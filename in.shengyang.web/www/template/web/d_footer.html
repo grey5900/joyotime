@@ -1,0 +1,15 @@
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/web/get_update/1',
+		type: 'post',
+		dataType: 'json',
+		success: function(data, textStatus, xhr) {
+			$('#versionNumber').text(data.version);
+			$('#versionDate').text(data.createDate);
+		},
+	});
+})
+</script>
+<script src="/static/js/download.js" type="text/javascript" charset="utf-8"></script>
+<!--{template common/footer}-->

@@ -1,0 +1,34 @@
+<!--{template common/header}-->
+	<div id="container-search-index">
+		<div class="search-mainbox">
+			<form name="search" action="/search" method="get" class="search-form form-inline">
+                <div class="tabs">
+                    <ul>
+                        <li {if !$t}class="on"{/if}><a href="/search/">全部</a></li>
+                        <li {if $t == 20}class="on"{/if}><a href="/search/?t=20">地点</a></li>
+                        <li {if $t == 30}class="on"{/if}><a href="/search/?t=30">用户</a></li>
+                        <li {if $t == 40}class="on"{/if}><a href="/search/?t=40">点评</a></li>
+                        <li {if $t == 50}class="on"{/if}><a href="/search/?t=50">新闻</a></li>
+                        <li><a href="http://f.chengdu.cn/search/building/">楼盘</a></li>
+                    </ul>
+                </div>
+				<div class="input-box">
+					<input type="text" name="kw" value="{$kw}" placeholder="请输入关键字" class="keywords" /><input type="submit" value="  搜索  " class="btn btn-primary" />
+					<input type="hidden" name="page" value="{$page}" />
+					<input type="hidden" name="t" value="{$t}" />
+				</div>
+			</form>
+		</div>
+	</div>
+<script type="text/javascript">
+$(function(){
+	$("form[name=search]").on("submit", function(){
+		var kw = $("input[name=kw]").val();
+		var t = $("input[name=t]").val();
+		window.location.href = "/search?kw=" + kw + "&t=" + t;
+		return false;
+	});
+});
+</script>
+
+<!--{template common/footer}-->

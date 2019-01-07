@@ -1,0 +1,97 @@
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post" action="{$current_url}">
+        <div class="searchBar">
+            <ul class="searchContent">
+                <li>
+                    <label>
+                        <select class="combox" name="status">
+                            <option value="-1" selected>处理状态</option>
+                            <!--{loop $poi_handle $key $value}-->
+                            <option value="{$key}">{$value}</option>
+                            <!--{/loop}-->
+                        </select></label>
+                    <label>
+                        <select class="combox" name="type">
+                            <option value="placename">POI名称</option>
+                            <option value="id">POI ID</option>
+                            <option value="address">POI地址</option>
+                        </select></td> </label>
+                </li>
+                <li>
+                    <input type="text" name="keywords" id="keywords" value="{$keywords}" size="30" />
+                </li>
+            </ul>
+            <div class="subBar">
+                <ul>
+                    <li>
+                        <div class="buttonActive">
+                            <div class="buttonContent">
+                                <button type="submit">
+                                    检索
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="button" href="{eval echo site_url(array('poi', 'report', 'index'))}" rel="{eval echo build_rel(array('poi', 'report', 'index'))}" target="navTab" title="POI报错"><span>重置列表</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="edit"  href="{eval echo site_url(array('poi', 'report', 'edit', 'id'))}/<!--{{id}}-->" warn="请选择要编辑的报错POI" rel="{eval echo build_rel(array('poi', 'report', 'edit'))}" target="navTab" title="POI报错编辑"><span>编辑</span></a>
+            </li>
+            <li class="line">
+                line
+            </li>
+            <li>
+                <a class="icon" href="#"><span>导出EXCEL</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="list" width="100%" layoutH="138">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="20%">地点</th>
+                <th width="30%">地址</th>
+                <th width="15%" orderField="reportTime" class="<!--{if $order_field=='reportTime'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">报错时间</th>
+                <th width="5%">地点状态</th>
+                <th width="20%">报错类型</th>
+                <th width="5%">处理状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr id="row_{$row['id']}" status="{$row['status']}" target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['placename']}</td>
+                <td>{$row['address']}</td>
+                <td>{$row['reportTime']}</td>
+                <td id="row_status_{$row['id']}">{$poi_status[$row['status']]}</td>
+                <td title="{$row['report']}">{$row['report']}</td>
+                <td>{$poi_handle[$row['isConfirm']]}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript" src="/static/js/poi.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("select[name=type]").val("{$type}");
+        $("select[name=status]").val("{$status}");
+    });
+</script>

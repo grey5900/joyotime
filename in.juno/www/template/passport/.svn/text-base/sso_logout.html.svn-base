@@ -1,0 +1,6 @@
+<!--{loop $apps $host $auth}-->
+var syn_logout = document.createElement("script");
+syn_logout.src = "http://{$host}/sso/clearcookie?s={$auth}&t=" + Math.random();
+syn_logout.setAttribute('type', 'text/javascript');
+document.body.appendChild(syn_logout);
+<!--{/loop}-->

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>IN成都商家平台</title>
+		<!-- Date: 2012-08-27 -->
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+		<link rel="stylesheet" href="css/wrapper.css" >
+		<link rel="stylesheet" href="css/uploadify.css" />
+		<link rel="shortcut icon" href="img/favicon.ico">
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/bootstrap-datepicker.js"></script>
+		<script src="js/jquery.validate.js"></script>
+
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+		<script type="text/javascript">
+		</script>
+
+	</head>
+	<body>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="navbar-link">
+						<h3><a class="logo" href="#">
+							<img width="354" height="55" title="IN成都商家平台" src="img/logo_header.png">
+						</a></h3>
+					</div>
+					<div class="navbar-link pull-right">
+						欢迎您！<span>多梦科技</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu">
+			<div class="container">
+				<div id="fixed-header">
+					<div class="navbar">
+						<ul class="nav">
+					    	<li><a href="#">首页</a></li>
+						    <li class="active"><a href="#">优惠管理</a></li>
+						    <li><a href="extend.html">扩展信息</a></li>
+						    <li><a href="vip_special.html">会员管理</a></li>
+					   </ul>
+					</div>
+				</div>
+				<div class="navbar-link pull-right">
+					<a href="#">修改密码</a><span>|</span>
+					<a href="#">退出登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="container">
+				<div class="mainbox">
+					<div class="main">
+						<div class="inner main-conter">
+							<div class="title">
+								<h3>创建优惠</h3>
+							</div>
+							<div class="from-detail">
+								<div class="hd">
+									<ul class="nav nav-tabs">
+										<li class="active"><a href="#">发送优惠</a></li>
+										<li><a href="#">签到优惠</a></li>
+									</ul>
+								</div>
+								<form id="createprefe-form" class="form-frame" action="" method="post" novalidate="novalidate">
+									<div class="control-group">
+										<label class="control-label">图  片：</label>
+										<div class="controls">
+											<!-- <div class="photo-upload">
+												<span class="upload-img fileinput-button">
+													<input type="file" multiple="" name="files[]"/>
+												</span>
+												<span class="help-block">提示：每次最多可以批量上传10张照片，每张照片大小可以到3M。仅支持JPG，JPEG， GIF，PNG或BMP格式</span>
+												<table role="presentation" class="table table-striped">
+										            <tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody>
+										        </table>
+											</div> -->
+											<input type="file" name="files" id="uploader-pic">
+											<span class="help-block">提示：每次最多可以批量上传10张照片，每张照片大小可以到3M。仅支持JPG，JPEG， GIF，PNG或BMP格式</span>
+											<div class="up-pic">
+												<div class="frame" id="div_upload_big">
+												</div>
+											</div>
+											<div class="show-pic">
+												<div id="preview" class="frame">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">标  题：</label>
+										<div class="controls">
+											<input class="input-xlarge text-input" type="text" name="prefename" value="" id="prefename" placeholder="标题"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">优惠描述：</label>
+										<div class="controls">
+											<textarea id="depict" name="depict" class="input-xlarge" rows="3" cols="8" type="text"></textarea>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">有限期到：</label>
+										<div class="controls">
+											<input id="expire" class="input-medium text-input" type="text" value="" name="expire">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">可使用次数：</label>
+										<div class="controls">
+											<input class="input-small text-input" type="text" name="use" value="" id="use"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">适用店铺：</label>
+										<div class="controls">
+											<label class="checkbox"><input class="" type="checkbox" value="良木缘一店"/>良木缘一店</label>
+											<label class="checkbox"><input class="" type="checkbox" value="良木缘一店"/>良木缘一店</label>
+											<label class="checkbox"><input class="" type="checkbox" value="良木缘一店"/>良木缘一店</label>
+											<label class="checkbox"><input class="" type="checkbox" value="良木缘一店"/>良木缘一店</label>
+											<label class="checkbox"><input class="" type="checkbox" value="良木缘一店"/>良木缘一店</label>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">其他描述：</label>
+										<div class="controls">
+											<input class="input-xlarge text-input" type="text" name="" value="" id="" placeholder="标题"/>
+											<br /><br />
+											<textarea id="" name="" class="input-xlarge" rows="3" cols="8" type="text" placeholder="文字"></textarea>
+										</div>
+									</div>
+									<div class="from-actions">
+										<label class="control-label"></label>
+										<div class="controls">
+											<input type="hidden" name="src" id="image_src" value="" />
+											<input type="hidden" name="x1" value="0" id="x1" />
+											<input type="hidden" name="y1" value="0" id="y1" />
+											<input type="hidden" name="x2" value="360" id="x2" />
+											<input type="hidden" name="y2" value="360" id="y2" />
+											<input type="hidden" name="w" value="360" id="w" />
+											<input type="hidden" name="h" value="360" id="h" />
+											<input class="btn" data-loading-text="　……　" type="submit" value="　预览　">
+											<input class="btn btn-primary" type="submit" value="提交审核">
+										</div>
+										
+
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar">
+						<div class="title">
+							
+						</div>
+						<ul class="nav nav-list">
+							<li class="active"><a href="#">新建优惠</a></li>
+							<li><a href="pre_check.html">等待审核</a></li>
+							<li><a href="pre_publish.html">已发布</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="copyright">
+				<p><a href="#">关于我们</a>|<a href="#">联系我们</a>|<a href="#">帮助  </a></p>
+				<p ><span>©2011 in.chengdu.cn  All Rights Reserved</span><span>蜀ICP备：07003170号 ICP许可证编号：川B2-20060070	</span></p>
+			</div>
+		</div>
+		<script src="js/jquery.uploadify.min.js"></script>
+		<script src="js/jquery.imgareaselect.min.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$("#uploader-pic").uploadify({
+				"width" : 170,
+				"height": 60,
+				"auto":true,
+				"multi":false,
+				"buttonText":"",
+				"fileSizeLimit":"2048KB",//图片最大size 
+				"fileTypeExts":"*.png;*.jpg;*.gif",//允许上传的图片类型
+				"swf":"js/uploadify.swf",
+				"uploader":"/upload",//图片上传逻辑页面
+				"onSelect":function(e, queueId, fileObj){
+					alert(
+						"唯一标识:" + queueId + "\r\n" +
+	                  "文件名：" + fileObj.name + "\r\n" +
+	                  "文件大小：" + fileObj.size + "\r\n" +
+	                  "创建时间：" + fileObj.creationDate + "\r\n" +
+	                  "最后修改时间：" + fileObj.modificationDate + "\r\n" +
+	                  "文件类型：" + fileObj.type);
+				},
+				"onUploadStart":function(file){
+					$("#div_upload_big").html("");
+					$("#preview").html("");
+				},
+				"onUploadSuccess":function(file){
+					var image_path = "{$upload_path}"+file.name;
+					var w,h;
+					$('#div_upload_big').append('<img width="360px" height="360px" id="photo" src="'+image_path+'" />');
+					$('#preview').append('<img id="thumb" width="160px" height="160px" src="'+image_path+'"/>');
+					$("#photo").attr({src:image_path});
+					$("#thumb").attr({src:image_path});
+					$("#image_src").val(image_path);
+					
+					$('#upload_thumb').show();
+	
+					$('#photo').imgAreaSelect({ 
+						aspectRatio: '1:1', 
+						handles: true,
+						fadeSpeed: 170,
+						resizeable:false,			
+						onSelectChange: preview
+					});
+					
+				},
+				"onUploadError":function(file){
+					alert("头像上传失败了");
+				}
+	
+			});
+			$("#upload_thumb").on("submit",function(){
+				$.ajax({
+					type: "POST",
+					url: $("#upload_thumb").attr("action"),
+					data: $("#upload_thumb").serialize(),
+					dataType: "json",
+					success: function(json){
+						$('#messager').messager({message:json.msg});
+						if( json.code == 1){
+							window.location.reload();
+						}
+					}
+				});
+				return false;
+			});
+		});
+	</script>
+	</body>
+</html>
+

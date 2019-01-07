@@ -1,0 +1,7 @@
+<!--{if $data[2]}-->
+<ul class="slide-list">
+<!--{loop $data[2] $row}-->
+<li><a href="{$row['imageLink']}" target="_blank"><img src="{$row['image']}" alt="{$row['title']}" width="275" height="470" /><span class="caption">{$row['title']}</span></a></li>
+<!--{/loop}-->
+</ul>
+<!--{/if}-->

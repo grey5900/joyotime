@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>有爱•眼不老</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.3.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+			/*	background color	*/
+			.page {
+				background: #f8f1e8;
+			}
+			#content .unit .box {
+				background: #fff;
+			}
+			.touchslider-viewport {
+				background: #fcadcd;
+			}
+			.box-db-left, .box-db-right {
+				background: #000;
+			}
+			.box-db .img img {
+				background: #fff;
+			}
+			/* font color  */
+			.unit-title {
+				color: #ab7133;
+			}
+			#content .unit p {
+				color: #666;
+			}
+			#content .statement p {
+				color: #666;
+			}
+			.box-db-left, .box-db-right {
+				color: #5a146a;
+			}
+			.texts .info-group {
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+				color: #f56006;
+			}
+			.texts .inside p {
+
+			}
+			.bottons .botton span.title {
+				color: #fff;
+			}
+			.bottons .botton span.intro {
+				color: #fff;
+			}
+			.touchslider-item .touchslider-info {
+				color: #fff;
+			}
+			.multi-line dd span {
+				color: #b2dbf9;
+			}
+			.multi-line dd {
+				border-bottom: 0;
+			}
+			.multi-line .viewall a {
+				color: #e94083;
+			}
+			.multi-line .viewall a:hover {
+
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #666;
+				padding-top: 5px;
+			}
+			.touchslider-item img {
+				height: 190px;
+			}
+			.touchslider-nav-item {
+
+			}
+			.feed, .user {
+				border-bottom: 0;
+			}
+			.feed a:hover, .user a:hover {
+				border-bottom: 0;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+			}
+/*			#content .img-unit {
+				box-shadow: none;
+			}*/
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/35/"><img border="0" src="http://icd.sc/img/m/35/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit bottons">
+            <div class="unit-title">
+              <h3>丹凤眼—第七届单身白领节，手机用户报名通道：</h3>
+            </div>
+            <a class="botton bottonColor-brown" href="inplace://317338">
+              <span class="title">报名参加</span>
+              <span class="intro">参加人数：<span id="joins_num">{$feed_count}</span> 人</span>
+            </a>
+          </div>
+           <div class="unit texts">
+            <div class="unit-title">
+              <h3>参与方式</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  1.点击“报名参加”，上传自己的“眼部”照片，并填写个人相关信息（如：性别+自我介绍）报名成功后，会系统自动为你配对，随时关注地点动态，配对成功者会电话通知您参与线下互动活动，与TA一起赢取现场大奖；
+                </p>
+                <p>
+                  2.在“个人设置”里，完善个人资料填写，联系方式必填，每周末派对活动前，将由工作人员电话通知活动详情；
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动介绍</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <p>活动时间：2012.10.26-2012.11.23</p>
+                <div class="expand-simple">
+                  <p>
+一个人同另一个人在第一次见面的时候被对方的外表长相气质神韵所吸引，这就是“眼缘”。......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    一个人同另一个人在第一次见面的时候被对方的外表长相气质神韵所吸引，这就是“眼缘”。有着浓厚的时代标志和时尚印记，让更多的单身男女发现爱并创造爱。“打捞”全程单身白领，提供时尚，私密无门槛交友活动，那是一份遇见未知爱情的机缘。单身白领节是成都商报主办，其他媒体联合支持的大型单身男女约会活动。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动安排</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+以下活动，成功报名的IN成都用户均可参加<br />
+1.【那些年的浪漫回味】11月13日17:30，活动地址：金牛区交大路183号凯德广场4楼食无季，收费标准：9元/人。<br />
+2.【单身好声音】11月14日19:30，活动地址：咔乐迪KTV(西体店)（金牛区西体北路2号），收费标准：19元/人。<br />
+3.【丹凤眼靓出你的声线】11月15日19:30，活动地址：建设北路三段6号龙湖天街三千集四楼音乐房子KTV，收费标准：29元/人。<br />
+4.【眼缘狂欢派对】11月22日，爱游世界的旅行看片体验&单身集结的音乐狂欢，现场互动及抽奖活动，活动地点：国色天乡。  
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>特别活动</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+
+                <p>
+                  【美目传情之旅】爱在旅途之达古冰山2日游；（成功报名者有机会获得“爱在旅途”旅行交友活动资格，电话通知）
+
+                </p>
+                <div class="contr">
+                  <div class="photo"><img src="http://icd.sc/img/m/35/1.jpg" width="190"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--{if isset($feed) && !empty($feed)}-->
+          <div class="unit card">
+            <div class="unit-title">
+              <h3>活动动态</h3>
+            </div>
+            <div class="box">
+              <div class="feeds">
+                <div class="feed">
+                  <a href="/event/feeds/{$event_id}/{$uid}/0/1">
+                  <div class="arrow">
+                    <div class="icon">
+                      <img src="{$feed[avatar]}"  width="40" height="40"/>
+                    </div>
+                    <div class="detail">
+                      <h4>{$feed[uname]}</h4>
+                      <!--{if $feed[type]==1}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        签到
+                      </div>
+                      <!--{elseif $feed[type]==2}-->
+                      <div class="action">
+                        点评
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="start">
+                        <!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}-->
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <!--{elseif $feed[type]==3}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        上传照片
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <div class="photo"><img src="{$feed[photoName]}" width="200" />
+                      </div>
+                      <!--{/if}-->
+                    </div>
+                  </div> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--{/if}-->
+
+          <!--{if isset($joines) && !empty($joines)}-->
+          <div class="unit user-list">
+            <div class="unit-title">
+              <h3>您有{$count_joines}位好友参加了该活动</h3>
+            </div>
+            <div class="box">
+              <a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+              <ul class="user-list">
+                <!--{loop $joines $uid $u}-->
+                <li><img src="{$u[avatar]}" />
+                </li>
+                <!--{/loop}-->
+              </ul> </a>
+            </div>
+          </div>
+          <!--{/if}-->
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong><br />
+               1. 此活动为手机用户报名通道，将同步至专题网页活动，手机用户可登陆成都全搜索，进入“第七届单身白领节”专题活动，查看更多详情，报名咨询热线：028-86530331 ；<br />
+2.  现场报名：红星路二段159号成都传媒集团1楼大厅（10:00-17:00）；丹凤眼国际眼部美容理疗机构18家门店；<br />
+3.  本活动由成都商报主办；<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				})
+				$(".touchslider").touchSlider({
+					mouseTouch : true,
+				});
+			})
+    </script>
+  </body>
+</html>

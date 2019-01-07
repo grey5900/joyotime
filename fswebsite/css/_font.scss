@@ -1,0 +1,49 @@
+/*
+ * font variable
+ *
+ */
+
+@font-face {
+  font-family: OpenSans-Light;
+  font-style:  normal;
+  font-weight: 300;
+  src: url("/font/OpenSans-Light.ttf");
+}
+
+$h: Helvetica,sans-serif,Arial;
+
+$yh:'Microsoft Yahei', "\5B8B\4F53", verdana, sans-serif;
+
+$font-g:Georgia;
+
+$st:\5B8B\4F53;
+
+$ol: OpenSans-Light,sans-serif,Arial;
+
+
+
+/* global */
+
+html {
+  font-size: 100%;
+  font-family: $yh;
+}
+
+body#eng {
+  font-family: $ol;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $ol;
+  }
+}
+body#chn {
+  font-family: $yh;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $yh;
+  }
+}
+
+
+p {
+  font-weight: 100;
+  font-size: 1em;
+}

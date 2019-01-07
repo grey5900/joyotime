@@ -1,0 +1,126 @@
+{eval $page_rel='deal_trend_analysis';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="start_date" value="{$start_date}"/>
+    <input type="hidden" name="end_date" value="{$end_date}"/>
+    <input type="hidden" name="no_zero" value="{$no_zero}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>时段：</td>
+                    <td width="450">
+                    <input type="text" readonly="readonly" name="start_date" class="date" value="{$start_date}" />
+                    ~
+                    <input type="text" readonly="readonly" name="end_date" class="date" value="{$end_date}" />
+                    </td>
+                    <td>
+                        <label><input type="checkbox" name="no_zero" value="1"<!--{if $no_zero}--> checked="checked"<!--{/if}--> />排除0元订单</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        商品类别：
+                    </td>
+                    <td colspan="2">
+                        <label><input type="checkbox" name="goods_type[]"<!--{if $goods_type && in_array(10, $goods_type)}--> checked="checked"<!--{/if}--> value="10" />总和</label>
+                        <label><input type="checkbox" name="goods_type[]"<!--{if $goods_type && in_array(2, $goods_type)}--> checked="checked"<!--{/if}--> value="2" />电影票</label>
+                        <label><input type="checkbox" name="goods_type[]"<!--{if $goods_type && in_array(1, $goods_type)}--> checked="checked"<!--{/if}--> value="1" />章鱼团</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        分析项目：
+                    </td>
+                    <td>
+                        <!--{loop $deal_analysis_item $key $value}-->
+                        <label><input type="radio" name="item" value="{$key}" <!--{if $item == $key}--> checked="checked"<!--{/if}--> />{$value}</label>
+                        <!--{/loop}-->
+                    </td>
+                    <td>
+                        <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                分析
+                            </button>
+                        </div>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" layoutH="98">
+    <div id="{$page_rel}_container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        new Highcharts.Chart({
+            chart: {
+                renderTo: "{$page_rel}_container",
+                type: "line",
+                marginRight: 130,
+                marginBottom: 25
+            },
+            title: {
+                text: "交易趋势分析图",
+                x: -20 //center
+            },
+            subtitle: {
+                text: "时间段：{$start_date} ~ {$end_date}",
+                x: -20
+            },
+            xAxis: {
+                type: "datetime",
+                labels: {
+                    formatter: function() {
+                        return  Highcharts.dateFormat('%Y-%m-%d', this.value);
+                    }
+                }
+            },
+            yAxis: {
+                title: {
+                    text: "{$deal_analysis_item[$item]}"
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: "#808080"
+                }]
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        Highcharts.dateFormat('%Y-%m-%d', this.x) +': '+ this.y;
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 100,
+                borderWidth: 0
+            },
+            series: [
+            <!--{eval $delim1 = '';}-->
+            <!--{loop $series $key $value}-->
+            {$delim1}{
+                name: '{$key}',
+                data: [
+                <!--{eval $delim2 = '';}-->
+                <!--{loop $value $k $v}-->
+                {$delim2}[{$v['timestamp']}, {$v['value']}]<!--{eval $delim2 = ',';}-->
+                <!--{/loop}-->
+                ]
+            }
+            <!--{eval $delim1 = ',';}-->
+            <!--{/loop}-->
+            ]
+        });
+    });
+</script>

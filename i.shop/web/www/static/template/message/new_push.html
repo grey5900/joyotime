@@ -1,0 +1,64 @@
+<!--{template web/header}-->
+
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox">
+			<div class="main">
+				<div class="inner main-conter">
+					<div class="title">
+						<h3>新建推送消息</h3>
+					</div>
+					<div class="from-detail">
+						<form id="push-form" class="form-frame" action="{$current_url}" method="post" novalidate="novalidate"<!--{if !empty($msg) && $msg[status] == 0}-->onsubmit="return false;"<!--{/if}-->>
+							<div class="alert alert-error hide"></div>
+							<!-- 会员选择 -->
+							<div class="control-group">
+								<label class="control-label">发送给：</label>
+								<div class="controls">全部会员</div>
+								<input type="hidden" name="recieverIds" value="all" />
+							</div>
+							<div class="control-group">
+								<label class="control-label">消息内容：</label>
+								<div class="controls">
+								   <!--{if !empty($msg)}-->
+								   <!--{if $msg[status] == 10}-->
+			                       <a class="tip-fail jqModal" href="javascript:;" onclick="showReason('驳回原因', '{$msg[remark]}');return false;"><i>审核失败...</i></a>
+								   <!--{elseif $msg[status] == 20}-->
+			                       <span class="tip-view">展示中...</span>
+								   <!--{else}-->
+			                       <span class="tip-wait">等待审核...</span>
+								   <!--{/if}-->
+								   <!--{/if}-->
+									<textarea id="content" name="content" class="input-xlarge" rows="4" cols="8" type="text"<!--{if !empty($msg) && $msg[status] == 0}--> readonly<!--{/if}-->>{$msg[welcomeMsg]}</textarea>
+								</div>
+							</div>
+							<!--{if !empty($prefers)}-->
+							<div class="control-group">
+								<label class="control-label">消息链接：</label>
+								<div class="controls">
+									<select  name="prefer_id" id="link" enable="false">
+										<option value="" selected>无链接</option>
+										<!--{loop $prefers $k $v}-->
+										<option value="{$v[id]}">{$v[title]}</option>
+										<!--{/loop}-->
+									</select>
+								</div>
+							</div>
+							<!--{/if}-->
+							<div class="from-actions">
+								<label class="control-label"></label>
+								<div class="controls">
+									<input<!--{if !$can_push}--> disabled="disabled"<!--{/if}--> class="btn btn-primary" data-loading-text="　……　" type="submit" value="　立即推送　">
+									<p>*今天<!--{if $can_push}-->还可以推送1次<!--{else}-->不可以再推送消息了<!--{/if}--><p>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!--{template sider}-->
+		</div>
+	</div>
+</div>
+
+<!--{template web/footer}-->

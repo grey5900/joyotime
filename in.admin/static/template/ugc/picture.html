@@ -1,0 +1,214 @@
+{if !isset($do) || empty($do)}
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="orderField" value="{$orderField}" />
+	<input type="hidden" name="orderDirection" value="{$orderDirection}" />
+	<input type="hidden" name="keyword" value="{$keyword}" />
+	<input type="hidden" name="status" value="{$status}" />
+	<input type="hidden" name="begin" value="{$begin}" />
+	<input type="hidden" name="end" value="{$end}" />
+	<input type="hidden" name="poi_id" value="{$placeId}" />
+	<input type="hidden" name="user_id" value="{$uid}" />
+	<input type="hidden" name="isdesc" value="{$isdesc}" />
+	<input type="hidden" name="iswall" value="{$iswall}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				内容：
+				<input type="text" name="keyword" value="{$keyword}"/>
+			</li>
+			<li>
+			<select class="combox" name="status">
+				<option value="-1"{if !isset($status) || $status==-1} selected{/if}>是否审核</option>
+				<option value="1"{if isset($status) && $status==1} selected{/if}>已审核</option>
+				<option value="9"{if isset($status) && $status==9} selected{/if}>未审核</option>
+				<option value="2"{if isset($status) && $status==2} selected{/if}>敏感词</option>
+				<option value="3"{if isset($status) && $status==3} selected{/if}>被屏蔽</option>
+			</select>
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				<li><a class="button" href="{eval echo site_url(array('ugc','post','advsearch'));}/op/pic" rel="{eval echo build_rel(array('ugc','post','advsearch','op','pic'));}" target="dialog" mask="true" title="高级检索"><span>高级检索</span></a></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('ugc','post','edit'));}/do/examine/op/pic" target="selectedTodo" rel="ids[]" warn="请至少选择一条纪录"><span>批量标为已审</span></a></li>
+			<li><a class="edit" href="{eval echo site_url(array('ugc','reply','redirect', 'do', 'pic'));}/item_id/<!--{{sid_pic}}-->/rel/{eval echo build_rel(array('ugc','reply','redirect'));}" target="dialog" rel="{eval echo build_rel(array('ugc','reply','redirect'));}" warn="请选择一条纪录"><span>回复</span></a></li>
+			<!--<li><a class="delete" href="{eval echo site_url(array('ugc','post','edit'));}/do/status/op/pic" target="selectedTodo" rel="ids[]" title="确定要屏蔽吗？" warn="请至少选择一条纪录"><span>屏蔽</span></a></li>-->
+			<li><a class="delete" href="{eval echo site_url(array('ugc','post','banned', 'type', '3', 'id'));}/<!--{{sid_pic}}-->" target="ajaxTodo" title="确定要屏蔽吗？" warn="请选择要屏蔽的记录"><span>屏蔽</span></a></li>
+			<li class="line">line</li>
+			<!-- Add by Liuw at 2012-12-06:3.0 -->
+			<li><a class="icon" href="{echo site_url(array('ugc', 'post', 'set_tag', 'type', 3, 'ids'));}/<!--{{sid_pic}}-->" target="dialog" rel="{echo build_rel(array('ugc', 'post', 'set_tag'));}" title="设置标签" warn="请选择一条点评"><span>设置标签</span></a></li>
+			<li><a class="icon" 
+			id="set_tag_button" title="设置标签" warn="请选择一条点评">
+			<span>批量设置标签</span></a></li>
+			<li><a class="icon" href="#" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
+		</ul>
+	</div>
+
+	<div layoutH="116" id="">
+	<table class="list" width="100%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="5%">ID</th>
+				<th width="5%">用户</th>
+				<th width="10%" orderField="createDate" class="{$orderDirection}">时间</th>
+				<th width="10%">地点</th>
+				<th width="20%">内容</th>
+				<th width="38%">TAG</th>
+				<th width="5%">赞</th>
+				<th width="5%">回复</th>
+				<!-- <th width="5%">操作</th> -->
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="sid_pic" rel="{$key}" id="ugcv3_post_settag">
+				<td><input name="ids[]" value="{$key}" type="checkbox"></td>
+				<td>{$val['id']}</td>
+				<td class="style-1">
+					<div><img alt="avatar" height="40" width="40" src="{eval echo image_url($val[avatar], 'head');}" /></div>
+					<div class="nameid">
+					<span>{$val[username]}</span>
+					<p>ID{$val[uid]}</p>
+					<div>
+				</td>
+				<td><span>{$val[createDate]}</span></td>
+				<td><span>{$val[placename]}</span></td>
+				<td class="style-2">
+					<div class="content">
+						{$val[content]}
+					</div>
+					<div><a class="image_show" style="cursor:pointer;" href="{eval echo image_url($val[photoName], 'user', 'odp');}"><img alt="pic" width="80" src="{eval echo image_url($val[photoName], 'user', 'odp');}" /></a></div>
+				</td>
+				<td>{$val[tags]}</td>
+				<td><span>{$val[praiseCount]}</span></td>
+				<td><span>{$val[replyCount]}</span></td>
+				<!-- <td><a href="" rel="{eval echo build_rel(array('ugc','post','setwall'));}" target="dialog" class="operating">+</a></td> -->	
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+<script type="text/javascript">
+	$(function(){
+		$("a.image_show").fancybox();
+	});
+</script>
+</div>
+
+{elseif $do==='reply'}
+<div class="pageContent">
+	<form method="post" action="{$post_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent">
+		<table border="0" cellspacing="8" cellpadding="8" width="100%" layoutH="60">
+			<tbody>
+				<tr>
+					<td width="120" valign="top" align="right"><label>回复内容</label></td>
+					<td align="left" valign="top" colspan="2"><textarea name="content" cols="50" rows="6" class="required"></textarea></td>
+				</tr>
+				<tr>
+					<td align="right"><label>回复时间</label></td>
+					<td align="left" colspan="2">
+						<input type="text" name="created_txt" value="{$now}" readonly />
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label>选择马甲</label></td>
+					<td align="left" class="nowrap">
+					<input type="radio" name="uid" value="random" checked="checked"/>随机 
+					<input type="radio" name="uid" value="select" />指定:</td>
+					<td><input type="hidden" name="user.id" value="" />
+					<input type="text" name="user.name" size="20" value="" readonly class="required"/>
+					<a class="btnLook" href="{eval echo site_url(array('ugc','post','listvest'));}/aid/{$aid}/tmp/vest1" lookupGroup="user">查找带回</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">回复</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+{elseif $do==='advsearch'}
+<div class="pageContent">
+	<form method="post" action="{$search_url}" onsubmit="return navTabSearch(this);">
+		<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+				<label>内容：</label>
+				<input type="text" name="keyword" size="30" />
+			</div>
+			<div class="unit">
+				<label>指定时间段：</label>
+				<input type="text" name="begin" class="date textInput readonly" readonly="true" format="yyyy-MM-dd 00:00:00"/><a class="inputDateButton" href="javascript:;">选择</a>
+				<label style="text-align: center; width:10px;">~</label>
+				<input type="text" name="end" class="date textInput readonly" readonly="true" format="yyyy-MM-dd 23:59:59"/><a class="inputDateButton" href="javascript:;">选择</a>
+			</div>
+			<div class="unit">
+				<label>指定POI：</label>
+				<input type="hidden" name="poi.id" />
+				<input type="text" name="poi.name" value="" readonly />
+				<a id="lookup_link" class="btnLook" href="{eval echo site_url(array('ugc','post','list_lookup'));}/type/place" lookupGroup="poi" height="560">查找带回</a>
+			</div>
+			<div class="unit">
+				<label>指定用户：</label>
+				<input type="hidden" name="user.id" value=""/>
+				<input type="text" name="user.name" value="" readonly />
+				<a id="lookup_link" class="btnLook" href="{eval echo site_url(array('ugc','post','list_lookup'));}/type/user" lookupGroup="user" height="560">查找带回</a>
+			</div>
+			<div class="unit">
+				<label>是否带描述：</label>
+				<input type="radio" name="isdesc" value="2" />否&nbsp;&nbsp;<input type="radio" name="isdesc" value="1"/>是
+			</div>
+			<div class="unit">
+				<label>审核状态：</label>
+				<select name="status">
+				<option value="-1">是否审核</option>
+				<option value="1"}>已审核</option>
+				<option value="9">未审核</option>
+				</select>
+			</div>
+	</div>		
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检 索</button></div></div></li>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取 消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+{/if}
+
+<script>
+$(function(){
+	$("#set_tag_button").click(function(){
+		var ids = new Array();
+		$("#ugcv3_post_settag input[name='ids\[\]'][type='checkbox']:checked").each(function(i,k){
+			ids[i] = $(this).val();
+		});
+		if(ids.length<=0){ 
+			alertMsg.error("请选择要设置标签的记录");
+			return ;
+		}
+		var idstrng = ids.join("-");
+		$.pdialog.open("{echo site_url(array('ugc', 'post', 'set_tag','ids'));}/"+idstrng, "{echo build_rel(array('ugc', 'post', 'set_tag'));}", "设置标签", {width: 500, height: 300 ,'ids' :ids});
+	});
+	});
+</script>

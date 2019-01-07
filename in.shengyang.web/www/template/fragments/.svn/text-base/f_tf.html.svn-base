@@ -1,0 +1,88 @@
+<!-- f_tf -->
+
+<!--{eval $tf_info = $row[data][0];}-->
+<!--{eval $ext_info = $tf_info['extraData'];}-->
+
+<div class="groupon" style="display:none">
+    <div class="tit"><h2>{$row[frag][name]}</h2></div>
+    <div class="con">
+        <div class="thumb"><a href="{$tf_info['link']}" target="_blank"><img src="{$tf_info['image']}" /></a></div>
+        <div class="detail">
+            <h3><a href="{$tf_info['link']}" target="_blank">{$tf_info['title']}</a></h3>
+            <div class="info">
+            <!--
+                市场均价：{$ext_info['market_price']['data']}<br/>
+                距离团购结束：<span id='js_countdown' data="{$ext_info['end_time']['data']}">计算中...</span><br/>
+                团购优惠：{$ext_info['youhui']['data']}<br/>
+                返利：{$ext_info['fanli']['data']}<br/>
+                最高优惠：{$ext_info['max_youhui']['data']}
+             -->
+
+            </div>
+            <div class="action">
+                <div class="flag">
+                    <div class="count">当前团购人数：<strong><!--  {$ext_info['now_number']['data']} --></strong></div>
+                    <div class="prefer">成交10套或以上：<!-- {$ext_info['tenper']['data']} --></div>
+                </div>
+                <a href="{$tf_info['link']}" target="_blank" class="btn btn-success btn-large">我要团购</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- f_tf -->
+
+
+
+<script>
+var count_timeout = null;
+var count_down = 0;
+$(function(){
+	
+	var source = '{$row[frag][dataSource]}';
+	
+	$.getJSON(source+'&callback=?',function(data){
+	
+		var info = data.list[0];
+		var now = {eval echo time();};
+		count_down = parseInt(info.end_time - now);;//parseInt($("#js_countdown").attr("data") - now);
+		info.image && $(".groupon .thumb a").attr("href",info.url).find("img").attr("src",info.image);
+		info.title && $(".groupon .detail h3 a").attr("href",info.url).html(info.title);
+		$(".groupon .detail div.info").html("市场均价："+info.market_price+"元/㎡<br/>距离团购结束：<span id='js_countdown'>"+count_down+"</span><br/>团购优惠："+info.youhui+"<br/>返利："+info.fanli+"<br/>最高优惠："+info.max_youhui);
+		info.now_number && $(".groupon .detail div.count").find("strong").html(info.now_number);
+		info.tenper && $(".groupon .detail div.prefer").html("成交10套或以上："+info.tenper);
+		info.url && $(".groupon .detail a.btn").attr("href",info.url);
+		groupon_countdown();
+		$(".groupon").show();
+	})
+})
+
+function groupon_countdown(){
+	count_timeout = setTimeout("timer()",1000);
+	//return format_time(count_down);
+	$("#js_countdown").html(format_time(count_down));
+}
+function timer(){
+	if(count_down>0){
+		count_down -- ;
+		$("#js_countdown").html(format_time(count_down));
+		setTimeout("timer()",1000);
+	}
+	else{
+		clearTimeout(count_timeout);
+	}
+}
+function format_time(sec){
+	if(sec<=0) return "已结束";
+	var days = Math.floor(sec/(3600*24));
+	var hours = Math.floor((sec - days*3600*24)/3600);
+	var mins = Math.floor((sec - days*3600*24 - hours*3600)/60);
+	//alert(days+"-"+hours+"-"+mins);
+	//return days+"天"+hours+"小时"+mins+"分";
+	var str = '';
+	days ? str+= days+"天" : "";
+	hours ? str+= hours+"时" : "";
+	mins ? str+= mins+"分" : "";
+
+	return str;
+}
+</script>

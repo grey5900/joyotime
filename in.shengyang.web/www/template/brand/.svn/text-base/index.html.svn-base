@@ -1,0 +1,88 @@
+<!--{template common/header3.0}-->
+	<div class="main layout detail">
+		<div class="column intro_banner">
+			<div class="img">
+				<img src="/index3.0/images/contact.png" alt="" />
+			</div>
+			<div class="info">
+				<h1>积分商户</h1>
+				<p>抢地主、玩道具，积分送大礼！<br />积分商户，直接返积分票，消费即可获赠积分票。</p>
+				<a href="http://in.jin95.com/download" class="down" target="_blank">下载IN沈阳客户端，玩转积分</a>
+			</div>
+			<div class="btns">
+				
+			</div>
+		</div>
+		<div class="column contact">
+			<div class="article">
+				<div class="tit">
+					<h3><i></i>商户列表</h3>
+				</div>
+				<div class="con">
+					<div class="list">
+						<ul>
+						{loop $list $l}
+							<li>
+								<div class="img">
+									<a href="/place/{$l['id']}/" target="_blank"><img src="{echo image_url($l['icon'],'common');}"  alt="" /></a>
+								</div>
+								<div class="info">
+									<h3><a href="/place/{$l['id']}/" target="_blank">{$l['placename']}</a><a class="qrcode" data-content="<img src='http://chart.googleapis.com/chart?chs=200x200&amp;cht=qr&amp;chl=http://in.jin95.com/qr/inplace/{$l['id']}' />" href="###"><i class="icon-qrcode"></i></a></h3>
+									<div class="star">
+										<span class="icon-10"></span>
+									</div>
+									<p><span>{$l['tipCount']}个点评</span>{if $l['pcc']}<span>人均消费-{$l['pcc']}元</span>{/if}</p>
+									<p><span>地址：{$l['address']}</span>{if $l['tel']}<span>电话：{$l['tel']}</span>{/if}</p>
+									<p>商户点评：{$l['description']}</p>
+								</div>
+								<i class="tag"></i>
+							</li>
+						{/loop}
+							
+						</ul>
+					</div>
+					
+					{$paginate}
+				</div>
+			</div>
+			<div class="side">
+				<div class="module hot">
+					<div class="tit">
+						<h3>美食热门活动<i></i></h3>
+					</div>
+					{if $event}
+					<div class="con">
+						<a href="/event_new/detail/{$event['id']}/" target="_blank"><img src="{echo image_url($event['image'],'common','udp')}" alt="{$event['subject']}" /></a>
+					</div>
+					{/if}
+				</div>
+				<div class="module location">
+					<div class="tit">
+						<h3>热门美食<i></i></h3>
+					</div>
+					<div class="con">
+						<ul>
+						{loop $top_place $tp}
+							<li>
+								<div class="img">
+									<a href="/place/{$tp['id']}/" target="_blank"><img src="{echo image_url($tp['icon'],'common');}" alt="" /></a>
+								</div>
+								<div class="info">
+									<a href="/place/{$tp['id']}/" target="_blank">{$tp['placename']}</a>
+									<p><a href="/place/{$tp['id']}/" target="_blank">{$tp['countPost']}个点评</a></p>
+								</div>
+							</li>
+						{/loop}
+						
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="/brand/delicious_places/"></script>	
+
+<!--[if lte IE 6]>
+<script type="text/javascript" src="js/ie6.js"></script>
+<![endif]-->
+<!--{template common/footer}-->

@@ -1,0 +1,90 @@
+<!--{template common/header3.0}-->
+	<div class="main layout detail">
+		<div class="column intro_banner">
+			<div class="img">
+				<img src="/index3.0/images/act.png" alt="" />
+				
+			</div>
+			<div class="info">
+				<h1>活动IN沈阳</h1>
+				<p>抢地主、玩道具，积分送大礼！<br />IN沈阳3.0来了，玩转沈阳遍地的好吃，好玩，尽在IN沈阳。</p>
+				<a href="http://in.jin95.com/download/" target="_blank" class="down">下载IN沈阳客户端，玩转积分</a>
+			</div>
+			
+		</div>
+		<div class="column act">
+			<div class="bd">
+				<div class="article">
+					<div class="module hot">
+						<div class="tit">
+							<h3>全部活动列表<i></i></h3>
+						</div>
+						<div class="con">
+						 {loop $list $row}
+							<div class="box">
+								<div class="img">
+									<a href="/event_new/detail/{$row['id']}/" target="_blank"><img src="{echo image_url($row['image'], 'common', 'udp');}" alt="{$row['subject']}" /></a>
+								</div>
+								<div class="info">
+									<h4><a href="/event_new/detail/{$row['id']}/"  target="_blank">{$row['subject']}</a></h4>
+									<span>时间：{$row['startDate']} ~ {$row['endDate']}</span>
+									<p><em>{$row['hits']}</em>人关注</p>
+									<div class="btns">
+										{if $row['is_expired']}
+											<a href="/event_new/detail/{$row['id']}/"  target="_blank" class="btn disabled">已结束</a>
+										{elseif $row['is_begin']}
+											<a href="/event_new/detail/{$row['id']}/#post"  target="_blank" class="btn btn-warning">写点评</a>
+											{if $row['applyProperty']['form']}
+											<a href="/event_new/detail/{$row['id']}/"  target="_blank" class="btn btn-success">我要报名</a>
+											{/if}
+										{else}
+											<a href="/event_new/detail/{$row['id']}/"  target="_blank" class="btn disabled">敬请期待</a>
+										{/if}
+									</div>
+								</div>
+							</div>
+						 {/loop}
+							
+							
+						</div>
+					</div>
+					<!--{$paginate}-->
+				</div>
+				<div class="side">
+					
+					<div class="column score">
+						<div class="tit">
+							<h3><i></i>积分商城</h3>
+							<a href="/store/" target="_blank">更多 ></a>
+							
+						</div>
+						<div class="bd">
+							<ul>
+							{loop $products $p}
+								<li class="">
+									<a href="/store/" target="_blank"><img src="{echo image_url($p['image'],'product');}" alt="" width="280" height="175"></a>
+									<div class="caption">
+										<span>{$p['name']}</span>
+										{if $p['originalPrice']}<s>{if $p['originalPriceType']==1}￥{/if}{echo intval($p['originalPrice']/100);}{if $p['originalPriceType']==0}积分{/if}</s>{/if}
+									</div>
+									<div class="score_panel">
+										<em>{$p['price']}</em>积分
+									</div>
+								</li>
+							{/loop}
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="js/ie6.js"></script>
+<![endif]-->
+<!--{template common/footer}-->
+</body>
+</html>

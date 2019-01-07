@@ -1,0 +1,114 @@
+<dl class="poi_block">
+    <dt>
+        &nbsp;
+    </dt>
+    <dd>
+        <label style="width:50px;">排序值：</label>
+        <input type="hidden" name="property_id[{$page_id}][{$block_id}]" value="{$property['id']}" />
+        <input type="text" size="4" name="order[{$page_id}][{$block_id}]" value="{$property['rankOrder']}" />
+        <button type="button" onclick="del_{$page_id}_block({$block_id})">删除</button>
+        <button type="button" status="{echo $data?0:1}" onclick="hidden_{$page_id}_block(this, {$block_id})">{echo $data?'展开':'隐藏'}</button>
+    </dd>
+</dl>
+<dl id="{$page_id}_{$block_id}_detail">
+    <dt>&nbsp;</dt>
+    <dd>
+        <dl>
+            <dt>碎片连接数据：</dt>
+            <dd>
+                <select id="{$page_id}_{$block_id}_module">
+                    <option value="0">无连接</option>
+                    <option value="-1">超链接</option>
+                    <!--{loop $module_list $row}-->
+                    <option value="{$row['id']}">模型：{$row['name']}</option>
+                    <!--{/loop}-->
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>样式：</dt>
+            <dd>
+                <label><input type="radio" name="style[{$page_id}][{$block_id}]" value="0"<!--{if $property['style'] == 0}--> checked="checked"<!--{/if}--> />一张图(左显示)</label>
+                <label><input type="radio" name="style[{$page_id}][{$block_id}]" value="1"<!--{if $property['style'] == 1}--> checked="checked"<!--{/if}--> />一张图(一行显示)</label>
+                <label><input type="radio" name="style[{$page_id}][{$block_id}]" value="2"<!--{if $property['style'] == 2}--> checked="checked"<!--{/if}--> />四张图(一行显示)</label>
+            </dd>
+        </dl>
+        <dl>
+            <dt>标题：</dt>
+            <dd><input type="text" size="60" name="title[{$page_id}][{$block_id}]" value="{$property['title']}" /></dd>
+        </dl>
+        <dl>
+            <dt>描述：</dt>
+            <dd><textarea name="content[{$page_id}][{$block_id}]" rows="4" cols="60">{$property['content']}</textarea></dd>
+        </dl>
+        <dl>
+            <dt>图片：</dt>
+            <dd>
+                <table>
+                    <tr>
+                        <td><button type="button" name="image" value="0">图一</button></td>
+                        <td><button type="button" name="image" value="1">图二</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" name="image" value="2">图三</button></td>
+                        <td><button type="button" name="image" value="3">图四</button></td>
+                    </tr>
+                </table>
+            </dd>
+        </dl>
+        <span id="{$page_id}_{$block_id}_extends">
+            <!--扩展模型-->
+        </span>
+    </dd>
+</dl>
+<script type="text/javascript">
+    $(function(){
+        // 绑定图片插件
+        var images = new Array();
+        <!--{loop $property['images'] $key $row}-->
+        images[{$key}] = "{$row}";
+        <!--{/loop}-->
+        $("button[name=image]", "#{$page_id}_{$block_id}").each(function(){
+            var i = $(this).attr("value");
+            var options = "name:\"image[{$page_id}][{$block_id}][" + i + "]\", id:\"{$page_id}_{$block_id}_" + $(this).attr("value") + "\", file_type:\"common\", required:false";
+            if(images[i]) {
+                options += ", image_name: \"" + images[i] + "\"";
+            }
+            $(this).my_upload(eval("({" + options + "})"));
+        });
+        
+        // 绑定选择扩展
+        $("#{$page_id}_{$block_id}_module", "#{$page_id}_{$block_id}").change(function(){
+            var module_id = $(this).val();
+            var b = false;
+            if(module_id > 0) {
+                // 需要去判断，模型是否已经加过了
+                $("input[name^='module_id[{$page_id}]']").each(function(){
+                    if($(this).val() == module_id) {
+                        b = true;
+                    }
+                });
+            }
+            if(b) {
+                alertMsg.error("模型已经存在，请另选一个");
+            } else {
+                get_{$page_id}_extends($("#{$page_id}_{$block_id}_extends", "#{$page_id}_{$block_id}"), '{$block_id}', module_id, '{$property_id}');
+            }
+        });
+        
+        <!--{if $property['moduleId']}-->
+        get_{$page_id}_extends($("#{$page_id}_{$block_id}_extends", "#{$page_id}_{$block_id}"), '{$block_id}', $property['moduleId'], '{$property_id}');
+        // 选中
+        $("#{$page_id}_{$block_id}_module", "#{$page_id}_{$block_id}").val("{$property['moduleId']}");
+        <!--{/if}-->
+        
+        $("input[type=radio][name^='style']", "#{$page_id}_{$block_id}").click(function(){
+            change_upload_{$page_id}_widget($(this).val());
+        });
+        
+    });
+
+function change_upload_{$page_id}_widget(val) {
+    
+}
+</script>

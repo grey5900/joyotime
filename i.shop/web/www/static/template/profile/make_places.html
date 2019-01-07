@@ -1,0 +1,56 @@
+<!--{template cover}-->
+<div class="hd">
+	<ul class="nav nav-tabs">
+		<li class="active-large"><a>编辑链接跳转</a></li>
+	</ul>
+</div>
+<div class="number-tit">
+	<h3><!--{if !isset($info) || empty($info)}-->2<!--{else}-->.<!--{/if}--></h3>
+	<span>添加链接</span>
+</div>
+<div class="fill">
+	<div class="span5">
+		<div class="controls">
+			<input id="hyperLink" class="controls-ipt w-fill text-input"
+				type="text" name="hyperLink" placeholder="链接到" value="{eval echo isset($info) && !empty($info) ? $info[hyperLink] : '';}">
+		</div>
+		<div class="controls">
+			<label class="checkbox"><input type="checkbox" name="unlinked" value="无链接"<!--{if isset($info) && empty($info[hyperLink])}--> checked="checked"<!--{/if}--> />无链接</label>
+		</div>
+	</div>
+	<!-- <div class="span4">
+		<iframe id="Client" src="/profile/preview" name="" scrolling="no"
+			frameborder="0" width="300px" height="450px"> </iframe>
+	</div> -->
+</div>
+<!--{if !isset($edit_publish) || !$edit_publish}-->
+<div class="number-tit">
+	<h3><!--{if !isset($info) || empty($info)}-->3<!--{else}-->.<!--{/if}--></h3>
+	<span>将此扩展信息应用到适用店铺</span>
+</div>
+<div class="fill">
+   <div class="li-list">
+     <label class="checkbox"><input class="" type="checkbox" id="ctlAll" value="1"<!--{if !isset($sels) || empty($sels) || count($sels) == count($list)}--> checked="checked"<!--{/if}-->/>全选</label>
+     <ul>
+     	<!--{loop $list $k $v}-->
+        <li>
+          <label class="checkbox"><input class="places" type="checkbox" name="places[]" value="{$v[id]}"<!--{if !isset($sels) || empty($sels) || (isset($sels) && in_array($v[id], $sels))}--> checked="checked"<!--{/if}-->>{$v[placename]}</label>
+        </li>
+     	<!--{/loop}-->
+     </ul>
+   </div>
+</div>
+<!--{/if}-->
+<script type="text/javascript">
+	$(function(){
+		$("#ctlAll").on("change", function(){
+			$(".places").each(function(i){
+				var c = $("#ctlAll").attr("checked");
+				if(c)
+					$(this).attr("checked", c);
+				else
+					$(this).removeAttr("checked");
+			});
+		});
+	});
+</script>

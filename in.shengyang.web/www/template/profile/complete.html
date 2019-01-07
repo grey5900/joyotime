@@ -1,0 +1,66 @@
+<!--{template common/header}-->
+<div class="container" id="container">
+	<div class="block">
+		<div class="block-header"><h2>完善帐号信息</h2></div>
+		<div class="block-content">
+			<div class="main">
+				<form class="form-horizontal" id="complete-form" action="/complete/{$info[id]}" method="post">
+					<div class="control-group">
+						<label class="control-label" for="username"><span class="warn">*</span> 用户名：</label>
+						<div class="controls">
+							<input type="text" name="username" value="" id="username" placeholder="用户名" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="password"><span class="warn">*</span> 密码：</label>
+						<div class="controls">
+							<input type="password" name="password" value="" id="password" placeholder="密码" />
+							<p class="help-block">2-15个字符组成，区分大小写</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="password_again"><span class="warn">*</span> 确认密码：</label>
+						<div class="controls">
+							<input type="password" name="password_again" value="" id="password_again" placeholder="重复以上密码" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="email">Email：</label>
+						<div class="controls">
+							<input type="text" name="email" value="" id="email" />
+							<p class="help-block">用于找回您的帐号，建议填写</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="nickname">昵称：</label>
+						<div class="controls">
+							<input type="text" name="nickname" value="{$info[nickname]}" id="nickname" class="input-small" maxlength="15" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="recommender">推荐人ID：</label>
+						<div class="controls">
+							<!--{if !empty($info[inviter])}-->
+							{$info[inviter]}
+							<!--{else}-->
+							<input type="text" name="recommender" value="" id="recommender" class="input-small" maxlength="10" />
+							<!--{/if}-->
+						</div>
+					</div>
+					<div class="form-actions">
+						<input type="submit" name="submit" class="btn btn-primary btn-large" value="注册IN沈阳帐号" />
+						<a href="/" class="btn btn-large">跳过</a>
+					</div>
+				</form>
+			</div>
+			<div class="sidebar">
+				<div class="guide">
+					<h4>Hi, {$info[nickname]} 欢迎来到IN沈阳！</h4>
+					<img src="{$info[avatar]}" width="160" height="160" />
+				</div>
+			</div>
+		</div>
+		<div class="block-footer"></div>
+	</div>
+</div>
+<!--{template common/footer}-->

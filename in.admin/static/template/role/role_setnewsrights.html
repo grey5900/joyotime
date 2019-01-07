@@ -1,0 +1,16 @@
+<div class="pageContent">
+	<form method="post" action="{eval echo site_url(array('role','edit'));}/id/{$id}/type/setnewsRights" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="accordionContent" layoutH="57">
+		<p>为角色［{$name}］分配频道权限</p>
+		<ul class="tree treeFolder treeCheck expand">
+			{$rHtml}
+		</ul>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>

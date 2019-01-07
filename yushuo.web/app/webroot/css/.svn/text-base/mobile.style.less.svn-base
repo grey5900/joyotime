@@ -1,0 +1,18 @@
+@import "_less/mobile/typo.less";
+@import "_less/mobile/font.less";
+@import "_less/mobile/text.less";
+@import "_less/mobile/main.less";
+
+
+
+/*
+ * color variable
+ * 
+ */
+
+@defaultGreen: #4db5a5;
+
+@defaultGray: #333;
+
+@bg: #edede3;
+

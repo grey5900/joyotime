@@ -1,0 +1,54 @@
+#container {
+	padding: 61px 0 0;
+	//background: url('fullscreen.jpg') center 0 no-repeat;
+	.container {
+		width: 1000px;
+		margin: 0px auto;
+		//background: url(@channel-back-image) -230px top repeat-y;
+		.main {
+			float: right;
+			width: 810px;
+		}
+		.main-l {
+			float: left;
+			width: 560px;
+		}
+		.main-r {
+			float: right;
+			width: 230px;
+		}
+	}
+}
+#container-page {
+	padding: 77px 0 0;
+	.container {
+		width: 1000px;
+		margin: 0px auto;
+		//background: url(@channel-back-image) -230px top repeat-y;
+		.main {
+			float: right;
+			width: 810px;
+		}
+		.main-l {
+			float: left;
+			width: 560px;
+		}
+		.main-r {
+			float: right;
+			width: 230px;
+		}
+	}
+	.container-fluid {
+		.clearfix();
+		width: 1000px;
+		margin: 0px auto;
+		.main {
+			float: left;
+			width: 700px;
+		}
+		.sidebar{
+			float: right;
+			width: 280px;
+		}
+	}
+}

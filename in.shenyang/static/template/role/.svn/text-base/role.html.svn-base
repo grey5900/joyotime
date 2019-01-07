@@ -1,0 +1,53 @@
+<form id="pagerForm" method="post" action="{eval echo site_url(array('role','index'));}">
+	<input type="hidden" name="pageNum" value="{$cur_page}"/>
+	<input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+	<input type="hidden" name="keyword" value="{$keyword}"/>
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" method="post" action="{eval echo site_url('role');}" onsubmit="return navTabSearch(this);">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:50px;"><label>角色名:</label></li>
+			<li><input type="text" name="keyword" id="keyword" size="20" value="{eval echo isset($keyword) && !empty($keyword) ? $keyword : '';}" /></li>			
+		</ul>
+		<div class="subBar"><ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+		</ul></div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('role','add'));}" target="dialog" rel="{eval echo build_rel(array('role','add'));}"><span>添加</span></a></li>
+			<li><a class="delete" href="{eval echo site_url(array('role','delete'));}/id/<!--{{sid_user}}-->" target="ajaxTodo" title="删除操作无法恢复，确定要删除吗？" warn="请选择一个角色"><span>删除</span></a></li>
+			<li><a class="edit" href="{eval echo site_url(array('role','edit'));}/id/<!--{{sid_user}}-->" target="dialog" rel="{eval echo build_rel(array('role','edit','edit'));}" warn="请选择一个角色"><span>编辑</span></a></li>
+			<li><a class="icon" href="{eval echo site_url(array('role','edit'));}/id/<!--{{sid_user}}-->/type/setrights" rel="{eval echo build_rel(array('role','edit','setrights'));}" target="dialog" warn="请选择一个角色"><span>分配权限</span></a></li>
+			<li><a class="icon" href="{eval echo site_url(array('role','edit'));}/id/<!--{{sid_user}}-->/type/setnewsRights" rel="{eval echo build_rel(array('role','edit','setnewsRights'));}" target="dialog" warn="请选择一个角色"><span>分配频道权限</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon" href="" target=""><span>导出EXCEL</span></a></li>
+		</ul>
+	</div>
+	
+	<table class="table" width="100%" layoutH="138">
+		<thead><tr>
+			<th width="5%">ID</th>
+			<th width="15%">角色名(账户数)</th>
+			<th width="25%">角色描述</th>
+			<th width="25%">绑定频道</th>
+			<th>权限?</th>
+		</tr></thead>
+		<tbody>
+		{loop $list $key $val}
+		<tr target="sid_user" rel="{$key}">
+			<td>{$key}</td>
+			<td><a href="{eval echo site_url(array('account','index'));}/rid/{$key}" target="navTab" title="帐户管理">{eval echo $val[name].' ('.$val[accounts].')'}</a></td>
+			<td>{$val[description]}</td>
+			<td>{$val[catName]}</td>
+			<td valign="middle">{if !empty($val[rights])}<span style="color:#00f;">已分配</span>{else}<span style="color:#f00;">未分配</span>{/if}</td>
+		</tr>
+		{/loop}
+		</tbody>
+	</table>
+    <!--{template main/page_bar}-->
+</div>

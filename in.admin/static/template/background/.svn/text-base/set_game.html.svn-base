@@ -1,0 +1,49 @@
+<div class="pageContent" id="background_set_game">
+	<form method="post" action="{$current_url}"
+		class="pageForm required-validate"
+		onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent nowrap" layoutH="57">
+			<dl>
+				<dt>头部图片（560*280）</dt>
+				<dd>
+					<button type="button" id="bg_head_img">上传头部图</button>
+				</dd>
+			</dl>
+			<dl>
+				<dt>牌面图片（136*136）</dt>
+				<dd>
+					<button type="button" id="bg_card_img">上传牌面图</button>
+				</dd>
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive">
+						<div class="buttonContent">
+							<button type="submit" id="btnSubmit">保存</button>
+						</div>
+					</div></li>
+				<li><div class="button">
+						<div class="buttonContent">
+							<button type="button" class="close">取消</button>
+						</div>
+					</div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var option = "name:\"head_image\",id:\"head_image\",file_type:\"default\",required:false";
+		<!--{if $bg}-->
+		option += ", image_name:\"{$bg['headImage']}\"";
+		<!--{/if}-->
+		$("#bg_head_img", "#background_set_game").my_upload(eval("({"+option+"})"));
+		
+		option = "name:\"card_image\",id:\"card_image\",file_type:\"default\",required:false";
+		<!--{if $bg}-->
+		option += ", image_name:\"{$bg['cardImage']}\"";
+		<!--{/if}-->
+		$("#bg_card_img", "#background_set_game").my_upload(eval("({"+option+"})"));
+	});
+</script>

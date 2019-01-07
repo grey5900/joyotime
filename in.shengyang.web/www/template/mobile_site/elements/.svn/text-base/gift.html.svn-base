@@ -1,0 +1,12 @@
+<div class="media-gift">
+    <a class="gift"<!--{if $auth}--> href="{$gift['url']}"<!--{/if}-->>
+        <div class="info">
+            <p>{$gift['name']}为你提供神秘宝箱</p>
+            <!--{if $auth}-->
+            <!--{else}-->
+            <p>注册才能打开</p>
+            <!--{/if}-->
+            <p>密室门票？凉饮？惊喜礼包？打开看看吧</p>
+        </div>
+    </a>
+</div>

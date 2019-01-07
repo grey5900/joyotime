@@ -1,0 +1,72 @@
+  <div class="modal-header">
+    <button type="button" class="close jqmClose">
+      &times;
+    </button>
+    <h3 id="myModalLabel">预览展现</h3>
+  </div>
+  <form class="form-preview">
+    <div class="phone-view">
+      <div class="img-unit">
+        <img id="preview-image" src="{$prefer[image]}" />
+        <span class="pretit" id="preview-title">
+                 {$prefer[title]}
+       </span>
+      </div>
+      <div class="view-content">
+        <div class="texts">
+          <div class="statement">
+              <span id="preview-detail">
+                {$prefer[detail]}
+              </span>
+          </div>
+        </div>
+        <div class="texts">
+          <div class="statement">
+              <span id="preview-date">
+                 <!-- {$prefer[beginDate]} ~  -->使用有效期至{$prefer[endDate]}
+              </span>
+          </div>
+        </div>
+        <div class="unit multi-line" id="intros">
+          <div class="unit-title">
+            <h3><i class=""></i>适用商家：</h3>
+          </div>
+          <div class="box">
+            <dl id="preview-places">
+              <!--{loop $prefer[places] $k $v}-->
+              <dd>
+                <a class="arrow">
+                  <span>{$v[placename]}</span>
+                  <div class="address">
+                    {$v[address]}
+                  </div> 
+                </a>
+              </dd>
+              <!--{/loop}-->
+            </dl>
+         </div>
+        </div>
+        <div class="unit texts">
+              <p id="preview-desc">
+                <strong>{$prefer[descTitle]}:</strong><br />
+                  {$prefer[description]}
+              </p>
+        </div>
+        <div class="unit multi-line" id="intros">
+          <div class="unit-title">
+            <div class="mzsm"><a>免责声明</a></div>
+          </div>
+          <div class="box">
+            <dl id="preview-places">
+              <dd>
+                <a class="arrow">
+                  <span>有疑问？请拨打IN成都服务电话4006028377</span>
+                </a>
+              </dd>
+            </dl>
+         </div>
+        </div>
+      </div>
+      <div class="view-footer"><img src="/static/img/preview_bottom.jpg" width="293px" /></div>
+    </div>
+  </form>

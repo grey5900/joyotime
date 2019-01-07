@@ -1,0 +1,43 @@
+/* -----------------------------------------
+   FishSaying Footer
+----------------------------------------- */
+.fs-footer {
+  background: #464d51;
+  padding: 40px 0 80px;
+}
+.fs-footer p.copyright {
+  margin: 6px 0 0;
+  font-size: em-calc(14);
+  line-height: em-calc(18);
+  color: #aaa;
+}
+.fs-footer .inline-list {
+  ul {
+    margin: 0 ;
+    padding: 0;
+    li {
+      margin: 0;
+    }
+  }
+  li a {
+    font-size: em-calc(14);
+    line-height: em-calc(18);
+  }
+}
+@media all and (max-width: 780px) {
+  .fs-footer {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .fs-footer {
+    display: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .fs-footer {
+    display: none;
+  }
+}
+

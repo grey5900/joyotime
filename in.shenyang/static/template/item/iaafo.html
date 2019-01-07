@@ -1,0 +1,107 @@
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="type" value="{$type}" />
+    <input type="hidden" name="itemAwardActionId" value="{$itemAwardActionId}" />
+</form>
+<div class="pageHeader" id="item_{$page_id}">
+    <form rel="pagerForm" method="post" name="iaafo_main_form" id="iaafo_main_form" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                     	<option value="poi" {if $type=='poi'}selected="selected"{/if}>POI</option>
+                        <option value="item_name" {if $type=='item_name'}selected="selected"{/if}>道具名</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                    <td><select name="itemAwardActionId" class="combox" url="{eval echo site_url(array('item', 'itemAwardsForObject', 'itemAwardActionId'))}/">
+                       
+                        <option value="0" {if $itemAwardActionId===0 }selected{/if}>全部动作</option>
+	                    {loop $actions $a}
+	                    	<option value="{$a['id']}" {if $a['id']==$itemAwardActionId}selected="selected"{/if}>{$a['actionName']}</option>
+	                    {/loop}
+                	</select></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+        <ul class="toolBar">
+        	<li>
+                <a class="add" target="navTab" title="添加" rel="{eval echo build_rel(array('item', 'add_iaafo'))}" href="{eval echo site_url(array('item', 'add_iaafo'))}"><span>添加</span></a>
+            </li>
+            <li>
+                <a class="edit" target="navTab" warn="请选择需要编辑的内容" title="编辑" rel="{eval echo build_rel(array('item', 'add_iaafo'))}" href="{eval echo site_url(array('item', 'add_iaafo', 'id'))}/<!--{{id}}-->"><span>编辑</span></a>
+            </li>
+            <li>
+                <a class="delete" title="确认删除？" warn="请选择要删除的内容" target="ajaxTodo" href="{eval echo site_url(array('item', 'del_iaafo', 'id'))}/<!--{{id}}-->" ><span>删除</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="list" width="100%" layoutH="108">
+    	<thead>
+    		<th width="10%">POI ID</th>
+    		<th width="20%">POI</th>
+    		<th width="30%">动作 中奖概率  每日上限</th>
+    		<th width="40%">物品</th>
+    	</thead>
+    	<tbody>
+    		{loop $list $k $row}
+    		<tr target="id" rel="{$row['id']}">
+    			<td>{$row['itemId']}</td>
+    			<td align="center">{$row['placename']}</td>
+    			<td align="left">
+    			{$row['actionName']}
+    			<input type="text" onfocus="modify_rank2(this,'ItemAwardActionForObject',{$row['id']},'probability',1);" value="{$row['probability']}" style="text-align:right" size=10 /> %
+    			{$row['frequency']}
+    			</td>
+    			<td>
+    			<table>
+    			{loop $row['items'] $k $i}
+    				<tr>
+    				<td>{$i.name}</td>
+    				<td>已爆出{$i.bao}</td>
+    				<td>库存   <input type="text" onfocus="modify_by_where(this,'ObjectOwnAwards','iaafoId={$i.iaafoId} and itemId={$i.itemId}','quantity',1);" value="{$i['quantity']}" style="text-align:right" size=10 /> 
+					
+					</td>
+					{if $k==0}
+					<td rowspan="{echo count($row['items']);}">
+					<a href="javascript:;" name="{$row['id']}" class="itemawardlog_button">道具获取日志</a>
+    				</td>
+    				{/if}
+    				</tr>   				
+    			{/loop}
+    			</table>
+    			
+    			</td>
+    		</tr>
+    		{/loop}
+    		
+    	</tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+
+<script>
+$(function(){
+
+	$("#iaafo_main_form select[name=itemAwardActionId]").change(function(){
+		//var url = $(this).attr("url") + $(this).val() ;
+		$("input[type=hidden][name=itemAwardActionId]").val($(this).val());
+		navTabSearch($("#iaafo_main_form"));
+    });
+
+	$(".itemawardlog_button").click(function(){
+        var d = $(this).attr("name");
+    	navTab.openTab('item_itemAwardLog', '/item/itemAwardLog', { title:'道具获取日志', fresh:true, data:{'iaafoId':d} });
+    });
+	
+});
+</script>

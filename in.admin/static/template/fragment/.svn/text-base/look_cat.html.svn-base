@@ -1,0 +1,31 @@
+<div class="pageHeader">
+	<div class="searchBar">
+		<div class="subBar">
+			<ul>
+				<li><div class="button"><div class="buttonContent"><button type="button" multLookup="catIds" warn="请选择部门">选择带回</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="pageContent" layoutH="85">
+	<table class="table" width="100%" cellpadding="4" cellspacing="4">
+		<thead><tr>
+			<th width="2%"><input type="checkbox" class="checkboxCtrl" group="catIds[]" /></th>
+			<th width="10%">频道ID</th>
+			<th width="15%">频道名称</th>
+			<th width="15%">创建时间</th>
+			<th width="30%">已分配的碎片</th>
+			<th>频道状态</th>
+		</tr></thead>
+		<tbody>
+			<!--{loop $list $k $v}-->
+			<tr><td><input type="checkbox" name="catIds" value="{cids:'{$v[id]}',catName:'{$v[catName]}'}"<!--{if $v[checked]}--> checked="checked"<!--{/if}-->/></td>
+			<td>{$v[id]}</td>
+			<td>{$v[catName]}</td>
+			<td>{$v[dateline]}</td>
+			<td>{$v[frag]}</td>
+			<td></td></tr>
+			<!--{/loop}-->
+		</tbody>
+	</table>
+</div>

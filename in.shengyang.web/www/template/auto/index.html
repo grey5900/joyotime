@@ -1,0 +1,92 @@
+<!--{template common/header3.0}-->
+<!--{template fragments/ad_back_top}-->
+	<div class="main layout channel">
+			<!--{template fragments/ad_back}-->
+            <!--通栏广告-->
+            <!--{template fragments/ad_banner}-->
+		<div class="column channel_topic">
+			<div class="channel_nav">
+				<div class="con">
+					<div class="logo">
+						<img src="/static/in_themes/{$theme}/images/topic_logo.jpg" alt="" />
+					</div>
+					<h1>汽车频道</h1>
+					<ul>
+					<!--{loop $sub_cate $key=>$value}-->
+					<li><a class="{if $key==$id}current{/if}" {if $value['link']!=''}target="_blank" href="{$value['link']}"{elseif $value['tag_count']}href="/category/{$key}"{else}href="/nlist/{$key}"{/if}><i class="nav-bg cat{$key} <!--{echo $key==$id?' on':''}-->"></i>{$value['catName']}</a></li>
+					<!--{/loop}-->					
+					</ul>
+					<div class="ft"></div>
+				</div>
+			</div>
+			<div class="channel_hot">
+				<div class="con">
+				<!--{if $hot}-->
+					<div class="hot">
+						<!--{template fragments/focus4.0}-->
+						<!--{template fragments/headline4.0}-->
+						
+					</div>
+					<!--{/if}-->
+					
+					<div class="bd-pic"></div>
+					<!--{template search}-->
+				</div>
+			</div>
+		</div>
+		<!--{template fragments/ad_banner_middle}-->
+		<div class="column">
+			<div class="hd">
+				<h2>{$v3_fragments['v3_auto_lichang']['frag']['name']}</h2>
+				{if $v3_fragments['v3_auto_lichang']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_auto_lichang']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+			</div>
+			<div class="bd">
+				<div class="article">
+					<!--{template fragments/auto_lichang}-->
+				</div>
+				<div class="side">
+					<!--{template fragments/auto_lichang_news}-->
+				</div>
+			</div>
+		</div>
+		<!--{template fragments/ad_banner_middle2}-->
+		<div class="column car_discount">
+			<div class="article">
+				<!--{template fragments/auto_youhui_hangqing}-->
+			</div>
+			<div class="side">
+				<!--{template fragments/auto_zhangyu_shuoche}-->
+			</div>
+		</div>
+		<!--{template fragments/ad_banner_middle3}-->
+		<div class="column mix">
+			<div class="article">
+				<!--{template fragments/tuangou}-->
+				<!--{template fragments/huodong}-->
+					<a name="waterfall"></a>
+					{if $v3_fragments['v3_posts']}
+					<div class="module timeline">
+						<div class="hd">
+							<h2>{$v3_fragments['v3_posts']['frag']['name']}</h2>
+							{if $v3_fragments['v3_posts']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_posts']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+
+						</div>
+						<!--{template channel/waterfall}-->
+					</div>
+					{/if}
+				</div>
+					<div class="side">
+						<!-- 侧边栏循环 -->
+						<!--{loop $sidebar_data $row}-->
+							<!--{template fragments/sidebars}-->
+						<!--{/loop}-->
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--{template fragments/ad_pop}-->
+	<!--{template fragments/ad_couplet_left}-->
+    <!--{template fragments/ad_couplet_right}-->
+<!--{template common/footer}-->

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>免责声明</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<style>
+			body, div, strong,p, dl, dd, dt,ul,li,h1 {
+				margin: 0;
+				padding: 0;
+				margin: 0;
+				border: 0;
+				outline: 0;
+				font-size: 100%;
+				vertical-align: baseline;
+				background: transparent;
+				outline: none;
+				word-break: break-all;
+				-webkit-text-size-adjust: none;
+			}
+			html {
+				display: block;
+			}
+			body {
+				color: #666666;
+				font-size: 24px;
+				font-family:  .81em/150% "Arial Black", Helvetica, Arial, sans-serif;
+			}
+			#container {
+				margin:0 auto;
+				width: 95%;
+				display: block;
+			}
+			h1,p{
+				color: #666666;
+			}
+			h3,b{
+				color: #5caa1d;
+			}
+			h1{
+				font-size: 21px;	
+			}
+			p{
+				font-size: 16px;
+				padding: 0 0 5px 0;
+			}
+			h3{
+				font-size: 16px;
+				margin: 0;
+				padding: 0 0 5px 0;
+			}
+			a, a:visited{
+				text-decoration: none;
+				color: #5ba81c;
+				display: inline;
+			}
+			a:hover{
+				text-decoration: underline;
+			}
+			dt{
+				text-align: center;
+				padding: 15px 0;
+			}
+			dd{
+				padding-bottom: 10px;
+			}
+		</style>
+</head>
+<body>
+	<div id="container">
+		<dl>
+			<dt><h1>免责申明</h1></dt>
+			<dd>
+				<p>1、IN成都积分是为答谢IN成都用户使用IN成都手机应用相关操作而进行的回馈计划，积分以IN成都用户帐号作为唯一的身份识别条件。</p>
+
+				<p>2、IN成都积分在兑换取得商品前并不构成IN成都用户资产，积分不可转让给其他IN成都用户帐号，任何转让对IN成都均不产生效力。</p>
+
+				<p>3、IN成都积分可在IN成都手机客户端的积分商城中进行合作商户服务类、实物类商品兑换，也可进行积分捐赠或参加相关积分兑换活动。 所有兑换操作一经成功受理，即不可取消或退还积分。</p>
+
+				<p>4、可供兑换商品种类及相应积分分值积分以积分商城公布内容为准，IN成都保留根据市场变化调整商品清单及相应积分分值的权利。</p>
+				
+				<p>5、以积分兑换商品（包括但不限于旅游、餐饮）折价、兑换券或其他凭证皆有使用期限，IN成都用户需于该凭证上所载有效期限内使用，否则即丧失使用权利，亦无法退换或延续。</p>
+				
+				<p>6、宣传品中的商品图片仅供参考，请以实物为准。</p>
+				
+				<p>7、本积分计划所提供的商品，由各合作商户提供，其质量、数量、款式、颜色、售后服务等问题均由供应商负责，IN成都不提供任何形式的担保和承诺。</p>
+				
+				<p>8、所有商品均有兑换上限，如某商品兑换数量已达到所设定的限量时，由于系统缓存等原因，商品未及时结束兑换，IN成都将尽量协助用户更改兑换其他商品。</p>
+				
+				<p>9、以积分兑换商品时，其积分兑换部分IN成都及合作商家均不再提供发票。</p>
+				
+				<p>10、IN成都积分商城兑换操作，无论是IN成都用户本人操作或委托他人操作，均视同为本人操作。</p>
+				
+				<p>11、互联网传输以及通信线路可能会受到干扰，出现中断、延迟或数据错误等现象。对于非IN成都所能控制的情况可能引起的数据及交易的不准确性或不及时性，IN成都不承担任何责任。</p>
+				
+				<p>12、对IN成都积分计划及规则，IN成都有权依法进行解释，并有权根据需要取消本计划或增删、修订本规定的权利（包括但不限于参加资格、积分计算、商品及兑换标准），并于IN成都相关媒体（网站、手机客户端等）公告后生效。</p>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

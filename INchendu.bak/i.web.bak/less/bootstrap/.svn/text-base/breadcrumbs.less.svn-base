@@ -1,0 +1,62 @@
+// BREADCRUMBS
+// -----------
+
+.position {
+  margin: @baseLineHeight /2 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    .ie7-inline-block();
+  }
+  .divider {
+    padding: 0 5px;
+    color: @grayLight;
+  }
+  .active a {
+    color: @grayDark;
+  }
+}
+
+.breadcrumb {
+  background: url(/img/bg_breadcrumb.png) 0px bottom repeat-x;
+  height: 38px;
+  width: 100%;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom: 1px solid #efefef;
+  .clearfix();
+  li {
+  	float: left;
+	padding: 0px 20px 0 10px;
+	background: url(/img/breadcrumb.png) right center no-repeat;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	line-height: 38px;
+	height: 38px;
+    span {
+		float: left;
+		display: block;
+    }
+	.close {
+		float: left;
+		margin: 13px 0 0 5px;
+	}
+    &.home {
+    	.icon-home {
+    		margin-top: 11px ~"\9";
+    	}
+    }
+    &.all {
+    	span {
+	      font-size: 14px;
+    	}
+    }
+  }
+  .divider {
+    padding: 0 5px;
+    color: @grayLight;
+  }
+  .active a {
+    color: @grayDark;
+  }
+}

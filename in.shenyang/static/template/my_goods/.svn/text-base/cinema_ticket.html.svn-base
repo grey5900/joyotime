@@ -1,0 +1,44 @@
+<script type="text/javascript">
+function view_cinema_related_place(id) {
+    $.pdialog.open("{eval echo site_url(array('goods', 'related_place', 'p', 'cinema', 'id'))}/" + id, "view_related_place", "查看关联地点", {width:"500",height:"300",maxable:false});　
+}
+</script>
+<div class="pageContent">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>等待上架</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>上架中</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>已下架</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="cinema_waiting" class="unitBox">
+                    {eval echo include_file(site_url(array('goods', 'cinema_waiting')));}
+                </div>
+            </div>
+            <div>
+                <div id="cinema_selling" class="unitBox">
+                    {eval echo include_file(site_url(array('goods', 'cinema_selling')));}
+                </div>
+            </div>
+            <div>
+                <div id="cinema_over" class="unitBox">
+                    {eval echo include_file(site_url(array('goods', 'cinema_over')));}
+                </div>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

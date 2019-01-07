@@ -1,0 +1,12 @@
+@import "less/bootstrap/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "less/bootstrap/mixins.less";
+@import "less/footer";
+@import "less/header";
+@import "less/login.less";
+@import "less/warpper-layout.less";
+@import "less/left-menu.less";
+@import "less/box-content.less";
+@import "less/fileupload.less";
+@import "less/select.less";
+@import "less/table.less";
+@import "less/nav-tabs.less";

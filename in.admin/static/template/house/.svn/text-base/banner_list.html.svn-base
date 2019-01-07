@@ -1,0 +1,37 @@
+<div class="pageContent" id="{$page_id}">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" href="/house/banner_add" target="navTab" title="添加banner" rel="house_banner_add"><span>添加banner</span></a>
+            </li>
+            <li>
+                <a class="add" href="/house/banner_edit/id/{{id}}" target="navTab" title="修改banner" warn="请选择要修改的banner" rel="house_banner_add"><span>修改banner</span></a>
+            </li>
+            <li>
+                <a class="add" href="/house/banner_del/id/{{id}}" target="ajaxTodo" title="你确定要删除banner" warn="请选择要删除的banner" rel="house_banner_del"><span>删除banner</span></a>
+            </li>
+         </ul>
+    </div>
+    <table class="list" width="100%" layoutH="58">
+        <thead>
+            <tr>
+            	<th witdh="5%">排序</th>
+                <th width="25%">大标题</th>
+                <th width="25%">小标题</th>
+                <th width="20%">图片</th>
+                <th width="25%">连接地址</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $k $row}-->
+            <tr target="id" rel="{$k}">
+            	<td>第{echo $k+1}位</td>
+                <td>{$row['title']}</td>
+                <td>{$row['subtitle']}</td>
+                <td><img src="{$row['image']}" width="200" /></td>
+                <td>{$row['url']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+</div>

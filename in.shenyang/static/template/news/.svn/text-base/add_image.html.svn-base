@@ -1,0 +1,86 @@
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+	<!--{if !empty($info[id])}--><input type="hidden" name="id" value="{$info[id]}" /><!--{/if}-->
+	<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+			<label>标题:</label><input type="text" class="required" name="subject" value="{$info[subject]}" size="50" />
+		</div>
+		<div class="unit">
+			<label>分类:</label>
+			<select name="newsCatId">
+			{$category}
+			</select>
+		</div>
+		<!--这个页面暂时就只传文字新闻-->
+		<!--div class="unit"> 
+			<label>新闻类型:</label>
+			<input type="radio" name="newsType" value="0" >文字
+			<input type="radio" name="newsType" value="1" checked="checked">图片
+		</div-->
+		
+		{if $info['id']}
+		<div class="unit"> 
+			<label>状态:</label>
+			<input type="radio" name="status" value="0" {if $info['status']==0}checked="checked"{/if}>未发布
+			<input type="radio" name="status" value="1" {if $info['status']==1}checked="checked"{/if}>发布
+		</div>
+		{/if}
+		<div class="unit">
+			<label>简介:</label>
+			<textarea name="summary" rows=5 cols=50>{$info['summary']}</textarea>
+		</div>
+		<div class="unit">
+			<label>内容:</label>
+			<textarea name="content" id="editor<!--{$timestamp}-->" class="editor required" cols="120" rows="25" upImgUrl="<!--{eval echo site_url(array('main','upload'));}-->" upImgExt="jpg,jpeg,gif,png"><!--{if !empty($info)&&!empty($info[content])}-->{$info[content]}<!--{/if}--></textarea>
+		</div>
+		<div class="unit">
+			<label>来源:</label><input type="text"  name="source" value="{$info[source]}"   /> 
+		</div>
+		<div class="unit">
+			<label>编辑:</label>
+		<input type="text"  name="editor.name" value="{$info[editor]}"   />
+		<a lookupgroup="editor" href="{eval echo site_url(array('block','get_vest'))}" class="btnLook">查找编辑</a>
+		</div> 
+		<div class="unit">
+			<label>关键词:</label>
+		<input type="text"  name="keywords" value="{$info[keywords]}"   /> 
+		</div> 
+		
+		<div class="unit">
+			<label>关联地点:</label>
+			<!--{template block/place_select}-->
+		</div> 
+		
+		<div class="unit" >
+			<label>上传图片: </label>
+			
+			<div style="height:auto;width:100%" id="upload_rich_img_<!--{$timestamp}-->"></div>
+		</div>  
+		
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+
+<script>
+$(function(){
+	var plugins = {pagination:{c:"plugin",t:"分页",e:function(){
+		this.pasteHTML("[next]");
+		}}
+	};
+	$("#editor<!--{$timestamp}-->").xheditor({plugins: plugins, tools:"full"});
+	
+	var options = {name:"images",file_type:'common',resolution:'odp', field:[{key:"detail", name:"详情", type:"textarea"}], up_url:'/upload/index',width:350,height:400,required:false,water:"www.chengdu.cn",location:9};
+	//alert(options);return false;
+	//var options = {name:"images",field:[{key:"detail", name:"详情", type:"textarea"}]};
+	$("#upload_rich_img_<!--{$timestamp}-->").my_rich_upload(options);
+
+	
+
+})
+</script>

@@ -1,0 +1,66 @@
+<form method="post" id="pagerForm" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="begin" value="{$begin}" />
+	<input type="hidden" name="end" value="{$end}" />
+</form>
+
+<div class="pageHeader">
+	<form method="post" rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}">
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>统计时间段：</td>
+				<td width="120">
+				<input type="text" class="date" name="begin" value="{$begin}" format="yyyy-MM-dd" yearstart="-10" yearend="0" size="20" readonly/>
+				~
+				<input type="text" class="date" name="end" value="{$end}" format="yyyy-MM-dd" yearstart="-10" yearend="0" size="20" readonly/>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><span id="stat-date">{$stat_time}</span></li>
+			<li><span id="stat-checkin">签到：{$sum[sum_checkin]}</span></li>
+			<li><span id="stat-tip">点评：{$sum[sum_tip]}</span></li> 
+			<li><span id="stat-photo">图片：{$sum[sum_photo]}</span></li> 
+			<li><span id="stat-reply">回复：{$sum[sum_reply]}</span></li> 
+			<li><span id="stat-upm">私信：{$sum[sum_upm]}</span></li> 
+			<li><span id="stat-share">分享：{$sum[sum_share]}</span></li>
+		</ul>
+	</div>
+	<table class="table" width="100%">
+		<thead>
+			<tr>
+				<th>统计日期</th>
+				<th>签到数</th>
+				<th>点评数</th>
+				<th>图片数</th>
+				<th>回复数</th>
+				<th>私信数</th>
+				<th>分享次数</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--{loop $list $k $v}-->
+			<tr>
+				<td>{$v[createDate]}</td>
+				<td>{$v[checkinCount]}</td>
+				<td>{$v[tipCount]}</td>
+				<td>{$v[photoCount]}</td>
+				<td>{$v[replyCount]}</td>
+				<td>{$v[UPMCount]}</td>
+				<td>{$v[shareCount]}</td>
+			</tr>
+			<!--{/loop}-->
+		</tbody>
+	</table>
+ 		   <!--{template main/page_bar}-->
+</div>

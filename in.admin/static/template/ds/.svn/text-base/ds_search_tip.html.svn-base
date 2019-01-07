@@ -1,0 +1,13 @@
+<select name="type">
+    <option value="content">点评内容</option>
+    <option value="nickname">发布用户昵称</option>
+    <option value="placename">发布地点名</option>
+</select>
+<input type="text" name="name" size="15" />
+<script type="text/javascript">
+    function get_ds_form_data(){
+        var type = $("select[name='type']", $("#ds_search_tip")).val();
+        var name = $("input[name='name']", $("#ds_search_tip")).val();
+        return {type:type, name:name};
+    }
+</script>

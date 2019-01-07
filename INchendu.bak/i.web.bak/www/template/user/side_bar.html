@@ -1,0 +1,27 @@
+<div class="sidebar">
+	<div class="header-user">
+		<a href="/user/{$profile[id]}/" class="avatar large pull-left" ><img id="uAvatar" src="{eval echo image_url($profile['avatar'], 'head', 'hmdp')}" alt="{$profile[nickname]}"/></a>
+		<ul>
+			<li><h4><a href="/user/{$profile[id]}/">{$profile[nickname]}</a><i class="ico-approve">LV{$profile[level]}</i></h4></li>
+			<li><span class="grayLight">积分：<em>{$profile[exp]}</em></span></li>
+		</ul>
+	</div>
+	<div class="details">
+		<ul>
+			<li class="w"><a href="/user_score/" class="font-yab">{$profile[exp]}</a><p>积分</p></li>
+			<li><i class="dotted-line-y"></i></li>
+			<li class="w"><a href="/user_friend/{$profile[id]}/1/" class="font-yab">{$profile[beFollowCount]}</a><p>粉丝</p></li>
+			<li><i class="dotted-line-y"></i></li>
+			<li class="w"><a href="/user_friend/{$profile[id]}/0/" class="font-yab">{$profile[followCount]}</a><p>关注</p></li>
+		</ul>
+	</div>
+	<div class="profile">
+		<ul>
+			<li><i class="ico-time"></i><a href="/user/{$profile[id]}/">时光轴</a></li>
+			<li><i class="ico-pic"></i><a href="/user_photo/{$profile[id]}/">图片墙</a></li>
+			<li><i class="ico-friend"></i><a href="/user_friend/{$profile[id]}/">好友</a></li>
+			<li><i class="ico-landlord"></i><a href="/user_mayor/{$profile[id]}/">地主</a></li>
+			<li><i class="ico-instal"></i><a href="/user_settings/">设置</a></li>
+		</ul>
+	</div>
+</div>

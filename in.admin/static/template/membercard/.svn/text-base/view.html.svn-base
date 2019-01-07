@@ -1,0 +1,127 @@
+<!--{eval $page_id = 'coupon_view';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>
+                    标题：
+                </dt>
+                <dd>
+                    <input type="text" name="title" size="60" class="required" value="{$prefer['title']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                   描述：
+                </dt>
+                <dd>
+                    <textarea name="description" rows="8" cols="60" class="required">{$prefer['description']}</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                   详情：
+                </dt>
+                <dd>
+                    <textarea name="detail" rows="8" cols="60" class="required">{$prefer['detail']}</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    包包图片(190*190)：
+                </dt>
+                <dd>
+                    <a rel="icon" href="{$prefer['icon_url']}"><img height="100" border="0" src="{$prefer['icon_url']}"></a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    详情图片(640*400)：
+                </dt>
+                <dd>
+                    <a rel="image" href="{$prefer['image_url']}"><img height="100" border="0" src="{$prefer['image_url']}"></a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>是否唯一：</dt>
+                <dd>
+                    <label><input type="radio" name="is_unique" value="1" disabled="true"<!--{if $prefer['isUnique'] === '1'}--> checked="checked"<!--{/if}--> />是</label>
+                    <label><input type="radio" name="is_unique" value="0" disabled="true"<!--{if $prefer['isUnique'] === '0'}--> checked="checked"<!--{/if}--> />否</label>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    类型：
+                </dt>
+                <dd>
+                    <label><input type="radio" name="type" value="0" disabled="true"<!--{if $prefer['type'] === '0'}--> checked="checked"<!--{/if}--> />普通优惠</label>
+                    <label><input type="radio" name="type" value="1" disabled="true"<!--{if $prefer['type'] === '1'}--> checked="checked"<!--{/if}--> />会员优惠</label>
+                </dd>            
+            </dl>
+            <dl>
+                <dt>
+                    使用：
+                </dt>
+                <dd>
+                    <label><input type="radio" name="is_usable" value="1" disabled="true"<!--{if $prefer['isUsable'] === '0'}--> checked="checked"<!--{/if}--> />需要</label>
+                    <label><input type="radio" name="is_usable" value="0" disabled="true"<!--{if $prefer['isUsable'] === '1'}--> checked="checked"<!--{/if}--> />不需要</label>
+                </dd>            
+            </dl>
+            <dl>
+                <dt>
+                    有效期：
+                </dt>
+                <dd>
+                    <input type="input" readonly="readonly" class="required" name="end_date" size="12" value="{$prefer['end_date']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    使用店铺：
+                </dt>
+                <dd>
+                    <select name="places" multiple style="width:320px;height:250px;" readonly="true">
+                        <!--{loop $places $row}-->
+                        <option id="{$row['id']}">{$row['placename']}</option>
+                        <!--{/loop}-->
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>备注：</dt>
+                <dd><textarea name="remark" cols="60" rows="5">{$prefer['remark']}</textarea></dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function() {
+        // 所有的disabled
+        $("input", $("#coupon_view")).each(function(){
+            $(this).attr("disabled", true);
+        });
+        $("textarea", $("#coupon_view")).each(function(){
+            $(this).attr("disabled", true);
+        });
+        $("button", $("#coupon_view")).each(function(){
+            $(this).attr("disabled", true);
+        });
+        
+        $("a[rel=icon]", $("#coupon_view")).fancybox();
+        $("a[rel=image]", $("#coupon_view")).fancybox();
+    });
+
+</script>

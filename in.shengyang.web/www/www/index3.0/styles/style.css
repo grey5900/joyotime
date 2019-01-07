@@ -1,0 +1,4379 @@
+@import "bootstrap/css/bootstrap.min.css";
+@charset "utf-8";
+/**theme**/
+/*border*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000320}}
+.bd-pic {
+  height: 4px;
+  line-height: 4px;
+  border: none;
+  margin: 15px 0;
+  background: url(images/ico.png) no-repeat 0 bottom;
+  _background-image: url(images/ico-8.png);
+  background-repeat: repeat-x;
+}
+/*font-color*/
+/**font-style**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000336}}
+.t14 {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000339}}
+.t16 {
+  font: bold 16px/18px "\5B8B\4F53";
+}
+/**btn-style**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000347}}
+.btn-vertical {
+  border-radius: 0;
+  min-width: 80px;
+  _width: 80px;
+  border-width: 1px 1px 1px 1px;
+}
+/**clear**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000355}}
+.clearfix {
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.clearfix:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+/**layout**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000361}}
+.ib {
+  display: inline-block;
+  *zoom: 1;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000366}}
+.vm {
+  display: table-cell;
+  vertical-align: middle;
+}
+/**avatar,icon**/
+/*重置样式*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\000032}}
+ul,
+ol {
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\000033}}
+body,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+table,
+td,
+tr,
+img,
+div,
+input,
+textarea,
+iframe {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\000034}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\000035}}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\000036}}
+input,
+img,
+button {
+  vertical-align: middle;
+  border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\000037}}
+a {
+  text-decoration: none;
+  color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\000038}}
+a:hover {
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\000039}}
+em,
+strong,
+i {
+  font-style: normal;
+  font-weight: normal;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\0000310}}
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 30px;
+  *min-height: 0;
+}
+/*全局样式*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\0000322}}
+.clearfix {
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\0000323}}
+.clearfix:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\0000325}}
+.fr {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\0000326}}
+.b {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_reset\.less}line{font-family:\0000327}}
+.ib {
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\000031}}
+.column {
+  zoom: 1;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.column:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\000033}}
+.column > .article {
+  width: 700px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\000038}}
+.column.mix > .article .module {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000312}}
+.column > .side {
+  width: 280px;
+  margin-left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000315}}
+.column > .side .module {
+  border-bottom: 1px solid #31548a;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000318}}
+.column > .side .module .con {
+  padding: 10px 10px 0;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000324}}
+.column .article,
+.column .side,
+.column .col_l,
+.column .col_m,
+.column .col_r {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000328}}
+.column .hd {
+  border-top: 2px solid #31548a;
+  height: 33px;
+  line-height: 33px;
+  background: #eee;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000334}}
+.column .hd h2,
+.column .hd .tabs a {
+  font-size: 18px;
+  line-height: 33px;
+  color: #fff;
+  padding: 0 25px;
+  float: left;
+  background: #31548a;
+  margin-right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000344}}
+.column .hd .tabs a {
+  color: #666;
+  background: #F0F0F0;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000348}}
+.column .hd .tabs a.active {
+  color: #fff;
+  background: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000354}}
+.column .hd a {
+  margin-right: 10px;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000359}}
+.column .bd {
+  padding: 15px 10px 0;
+  zoom: 1;
+  border: 1px solid #31548a;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.column .bd:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000368}}
+.column .bd .article {
+  width: 678px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000371}}
+.column .bd .side {
+  width: 280px;
+  margin-left: 20px;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000376}}
+.column .bd .col_l {
+  width: 240px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000379}}
+.column .bd .col_m {
+  width: 420px;
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000384}}
+.column .tit {
+  background: url(images/ico.png) repeat-x bottom;
+  _background-image: url(images/ico-8.png);
+  height: 25px;
+  line-height: 25px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000391}}
+.column .tit h3 {
+  position: relative;
+  font-size: 18px;
+  padding-left: 15px;
+  color: #333333;
+  line-height: 25px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\0000398}}
+.column .tit h3 a {
+  color: #333333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\00003100}}
+.column .tit h3 a:hover {
+  color: #31548a;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\00003105}}
+.column .tit h3 i {
+  position: absolute;
+  display: block;
+  height: 18px;
+  width: 4px;
+  background: #31548a;
+  left: 5px;
+  top: 4px;
+  *top: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\00003116}}
+.column .tit a {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\00003120}}
+.column .con {
+  padding-top: 15px;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.column .con:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\00003125}}
+.column .list-fluid > li {
+  width: 33.3%;
+  float: left;
+  border-top: 1px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\00003129}}
+.column .list-fluid > li:nth-of-type(1) {
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\00003132}}
+.column .list-fluid > li:nth-of-type(2) {
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_layout\.less}line{font-family:\00003135}}
+.column .list-fluid > li:nth-of-type(3) {
+  border: none;
+}
+/*.two_col{
+	.article{
+		width:700px;
+		.module{
+			margin-bottom:20px;
+		}
+	}
+	.side{
+		width:280px;
+		.con{
+			border-bottom:@bd-grey;
+			padding:15px 10px 0;
+		}
+		.module{
+			margin-bottom:15px;
+		}
+	}
+	.bd{
+		border:none;
+		border-bottom:@bd-grey;
+	}
+}*/@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\000034}}
+.header .nav_bar {
+  background: #fff;
+  height: 29px;
+  line-height: 29px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000310}}
+.header .nav_bar .user_nav,
+.header .nav_bar .more_nav {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000313}}
+.header .nav_bar .site_nav {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000317}}
+.header .nav_bar .more_nav span {
+  color: #D0D0D0;
+  margin: 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000324}}
+.header .nav_bar .user_nav .popover {
+  max-width: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000328}}
+.header .nav_bar .user_nav .popover .popover-title {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000331}}
+.header .nav_bar .user_nav .popover .popover-content {
+  padding: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000335}}
+.header .nav_bar .user_nav .popover.bottom .arrow:after {
+  border-bottom-color: #aaa;
+  border-bottom-color: #fff\0;
+  border-bottom-color: #aaa\9\0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000343}}
+.header .nav_bar .user_nav .yy_panel {
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000345}}
+.header .nav_bar .user_nav .yy_panel .con {
+  padding: 5px;
+  width: 320px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000351}}
+.header .nav_bar .user_nav .yy_panel .con .upload {
+  display: block;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  background: url(images/icons.png) no-repeat -165px -37px;
+  _background-image: url(images/icons-8.png);
+  filter: alpha(opacity=35);
+  opacity: .35;
+  right: 15px;
+  top: 75px;
+  z-index: 999;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000362}}
+.header .nav_bar .user_nav .yy_panel .con .upload:hover {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000365}}
+.header .nav_bar .user_nav .yy_panel .con .upload #upload {
+  filter: alpha(opacity=0);
+  opacity: .0;
+  position: absolute;
+  left: -9999em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000373}}
+.header .nav_bar .user_nav .yy_panel .con #preview {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 50px;
+  right: 10px;
+  overflow: hidden;
+  z-index: 999;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000383}}
+.header .nav_bar .user_nav .yy_panel .con #preview img {
+  height: 45px;
+  width: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000389}}
+.header .nav_bar .user_nav .yy_panel textarea {
+  padding: 5px;
+  resize: none;
+  width: 100%;
+  height: 95px;
+  *width: 310px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\0000396}}
+.header .nav_bar .user_nav .yy_panel input {
+  font-weight: bold;
+  margin-top: 8px;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003107}}
+.header .nav_bar .user_nav .sign_in a {
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003110}}
+.header .nav_bar .user_nav .sign_in .name {
+  color: #333333;
+  margin-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003114}}
+.header .nav_bar .user_nav .sign_in .exit,
+.header .nav_bar .user_nav .sign_in .yy {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  width: 20px;
+  height: 20px;
+  filter: alpha(opacity=60);
+  opacity: .6;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003122}}
+.header .nav_bar .user_nav .sign_in .exit:hover,
+.header .nav_bar .user_nav .sign_in .yy:hover {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003127}}
+.header .nav_bar .user_nav .sign_in .exit {
+  background: url(images/icons.png) no-repeat -223px -35px;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003130}}
+.header .nav_bar .user_nav .sign_in .yy {
+  background: url(images/icons.png) no-repeat -198px -35px;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003137}}
+.header .nav {
+  height: 55px;
+  line-height: 55px;
+  background: #fff;
+  border-bottom: 2px solid #31548a;
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003143}}
+.header .nav .site_nav {
+  float: left;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003146}}
+.header .nav .site_nav i {
+  position: absolute;
+  bottom: 2px;
+  *bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003157}}
+.header .nav .site_nav a {
+  color: #333333;
+  font-size: 18px;
+  margin-right: 24px;
+  *margin-right: 22px;
+  text-decoration: none;
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003165}}
+.header .nav .site_nav .logo {
+  background: url('images/logo.png') no-repeat scroll 0 0 transparent;
+  _background: url('images/logo.gif') no-repeat scroll 0 0 transparent;
+  height: 50px;
+  width: 159px;
+  display: block;
+  overflow: hidden;
+  margin-top: -15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003173}}
+.header .nav .site_nav .logo cite {
+  display: none;
+  text-indent: -999px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003180}}
+.header .nav .search_bar {
+  float: right;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003183}}
+.header .nav .search_bar .txt {
+  background: #F2F2F2;
+  width: 256px;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_header\.less}line{font-family:\00003189}}
+.header .nav .search_bar button {
+  position: absolute;
+  right: 0;
+  border: none;
+  filter: alpha(opacity=50);
+  opacity: .5;
+  top: 18px;
+  background: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\000033}}
+.hot .box {
+  zoom: 1;
+  margin-bottom: 10px;
+  padding-left: 420px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.hot .box:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\000037}}
+.hot .box .img {
+  float: left;
+  margin-left: -420px;
+  _display: inline;
+  width: 420px\0;
+  height: 168px\0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000313}}
+.hot .box .img img {
+  width: 420px;
+  height: 168px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000318}}
+.hot .box .info {
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000322}}
+.hot .box .info h4 a {
+  font: 16px/18px Microsoft Yahei;
+  color: #333333;
+  display: block;
+  max-height: 36px;
+  _height: 36px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000331}}
+.hot .box .info span {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000334}}
+.hot .box .info p {
+  padding-bottom: 15px;
+  border-bottom: 1px dotted #d9d9d9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000337}}
+.hot .box .info p em {
+  color: #d63333;
+  font-family: Georgia, Microsoft Yahei;
+  font-size: 24px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000343}}
+.hot .box .info .btns {
+  margin-top: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000345}}
+.hot .box .info .btns a {
+  width: 112px;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000350}}
+.hot .box .info .btns .btn {
+  border-radius: 0;
+  font: bold 14px/20px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000354}}
+.hot .box .info .btns .btn-warning {
+  border: 1px solid #DA7800;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000357}}
+.hot .box .info .btns .btn-success {
+  border: 1px solid #448317;
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000366}}
+.contact .bd {
+  padding-bottom: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000372}}
+.more_act li {
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000374}}
+.more_act li img {
+  width: 280px;
+  height: 112px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000383}}
+.loc_album .con {
+  padding-bottom: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000386}}
+.loc_album .box {
+  width: 50%;
+  *width: 49%;
+  overflow: hidden;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000391}}
+.loc_album .box .img {
+  float: left;
+  width: 110px;
+  overflow: hidden;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\0000396}}
+.loc_album .box .img i {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background: url(images/book.png) no-repeat;
+  _background-image: url(images/book-8.png);
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003106}}
+.loc_album .box .img img {
+  width: 110px;
+  height: 110px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003112}}
+.loc_album .box .info {
+  padding: 0 10px 0 120px;
+  height: 110px;
+  *height: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003117}}
+.loc_album .box .info h4 a {
+  font: bold 16px/18px "\5B8B\4F53";
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003122}}
+.loc_album .box .info p {
+  padding: 10px 0;
+  word-break: break-all;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003126}}
+.loc_album .box .info .user {
+  color: #999;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003128}}
+.loc_album .box .info .user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003134}}
+.loc_album .box li {
+  margin-bottom: 10px;
+  padding-left: 30px;
+  width: 100%;
+  position: relative;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003140}}
+.loc_album .box li i {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003147}}
+.loc_album hr {
+  border-top: 1px dotted #d9d9d9;
+  margin: 15px 0;
+  float: left;
+  width: 100%;
+  *width: 675px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003159}}
+.more_la .con ul {
+  margin-top: -10px;
+  _zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003163}}
+.more_la .con li {
+  margin-top: 10px;
+  border-bottom: 1px dotted #d9d9d9;
+  padding-bottom: 10px;
+  background: url(images/icons.png) no-repeat -368px top;
+  _background-image: url(images/icons-8.png);
+  padding-left: 42px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003170}}
+.more_la .con li a {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003172}}
+.more_la .con li a.address {
+  font: bold 14px/18px "\5b8b\4f53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003175}}
+.more_la .con li a.user {
+  color: #aaaaaa;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003180}}
+.more_la .con li span {
+  color: #aaa;
+}
+/**社区**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003189}}
+.community .bd {
+  padding-bottom: 15px !important;
+  height: 600px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003198}}
+.talent .con {
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003201}}
+.talent li {
+  margin-bottom: 5px;
+  border-bottom: 1px dotted #d9d9d9;
+  padding-bottom: 5px;
+  min-height: 60px\9;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.talent li:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003208}}
+.talent li.active .img {
+  margin-left: 5px;
+  height: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003213}}
+.talent li.active .info {
+  padding-left: 75px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003217}}
+.talent li .img {
+  float: left;
+  margin-left: -60px;
+  _display: inline;
+  height: 0;
+  height: 60px\0;
+  width: 60px\0;
+  -webkit-transition: margin-left, ease, 0.3s;
+  -moz-transition: margin-left, ease, 0.3s;
+  -ms-transition: margin-left, ease, 0.3s;
+  -o-transition: margin-left, ease, 0.3s;
+  transition: margin-left, ease, 0.3s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003225}}
+.talent li .img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003229}}
+.talent li .info {
+  -webkit-transition: all, ease, 0.3s;
+  -moz-transition: all, ease, 0.3s;
+  -ms-transition: all, ease, 0.3s;
+  -o-transition: all, ease, 0.3s;
+  transition: all, ease, 0.3s;
+  padding-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003234}}
+.talent li a {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003237}}
+.talent li p {
+  color: #aaaaaa;
+}
+/*地点公共*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003245}}
+.module .location li,
+.module.location li {
+  height: 60px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #d9d9d9;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003250}}
+.module .location li .address,
+.module.location li .address {
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003252}}
+.module .location li .address img,
+.module.location li .address img {
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003255}}
+.module .location li .address .img,
+.module.location li .address .img {
+  float: left;
+  width: 60px\0;
+  height: 60px\0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003260}}
+.module .location li .address .info,
+.module.location li .address .info {
+  padding-left: 70px;
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003263}}
+.module .location li .address .info a,
+.module.location li .address .info a {
+  font: bold 16px/18px "\5B8B\4F53";
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003268}}
+.module .location li .address .info p em,
+.module.location li .address .info p em {
+  color: #CF3431;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003280}}
+.land_lord li {
+  /*height:60px;
+		padding-bottom:10px;
+		border-bottom:@dot;
+		margin-bottom:10px;*/
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003285}}
+.land_lord li .lords {
+  float: right;
+  width: 140px;
+  *width: 150px;
+  height: 60px\0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003290}}
+.land_lord li .lords .s_tit {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003292}}
+.land_lord li .lords .s_tit i {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003297}}
+.land_lord li .lords .img {
+  margin-left: -10px;
+  _zoom: 1;
+  font-size: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003302}}
+.land_lord li .lords img {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  margin-left: 10px;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003308}}
+.land_lord li .address {
+  float: left;
+  /*img{
+				.avatar(60px);
+			}
+			.img{
+				float:left;
+			}
+			.info{
+				padding-left:70px;
+				margin-top:10px;
+				a{
+					.t16;
+					color:@font-green;
+				}
+				p{
+					em{
+						color:#CF3431;
+					}
+				}
+			}*/
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003335}}
+.items .box {
+  float: left;
+  width: 50%;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003339}}
+.items .box .img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003344}}
+.items .box .img img {
+  width: 80px;
+  height: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003349}}
+.items .box .info {
+  padding: 0 10px 0 90px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003351}}
+.items .box .info a {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003354}}
+.items .box .info p {
+  margin-top: 5px;
+  color: #999;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003357}}
+.items .box .info p b {
+  color: #666;
+}
+/**商户**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003367}}
+.con_news .head_line {
+  padding: 0 0 0 265px;
+  height: 300px;
+  *height: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003371}}
+.con_news .head_line h1 {
+  text-align: center;
+  line-height: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003374}}
+.con_news .head_line h1 a {
+  color: #333333;
+  font-size: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003379}}
+.con_news .head_line p {
+  line-height: 2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003381}}
+.con_news .head_line p a.sort {
+  color: #2eacb7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003389}}
+.con_news .head_line .box ul {
+  margin-top: 10px;
+  border-top: 1px dotted #d9d9d9;
+  padding-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003395}}
+.con_news .head_line .box li .sort {
+  color: #31548a;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003399}}
+.con_news .head_line .box li .address {
+  color: #2eacb7;
+  margin-left: 10px;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003404}}
+.con_news .head_line .box li a {
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003411}}
+.con_news .score_repo {
+  width: 100%;
+  border-top: 1px solid #31548a;
+  margin-top: 15px;
+  padding-top: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003416}}
+.con_news .score_repo .box {
+  float: left;
+  width: 33.3%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003419}}
+.con_news .score_repo .box .img {
+  float: left;
+  margin-right: 10px;
+  width: 60px\0;
+  height: 60px\0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003424}}
+.con_news .score_repo .box .img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003428}}
+.con_news .score_repo .box .info {
+  padding: 0 20px 0 0;
+  color: #aaaaaa;
+  height: 60px;
+  display: table-cell;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003433}}
+.con_news .score_repo .box .info a {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003436}}
+.con_news .score_repo .box .info b {
+  color: #ce302d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003441}}
+.con_news .score_repo .box:nth-child(3n) .info {
+  padding-right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003447}}
+.con_news .carousel {
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  float: left;
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003456}}
+.con_news .carousel-indicators,
+.channel .carousel-indicators {
+  right: 0;
+  left: 0;
+  top: auto;
+  width: 100%;
+  z-index: 99;
+  text-align: center;
+  height: 20px;
+  background: #000;
+  bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003467}}
+.con_news .carousel-indicators li,
+.channel .carousel-indicators li {
+  text-indent: 0;
+  cursor: pointer;
+  float: none;
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  width: 17px;
+  height: 3px;
+  margin-left: 3px;
+  background: #727272;
+  margin-top: 9px;
+  _overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003478}}
+.con_news .carousel-indicators li.active,
+.channel .carousel-indicators li.active {
+  background: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003483}}
+.con_news .carousel-caption,
+.channel .carousel-caption {
+  padding: 0;
+  text-align: center;
+  bottom: 20px;
+  height: 30px;
+  _width: 100%;
+  filter: alpha(opacity=75);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003490}}
+.con_news .carousel-caption a,
+.channel .carousel-caption a {
+  line-height: 30px;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003495}}
+.con_news .carousel-inner,
+.channel .carousel-inner {
+  _height: 100%;
+  _overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003499}}
+.con_news .carousel-inner .item img,
+.channel .carousel-inner .item img {
+  width: 250px;
+  height: 300px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003508}}
+.new_cont li {
+  margin-bottom: 10px;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.new_cont li:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003511}}
+.new_cont li .img {
+  float: left;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003514}}
+.new_cont li .img img {
+  width: 80px;
+  height: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003520}}
+.new_cont li .info a {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003523}}
+.new_cont li .info p {
+  color: #999;
+}
+/*积分商城*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003532}}
+.mall .des {
+  margin-top: 10px;
+  padding-left: 60px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background: url(images/icons.png) no-repeat -350px -54px;
+  _background-image: url(images/icons-8.png);
+  border-bottom: 1px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003541}}
+.mall .follow .qrcode {
+  font-size: 11px;
+  border: 1px solid #000;
+}
+/**全城动态**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003554}}
+.waterfall .thumbnails li {
+  width: 222px;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003557}}
+.waterfall .thumbnails li .photo {
+  padding: 6px;
+  text-align: center;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003561}}
+.waterfall .thumbnails li .photo p {
+  text-align: left;
+  line-height: 20px;
+  margin: 9px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003567}}
+.waterfall .thumbnails li .user {
+  padding: 9px;
+  border-top: 1px solid #F3F3F3;
+  background: #FAFAFA;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.waterfall .thumbnails li .user:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003574}}
+.waterfall .thumbnails li .user .user_info .img {
+  float: left;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003577}}
+.waterfall .thumbnails li .user .user_info .img img {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003581}}
+.waterfall .thumbnails li .user .user_info .info {
+  line-height: 14px;
+  height: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003584}}
+.waterfall .thumbnails li .user .user_info .info a {
+  font-weight: bold;
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003588}}
+.waterfall .thumbnails li .user .user_info .info p {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003593}}
+.waterfall .thumbnails li .user .interact {
+  float: right;
+  margin-top: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003596}}
+.waterfall .thumbnails li .user .interact a {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  width: 18px;
+  height: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003600}}
+.waterfall .thumbnails li .user .interact a.reply {
+  background: url(images/icons.png) no-repeat -193px -60px;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003603}}
+.waterfall .thumbnails li .user .interact a.like {
+  background: url(images/icons.png) no-repeat -216px -60px;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003605}}
+.waterfall .thumbnails li .user .interact a.like.on {
+  background-position: -216px -82px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_module\.less}line{font-family:\00003614}}
+.waterfall .pagination {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\000031}}
+#footer {
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px #d7d7d7 solid;
+  background: #ffffff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\000036}}
+#footer .friendlink {
+  display: none;
+  background: #ededed;
+  border-top: 1px #d7d7d7 solid;
+  border-bottom: 1px #d7d7d7 solid;
+  height: 35px;
+  line-height: 35px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000315}}
+#footer .friendlink .con {
+  width: 880px;
+  height: 35px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000320}}
+#footer .friendlink a {
+  padding-right: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000323}}
+#footer .friendlink .btn {
+  float: right;
+  width: 30px;
+  height: 15px;
+  margin-top: 10px;
+  background-position: right -34px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000331}}
+#footer .friendlink .btn b {
+  display: block;
+  width: 14px;
+  height: 15px;
+  cursor: pointer;
+  float: left;
+  margin-right: 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000342}}
+#footer .about {
+  height: 93px;
+  padding: 22px 0 0 78px;
+  border-bottom: 1px #d4d4d4 dashed;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000346}}
+#footer .about h2 {
+  font-size: 16px;
+  line-height: 18px;
+  height: 18px;
+  padding-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000352}}
+#footer .about p {
+  line-height: 22px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000355}}
+#footer .about .index {
+  width: 213px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000358}}
+#footer .about .down {
+  width: 383px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000361}}
+#footer .about .ab {
+  width: 320px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000364}}
+#footer .about b {
+  float: left;
+  width: 46px;
+  height: 46px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000370}}
+#footer .about .c {
+  color: #aaa;
+  padding-top: 22px;
+  height: 56px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000377}}
+#footer .about a {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000381}}
+#footer .footer-nav {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  text-align: center;
+  border-bottom: 1px solid #dbdbdb;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000382}}
+#footer .footer-nav a {
+  margin: 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000383}}
+#footer .copyright {
+  text-align: center;
+  padding: 10px 0 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000384}}
+#footer .network-monitor {
+  width: 660px;
+  height: 60px;
+  padding: 10px 0 0 0;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000385}}
+#footer .network-monitor li {
+  display: inline;
+  float: left;
+  width: 60px;
+  margin: 0 0 0 10px;
+  padding: 0 0 0 40px;
+  overflow: hidden;
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000386}}
+#footer .network-monitor .monitor {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  margin: 0 0 0 -40px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000387}}
+#footer .monitor img {
+  max-width: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000388}}
+#footer .monitor.s1 img {
+  margin: 0 0 0 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000389}}
+#footer .monitor.s2 img {
+  margin: 0 0 0 -50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000390}}
+#footer .monitor.s3 img {
+  margin: 0 0 0 -100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000391}}
+#footer .monitor.s4 img {
+  margin: 0 0 0 -150px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000392}}
+#footer .monitor.s5 img {
+  margin: 0 0 0 -200px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_footer\.less}line{font-family:\0000393}}
+#footer .monitor.s6 img {
+  margin: 0 0 0 -250px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\000031}}
+#infscr-loading {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\000033}}
+#infscr-loading img {
+  margin-left: 17px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\000036}}
+#infscr-loading div {
+  margin-top: -20px;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000312}}
+.timeline .pagination {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000317}}
+.timeline .loc_album .box .list li {
+  float: left;
+  width: 146px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000322}}
+.timeline .bd {
+  background-color: transparent;
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000326}}
+.timeline .article,
+.timeline .content {
+  background: #fff;
+  border: 1px solid #31548a;
+  padding-bottom: 38px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000331}}
+.timeline .content {
+  padding-bottom: 0;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.timeline .content:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000335}}
+.timeline .col_l {
+  width: 126px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000339}}
+.timeline .col_m {
+  float: right;
+  width: 557px;
+  border-left: 2px #f0f0f0 solid;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000344}}
+.timeline .col_con {
+  float: left;
+  width: 870px;
+  border-left: 2px #f0f0f0 solid;
+  padding-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000351}}
+.timeline .side .module {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000353}}
+.timeline .side .module .con {
+  background: #fff;
+  border: 1px solid #31548a;
+  border-top: none;
+  border-color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000361}}
+.timeline .comment {
+  padding: 15px 15px 10px 20px;
+  border-bottom: 1px solid #31548a;
+  margin-bottom: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000365}}
+.timeline .comment .c_area {
+  background: #fbfbfb;
+  border: 1px solid #31548a;
+  padding-left: 80px;
+  position: relative;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000371}}
+.timeline .comment .c_area textarea {
+  margin: 10px 0;
+  height: 120px;
+  width: 95%;
+  resize: none;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000381}}
+.timeline .comment .c_area .upload {
+  background: #fff;
+  border: 1px solid #31548a;
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000388}}
+.timeline .comment .c_area .upload .up_label {
+  width: 60px;
+  height: 60px;
+  background: url(images/imgselect.png) no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000395}}
+.timeline .comment .action {
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.timeline .comment .action:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000397}}
+.timeline .comment .action .sync {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\0000399}}
+.timeline .comment .action .sync input {
+  vertical-align: top;
+  vertical-align: middle\9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003104}}
+.timeline .comment .action .btn {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003109}}
+.timeline .nav {
+  padding-left: 10px;
+  width: 40px;
+  margin: 23px 0 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003113}}
+.timeline .nav .slide {
+  display: block;
+  width: 8px;
+  height: 8px;
+  padding: 1px;
+  background: #31548a;
+  border: 1px solid #589725;
+  overflow: hidden;
+  float: left;
+  margin: 8px 0 0 -15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003123}}
+.timeline .nav .slide i {
+  vertical-align: top;
+  margin: 0;
+  *cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background-position: -411px -99.5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003133}}
+.timeline .nav li {
+  border-right: 5px solid #88be5b;
+  margin-bottom: 1px;
+  min-height: 29px;
+  line-height: 29px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003138}}
+.timeline .nav li .month {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003140}}
+.timeline .nav li .month a {
+  color: #31548a;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003145}}
+.timeline .nav li.active {
+  border-right-color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003147}}
+.timeline .nav li.active i {
+  background-position: -435px -99px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003151}}
+.timeline .nav li.active .month {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003158}}
+.timeline .col_m .hd {
+  margin-bottom: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003160}}
+.timeline .col_m .hd .tit {
+  background: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003163}}
+.timeline .col_m .hd .tabs {
+  float: right;
+  height: 33px;
+  line-height: 33px;
+  font-size: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003168}}
+.timeline .col_m .hd .tabs a {
+  padding: 0 20px;
+  font-size: 18px;
+  color: #727272;
+  background: transparent;
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  margin: 0;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003176}}
+.timeline .col_m .hd .tabs a.active {
+  background: #31548a;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003183}}
+.timeline .col_m .posts {
+  margin-right: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003186}}
+.timeline .col_m .post {
+  position: relative;
+  background: #f0f0f0;
+  padding: 2px;
+  margin: 0 0 47px 17px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *z-index: 1;
+  /* reply*/
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003194}}
+.timeline .col_m .post .link {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003196}}
+.timeline .col_m .post .link a {
+  display: block;
+  overflow: hidden;
+  width: 57px;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+  color: #aaa;
+  text-decoration: none;
+  background: url('images/post_link.png') no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003208}}
+.timeline .col_m .post .arr {
+  width: 8px;
+  height: 12px;
+  background: url(images/ico.png) no-repeat right -17px;
+  _background-image: url(images/ico-8.png);
+  position: absolute;
+  top: 30px;
+  left: -19px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003216}}
+.timeline .col_m .post .ico {
+  background: url("images/ico-light1.png") no-repeat scroll 0 -33px transparent;
+  display: block;
+  height: 32px;
+  text-indent: -9999px;
+  width: 33px;
+  left: -32px;
+  position: absolute;
+  top: -10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003225}}
+.timeline .col_m .post .ico.talk {
+  background-position: 0 -136px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003228}}
+.timeline .col_m .post .ico.ads {
+  background-position: 0 -171px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003232}}
+.timeline .col_m .post .avatar {
+  float: left;
+  margin: -8px 0 0 13px;
+  *position: absolute;
+  *top: -7px;
+  *left: 13px;
+  *margin: 0;
+  width: 40px;
+  height: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003243}}
+.timeline .col_m .post .avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003247}}
+.timeline .col_m .post .item {
+  background: #fff;
+  border: 1px #ddd solid;
+  padding-bottom: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003251}}
+.timeline .col_m .post .item h2 {
+  padding-left: 64px;
+  height: 33px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003257}}
+.timeline .col_m .post .item h2 a {
+  margin-left: 5px;
+  color: #333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003260}}
+.timeline .col_m .post .item h2 a i.v {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  margin-left: 5px;
+  width: 18px;
+  height: 19px;
+  background: url(images/icons.png) no-repeat -139px -37px;
+  _background-image: url(images/icons-8.png);
+  position: relative;
+  top: 2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003271}}
+.timeline .col_m .post .item h3 {
+  padding-left: 64px;
+  height: 33px;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003275}}
+.timeline .col_m .post .item h3 span {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003279}}
+.timeline .col_m .post .item .p_con {
+  padding: 0 10px;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003281}}
+.timeline .col_m .post .item .p_con .star em {
+  color: #f3801a;
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003288}}
+.timeline .col_m .post .item .p_con .photo {
+  margin: 10px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003290}}
+.timeline .col_m .post .item .p_con .photo img {
+  display: block;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003295}}
+.timeline .col_m .post .item .p_con p {
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003300}}
+.timeline .col_m .post .item .loc_album .box {
+  float: none;
+  margin-left: 10px;
+  width: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003306}}
+.timeline .col_m .post .item p {
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003310}}
+.timeline .col_m .post .footbar {
+  color: #aaa;
+  line-height: 30px;
+  height: 30px;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003316}}
+.timeline .col_m .post .footbar .tags {
+  width: 380px;
+  height: 30px;
+  float: left;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003321}}
+.timeline .col_m .post .footbar .tags li {
+  line-height: 22px;
+  margin: 4px 5px 0 0;
+  padding: 0 0 0 22px;
+  float: left;
+  background: url('images/bg_tag_gray.png') left top no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003327}}
+.timeline .col_m .post .footbar .tags li span {
+  display: block;
+  padding: 0 10px 0 0;
+  background: url('images/bg_tag_gray.png') right top no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003334}}
+.timeline .col_m .post .footbar .actions {
+  float: right;
+  padding: 0px 10px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003337}}
+.timeline .col_m .post .footbar .actions a {
+  color: #aaaaaa;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003340}}
+.timeline .col_m .post .footbar .actions a .num {
+  font-family: Arial, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003344}}
+.timeline .col_m .post .footbar .actions a:hover {
+  color: #666;
+  filter: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003349}}
+.timeline .col_m .post .footbar .actions .action-share {
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003351}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu {
+  margin: 8px 0 0;
+  width: 90px;
+  min-width: auto;
+  padding: 5px 5px 0;
+  list-style: none;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003359}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: #fff;
+  position: absolute;
+  top: -7px;
+  left: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003370}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  position: absolute;
+  top: -6px;
+  left: 13px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003380}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu li {
+  margin: 0 0 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003382}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu li a {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0 0 0 26px;
+  border: 1px solid #eeeeee;
+  background: #ffffff url('images/icon_share.png') left center no-repeat;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003391}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu li a:hover {
+  color: #000;
+  border: 1px solid #cccccc;
+  background-color: #fafafa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003396}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu li a.action-share-icd {
+  background-position: 5px 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003399}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu li a.action-share-weibo {
+  background-position: 5px -28px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003402}}
+.timeline .col_m .post .footbar .actions .action-share .dropdown-menu li a.action-share-qq {
+  background-position: 5px -60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003413}}
+.timeline .col_m .post .replys {
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.timeline .col_m .post .replys:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003415}}
+.timeline .col_m .post .replys .reply-list {
+  margin: 0px;
+  padding: 0 10px;
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003419}}
+.timeline .col_m .post .replys .reply-list li {
+  padding: 15px 0;
+  border-top: 1px #ccc dashed;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003423}}
+.timeline .col_m .post .replys .reply-list li .avatar {
+  float: left;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: static;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003432}}
+.timeline .col_m .post .replys .reply-list li .avatar img {
+  width: 30px;
+  height: 30px;
+  border-raidus: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003438}}
+.timeline .col_m .post .replys .reply-list li .name {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003441}}
+.timeline .col_m .post .replys .reply-list li .time {
+  color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003444}}
+.timeline .col_m .post .replys .reply-list li p {
+  line-height: 16px;
+  margin: 0 60px 0 40px;
+  padding: 0px;
+  word-break: break-word;
+  word-wrap: break-all;
+  *float: left;
+  *margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003453}}
+.timeline .col_m .post .replys .reply-list li .actions {
+  float: right;
+  height: 15px;
+  line-height: 15px;
+  color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003458}}
+.timeline .col_m .post .replys .reply-list li .actions a {
+  color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003464}}
+.timeline .col_m .post .replys .reply-form {
+  margin: 0px 10px;
+  position: relative;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003468}}
+.timeline .col_m .post .replys .reply-form .txt {
+  border: 1px #d0d0d0 solid;
+  color: #aaa;
+  *padding: 4px 0;
+  *width: 386px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003476}}
+.timeline .col_m .post .replys .reply-form textarea.txt {
+  height: 30px;
+  padding: 0px 70px 0px 5px;
+  line-height: 30px;
+  overflow: hidden;
+  resize: none;
+  width: 100%;
+  *width: 420px;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003486}}
+.timeline .col_m .post .replys .reply-form .btn {
+  position: absolute;
+  display: none;
+  top: 3px;
+  right: 3px;
+  *right: 0px;
+  height: 16px;
+  line-height: 16px;
+  border-radius: 2px;
+  padding: 3px 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003501}}
+.timeline .col_m .post .clock {
+  background: url(images/ico.png) no-repeat right -213px;
+  _background-image: url(images/ico-8.png);
+  height: 20px;
+  text-align: right;
+  padding: 10px 24px 0 0;
+  line-height: 20px;
+  color: #aaa;
+  float: right;
+  margin-bottom: -30px;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003516}}
+.timeline .col_m hr {
+  margin: 0;
+  border: none;
+  height: 2px;
+  background: #f0f0f0 70%;
+  background: -webkit-linear-gradient(left, #f0f0f0 70%, #ffffff);
+  background: -moz-linear-gradient(left, #f0f0f0 70%, #ffffff);
+  background: -o-linear-gradient(left, #f0f0f0 70%, #ffffff);
+  background: -ms-linear-gradient(left, #f0f0f0 70%, #ffffff);
+  background: linear-gradient(left, #f0f0f0 70%, #ffffff);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003523}}
+#share-form .modal-heaer h3 {
+  font-size: 14px;
+  line-height: 24px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003529}}
+#share-form .modal-body .message_input {
+  padding: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003531}}
+#share-form .modal-body .message_input textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_timeline\.less}line{font-family:\00003540}}
+#share-form .modal-footer .btn {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\000033}}
+/* @charset "utf-8"; */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\000033}}
+.user_banner {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\000035}}
+.user_banner .cover {
+  margin-top: -40px;
+  height: 324px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\000038}}
+.user_banner .cover img {
+  height: 324px;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000313}}
+.user_banner .avatar {
+  width: 160px;
+  height: 244px;
+  background: url(images/avatar.png) no-repeat;
+  background: url("images/avatar_other.png") 0 0 no-repeat \0;
+  *background: url(images/avatar_other.png) no-repeat;
+  position: absolute;
+  top: 210px;
+  *top: 140px;
+  left: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000324}}
+.user_banner .avatar img {
+  margin: 5px;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000331}}
+.user_banner .sub {
+  height: 80px;
+  background: #F6F6F6;
+  padding-left: 130px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000335}}
+.user_banner .sub .name {
+  padding-left: 95px;
+  height: 65px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000339}}
+.user_banner .sub .name h2 {
+  font-size: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000341}}
+.user_banner .sub .name h2 a {
+  margin-left: 5px;
+  background: #fff;
+  border: 1px solid #E1E1E1;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000348}}
+.user_banner .sub .name p {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000351}}
+.user_banner .sub .name .btn {
+  float: right;
+  margin-top: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000356}}
+.user_banner .sub hr {
+  margin: 0;
+  border: none;
+  height: 2px;
+  background: #eaeaea 80%;
+  background: -webkit-linear-gradient(left, #eaeaea 80%, #f6f6f6);
+  background: -moz-linear-gradient(left, #eaeaea 80%, #f6f6f6);
+  background: -o-linear-gradient(left, #eaeaea 80%, #f6f6f6);
+  background: -ms-linear-gradient(left, #eaeaea 80%, #f6f6f6);
+  background: linear-gradient(left, #eaeaea 80%, #f6f6f6);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000360}}
+.user_banner .info {
+  height: 128px;
+  background: #fff;
+  border: 1px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000364}}
+.user_banner .info > div {
+  height: 100%;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000367}}
+.user_banner .info > div p {
+  line-height: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000373}}
+.user_banner .info .intro {
+  color: #999;
+  width: 132px;
+  background: url(images/bm-hole.png) repeat-y 100% 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000377}}
+.user_banner .info .intro p {
+  height: 25%;
+  padding-left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000382}}
+.user_banner .info .score {
+  width: 157px;
+  padding-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000385}}
+.user_banner .info .score p {
+  color: #666;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000388}}
+.user_banner .info .score p em {
+  font-family: Georgia;
+  color: #31548a;
+  font-size: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\0000396}}
+.user_banner .info .album .box {
+  margin-left: 8px;
+  width: 244px;
+  overflow: hidden;
+  float: left;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003102}}
+.user_banner .info .album .box ul {
+  margin-left: -4px;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003106}}
+.user_banner .info .album .box li {
+  float: left;
+  margin: 4px 0 0 4px;
+  overflow: hidden;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003111}}
+.user_banner .info .album .box li img {
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003116}}
+.user_banner .info .album .box .mini {
+  width: 58px;
+  height: 58px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003120}}
+.user_banner .info .album .box .small {
+  width: 120px;
+  height: 120px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003124}}
+.user_banner .info .album .box .large {
+  width: 100%;
+  height: 120px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003128}}
+.user_banner .info .album .box .title {
+  position: absolute;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  filter: alpha(opacity=60);
+  opacity: .6;
+  background: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003140}}
+.user_banner .info .album .box .title a {
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003145}}
+.user_banner .info .album .location {
+  width: 182px;
+}
+/*成就*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003154}}
+.user_achieve .con {
+  *padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003157}}
+.user_achieve .con li {
+  float: left;
+  margin: 0 0 10px 10px;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003161}}
+.user_achieve .con li img {
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+}
+/*标签*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003169}}
+.user_tags ul {
+  padding-right: 10px;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.user_tags ul:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003173}}
+.user_tags li {
+  float: left;
+  margin: 0 0 10px 10px;
+  padding: 0 20px;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003181}}
+.user_tags p {
+  margin: 10px;
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003184}}
+.user_tags p a {
+  color: #31548a;
+}
+/*足迹*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003191}}
+.user_track .con {
+  padding: 9px 9px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003194}}
+.user_track .con p {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003197}}
+.user_track .con .map {
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003205}}
+.user_track .location {
+  padding-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003209}}
+.user_track .location .address .info a {
+  color: #666666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003211}}
+.user_track .location .address .info p a {
+  color: #31548a;
+  font: 12px/1.5 Microsoft Yahei;
+  margin-right: 5px;
+}
+/*地主状态*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003225}}
+.user_lord .con {
+  padding: 20px;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003228}}
+.user_lord .con .slide_menu {
+  width: 270px;
+  float: left;
+  margin-right: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003233}}
+.user_lord .con .map {
+  height: 517px;
+  width: 670px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003240}}
+.slide_menu {
+  position: relative;
+  padding: 31px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003243}}
+.slide_menu .inner {
+  max-height: 450px;
+  _height: 450px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003247}}
+.slide_menu .inner li {
+  padding: 10px;
+  line-height: 1.2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003250}}
+.slide_menu .inner li a {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003253}}
+.slide_menu .inner li p {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003256}}
+.slide_menu .inner li:nth-of-type(odd) {
+  background: #F7F7F7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003259}}
+.slide_menu .inner li:nth-of-type(even) {
+  background: #EFEFEF;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003264}}
+.slide_menu a.prev,
+.slide_menu a.next {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 268px;
+  height: 31px;
+  border: 1px solid #BBBBBB;
+  background: #AAAAAA;
+  text-align: center;
+  line-height: 31px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003274}}
+.slide_menu a.prev:hover,
+.slide_menu a.next:hover {
+  border-color: #31548a;
+  background: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003279}}
+.slide_menu a.prev {
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003282}}
+.slide_menu a.next {
+  bottom: 0;
+}
+/*好友*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003288}}
+.user_friends {
+  padding: 23px 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003290}}
+.user_friends .hd {
+  border-top: none;
+  border-bottom: 2px solid #31548a;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003295}}
+.user_friends .hd .tabs a {
+  font-size: 14px !important;
+  background: #F5F5F5;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003299}}
+.user_friends .hd .tabs a.active {
+  background: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003305}}
+.user_friends .bd {
+  padding: 20px 0 0;
+  border-bottom: 1px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003308}}
+.user_friends .bd ul {
+  *zoom: 1;
+  margin-left: -24px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003312}}
+.user_friends .bd li {
+  float: left;
+  margin: 0 0 20px 24px;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003316}}
+.user_friends .bd li img {
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+}
+/*设置*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003323}}
+.setting {
+  min-height: 552px;
+  overflow: hidden;
+  /*.col_l{
+		//padding-bottom:999px;
+		//margin-bottom:-999px;
+	}*/
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003326}}
+.setting .menu {
+  padding: 20px 0 0 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003328}}
+.setting .menu li {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003331}}
+.setting .menu li.active a {
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003334}}
+.setting .menu li.active .basic {
+  background-position: -41px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003337}}
+.setting .menu li.active .avatar {
+  background-position: -41px -77px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003340}}
+.setting .menu li.active .password {
+  background-position: -41px -155px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003343}}
+.setting .menu li.active .email {
+  background-position: -41px -230px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003346}}
+.setting .menu li.active .sync {
+  background-position: -41px -307px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003349}}
+.setting .menu li.active .score {
+  background-position: -41px bottom;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003353}}
+.setting .menu li a {
+  font-size: 14px;
+  color: #aaaaaa;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003357}}
+.setting .menu li a i {
+  display: block;
+  margin-left: 5px;
+  width: 41px;
+  height: 41px;
+  background: url(images/icon_setting.png) no-repeat;
+  _background-image: url(images/icon_setting-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003365}}
+.setting .menu li a i.avatar {
+  background-position: 0 -77px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003368}}
+.setting .menu li a i.password {
+  background-position: 0 -155px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003371}}
+.setting .menu li a i.email {
+  background-position: 0 -230px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003374}}
+.setting .menu li a i.sync {
+  background-position: 0 -307px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003377}}
+.setting .menu li a i.score {
+  background-position: 0 bottom;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003388}}
+.setting .col_con {
+  padding: 10px;
+  width: 850px;
+  font-size: 14px;
+  padding-bottom: 999px;
+  margin-bottom: -999px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003394}}
+.setting .col_con .tab_hd {
+  border-bottom: 1px solid #31548a;
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003398}}
+.setting .col_con input[type="text"],
+.setting .col_con textarea,
+.setting .col_con select {
+  background: #FBFBFB;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003403}}
+.setting .col_con textarea {
+  width: 500px;
+  padding: 6px 9px;
+  resize: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003409}}
+.setting .col_con .form-horizontal .control-label {
+  width: 130px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003412}}
+.setting .col_con .form-horizontal .controls {
+  margin-left: 150px;
+  *margin-left: 0;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003416}}
+.setting .col_con .form-horizontal .controls .btn-vertical {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003422}}
+.setting .col_con .basic {
+  padding: 50px 0 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003424}}
+.setting .col_con .basic .info {
+  font-weight: bold;
+  padding-left: 85px;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003428}}
+.setting .col_con .basic .info em {
+  color: #31548a;
+  font-weight: normal;
+  margin: 0 10px 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003436}}
+.setting .col_con .avatar {
+  padding: 20px 50px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003438}}
+.setting .col_con .avatar .con {
+  padding: 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003442}}
+.setting .col_con .avatar .info p {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003447}}
+.setting .col_con .avatar .avatar_up .upload {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  width: 360px;
+  height: 360px;
+  border: 1px solid #ebebeb;
+  background: #ffffff url("images/avatarselect.jpg") center center no-repeat;
+  cursor: pointer;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003461}}
+.setting .col_con .avatar .avatar_up .upload input {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003466}}
+.setting .col_con .avatar .form-actions {
+  background: #fff;
+  border: none;
+  padding: 0;
+  width: 362px;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003475}}
+.setting .col_con .score {
+  padding: 10px 0 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003477}}
+.setting .col_con .score table {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003479}}
+.setting .col_con .score table th,
+.setting .col_con .score table td {
+  height: 35px;
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003484}}
+.setting .col_con .score table tbody td {
+  border-top: 1px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003488}}
+.setting .col_con .score table tbody tr:first-of-type td {
+  border-width: 2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003496}}
+.setting .col_con .sync {
+  margin-top: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003499}}
+.setting .col_con .sync dl dd {
+  margin-left: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003501}}
+.setting .col_con .sync dl dd a {
+  color: #333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003508}}
+.setting .col_con .password,
+.setting .col_con .email {
+  margin-top: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003510}}
+.setting .col_con .password .controls,
+.setting .col_con .email .controls {
+  line-height: ;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003516}}
+.setting .col_con .email .controls .current_email {
+  line-height: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003518}}
+.setting .col_con .email .controls .current_email span {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_user\.less}line{font-family:\00003522}}
+.setting .col_con .email .controls .current_email a {
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\000032}}
+/* @charset "utf-8"; */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\000032}}
+.detail {
+  /*.score_banner{
+		.bd{
+			padding:9px !important;;
+			border:@bd-grey;
+			ul{
+				margin:-18px 0 0 -28px;
+				*zoom:1;
+			}
+			li{
+				margin:18px 0 0 28px;
+				img{
+					width:312px;
+					height:190px;
+				}
+			}
+		}
+	}*/
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\000033}}
+.detail .location {
+  background: #fff;
+  border: 1px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\000036}}
+.detail .location .author,
+.detail .location .list li {
+  padding: 10px 10px 10px 0;
+  margin-left: 10px;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000311}}
+.detail .location .author {
+  border-bottom: 2px solid #31548a;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000315}}
+.detail .location .img {
+  float: left;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000318}}
+.detail .location .img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000321}}
+.detail .location .img a {
+  display: block;
+  width: 60px;
+  text-align: center;
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000328}}
+.detail .location .info {
+  height: 60px;
+  *float: left;
+  display: table-cell;
+  vertical-align: middle;
+  *margin-top: 0px;
+  *display: block;
+  *height: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000336}}
+.detail .location .info a {
+  color: #31548a;
+  font: bold 16px/18px "宋体";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000343}}
+.detail .location .list li {
+  border-bottom: 1px dotted #d9d9d9;
+  padding-left: 30px;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.detail .location .list li:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000348}}
+.detail .location .list li:hover {
+  background: #F7F7F7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000353}}
+.detail .location .reaction {
+  padding-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000355}}
+.detail .location .reaction .sub_tit {
+  margin-top: 15px;
+  height: 22px;
+  line-height: 22px;
+  text-align: left;
+  border-bottom: 2px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000362}}
+.detail .location .reaction .sub_tit a {
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000364}}
+.detail .location .reaction .sub_tit a:hover {
+  color: #333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000370}}
+.detail .location .reaction .sub_con ul {
+  *zoom: 1;
+  margin-left: -8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000374}}
+.detail .location .reaction .sub_con li {
+  float: left;
+  margin-left: 8px;
+  _display: inline;
+  margin-top: 8px;
+  width: 40px\0;
+  height: 40px\0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000381}}
+.detail .location .reaction .sub_con li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000389}}
+.detail .loc_intro .img {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000391}}
+.detail .loc_intro .img img {
+  width: 110px;
+  height: 110px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\0000395}}
+.detail .loc_intro .img i {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background: url('images/book2.png');
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003105}}
+.detail .loc_intro .info {
+  height: 110px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003107}}
+.detail .loc_intro .info p {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003109}}
+.detail .loc_intro .info p em {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003116}}
+.detail .mall_box .con {
+  background: #fff;
+  border: 1px solid #31548a;
+  border-top: none;
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003121}}
+.detail .mall_box .con li {
+  height: 175px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003123}}
+.detail .mall_box .con li .item {
+  margin: 27px auto 0;
+  width: 220px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003126}}
+.detail .mall_box .con li .item .img {
+  float: left;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003129}}
+.detail .mall_box .con li .item .img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003133}}
+.detail .mall_box .con li .item .info {
+  height: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003135}}
+.detail .mall_box .con li .item .info h4 {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003138}}
+.detail .mall_box .con li .item .info h4,
+.detail .mall_box .con li .item .info p em {
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003141}}
+.detail .mall_box .con li .item .info p {
+  margin-top: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003143}}
+.detail .mall_box .con li .item .info p em {
+  font-size: 20px;
+  font-family: Georgia;
+  *line-height: 1.2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003150}}
+.detail .mall_box .con li .item .intro {
+  clear: both;
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003153}}
+.detail .mall_box .con li .item .intro span {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003163}}
+.detail .loc_album .bd {
+  padding-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003166}}
+.detail .loc_album .list-fluid {
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.detail .loc_album .list-fluid:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003168}}
+.detail .loc_album .list-fluid > li {
+  padding-top: 15px;
+  *margin-bottom: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003173}}
+.detail .loc_album .box {
+  width: auto;
+  float: none;
+  height: 232px;
+  overflow: hidden;
+  /*li{
+				margin-bottom:10px;
+				padding-left:30px;
+				width:100%;
+				position:relative;
+				font-size:14px;
+				i{
+					position:absolute;
+					left:5px;
+					top:3px;
+				}
+			}*/
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003178}}
+.detail .loc_album .box .info {
+  *height: 110px;
+  *padding-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003182}}
+.detail .loc_album .box .list {
+  position: relative;
+  *width: 95%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003185}}
+.detail .loc_album .box .list li {
+  *height: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003188}}
+.detail .loc_album .box .list .elite {
+  position: absolute;
+  width: 72px;
+  height: 48px;
+  background: url(images/icons.png) no-repeat -261px -21px;
+  _background-image: url(images/icons-8.png);
+  right: 0;
+  top: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003209}}
+.detail .loc_album .box hr {
+  float: none;
+  margin-right: 30px;
+  width: auto;
+  *width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003218}}
+.detail .act {
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003222}}
+.detail .act .side .score .bd {
+  border: none;
+  padding: 15px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003225}}
+.detail .act .side .score .bd ul {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003228}}
+.detail .act .side .score .bd li {
+  margin: 0 0 10px;
+  *float: none;
+  float: none\0;
+  width: 280px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003233}}
+.detail .act .side .score .bd li img {
+  width: 280px;
+  height: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003237}}
+.detail .act .side .score .bd li .caption {
+  *width: 280px;
+  width: 280px\0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003264}}
+.detail .score .bd {
+  padding: 20px 19px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003266}}
+.detail .score .bd li {
+  float: left;
+  position: relative;
+  margin: 30px 0 0 30px;
+  width: 300px\0;
+  height: 188px\0;
+  *width: 300px;
+  *height: 188px;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003276}}
+.detail .score .bd li.large img {
+  width: 640px;
+  height: 400px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003281}}
+.detail .score .bd li img {
+  width: 300px;
+  height: 188px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003285}}
+.detail .score .bd li .score_panel {
+  position: absolute;
+  height: 26px;
+  top: 10px;
+  right: 10px;
+  background: url(images/icons.png) no-repeat -240px -71px;
+  _background-image: url(images/icons-8.png);
+  text-align: center;
+  width: 94px;
+  /*background:rgba(0,0,0,0.75);
+					border-radius:13px;*/
+
+  color: #fff;
+  font-size: 12px;
+  line-height: 26px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003309}}
+.detail .score .bd li .score_panel em {
+  font-style: italic;
+  color: #ffbb03;
+  margin-right: 5px;
+  font-size: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003316}}
+.detail .score .bd li .caption {
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background: #333;
+  *filter: alpha(opacity=75);
+  filter: alpha(opacity=75) /0;
+  background: rgba(0, 0, 0, 0.75);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003328}}
+.detail .score .bd li .caption span,
+.detail .score .bd li .caption s {
+  margin: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003331}}
+.detail .score .bd li .caption span {
+  float: right;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003335}}
+.detail .score .bd li .caption s {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003342}}
+.detail .score ul {
+  *zoom: 1;
+  margin: -30px 0 0 -30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003349}}
+.detail .score_banner .bd {
+  padding: 9px !important;
+  border: 1px solid #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003352}}
+.detail .score_banner .bd ul {
+  margin: -10px 0 0 -28px;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003356}}
+.detail .score_banner .bd li {
+  margin: 10px 0 0 28px;
+  width: 312px;
+  height: 195px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003360}}
+.detail .score_banner .bd li img {
+  width: 312px;
+  height: 195px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003364}}
+.detail .score_banner .bd li.large {
+  width: 640px;
+  height: 400px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003372}}
+.detail .lord .article,
+.detail .contact .article {
+  width: 700px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003376}}
+.detail .lord .side,
+.detail .contact .side {
+  width: 280px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003379}}
+.detail .lord .con,
+.detail .contact .con {
+  background: #fff;
+  border: 1px solid #31548a;
+  border-top: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003387}}
+.detail .contact .article .con {
+  padding-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003391}}
+.detail .contact .article .con .list ul li {
+  padding: 19px 19px 9px;
+  zoom: 1;
+  border-bottom: 1px dotted #d9d9d9;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_variable\.less}line{font-family:\0000357}}
+.detail .contact .article .con .list ul li:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003396}}
+.detail .contact .article .con .list ul li:nth-of-type(odd) {
+  background: #fafafa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003399}}
+.detail .contact .article .con .list ul li .tag {
+  position: absolute;
+  width: 92px;
+  height: 32px;
+  background: url(images/icons.png) no-repeat -148px 0;
+  _background-image: url(images/icons-8.png);
+  right: 0;
+  top: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003407}}
+.detail .contact .article .con .list ul li .img {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003410}}
+.detail .contact .article .con .list ul li .img img {
+  width: 100px;
+  height: 100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003415}}
+.detail .contact .article .con .list ul li .info {
+  padding-left: 110px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003417}}
+.detail .contact .article .con .list ul li .info h3 {
+  line-height: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003419}}
+.detail .contact .article .con .list ul li .info h3 a {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003422}}
+.detail .contact .article .con .list ul li .info h3 .qrcode {
+  margin-left: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003426}}
+.detail .contact .article .con .list ul li .info p {
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003428}}
+.detail .contact .article .con .list ul li .info p span {
+  margin-right: 35px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003440}}
+.detail .contact .side .module {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003442}}
+.detail .contact .side .module .con {
+  padding: 9px;
+  border-color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003447}}
+.detail .contact .side .location {
+  background: transparent;
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003450}}
+.detail .contact .side .location .con {
+  padding-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003453}}
+.detail .contact .side .location .con .info a {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003456}}
+.detail .contact .side .location .con .info p {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003458}}
+.detail .contact .side .location .con .info p a {
+  color: #31548a;
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003473}}
+.detail .lord .article .con {
+  padding: 0;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003476}}
+.detail .lord .article .con ul {
+  margin-top: -1px;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003479}}
+.detail .lord .article .con ul li {
+  border-top: 1px dotted #d9d9d9;
+  height: 91px;
+  line-height: 91px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003484}}
+.detail .lord .article .con ul li > div {
+  float: left;
+  height: 91px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003488}}
+.detail .lord .article .con ul li .info {
+  width: 135px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003490}}
+.detail .lord .article .con ul li .info em {
+  font: italic 18px/91px Georgia;
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003493}}
+.detail .lord .article .con ul li .info em.red {
+  color: #d63333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003498}}
+.detail .lord .article .con ul li:hover {
+  background: url(images/bdl.png) no-repeat left top #fafafa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003503}}
+.detail .lord .article .con ul li.first .rank i {
+  background-position: -185px -109px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003510}}
+.detail .lord .article .con ul li.sec .rank i {
+  background-position: -238px -109px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003517}}
+.detail .lord .article .con ul li.thd .rank i {
+  background-position: -292px -109px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003522}}
+.detail .lord .article .con ul li .rank {
+  width: 100px;
+  font-style: italic;
+  text-align: right;
+  color: #31548a;
+  font-size: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003528}}
+.detail .lord .article .con ul li .rank i {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  width: 50px;
+  height: 72px;
+  background: url(images/icons.png) no-repeat;
+  _background-image: url(images/icons-8.png);
+  vertical-align: middle;
+  *position: relative;
+  *top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003539}}
+.detail .lord .article .con ul li .address {
+  margin-left: 60px;
+  width: 268px;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003543}}
+.detail .lord .article .con ul li .address img {
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003546}}
+.detail .lord .article .con ul li .address a {
+  font: bold 14px/18px "\5B8B\4F53";
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003557}}
+.detail .lord .lord_rank .con {
+  background: #fff;
+  border: 1px solid #31548a;
+  border-top: none;
+  position: relative;
+  padding-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003563}}
+.detail .lord .lord_rank .con .line {
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid #63AB2A;
+  left: 16px;
+  top: 33px;
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003571}}
+.detail .lord .lord_rank .con ul {
+  *z-index: 99;
+  *position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003575}}
+.detail .lord .lord_rank .con li {
+  margin-bottom: 10px;
+  padding-left: 30px;
+  position: relative;
+  *height: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003581}}
+.detail .lord .lord_rank .con li.front .num {
+  background: #E24A49;
+  border-color: #BB3E3C;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003586}}
+.detail .lord .lord_rank .con li .num {
+  position: absolute;
+  display: block;
+  width: 14px;
+  height: 13px;
+  line-height: 13px;
+  color: #fff;
+  background: #78D034;
+  left: 9px;
+  top: 23px;
+  text-align: center;
+  border: 1px solid #31548a;
+  z-index: 99;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003600}}
+.detail .lord .lord_rank .con li .img {
+  margin-right: 10px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003603}}
+.detail .lord .lord_rank .con li .img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003607}}
+.detail .lord .lord_rank .con li .info {
+  height: 60px;
+  display: table-cell;
+  vertical-align: middle;
+  *margin-top: 10px;
+  *float: left;
+  *height: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003614}}
+.detail .lord .lord_rank .con li .info a {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003617}}
+.detail .lord .lord_rank .con li .info p {
+  *white-space: nowrap;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003619}}
+.detail .lord .lord_rank .con li .info p em {
+  color: #31548a;
+  font: italic 20px/1.2 Georgia;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003630}}
+.intro_banner {
+  position: relative;
+  padding: 15px 20px;
+  background: #EEEEEE;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003635}}
+.intro_banner .img {
+  float: left;
+  margin-right: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003639}}
+.intro_banner .img img {
+  width: 130px;
+  height: 130px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003645}}
+.intro_banner .info {
+  height: 130px;
+  display: table-cell;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003649}}
+.intro_banner .info h1,
+.intro_banner .info p em {
+  font-size: 18px;
+  color: #333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003653}}
+.intro_banner .info p {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003656}}
+.intro_banner .info .down {
+  display: block;
+  margin-top: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003661}}
+.intro_banner .btns {
+  width: 50%;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003667}}
+.intro_banner .btns a {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  background: #fff;
+  height: 27px;
+  line-height: 27px;
+  padding: 0 10px 0 25px;
+  border-radius: 3px;
+  margin-left: 10px;
+  position: relative;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003677}}
+.intro_banner .btns a i {
+  width: 14px;
+  height: 14px;
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003685}}
+.intro_banner .btns a i.collect {
+  background: url(images/icons.png) no-repeat -288px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003688}}
+.intro_banner .btns a i.lord {
+  background: url(images/icons.png) no-repeat -303px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003691}}
+.intro_banner .btns a i.loc_album {
+  background: url(images/icons.png) no-repeat -347px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003694}}
+.intro_banner .btns a i.location {
+  background: url(images/icons.png) no-repeat -320px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003697}}
+.intro_banner .btns a i.mall {
+  background: url(images/icons.png) no-repeat -333px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_detail\.less}line{font-family:\00003700}}
+.intro_banner .btns a i.item {
+  background: url(images/icons.png) no-repeat -270px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\000032}}
+/* @charset "utf-8"; */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\000032}}
+#signin-modal {
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\000035}}
+#signin-modal:before,
+#signin-modal:after {
+  display: block;
+  content: "";
+  line-height: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000310}}
+#signin-modal:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000313}}
+#signin-modal .modal-header h3 {
+  font-size: 12px;
+  font-weight: normal;
+  color: #aaa;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000321}}
+#signin-modal .modal-body {
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000324}}
+#signin-modal .signup-modal-form {
+  width: 310px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000328}}
+#signin-modal .signup-modal-form input {
+  margin-bottom: 10px;
+  /*min-height:0 \0;*/
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000332}}
+#signin-modal .inputs input[type="text"],
+#signin-modal .inputs input[type="password"] {
+  *padding-left: 0;
+  *padding-right: 0;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000337}}
+#signin-modal .modal-body {
+  overflow-y: visible;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000340}}
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  filter: alpha(opacity=40);
+  opacity: .4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000344}}
+#signin-modal .signin-modal-form {
+  width: 210px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000348}}
+#signin-modal .signin-modal-form input {
+  margin-bottom: 10px;
+  /*min-height:0 \0*/
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000353}}
+#signin-modal .divider {
+  width: 1px;
+  border-right: 1px solid #eee;
+  margin: 0 9px;
+  height: 250px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000360}}
+#signin-modal .caption h3 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000365}}
+#signin-modal .caption p {
+  color: #aaa;
+  line-height: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000371}}
+#signin-modal .caption p.error {
+  color: #cc0000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000374}}
+#signin-modal .inputs {
+  height: 130px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000377}}
+#signin-modal .inputs p {
+  padding: 0;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000381}}
+#signin-modal input {
+  border-radius: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000384}}
+#signin-modal .inputs .rememberme {
+  float: left;
+  font-weight: normal;
+  width: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000389}}
+#signin-modal .inputs .forgot {
+  display: block;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000393}}
+#signin-modal .btns {
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000396}}
+#signin-modal .btns input {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\0000399}}
+#signin-modal .btns .btn-weibo i,
+#signin-modal .btns .btn-qq i {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\00003108}}
+#signin-modal .btns .btn-weibo i {
+  background: url('ico_syn.gif') -20px 0 no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_sign_form\.less}line{font-family:\00003111}}
+#signin-modal .btns .btn-qq i {
+  background: url('ico_syn.gif') 0 0 no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\000031}}
+.ad-banner-middle,
+.ad-banner-half {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\000032}}
+.ad-banner-middle > div,
+.ad-banner > div {
+  margin: 0 auto !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\000033}}
+.ad-banner,
+.ad-banner-middle {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\000036}}
+.ad-banner-half {
+  margin-left: -10px;
+  overflow: hidden;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\0000310}}
+.ad-banner-half > div {
+  width: 495px;
+  float: left;
+  margin-left: 10px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\0000317}}
+*html .ad-banner-half div {
+  width: 495px;
+  display: inline;
+  margin-left: 10px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\0000323}}
+.fixAd {
+  position: fixed;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\0000325}}
+.fixAd i {
+  position: absolute;
+  right: 0;
+  top: -15px;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_ad\.less}line{font-family:\0000331}}
+.fixAd img {
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\000031}}
+#container {
+  margin: 20px auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\000035}}
+.download-wrap .layout {
+  height: 598px;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\000039}}
+.download-wrap .iphone-bd {
+  height: 598px;
+  width: 100%;
+  background: url('images/bg_download_banner.jpg') center center repeat;
+  position: relative;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000315}}
+.download-wrap .iphone-bd h3 {
+  position: absolute;
+  top: 50px;
+  left: 360px;
+  line-height: 42px;
+  font-size: 36px;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000326}}
+.download-wrap .iphone-bd .summary {
+  position: absolute;
+  top: 100px;
+  left: 360px;
+  width: 530px;
+  line-height: 28px;
+  font-size: 16px;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000335}}
+.download-wrap .iphone-bd .btn-ipa {
+  background: url('images/btn_download_app.png') repeat-y scroll 0 -999em;
+  background-position: -78px 0;
+  width: 78px;
+  height: 78px;
+  position: absolute;
+  bottom: 135px;
+  left: 460px;
+  cursor: pointer;
+  border: none;
+  margin: 0 0 0 150px;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000347}}
+.download-wrap .iphone-bd .btn-ipa span {
+  display: block;
+  margin: 100px 0;
+  padding: 5px;
+  text-align: center;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000355}}
+.download-wrap .iphone-bd .btn-appstore {
+  background: url('images/btn_download_app.png') repeat-y scroll 0 -999em;
+  background-position: 0 0;
+  width: 78px;
+  height: 78px;
+  position: absolute;
+  bottom: 135px;
+  left: 460px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000367}}
+.download-wrap .iphone-bd .btn-appstore span {
+  display: block;
+  margin: 100px 0;
+  padding: 5px;
+  text-align: center;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000375}}
+.download-wrap .iphone-bd .two-dimensional-code {
+  position: absolute;
+  bottom: 135px;
+  left: 760px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000380}}
+.download-wrap .iphone-bd .imitation-iphone {
+  height: 354px;
+  left: 115px;
+  overflow: hidden;
+  position: absolute;
+  top: 132px;
+  width: 187px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000387}}
+.download-wrap .iphone-bd .imitation-iphone li {
+  float: left;
+  width: 187px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000393}}
+.download-wrap .android-bd {
+  height: 598px;
+  width: 100%;
+  background: url('images/bg_download_banner.jpg') center center repeat;
+  position: relative;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\0000399}}
+.download-wrap .android-bd h3 {
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  line-height: 42px;
+  font-size: 36px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003107}}
+.download-wrap .android-bd a {
+  text-indent: -9999em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003110}}
+.download-wrap .android-bd .summary {
+  position: absolute;
+  top: 100px;
+  left: 70px;
+  width: 530px;
+  line-height: 28px;
+  font-size: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003118}}
+.download-wrap .android-bd .btn-apk {
+  background: url('images/btn_download_app.png') repeat-y scroll 0 -999em;
+  background-position: 0 0;
+  width: 78px;
+  height: 78px;
+  display: block;
+  position: absolute;
+  bottom: 130px;
+  left: 70px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003130}}
+.download-wrap .android-bd .btn-apk span {
+  display: block;
+  margin: 100px 0;
+  padding: 5px;
+  text-align: center;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003138}}
+.download-wrap .android-bd .two-dimensional-code {
+  position: absolute;
+  bottom: 135px;
+  left: 350px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003143}}
+.download-wrap .android-bd .imitation-android {
+  height: 310px;
+  overflow: hidden;
+  position: absolute;
+  right: 68px;
+  top: 114px;
+  width: 200px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003150}}
+.download-wrap .android-bd .imitation-android li {
+  float: left;
+  width: 200px;
+  height: 298px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003158}}
+.concern-us {
+  position: relative;
+  height: 54px;
+  margin: 20px 0 0 0;
+  padding: 0 0 0 150px;
+  background: #e8ecde;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003164}}
+.concern-us h3 {
+  position: absolute;
+  margin: 5px 0 0 -90px;
+  font-size: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003169}}
+.concern-us ul {
+  margin-left: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/_download\.less}line{font-family:\00003172}}
+.concern-us li {
+  float: left;
+  width: 19%;
+  margin-top: 5px;
+  overflow: hidden;
+}
+/**variable**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000328}}
+i.in_icon {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  width: 14px;
+  height: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000334}}
+i.collect {
+  background: url(images/icons.png) no-repeat -288px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000337}}
+i.lord {
+  background: url(images/icons.png) no-repeat -303px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000340}}
+i.loc_album {
+  background: url(images/icons.png) no-repeat -347px 0;
+  _background-image: url(images/icons-8.png);
+  width: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000344}}
+i.location {
+  background: url(images/icons.png) no-repeat -320px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000347}}
+i.mall {
+  background: url(images/icons.png) no-repeat -333px 0;
+  _background-image: url(images/icons-8.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000351}}
+a.qrcode {
+  font: 11px/1 Microsoft Yahei !important;
+  border: 1px solid #000;
+}
+/*评分*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000357}}
+.star span {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  width: 83px;
+  height: 15px;
+  background: url(images/stars.png) no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000362}}
+.star span.icon-0 {
+  background-position: -2px -2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000365}}
+.star span.icon-1 {
+  background-position: -2px -20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000368}}
+.star span.icon-2 {
+  background-position: -2px -38px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000371}}
+.star span.icon-3 {
+  background-position: -2px -54px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000374}}
+.star span.icon-4 {
+  background-position: -2px -72px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000377}}
+.star span.icon-5 {
+  background-position: -2px -88px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000380}}
+.star span.icon-6 {
+  background-position: -2px -106px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000383}}
+.star span.icon-7 {
+  background-position: -2px -122px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000386}}
+.star span.icon-8 {
+  background-position: -2px -140px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000389}}
+.star span.icon-9 {
+  background-position: -2px -157px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\0000392}}
+.star span.icon-10 {
+  background-position: -2px -174px;
+}
+/**varible end**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003101}}
+body {
+  font: 12px/1.5 'Microsoft Yahei', "\5B8B\4F53", verdana, sans-serif;
+  color: #666;
+  background: url(images/bd.jpg);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003106}}
+a {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003108}}
+a.down {
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003111}}
+a:hover {
+  color: #31548a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003117}}
+.layout {
+  width: 1000px;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003122}}
+.main {
+  padding-top: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003128}}
+.pagination ul {
+  border-radius: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003131}}
+.pagination ul li:first-child > a,
+.pagination ul li:last-child > a {
+  border-radius: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003135}}
+.pagination ul li a:hover {
+  color: #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003143}}
+label.up_label input[type="file"] {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003147}}
+.banner {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  _width: 1000px;
+  margin-top: -20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003153}}
+.banner a.left,
+.banner a.right {
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 175px;
+  background: url(images/icons.png) no-repeat 0 0;
+  _background-image: url(images/icons-8.png);
+  filter: alpha(opacity=40);
+  opacity: .4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003162}}
+.banner a.left:hover,
+.banner a.right:hover {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003166}}
+.banner a.right {
+  background-position: 0 -80px;
+  right: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003170}}
+.banner a.left {
+  left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003173}}
+.banner .content > div {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003175}}
+.banner .content > div .smalls {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003180}}
+.banner .content .loop {
+  width: 1370px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003185}}
+.banner .box {
+  float: left;
+  margin: 0 4px 4px 0;
+  height: 198px;
+  position: relative;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003192}}
+.banner .box .b_con {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003198}}
+.banner .box img {
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003202}}
+.banner .box.large {
+  width: 640px;
+  height: 400px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003206}}
+.banner .box.middle {
+  width: 318px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003209}}
+.banner .box.small {
+  width: 198px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003212}}
+.banner .box.long {
+  width: 400px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003214}}
+.banner .box.long img {
+  min-width: 100%;
+  width: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003219}}
+.banner .box .item {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 18px;
+  padding-bottom: 5px;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #000;
+  filter: alpha(opacity=70);
+  background: rgba(0, 0, 0, 0.6);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003235}}
+.banner .box .rate {
+  position: absolute;
+  font: italic 18px/30px Georgia;
+  color: #31548a;
+  right: 9px;
+  top: 10px;
+  padding: 0 15px;
+  border-radius: 15px;
+  text-align: center;
+  *padding: 0;
+  padding: 0\0;
+  *width: 94px;
+  width: 94px\0;
+  background: url(images/icons.png) -240px -71px no-repeat;
+  _background-image: url(images/icons-8.png);
+  background: rgba(0, 0, 0, 0.7);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003251}}
+.banner .box .rate i {
+  *zoom: 1;
+  display: inline-block;
+  _display: inline;
+  _zoom: 1;
+  width: 18px;
+  height: 20px;
+  background: url(images/icons.png) no-repeat -166px -60px;
+  _background-image: url(images/icons-8.png);
+  vertical-align: middle;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003262}}
+.modal-body {
+  overflow-x: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003265}}
+.modal-loading {
+  background: none repeat scroll 0 0 #FFFFFF;
+  line-height: 50px;
+  text-align: center;
+}
+/*
+	messager
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003273}}
+#messager {
+  min-width: 200px;
+  max-width: 300px;
+  _width: 200px;
+  padding: 20px 15px;
+  line-height: 20px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 9999;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid #666 \9;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+/*.small_banner{
+	width:250px;
+	height:300px;
+	overflow:hidden;
+	position:relative;
+	float:left;
+	li{
+		width:100%;
+		float:left;
+	}
+	.titles,.ctrls{
+		position:absolute;
+		left:0;
+		width:100%;
+		z-index:99;
+	}
+	.titles{
+		height:30px;
+		bottom:20px;
+		li{
+			position:relative;
+			z-index:100;
+			text-align:center;
+			line-height:30px;
+			a{
+				color:#fff;
+			}
+		}
+		.mask{
+			height:30px;
+			filter:alpha(opacity=60);
+			opacity:.6;
+			background:#000;
+			width:100%;
+			z-index:99;
+			position:absolute;
+			left:0;
+		}
+	}
+	.ctrls{
+		text-align:center;
+		height:20px;
+		background:#000;
+		bottom:0;
+		li{
+			cursor:pointer;
+			float:none;
+			.ib;
+			width:17px;
+			height:3px;
+			margin-left:3px;
+			background:#727272;
+			margin-top:9px;
+			_overflow:hidden;
+			&.current{
+				background:@green;
+			}
+		}
+	}
+}
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003358}}
+.map {
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.shengyang\.web\/www\/www\/index3\.0\/styles\/style\.less}line{font-family:\00003362}}
+.map img {
+  max-width: none;
+}

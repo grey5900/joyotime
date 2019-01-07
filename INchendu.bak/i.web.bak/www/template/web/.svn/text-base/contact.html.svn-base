@@ -1,0 +1,31 @@
+<!--{template web/header}-->
+
+<div class="container" id="container">
+	<div class="section fixed">
+		<div class="main">
+			<div class="inner">
+				<div class="main-header"><h2>联系我们</h2></div>
+				<div class="main-midden">
+					<div class="bd">
+						地址：四川省成都市锦江区锦东路668号国嘉新视界14楼<br>
+						邮编：610066<br>
+						电话：028-86007329<br>
+						传真：028-86007235<br>
+						客服电话：400-6028-377<br>
+						市场合作：<a href="mailto:business@in.chengdu.cn">business@in.chengdu.cn</a><br>
+						商户合作：<a href="mailto:shop@in.chengdu.cn">shop@in.chengdu.cn</a><br>
+						媒体合作：<a href="mailto:media@in.chengdu.cn">media@in.chengdu.cn</a><br>
+						渠道合作：<a href="mailto:channel@in.chengdu.cn">channel@in.chengdu.cn</a><br>
+						<div class="map-wrap">
+							<img alt="" src="/img/com_map.png">
+						</div>
+					</div>
+				</div>
+				<div class="main-footer"></div>
+			</div>
+		</div>
+		<!--{template siderbar}-->
+	</div>
+</div>
+
+<!--{template web/footer}-->

@@ -1,0 +1,72 @@
+<!--{template common/header}-->
+<div id="container">
+  <div class="mini-header">
+    <div class="card">
+      <a class="avatar" href="/user/{$info[id]}"><img src="{$info[avatar_h]}" /></a>
+      <div class="info">
+        <h2>
+          <a href="/user/{$info[id]}">{echo $info[nickname] ? $info[nickname] : $info[username];}</a>
+        </h2>
+        <p>{$info[description]}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="pagelet">
+      <!--{if !empty($list)}-->
+      <div class="total">在<em>{$info[mayorshipCount]}</em>个地方是地主</div>
+      <div class="mayor_block">
+        <div class="console_sidebar">
+          <a href="/user_mayor/{$info[id]}/{$prev}/" id="console_up" class="console_up">上一页</a>
+          <ul class="mayor_list" id="console_container">
+            <!--{loop $list $k $v}-->
+            <li data-lat="{$v[latitude]}" data-lng="{$v[longitude]}" data-id="{$v['id']}" data-house="{$v['placename']}" data-addr="{$v['address']}"><a href="/place/{$v[id]}/"><span class="title">{$v[placename]}</span><span class="time">{echo substr($v[mayorDate], 0, -3);}</span></a></li>
+            <!--{/loop}-->
+          </ul>
+          <a href="/user_mayor/{$info[id]}/{$next}/" id="console_down" class="console_down">下一页</a>
+        </div>
+        <div class="console_main">
+            <div id="map" class="map"></div>
+        </div>
+      </div>
+      <!--{/if}-->
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7dc3e4b24f182c84b3843400d2b83bbe"></script>
+<script type="text/javascript" src="/static/js/mapper.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var points = [],
+            markers = [],
+            infowindows = [];
+        $('#console_container li').each(function(i,n){
+            var _this = $(this),
+                    lat = _this.data('lat'),
+                    lng = _this.data('lng');
+
+            points[i] = new BMap.Point(lng,lat);
+            markers[i] = new BMap.Marker(points[i]);
+            infowindows[i] = new BMap.InfoWindow('<div style="width:200px;height:40px;"><a href="/place/'+_this.data("id")+'">'+_this.data("house")+'</a><p>地址：'+_this.data("addr")+'</p></div>');
+        })
+
+        $("#map").mapper({
+            lat : points[0].lat,
+            lng : points[0].lng,
+            marker : markers,
+            infowindow : infowindows,
+            control : true,
+            after: function(map){
+                $('#console_container li').each(function(i,n){
+                    var _this = $(this);
+                    _this.on("mouseover",function(){
+                        map.panTo(points[i]);
+                    })
+                })
+            }
+        });
+    });
+</script>
+
+
+<!--{template common/footer}-->

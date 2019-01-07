@@ -1,0 +1,272 @@
+[ERROR] 2012-08-29 14:59:20,348 method:org.quartz.core.JobRunShell.run(JobRunShell.java:222)
+Job DEFAULT.jobDeviceDetail threw an unhandled Exception: 
+org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is org.springframework.dao.CannotAcquireLockException: StatementCallback; SQL [REPLACE INTO StatUserDevice(activeCount,activeCount15,activeCount7,connectCount,deviceType,id,newCount,newUserCount,statDate) VALUES('251','265','254','2567','0','1','175','16','2012-07-01')]; Lock wait timeout exceeded; try restarting transaction; nested exception is java.sql.SQLException: Lock wait timeout exceeded; try restarting transaction
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:320)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:113)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:557)
+Caused by: org.springframework.dao.CannotAcquireLockException: StatementCallback; SQL [REPLACE INTO StatUserDevice(activeCount,activeCount15,activeCount7,connectCount,deviceType,id,newCount,newUserCount,statDate) VALUES('251','265','254','2567','0','1','175','16','2012-07-01')]; Lock wait timeout exceeded; try restarting transaction; nested exception is java.sql.SQLException: Lock wait timeout exceeded; try restarting transaction
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:261)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:407)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:428)
+	at com.joyotime.xr87.job.device.JobDevice$1.doInTransactionWithoutResult(JobDevice.java:334)
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:33)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:130)
+	at com.joyotime.xr87.job.device.JobDevice.execute(JobDevice.java:306)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:273)
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:311)
+	... 3 more
+Caused by: java.sql.SQLException: Lock wait timeout exceeded; try restarting transaction
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1055)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3558)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3490)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1959)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2109)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2642)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2571)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:782)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:625)
+	at org.apache.commons.dbcp.DelegatingStatement.execute(DelegatingStatement.java:264)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:421)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:396)
+	... 14 more
+[ERROR] 2012-08-29 14:59:20,368 method:org.quartz.core.ErrorLogger.schedulerError(QuartzScheduler.java:2361)
+Job (DEFAULT.jobDeviceDetail threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is org.springframework.dao.CannotAcquireLockException: StatementCallback; SQL [REPLACE INTO StatUserDevice(activeCount,activeCount15,activeCount7,connectCount,deviceType,id,newCount,newUserCount,statDate) VALUES('251','265','254','2567','0','1','175','16','2012-07-01')]; Lock wait timeout exceeded; try restarting transaction; nested exception is java.sql.SQLException: Lock wait timeout exceeded; try restarting transaction]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:224)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:557)
+Caused by: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is org.springframework.dao.CannotAcquireLockException: StatementCallback; SQL [REPLACE INTO StatUserDevice(activeCount,activeCount15,activeCount7,connectCount,deviceType,id,newCount,newUserCount,statDate) VALUES('251','265','254','2567','0','1','175','16','2012-07-01')]; Lock wait timeout exceeded; try restarting transaction; nested exception is java.sql.SQLException: Lock wait timeout exceeded; try restarting transaction
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:320)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:113)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	... 1 more
+Caused by: org.springframework.dao.CannotAcquireLockException: StatementCallback; SQL [REPLACE INTO StatUserDevice(activeCount,activeCount15,activeCount7,connectCount,deviceType,id,newCount,newUserCount,statDate) VALUES('251','265','254','2567','0','1','175','16','2012-07-01')]; Lock wait timeout exceeded; try restarting transaction; nested exception is java.sql.SQLException: Lock wait timeout exceeded; try restarting transaction
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:261)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:407)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:428)
+	at com.joyotime.xr87.job.device.JobDevice$1.doInTransactionWithoutResult(JobDevice.java:334)
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:33)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:130)
+	at com.joyotime.xr87.job.device.JobDevice.execute(JobDevice.java:306)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:273)
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:311)
+	... 3 more
+Caused by: java.sql.SQLException: Lock wait timeout exceeded; try restarting transaction
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1055)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3558)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3490)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1959)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2109)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2642)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2571)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:782)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:625)
+	at org.apache.commons.dbcp.DelegatingStatement.execute(DelegatingStatement.java:264)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:421)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:396)
+	... 14 more
+[INFO ] 2012-08-29 16:26:26,773 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:500)
+Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@e80a59: startup date [Wed Aug 29 16:26:26 CST 2012]; root of context hierarchy
+[INFO ] 2012-08-29 16:26:26,837 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:315)
+Loading XML bean definitions from file [E:\wwwroot\inchengdu\xr87.job\config\applicationContext.xml]
+[INFO ] 2012-08-29 16:26:27,116 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/jdbcConfig.properties]
+[INFO ] 2012-08-29 16:26:27,117 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/jobConfig.properties]
+[INFO ] 2012-08-29 16:26:27,117 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/config.properties]
+[INFO ] 2012-08-29 16:26:27,131 method:org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:581)
+Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@8bdcd2: defining beans [propertyConfigurer,dataSource,transactionManager,com.joyotime.xr87.util.SpringUtil#0,com.joyotime.xr87.job.util.BaseInfo#0,com.joyotime.xr87.job.Start#0,jobAbstract,jobDetailAbstract,jobSettle,jobSettleDetail,jobSettleTrigger,jobDevice,jobDeviceDetail,jobDeviceTrigger,schedulerFactory]; root of factory hierarchy
+[INFO ] 2012-08-29 16:26:27,408 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1157)
+Using default implementation for ThreadExecutor
+[INFO ] 2012-08-29 16:26:27,432 method:org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61)
+Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[INFO ] 2012-08-29 16:26:27,433 method:org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:243)
+Quartz Scheduler v.2.1.5 created.
+[INFO ] 2012-08-29 16:26:27,434 method:org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:154)
+RAMJobStore initialized.
+[INFO ] 2012-08-29 16:26:27,435 method:org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:268)
+Scheduler meta-data: Quartz Scheduler (v2.1.5) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[INFO ] 2012-08-29 16:26:27,436 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1306)
+Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[INFO ] 2012-08-29 16:26:27,436 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1310)
+Quartz scheduler version: 2.1.5
+[INFO ] 2012-08-29 16:26:27,438 method:org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2247)
+JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@1581593
+[INFO ] 2012-08-29 16:26:27,441 method:org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:534)
+Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[ERROR] 2012-08-29 16:26:52,432 method:org.quartz.core.JobRunShell.run(JobRunShell.java:222)
+Job DEFAULT.jobDeviceDetail threw an unhandled Exception: 
+org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is java.util.MissingFormatArgumentException: Format specifier 's'
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:320)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:113)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:557)
+Caused by: java.util.MissingFormatArgumentException: Format specifier 's'
+	at java.util.Formatter.format(Unknown Source)
+	at java.util.Formatter.format(Unknown Source)
+	at java.lang.String.format(Unknown Source)
+	at com.joyotime.xr87.job.device.JobDevice.execute(JobDevice.java:314)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:273)
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:311)
+	... 3 more
+[ERROR] 2012-08-29 16:26:52,440 method:org.quartz.core.ErrorLogger.schedulerError(QuartzScheduler.java:2361)
+Job (DEFAULT.jobDeviceDetail threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is java.util.MissingFormatArgumentException: Format specifier 's']
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:224)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:557)
+Caused by: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is java.util.MissingFormatArgumentException: Format specifier 's'
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:320)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:113)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	... 1 more
+Caused by: java.util.MissingFormatArgumentException: Format specifier 's'
+	at java.util.Formatter.format(Unknown Source)
+	at java.util.Formatter.format(Unknown Source)
+	at java.lang.String.format(Unknown Source)
+	at com.joyotime.xr87.job.device.JobDevice.execute(JobDevice.java:314)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:273)
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:311)
+	... 3 more
+[INFO ] 2012-08-29 16:32:14,798 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:500)
+Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@e80a59: startup date [Wed Aug 29 16:32:14 CST 2012]; root of context hierarchy
+[INFO ] 2012-08-29 16:32:14,863 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:315)
+Loading XML bean definitions from file [E:\wwwroot\inchengdu\xr87.job\config\applicationContext.xml]
+[INFO ] 2012-08-29 16:32:15,140 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/jdbcConfig.properties]
+[INFO ] 2012-08-29 16:32:15,141 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/jobConfig.properties]
+[INFO ] 2012-08-29 16:32:15,141 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/config.properties]
+[INFO ] 2012-08-29 16:32:15,155 method:org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:581)
+Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@8bdcd2: defining beans [propertyConfigurer,dataSource,transactionManager,com.joyotime.xr87.util.SpringUtil#0,com.joyotime.xr87.job.util.BaseInfo#0,com.joyotime.xr87.job.Start#0,jobAbstract,jobDetailAbstract,jobSettle,jobSettleDetail,jobSettleTrigger,jobDevice,jobDeviceDetail,jobDeviceTrigger,schedulerFactory]; root of factory hierarchy
+[INFO ] 2012-08-29 16:32:15,439 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1157)
+Using default implementation for ThreadExecutor
+[INFO ] 2012-08-29 16:32:15,462 method:org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61)
+Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[INFO ] 2012-08-29 16:32:15,463 method:org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:243)
+Quartz Scheduler v.2.1.5 created.
+[INFO ] 2012-08-29 16:32:15,465 method:org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:154)
+RAMJobStore initialized.
+[INFO ] 2012-08-29 16:32:15,466 method:org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:268)
+Scheduler meta-data: Quartz Scheduler (v2.1.5) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[INFO ] 2012-08-29 16:32:15,466 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1306)
+Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[INFO ] 2012-08-29 16:32:15,467 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1310)
+Quartz scheduler version: 2.1.5
+[INFO ] 2012-08-29 16:32:15,468 method:org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2247)
+JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@1581593
+[INFO ] 2012-08-29 16:32:15,472 method:org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:534)
+Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[ERROR] 2012-08-29 16:32:20,552 method:org.quartz.core.JobRunShell.run(JobRunShell.java:222)
+Job DEFAULT.jobDeviceDetail threw an unhandled Exception: 
+org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is java.util.MissingFormatArgumentException: Format specifier 's'
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:320)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:113)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:557)
+Caused by: java.util.MissingFormatArgumentException: Format specifier 's'
+	at java.util.Formatter.format(Unknown Source)
+	at java.util.Formatter.format(Unknown Source)
+	at java.lang.String.format(Unknown Source)
+	at com.joyotime.xr87.job.device.JobDevice.execute(JobDevice.java:314)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:273)
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:311)
+	... 3 more
+[ERROR] 2012-08-29 16:32:20,555 method:org.quartz.core.ErrorLogger.schedulerError(QuartzScheduler.java:2361)
+Job (DEFAULT.jobDeviceDetail threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is java.util.MissingFormatArgumentException: Format specifier 's']
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:224)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:557)
+Caused by: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'execute' on target class [class com.joyotime.xr87.job.device.JobDevice] failed; nested exception is java.util.MissingFormatArgumentException: Format specifier 's'
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:320)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:113)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	... 1 more
+Caused by: java.util.MissingFormatArgumentException: Format specifier 's'
+	at java.util.Formatter.format(Unknown Source)
+	at java.util.Formatter.format(Unknown Source)
+	at java.lang.String.format(Unknown Source)
+	at com.joyotime.xr87.job.device.JobDevice.execute(JobDevice.java:314)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:273)
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:311)
+	... 3 more
+[INFO ] 2012-08-29 16:36:38,510 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:500)
+Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@e80a59: startup date [Wed Aug 29 16:36:38 CST 2012]; root of context hierarchy
+[INFO ] 2012-08-29 16:36:38,574 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:315)
+Loading XML bean definitions from file [E:\wwwroot\inchengdu\xr87.job\config\applicationContext.xml]
+[INFO ] 2012-08-29 16:36:38,846 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/jdbcConfig.properties]
+[INFO ] 2012-08-29 16:36:38,847 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/jobConfig.properties]
+[INFO ] 2012-08-29 16:36:38,847 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:177)
+Loading properties file from URL [file:config/config.properties]
+[INFO ] 2012-08-29 16:36:38,861 method:org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:581)
+Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@8bdcd2: defining beans [propertyConfigurer,dataSource,transactionManager,com.joyotime.xr87.util.SpringUtil#0,com.joyotime.xr87.job.util.BaseInfo#0,com.joyotime.xr87.job.Start#0,jobAbstract,jobDetailAbstract,jobSettle,jobSettleDetail,jobSettleTrigger,jobDevice,jobDeviceDetail,jobDeviceTrigger,schedulerFactory]; root of factory hierarchy
+[INFO ] 2012-08-29 16:36:39,143 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1157)
+Using default implementation for ThreadExecutor
+[INFO ] 2012-08-29 16:36:39,166 method:org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61)
+Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[INFO ] 2012-08-29 16:36:39,167 method:org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:243)
+Quartz Scheduler v.2.1.5 created.
+[INFO ] 2012-08-29 16:36:39,168 method:org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:154)
+RAMJobStore initialized.
+[INFO ] 2012-08-29 16:36:39,170 method:org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:268)
+Scheduler meta-data: Quartz Scheduler (v2.1.5) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[INFO ] 2012-08-29 16:36:39,170 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1306)
+Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[INFO ] 2012-08-29 16:36:39,170 method:org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1310)
+Quartz scheduler version: 2.1.5
+[INFO ] 2012-08-29 16:36:39,172 method:org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2247)
+JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@1581593
+[INFO ] 2012-08-29 16:36:39,175 method:org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:534)
+Scheduler schedulerFactory_$_NON_CLUSTERED started.

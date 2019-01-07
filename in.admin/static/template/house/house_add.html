@@ -1,0 +1,136 @@
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <input type="hidden" name="placeCategory.name" id="placeCategory_name" value="楼盘" />
+        <input type="hidden" name="placeCategory.id" id="placeCategory_id" value="100" />
+        <input type="hidden" name="is_business" value="0" />
+        <input type="hidden" name="isRepayPoint" value="0" />
+        <input type="hidden" name="background" value=""/>
+        <div class="pageFormContent nowrap" layoutH="57">
+            <table width="100%">
+                <tr>
+                    <td valign="top">
+                    <dl>
+                        <dt>
+                            地点名称：
+                        </dt>
+                        <dd>
+                            <input type="text" size="30" name="placename" id="placename" class="required" value="{$poi['placename']}" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            地址：
+                        </dt>
+                        <dd>
+                            <input type="text" size="60" name="address" id="address" class="required" value="{$poi['address']}" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            纬度：
+                        </dt>
+                        <dd>
+                            <input type="text" size="15" name="latitude" id="latitude" class="required" value="<!--{if $poi['latitude']}-->{$poi['latitude']}<!--{else}-->30.659462<!--{/if}-->" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            经度：
+                        </dt>
+                        <dd>
+                            <input type="text" size="15" name="longitude" id="longitude" class="required" value="<!--{if $poi['longitude']}-->{$poi['longitude']}<!--{else}-->104.065735<!--{/if}-->" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            图标：
+                        </dt>
+                        <dd>
+                            <button type="button" id="poi_icon">上传图标</button>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            电话：
+                        </dt>
+                        <dd>
+                            <input type="text" size="40" name="tel" id="tel" value="{$poi['tel']}" alt="多个电话用空格分隔" />(多个电话用空格分隔)
+                        </dd>
+                    </dl>
+                    
+                    <!--{eval $place_id = $poi['id']?$poi['id']:0}-->
+                    <!--{template house/house_place_block}-->
+                    
+                    </td>
+                    <td width="400" valign="top"><iframe src="/static/fragment/map_soso.html?{$page_id}" scrolling="no" width="400" height="450" frameborder="0"></iframe></td>
+                </tr>
+            </table>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    <!--{if $module_id_json}-->
+    var moduleIds = eval('({$module_id_json})');
+    <!--{else}-->
+    var moduleIds = {};
+    <!--{/if}-->
+
+    $(function() {
+        var options = "name:\"poi_icon[]\", id:\"poi_icon\", file_type:\"common\", resolution:'odp',  required:false";
+        <!--{if $poi['icon']}-->
+            options += ", image_name: \"{$poi['icon']}\"";
+        <!--{/if}-->
+        $("#poi_icon", $("#{$page_id}")).my_upload(eval("({" + options + "})"));
+
+        options = "name:\"poi_icon[]\", id:\"poi_wp_icon\", file_type:\"common\", resolution:'wdp', required:false";
+        <!--{if $poi['icon']}-->
+            options += ", image_name: \"{$poi['icon']}\"";
+        <!--{/if}-->
+        $("#poi_wp_icon", $("#{$page_id}")).my_upload(eval("({" + options + "})"));
+        
+        $("#is_business", $("#{$page_id}")).click(function(){
+            if($(this).attr("checked")) {
+                $("#pcc_dl", $("#{$page_id}")).show();
+            } else {
+                $("#pcc_dl", $("#{$page_id}")).hide();
+            }
+        });
+		
+    });
+    
+    function del_add_module_data(moduleId) {
+        moduleIds['id_' + moduleId] = 0;
+        $("#add_module_data_" + moduleId, $("#{$page_id}")).remove();
+    }
+    
+    function hidden_add_module_data(obj, moduleId) {
+        var status = parseInt($(obj).attr("status"));
+        var b = status == 1?false:true;
+        $("#add_module_data_field_" + moduleId, $("#{$page_id}")).toggle(b);
+        $(obj).attr("status", status == 1?0:1);
+        $(obj).text(b?"隐藏":"展开");
+    }
+
+</script>

@@ -1,0 +1,1 @@
+<div class="alert alert-error alert-message hide"></div>

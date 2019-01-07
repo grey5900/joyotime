@@ -1,0 +1,68 @@
+﻿<!--{template common/header}-->
+<script type="text/javascript" src="/static/js/channel.min.js?{$version}"></script>
+<link href="/static/skin/channel_style.css" rel="stylesheet" type="text/css" />
+<div id="container-page">
+  <div class="container">
+    <!--{template /channel/nav}-->
+    <div class="main">
+      <div class="main-l">
+          <div class="push">
+              <div class="tit"><h2>活动</h2></div>
+              <div class="con">
+                  <div class="media-list">
+                      <!--{loop $list $row}-->
+                      <div class="media">
+                          <div class="media-thumb"><a href="/event_new/detail/{$row['id']}" target="_blank"><img src="{echo image_url($row['image'], 'common', 'udp')}" alt="{$row['subject']}"></a></div>
+                          <div class="media-body">
+                              <h4>
+                                  <a href="/event_new/detail/{$row['id']}" target="_blank">{$row['subject']}</a>
+                              </h4>
+                              <div class="join">
+                                      <!--{if $row['is_expired']}-->
+                                  <a href="/event_new/detail/{$row['id']}" class="btn btn-large disabled">已结束</a>
+                                      <!--{elseif $row['is_begin']}-->
+                                  <a href="/event_new/detail/{$row['id']}" class="btn btn-success btn-large">立即参加</a>
+                                      <!--{else}-->
+                                  <a href="/event_new/detail/{$row['id']}" class="btn btn-large disabled">敬请期待</a>
+                                      <!--{/if}-->
+                              </div>
+                              <div class="intro">
+                                  <!--{loop $row['intro'] $intro}-->
+                                  {$intro['title']}：{$intro['intro']}
+                                  <!--{/loop}-->
+                              </div>
+                          </div>
+                          <div class="media-footer">
+                              <span class="time"><em>{$row['startDate']}</em> ～<em> {$row['endDate']}</em></span>
+                          <span class="info">
+                            <i class="peopleico"></i>已有<em>{$row['hits']}关注</em>
+                          </span>
+                          </div>
+                      </div>
+                      <!--{/loop}-->
+
+                  </div>
+                  <!--{$paginate}-->
+              </div>
+          </div>
+    </div>
+
+    <div class="main-r">
+       			<!--{loop $sidebar_data $row}-->
+					<!--{template fragments/sidebars}-->
+				<!--{/loop}-->
+    </div>
+  </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+    $('.channel-nav').affix({
+        offset: {
+            top: $('.channel-nav').offset().top
+            , bottom: 210
+        }
+    })
+})
+</script>
+<!--{template common/footer}-->

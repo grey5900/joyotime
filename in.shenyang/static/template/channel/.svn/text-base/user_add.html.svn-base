@@ -1,0 +1,101 @@
+<div class="pageContent" id="channel_user_add_{$dialog_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>
+                    所属渠道：
+                </dt>
+                <dd>
+                    <select name="channel_id"<!--{if $is_edit}--> disabled="disabled"<!--{/if}-->>
+                        <option value="0">选择所属渠</option>
+                        <!--{loop $channel $row}-->
+                        <option value="{$row['id']}"<!--{if $row['id'] == $user['channelId']}--> selected<!--{/if}-->>{$row['name']}</option>
+                        <!--{/loop}-->
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    用户名：
+                </dt>
+                <dd>
+                    <input type="text" name="username" size="40" class="required" value="{$user['username']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    密码：
+                </dt>
+                <dd>
+                    <input type="password" size="40" name="password"<!--{if !$is_edit}--> class="required"<!--{/if}--> />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    启用：
+                </dt>
+                <dd>
+                    <label><input type="radio" name="status" value="0"<!--{if empty($user['status'])}--> checked="checked"<!--{/if}--> />是</label>
+                    <label><input type="radio" name="status" value="1"<!--{if $user['status']}--> checked="checked"<!--{/if}--> />否</label>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    备注：
+                </dt>
+                <dd>
+                    <textarea id="remark" name="remark" cols="60" rows="5">{$user['remark']}</textarea>
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick="onsubmit{$dialog_id}Add();">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function onsubmit{$dialog_id}Add() {
+        var form = $("form", $("#channel_user_add_{$dialog_id}"));
+        if (!form.valid()) {
+            return false;
+        }
+        
+        if($("select[name=channel_id]", form).val() == "0") {
+            alertMsg.error('请选择所属渠道');
+            return false;
+        }
+        
+        alertMsg.confirm("确定要提交么？", {
+            okCall : function() {
+                $.ajax({
+                    type: 'POST',
+                    url:form.attr("action"),
+                    data:form.serializeArray(),
+                    dataType:"json",
+                    cache: false,
+                    success: dialogAjaxDone,
+                    error: DWZ.ajaxError
+                });
+            }
+        });
+    }
+</script>

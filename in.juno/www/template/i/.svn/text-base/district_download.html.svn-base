@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>品质华侨城·幸福千万家</title>
+	<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}" type="text/css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="container">
+			<div class="lumps">
+				<div class="top">
+					<a href="#"><img src="/static/m_img/district/top_banner_download.jpg" /></a>
+				</div>
+				<div class="download">
+					<div class="download-button">
+						<a href="http://itunes.apple.com/cn/app/id428311029?mt=8" class="app half"></a>
+						<a href="http://in.chengdu.cn/dl/android/inchengdu-4.0.1.apk" class="pak half"></a>
+					</div>
+					<div class="download-info">
+						<div class="tit">
+							<i class="dtit"></i>
+						</div>
+						<div class="step">
+							<div class="dd">
+								<i class="st1"></i>
+								<span>5秒注册会员即可领取5000积分，积分商城礼品随心兑</span>
+							</div>
+						</div>
+						<div class="step">
+							<div class="dd">
+								<i class="st2"></i>
+								<span>每日登陆畅享惊喜，动动拇指小侨送您火爆大礼包</span>
+							</div>
+						</div>
+						<div class="step">
+							<div class="dd">
+								<i class="st3"></i>
+								<span>独家优惠抢先曝光，率先尊享会员身份</span>
+							</div>
+						</div>
+						<div class="step">
+							<div class="dd">
+								<i class="st4"></i>
+								<span>抢地主游戏，占领欢乐谷，争当华侨城地主之王</span>
+							</div>
+						</div>
+						<p>心动不如行动，成为侨城会会员！</p>
+						<p>和IN成都一起出发，开始一段魅力奇特的华侨城之旅吧！</p>
+					</div>
+					<div class="download-button">
+						<a href="http://itunes.apple.com/cn/app/id428311029?mt=8" class="app half"></a>
+						<a href="http://in.chengdu.cn/dl/android/inchengdu-4.0.1.apk" class="pak half"></a>
+					</div>
+				</div>
+				<div class="footer">
+					<p>IN.CHENGDU.CN</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

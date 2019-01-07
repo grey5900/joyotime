@@ -1,0 +1,98 @@
+<div class="pageContent">
+    <div class="pageFormContent" layoutH="38">
+        <dl>
+            <dt style="width:120px;">
+                订单号：
+            </dt>
+            <dd>
+                {$order['id']}
+            </dd>
+        </dl>
+        <dl>
+            <dt style="width:120px;">
+                商品名：
+            </dt>
+            <dd>
+                {$order['itemTitle']}（{$order['itemId']}）
+            </dd>
+        </dl>
+        <dl>
+            <dt style="width:120px;">
+                下单用户：
+            </dt>
+            <dd>
+                {$order['nickname']} 
+                （{$order['uid']}）
+                {$order['cellphoneNo']}
+            </dd>
+        </dl>
+        <dl>
+            <dt style="width:120px;">
+                下单时间：
+            </dt>
+            <dd>
+                {$order['createDate']}
+            </dd>
+        </dl>
+        <!--{if $order['isPayed']}-->
+        <dl>
+            <dt style="width:120px;">
+                付款方式：
+            </dt>
+            <dd>
+                {$order['payWayName']}
+            </dd>
+        </dl>
+        <dl>
+            <dt style="width:120px;">
+                付款时间：
+            </dt>
+            <dd>
+                {$order['payDate']}
+            </dd>
+        </dl>
+        <!--{/if}-->
+        <dl>
+            <dt style="width:120px;">
+                购买数量：
+            </dt>
+            <dd>
+                {$order['quantity']}
+            </dd>
+        </dl>
+        <dl>
+            <dt style="width:120px;">
+                商品金额：
+            </dt>
+            <dd>
+                {$order['goodsMoney']}
+            </dd>
+        </dl>
+        <!--{if $order['itemType'] == 13}-->
+        <dl>
+            <dt style="width:120px;">
+                附加费用：
+            </dt>
+            <dd>
+                {$order['extMoney']}
+            </dd>
+        </dl>
+        <!--{/if}-->
+        <dl>
+            <dt style="width:120px;">
+                <!--{if $order['isPayed']}-->实付<!--{else}-->应付<!--{/if}-->金额：
+            </dt>
+            <dd>
+                {$order['money']}
+            </dd>
+        </dl>
+        <dl>
+            <dt style="width:120px;">
+                来源方订单号：
+            </dt>
+            <dd>
+                {$order['sourceName']} {$order['partnerOrderCode']}
+            </dd>
+        </dl>
+    </div>
+</div>

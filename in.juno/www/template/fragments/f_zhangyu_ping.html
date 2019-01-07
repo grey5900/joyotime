@@ -1,0 +1,27 @@
+{if $v3_fragments['v3_f_zhangyu_ping']}
+<div class="module hot_rec">
+						<div class="tit">
+							<h3>热门推荐<i></i></h3>
+						</div>
+						<div class="con">
+							<ul class="channel_list">
+							{loop $v3_fragments['v3_f_zhangyu_ping']['data'] $f_ping_key $zhangyu}
+								<li>
+								
+									<div class="img">
+										<a href="{$zhangyu['link']}" target="_blank"><img alt="{$zhangyu['title']}" src="{$zhangyu['image']}"></a>
+									</div>
+									<div class="info">
+										<h4>
+											<a href="{$zhangyu['link']}" target="_blank">{$zhangyu['title']}</a>
+										</h4>
+										<p>{$zhangyu['summary']} <a href="{$zhangyu['link']}" target="_blank">[详细]</a></p>
+										
+									</div>
+								</li>
+							{/loop}
+								
+							</ul>
+						</div>
+					</div>
+					{/if}

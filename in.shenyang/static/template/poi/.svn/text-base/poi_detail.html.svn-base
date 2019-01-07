@@ -1,0 +1,120 @@
+<div class="pageHeader">
+    <form method="post" action="{eval echo site_url(array('poi', 'poi', 'detail'))}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent" width="100%">
+                <tr>
+                    <td width="80">
+                    <select class="combox" name="type">
+                        <option value="id">POI ID</option>
+                        <option value="placename">POI名称</option>
+                    </select></td>
+                    <td width="200">
+                    <input type="text" name="keywords" value="{$keywords}" size="30"/>
+                    </td>
+                    <td width="50">
+                    <ul>
+                        <li>
+                            <div class="buttonActive">
+                                <div class="buttonContent">
+                                    <button type="submit">
+                                        跳转
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul></td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            <div style="width:600px;float:left">
+            <table class="table" layoutH="800" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="5%">ID</th>
+                                <th width="20%">地点名</th>
+                                <th width="25%">地址</th>
+                                <th width="5%">状态</th>
+                                <th width="15%">分类</th>
+                            </tr>  
+                         </thead>  
+                         <tbody>
+                            <tr>
+                                <td>{$place['id']}</td>
+                                <td>{$place['placename']}</td>
+                                <td>{$place['address']}</td>
+                                <td>{$poi_status[$place['status']]}</td>
+                                <td id="place_category_tip">{$place['category']}</td>
+                            </tr>
+                         </tbody>
+                         <thead>    
+                            <tr>
+                                <th width="5%">星级</th>
+                                <th width="5%">权重</th>
+                                <th width="5%">返还积分</th>
+                                <th width="10%">点评</th>
+                                <!-- th width="5%">吐槽</th -->
+                                <th width="10%">地点册</th>
+                                <!-- th width="10%">7天热度</th -->
+                                <th width="25%">电话</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{$place['level']}</td>
+                                <td>{$place['rating']}</td>
+                                <td>{$place['isRepayPoint']}</td>
+                                <td>{$place['tipCount']}</td>
+                                <!-- td>{$place['pcc']}</td -->
+                                <td>{$place['atCollectionCount']}</td>
+                                
+                                <td>{$place['tel']}</td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>       
+            </div>
+            {if $place['background']}<div style="width:150px; height:140px;float:left">
+           		<img src="{echo image_url($place['background'],'common');}" width=140 height=140 />
+           	</div>{/if}
+           	<div style="width:100px; height:140px;float:left">
+           	<input type="button" onclick="$.pdialog.open('/poi/poi/poi_select_image/id/{$place['id']}/rel/poi_poi_detail' , 'poi_poi_select_image'  , '编辑封面图片' , {width:1110,height:500,close:imgareaselect_close})" value="编辑封面" />
+           <!-- 	<br/><a class="button" href="/poi/poi/poi_select_image/id/{$place['id']}" target="ajaxTodo" title="确定要删除封面吗？">删除封面</a> -->
+           	<!-- onclick="navTab.openTab('poi_poi_add', '/poi/poi/edit/id/{$place['id']}' ,{ title:'编辑POI', fresh:false })" -->
+            </div>
+            </div>
+    </form>
+</div>
+<div class="pageContent" style="padding:0px 5px 5px">
+    <div class="divider"></div>
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    
+                    <li>
+                        <a href="javascript:;"><span id="poi_tip_num_id">点评({$place['tipCount']})</span></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="detail_tip" class="unitBox">
+                    {eval echo include_file(site_url(array('poi', 'poi', 'find_tip', 'id', $place['id'])));}
+                </div>
+            </div>
+            
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $("select[name=type]").val("{$type}");
+        //$("#poi_tip_num_id").text($("span[id=callback_poi_tip_num_id]").text());
+        //$("#poi_photo_num_id").text($("span[id=callback_poi_photo_num_id]").text());
+    });
+</script>

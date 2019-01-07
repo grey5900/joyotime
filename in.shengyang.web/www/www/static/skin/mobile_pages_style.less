@@ -1,0 +1,39 @@
+@import "_mobile/reset.less";
+@import "_mobile/mixins.less";
+
+@import "_mobile/banners.less";
+@import "_mobile/buttons.less";
+@import "_mobile/message.less";
+@import "_mobile/modals.less";
+@import "_mobile/pagination.less";
+@import "_mobile/table.less";
+
+.container {
+  height: 100%;
+  width: auto;
+}
+.lumps {
+  width: 100%;
+}
+.lump {
+  margin: 0 auto;
+  width: 100%;
+  min-height:200px;
+  text-align: center;
+}
+.button {
+  display:inline-block;
+  padding: 4px 0;
+  margin: 10px 0 20px;
+  width: 220px;
+  .border-radius(50px);
+  .orange-button();
+}
+.button-default {
+  display:inline-block;
+  padding: 4px 0;
+  margin: 10px 0 20px;
+  width: 220px;
+  .border-radius(50px);
+  .gray-button();
+}

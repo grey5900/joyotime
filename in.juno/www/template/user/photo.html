@@ -1,0 +1,43 @@
+<!--{template common/header}-->
+<script type="text/javascript" src="/static/js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="/static/js/photo.min.js"></script>
+<div id="container">
+	<!--{template sub_header}-->
+<!-- 图片墙 -->
+  <div class="container">
+    <div class="photowall">
+      <div class="tit">
+        <h3>{$info['name']}的图片墙</h3>
+      </div>
+      <div class="con">
+        <ul class="thumbnails">
+        	<!--{loop $list $k $v}-->
+        	<li class="thumbnail">
+        	  <div class="photo">
+        	    <a href="/review/$v[id]"><img src="{$v[photoName]}" alt="{$v[content]}" width="{$v[photoSize][w]}" height="{$v[photoSize][h]}" /></a>
+        	    <!--{if !empty($v[content])}--><p>{$v[content]}</p><!--{/if}-->
+        	  </div>
+        	  <div class="user">
+        	  
+        	   <a class="action-like praise {if !$v['is_praised']}on{/if}" data-type="19" data-id="{$v[id]}" href="#">赞<span id="praise_count_{$v[id]}"><!--{if $v[praiseCount]}-->({$v[praiseCount]})<!--{/if}--></span></a>
+        	    <div class="detail-place">
+        	    
+        	      <a class="username" target="_blank" href="/place/{$v[placeId]}">{$v[placename]}</a>
+        	      <p class="data">{$v[createDate]}</p>
+        	    </div>
+        	    
+        	  </div>
+        	</li>
+        	<!--{/loop}-->
+        </ul>
+        {if $paginate}
+       	{$paginate}
+       	{else}
+       	<div class="pagination" >
+       	</div>
+       	{/if}
+      </div>
+    </div>
+  </div>
+</div>
+<!--{template common/footer}-->

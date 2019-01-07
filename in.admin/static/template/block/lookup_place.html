@@ -1,0 +1,17 @@
+<div id="lookup_place_{$page_id}">
+<input type="hidden" name="content.id" id="c_id" />
+<input type="text" name="content.name" id="c_name" {echo $no_required?'':' class="required"';} size="30" readonly />
+<a id="lookup_link" class="btnLook" href="/lookup/list_lookup/type/place" lookupGroup="content" height="560">查找带回</a>
+</div>
+<!--{if $c_id}-->
+<script type="text/javascript">
+    $(function(){
+        $.getJSON("/block/get_place/id/{$c_id}", function(json){
+            if(json.id) {
+                $("#c_id", "#lookup_place_{$page_id}").val(json.id);
+                $("#c_name", "#lookup_place_{$page_id}").val(json.name);
+            }
+        });
+    });
+</script>
+<!--{/if}-->

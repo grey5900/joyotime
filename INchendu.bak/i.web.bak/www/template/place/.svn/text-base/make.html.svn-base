@@ -1,0 +1,104 @@
+<!--{template web/header}-->
+<script type="text/javascript">
+	function list_soncate(){
+		var parent = $("#catelog").val();
+		if(parent != ""){
+			var url = "/list_category/"+$("#catelog").val();
+			$.getJSON(url, function(json){
+				if(json != null){
+					var sonSelector = $("<select></select>").attr({"name":"catelog[]","class":"span2"});
+					sonSelector.append($("<option value=\"\" selected>--</option>"));
+					$.each(json, function(i, item){
+						var sonOption = $("<option value=\""+item.id+"\">"+item.content+"</option>");
+						sonSelector.append(sonOption);
+					});
+					$("#cates").append(sonSelector);
+				}
+			});
+		}
+	}
+</script>
+<div class="container" id="container">
+	<div class="block gap">
+		<img src="/img/pic_21.jpg" />
+	</div>
+	<div class="block gap">
+		<div class="block-header"><h2>六大特权</h2></div>
+		<div class="block-content">
+			<div class="main dotted-solid-line">
+				<ul>
+					<li><img src="/img/pic_22.jpg" /></li>
+					<li><img src="/img/pic_23.jpg" /></li>
+					<li><img src="/img/pic_25.jpg" /></li>
+					<li><img src="/img/pic_27.jpg" /></li>
+					<li><img src="/img/pic_24.jpg" /></li>
+					<li><img src="/img/pic_26.jpg" /></li>
+				</ul>
+			</div>
+			<form class="" id="place-add-form" action="/add_place/" method="post">
+				<div class="main dotted-solid-line">
+					<div class="grid-lf">
+						<div class="control-group">
+							<label class="" for="placename"><span class="warn">*</span> 名称：</label>
+							<div class="controls">
+								<input type="text" name="placename" value="" id="placename" placeholder="商家名称" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="" for="catelog"><span class="warn">*</span> 类型：</label>
+							<div class="controls" id="cates">
+								<select name="catelog[]" id="catelog" class="span2" onchange="list_soncate();">
+									<option value="" selected>--</option>
+									{loop $cats $key $val}
+									<option value="{$key}" style="font-size:16px;font-weight:bold;">{$val[content]}</option>
+									{/loop}
+								</select>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="" for="address"><span class="warn">*</span> 地址：</label>
+							<div class="controls">
+								<input type="text" name="address" value="" id="address" placeholder="拖动地图标记自动获取地址" />
+								<input type="hidden" name="coordinate" id="coordinate" />
+								
+							</div>
+						</div>
+					<!--	<div class="control-group">
+							<label class="" for="phone"><span class="warn">*</span> 电话：</label>
+							<div class="controls">
+								<input type="text" name="phone" value="" id="phone" maxlength="11" />
+							</div>
+						</div>
+					 	<div class="control-group">
+							<label class="" for="average"><span class="warn">*</span> 人均消费：</label>
+							<div class="controls">
+								<input type="text" name="average" value="" id="average" />
+							</div>
+						</div> -->
+						<div class="control-group">
+							<label class="" for="verifycode"><span class="warn">*</span> 验证码：</label>
+							<div class="controls">
+								<input type="text" name="verifycode" value="" id="verifycode" class="input-small" />
+								<img id="i_valicode" src="/captcha" style="cursor:pointer;" alt="验证码" title="看不清？点击图片更换一下" onclick="$(this).attr('src','/captcha');" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="" for="verifycode"></label>
+							<span>
+								* 商家添加后工作人员会在24小时审核确认
+							</span>
+						</div>
+					</div>
+					<div class="grid-rt">
+						<div class="map" id="map" data-lat="30.6581000" data-lng="104.0660000" style="width:610px;height:370px;"></div>
+					</div>				
+				</div>
+				<div class="main">
+					<input type="submit" name="submit" class="btn btn-primary btn-large" value="　入驻IN成都　" />
+				</div>
+			</form>
+		</div>
+		<div class="block-footer"></div>
+	</div>
+</div>
+<!--{template web/footer}-->

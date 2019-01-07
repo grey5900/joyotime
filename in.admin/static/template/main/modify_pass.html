@@ -1,0 +1,25 @@
+<div class="pageContent">
+	<form method="post" action="{eval echo site_url(array('main','modify_pass'));}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="57">
+			<dl>
+				<dt>旧 密 码</dt>
+				<dd><input type="password" name="oldpwd" class="required" size="20" /></dd>
+			</dl>
+			<dl>
+				<dt>新 密 码</dt>
+				<dd><input type="password" name="newpwd" id="newpwd" class="required alphanumeric" size="20" /></dd>
+			</dl>
+			<dl>
+				<dt>确认密码</dt>
+				<dd><input type="password" name="newpwd2" class="required" equalto="#newpwd" size="20" /></dd>
+			</dl>
+		</div>
+		<input type="hidden" name="id" value="{$id}" />
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

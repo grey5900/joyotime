@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:wb=“http://open.weibo.com/wb”>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title><!--{$title}--></title>
+	<meta name="keywords" content="<!--{$keywords}-->" />
+	<meta name="description" content="<!--{$description}-->" />
+	<script type="text/javascript">
+		var online_id = '<!--{$auth[uid]}-->',online_name = '<!--{if $auth[nickname]}--><!--{$auth[nickname]}--><!--{else}--><!--{$auth[username]}--><!--{/if}-->',online_avatar = '<!--{if $auth[avatar_m]}--><!--{$auth[avatar_m]}--><!--{else}-->/static/head_default.png<!--{/if}-->';
+	</script>
+	<script type="text/javascript">
+		var signout_url = "{$signout_url}";
+		var sso_logout_url = "{$sso_logout_url}";
+		var current_url = location.href.split("?")[0];
+	</script>
+	<link rel="stylesheet" href="/index3.0/styles/bootstrap/css/bootstrap.min.css" />
+	<link href="/static/skin/style.css?{$version}" rel="stylesheet" type="text/css" />
+	<link href="/static/skin/{$c_name}_style.css?{$version}" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/index3.0/styles/_header.css" type="text/css" />
+    <script type="text/javascript" src="/p/?static/js/jquery.min.js&static/js/jquery.infinitescroll.min.js&static/js/bootstrap.min.js&static/js/extend.js&static/js/jquery.validate.min.js&static/js/jquery.placeholder.min.js&{$version}"></script>
+    
+    <!--  <script type="text/javascript" src="/static/js/{$c_name}.min.js?{$version}"></script>-->
+    <script type="text/javascript" src="/static/js/{$c_name}.js?{$version}"></script>
+	
+	<!--[if lte IE 6]>
+	<script type="text/javascript" src="http://tg.chengdu.cn/static/js/new/warningIE6.js"></script>
+	<![endif]-->
+	
+	
+	
+	  
+    <!--{if $theme}-->
+    <link href="/static/in_themes/{$theme}/skin/style.css?{$version}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/static/in_themes/{$theme}/js/extend.min.js?{$version}"></script>
+	<script>
+		var theme = "$theme";
+	</script>
+    <!--{/if}-->
+    <script type='text/javascript' src='http://js.adm.cnzz.net/js/abase.js'></script>
+	<style type="text/css">
+		.layout{
+			width:1000px;
+			margin:0 auto;
+		}
+		body{
+			padding-top:0;
+		}
+		.nav{
+			float:none;
+			width:auto;
+			margin-bottom:0;
+		}
+		.carousel-indicators li{
+			float:none;
+		}
+		.carousel-indicators{
+			top:auto;
+		}
+		.thumbnails>li{
+			margin-left:12px;
+		}
+		
+		.thumbnail{
+			padding:0;
+		}
+		#container-page{
+			padding-top:30px;
+		}
+		.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
+			color: #fff;
+			background-color: #51a351;
+		}
+		.btn-success {
+		color: #fff;
+		text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+		background-color: #5bb75b;
+		background-image: -moz-linear-gradient(top,#62c462,#51a351);
+		background-image: -webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#51a351));
+		background-image: -webkit-linear-gradient(top,#62c462,#51a351);
+		background-image: -o-linear-gradient(top,#62c462,#51a351);
+		background-image: linear-gradient(to bottom,#62c462,#51a351);
+		background-repeat: repeat-x;
+		border-color: #51a351 #51a351 #387038;
+		border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',endColorstr='#ff51a351',GradientType=0);
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+		}
+	</style>
+	<script type="text/javascript" src="/static/js/v3/seajs/sea.js" id="seajsnode"></script>
+	<script type="text/javascript">
+		seajs.use('seajs/nav',function(nav){
+			nav.hover();
+		})
+	</script>
+	<script type="text/javascript" src="/static/js/jquery.ajaxfileupload.min.js"></script>
+	<script type="text/javascript" src="/static/js/newHeader.js"></script>
+	<script type="text/javascript" src="/static/js/v3/extend.js"></script>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="nav_bar">
+			<div class="layout">
+				<div class="user_nav">
+					<!--{if $auth}-->
+					<div class="sign_in">
+						<a href="/user/" class="name"><!--{if $auth[nickname]}--><!--{eval echo cut_string($auth[nickname],12);}--><!--{else}--><!--{eval echo cut_string($auth[username],12);}--><!--{/if}--></a>
+						<a href="#" data-rel="popover" data-toggle="popover" data-html="true" data-content='<div class="yy_panel"><div class="con"><form id="tip-post2" action="/common/send"><textarea id="yText" placeholder="心情如何，写下来吧……" name="content" id="" maxlength="500" rows="10"></textarea><input id="ySmt" type="submit" value="发表" class="btn btn-vertical btn-success" /><label id="cover2" class="upload" for="upload"><input type="file" id="upload" name="Filedata" /></label><div id="preview"></div></form>	</div></div>'   data-placement="bottom" class="yy"></a>
+						
+						<a href="javascript:;" onclick="$.signout();" class="exit"></a>
+					</div>
+					<!--{else}-->
+					<div class="reg">
+						<a href="#" onclick="$.modalSignup();">登录</a> -
+						<a href="#" onclick="$.modalSignup();">注册</a>
+					</div>
+					<div class="sign_in" style="display:none">
+						<a href="/user/" class="name">
+						<a href="#" class="yy"></a>
+						<a href="javascript:;" onclick="$.signout();" class="exit"></a>
+					</div>
+					<!--{/if}-->
+				</div>
+				
+				<div class="more_nav">
+					<a id="clt" href="#">加入收藏夹</a> -
+					<a href="http://in.jin95.com/download" target="_blank">下载IN沈阳客户端</a>
+					<span>|</span>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<div class="layout">
+				<div class="search_bar">
+				<form name="search" action="/search" method="get" class="search-form form-inline">
+					<button type="submit"><i class="icon-search"></i></button>
+					<input type="text" class="txt" name="kw" placeholder="搜地点/点评/新闻/楼盘" />
+				</form>		
+				</div>
+				<div class="site_nav">
+                    <a href="http://in.jin95.com" class="logo" target="_blank" title="IN沈阳-最了解沈阳得应用"><cite>最了解沈阳得应用     </cite></a>
+                </div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	$(function(){
+		if(current_url.indexOf("/search")>=0){
+			$(".search_bar form").remove();
+		}
+	});
+	</script>

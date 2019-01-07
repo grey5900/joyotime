@@ -1,0 +1,42 @@
+<div class="pageContent">
+	<form method="post" action="{eval echo site_url(array('rights','edit'));}/id/{$id}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="57">
+			<div class="unit">
+				<label>权限名称：</label>
+				<input type="text" name="name" value="{$edit[name]}" />
+			</div>
+			<div class="unit">
+				<label>上级id：</label>
+				<input type="text" name="parentid" value="{$edit[parentid]}" />
+			</div>
+			<div class="unit">	
+				<label>菜单项：</label>
+				<select name="ismenu">
+					<option value="1"{if $edit[ismenu]} selected="selected"{/if}>是</option>
+					<option value="0"{if !$edit[ismenu]} selected="selected"{/if}>否</option>
+				</select>
+			</div>
+			<div class="unit">	
+				<label>链接：</label>
+				<input type="text" name="uri" value="{$edit[uri]}" />
+			</div>
+			<div class="unit">	
+				<label>排序：</label>
+				<input type="text" name="serialno" value="{$edit[serialno]}" />
+			</div>
+			<div class="unit">	
+				<label>纪录日志?：</label>
+				<select name="islog">
+					<option value="1"{if $edit[islog]} selected="selected"{/if}>是</option>
+					<option value="0"{if !$edit[islog]} selected="selected"{/if}>否</option>
+				</select>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

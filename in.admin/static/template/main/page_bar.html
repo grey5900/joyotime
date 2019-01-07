@@ -1,0 +1,19 @@
+<!--需要带入的几个变量 $total_num 总条数 $per_page_num 通过系统设置带入可以每个页面替换 $page_shown显示页面数通过配置，也可以替换 $cur_page当前页数-->
+<div class="panelBar" {if $customer_page_style}style="{$customer_page_style}"{/if}>
+    <div class="pages">
+        <span>显示</span>
+        <select class="combox" name="numPerPage" onchange="{if isset($is_dialog)&&$is_dialog}dialog{else}navTab{/if}PageBreak({numPerPage:this.value}<!--{if $page_rel}-->, '{$page_rel}'<!--{/if}-->)">
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+        </select>
+        <span>条，共{if $total_num}{$total_num}{else}0{/if}条</span>
+    </div>
+    <div class="pagination" targetType="{if isset($is_dialog)&&$is_dialog}dialog{else}navTab{/if}"<!--{if $page_rel}--> rel="{$page_rel}"<!--{/if}--> totalCount="{$total_num}" numPerPage="{$per_page_num}" pageNumShown="{$page_shown}" currentPage="{$cur_page}"></div>
+</div>
+<script type="text/javascript">
+$(function(){
+    $("select[name=numPerPage]").val("{$per_page_num}");
+});
+</script>

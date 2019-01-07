@@ -1,0 +1,46 @@
+<!--{template web/header}-->
+<div class="container" id="container">
+	<div class="article">
+		<div class="main">
+			<div class="main-box">
+				<div class="topic">
+					<h1><a href="/user/{$info[uid]}/">{$info[uname]}</a>在<a href="/place/{$info[placeId]}/">{$info[placename]}</a>的点评</h1>
+				</div>
+				<div class="review-content" id="review-content">
+					<div class="who-review">
+						<div class="personal-icon">
+							<a href="/user/{$info[uid]}/" class="avatar large"><img width="60" height="60" src="{$info[avatar]}" alt="{$info[uname]}" /><i></i></a>
+						</div>
+						<div class="detail">
+							<h3><a href="/user/{$info[uid]}/">{$info[uname]}</a><i class="ico-approve">LV{$user_lv}</i></h3>
+							<div class="review-time">
+								{$info[createDate]}
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						<div class="stars-info">
+							<span class="ico-star-{$info[star]}"></span>
+							<!--{if $info[isBusiness]}--><!--{if !empty($info[pcc])}-->人均：<em><!--{if $info[pcc]>=0}-->{$info[pcc]}<!--{else}-->-<!--{/if}--></em>元<!--{/if}--><!--{/if}-->
+						</div>
+						<p class="text-detail">
+							{$info[content]}
+						</p>
+					</div>
+					<div id="posts-action">
+						<!--{template action}-->
+					</div>
+					<div class="cover-page">
+						{if !empty($prev_post) && $prev_post > -1}<a href="/review/{$prev_post}/" class="pull-left">&lt; 查看上一条点评</a>{else}<span class="pull-left">没有了</span>{/if}
+						{if !empty($next_post) && $next_post > -1}<a href="/review/{$next_post}/" class="pull-right">查看下一条点评 &gt;</a>{else}<span class="pull-right">没有了</span>{/if}
+					</div>
+				</div>
+			</div>
+			<!--{template reply}-->
+		</div>
+		<!--{template sider_bar}-->
+	</div>
+</div>
+<!--{template function}-->
+<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!--{template web/footer}-->

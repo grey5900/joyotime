@@ -1,0 +1,92 @@
+10
+
+dir
+38580
+svn://182.140.139.153/Incd20/Web/trunk/www/framework/database/drivers
+svn://182.140.139.153/Incd20
+
+
+
+2012-05-02T03:02:18.008563Z
+1593
+zhucl
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+86661628-28bb-49c0-9a6f-c8e3782614a9
+
+cubrid
+dir
+
+index.html
+file
+
+
+
+
+2013-07-22T03:58:22.000000Z
+0227cfd904e99656279202032b98d4a7
+2012-05-02T03:02:18.008563Z
+1593
+zhucl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+114
+
+mssql
+dir
+
+mysql
+dir
+
+mysqli
+dir
+
+oci8
+dir
+
+odbc
+dir
+
+pdo
+dir
+
+postgre
+dir
+
+sqlite
+dir
+
+sqlsrv
+dir
+

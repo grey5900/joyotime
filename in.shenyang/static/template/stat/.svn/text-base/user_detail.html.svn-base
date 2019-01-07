@@ -1,0 +1,64 @@
+{eval $page_rel='user_stat_detail';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="start_date" value="{$start_date}"/>
+    <input type="hidden" name="end_date" value="{$end_date}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td width="300"> 时段：
+                    <input type="text" readonly="readonly" name="start_date" class="date" value="{$start_date}" />
+                    ~
+                    <input type="text" readonly="readonly" name="end_date" class="date" value="{$end_date}" />
+                    </td>
+                    <td>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                查询
+                            </button>
+                        </div>
+                    </div></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3"> {$start_date} 到 {$end_date}：
+                    启动次数：{$stat['connectCount']} 新增终端：{$stat['newCount']} 新增注册用户：{$stat['newUserCount']} </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <table width="100%" class="table" layoutH="178" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="20%">日期</th>
+                <th width="10%">启动次数</th>
+                <th width="10%">活跃终端</th>
+                <th width="10%">7日活跃终端</th>
+                <th width="10%">15日活跃终端</th>
+                <th width="10%">新终端</th>
+                <th width="10%">新注册用户</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr>
+                <td>{$row['statDate']}</td>
+                <td>{$row['connectCount']}</td>
+                <td>{$row['activeCount']}</td>
+                <td>{$row['activeCount7']}</td>
+                <td>{$row['activeCount15']}</td>
+                <td>{$row['newCount']}</td>
+                <td>{$row['newUserCount']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

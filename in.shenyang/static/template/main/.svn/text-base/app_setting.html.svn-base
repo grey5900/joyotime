@@ -1,0 +1,193 @@
+<h2 class="contentTitle"></h2>
+<div class="pageContent">
+    <div class="tabs" currentIndex="0" eventType="click">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>基础设定</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>图片配置</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>上传测试</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+                    <div class="pageFormContent nowrap" layoutH="100">
+                        <dl>
+                            <dt>
+                                默认列表每页显示：
+                            </dt>
+                            <dd>
+                                <input type="text" name="per_page_num" size="4" maxlength="4" value="{$common['per_page_num']}" class="required number" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                显示页码数：
+                            </dt>
+                            <dd>
+                                <input type="text" name="page_shown" size="4" maxlength="4" value="{$common['page_shown']}" class="required number" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                章鱼团名称：
+                            </dt>
+                            <dd>
+                                <input type="text" name="name_tg_chengdu_cn" size="20" maxlength="20" value="{$common['name_tg_chengdu_cn']}" class="required" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                章鱼团key：
+                            </dt>
+                            <dd>
+                                <input type="text" name="key_tg_chengdu_cn" size="40" maxlength="40" value="{$common['key_tg_chengdu_cn']}" class="required" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                章鱼团获取团购地址：
+                            </dt>
+                            <dd>
+                                <input type="text" name="url_tg_chengdu_cn" size="60" maxlength="400" value="{$common['url_tg_chengdu_cn']}" class="required" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                商报买购网名称：
+                            </dt>
+                            <dd>
+                                <input type="text" name="name_mygo_chengdu_cn" size="20" maxlength="20" value="{$common['name_mygo_chengdu_cn']}" class="required" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                商报买购网key：
+                            </dt>
+                            <dd>
+                                <input type="text" name="key_mygo_chengdu_cn" size="40" maxlength="40" value="{$common['key_mygo_chengdu_cn']}" class="required" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                商报买购网获取团购地址：
+                            </dt>
+                            <dd>
+                                <input type="text" name="url_mygo_chengdu_cn" size="60" maxlength="400" value="{$common['url_mygo_chengdu_cn']}" class="required" />
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="formBar">
+                        <ul>
+                            <li>
+                                <div class="buttonActive">
+                                    <div class="buttonContent">
+                                        <button type="submit">
+                                            提交
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="type" value="common" />
+                </form>
+            </div>
+            <div>
+                <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+                    <div class="pageFormContent nowrap" layoutH="100">
+                        <div>
+                            设置图片的生成规则
+                            <br/>
+                            例如：
+                            <br/>
+                            poi_cat;poi分类;/poi_cat/;odp=?x?:mdp=200x200
+                            <br/>
+                            用;隔开，第一段为名称唯一；第二段为中文名称；第三段为保存路径；后面的为生成规格，格式间用:分开
+                        </div>
+                        <dl>
+                            <dt>
+                                图片存放路径：
+                            </dt>
+                            <dd>
+                                <input type="text" name="image_base_uri" size="40" maxlength="200" value="{$image['image_base_uri']}" class="required" />
+                                (uri)
+                            </dd>
+                        </dl>
+                        <div>
+                            <a href="javascript:;" class="btnAdd" id="addImageCat" alt="添加" title="添加"><span>添加</span></a>
+                        </div>
+                        <!--{eval $i = 0;}-->
+                        <!--{loop $image['image_cat_arr'] $key $value}-->
+                        <dl>
+                            <dt>
+                                {$value['name']}
+                            </dt>
+                            <dd>
+                                <input type="text" name="image_cat[]" size="80" maxlength="200" value="{eval echo $image['image_cat'][$i++]}" />
+                            </dd>
+                        </dl>
+                        <!--{/loop}-->
+                    </div>
+                    <div class="formBar">
+                        <ul>
+                            <li>
+                                <div class="buttonActive">
+                                    <div class="buttonContent">
+                                        <button type="submit">
+                                            提交
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="type" value="image" />
+                </form>
+            </div>
+            <div>
+                <div class="pageFormContent nowrap" layoutH="100">
+                    <dl>
+                        <dt>
+                            头像：
+                        </dt>
+                        <dd id="avatar_id" text="上传头像">
+                            
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            活动：
+                        </dt>
+                        <dd id="event_id"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $("#addImageCat").click(function() {
+            var addDiv = $(this).parent().parent();
+            var insertHtml = '<dl><dt>新的图片存储：</dt><dd><input type="text" name="image_cat[]" size="80" maxlength="200" value="" /></dd></dl>';
+            addDiv.append(insertHtml);
+        });
+        
+        
+        $("#avatar_id").my_rich_upload({name: "ceshi[name]", data:[{image: "201210_18_155249161_94437.jpg", title: "标题你大爷的", detail: "这里是详情"}]});
+    });
+    
+    
+</script>

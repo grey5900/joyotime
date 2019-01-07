@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta content="zh_cn" name="language">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+		<title>川菜好吃嘴集结令</title>
+		<link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+		<link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.css"/>
+		<style type="text/css" media="screen">
+			.unit-title {
+				color: #5ba81c;
+			}
+
+			.page {
+			  background: #f5f5f5;
+			}
+			.grid {
+			 
+			}
+			
+			#content .unit .box {
+			  background: #fff;
+			 }
+			.texts .info-group {
+			  color: #0c425c;
+			  border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+			
+			}
+			.texts .inside p {
+			
+			}
+			.bottons .botton span.title {
+			  color: #a1400b;
+			}
+			.bottons .botton span.intro {
+			  color: #a1400b;
+			}
+			.touchslider-item .touchslider-info {
+			  color: #fff;
+			}
+			.multi-line dd span {
+				color: #666;
+			}
+			.multi-line .viewall a {
+				
+			}
+			.multi-line .viewall a:hover{
+			  
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #aaa;
+				padding-top: 5px;
+			}
+			.touchslider-item img { 
+			 	height: 290px;
+			 }
+
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<div id="content">
+				<div class="unit-img">
+					<a href="/event/index/30/"><img border="0" src="http://icd.sc/img/m/30/header.jpg" width="100%" border="0" /></a>
+				</div>
+				<div class="page-title">
+					<h3>您有{$count_joines}位好友参加了该活动</h3>
+				</div>
+				<!-- <div class="grid"> -->
+					<div class="card">
+						<!-- <div class="box"> -->
+							<div class="users">
+								<!--{loop $list $id $user}-->
+								<div class="user">
+									<a href="inuser://{$id}">
+									<div class="icon"><img src="{$user[avatar]}" width="40" height="40" />
+									</div>
+									<div class="detail">
+										<h4>{$user[uname]}</h4>
+										<div class="info">
+											{$user[description]}
+										</div>
+									</div> </a>
+								</div>
+								<!--{/loop}-->
+							</div>
+						<!-- </div> -->
+					</div>
+				{$paginate}
+				<!-- </div> -->
+			</div>
+		</div>
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.infinitescroll.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.users').infinitescroll({
+			        navSelector  : '.pagination',
+			        nextSelector : '.pagination a:contains("下一页")',
+			        itemSelector : '.user',
+			        loading: {
+			            finished: undefined,
+			            finishedMsg: "没有更多了...",
+			            img: "/img/empty.gif",
+			            msg: null,
+			            msgText: "加载中...",
+			            selector: null,
+			            speed: 'fast',
+			            start: undefined
+			        }
+				});
+			})
+		</script>
+	</body>
+</html>

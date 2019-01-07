@@ -1,0 +1,42 @@
+<!--{eval $page_id = 'pointticket_edit';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <input type="hidden" name="brand_id" value="1" />
+        <div class="pageFormContent" layoutH="58">
+        	<dl>
+        	<font color="red">注：留空不更新</font>
+        	</dl>
+            <dl>
+            	<dt>绑定POI：</dt>
+            	<!--{eval $no_required = true;}-->
+            	<dd><!--{template block/lookup_place}--></dd>
+            </dl>
+            <dl>
+            	<dt style="width:70px;">过期时间：</dt>
+            	<dd><input type="text" name="expire_date" value="{$ticket['expireDate']}" class="date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/></dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>  

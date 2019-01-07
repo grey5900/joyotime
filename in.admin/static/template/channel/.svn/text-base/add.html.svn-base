@@ -1,0 +1,102 @@
+<div class="pageContent" id="channel_add_{$dialog_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>
+                    名称：
+                </dt>
+                <dd>
+                    <input type="text" name="name" size="40" class="required" value="{$channel['name']}" />
+                </dd>
+            </dl>
+            <!--{if $type == 'channel'}-->
+            <dl>
+                <dt>
+                    所属渠道：
+                </dt>
+                <dd>
+                    <select name="parent_id"<!--{if $channel}--> disabled="disabled"<!--{/if}-->>
+                        <option value="0">选择所属渠道</option>
+                        <!--{loop $merchant $row}-->
+                        <option value="{$row['id']}"<!--{if $row['id'] == $channel['parentId']}--> selected<!--{/if}-->>{$row['name']}</option>
+                        <!--{/loop}-->
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    扣量比例：
+                </dt>
+                <dd>
+                    <input type="text" size="10" name="ratio" class="required number" value="{eval echo $channel['ratio']?$channel['ratio']*100:''}" />%
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    合作开始时间：
+                </dt>
+                <dd>
+                    <input type="text" size="12" name="start_date" class="required date" value="{$channel['startDate']}" />
+                </dd>
+            </dl>
+            <!--{/if}-->
+            <dl>
+                <dt>
+                    备注：
+                </dt>
+                <dd>
+                    <textarea id="remark" name="remark" cols="60" rows="5">{$channel['remark']}</textarea>
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick="onsubmit{$dialog_id}Add();">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function onsubmit{$dialog_id}Add() {
+        var form = $("form", $("#channel_add_{$dialog_id}"));
+        if (!form.valid()) {
+            return false;
+        }
+        
+        if($("select[name=parent_id]", form).val() == "0") {
+            alertMsg.error('请选择所属渠道商');
+            return false;
+        }
+        
+        alertMsg.confirm("确定要提交么？", {
+            okCall : function() {
+                $.ajax({
+                    type: 'POST',
+                    url:form.attr("action"),
+                    data:form.serializeArray(),
+                    dataType:"json",
+                    cache: false,
+                    success: dialogAjaxDone,
+                    error: DWZ.ajaxError
+                });
+            }
+        });
+    }
+</script>

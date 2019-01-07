@@ -1,0 +1,20 @@
+/**
+ * Created by Jaskang on 14-3-25.
+ */
+
+@import "_model/bootstrap3.0.3.min.css";
+@import "_model/sequencejs-qubico.css";
+@import "font-awesome.min.css";
+@import "_less/v3.0/index.less";
+@import "_less/v3.0/modelwindow.less";
+
+
+.text-center{
+  text-align: center;
+}
+.text-left{
+  float: left;
+}
+.text-right{
+  float: right;
+}

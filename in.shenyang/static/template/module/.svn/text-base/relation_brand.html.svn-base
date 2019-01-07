@@ -1,0 +1,80 @@
+<form id="pagerForm" method="post" action="#rel#" onsubmit="return navTabSearch(this);">
+    <input type="hidden" name="keywords" value="{$keywords}" />
+    <input type="hidden" name="pageNum" value="{$pageNum}" />
+    <input type="hidden" name="numPerPage" value="{$per_page_num}" />
+</form>
+
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return dwzSearch(this, 'dialog');">
+    <div class="searchBar">
+        <table>
+            <tr>
+                <td><label>关联品牌：</label><input type="text" name="keywords" value="{$keywords}"/></td>
+                <td><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></td>
+                <td><label><input type="checkbox" group="ids[]" class="checkboxCtrl" name="select_all" />全选</lable></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</div>
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <input type="hidden" name="do" value="submit"/>
+        <div class="pageFormContent" layoutH="98">
+            <table class="table" width="100%" cellspacing="4" cellpadding="4">
+            <tbody>
+                <tr>
+                <!--{loop $list $key $row}-->
+                    <!--{if $key%2 == 0 && $key > 0}-->
+                </tr><tr>
+                    <!--{/if}-->
+                    <td width="10%"><input type="checkbox" id="c_{$row['id']}" name="ids[]"<!--{if $module_brand[$row['id']]}--> checked="checked"<!--{/if}--> value="{$row['id']}" /></td>
+                    <td width="40%"><label for="c_{$row['id']}">{$row['name']}</label></td>
+                <!--{/loop}-->
+                <!--{if $key%2 == 0}-->
+                <td width="10%">&nbsp;</td><td width="40%">&nbsp;</td>
+                <!--{/if}-->
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick='onsubmit_form(this.form, "您确定要提交？", check_ids_empty, dialogAjaxDone)'>
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function check_ids_empty() {
+        var checked = false;
+        $("input[name='ids[]']").each(function(){
+            if($(this).attr("checked")) {
+                checked = true;
+            }
+        });
+        
+        if(!checked) {
+            return confirm("你没有选择品牌，这样会清空之前的选择哦？亲，想好了？");
+        }
+        
+        return checked;
+    }
+</script>

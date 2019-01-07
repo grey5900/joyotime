@@ -1,0 +1,76 @@
+<!--{template web/header}-->
+
+<div class="container" id="container">
+	<div class="download-wrap">
+		<div class="download-nav">
+			<ul>
+				<li class="current nav-iphone">
+					<a href="/download/iphone/"></a>
+				</li>
+				<li class="nav-android">
+					<a href="/download/android/"></a>
+				</li>
+				<li class="nav-wp">
+					<a href="/download/wp/"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="iphone-bd">
+			<h3>IN成都iPhone版</h3>
+			<p class="summary">
+				IN成都iPhone客户端是一款专为iPhone推出的基于地理位置的移动互联网服务。“签到”自己所处的地点，告诉朋友“我在哪儿”，随时随地分析成都好吃的、好玩的信息，并得到优惠惊喜。用记录生活轨迹的方式来感受成都。因为爱成都，所以IN成都！
+				<br>
+				<br>
+				版本：V<span id="versionNumber">加载中...</span>
+				<br>
+				更新日期：<span id="versionDate">加载中...</span>
+			</p>
+			<a target="_blank" id="downloadUrl" href="http://itunes.apple.com/cn/app/id428311029?mt=8" class="btn-appstore">下载客户端</a>
+			<img class="two-dimensional-code" alt="IN成都iPhone客户端" src="/img/iphone_dimensional_code.gif" title="IN成都iPhone客户端">
+			<div class="imitation-iphone">
+				<ul id="switch-iphone">
+					<li><img alt="" width="205" height="308" src="/img/iphone1.png" /></li>
+					<li><img alt="" width="205" height="308" src="/img/iphone2.png" /></li>
+					<li><img alt="" width="205" height="308" src="/img/iphone3.png" /></li>
+					<li><img alt="" width="205" height="308" src="/img/iphone4.png" /></li>
+					<li><img alt="" width="205" height="308" src="/img/iphone5.png" /></li>
+					<li><img alt="" width="205" height="308" src="/img/iphone6.png" /></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="concern-us">
+		<h3>关注我们：</h3>
+		<ul>
+			<li class="sina-weibo">
+				<a href="http://weibo.com/inchengducn" target="_blank"><img alt="" src="/img/attention_bg.gif"></a>
+			</li>
+			<li class="douban">
+				<a href="http://site.douban.com/111326/" target="_blank"><img alt="" src="/img/attention_bg.gif"></a>
+			</li>
+			<li class="tencent-weibo">
+				<a href="http://t.qq.com/inchengducn" target="_blank"><img alt="" src="/img/attention_bg.gif"></a>
+			</li>
+			<li class="renren">
+				<a href="http://page.renren.com/699149013/index" target="_blank"><img alt="" src="/img/attention_bg.gif"></a>
+			</li>
+			<li class="qq">
+				<em>23801638</em><img alt="" src="/img/attention_bg.gif">
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/web/get_update/0',
+		type: 'post',
+		dataType: 'json',
+		success: function(data, textStatus, xhr) {
+			$('#versionNumber').text(data.version);
+			$('#versionDate').text(data.createDate);
+		},
+	});
+})
+</script>
+<!--{template web/footer}-->

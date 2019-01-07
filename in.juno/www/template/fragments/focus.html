@@ -1,0 +1,18 @@
+{if $hot[focus][data]}
+<div id="focus" class="carousel slide" data-toggle="collapse" data-target="focus">
+	  <div class="carousel-inner">
+		{loop $hot[focus][data] $k $d}
+		<a href="{$d['link']}" target="_blank" class="item {if $k==0}active{/if}">
+			<img src="{$d['image']}"  alt="{$d['title']}" />
+			<span class="carousel-caption">{$d['title']}</span>
+		</a>
+		{/loop}
+	  </div>
+	  <ol class="carousel-indicators">
+		{loop $hot[focus][data] $k $d}
+	      <li class="{if $k==0}active{/if}" onmouseover="$('#focus').carousel({$k});"></li>
+		{/loop}
+	  </ol>
+
+</div>
+{/if}

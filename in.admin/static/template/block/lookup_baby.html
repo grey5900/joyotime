@@ -1,0 +1,91 @@
+<div id="{$page_id}_lookup_baby">
+    <input type="text" size="15" name="keywords" id="keywords" />
+    <input type="text" name="query_place_num" value="100" size="3" />
+    <input type="hidden" name="ext_condition" value="{$ext_condition}" />
+    <button id="search" type="button"> 搜 索 </button><br/>
+	<select name="baby" id="source_baby"  ></select>
+</div>
+<script type="text/javascript">
+    $(function(){
+        // 地点的选择
+        $("#search", $("#{$page_id}_lookup_baby")).click(function(){
+            var keywords = $.trim($("#keywords", $("#{$page_id}_lookup_baby")).val());
+            if("" == keywords) {
+                alert("请输入查询的关键词");
+                return;
+            }
+            $("#source_baby", $("#{$page_id}_lookup_baby")).html("");
+            var num = parseInt($("input[name=query_place_num]", $("#{$page_id}_lookup_baby")).val());
+            $.getJSON("{eval echo site_url(array('babyclock', 'babyinfo', 'keywords'))}/" + encodeURIComponent(keywords) + "/num/" + num, {{echo $ext_condition?'ext_condition:"'.$ext_condition.'"':''}}, function(data){
+                var len = data.length;
+                for(var i=0; i<len; i++) {
+                    var gender = (data[i].gender==1) ? "男":"女";
+                    var option_str = "<option value=\"" + data[i].id + "\">" + "(" + data[i].id + ")" + data[i].name + " 性别:"+ gender +"</option>";
+                    $("#source_baby", $("#{$page_id}_lookup_baby")).append(option_str);    
+                }
+            });
+            {$page_id}_select_place_list();
+        });
+
+        $("#add_btn", $("#{$page_id}_lookup_baby")).click(function(){
+            // 获取所有备选
+            {$page_id}_place_edit_list("source_place", "place");
+        });
+        
+        $("#source_place", $("#{$page_id}_lookup_baby")).dblclick(function(){
+            // 双击
+            {$page_id}_place_edit_list("source_place", "place");
+        });
+        
+        $("#del_btn", $("#{$page_id}_lookup_baby")).click(function(){
+            // 删除已经选中的
+            {$page_id}_place_edit_list("place", "source_place");
+        });
+        
+        $("#place", $("#{$page_id}_lookup_baby")).dblclick(function(){
+            // 双击
+            {$page_id}_place_edit_list("place", "source_place");
+        });
+    
+        // 初始之前的选中的
+        <!--{if $place}-->
+        <!--{loop $place $p}-->
+        $("#place", $("#{$page_id}_lookup_baby")).append("<option value=\"{$p['id']}\">({$p['id']}){echo trim($p['placename'])}</option>");
+        <!--{/loop}-->
+        {$page_id}_select_place_list();
+        <!--{/if}-->
+    });
+
+/**
+ * 移动select里面的数据
+ * 从id1到id2的select
+ */
+function {$page_id}_place_edit_list(id1, id2) {
+    var selected_items = $("#" + id1, $("#{$page_id}_lookup_baby")).find("option:selected");
+    if(selected_items.length < 1) {
+        alert("请选择地点列表数据");
+        return;
+    }
+    
+    for(var i=0; i<selected_items.length; i++) {
+        $(selected_items[i]).remove();
+        
+        // CHECK一次是否已经在选择列表中存在
+        if(in_select($(selected_items[i]).val(), $("#" + id2, $("#{$page_id}_lookup_baby")))) {
+            continue;
+        }
+        
+        var option_str = "<option value=\"" + $(selected_items[i]).val() + "\">" + $(selected_items[i]).text() + "</option>";
+        $("#" + id2, $("#{$page_id}_lookup_baby")).append(option_str);
+    }
+    
+    {$page_id}_select_place_list();
+}
+
+/**
+ * 选择地点列表，这样子提交才会有数据
+ */
+function {$page_id}_select_place_list() {
+    $("#place", $("#{$page_id}_lookup_baby")).find("option").attr("selected", "selected");
+}
+</script>

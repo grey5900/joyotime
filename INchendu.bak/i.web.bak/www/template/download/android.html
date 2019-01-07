@@ -1,0 +1,76 @@
+<!--{template web/header}-->
+
+<div class="container" id="container">
+	<div class="download-wrap">
+		<div class="download-nav">
+			<ul>
+				<li class="nav-iphone">
+					<a href="/download/iphone/"></a>
+				</li>
+				<li class="current nav-android">
+					<a href="/download/android/"></a>
+				</li>
+				<li class="nav-wp">
+					<a href="/download/wp/"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="android-bd">
+			<h3>IN成都Android版</h3>
+			<p class="summary">
+				IN成都Android客户端是一款专为Android手机推出的基于地理位置的移动互联网服务。“签到”自己所处的地点，告诉朋友“我在哪儿”，随时随地分享成都好吃的、好玩的信息，并得到优惠惊喜。用记录生活轨迹的方式来感受成都。因为爱成都，所以IN成都！
+				<br>
+				<br>
+				版本：V<span id="versionNumber">加载中...</span>
+				<br>
+				更新日期：<span id="versionDate">加载中...</span>
+			</p>
+			<a target="_blank" id="downloadUrl" href="http://in.chengdu.cn/dl/inchengdu.apk" class="btn-apk">下载客户端</a>
+			<img class="two-dimensional-code" alt="IN成都android客户端" src="/img/android_dimensional_code.gif" title="IN成都android客户端">
+			<div class="imitation-android">
+				<ul id="switch-android">
+					<li><img alt="" width="196" height="299" src="/img/android1.png" /></li>
+					<li><img alt="" width="196" height="299" src="/img/android2.png" /></li>
+					<li><img alt="" width="196" height="299" src="/img/android3.png" /></li>
+					<li><img alt="" width="196" height="299" src="/img/android4.png" /></li>
+					<li><img alt="" width="196" height="299" src="/img/android5.png" /></li>
+					<li><img alt="" width="196" height="299" src="/img/android6.png" /></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="concern-us">
+		<h3>关注我们：</h3>
+		<ul>
+			<li class="sina-weibo">
+				<a href="http://weibo.com/inchengducn" target="_blank"><img alt="" src="/img/attention_bg.gif"></a>
+			</li>
+			<li class="douban">
+				<a href="http://site.douban.com/111326/" target="_blank"><img alt="" src="/img/attention_bg.gif"></a>
+			</li>
+			<li class="tencent-weibo">
+				<a href="http://t.qq.com/inchengducn" target="_blank"><img alt="" src="/img/attention_bg.gif"></a>
+			</li>
+			<li class="renren">
+				<a href="http://page.renren.com/699149013/index" target="_blank"><img alt="" src="/img/attention_bg.gif"></a>
+			</li>
+			<li class="qq">
+				<em>23801638</em><img alt="" src="/img/attention_bg.gif">
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/web/get_update/1',
+		type: 'post',
+		dataType: 'json',
+		success: function(data, textStatus, xhr) {
+			$('#versionNumber').text(data.version);
+			$('#versionDate').text(data.createDate);
+		},
+	});
+})
+</script>
+<!--{template web/footer}-->

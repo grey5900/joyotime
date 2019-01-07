@@ -1,0 +1,31 @@
+<div class="pageContent">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>生产积分票</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>流通中的积分票</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="pointticket_list" class="unitBox">
+                    {eval echo include_file(site_url(array('pointticket', 'pointticket_list')));}
+                </div>
+            </div>
+            <div>
+                <div id="pointticket_code_list" class="unitBox">
+                    {eval echo include_file(site_url(array('pointticket', 'pointticket_code_list')));}
+                </div>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate"  onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="57">
+        	<!--{if $list}-->
+            <dl>
+                <dt>
+                    排序位置：
+                </dt>
+                <dd>
+                    <select name="index">
+                    <!--{loop $list $k $row}-->
+                    	<option value="{$k}"<!--{if $id==$k}--> selected<!--{/if}-->>第{echo $k+1}位</option>
+                    <!--{/loop}-->
+                    <option value="{echo $k + 1}">最后</option>
+                    </select>
+                </dd>
+            </dl>
+            <!--{/if}-->
+            <dl>
+                <dt>
+                    标题：
+                </dt>
+                <dd>
+                    <input type="text" id="title" name="title" size="100" maxlength="100" value="{$banner['title']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    连接：
+                </dt>
+                <dd>
+                    <input type="text" id="url" name="url" size="60" maxlength="60" value="{$banner['url']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    上传图片：
+                </dt>
+                <dd>
+                    <button type="button" id="image">上传图片(1000*70)</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+$(function(){
+	option = "name:\"image\", file_type:\"common\", id:\"image\", required: true";
+	<!--{if $banner['image']}-->
+	option += ",image_name:\"{$banner['image']}\"";
+	<!--{/if}-->
+	$("#image", "#{$page_id}").my_upload(eval("({"+option+"})"));
+});
+</script>

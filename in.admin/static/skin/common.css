@@ -1,0 +1,300 @@
+@CHARSET "UTF-8";
+
+.r_list {
+    display: block;
+    overflow: auto;
+    margin: 0;
+    padding: 2px 8px;
+    left: 2em;
+}
+.r_list ul {
+}
+.r_list ul li {
+    margin: 2px 10px;
+    padding: 0 10px;
+}
+.item {
+    padding: 0 0 0 4px;
+    margin: 2px 0 0 4px;
+}
+.item ul {
+    margin: 0;
+}
+.item ul li {
+    margin: 0 2px;
+}
+/* 上传用到的 */
+.progressWrapper {
+    width: 357px;
+    overflow: hidden;
+}
+.progressContainer {
+    margin: 5px;
+    padding: 4px;
+    border: solid 1px #E8E8E8;
+    background-color: #F7F7F7;
+    overflow: hidden;
+}
+/* Message */
+.message {
+    margin: 1em 0;
+    padding: 10px 20px;
+    border: solid 1px #FFDD99;
+    background-color: #FFFFCC;
+    overflow: hidden;
+}
+/* Error */
+.red {
+    border: solid 1px #B50000;
+    background-color: #FFEBEB;
+}
+/* Current */
+.green {
+    border: solid 1px #DDF0DD;
+    background-color: #EBFFEB;
+}
+/* Complete */
+.blue {
+    border: solid 1px #CEE2F2;
+    background-color: #F0F5FF;
+}
+.progressName {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #555;
+    width: 323px;
+    height: 14px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.progressBarInProgress, .progressBarComplete, .progressBarError {
+    font-size: 0;
+    width: 0%;
+    height: 2px;
+    background-color: blue;
+    margin-top: 2px;
+}
+.progressBarComplete {
+    width: 100%;
+    background-color: green;
+    visibility: hidden;
+}
+.progressBarError {
+    width: 100%;
+    background-color: red;
+    visibility: hidden;
+}
+.progressBarStatus {
+    margin-top: 2px;
+    width: 337px;
+    font-size: 7pt;
+    font-family: Arial;
+    text-align: left;
+    white-space: nowrap;
+}
+a.progressCancel {
+    font-size: 0;
+    display: block;
+    height: 14px;
+    width: 14px;
+    background-image: url(/static/js/swfupload/images/cancelbutton.gif);
+    background-repeat: no-repeat;
+    background-position: -14px 0px;
+    float: right;
+}
+a.progressCancel:hover {
+    background-position: 0px 0px;
+}
+.sortDragItem {
+    border: 1px solid #b8d0d6;
+    padding: 5px;
+    margin: 5px
+}
+/* -- -- */
+.addImgDiv {
+    margin: 5px;
+    padding: 4px;
+    border: solid 1px #E8E8E8;
+    background-color: #F7F7F7;
+    overflow: hidden;
+    float: left;
+}
+.addImgDiv a {
+    font-size: 0;
+    display: block;
+    height: 14px;
+    width: 14px;
+    background-image: url(/static/js/swfupload/images/cancelbutton.gif);
+    background-repeat: no-repeat;
+    background-position: -14px 0px;
+    float: right;
+}
+.f-red {
+    color: #fd0b0b;
+    line-height: 20px;
+}
+.f-blue {
+    color: #1c0bfd;
+    line-height: 20px;
+}
+.f-close {
+    color: #800080;
+    line-height: 20px;
+}
+.style-1 {
+}
+.style-1 div {
+    float: left;
+    padding: 0 10px
+}
+.style-1 .nameid {
+    width: 120px;
+    line-height: 21px;
+}
+.style-2 {
+}
+.style-2 span {
+    float: left;;
+    width: 50%;
+    padding: 10px 5px;
+}
+.style-2 .content {
+    padding: 10px;
+}
+.searchBar ul.searchContent li {
+    width: 200px;
+}
+.pageContent table th.he {
+    height: 35px;
+}
+.pageContent table th td {
+    padding: 4px;
+}
+.list .operating {
+    font-size: 23px;
+    font-weight: bolder;
+    text-align: center;
+}
+.pageContent table th.he {
+    height: 35px;
+}
+.pageContent table th td {
+    padding: 4px;
+}
+.unit label {
+    width: 100px;
+}
+a.actDel {
+    background: url(delete.png) no-repeat;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    float: left;
+    margin-right: 6px;
+    padding: 2px 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.landmark {
+    background: url(star.gif) no-repeat;
+    margin-left: 5px;
+}
+.taboo {
+	font-size:14px;
+	font-weight:bold;
+	color:#ff0000;
+}
+.order-delete {
+    background: url(delete.png) no-repeat;
+    margin-left: 5px;
+}
+.order-refund {
+    background: url(refund.png) no-repeat;
+    margin-left: 5px;
+}
+.order-remark {
+    background: url(remark.png) no-repeat;
+    margin-left: 5px;
+}
+.tip-expire {
+    background: url(expire.png) no-repeat;
+    margin-left: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    width: 32px;
+    height: 16px;
+}
+.tip-remark {
+    background: url(remark.png) no-repeat;
+    margin-left: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    width: 32px;
+    height: 16px;
+}
+.tip-allow {
+    background: url(allow.png) no-repeat;
+    margin-left: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    width: 32px;
+    height: 16px;
+}
+.tip-forbid {
+    background: url(forbid.png) no-repeat;
+    margin-left: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    width: 32px;
+    height: 16px;
+}
+
+a:hover.order-remark {
+    text-decoration: none;
+}
+
+.dl-line {
+    background: #03408B;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+}
+
+.tip_red, .tip_blue, .tip_green, .tip_grey {
+    margin: 3px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+
+.tip_red {
+    background: red;
+}
+
+.tip_blue {
+    background: blue;
+}
+
+.tip_green {
+    background: green;
+}
+
+.tip_grey {
+    background: grey;
+}
+
+.xheBtnPage { background:url(next.png) no-repeat}

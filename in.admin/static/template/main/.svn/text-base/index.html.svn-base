@@ -1,0 +1,121 @@
+<!--{template header}-->
+<script type="text/javascript">
+$(function(){
+   if(window != window.top) {
+        window.top.location.href = "/";
+    }
+    
+    $("ul a[rel=main_index]").attr("href", "javascript:;").attr("target", "");
+
+});
+</script>
+<div id="layout">
+    <div id="header">
+        <div class="headerNav">
+            <a class="logo" href="/">..</a>
+            <ul class="nav">
+                <li style="color: #B9CCDA;">
+                    {$auth_name}
+                </li>
+                <li>
+                    <a href="{eval echo site_url(array('main','modify_pass'));}" target="dialog" rel="{eval echo build_rel(array('main','modify_pass'));}">{lang modify_pass}</a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="if(confirm('{lang logout_tip}')) top.location.href='{eval echo site_url(array('main','logout'));}';">退出</a>
+                </li>
+            </ul>
+            <ul class="themeList" id="themeList">
+                <li theme="default">
+                    <div class="selected">
+                        蓝色
+                    </div>
+                </li>
+                <li theme="green">
+                    <div>
+                        绿色
+                    </div>
+                </li>
+                <li theme="purple">
+                    <div>
+                        紫色
+                    </div>
+                </li>
+                <li theme="silver">
+                    <div>
+                        银色
+                    </div>
+                </li>
+                <li theme="azure">
+                    <div>
+                        天蓝
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- navMenu -->
+    </div>
+    <div id="leftside">
+        <div id="sidebar_s">
+            <div class="collapse">
+                <div class="toggleCollapse">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar">
+            <div class="toggleCollapse">
+                <h2>功能列表</h2>
+                <div>
+                    收缩
+                </div>
+            </div>
+            <div class="accordion" fillSpace="sidebar">
+                <div class="accordionHeader">
+                    <h2><span>Folder</span>{lang title}</h2>
+                </div>
+                <div class="accordionContent">
+                    <ul class="tree treeFolder expand">
+                        {$menu_str}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="navTab" class="tabsPage">
+            <div class="tabsPageHeader">
+                <div class="tabsPageHeaderContent">
+                    <!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
+                    <ul class="navTab-tab">
+                        <li tabid="main" class="main">
+                            <a href="javascript:;"><span><span class="home_icon">{lang home}</span></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tabsLeft">
+                    left
+                </div><!-- 禁用只需要添加一个样式 class="tabsLeft tabsLeftDisabled" -->
+                <div class="tabsRight">
+                    right
+                </div><!-- 禁用只需要添加一个样式 class="tabsRight tabsRightDisabled" -->
+                <div class="tabsMore">
+                    more
+                </div>
+            </div>
+            <ul class="tabsMoreList">
+                <li>
+                    <a href="javascript:;">{lang home}</a>
+                </li>
+            </ul>
+            <div class="navTab-panel tabsPageContent layoutBox">
+                <div class="page unitBox">
+                    <div class="pageFormContent" style="margin-right:230px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    {lang copyright}
+</div>
+<!--{template footer}-->

@@ -1,0 +1,176 @@
+<div id="recommend_home_{$page_id}"class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <div class="pageFormContent" layoutH="57">
+        <!--{if $digests}-->
+        	<div class="unit">
+			      <label><input type="checkbox" name="recommend_digest" value="1" checked="checked" />设为精华</label>
+			</div>
+		<!--{/if}-->
+		<!--{if $has_home}-->
+			<div class="unit">
+				<label><input type="checkbox" name="recommend_home" value="1"{echo $data?' checked="checked"':''} />推荐到首页</label>
+			</div>
+		<!--{/if}-->
+			<div class="unit" id="score_select" style="display:none;">
+				<table width="{echo 70*count($digests)}">
+			      	<tr>
+				      <!--{loop $digests $d}-->
+				      <td>
+				      <input type="radio" name="score" value="{$d}"<!--{if $item['essenceScore']==$d}--><!--{eval $b = true;}--> checked="checked" disabled="disabled"<!--{elseif $d=='input' && empty($b)}--> checked="checked"<!--{/if}--> />
+				      </td>
+				      <td>
+				      <!--{if $d == 'input'}-->
+				      <input type="text" size="6" value="{echo intval($item['essenceScore'])}" name="input_score" class="number" />
+				      <!--{else}-->
+				      {$d}
+				      <!--{/if}-->
+				      </td>
+				      <!--{/loop}-->
+			      	</tr>
+			      </table>
+			</div>
+		<!--{if $has_home}-->
+			<span id="recommend_home_area">
+				<div class="unit">
+					<label>封面标题：</label>
+					<!-- 话题标题加上# # -->
+					<!--{if $item_type == 26}-->
+					<input type="text" name="content" size="50" value="{echo $data?$data['content']:'#'.$item[$field].'#'}" />
+					<!--{else}-->
+					<input type="text" name="content" size="50" value="{echo $data?$data['content']:$item[$field]}" />
+					<!--{/if}-->
+				</div>
+				<div class="unit">
+				<table>
+					<tr>
+					<!--{if $homepage}-->
+					<td width="60%">
+					<label>权重值：</label>
+					<input type="text" name="rankOrder" class="required number" size="10" value="{$data['rankOrder']}" />
+					</td>
+					<!--{else}-->
+					<td width="60%">
+					&nbsp;
+					</td>
+					<!--{/if}-->
+					<td width="40%">
+					<label>过期时间：</label>
+					<input type="text" name="expireDate" class="required date" format="yyyy-MM-dd HH:mm:ss" id="expireDate" value="{echo $data?$data['expireDate']:(now(999, now(-1) + 86400*$expire_day))}" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+						</td>
+					</tr>
+				</table>
+				</div>
+				<!--{if !in_array($item_type, array(4, 5, 23))}-->
+				<!-- <div class="unit">
+					<label>赞：</label>
+					<input type="text" name="praiseCount" class="number" size="10" value="{echo $data['praiseCount']?$data['praiseCount']:($item['praiseCount']?$item['praiseCount']:0)}" /> 
+				</div> -->					
+				<!--{/if}-->
+				<div class="unit">
+					<!--{template block/imgareaselect}-->
+				</div>		
+			</span>
+		</div>
+		<!--{/if}-->
+                                                                     
+		<div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	<!--{if $item['essenceScore']}-->
+	// 已经设置过了精华，那么设置所有选项为disabled
+	$("input[name=score]", "#recommend_home_{$page_id}").each(function(){
+		$(this).attr('disabled', 'disabled');
+	});
+	<!--{/if}-->
+	
+	$("input[name=recommend_home]", "#recommend_home_{$page_id}").on("click", function(){
+		recommend_area($(this).attr("checked")=="checked"?true:false);
+		select_point();
+	});
+	
+	$("input[name=recommend_digest]", "#recommend_home_{$page_id}").on("click", function(){
+		select_point();
+	});
+	
+	<!--{if $has_home}-->
+	recommend_area(true);
+	<!--{/if}-->
+	
+	select_point();
+	
+	$("#btnSubmit", "#recommend_home_{$page_id}").on("click", function(){
+		var form = $("form", "#recommend_home_{$page_id}");
+        if (!form.valid()) {
+            return false;
+        }
+        
+        <!--{if $has_home}-->
+        // 检查标题和图片
+        var title = $.trim($("input[name=content]", "#recommend_home_{$page_id}").val());
+        var image = $.trim($("input[name=image]", "#recommend_home_{$page_id}").val());
+        if(title == '' && image == '') {
+        	alertMsg.error('标题和图片必须填一个哦，亲');
+        	return false;
+        }
+        <!--{/if}-->
+        
+        $.ajax({
+            type: 'POST',
+            url:form.attr("action"),
+            data:form.serializeArray(),
+            dataType:"json",
+            cache: false,
+            success: dialogAjaxDone,
+            error: DWZ.ajaxError
+        });
+	});
+});
+
+function recommend_area(b) {
+	var area = $("#recommend_home_area", "#recommend_home_{$page_id}");
+	if(b) {
+		$("input[name=recommend_home]", "#recommend_home_{$page_id}").attr("checked", "checked");
+		//$("input[name=content]", "#recommend_home_{$page_id}").addClass("required");
+		$("input[name=expireDate]", "#recommend_home_{$page_id}").addClass("required");
+		$("input[name=baseRankOrder]", "#recommend_home_{$page_id}").addClass("required");
+		area.show();
+	} else {
+		//$("input[name=content]", "#recommend_home_{$page_id}").removeClass("required");
+		$("input[name=expireDate]", "#recommend_home_{$page_id}").removeClass("required");
+		$("input[name=baseRankOrder]", "#recommend_home_{$page_id}").removeClass("required");
+		area.hide();
+	}
+}
+
+function select_point() {
+	if ($("input[name=recommend_home]", "#recommend_home_{$page_id}").attr("checked") ||
+		$("input[name=recommend_digest]", "#recommend_home_{$page_id}").attr("checked")) {
+		$("#score_select", "#recommend_home_{$page_id}").show();
+	} else {
+		$("#score_select", "#recommend_home_{$page_id}").hide();
+	}
+}
+</script>

@@ -1,0 +1,31 @@
+<div class="pageContent" style="padding:0px 5px">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>展示中的活动</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>已停用的活动</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="event_show_tab" class="unitBox">
+                    {eval echo include_file(site_url(array('event', 'show')));}
+                </div>
+            </div>
+            <div>
+                <div id="event_hide_tab" class="unitBox">
+                    {eval echo include_file(site_url(array('event', 'hide')));}
+                </div>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

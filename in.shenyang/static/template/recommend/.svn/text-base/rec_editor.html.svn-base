@@ -1,0 +1,260 @@
+
+<div class="pageContent">
+	<form method="post" action="" class="pageForm required-validate" onsubmit="">
+		<div class="pageFormContent" layoutH="68">
+			<div id="fragmentHolder" data-fragment='{$frag}'></div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="parseSpecial();add_new();">确定</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+var ds = <!--{if !empty($sel)}-->{$sel}<!--{else}-->null<!--{/if}-->;
+var	data = $("#fragmentHolder").data("fragment");
+var isprased = false;
+function parseSpecial(){
+		var new_text = $('#summary').val().replace(/</gi, "[").replace(/>/gi, "]");
+		$('#summary').val(new_text);
+		isprased = true;
+}
+function add_new(){
+	
+	if($('#fragmentHolder #title').val() == ''){
+		alertMsg.error('标题不能为空');
+	}else if($('#fragmentHolder #link').val() == ''){
+		alertMsg.error('内容链接地址不能为空');
+	}else{
+		var item = '';
+		var intro = $('#fragmentHolder #summary').val().replace(/[\r\n]/gi, "<br>");
+		//基本属性
+		var cur = 'title:"'+$('#fragmentHolder #title').val()+'",title_link:"'+$('#fragmentHolder #link').val()+'",intro:"'+intro+'"';
+		if($('#fragmentHolder #fragment_image').val() != ""){
+			var img = $('#fragmentHolder #fragment_image').val();
+			//var imgs = img.split('/');
+			//获取图片的URL
+			cur += ',image:"'+img+'"';
+			var img_url = $('#fragmentHolder #image_link').val();
+			cur += ',image_url:"'+img_url+'",image_link:"'+img_url+'"';
+			
+		}
+		 
+		//扩展属性
+		var ext = '';
+		var exp = data.extraProperty;
+		if(typeof exp != 'undefined' && exp != ''){
+			var sp = '';
+			for(var key in exp){
+				var v = '';
+				switch(exp[key].type){
+				case 'check'://复选框
+					var s = '';
+					var def_vas = exp[key].def_value.split(',');
+					for(var i=0;i<def_vas.length;i++){
+						if($('#'+key+'_'+def_vas[i]).attr('checked')){
+							v += s+$('#'+key+'_'+def_vas[i]).val();
+							s = ',';
+						}
+					}
+					break;
+				case 'radio':
+					var def_vas = exp[key].def_value.split(',');
+					for(var i=0;i<def_vas.length;i++){
+						if($('#'+key+'_'+def_vas[i]).attr('checked')){
+							v = $('#'+key+'_'+def_vas[i]).val();
+						}
+					}
+					break;
+				default: 
+					v = $('#'+key).val();
+					break;
+				}
+				if(exp[key].required && (v=='' || typeof v == 'undefined')){
+					alert(exp[key].view+"必须填写!");
+					return false;
+				}
+				if(typeof v != 'undefined' && v != ''){
+					ext += sp + key+':"'+v+'"';
+					sp = ',';
+				}
+			}
+		}
+		
+		item = cur + (typeof ext != 'undefined' && ext != '' ? ',' + ext : '');
+		if(item != ""){
+			item = '{'+item+'}';
+		}
+		//更新推荐列表
+		var f = false;
+		if(typeof ds != 'undefined' && ds != null) f = true;
+		list_save.push(eval('('+item+')'), f, exp);
+		//关闭
+		$.pdialog.close('dlg_rec_data_editor');
+	}
+}
+function ex(data){
+	var output = '';
+	if(typeof data != 'undefined' && data != ''){
+		output = '<fieldset id="extra">\
+			<legend>扩展信息</legend>';
+		for(exp in data) {
+			output += '\
+				<p class="nowrap">\
+					<label for="' + data[exp].key + '">' + data[exp].view + '：</label>\
+			';
+			var	class_repuire = '';
+			if(data[exp].required){
+				 class_repuire = "required";
+			}
+			switch (data[exp].type) {
+				//多选框
+				case 'check':
+					var value = data[exp].def_value.split(",");
+					for (var i in value){
+						output += '<label><input type="checkbox" name="' + data[exp].key + '" value="' + value[i] + '" id="' + data[exp].key + '_' + value[i] + '" />' + value[i] +'</label> ';
+					}
+					break;
+				//单选框
+				case 'radio':
+					var value = data[exp].def_value.split(",");
+					for (var i in value){
+						output += '<label><input type="radio" name="' + data[exp].key + '" value="' + value[i] + '" id="' + data[exp].key + '_' + value[i] + '" />' + value[i] +'</label> ';
+					}
+					break;
+				//下拉列表
+				case 'select':
+					output += '\
+						<select id="' + data[exp].key + '" class="combox '+class_repuire+'">\
+							<option value="">请选择</option>\
+					';
+					var value = data[exp].def_value.split(',');
+					for (var i in value){
+						output += '<option value="' + value[i] + '">' + value[i] + '</option>';
+					}
+					output += '</select>';
+					break;
+				//文本域
+				case 'text':
+					output += '<textarea name="' + data[exp].key + '" id="' + data[exp].key + '" cols="80" rows="5" class="textInput '+class_repuire+'"></textarea>';
+					break;
+				//日期
+				case 'date':
+					output += '<input type="text" name="' + data[exp].key + '" value="" id="' + data[exp].key + '" class="date textInput valid '+class_repuire+'" datefmt="yyyy-MM-dd" mindate="{%y-10}-%M-%d" maxdate="{%y+10}-%M" /><a class="inputDateButton" href="javascript:;">选择</a>';
+					break;
+				//时间
+				case 'time':
+					output += '<input type="text" name="' + data[exp].key + '" value="" id="' + data[exp].key + '" class="textInput '+class_repuire+'" />';
+					break;
+				//图片
+				case 'img':
+					output += '<button type="button" id="btn_exp_upload_'+data[exp].key+'" class="'+class_repuire+'">上传图片</button>';
+					break;
+				//文本框
+				default:
+					output += '<input type="text" name="' + data[exp].key + '" value="" id="' + data[exp].key + '" class="textInput '+class_repuire+'" />';
+					break;
+			}
+			output += '</p>';
+		}
+		output += '</fieldset>';
+	}
+	return output;
+}
+$(function(){
+	var json,
+		extra,
+		output;
+
+	//data = eval('(' + $("#fragmentHolder").data('fragment') + ')');
+	extra = ex(data.extraProperty);
+	output = $('\
+			<fieldset>\
+				<legend>基本信息</legend>\
+				<p class="nowrap"><label for="title">标题：</label><input type="text" name="title" value="" id="title" class="required textInput" /></p>\
+				<p class="nowrap"><label for="link">链接：</label><input type="text" name="link" value="" id="link" class="textInput" /></p>\
+				<p class="nowrap"><label for="summary">摘要：</label><textarea name="summary" id="summary" cols="80" rows="5" class="textInput"></textarea></p>\
+				<p class="nowrap"><label for="image">图片'+(data.rule.pic_size ? '('+data.rule.pic_size+')':'')+'：</label><button type="button" id="btn_image">上传图片</button></p>\
+				<input type="hidden" name="image_link" value="" id="image_link" />\
+			</fieldset>' + extra);
+	$("#fragmentHolder").append(output);
+	//绑定图片上传插件
+	var opt_cur_image = {
+		name:'fragment_image',
+		id:'fragment_image',
+		file_type:'common',
+		resolution:'odp',
+		change_name:true
+	};
+	var opt_exp_image = {file_type:'common',resolution:'odp', thumb_height:40, up_url:'/upload/'};
+	if(typeof data != 'undefined' && typeof data.rule.pic_size != 'undefined' && data.rule.pic_size != ''){
+		var sizes = data.rule.pic_size.split('*');
+		if(sizes[1] != '0'){
+			opt_cur_image['thumb_height'] = sizes[1];
+		}
+		opt_cur_image['width'] = typeof sizes[0] != 'undefined' ? Number(sizes[0]) : 0;
+		opt_cur_image['height'] = typeof sizes[1] != 'undefined' ? Number(sizes[1]) : 0;
+	}
+	if(typeof ds != 'undefined' && ds != null){
+		$("#fragmentHolder #title").val(ds.title);
+		$("#fragmentHolder #link").val(ds.title_link);
+		$("#fragmentHolder #summary").val(ds.intro?ds.intro.replace(/<br>/gi, "\n"):"");
+		$("#fragmentHolder #image_link").val(ds.image_url);
+		if(typeof ds.image != 'undefined' && ds.image != ''){
+			opt_cur_image['image_name'] = ds.image_url;
+		}		
+		
+		//扩展属性
+		if(typeof data.extraProperty != 'undefined' && data.extraProperty != ''){
+			for(var ek in data.extraProperty){
+				var v = ds[ek];
+				if(typeof v != 'undefined' && v != ''){
+					switch(data.extraProperty[ek].type){
+					case 'check'://复选框
+						var values = v.split(',');
+						for(var i=0;i<values.length;i++){
+							$("#fragmentHolder #"+ek+"_"+values[i]).attr('checked', 'checked');
+						}
+						break;
+					case 'radio'://单选框
+						var values = data.extraProperty[ek].def_value.split(',');
+						for(var i=0;i<values.length;i++){
+							if(values[i] == v){
+								$('#fragmentHolder #'+ek+"_"+values[i]).attr('checked', 'checked');
+							}
+						}
+						break;
+					case 'img'://图片
+						opt_exp_image['image_name'] = v;
+						opt_exp_image['name'] = ek;
+						opt_exp_image['id'] = ek;
+						$('#fragmentHolder #'+ek).val(v);
+						//绑定
+						$('#fragmentHolder #btn_exp_upload_'+ek).my_upload(opt_exp_image);
+						break;
+					default://其他的
+						$('#fragmentHolder #'+ek).val(v);
+					}
+				}
+			}
+		}
+	}
+	if(typeof data.extraProperty != 'undefined' && data.extraProperty != ''){
+		for(var ek in data.extraProperty){
+			if(data.extraProperty[ek].type == 'img'){
+				opt_exp_image['name'] = ek;
+				opt_exp_image['id'] = ek;
+				$('#fragmentHolder #btn_exp_upload_'+ek).my_upload(opt_exp_image);
+			}
+		}
+	}
+	$("#fragmentHolder #btn_image").my_upload(opt_cur_image);
+	$("#fragmentHolder #fragment_image").change(function(){
+		$.getJSON('/main/get_image_url',{file_name:$(this).val(),resolution:'odp',file_type:'common'},function(json){
+			$("#fragmentHolder #image_link").val(json.source_image);
+		});
+	});
+});
+</script>

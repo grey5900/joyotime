@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>{$event['subject']}</title>
+    <link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" />
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/mobile.min.js"></script>
+    <script type="text/javascript">
+    <!--{if $uid}-->
+    var online_id = {$uid};
+    <!--{else}-->
+    var online_id = 0;
+    <!--{/if}-->
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="container">
+        <div class="top">
+          <a href="/event_new/m_index/{$event['id']}"><img src="{$event['banner']}" alt="{$event['subject']}"/></a>
+        </div>
+        <div class="title">
+          <h3>有{$count}位用户参加了该活动</h3>
+        </div>
+        <div class="post">
+          <div class="users" id="users">
+          	<!--{loop $list $k $v}-->
+            <div class="user-list">
+              <a href="inuser://{$v[id]}">
+              <div class="icon"><img src="{$v[avatar_uri]}" width="40" height="40" />
+              </div>
+              <div class="detail">
+                <h4>{$v[name]}</h4>
+                <div class="info">
+                  {$v[description]}
+                </div>
+              </div> </a>
+            </div>
+         	<!--{/loop}-->
+          </div>
+        </div>
+       
+        <div class="pagination pagination-centered" >
+        </div>
+        <a href="/event_new/m_apply_list/{$event['id']}/2" style="display:none" id="rolling_next_page"></a>
+       
+      </div>
+      <div class="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

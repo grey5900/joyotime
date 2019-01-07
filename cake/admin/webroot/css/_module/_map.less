@@ -1,0 +1,102 @@
+/**
+ * Created by JasKang on 2014/4/18.
+ */
+#fs-map{
+  img{
+    max-width:none;
+    vertical-align:inherit;
+  }
+}
+.fs-map-Info{
+  position:absolute;
+  left: 10px;
+  bottom:10px;
+  background:rgba(255, 255, 255, 0.8) none repeat scroll 0 0 !important;/*实现FF背景透明，文字不透明*/
+  filter:Alpha(opacity=80); background:#fff;/*实现IE背景透明*/
+  padding:18px;
+  span{
+    color:#999;
+    font-size: 14px;
+    line-height: 28px;
+    .num{
+      color:#09c;
+    }
+  }
+}
+.fs-map-markerinfo{
+  width: 232px;
+  height: 60px;
+  overflow:hidden;
+  color:#666;
+  background-color: #fff;
+  > .in-box{
+    height:60px;
+    display:inline-block;
+    position: relative;
+    overflow:hidden;
+    .link{
+      height:60px;
+      display:inline-block;
+      color:#666;
+      &:hover{
+        background:#ddd;
+      }
+    }
+    .marker-img{
+      position:absolute;
+      left:0px;
+      top:0px;
+      width:60px;
+      height:60px;
+    }
+    .marker-info{
+      margin-left:70px;
+      overflow:hidden;
+      height:60px;
+      display:inline-block;
+      .title{
+        display:inline-block;
+        height:36px;
+        line-height:36px;
+        width: 150px;
+        font-size: 18px;
+        overflow:hidden;
+        margin: 0;
+        padding: 0;
+        font-family:"Microsoft Yahei","微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .bar{
+        margin-top:-5px;
+        padding: 0;
+        display:inline-block;
+        height:20px;
+        line-height:20px;
+        width: 150px;
+        font-size: 12px;
+        overflow:hidden;
+        font-family:"Microsoft Yahei","微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;
+        i{
+          display: inline-block;
+          width:16px;
+          height:16px;
+          vertical-align: middle;
+        }
+        label{
+          vertical-align: middle;
+          margin-bottom: 0;
+          margin-left: 5px;
+          margin-right: 25px;
+          padding: 0;
+        }
+        .star{
+          background: url("/img/icon_star.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+        .erji{
+          background: url("/img/icon-erji.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,24 @@
+
+<div class="pageContent">
+    <table class="table" width="100%" layoutH="158">
+    	<thead>
+    		<th width="30%">事件</th>
+    		<th width="40%">概率</th>
+    		<th width="30%">每日中奖上限次数</th>
+    	</thead>
+    	<tbody>
+    		{loop $list $k $row}
+    		<tr>
+    			<td>{$row['actionName']}</td>
+    			<td align="center"><input type="text" onfocus="modify_rank2(this,'ItemAwardAction',{$row['id']},'probability',1);" value="{$row['probability']}" style="text-align:right" />%</td>
+    			<td align="center"><input type="text" onfocus="modify_rank2(this,'ItemAwardAction',{$row['id']},'frequency',1);" value="{$row['frequency']}"  style="text-align:right" /></td>
+    		</tr>
+    		{/loop}
+    		
+    	</tbody>
+    </table>
+</div>
+
+<script>
+
+</script>

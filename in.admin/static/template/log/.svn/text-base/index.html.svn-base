@@ -1,0 +1,116 @@
+{if $do==='advsearch'}
+<div class="pageContent">
+	<form method="post" action="{eval echo site_url('log');}" onsubmit="return navTabSearch(this);">
+	<div class="pageFormContent">
+		<table border="0" cellspacing="2" cellpadding="2" width="100%">
+			<tbody>
+                <tr><td width="80">动作:</td>
+                <td><input type="text" name="acturi" value="" size="20" /></td></tr>
+                <tr><td width="80">内容:</td>
+                <td><input type="text" name="actdesc" value="" size="20" /></td></tr>
+				<tr><td>
+				<select name="type">
+					<option value="atruename">姓名</option>
+					<option value="admin">帐号</option>
+					<option value="role">角色</option>
+				</select>:
+				</td><td colspan="3"><input type="text" name="typeval" value="" size="20" /></td></tr>
+				<tr><td>操作时间:</td>
+				<td width="160"><input type="text" name="actbegin" class="date textInput readonly" readonly="true" format="yyyy-MM-dd"/><a class="inputDateButton" href="javascript:;">选择</a></td>
+				<td width="10">-</td>
+				<td><input type="text" name="actend" class="date textInput readonly" readonly="true" format="yyyy-MM-dd"/><a class="inputDateButton" href="javascript:;">选择</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>		
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+{else}
+<!-- 分页参数 -->
+<form id="pagerForm" method="post" action="{eval echo site_url('log');}">
+	<input type="hidden" name="pageNum" value="{$pageNum}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="{$orderField}" />
+	<input type="hidden" name="orderDirection" value="{$orderDirection}" />
+	<input type="hidden" name="actdesc" value="{$actdesc}" />
+	<input type="hidden" name="type" value="{$type}" />
+	<input type="hidden" name="typeval" value="{$typeval}" />
+	<input type="hidden" name="actbegin" value="{$actbegin}" />
+    <input type="hidden" name="actend" value="{$actend}" />
+    <input type="hidden" name="acturi" value="{$acturi}" />
+</form>
+
+<!-- 搜索框 -->
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post" action="{eval echo site_url('log');}">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li><label>动作内容:</label>
+			<input type="text" name="actdesc" value="{$actdesc}" size="20" /></li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				<li><a class="button" href="{eval echo site_url(array('log','advsearch'));}" target="dialog" rel="{eval echo build_rel(array('log','advsearch'));}" title="高级检索" rel="log/advsearch"><span>高级检索</span></a></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<!-- 页面主体 -->
+<div class="pageContent">
+	
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="icon" href="#" target="dwzExport" targetType="navTab" title = "确定要导出这些纪录吗？"><span>导出EXCEL</span></a></li>
+		</ul>
+	</div>
+	
+	<div layoutH="116" id="w_list_print">
+	<table class="list" width="98%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="8%">帐号</th>
+				<th width="8%">真实姓名</th>
+                <th width="15%" orderField="{$orderField}" class="{$orderDirection}">操作时间</th>
+                <th width="15%">动作</th>
+				<th>内容</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="sid_log" rel="{$key}">
+				<td>{$val[admin]}</td>
+				<td>{$val[atruename]}</td>
+				<td>{eval echo date('Y-m-d H:i', $val[dateline]);}</td>
+                <td>{$val[acturi]}</td>
+                <td>{$val[actdesc]}</td>
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+	<div class="panelBar" >
+		<div class="pages">
+			<span>显示</span>
+			<select name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option value="20"{if $numPerPage == 20} selected="selected"{/if}>20</option>
+				<option value="50"{if $numPerPage == 50} selected="selected"{/if}>50</option>
+				<option value="100"{if $numPerPage == 100} selected="selected"{/if}>100</option>
+				<option value="200"{if $numPerPage == 200} selected="selected"{/if}>200</option>
+			</select>
+			<span>条，共{$count}条</span>
+		</div>
+		
+		<div class="pagination" targetType="navTab" totalCount="{$count}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$pageNum}"></div>
+
+	</div>
+	
+</div>
+{/if}

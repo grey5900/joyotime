@@ -1,0 +1,393 @@
+@import "../../../skin/bootstrap/variables.less";
+@import "../../../skin/bootstrap/mixins.less";
+
+/* 频道主色调 */
+@channel-fore: #32c0ca;
+@channel-back: #f37a94;
+@channel-back-image: 'channel-style.png';
+
+body {
+}
+
+//全屏图片链接
+a.fullscreen {
+	display: block;
+	width: 1000px;
+	height: 140px;
+	margin: 0 auto;
+}
+
+#container {
+  background: url('fullscreen.jpg') center 0 no-repeat;
+  .container {
+    background: url(@channel-back-image) -230px top repeat-y;
+  }
+}
+#container-page {
+  .container {
+    background: url(@channel-back-image) -230px top repeat-y;
+  }
+}
+.main-l {
+  border-top: 2px solid @channel-back;
+}
+/* nav*/
+.nav-bg {
+	background: url(@channel-back-image) no-repeat;
+}
+.nav {
+	float: left;
+	width: 190px;
+	.tit {
+		height: 71px;
+		margin: 0px;
+		padding: 0px;
+		text-indent: -9999px;
+	}
+	.col {
+		.cleartype();
+		a {
+			height: 26px;
+			line-height: 26px;
+			display: block;
+			background-color: @channel-back;
+			background-position: 0 -116px;
+			padding: 9px 0 9px 19px;
+			font-size: 16px;
+			color: #ffffff;
+			.ico {
+				background: url('nav-ico.png') no-repeat;
+				width: 26px;
+				height: 26px;
+				float: left;
+				display: block;
+				margin-right: 9px;
+				&.qss { background-position: 0 -27px; }
+				&.mao { background-position: 0 -54px; }
+				&.fang { background-position: 0 -81px; }
+				&.che { background-position: 0 -108px; }
+				&.ssss { background-position: 0 -135px; }
+				&.xin { background-position: 0 -162px; }
+			}
+			&:hover,
+			&.on {
+				text-decoration: none;
+				color: #fff;
+				background-color: @channel-fore;
+				background-position: 0 -71px;
+			}
+		}
+	}
+	.tag {
+		padding: 20px 11px 0;
+		a {
+			background: lighten(@channel-back,8);
+			height: 30px;
+			line-height: 30px;
+			padding: 0 10px;
+			display: inline-block;
+			margin-bottom: 10px;
+			color: lighten(@channel-back,50);
+			text-decoration: none;
+			&:hover {
+				background-color: lighten(@channel-back,16);
+			}
+		}
+	}
+}
+.main {
+	float: right;
+	width: 810px;
+}
+.main-l {
+	float: left;
+	width: 560px;
+	border-top: 2px solid @channel-back;
+}
+.main-r {
+	float: right;
+	width: 230px;
+}
+
+/* 热点*/
+.hot {
+	background: #fff;
+	padding: 14px;
+	border: 1px #eaeaea solid;
+	border-top: 2px solid @channel-back;
+	margin-bottom: 20px;
+	.clearfix();
+	.headline {
+		width: 365px;
+		padding-left: 15px;
+		float: right;
+		.list {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			li {
+				line-height: 20px;
+				border-bottom: 1px #ccc dashed;
+				padding-bottom: 6px;
+				margin-bottom: 6px;
+				h1 {
+					margin: 0px;
+					padding: 0px;
+					font-size: 18px;
+					text-align: center;
+					line-height: 24px;
+					font-weight: normal;
+					.cleartype();
+				}
+				p {
+					margin: 0px;
+					padding: 0px;
+					color: #666666;
+					font-size: 12px;
+					text-align: center;
+					font-weight: normal;
+				}
+				&.more {
+					border: none;
+					padding-bottom: 0px;
+					margin-bottom: 0px;
+					line-height: 23px;
+					a {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* 焦点幻灯*/
+#hd1 {
+	width: 400px;
+	height: 300px;
+	float: left;
+}
+.focus {
+	position: relative;
+	overflow: hidden;
+	font-size: 0;
+}
+#hd1 .focus img,#hd1 .focus {
+	width: 400px;
+	height: 300px;
+}
+.focus_Num,.focus .bg-al {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	overflow: hidden;
+	width: 400px;
+	height: 50px;
+}
+.focus_Num ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#hd1 .focus_Num ul,#hd1 .focus_Num li {
+	line-height: 30px;
+	line-height: 30px;
+}
+.focus_Num ul {
+	overflow: hidden;
+}
+.focus_Num li {
+	display: block;
+	display: none;
+	font-size: 14px;
+	color: #eee;
+	text-align: center;
+}
+.focus_Num span {
+	cursor: pointer;
+	display: inline-block;
+}
+.focus_Numid {
+	text-align: center;
+	padding-top: 9px;
+}
+#hd1 .focus_Num span {
+	width: 17px;
+	height: 3px;
+	background: #727272;
+	overflow: hidden;
+	margin-right: 3px;
+}
+#hd1 .focus_Num span.hov {
+	background: #c82e32;
+}
+.focus .bg-al {
+	filter: alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+	background: #000;
+	height: 50px;
+}
+
+.push {
+	border-right: 1px #e6e6e6 solid;
+	border-bottom: 1px #e6e6e6 solid;
+	background: #fff;
+	.tit {
+		height: 33px;
+		line-height: 33px;
+		background: #eee;
+		padding-left: 18px;
+		zoom: 1;
+		h2 {
+			padding: 0px;
+			margin: 0 10px 0 0;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 33px;
+			float: left;
+			.cleartype();
+		}
+		.say {
+			width: 68px;
+			height: 25px;
+			margin: 4px 0 0 0;
+			background: url(@channel-back-image) 0 -160px no-repeat;
+			display: block;
+			float: left;
+			color: #fff;
+			font-weight: bold;
+			font-size: 14px;
+			text-align: center;
+			text-decoration: none;
+			line-height: 28px;
+			padding-left: 10px;
+		}
+		.tab {
+			float: right;
+			width: 180px;
+			height: 40px;
+			a {
+				display: block;
+				width: 90px;
+				height: 40px;
+				line-height: 30px;
+				text-align: center;
+				color: #333;
+				font-size: 18px;
+				float: left;
+				text-decoration: none;
+				.cleartype();
+				&.current {
+					color: #fff;
+					background-position: -140px -160px;
+				}
+			}
+		}
+	}
+	.con {
+		padding-bottom: 45px;
+	}
+}
+
+/* 重设频道头部样式 */
+#header {
+	border-bottom-color: @channel-back;
+	.site-nav {
+		li {
+			a {
+				&.on {
+					border-bottom-color: @channel-back;
+				}
+			}
+		}
+	}
+}
+
+/* 重设频道模块样式 */
+.module {
+	.tit {
+		h3 {
+			background: url(@channel-back-image) 0px -200px no-repeat;
+		}
+	}
+	.con {}
+	.list-groupon {
+		.price {
+			.p { color: @channel-back;}
+		}
+	}
+	&#babyclock {
+		.tit {
+			background: url(@channel-back-image) 0 -240px no-repeat;
+			padding: 0px;
+			h3 {
+				line-height: 33px;
+				color: #ffffff;
+				padding: 0 0 0 30px;
+				background: none;
+			}
+			.more {
+				line-height: 33px;
+				color: #ffffff;
+				font-size: 14px;
+				font-weight: bold;
+				background: none;
+			}
+		}
+		.photo {
+			display: block;
+			margin: -10px -10px 0;
+			position: relative;
+			img {
+				width: 230px;
+				height: 300px;
+			}
+			.t {
+				display: block;
+				line-height: 35px;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				color: #fff;
+				background: rgba(249,118,144,0.8);
+				*background: #f97690;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 16px;
+				text-align: left;
+				padding: 0 8px;
+				.sex {
+					display: inline-block;
+					*display: inline;
+					*zoom: 1;
+					vertical-align: middle;
+					margin: -3px 0 0 5px;
+					width: 22px;
+					height: 22px;
+					text-indent: -9999px;
+					overflow: hidden;
+					background: url('babyclock-sex.png') 0 0 no-repeat;
+					&.girl {
+						background-position: 0 0;
+					}
+					&.boy {
+						background-position: 0 -22px;
+					}
+				}
+				span {
+					display: block;
+					font-weight: normal;
+					font-size: 12px;
+					float: right;
+				}
+			}
+		}
+		.list-news {
+			padding-top: 5px;
+		}
+	}
+}
+

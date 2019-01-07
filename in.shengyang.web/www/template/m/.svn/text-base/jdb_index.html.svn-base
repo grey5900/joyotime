@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>50家火锅店全部优惠，40个试吃名额，快来参与吧！</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.5.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+      /*  background color  */
+      .page {
+        background:url("http://icd.sc/img/m/jdb/bg.jpg") repeat;
+      }
+      #content .unit .box {
+        background: #fff;
+      }
+      .touchslider-viewport {
+        background: #fff;
+      }
+      /* font color  */
+      .unit-title {
+        color: #fff;
+        text-shadow:0 1px 0   #000;
+      }
+      #content .unit p {
+        color: #666;
+      }
+      #content .statement p {
+        color: #fff;
+      }
+      .box-db-left, .box-db-right {
+        color: #5a146a;
+      }
+      .texts .info-group {
+        color: #0c425c;
+        border-bottom: 1px dotted #e1d5c5;
+      }
+      .texts .inside strong {
+        color: #5ba81c;
+      }
+      .texts .inside p {
+
+      }
+      .bottons .botton span.title {
+      }
+      .bottons .botton span.intro {
+
+      }
+      .touchslider-item .touchslider-info {
+        color: #fff;
+      }
+      .multi-line dd span {
+        color: #666;
+      }
+      .multi-line dd .photo {
+        clear: both;
+        text-align: center;
+      }
+      .multi-line .viewall a {
+        color: #5ba81c;
+      }
+      .multi-line .viewall a:hover {
+
+      }
+      .multi-line .address {
+        font-size: 12px;
+        color: #666;
+        padding-top: 5px;
+      }
+      .touchslider-item img {
+        height: 290px;
+      }
+      .touchslider-nav-item {
+
+      }
+      .feed, .user {
+        border-bottom: 0;
+      }
+      .feed a:hover, .user a:hover {
+        border-bottom: 0;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+      }
+      #content .unit .mid {
+        border-top:1px solid #eee;
+        padding:20px 0 10px 0;
+      }
+      .wb-join{
+        display: inline-block;
+        width: 87px;
+        height: 21px;
+        background: url("http://icd.sc/img/m/jdb/jn.png") no-repeat;
+        float: right;
+        background-size: 87px 21px;
+      }
+      .dl-tit {
+        background: url("http://icd.sc/img/m/jdb/jdb.jpg") no-repeat;
+        padding-left: 65px;
+        background-size: 62.5px 25px;
+        line-height: 25px;
+        border-bottom: 2px solid #EEE;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/{$event_id}/"><img border="0" src="http://icd.sc/img/m/jdb/header.jpg" width="100%" border="0" /></a>
+          </div>
+
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动说明</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+寒冷冬季，成都好吃嘴儿们可以甩开围巾手套，但绝不能没有滚烫鲜辣的巴蜀火锅！！！IN成都携手红罐凉茶加多宝，让你在这个冬季开怀畅饮、劲涮鲜辣！现只要拍下......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    寒冷冬季，成都好吃嘴儿们可以甩开围巾手套，但绝不能没有滚烫鲜辣的巴蜀火锅！！！IN成都携手红罐凉茶加多宝，让你在这个冬季开怀畅饮、劲涮鲜辣！现只要拍下“火锅与加多宝”的恩爱照上传微薄，超值大礼马上送！更有百张热门电影票、手机充值卡赢到你手软！这些还不够？让50多家美味火锅店送你多重优惠惊喜吧，赶快来当行动派火锅达人！
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动时间</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  活动时间：11月30号-12月30号
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动一、上传“火锅与加多宝”的甜蜜恩爱照，6罐礼品装加多宝立即送到你手中!</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <h3>一边围着桌子热闹地吃着麻辣鲜香的火锅，一边打开清凉可口的加多宝与朋友们开怀畅饮!这么美妙的时刻千万不要忘记“咔咔”拍下。现在起，拍下“火锅与加多宝”的甜蜜恩爱照上传微博或IN成都，千罐加多宝，只要你敢传！我们就敢送！</h3>
+                
+                  <br /><h3>【参与方式】</h3><br />
+<p>1.  在任意地点吃火锅并拍下“火锅与加多宝”的合照，上传新浪或腾讯微博，含话题关键字 #吃火锅就要加多宝# 并@IN成都，即可获得活动奖品一份。 
+2.  通过IN成都客户端上传“火锅与加多宝”的合照，含话题关键字 #吃火锅就要加多宝#，并同步新浪或腾讯微博，即可获得活动奖品一份。</p><br />
+
+<h3>【奖品设置】</h3><br />
+<p>只要通过上述方式参与活动上传图片，即可获得加多宝凉茶6罐礼品装。</p><br />
+
+<h3>【友情提示】</h3><br />
+<p>为了保证活动的公平性，一个用户限领取一份礼品。恶意使用马甲等将取消获奖资格。</p>
+                <a href="http://m.weibo.com/inchengducn" target="_blank" class="wb-join"></a>
+              </div>
+            </div>
+          </div>
+          
+          <!--{if isset($feed) && !empty($feed)}-->
+          <div class="unit card">
+            <div class="unit-title">
+              <h3>活动二、拍展架、写点评，超热档电影票和充值卡周周大派送!更有数场火锅派对由“加多宝”为你埋单，畅吃畅饮！</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <h3>【参与方式】</h3>
+                <p>凡在活动优惠火锅商家拍下“加多宝火锅节”X展架并写下点评的用户,，附带关键字“吃火锅就要加多宝”，将有机会获得IN成都每周为你准点派送的电影票或是50元手机充值卡，更有机会免费参加数场“加多宝火锅派对”，让你感受火锅与加多宝的绝配魅力！</p>
+                <h3>【奖品设置】</h3>
+                <p>IN成都每周将从活动参与活动中抽选出50名幸运用户，送出电影票2张/ 50元手机充值卡/ 免费参加“加多宝火锅派对”名额。优质点评和点评数量都将提升你的中奖几率哦。</p>
+              </div>
+              <div class="feeds">
+                <div class="feed">
+                  <a href="/event/feeds/{$event_id}/{$uid}/0/1">
+                  <div class="arrow">
+                    <div class="icon">
+                      <img src="{$feed[avatar]}"  width="40" height="40"/>
+                    </div>
+                    <div class="detail">
+                      <h4>{$feed[uname]}</h4>
+                      <!--{if $feed[type]==1}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        签到
+                      </div>
+                      <!--{elseif $feed[type]==2}-->
+                      <div class="action">
+                        点评
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="start">
+                        <!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}-->
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <!--{elseif $feed[type]==3}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        上传照片
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <div class="photo"><img src="{$feed[photoName]}" width="200" />
+                      </div>
+                      <!--{/if}-->
+                    </div>
+                  </div> </a>
+                </div>
+              </div>
+              <div class="inside">
+                <div class="mid">
+                  <a class="botton-join aqua" href="http://in.chengdu.cn/event/index/26/" target="_blank" >
+                    <div class="glare"></div>
+                    立即参与达人活动
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--{/if}-->
+
+          <!--{if isset($joines) && !empty($joines)}-->
+          <div class="unit user-list">
+            <div class="unit-title">
+              <h3>他们参加了这个活动</h3>
+            </div>
+            <div class="box">
+              <a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+              <ul class="user-list">
+                <!--{loop $joines $id $u}-->
+                <li><img src="{$u[avatar]}" />
+                </li>
+                <!--{/loop}-->
+              </ul> </a>
+            </div>
+          </div>
+          <!--{/if}-->
+          
+         
+           <div class="unit multi-line">
+             <div class="unit-title">
+              <h3>活动三、加多宝联动全城50家火锅店，优惠劲爽你！赶快做个火锅达人行动派！</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <h3>【怎样获得优惠？】</h3><br />
+<p>
+1、吃火锅、刷同心卡、将您和加多宝的合照（火锅、加多宝、还有您缺一不可哦）上传至您的微博或IN成都相对应的地点，即可享受该火锅店对应优惠。<br />
+
+2、使用IN成都专属对应火锅店电子优惠券，即可享受该火锅店对应优惠。<br />
+
+3、转发IN成都含有“加多宝”字样微博，即可享受该火锅店对应优惠。<br />
+
+4、拍摄火锅店门口IN成都“加多宝火锅节”X展架上传至微博并@3位好友，即可享受该火锅店对应优惠。
+</p>
+              </div>
+              <div class="dl-tit">优惠商家</div>
+              <dl class="shrink" id="txl1">
+                <dd>
+                  <a href="inplace://11941">
+                    <div class="arrow">
+                      <span>小天鹅火锅（财富店）</span>
+                      <!-- <div class="address">
+                        
+                      </div> -->
+                    </div> 
+                  </a>
+                </dd>
+               <dd>
+                  <a href="inplace://9599">
+                    <div class="arrow">
+                      <span>小天鹅火锅（春熙店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://2284">
+                    <div class="arrow">
+                      <span>小天鹅火锅（嘉茂店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://7281">
+                    <div class="arrow">
+                      <span>小天鹅火锅（千盛店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://8016">
+                    <div class="arrow">
+                      <span>小天鹅火锅（一环路店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://3840">
+                    <div class="arrow">
+                      <span>小天鹅火锅（骡马市店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://6478">
+                    <div class="arrow">
+                      <span>小天鹅火锅（天府店</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://241682">
+                    <div class="arrow">
+                      <span>小天鹅火锅（凯丹店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://315991">
+                    <div class="arrow">
+                      <span>小天鹅火锅（优品道店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320367">
+                    <div class="arrow">
+                      <span>小天鹅火锅（奥克斯店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://7389">
+                    <div class="arrow">
+                      <span>大妙火锅（锦里店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://4645">
+                    <div class="arrow">
+                      <span>大妙火锅（窄巷子店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://304732">
+                    <div class="arrow">
+                      <span>大妙火锅（东区音乐公园店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305785">
+                    <div class="arrow">
+                      <span>大妙火锅（小天店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://4616">
+                    <div class="arrow">
+                      <span>吴铭火锅（长顺店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320361">
+                    <div class="arrow">
+                      <span>吴铭火锅（蓝谷地店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320362">
+                    <div class="arrow">
+                      <span>吴铭火锅（锦绣店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://5211">
+                    <div class="arrow">
+                      <span>吴铭火锅（琴台店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://2264">
+                    <div class="arrow">
+                      <span>吴铭火锅（蓝天店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://7424">
+                    <div class="arrow">
+                      <span>吴铭火锅（武侯祠店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://319096">
+                    <div class="arrow">
+                      <span>十七码头鲜菜老灶火锅（东门店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305316">
+                    <div class="arrow">
+                      <span>重庆胖妈烂火锅（东大街店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320352">
+                    <div class="arrow">
+                      <span>老院坝火锅（交大凯德店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://21109">
+                    <div class="arrow">
+                      <span>小天鹅洪鼎奇珍</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://8991">
+                    <div class="arrow">
+                      <span>琴妹土鸡黄喉火锅</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320353">
+                    <div class="arrow">
+                      <span>家禧吊脚楼老火锅（望平街总店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://239442">
+                    <div class="arrow">
+                      <span>老知青火锅（交大店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://231828">
+                    <div class="arrow">
+                      <span>老知青火锅（红牌楼店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305866">
+                    <div class="arrow">
+                      <span>澜庭苑火锅（交大店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://7543">
+                    <div class="arrow">
+                      <span>澜庭苑火锅（万里号店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305867">
+                    <div class="arrow">
+                      <span>澜庭苑火锅（九茹村店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320354">
+                    <div class="arrow">
+                      <span>老街坊（天仁店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://10942">
+                    <div class="arrow">
+                      <span>老街坊（紫荆店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320363">
+                    <div class="arrow">
+                      <span>煲仔牛老火锅（龙泉店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://237086">
+                    <div class="arrow">
+                      <span>川江滋香干锅店</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://238890">
+                    <div class="arrow">
+                      <span>川江滋香火锅（总店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://238900">
+                    <div class="arrow">
+                      <span>川江滋香火锅（旗舰店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://7489">
+                    <div class="arrow">
+                      <span>川江滋香火锅（彩虹桥店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320365">
+                    <div class="arrow">
+                      <span>川江滋香火锅（荆竹店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://1845">
+                    <div class="arrow">
+                      <span>方向火锅（一品天下店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://231252">
+                    <div class="arrow">
+                      <span>老庄火锅</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://233097">
+                    <div class="arrow">
+                      <span>廖老四鲜鹅肠（高攀店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://229738">
+                    <div class="arrow">
+                      <span>廖老四鲜鹅肠（东门店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://9678">
+                    <div class="arrow">
+                      <span>廖老四鲜鹅肠（肖家河店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://10499">
+                    <div class="arrow">
+                      <span>廖老四鲜鹅肠（玉林店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://6395">
+                    <div class="arrow">
+                      <span>廖老四鲜鹅肠（彩虹桥店）</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320368">
+                    <div class="arrow">
+                      <span>月满大江新派火锅</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://319481">
+                    <div class="arrow">
+                      <span>香巷子牛杂火锅</span>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320851">
+                    <div class="arrow">
+                      <span>打渔人家鱼头火锅</span>
+                    </div> 
+                  </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa1">
+                <a class="showMore" id="txs1">查看全部（<em>49</em>）</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong><br />
+1、火锅试吃团选取标准：参与达人活动、上传吃火锅喝加多宝照片。<br />
+         2、火锅试吃共四次，分批次进行名单公布，中奖用户私信通知。<br />
+         3、火锅试吃团成员需在试吃地点上传3条点评（每条不少于50字）、5张图片。<br />
+         4、用户在IN成都发布吃火锅喝加多宝照片并同步至新浪微博，或在新浪微博上传照片并@IN成都即有资格进入获奖用户候选名单。<br />
+         5、此次活动最终解释权归IN成都和加多宝所有。
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+     <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $(".expand").each(function() {
+          $(this).on("click", function() {
+            $(this).toggleClass("on");
+          });
+      });
+      $("#txl1").each(function() {
+          $("#txl1 > dd:gt(1)").hide();
+          $("#txa1").click(function() {
+            $("#txs1").toggle();
+            $("#txl1 > dd:gt(1)").toggle();
+          });
+        })
+      })
+    </script>
+  </body>
+</html>

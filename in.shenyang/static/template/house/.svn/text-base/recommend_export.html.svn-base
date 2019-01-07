@@ -1,0 +1,45 @@
+<script type="text/javascript">
+function handle_export(json) {
+	DWZ.ajaxDone(json);
+	if(json.statusCode == 200) {
+		window.open("/house/recommend_export/start_date/" + json.value.start_date + "/end_date/" + json.value.end_date);
+		$.pdialog.closeCurrent();
+	}
+}
+</script>
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, handle_export);">
+        <div class="pageFormContent" layoutH="58">
+            <table>
+            	<tr>
+            	<td>订单创建时间：<td>
+	            <td><input type="text" size="18" name="start_date" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true" /></td>
+	            <td>-</td>
+	            <td><input type="text" size="18" name="end_date" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true" /></td>
+            	</tr>
+            </table>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

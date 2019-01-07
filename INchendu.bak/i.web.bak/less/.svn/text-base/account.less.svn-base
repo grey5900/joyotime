@@ -1,0 +1,73 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "global.less";
+
+#container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.block {
+	width: 980px;
+	.clearfix();
+	.block-header {
+		font-size: 14px;
+		height: 44px;
+		background: url(/img/bg_account_header.png) top left no-repeat;
+		h2 {
+			font-size: 16px;
+			float: left;
+			line-height: 44px;
+			padding: 0px 10px;
+			.font-yab();
+		}
+	}
+	.block-content {
+		border: 1px solid @graySide;
+		border-width: 0 1px;
+		padding: 20px;
+		min-height: 300px;
+		background: @whiteText;
+		.clearfix();
+		.sidebar {
+			float: right;
+			padding: 20px;
+			width: 260px;
+			border-left: 1px dotted #ccc;
+			.guide {
+				h4 {
+					margin: 0 0 10px 0;
+					color: @grayDark;
+					font-size: 14px;
+					font-weight: normal;
+				}
+			}
+		}
+		.main {
+			float: left;
+			padding: 20px 0;
+			width: 600px;
+		}
+		.form-actions {
+			border: none;
+			background: @whiteText;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}
+	.block-footer {
+		height: 10px;
+		background: url(/img/bg_account_footer.png) top left no-repeat;
+	}
+}
+
+#resetpassword-form,
+#resetpassword-form-1 {
+	width: 520px;
+	margin: 100px auto;
+}
+.control-group{
+	.valicode{
+		display: inline;
+	}
+}

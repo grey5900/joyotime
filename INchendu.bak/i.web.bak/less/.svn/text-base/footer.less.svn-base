@@ -1,0 +1,27 @@
+/*
+ * footer
+ */
+
+.footer {
+	clear: both;
+	margin:0;padding:20px 0;border-top:1px solid @grayLighter; background:@whiteText;
+  .mobile{height:70px; margin:0 0 0 180px;
+    li{float:left;
+      a{display:block;width: 200px;height: 70px;background:transparent url(/img/download_bg.gif) no-repeat  scroll 0 -999em;
+        &.android{background-position:0 0;
+          &:hover{background-position:0 -70px;}
+        }
+        &.app-store{background-position:0 -140px;
+          &:hover{background-position:0 -210px;}
+        }
+        &.web{background-position:0 -280px;
+          &:hover{background-position:0 -350px;}
+        }
+      }
+    }
+  }
+  .copyright{margin:10px 0 0 0;padding:20px 0 0 0;text-align:center;background:url(/img/dotted_line.gif) 0 top repeat-x;
+    a{margin:0 5px;}
+    span{margin:0 20px 0 0;.grayLightest();}
+  }
+}

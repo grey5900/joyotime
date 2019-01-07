@@ -1,0 +1,11 @@
+{
+    "apiVersion": "0.1",
+    "swaggerVersion": null,
+    "basePath": "http://tuanfang.joyotime.com/doc/api-doc",
+    "apis": [
+        {
+            "path": "/resources/api.{format}",
+            "description": "\u56e2\u8d2d\u3001\u4f18\u60e0\u3001\u63a8\u8350\uff08\u9700\u8981\u9a8c\u8bc1\u7684token\uff09"
+        }
+    ]
+}

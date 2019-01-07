@@ -1,0 +1,74 @@
+<!--{template common/header3.0}-->
+	<div class="main layout detail">
+		<div class="column intro_banner">
+			<div class="img">
+				<img src="/index3.0/images/score.png" alt="积分商城" />
+			</div>
+			<div class="info">
+				<h1>IN成都4.0三大炮：积分商城</h1>
+				<p>抢地主、玩道具，积分送大礼！<br />IN成都4.0来了，为了带来了各种各样的礼物，这些都可以用积分兑换哦</p>
+				<a href="http://in.chengdu.cn/download/" target="_blank" class="down">下载IN成都客户端，玩转积分</a>
+			</div>
+			<div class="btns">				
+				<a href="/lord/"><i class="lord"></i>去抢地主</a>
+				<a href="/mall/"><i class="item"></i>去道具商城</a>
+			</div>
+		</div>
+		<div class="column score score_banner">
+			<div class="bd">
+				<ul>
+				{loop $top3 $k $t}
+					<li {if $k==0}class="large"{/if}>
+						<img src="{echo image_url($t['image'],'product');}" alt="{$t[name]}" />
+						<div class="caption">
+							<span>{$t['name']}</span>
+							{if intval($t['originalPrice'])>0}
+							<s><!--  市场价：-->{if $t['originalPriceType']==1}￥{/if}{echo $t['originalPrice']/100;}{if $t['originalPriceType']==0}积分{/if}</s>
+							{/if}
+						</div>
+						<div class="score_panel">
+							<em>{$t['price']}</em>积分
+						</div>
+					</li>
+				{/loop}
+					
+				</ul>
+			</div>
+		</div>
+		<div class="column score">
+			<div class="tit">
+				<h3><i></i>商品列表</h3>
+			</div>
+			<div class="bd">
+				<ul>
+				{loop $list $l}
+					<li class="">
+						<img src="{echo image_url($l['image'],'product','pdp');}" alt="{$l[name]}" />
+						<div class="caption">
+							<span>{$l['name']}</span>
+							{if intval($l['originalPrice'])>0}
+							<s><!--  市场价：-->{if $l['originalPriceType']==1}￥{/if}{echo $l['originalPrice']/100;}{if $l['originalPriceType']==0}积分{/if}</s>
+							{/if}
+						</div>
+						<div class="score_panel">
+							<em>{$l['price']}</em>积分
+						</div>
+					</li>
+				{/loop}
+					
+				</ul>
+				
+			</div>
+			
+			{$paginate}
+		</div>
+	</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="js/ie6.js"></script>
+<![endif]-->
+<!--{template common/footer}-->
+</body>
+</html>

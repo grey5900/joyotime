@@ -1,0 +1,123 @@
+{if $v3_fragments['v3_tuangou']}
+<div class="module tg">
+					<div class="hd">
+						<h2>{$v3_fragments['v3_tuangou']['frag']['name']}</h2>
+						{if $v3_fragments['v3_tuangou']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_tuangou']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+					</div>
+					<div class="bd">
+						<div class="primary" id="v3_tuangou_first">
+							<h3><a href="" target="_blank">loading...</a></h3>
+							<div class="img">
+								<a href="" target="_blank"><img src="{$v3_fragments['v3_tuangou']['data'][0]['image']}" alt="" /></a>
+							</div>
+							<div class="info">
+								<ul>
+									<li class="">
+										<div class="price">
+											<h3><em>￥</em>-</h3>
+											<p>原价：- | 节省：- | -折</p>
+										</div>
+									</li>
+									<li class="">
+										<div class="people">
+											<h3><em>-</em>人已团购</h3>
+											<p id="tuangou_countdown">剩余时间：-</p>
+										</div>
+									</li>
+									<li>
+										<a href="" target="_blank" class="btn btn-vertical btn-warning">我要团购</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="sub" id="tg_more" style="display:none">
+							<h3>更多团购 <span>>></span></h3>
+							<ul id="v3_tuangou_more_list">
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+<script>
+var v3_count_timeout = null;
+var v3_count_down = 0;
+$(function(){
+	var source = '{$v3_fragments[v3_tuangou][frag][dataSource]}';
+	
+	$.getJSON(source+'&callback=?',function(data){
+		var smallest_key = 0;
+		$.each(data.list,function(k,v){
+			
+			if(!v.close_time){ //木有结束就可以拿来展示啦
+				if(k == smallest_key){
+					var now = {eval echo time();};
+					v3_count_down = parseInt(v.end_time - now);
+					$("#v3_tuangou_first").find("h3 > a").html(v.title);
+					$("#v3_tuangou_first").find("a").attr("href",v.url);
+					$("#v3_tuangou_first").find('.info ul li:first').find('.price > h3').html('<em>￥</em>'+v.team_price);
+					$("#v3_tuangou_first").find('.info ul li:first').find('.price > p').html('原价：'+v.market_price+' | 节省：'+v.save+' | '+v.disc+'折');
+					
+					$("#v3_tuangou_first").find('.info ul li').eq(1).find('.people > h3').html('<em>'+v.now_number+'</em>人已团购');
+					$("#v3_tuangou_first").find('.info ul li').eq(1).find('.people > p').html('剩余时间：-');
+
+					//$("#v3_tuangou_first").find('.info ul li:last > a').attr("href",v.url);
+					v3_groupon_countdown();
+				}
+				else{
+					if($("#v3_tuangou_more_list li").length<3){
+						var tmp_html = '<li>';
+							tmp_html+= '<div class="img">';
+							tmp_html+= '<a href="'+v.url+'" target="_blank"><img src="'+v.image+'" alt="" /></a>';
+							tmp_html+= '<div class="caption">';
+							tmp_html+= '<p>';
+							tmp_html+= '<em>'+v.now_number+'</em>人已购买';
+							tmp_html+= '</p>';
+							tmp_html+= '</div>';
+							tmp_html+= '</div>';
+							tmp_html+= '<div class="info">';
+							tmp_html+= '<a href="'+v.url+'" target="_blank">'+v.title+'</a>';
+							tmp_html+= '<div class="price">';
+							tmp_html+= '<em>'+v.disc+'折</em><b>￥'+v.team_price+'</b><span>￥'+v.market_price+'</span>';
+							tmp_html+= '</div>';
+							tmp_html+= '</div>';
+							tmp_html+= '</li>';
+						$("#v3_tuangou_more_list").append(tmp_html);
+						$("#tg_more").show();
+					}
+				}
+			}else{
+				smallest_key++;
+			}
+		});
+	});
+});
+
+function v3_groupon_countdown(){
+	v3_count_timeout = setTimeout("v3_timer()",1000);
+	$("#tuangou_countdown").html('剩余时间：'+v3_format_time(v3_count_down));
+}
+function v3_timer(){
+	if(v3_count_down>0){
+		v3_count_down -- ;
+		$("#tuangou_countdown").html('剩余时间：'+v3_format_time(v3_count_down));
+		setTimeout("v3_timer()",1000);
+	}
+	else{
+		clearTimeout(v3_count_timeout);
+	}
+}
+function v3_format_time(sec){
+	if(sec<=0) return "已结束";
+	var days = Math.floor(sec/(3600*24));
+	var hours = Math.floor((sec - days*3600*24)/3600);
+	var mins = Math.floor((sec - days*3600*24 - hours*3600)/60);
+	var str = '';
+	days ? str+= days+"天" : "";
+	hours ? str+= hours+"时" : "";
+	mins ? str+= mins+"分" : "";
+
+	return str;
+}
+</script>
+{/if}

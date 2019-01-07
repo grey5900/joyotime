@@ -1,0 +1,115 @@
+<!--{template web/header}-->
+<div id="container" class="container">
+	<div class="section fixed">
+		<div class="main">
+			<div class="inner">
+				<div class="main-header">
+					<h2>个人设置</h2>
+				</div>
+				<div class="main-content">
+					<!--{template tit}-->
+					<div class="con">
+						<div class="img-wrap">
+							<p>
+								或者从电脑中选择喜欢的照片,你可以上传JPG、JPEG、GIF或PNG文件 <span>
+									<input type="file" name="files" id="avatar">
+								</span>
+							</p>
+							<div class="up-avatar">
+								<!-- <p class="c-gray">
+								或者从电脑中选择喜欢的照片,你可以上传JPG、JPEG、GIF或BMP文件
+								<span>
+								<input type="file" name="files" id="avatar">
+								</span>
+								</p> -->
+								<div class="frame" id="div_upload_big">
+									<!-- <img id="photo" src="" width="360" height="360"/> -->
+								</div>
+							</div>
+							<div class="show-avatar">
+								<!-- <div class="frame"> -->
+									<div id="preview" class="frame">
+										<!-- <img id="thumb" src="" height="160" height="160" style="overflow: hidden" /> -->
+									</div>
+								<!-- </div> -->
+							</div>
+							<div class="from-actions">
+								<!-- <div class="controls"> -->
+								<form name="thumbnail" action="{$current_url}" method="post" id="upload_thumb">
+									<input type="hidden" name="src" id="image_src" value="" />
+									<input type="hidden" name="x1" value="0" id="x1" />
+									<input type="hidden" name="y1" value="0" id="y1" />
+									<input type="hidden" name="x2" value="360" id="x2" />
+									<input type="hidden" name="y2" value="360" id="y2" />
+									<input type="hidden" name="w" value="360" id="w" />
+									<input type="hidden" name="h" value="360" id="h" />
+									<input class="btn btn-primary" data-loading-text="　……　" type="submit" value="　保存　" name="upload" id="save_avatar" />
+								</form>
+								<!-- </div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main-footer"></div>
+			</div>
+		</div>
+		<!--{template side_bar}-->
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#avatar").uploadify({
+			"auto":true,
+			"multi":false,
+			"buttonText":"上传照片",
+			"fileSizeLimit":"2048KB",//图片最大size 
+			"fileTypeExts":"*.png;*.jpg;*.gif",//允许上传的图片类型
+			"swf":"/js/uploadify.swf",
+			"uploader":"/upload",//图片上传逻辑页面
+			"onUploadStart":function(file){
+				$("#div_upload_big").html("");
+				$("#preview").html("");
+			},//开始上传时
+			"onUploadSuccess":function(file){
+				var image_path = "{$upload_path}"+file.name;
+				var w,h;
+				$('#div_upload_big').append('<img width="360px" height="360px" id="photo" src="'+image_path+'" />');
+				$('#preview').append('<img id="thumb" width="160px" height="160px" src="'+image_path+'"/>');
+				$("#photo").attr({src:image_path});
+				$("#thumb").attr({src:image_path});
+				$("#image_src").val(image_path);
+				
+				$('#upload_thumb').show();
+
+				$('#photo').imgAreaSelect({ 
+					aspectRatio: '1:1', 
+					handles: true,
+					fadeSpeed: 200,
+					resizeable:false,			
+					onSelectChange: preview
+				});
+				
+			},//上传成功
+			"onUploadError":function(file){
+				alert("头像上传失败了");
+			}//上传失败
+
+		});
+		$("#upload_thumb").on("submit",function(){
+			$.ajax({
+				type: "POST",
+				url: $("#upload_thumb").attr("action"),
+				data: $("#upload_thumb").serialize(),
+				dataType: "json",
+				success: function(json){
+					$('#messager').messager({message:json.msg});
+					if( json.code == 1){
+						window.location.reload();
+					}
+				}
+			});
+			return false;
+		});
+	});
+</script>
+<!--{template web/footer}-->

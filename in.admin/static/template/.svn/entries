@@ -1,0 +1,196 @@
+10
+
+dir
+42063
+svn://svn.joyotime.com/Incd20/XR87/trunk/static/template
+svn://svn.joyotime.com/Incd20
+
+
+
+2014-03-21T09:11:32.841967Z
+42063
+zourong
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+86661628-28bb-49c0-9a6f-c8e3782614a9
+
+account
+dir
+
+babyclock
+dir
+
+background
+dir
+
+banner
+dir
+
+batch
+dir
+
+block
+dir
+
+brand
+dir
+
+cache
+dir
+
+channel
+dir
+
+client
+dir
+
+cms_category
+dir
+
+cms_content
+dir
+
+coupon
+dir
+
+ds
+dir
+
+enewspaper
+dir
+
+event
+dir
+
+fragment
+dir
+
+goods
+dir
+
+home
+dir
+
+home2014
+dir
+
+house
+dir
+
+house_i
+dir
+
+inmall
+dir
+
+item
+dir
+
+itemawards
+dir
+
+log
+dir
+
+lookup
+dir
+
+main
+dir
+
+membercard
+dir
+
+message
+dir
+
+module
+dir
+
+module_template
+dir
+
+my_goods
+dir
+
+my_order
+dir
+
+new_event
+dir
+
+news
+dir
+
+order
+dir
+
+other
+dir
+
+place
+dir
+
+poi
+dir
+
+poi_block
+dir
+
+point
+dir
+
+pointticket
+dir
+
+post
+dir
+
+recommend
+dir
+
+rights
+dir
+
+role
+dir
+
+stat
+dir
+
+tags
+dir
+
+ugc
+dir
+
+ugcv3
+dir
+
+user
+dir
+
+version
+dir
+
+vest
+dir
+
+vote
+dir
+
+www
+dir
+

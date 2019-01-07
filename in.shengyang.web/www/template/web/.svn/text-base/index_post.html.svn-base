@@ -1,0 +1,31 @@
+				<ul class="thumbnails">
+					{loop $home_post $hp}
+					<li class="thumbnail">
+						<div class="photo">
+							{if $hp['photoName']}
+							<a href="/review/{$hp['id']}/" target="_blank">
+								<img src="{$hp['photoName']}" width="{$hp['photoSize']['w']}" height="{$hp['photoSize']['h']}" alt="" />
+							</a>
+							{/if}
+							<p>{echo cut_string($hp['content'],201)}</p>
+						</div>
+						<div class="user">
+							<div class="interact">
+								<!-- a href="#" class="reply action-reply"></a-->
+								<a href="#" class="like action-like praise {if !$hp['is_praised']}on{/if}" data-type="19" data-id="{$hp[id]}"></a>
+							</div>
+							<div class="user_info">
+								<div class="img">
+									<a href="/user/{$hp['uid']}/" target="_blank">
+										<img src="{$hp['avatar_url']}" data-toggle="tooltip" data-original-title="{$hp['nickname']}" alt="" />
+									</a>
+								</div>
+								<div class="info">
+									<a href="/user/{$hp['uid']}/" target="_blank">{$hp['nickname']}</a>
+									<p class="time">{$hp['createDate']}</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					{/loop}
+				</ul>			

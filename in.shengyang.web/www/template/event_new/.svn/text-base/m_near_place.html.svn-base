@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>附近地点</title>
+    <link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" />
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/mobile.min.js"></script>
+    <script type="text/javascript">
+    <!--{if $uid}-->
+    var online_id = {$uid};
+    <!--{else}-->
+    var online_id = 0;
+    <!--{/if}-->
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="container">
+        <!--{if $near_places}-->
+		<div class="post">
+        	<div class="feeds" id="feeds">
+				<!--{loop $near_places $row}-->
+				<div class="feed-list">
+					<a href="inchengdu://inplace/{$row['id']}">
+						<div class="icon">
+							<img src="{$row['icon']}" width="40" height="40" />
+						</div>
+						<div class="detail">
+							<div class="info">
+								{$row['placename']}
+							</div>
+							<div class="star">
+								<i class="ico-star-{$row['star']}"></i>
+								<!--{if $row['show_distance']}-->
+								<span>{$row['distance']}</span>
+								<!--{/if}-->
+							</div>
+						</div>
+					</a>
+				</div>
+				<!--{/loop}-->
+			</div>
+		</div>
+		<!--{/if}-->
+      </div>
+    </div>
+  </body>
+</html>

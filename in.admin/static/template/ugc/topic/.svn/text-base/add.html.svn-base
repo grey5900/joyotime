@@ -1,0 +1,58 @@
+{eval $page_rel='topic_add';}
+<div class="pageContent" id="{$page_rel}">
+    <form method="post" action="{$current_url}" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>话题：</dt>
+                <!--{if $topic['subject']}-->
+                <dd><input type="text" id="subject" name="subject" class="required" size="80" maxlength="200" value="{$topic['subject']}" readonly="readonly" /></dd>
+            	<!--{else}-->
+            	<dd><input type="text" id="subject" name="subject" class="required" size="80" maxlength="200" value="{$topic['subject']}" /></dd>
+            	<!--{/if}-->
+            </dl>
+            <dl>
+                <dt>背景图片(640 x 400)：</dt>
+                <dd><button id="image" type="button">上传</button>
+                </dd>
+            </dl>
+            <dl>
+                <dt>列表小图标(200 x 150)：</dt>
+                <dd><button id="icon" type="button">上传</button>
+                </dd>
+            </dl>
+            <dl>
+                <dt>精彩话题：</dt>
+                <dd>
+                <label><input type="radio" value="0" name="is_official" />否</label>
+                <label><input type="radio" value="1" name="is_official" />是</label>
+                </dd>
+            </dl>
+            <dl>
+                <dt>描述：</dt>
+                <dd><textarea id="description" name="description" cols="80" rows="5" class="required">{$topic['description']}</textarea></dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit" onclick="onsubmitSelected();">保存</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var options = "name:\"image\", id:\"image\", file_type:\"default\", api:\"3\", required:true";
+        <!--{if $topic['image']}-->
+            options += ", image_name: \"{$topic['image']}\"";
+        <!--{/if}-->
+        $("#image", "#{$page_rel}").my_upload(eval("({" + options + "})"));
+        var options = "name:\"icon\", id:\"icon\", file_type:\"default\", api:\"3\", required:true";
+        <!--{if $topic['image']}-->
+            options += ", image_name: \"{$topic['icon']}\"";
+        <!--{/if}-->
+        $("#icon", "#{$page_rel}").my_upload(eval("({" + options + "})"));
+        
+        $("input:radio[name=is_official]", "#{$page_rel}")[{echo $topic['isOfficial']?$topic['isOfficial']:0}].checked = true;
+    });
+</script>

@@ -1,0 +1,42 @@
+<!--{template common/header}-->
+<div id="container">
+	<div  class="container-fluid">
+		<div class="row">
+			<!--{template side_bar}-->
+			<div class="main">
+				<!--{template navigation}-->
+				<div class="con">
+					<div class="fill">
+						<div class="img-wrap">
+							<p>
+								从电脑中选择喜欢的照片,你可以上传JPG、JPEG、GIF或PNG文件
+							</p>
+							<div class="up-avatar">
+								<label class="imgselect" id="avatarCover" for="avatar">
+									<input type="file" class="imgbtn" name="Filedata" value="" id="avatar"/>
+								</label>
+							</div>
+							<div class="show-avatar">
+								<div id="preview"></div>
+							</div>
+							<div class="from-actions">
+								<form name="thumbnail" action="/profile/avatar" method="post" id="upload_thumb">
+									<input type="hidden" name="src" id="image_src" value="" />
+									<input type="hidden" name="w" value="0" id="w" />
+									<input type="hidden" name="h" value="0" id="h" />
+									<input type="hidden" name="x1" id="x1" />
+									<input type="hidden" name="y1" id="y1" />
+									<input type="hidden" name="x2" id="x2" />
+									<input type="hidden" name="y2" id="y2" />
+									<input class="btn btn-primary" data-loading-text="　保存中...　" type="submit" value="　保存　" name="upload" id="save_avatar" />
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<input type="hidden" id="upload_path" value="{$upload_path}" />
+<!--{template common/footer}-->

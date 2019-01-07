@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta content="zh_cn" name="language">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+		<title>十一长假 带上小in去happy~</title>
+		<link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+		<link rel="stylesheet" href="//icd.sc/demo/c/basic.css"/>
+		<style type="text/css" media="screen">
+			* {
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				-webkit-focus-ring-color:  rgba(0, 0, 0, 0);
+			}
+			.page {
+			}
+			.unit-img img {
+				display: block;
+			}
+			.unit-img {
+				-webkit-box-shadow: 0 1px 2px rgba(165, 165, 165, .55);
+				-moz-box-shadow: 0 1px 2px rgba(165,165,165,.55);
+				box-shadow: 0 1px 2px rgba(165, 165, 165, .55);
+			}
+			#content .greeyColor h3 {
+				font-size: 1.4em;
+				font-weight: bold;
+				color: #e20121;
+			}
+			#content .unit .box {
+				background-color: #f6eada;
+			}
+			#content dl dd h3 {
+				color: #000;
+				font-weight: bold;
+			}
+			#content a.arrow {
+				display: block;
+				font-size: 1.2em;
+				color: #000;
+			}
+			#content .botton span.title {
+				display: block;
+				font-weight: bold;
+				color: #0c425c;
+			}
+			#content .botton span.intro {
+				display: block;
+				font-size: 0.65em;
+				color: #0c425c;
+				font-weight: normal;
+			}
+			#joins_num {
+				color: #0c425c !important;
+			}
+			.bottonColor-orange {
+				border: 1px solid #bea084;
+				background-color: #bfa489;
+				background-image: -moz-linear-gradient(top, #ecddca, #bfa489);
+				background-image: -ms-linear-gradient(top, #ecddca, #bfa489);
+				background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#ecddca), to(#bfa489)); 
+				background-image: -webkit-linear-gradient(top, #ecddca, #bfa489); 
+				background-image: -o-linear-gradient(top, #ecddca, #bfa489);
+				background-image: linear-gradient(top, #ecddca, #bfa489);
+				background-repeat: repeat-x;
+				filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",#ecddca, #bfa489));
+				-webkit-box-shadow:  0 1px 2px rgba(0,0,0,.2);
+				-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+				box-shadow: inset 0 1px 0px rgba(255,255,255,.5), 0 1px 0px rgba(255,255,255,.5);
+				color: #0c425c;
+			}
+			.page-title h3 {
+				text-align: center;
+				background: url(/demo/i/view_bg.jpg) 0 0 repeat-x;
+				width: 100%;
+				height: 34px;
+				line-height: 34px;
+				font-size: 14px;
+				font-weight: bold;
+				border-bottom: 1px solid rgba(0,0,0,0.08);
+				color: #999999;
+			}
+			.feeds,
+			.users {
+			}
+			.feed,
+			.user {
+				font-size: 14px;
+				line-height: 20px;
+				border-bottom: 1px solid rgba(0,0,0,0.08);
+				box-shadow: inset 1px 1px 0px rgba(255,255,255,0.5);
+			}
+			.feed:after,
+			.user:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.feed a,
+			.user a {
+				display: block;
+				color: #000;
+				margin: 0;
+				padding: 8px;
+				font-size: 1em !important;
+			}
+			.feed a:hover,
+			.user a:hover {
+				background-color: #e9f7db;
+				box-shadow: inset 1px 1px 1px #cfebb1;
+			}
+			.feed .icon,
+			.user .icon {
+				float: left;
+			}
+			.feed .detail,
+			.user .detail {
+				margin-left: 50px;
+			}
+			.feed .icon img,
+			.user .icon img {
+				display: block;
+				border-radius: 8px;
+				box-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+			}
+			.feed h4,
+			.feed .place,
+			.user h4 {
+				font-weight: bold;
+				color: #5CAA1D;
+				display: inline;
+			}
+			.feed .action {
+				color: #999999;
+				display: inline;
+			}
+			.feed .content {
+				color: #333333;
+				display: block;
+			}
+			.feed .photo {
+				clear: both;
+				text-align: center;
+			}
+			.feed .photo img {
+				background: #ffffff;
+				padding: 4px;
+				box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+			}
+			.feed .time {
+				color: #666666;
+				font-size: 12px;
+			}
+			.expand:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.expand .expand-simple {
+				display: block;
+			}
+			.expand .expand-more {
+				display: none;
+			}
+			.expand.on .expand-simple {
+				display: none;
+			}
+			.expand.on .expand-more {
+				display: block;
+			}
+			.expand .expand-arrow {
+				height: 10px;
+				line-height: 10px;
+				font-size: 10px;
+				color: #666666;
+				text-align: left;
+				margin: 0px 10px;
+				padding: 0 0 10px;
+				background-image: url(/img/e/26/expand-arrow.png);
+				background-position: right 3px;
+				background-repeat: no-repeat;
+				overflow: hidden;
+			}
+			.expand.on .expand-arrow {
+				text-indent: -9999px;
+				background-position: right -23px;
+			}
+			#content .user-list {
+				margin: 0px;
+				padding: 0px;
+			}
+			#content .user-list li {
+				float: left;
+				margin-right: 5px;
+			}
+			#content .info-group {
+				clear: both;
+				font-size: 1.2em;
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+				margin-bottom: 5px;
+				padding-bottom: 5px;
+			}
+			#content .info-group:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			#content .info-group .info-label{
+				width: 28%;
+				margin-right: 2%;
+				float: left;
+				text-align: right;
+				font-weight: bold;
+			}
+			#content .info-group .infos{
+				width: 70%;
+				float: right;
+				text-align: left;
+			}
+			#content .inside p {
+				color: #0c425c;
+				font-size: 1.4em;
+			}
+			#infscr-loading {
+				line-height: 24px;
+				text-align: center;
+				font-size: 12px;
+			}
+			#infscr-loading img {
+				display: none;
+			}
+			.pagination {
+				display: none;
+			}
+			.goback {
+				display: block;
+				-webkit-box-shadow: 0 1px 2px rgba(165, 165, 165, .55);
+				-moz-box-shadow: 0 1px 2px rgba(165,165,165,.55);
+				box-shadow: 0 1px 2px rgba(165, 165, 165, .55);
+				-webkit-border-radius: .6em;
+				-moz-border-radius: .6em;
+				border-radius: .6em;
+				background: url(/demo/i/view_bg.jpg) 0 0 repeat-x;
+				width: 100%;
+				height: 34px;
+				line-height: 34px;
+				font-size: 14px;
+				font-weight: bold;
+				color: #999999;
+				text-shadow: 1px 1px 0px #ffffff;
+				text-align: center;
+			}
+			#footer {
+				background: url(/img/e/26/bg_footer.png) 0px bottom no-repeat;
+				background-size: 100% 5px;
+			}
+			#footer img {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<div id="content">
+				<div class="unit-img">
+					<a href="/event/index/27/"><img border="0" src="http://icd.sc/img/m/27/header.jpg" width="100%" border="0" /></a>
+				</div>
+				<div class="page-title">
+					<h3>您有{$count_joines}位好友参加了该活动</h3>
+				</div>
+				<div class="users">
+					<!--{loop $list $id $user}-->
+					<div class="user">
+						<a href="inuser://{$id}">
+							<div class="icon"><img src="{$user[avatar]}" width="40" height="40" /></div>
+							<div class="detail">
+								<h4>{$user[uname]}</h4>
+								<div class="info">{$user[description]}</div>
+							</div>
+						</a>
+					</div>
+					<!--{/loop}-->
+				</div>
+				{$paginate}
+			</div>
+		</div>
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.infinitescroll.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.users').infinitescroll({
+			        navSelector  : '.pagination',
+			        nextSelector : '.pagination a:contains("下一页")',
+			        itemSelector : '.user',
+			        loading: {
+			            finished: undefined,
+			            finishedMsg: "没有更多了...",
+			            img: "/img/empty.gif",
+			            msg: null,
+			            msgText: "加载中...",
+			            selector: null,
+			            speed: 'fast',
+			            start: undefined
+			        }
+				});
+			})
+		</script>
+	</body>
+</html>

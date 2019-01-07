@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IN成都</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />   
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="c/reset.css">
+    <link rel="stylesheet" href="c/basic_mobile.css"/>
+    
+    <script src="s/jquery.min.js"></script>
+    <script type="text/javascript" src="http://in.chengdu.cn/js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="http://in.chengdu.cn/js/jquery.infinitescroll.min.js"></script>
+    <script src="s/slide.min.js"></script>
+    <script src="s/basic_mobile.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="img-unit"><img src="i/img01.jpg" /></div>
+        <div class="grid">
+          <div class="unit bottons">
+            <a class="botton bottonColor-orange" href="#">
+              <span class="title">已报名</span>
+              <span class="intro">报名人数：<span id="joins_num">222222</span> 人</span>
+            </a>
+          </div>
+          
+          <div class="unit texts">
+            <div class="greeyColor"><h3>活动说明</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+                    先引用In成都用户U'r beautiful的动态做个开场白：“趁年轻，趁梦想还在，想去的地方现在就去；想做的事情，现在就做。哪怕搭车睡沙发住青旅，享受在路上，看风景是我不变的信念。
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    先引用In成都用户U'r beautiful的动态做个开场白：“趁年轻，趁梦想还在，想去的地方现在就去；想做的事情，现在就做。哪怕搭车睡沙发住青旅，享受在路上，看风景是我不变的信念。一个背包，一台单反，一张车票，一颗说走就走勇敢的心。朋友说，我还缺了……，那就相当完美了。”兔子姐的一番话勾起了大家对旅行的向往，面对金灿灿的十一黄金周，Inner们的小心脏还在保持正常节奏的跳动么？有没有身未动，心已远的赶脚？可兔子姐说她缺了……IN成都上有这么多的他、她和身份不明的TA，怎么会缺？十一，我们不如用一种古老的方式来共同完成一次旅行——让明信片飞！茫茫inner海，谁会是收到你明星片的那个人？
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  <span>点击查看全部内容</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="greeyColor"><h3>活动说明</h3></div>
+            <div class="box">
+              <div class="inside">
+                <div class="info-group">
+                  <div class="info-label">出去旅行的inner：</div>
+                  <div class="infos">
+                    你要去哪旅行，在“in小分队”写下带有关键字“我要寄明信片”的点评或图片，并写明你十一要去旅行的地方，或许，这是某个人心里向往已久的。小in为你找来想去此地旅行的inner。将明信片寄到“IN成都”，我们会帮你转给TA。
+                  </div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">未成行的inner：</div>
+                  <div class="infos">这个十一因各种理由不能成行的inner，你想去哪旅行？在“in小分队”写下带有关键字“我想要明信片”的点评，写出想去又不能去的地方，并陈述想去理由，理由可以文艺可以普通也可以很2，关键是能打动我们，小in将从所有活动参与者中挑选那些有着足够动人或者好玩理由的inner。收到明信片的幸运用户需要在in成都把它晒出来哦！</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">小in要做的：</div>
+                  <div class="infos">小in将会筛选所有参与活动的inner，然后按照异性相吸的原则把“要去旅行“和“想去旅行”的inner做相对应的分配。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">活动地点：</div>
+                  <div class="infos">IN小分队</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">活动时间：</div>
+                  <div class="infos">2012年9月24日-2012年10月20日。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">名单公布时间：</div>
+                  <div class="infos">9月29日由小in公布分配好的名单，并私信成功参与本次活动的用户。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">获奖名单公布时间：</div>
+                  <div class="infos">2012.10.20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="greeyColor"><h3>奖项设置：</h3></div>
+            <div class="box">
+              <div class="inside">
+                <p>1. 所有成功参与本次活动的inner均可获得500积分奖励。</p>
+                <p>2. 本次活动设置特殊奖项，获得此奖的用户可得50元红旗超市代金券一张。</p>
+                <strong>针对出去旅行的inner：</strong>
+                <p>　　飞的最远明信片；</p>
+                <p>　　飞的最密明信片（即寄到的用户数量最多）；</p>
+                <p><strong>针对未成行的inner：</strong></p>
+                <p>　　最感同身受理由奖（即对理想旅行地的陈述理由得到最多inner的回复）</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="unit card">
+            <div class="box">
+              <div class="feeds">
+                <!--{loop $list $id $feed}-->
+                <div class="feed">
+                  <a href="in{if $feed[type]==1}checkin{elseif $feed[type]==2}tip{elseif $feed[type]==3}photo{/if}://{$id}"> <h3>龙王庙正街41号邱家祠堂</h3>
+                  <div class="start">
+                    <i class="ico-star-8"></i>
+                  </div>
+                  <div class="photo">
+                    <img border="0" src="i/img01.jpg" width="300" height="160" />
+                  </div>
+                  <div class="info">
+                    <p>
+                      <strong>上榜理由</strong>
+                    </p>
+                    <p>
+                      龙王庙正街街口，正对着喧嚣的红星路四段，出街口右转不到500米，便是成都最繁华的春熙路。邱家祠堂，就隐藏在周围林立的高楼、往来的车流之中。祠堂建于清同治年间，距今已有144年历史，为广东梅州邱氏家族迁来四川时所建，是四川传统祠堂建筑的典型代表之一。民俗专家袁庭栋表示，邱家祠堂是成都目前唯一保存了完整结构的祠堂，对研究客家移民文化有着重要意义，去过了贲园，再来这里走一走，也许你还能感受到一点点老成都的影子！
+                    </p>
+                  </div> </a>
+                </div>
+                <!--{/loop}-->
+              </div>
+            </div>
+          </div>
+          <div class="unit card">
+            <div class="box">
+              <div class="users">
+                <!--{loop $list $id $user}-->
+                <div class="user">
+                  <a href="inuser://{$id}">
+                  <div class="icon"><img src="{$user[avatar]}" width="40" height="40" />
+                  </div>
+                  <div class="detail">
+                    <h4>{$user[uname]}</h4>
+                    <div class="info">
+                      {$user[description]}
+                    </div>
+                  </div> </a>
+                </div>
+                <!--{/loop}-->
+              </div>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="greeyColor"><h3>适用商家</h3></div>
+            <div class="box">
+              <dl>
+                <dd>
+                  <a class="arrow">
+                    <span>万达广场</span>
+                    <div class="grayLight">二环路东五段29号<em >111m</em></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a class="arrow">
+                    <span>万达广场</span>
+                    <div class="grayLight">二环路东五段29号<em >111m</em></div>
+                  </a>
+                </dd><dd>
+                  <a class="arrow">
+                    <span>万达广场</span>
+                    <div class="grayLight">二环路东五段29号<em >111m</em></div>
+                  </a>
+                </dd><dd>
+                  <a class="arrow">
+                    <span>万达广场</span>
+                    <div class="grayLight">二环路东五段29号<em >111m</em></div>
+                  </a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="greeyColor"><h3>适用商家介绍</h3></div>
+            <div class="box">
+              <dl class="shrink">
+                <dd>
+                  <div class="arrow">
+                    <h3>万达广场</h3>
+                    <div class="grayLight">二环路东五段29号<em >111m</em></div>
+                  </div>
+                </dd>
+                <dd>
+                  <div class="arrow">
+                    <h3>万达广场</h3>
+                    <div class="grayLight">二环路东五段29号<em >111m</em></div>
+                  </div>
+                </dd>
+                <dd>
+                  <div class="arrow">
+                    <h3>万达广场</h3>
+                    <div class="grayLight">二环路东五段29号<em >111m</em></div>
+                  </div>
+                </dd>
+                <dd>
+                  <div class="arrow">
+                    <h3>万达广场</h3>
+                    <div class="grayLight">二环路东五段29号<em >111m</em></div>
+                  </div>
+                </dd>
+              </dl>
+              <div class="viewall">
+                <a class="showMore">查看全部（<em>33</em>）</a>
+              </div>
+            </div>
+          </div>
+          <div class="unit scrolls">
+            <div class="greeyColor">
+              <h3>明显餐品</h3>
+            </div>
+            <div id="showPic" class="touchslider">
+              <div class="touchslider-viewport" >
+                <div>
+                  <div class="touchslider-item">
+                    <img src="i/img02.jpg">
+                    <span class="touchslider-info">
+                      迷尚豆捞：秉承澳门火锅之精华，
+                    </span>
+                  </div>
+                  <div class="touchslider-item">
+                    <img src="i/img03.jpg">
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div class="touchslider-nav">
+                <span class="touchslider-nav-item touchslider-nav-item-current"></span>
+                <span class="touchslider-nav-item"></span>
+                <span class="touchslider-nav-item"></span>
+              </div>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  迷尚豆捞：秉承澳门火锅之精华，纳现代都市之时尚。以一脉相承的古老秘方加上现代技术的科学配置，造就了具有都市风情特色的现代火锅文化。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit user-list">
+            <div class="greeyColor"><h3>您有222位好友参加了该活动</h3></div>
+            <div class="box">
+              <ul class="arrow">
+                <li><a href="#"><img src="i/icon.png" /></a></li>
+                <li><a href="#"><img src="i/icon.png" /></a></li>
+                <li><a href="#"><img src="i/icon.png" /></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong>
+                <br />
+                1．<strong>明信片邮寄地址：</strong>成都锦江区锦东路668号国嘉新世界14层全搜索in成都 ，邮编：610000
+                <br />
+                2．<strong>领取奖品时间：</strong>10.21—10.27，超过有效领取时间，将视为自动放弃领取奖品
+                <br />
+                3．奖品领取地址同上
+                <br />
+                4．小in将会在活动期间将可选用户名单私信“出去旅行的Inner”，由用户自己选择一对一或一对多。
+              </p>
+            </div>
+          </div>
+          
+          <div class="unit card">
+            <div class="greeyColor"><h3>活动动态</h3></div>
+            <div class="box">
+              <div class="feeds">
+                <!--{loop $list $id $feed}-->
+                <div class="feed">
+                  <a href="in{if $feed[type]==1}checkin{elseif $feed[type]==2}tip{elseif $feed[type]==3}photo{/if}://{$id}">
+                    <div class="icon"><img src="{$feed[avatar]}" width="40" height="40" />
+                  </div>
+                  <div class="detail">
+                    <h4>{$feed[uname]}</h4>
+                    <!--{if $feed[type]==1}-->
+                    <div class="action">
+                      在
+                    </div>
+                    <div class="place">
+                      {$feed[placename]}
+                    </div>
+                    <div class="action">
+                      签到
+                    </div>
+                    <!--{elseif $feed[type]==2}-->
+                    <div class="action">
+                      点评
+                    </div>
+                    <div class="place">
+                      {$feed[placename]}
+                    </div>
+                    <div class="start">
+                      <!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}-->
+                    </div>
+                    <div class="info">
+                      {$feed[content]}
+                    </div>
+                    <!--{elseif $feed[type]==3}-->
+                    <div class="action">
+                      在
+                    </div>
+                    <div class="place">
+                      {$feed[placename]}
+                    </div>
+                    <div class="action">
+                      上传照片
+                    </div>
+                    <div class="info">
+                      {$feed[content]}
+                    </div>
+                    <div class="photo"><img class="lazy" src="/img/empty.gif" data-original="{$feed[photoName]}" width="200" />
+                    </div>
+                    <!--{/if}-->
+                    <div class="time">
+                      {$feed[createDate]}
+                    </div>
+                  </div> </a>
+                </div>
+                <!--{/loop}-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>IN.CHENGDU.CN</p>
+      </div>
+    </div>
+  </body>
+</html>

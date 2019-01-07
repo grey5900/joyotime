@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta content="width=device-width; initial-scale=1" name="viewport" />
+		<title>帮助</title>
+		<script type="text/javascript" src="/static/js/dwz/js/jquery-1.9.1.js"></script>
+		<script src="/static/js/dwz/js/jquery.mobile.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			body {
+				font-size: 15px;
+				padding: 8px;
+				line-height: 1.5em;
+				background-color: #f6f6f6;
+				margin: 0px auto;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYyMjJGNjJEODkxQjExRTE4NTM5Qjc5REQ2RDU5RjBCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYyMjJGNjJFODkxQjExRTE4NTM5Qjc5REQ2RDU5RjBCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjIyMkY2MkI4OTFCMTFFMTg1MzlCNzlERDZENTlGMEIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjIyMkY2MkM4OTFCMTFFMTg1MzlCNzlERDZENTlGMEIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5SKxM4AAAAFVBMVEXz8/Py8vL4+Pj0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);
+			}
+			a {
+				color: #5CAA1D;
+				text-decoration: none;
+				font-weight: bold;
+			}
+			.ui-icon {
+				background: url("/static/skin/jqueryui/smoothness/images/icon-green.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+				display: inline-block;
+				box-shadow :0 1px 0 rgba(255, 255, 255, 0.4);
+			    position: absolute;
+			    width: 12px;
+				height: 12px
+			}
+			.ui-text {
+				-moz-user-select: none;
+			    position: relative;
+			    width: 100%;
+			    z-index: 1;
+			}
+			.ui-icon-minus {
+				background-position: -36px 0;
+				margin-top: 5px;
+			}
+			.ui-icon-plus {
+				background-position: 0 0;
+				margin-top: 5px;
+			}
+			.ui-btn-up-c {
+				background: #eee;
+				font-weight: bold;
+				color: #5CAA1D;
+				background: #fff;
+			}
+			.ui-btn-hover-c {
+				background: #f1f1f1;
+				font-weight: bold;
+				color: #5CAA1D;
+				background: #fff;
+			}
+			
+			.ui-btn-down-c {
+				background: #fff;
+				font-weight: bold;
+				color: #5CAA1D;
+				background: #fff;
+			}
+			.ui-btn-up-c, .ui-btn-hover-c, .ui-btn-down-c {
+				font-family: Helvetica, Arial, sans-serif;
+				text-decoration: none
+			}
+			
+			a.ui-link-inherit {
+				text-decoration: none !important
+			}
+			
+			.ui-btn-active:visited, .ui-btn-active:hover, .ui-btn-active a.ui-link-inherit {
+				color: #5CAA1D
+			}
+			
+			.ui-corner-all {
+				-webkit-border-radius: .4em;
+				border-radius: .4em
+			}
+			
+			
+			.ui-mobile, .ui-mobile body {
+				height: 99.9%
+			}
+			.ui-mobile fieldset, .ui-page {
+				padding: 0;
+				margin: 0
+			}
+			.ui-mobile a img, .ui-mobile fieldset {
+				border-width: 0
+			}
+			.ui-mobile-viewport {
+				margin: 0;
+				overflow-x: visible;
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: none;
+				-webkit-tap-highlight-color: rgba(0,0,0,0)
+			}
+			body.ui-mobile-viewport, div.ui-mobile-viewport {
+				overflow-x: hidden
+			}
+			.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page {
+				top: 0;
+				left: 0;
+				width: 100%;
+				min-height: 100%;
+				position: absolute;
+				display: none;
+				border: 0
+			}
+			.ui-mobile .ui-page-active {
+				display: block;
+				overflow: visible
+			}
+			
+			.ui-loading .ui-loader {
+				display: block
+			}
+			.ui-loader {
+				display: none;
+				z-index: 9999999;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				border: 0
+			}
+			
+			.ui-loader .ui-icon {
+				background-color: #000;
+				display: block;
+				margin: 0;
+				width: 44px;
+				height: 44px;
+				padding: 1px;
+				-webkit-border-radius: 36px;
+				border-radius: 36px
+			}
+			
+			.ui-corner-all > .ui-header:first-child, .ui-corner-all > .ui-content:first-child, .ui-corner-all > .ui-footer:first-child {
+				-webkit-border-top-left-radius: inherit;
+				border-top-left-radius: inherit;
+				-webkit-border-top-right-radius: inherit;
+				border-top-right-radius: inherit
+			}
+			.ui-corner-all > .ui-header:last-child, .ui-corner-all > .ui-content:last-child, .ui-corner-all > .ui-footer:last-child {
+				-webkit-border-bottom-left-radius: inherit;
+				border-bottom-left-radius: inherit;
+				-webkit-border-bottom-right-radius: inherit;
+				border-bottom-right-radius: inherit
+			}
+			.ui-btn {
+				display: block;
+				text-align: center;
+				cursor: pointer;
+				position: relative;
+				margin: .5em 0;
+				padding: 0
+			}
+			
+			.ui-btn-inner {
+				font-size: 16px;
+				padding: .6em 20px;
+				min-width: .75em;
+				display: block;
+				position: relative;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				zoom: 1
+			}
+			
+			.ui-btn-inner, .ui-btn-text {
+				-webkit-border-radius: inherit;
+				border-radius: inherit
+			}
+			.ui-btn-icon-notext .ui-icon {
+				display: block;
+				z-index: 0
+			}
+			.ui-btn-icon-left .ui-icon {
+				left: 10px
+			}
+			.ui-btn-icon-right .ui-icon {
+				right: 10px
+			}
+			.ui-btn-icon-top .ui-icon {
+				top: 10px
+			}
+			.ui-btn-icon-bottom .ui-icon {
+				top: auto;
+				bottom: 10px
+			}
+			
+			.ui-collapsible-inset {
+				margin: .5em;
+			}
+			.ui-collapsible-inset .ui-collapsible-heading {
+				margin: 0;
+			}
+			.ui-collapsible-heading .ui-btn {
+				text-align: left;
+				margin: 0;
+				border-left-width: 0;
+				border-right-width: 0
+			}
+			.ui-collapsible-inset .ui-collapsible-heading .ui-btn {
+				border-right-width: 1px;
+				border-left-width: 1px
+			}
+			.ui-collapsible-heading .ui-btn-icon-left .ui-btn-inner {
+				padding-left: 30px
+			}
+			.ui-collapsible-heading .ui-btn-icon-right .ui-btn-inner {
+				padding-right: 30px
+			}
+			
+			.ui-collapsible-heading .ui-btn span.ui-btn {
+				position: absolute;
+				left: 6px;
+				top: 50%;
+				margin: -12px 0 0 0;
+				width: 20px;
+				height: 20px;
+				padding: 1px 0 1px 2px;
+				text-indent: -9999px
+			}
+			.ui-collapsible-heading .ui-btn span.ui-btn .ui-btn-inner {
+				padding: 10px 0
+			}
+			.ui-collapsible-heading .ui-btn span.ui-btn .ui-icon {
+				left: 0;
+				margin-top: -10px
+			}
+			.ui-collapsible-heading-status {
+				position: absolute;
+				top: -9999px;
+				left: 0
+			}
+			
+			.ui-collapsible-heading-collapsed {
+				box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+			}
+			.ui-collapsible-content {
+				display: block;
+				margin: 0 -15px;
+				padding: 10px 15px;
+				border-left-width: 0;
+				border-right-width: 0;
+				border-top: none;
+				background: #fff;
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+				box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+			}
+			.ui-collapsible-inset .ui-collapsible-content {
+				margin: 0;
+				border-right-width: 1px;
+				border-left-width: 1px
+			}
+			.ui-collapsible-content-collapsed {
+				display: none
+			}
+			.ui-collapsible-set > .ui-collapsible.ui-corner-all {
+				-webkit-border-radius: 0;
+				border-radius: 0
+			}
+			.ui-collapsible-heading, .ui-collapsible-heading > .ui-btn {
+				-webkit-border-radius: inherit;
+				border-radius: inherit
+			}
+			.ui-collapsible-themed-content:not(.ui-collapsible-collapsed) .ui-collapsible-heading {
+			    -webkit-border-bottom-left-radius: 0;
+			    -webkit-border-bottom-right-radius: 0;
+			    border-bottom-left-radius: 0;
+			    border-bottom-right-radius: 0;
+			    border-bottom: 1px solid #5CAA1D;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-demo-html="true">
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>IN成都是什么？</h3>
+				<p>
+					IN成都是一个于2011年上线的成都本地化生活服务应用APP，可以发现成都好吃好玩好耍的地方，可以结交好友、抢地主、换道具、挣积分，用积分可以换取充值卡、电影票
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>IN成都怎么玩？</h3>
+				<p>
+					2013年我们全新发布了IN成都3.0版本，从现在起，你可以：<br />
+					· 发现成都<br />
+					发现成都在发生什么，流行什么。<br />
+					查找附近，看有什么好吃的，好玩的地点。<br />
+					查看准确丰富的成都本地餐饮、娱乐、购物、生活服务等场所信息。<br />
+					通过地点册收藏最爱，发现地点。<br />
+					· 写在成都<br />
+					随时发布你的文字、图片信息，提供多个精美图片滤镜。<br />
+					发布内容的可提及好友，可选择是否关联地点。<br />
+					发布内容可以选择是否同步至腾讯微博、新浪微博。<br />
+					· 玩转成都<br />
+					全新抢地主玩法，成为地主以后可以收租金哦。<br />
+					引入有趣的道具，比如推土机、迷魂汤、周扒皮的玉佩等等。<br />
+					· 结交好友<br />
+					发现相同爱好或相同足迹的好友，关注好友随时获得他的动态。<br />
+					美食达人、观影达人、血拼达人嬛等众多达人带你耍出成都味道。<br />
+					可与好友私信，接收到消息时会推送通知。<br />
+					· 积分生活<br />
+					IN成都鼓励优质原创内容，发布有用的内容打动小编可获得积分奖励。<br />
+					到合作商户消费都可获得消费积分奖励。<br />
+					在积分商城使用积分兑换你想要的电影票、加油卡、话费...<br />
+					· 其它功能<br />
+					IN成都不定期举行各种试吃、免费观影等活动。<br />
+					成都手机报每天新热本地新闻。
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>如何成为地主？地主能做些什么？</h3>
+				<p>
+· 付出一定的积分，就有机会抢到地主，第二天你就能征收到积分了。<br />
+· 只能抢附近半径1.5km的地主。<br />
+· 抢夺方式是随机的，不同的方式有不同的成功率。<br />
+· 成功率与是否装备道具、抢夺方式、地点累计的积分、你的等级、额外加成等因素决定。<br />
+· 每周三为地主抢夺日，抢夺几率+10%。<br />
+· 抢夺失败时，所付出的积分会转移一部分到地点。<br />
+· 成为地主后的第二天才能征收该地累计的积分。<br />
+· 征收不限距离的，可以躺在家里收。<br />
+· 征收积分时，地主获得50%、系统收税10%、地点剩余40%。<br />
+· 每周四为征收日，免税。<br />
+PS.抢地主是拼人品的。嘿嘿~					
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>道具怎么玩？</h3>
+				<p>
+						在“道具商城”可以买到各种道具。道具可以装饰你的头像、增加抢地主的成功率、升级包包的格数等等，具体用处请各位玩家大胆尝试，这里就不剧透了！嗯~<br />
+PS.LZ悄悄告诉大家一个小秘密：在IN成都进行某些操作时，也会随机出现道具商城买不到的稀有道具的！					
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>包包是什么？</h3>
+				<p>
+包包是一个专门存放IN成都道具的地方。用户每得到一个道具就可以把它放入包包。<br />
+PS.已过期的道具是会自动从包包里面消失的。<br />
+PPS.某些道具用得太频繁也会强撸灰飞烟灭的。</div>					
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>如何获得积分？积分能做什么？</h3>
+				<p>
+					· 完成新手任务、每日启动客户端都能获得积分。<br />
+· IN成都鼓励优质原创内容，发布有用的内容打动小编可获得积分奖励。
+· 到合作商户消费都可获得积分票。<br />
+· 在积分商城使用积分兑换你想要的电影票、加油卡、话费...<br />
+PS.据说未来还能换到iPhone5、iPad你信不信！！！					
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>如何获得IN成都积分票？</h3>
+				<p>
+					1、到与IN成都合作的商户消费，结账时向店员索要IN成都积分票。<br />
+2、在IN成都客户端的侧边栏找到“扫一扫”，扫描积分票上的二维码。<br />
+3、扫描成功后就能获得大量的积分。<br />
+PS.这是获得积分最快、最多的方式了！嘘~					
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>经验值、等级和称号？</h3>
+				<p>
+					经验值的多少代表着你咋IN成都的活跃度，在IN成都进行操作都会得到经验值，经验值的多少决定着你的等级，不同的等级对应不同的称号。（如果你想到了更有意思的称号，请与IN成都官方账号“小IN”联系，一经采用，定有重谢哟！	
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>点评是什么？</h3>
+				<p>
+						点评就是你向其他人们提供的建议啦！登录后就可以为任意地点写点评。<br />
+点评可囊括以下内容：有趣的信息、有帮助的信息、消费提示、推荐尝试、避免去做的、消费金额、服务环境等等。<br />
+点评写得好，还有可能被设置为精华，精华点评可以获得额外的积分奖励哦！还能被推荐到IN成都首页哦。					
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>地点册怎么玩？</h3>
+				<p>
+					家附近有哪些餐厅最好吃？心目中的情调咖啡小店有哪些？你都可以使用“地点册”来收集并与朋友分享。在每个地点页面上，你都可以把它加入你的地点册里面，也可以看到这个地点被哪些地点册收藏了。通过别人建的地点册，你可以看到与这家店格调相似的地方，更可以通过地点册来寻找气味相投的朋友！在你的个人主页上，也可以看到你建立和收藏的地点册。					
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>如果发现地点资料有错怎么办？</h3>
+				<p>
+				如果你发现地点资料有错（包括地名、地址、电话、地图等信息），可以在地点页面点击“报错”，纠正地点信息，“小IN”在收到您的反馈后会尽快处理的。	
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>为什么有时会定不到位？如何能加强定位？</h3>
+				<p>
+					目前IN成都采用的是手机GPS定位系统、WIFI定位以及运营商的基站定位三种方法相结合的定位方式。在用户同意了IN成都获取位置信息的请求之后，程序会自动调用以上三方所提供的位置信息，而由于上述途径会受到建筑物、天气以及其他因素的干扰，且不同手机的性能不同，因而有时定位会出现偏差，我们认为50米以内的偏差是可以接受的。如果想要定位效果好，建议走到室外较为空旷的地方再次定位。					
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>推送消息如何关闭？</h3>
+				<p>
+				进入个人档案页，点击右上方的“设置”，然后找到“消息提醒设置”，即可关闭推送通知。	
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>其他城市能用吗？</h3>
+				<p>
+				IN成都是基于成都的移动生活服务平台，所以我们会专注于自己这座城市的信息。我们提供的信息仅包含大成都区域范围内的地方。	
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>如何找朋友？</h3>
+				<p>
+				用户在“好友列表”或“动态”可点选右上的“找朋友”按钮来寻找好友，你可以选择系统推荐的“IN成都”达人，或者直接添加来自新浪微博和腾讯微博的好友。
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>如何修改头像、个人资料？</h3>
+				<p>
+					进入个人主页，点击右上的“设置”按钮，然后再点击“编辑个人资料”就能修改头像和个人资料啦。
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>如何添加常用页面到侧边栏(ios)或手机桌面(android)？</h3>
+				<p>
+					在可以添加的页面，点击右上的三个点按钮，就能添加这个页面到侧边栏或手机桌面了。
+				</p>
+			</div>
+			<div data-role="collapsible" class="ui-collapsible-themed-content">
+				<h3>如何联系我们？</h3>
+				<p>
+					IN成都官方账号：小IN
+						<br />
+						QQ群：23801638
+						<br />
+						客服热线：<a href="tel:4006028377">4006-028-377</a>
+						<br />
+						新浪微博：<a href="http://e.weibo.com/inchengducn">e.weibo.com/inchengducn</a>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

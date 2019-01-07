@@ -1,0 +1,109 @@
+                    
+{if isset($act) && !empty($act)}
+<div class="pageContent">
+	<form method="post" action="{$posturi}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent" style="display:block;height:240px;width:90%;">
+	
+			<div class="unit">
+				<label>帐号：</label>
+				{if $act==='edit'}{$acc[name]}{else}<input type="text" name="name" class="required" minlength="1" maxlength="16" value="" />{/if}
+			</div>
+			<div class="unit">
+				<label>密码：</label>
+				<input type="password" name="password"{if $act==='add'} class="required"{/if} size="30" value="" />
+			</div>
+			<div class="unit">
+				<label>姓名：</label>
+				<input type="text" name="truename"{if $act==='add'} class="required"{/if} minlength="1" maxlength="16" value="{$acc[truename]}" />
+			</div>
+			<div class="unit">
+				<label>启用：</label>
+				<input type="radio" name="state" value="1"{if $act==='add' || $acc[state]==1} checked="checked"{/if}/>是 <input type="radio" name="state" value="0"{if isset($acc) && !empty($acc) && $acc[state]==0} checked="checkedd"{/if}/>否
+			</div>
+			<div class="unit">
+				<label>描述：</label>
+				<textarea name="description" cols="30" rows="4">{$acc[description]}</textarea>
+			</div>
+			<div class="unit">
+				<label>角色：</label>
+				{loop $roles $key $val}
+					<input type="checkbox" name="role[]" value="{$key}"{if $act==='add'} class="required"{/if}{if isset($rids)&&!empty($rids)&&in_array($key, $rids)} checked="checked"{/if}/>{$val[name]}
+				{/loop}
+			</div>
+		</div> 
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+{else}
+<form id="pagerForm" method="post" action="{eval echo site_url(array('account','index'));}">
+	<input type="hidden" name="pageNum" value="{$cur_page}"/>
+	<input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+	<input type="hidden" name="orderField" value="{$orderField}"/>
+	<input type="hidden" name="orderDirection" value="{$orderDirection}"/>
+	<input type="hidden" name="keyword" value="{$keyword}"/>
+	<input type="hidden" name="type" value="{$type}" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" method="post" action="{eval echo site_url('account','index');}" onsubmit="return navTabSearch(this);">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:80px;"><label><select name="type">
+			<option value="1"{if empty($type) || $type == 1} selected="selected"{/if}>姓名</option>
+			<option value="2"{if !empty($type) && $type == 2} selected="selected"{/if}>帐号</option>
+			<option value="3"{if !empty($type) && $type == 3} selected="selected"{/if}>角色</option>
+			</select>:</label></li>
+			<li><input type="text" name="keyword" id="keyword" size="20" value="{$keyword}" /></li>			
+		</ul>
+		<div class="subBar"><ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+		</ul></div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('account','add'));}" target="dialog" rel="{eval echo build_rel(array('account','add'));}" width="500" height="340"><span>添加</span></a></li>
+			<li><a class="delete" href="{eval echo site_url(array('account','delete'));}/id/<!--{{sid_account}}-->" target="ajaxTodo" title="删除操作无法恢复，确定要删除吗？" warn="请选择一个帐号"><span>删除</span></a></li>
+			<li><a class="edit" href="{eval echo site_url(array('account','edit'));}/id/<!--{{sid_account}}-->" rel="{eval echo build_rel(array('account','edit'));}" target="dialog" warn="请选择一个帐号" width="500" height="340"><span>编辑</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon" href="" target=""><span>导出EXCEL</span></a></li>
+		</ul>
+	</div>
+	<!-- 列表 -->
+	<table class="table" width="100%" layoutH="138" targetType="navTab" asc="asc" desc="desc">
+		<thead><tr>
+			<th width="5%">ID</th>
+			<th width="8%">帐号</th>
+			<th width="8%">姓名</th>
+			<th width="10%" orderField="lasttime" class="{$orderDirection}">最后操作时间</th>
+			<th width="8%" orderField="state">已启用?</th>
+			<th width="25%">角色</th>
+			<th>描述</th>
+		</tr></thead>
+		<tbody>
+		{loop $list $key $val}
+		<tr target="sid_account" rel="{$key}">
+			<td>{$key}</td>
+			<td>{$val[name]}</td>
+			<td>{$val[truename]}</td>
+			<td>{$val[lasttime]}</td>
+			<td>{$val[state]}</td>
+			<td>{$val[role]}</td>
+			<td>{$val[description]}</td>
+		</tr>
+		{/loop}
+		</tbody>
+	</table>
+	<!-- END -->
+    <!--{template main/page_bar}-->
+</div>
+{/if}
+

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title></title>
+<link rel="stylesheet" href="skin/style.css" type="text/css" />
+<link rel="stylesheet" href="in_themes/auto/skin/style.css" type="text/css" />
+</head>
+<body>
+	<div id="header">
+		<div class="container">
+			<a href="http://www.chengdu.cn" class="logo">成都全搜索</a>
+			<div class="user-nav">
+				<a class="avatar" href="#"><img src="_img/avatar30x30.jpg"/></a><a class="name" href="#">m2</a>
+				<a class="setting" href="#">设置</a>
+				<a class="exit" href="#">退出</a>
+			</div>
+			<ul class="site-nav">
+				<li><a href="http://www.chengdu.cn">首页</a></li>
+				<li><a href="http://news.chengdu.cn/">新闻</a></li>
+				<li><a href="http://fb.chengdu.cn/">美食</a></li>
+				<li><a href="http://baby.chengdu.cn">亲子</a></li>
+				<li><a href="http://f.chengdu.cn">评房网</a></li>
+				<li class="on"><a href="http://auto.chengdu.cn">汽车</a></li>
+				<li><a href="http://movie.chengdu.cn/">观影</a></li>
+				<li><a href="http://home.chengdu.cn">家居家电</a></li>
+				<li><a href="http://mes.chengdu.cn/">购物</a></li>
+				<li class="dropdown">
+						<a id="site-nav-more" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">更多 <b class="caret"></b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="site-nav-more">
+							<li><a href="http://tg.chengdu.cn/">章鱼团</a></li>
+							<li><a href="http://google.com">旅游</a></li>
+							<li><a href="#anotherAction">健康</a></li>
+							<li><a href="#">买购</a></li>
+							<li><a href="#">同心卡</a></li>
+						</ul>
+	            </li>
+			</ul>
+		</div>
+	</div>
+	<div id="container-page">
+	  <div class="crumbs">
+      <ul>
+        <li><a href="#">品房网</a>&gt;</li>
+        <li><a href="#">车市资讯</a>&gt;</li>
+        <li><a href="#">新款宝马X1本月12日上市</a></li>
+      </ul>
+    </div>
+		<div class="container-fluid">
+		   <div class="main">
+		     <div class="article">
+		       <div class="art-title">
+		         <h1>增加手动挡！ 新款宝马X1本月12日上市</h1>
+		         <div class="cfrom"><span>2012-10-24 01:52:41</span><span>来自：成都全搜索新闻网</span></div>
+		       </div>
+		       <div class="art-content">
+		         <div class="contxt">
+		            <div class="mid">
+		              <img src="_img/001.jpg">
+		            </div> 
+		            <p>
+		              作为今年最后一个大型汽车展览盛会，2012广州车展于今日正式拉开序幕，肯定有不少朋友计划着到车展现场与豪华汽车、靓丽模特近距离接触。在众多的展车当中，SUV无疑是最受关注的车型，特别是最近两年越来越多的SUV车型在国内投产，由此可见SUV将是未来一段时间销售的热门车型。下面编辑为您推荐广州车展必看的5款重点SUV车型
+		            </p><br />
+		            <p>
+		              为了延续上个周末的精彩，继续回馈新老客户，新元素荣威计划于本周末，11月24-25日在展厅举行“购划算 轻松贷”0首付专场，届时新元素荣威全场多种车型贷款0首
+		            </p><br />
+		            <p>
+		              一年一度的广州车展今日将正式开幕，和往常一样，依然是羊城的初冬，依然是熟悉的琶洲会展中心。在本次广州车展，各大豪华品牌以及传统跑车品牌都计划推出新款跑车车型，来迎合国内日益壮大的富裕阶层的需求。下面我们就一起来看看有哪些跑车车型将会亮相本届广州车展，并期待它们将会给我们带来一场令人难忘的视觉盛宴。2012(第十届)广州国际汽车展览会于11月22日至12月2日在广州琶洲•中国进出口商品交易会展馆举行，虽然面临着广州限购、日系车市场份额下滑等不利因素，但是本届广州车展规模并未受到影响，反而进一步扩大，展馆规模达到20万平方米，参展的全部车型达到950款，其中全球首发车型34款，亚洲首发车型23款，均创历届最高。同时展期也从往届的7天延长至10天，提升了市民观展时间。分析指出，广州车展经过10年的成长，已经实现了从小到大的跨越，成为了国内三大车展之一，车企参展不仅仅是为了华南市场，更重要是布局全国市场。
+		            </p>
+		         </div>
+		         <div class="conend">
+		           <div class="pagination">
+                <ul>
+                  <li><a href="auto.html?page=1">上一页</a></li>
+                  <li><a href="auto.html?page=1">1</a></li>
+                  <li><a href="auto.html?page=2">2</a></li>
+                  <li><a href="auto.html?page=3">3</a></li>
+                  <li><a href="auto.html?page=4">4</a></li>
+                  <li><a href="auto.html?page=2">下一页</a></li>
+                </ul>
+              </div>
+              <div class="ckepop">
+                <!-- JiaThis Button BEGIN -->
+                <div id="ckepop">
+                  <span class="jiathis_txt">分享到：</span>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_xiaoyou"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+                </div>
+                <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+              </div>
+		         </div>
+		         <div class="next-page">
+		           <a class="pull-left">上一篇</a>
+		           <a class="pull-right">下一篇</a>
+		         </div>
+		       </div>
+		     </div>
+		     
+		     <div class="article">
+         <div class="tit">
+          <h2>相关资讯</h2>
+         </div>
+         <div class="con">
+           <ul>
+            <li>
+              <a href="#"><img src="_img/003.jpg" /></a>
+              <a href="#">全新一代路虎揽胜在英国进行..</a>
+            </li>
+            <li>
+              <a href="#"><img src="_img/003.jpg" /></a>
+              <a href="#">全新一代路虎揽胜在英国进行..</a>
+            </li>
+            <li>
+              <a href="#"><img src="_img/003.jpg" /></a>
+              <a href="#">全新一代路虎揽胜在英国进行..</a>
+            </li>
+            <li>
+              <a href="#"><img src="_img/003.jpg" /></a>
+              <a href="#">全新一代路虎揽胜在英国进行..</a>
+            </li>
+            <li>
+              <a href="#"><img src="_img/003.jpg" /></a>
+              <a href="#">全新一代路虎揽胜在英国进行..</a>
+            </li>
+            <li>
+              <a href="#"><img src="_img/003.jpg" /></a>
+              <a href="#">全新一代路虎揽胜在英国进行..</a>
+            </li>
+           </ul>
+         </div>
+		     </div>
+		   </div>
+		   <div class="sidebar">
+		    <div class="module">
+		      <div class="tit-first"></div>
+          <div class="con">
+            <div class="list-first">
+              <div class="place-card">
+                <img src="_img/tag.png" alt="" />
+                <div class="info">
+                  <h3><a href="#">四川申蓉长安福特</a></h3>
+                  <div class="star-info">
+                    <span class="ico-star-2"></span>
+                  </div>
+                  <p>地址：成都市机场路近都段15号 </p>
+                  <p>电话：028-88888888</p>
+                </div>
+                <div class="details">
+                  <ul>
+                    <li><a href="#">45324</a><p>图片</p></li>
+                    <li class="bor"><a href="#">4534</a><p>访客</p></li>
+                    <li><a href="#">22</a><p>收藏</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="link-sj"><a class="btn btn-success btn-large">商家主页</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="module">
+            <div class="tit"><h3>正在团购</h3></div>
+            <div class="con">
+              <ul class="list-groupon-sider">
+                <li>
+                  <div class="thumb"><a href="#"><img src="_img/004.jpg"/><em class="t">喜狮成双明嘉标致</em></a></div>
+                  <div class="summary"><a href="#">抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购</a></div>
+                  <div class="count"><strong>86</strong> 人已购买</div>
+                  <div class="price">
+                    <del class="o">原价 ￥434</del>
+                    <span class="p">￥299</span>
+                    <a href="#" class="btn btn-success" target="_blank">立即购买</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="thumb"><a href="#"><img src="_img/004.jpg"/><em class="t">喜狮成双明嘉标致</em></a></div>
+                  <div class="summary"><a href="#">抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购</a></div>
+                  <div class="count"><strong>86</strong> 人已购买</div>
+                  <div class="price">
+                    <del class="o">原价 ￥434</del>
+                    <span class="p">￥299</span>
+                    <a href="#" class="btn btn-success" target="_blank">立即购买</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="module">
+            <div class="tit">
+              <h3>本周热门推荐</h3>
+            </div>
+            <div class="con">
+              <ul class="list-hot">
+                <li><a href="#">2012第十届广州车展今日开幕 </a></li>
+                <li><a href="#">斯柯达中国换帅</a></li>
+                <li><a href="#">药驾？桑姜感冒胶囊无药驾问题</a></li>
+                <li><a href="#">成都油价回归“7元时代”</a></li>
+                <li><a href="#">持A2驾照开“迈巴赫”扣12分</a></li>
+                <li><a href="#">安全气囊故障吉普召回92万辆</a></li>
+                <li><a href="#">车市银十 自主品牌扭转颓势</a></li>
+                <li><a href="#">奥迪RS入列 豪车三大品牌交火</a></li>
+                <li><a href="#">成都新西亚西雅特全系七折起售最低17.98...</a></li>
+                <li><a href="#">奥迪RS入列 豪车三大品牌交火</a></li>
+              </ul>
+            </div>
+          </div>
+		   </div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+
+</html>

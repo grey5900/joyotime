@@ -1,0 +1,92 @@
+<!--{template common/header3.0}-->
+	<div class="main channel layout">
+		<!--{if $theme == 'auto' || $theme == 'f'}-->
+			<!--{template channel/channel_header}-->
+		<!--{/if}-->
+		
+		<div class="column banner_search">
+		<!--{if $theme == 'auto'}-->
+			<!--{template auto/search}-->
+		<!--{/if}-->
+		<!--{if $theme == 'f'}-->
+			<!--{template f/search}-->
+		<!--{/if}-->
+		</div>
+		<div class="column place_map">
+			<div class="tit">
+				<h3><i></i>{$category['catName']}</h3>
+			</div>
+			<div class="bd">
+				<div class="maplist">
+					<ol id="mapList">
+					<!--{eval $i=1;}-->
+               	 	<!--{loop $place $k $p}-->
+						<li data-id="{$p['id']}" data-addr="{$p['address']}" data-house="{$p['placename']}" data-lat="{$p[latitude]}" data-lng="{$p[longitude]}">
+							<div class="img">
+								<img src="{eval echo image_url($p[icon],'common')}" alt="{$p['placename']}" />
+							</div>
+							<div class="info">
+								<a href="/place/{$p[id]}">{$p[placename]}</a>
+								<p>地址：{$p[address]}</p>
+								<div class="star">
+									<span class="icon-{eval echo floor($p[level])}"></span>
+								</div>
+								<i class="mark">{$i}</i>
+							</div>
+						</li>
+					<!--{eval $i==1 && $cenlat = $p[latitude] }-->
+                	<!--{eval $i==1 && $cenlgn = $p[longitude] }-->
+                	<!--{eval $i++;}-->
+                	<!--{/loop}--> 
+						
+						
+					</ol>
+					{$paginate}
+				</div>
+                <style type="text/css">
+                    #map_zoom *{
+                        margin: 0;
+                        padding: 0;
+                        max-width: none;
+                    }
+                </style>
+				<div class="map_zoom">
+                    <div id="map" class="map"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7dc3e4b24f182c84b3843400d2b83bbe"></script>
+    <script type="text/javascript" src="/static/js/mapper.min.js"></script>
+	<script type="text/javascript">
+        $(function(){
+            var points = [],
+                markers = [],
+                infowindows = [];
+            $('#mapList li').each(function(i,n){
+                var _this = $(this),
+                        lat = _this.data('lat'),
+                        lng = _this.data('lng');
+                points[i] = new BMap.Point(lng,lat);
+                markers[i] = new BMap.Marker(points[i]);
+                infowindows[i] = new BMap.InfoWindow('<div style="width:200px;height:40px;"><a href="/place/'+_this.data("id")+'">'+_this.data("house")+'</a><p>地址：'+_this.data("addr")+'</p></div>');
+            })
+
+            $("#map").mapper({
+                lat : points[0].lat,
+                lng : points[0].lng,
+                marker : markers,
+                infowindow : infowindows,
+                control: true,
+                after: function(map){
+                    $('#mapList li').each(function(i,n){
+                        var _this = $(this);
+                        _this.on("mouseover",function(){
+                            map.panTo(points[i]);
+                        })
+                    })
+                }
+            });
+        })
+    </script>
+<!--{template common/footer}-->

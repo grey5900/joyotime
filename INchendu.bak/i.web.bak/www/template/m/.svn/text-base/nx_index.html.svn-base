@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>追崇“平价”时尚   美鞋提包赢回家</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.4.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+			/*	background color	*/
+			.page {
+				background: #f6f6f6;
+			}
+			#content .unit .box {
+				background: #fff;
+			}
+			.touchslider-viewport {
+				background: #fff;
+			}
+			.box-db-left, .box-db-right {
+				background: #000;
+			}
+			.box-db .img img {
+				background: #fff;
+			}
+			/* font color  */
+			.unit-title {
+				color: #5ba81c;
+			}
+			#content .unit p {
+				color: #666;
+			}
+			#content .statement p {
+				color: #666;
+			}
+			.box-db-left, .box-db-right {
+				color: #5a146a;
+			}
+			.texts .info-group {
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+				color: #666;
+			}
+			.texts .inside p {
+
+			}
+			.bottons .botton span.title {
+			}
+			.bottons .botton span.intro {
+			}
+			.touchslider-item .touchslider-info {
+				color: #fff;
+			}
+			.multi-line dd span {
+				color: #666;
+			}
+			.multi-line dd a:hover {
+				border-radius: 0;
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+			}
+			.multi-line .viewall a {
+				color: #ef631e;
+			}
+			.multi-line .viewall a:hover {
+
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #666;
+				padding-top: 5px;
+			}
+			.touchslider-item img {
+				height: 290px;
+			}
+			.touchslider-nav-item {
+
+			}
+			.feed, .user {
+				border-bottom: 0;
+			}
+			.feed a:hover, .user a:hover {
+				border-bottom: 0;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/31/"><img border="0" src="http://icd.sc/img/m/nx/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit bottons">
+            <a class="botton bottonColor-orange" href="inplace://175029">
+              <span class="title">报名参加</span>
+              <span class="intro">参加人数：<span id="joins_num">{$feed_count}</span> 人</span>
+            </a>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动说明</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  什么是时尚?让女鞋之都告诉你!时尚不单是那些躺在闪耀橱窗里昂贵的Gucci、LV，不单是在时装季上争相竞宠的名模大牌，时尚是生活中的触手可及，是每个人都可以轻松拥有的“平价”和“风潮”。点评“中国女鞋之都·武侯皮革城”，发表你的“平价”时尚宣言或推荐你钟爱的“平价”款，多重超值礼物让你速“变”时尚大“赢”家!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动时间</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  11月19日—12月10日
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>参与方式</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                 在“中国女鞋之都·武侯皮革城”点评，发布你的“平价”时尚宣言或是推荐你钟爱的“平价”款，即有机会赢取500元现金券、时尚美鞋、简约风格手提包、品质皮革手机套等超值大礼!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动奖励</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  1.  2名时尚点评用户将获得价值300元品质新款女鞋一双、500元现金券抵用券、价值68元优质皮革手机套一只、“中国女鞋之都·武侯皮革城”精美纪念版熊猫书签一份。
+<br />
+2.  10名优质活动点评用户将获得由“中国女鞋之都·武侯皮革城”提供的价值168元简约手提包以及价值68元的优质皮革手机套各一只。
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="box">
+              <dl class="shrink" id="txl2">
+                <dd>
+                  <a href="inplace://175029" >
+                    <div class="arrow">
+                      <span>中国女鞋之都·武侯皮革城</span>
+                      <div class="address">
+                        武侯区川藏路成双段鞋都南路139号
+                      </div> 
+                    </div> 
+                  </a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <!--{if isset($feed) && !empty($feed)}-->
+          <div class="unit card">
+            <div class="unit-title">
+              <h3>活动动态</h3>
+            </div>
+            <div class="box">
+              <div class="feeds">
+                <div class="feed">
+                  <a href="/event/feeds/{$event_id}/{$uid}/0/1">
+                  <div class="arrow">
+                    <div class="icon">
+                      <img src="{$feed[avatar]}"  width="40" height="40"/>
+                    </div>
+                    <div class="detail">
+                      <h4>{$feed[uname]}</h4>
+                      <!--{if $feed[type]==1}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        签到
+                      </div>
+                      <!--{elseif $feed[type]==2}-->
+                      <div class="action">
+                        点评
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="start">
+                        <!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}-->
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <!--{elseif $feed[type]==3}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        上传照片
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <div class="photo"><img src="{$feed[photoName]}" width="200" />
+                      </div>
+                      <!--{/if}-->
+                    </div>
+                  </div> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--{/if}-->
+
+          <!--{if isset($joines) && !empty($joines)}-->
+          <div class="unit user-list">
+            <div class="unit-title">
+              <h3>您有{$count_joines}位好友参加了该活动</h3>
+            </div>
+            <div class="box">
+              <a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+              <ul class="user-list">
+                <!--{loop $joines $id $u}-->
+                <li><img src="{$u[avatar]}" />
+                </li>
+                <!--{/loop}-->
+              </ul> </a>
+            </div>
+          </div>
+          <!--{/if}-->
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong><br />
+                1.  从参与用户中，抽取12名优质活动点评用户；优质点评标准：与活动地点相关紧密的，对其他用户有实际指导作用的。<br />
+                2.  本次活动由“中国女鞋之都·武侯皮革城”独家赞助。<br />
+                3.  中奖名单于活动结束后3个工作日内公布，具体领取事宜以中奖私信为准。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$(".touchslider").touchSlider({
+					mouseTouch : true,
+				});
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				})
+				$("#txl2").each(function() {
+					$("#txl2 > dd:gt(1)").hide();
+					$("#txa2").click(function() {
+						$("#txs2").toggle();
+						$("#txl2 > dd:gt(1)").toggle();
+					});
+				});
+			})
+    </script>
+  </body>
+</html>

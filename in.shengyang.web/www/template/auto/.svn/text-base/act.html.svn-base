@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="file:///E:/developer/8.5/root/juno/trunk/www/www/index3.0/styles/style.css" />
+	<link rel="stylesheet" href="skin/channel.css" />
+	<link rel="stylesheet" href="skin/auto.css" />
+	<!--[if lte IE 6]>
+		<script type="text/javascript" src="file:///E:/developer/8.5/root/juno/trunk/www/www/static/js/v3/ie6-warn.js"></script>
+		<link rel="stylesheet" href="file:///E:/developer/8.5/root/juno/trunk/www/www/index3.0/styles/ie6.css" />
+		<script type="text/javascript" src="file:///E:/developer/8.5/root/juno/trunk/www/www/static/js/v3/ie6.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="main channel layout">
+		<div class="column nav">
+			<div class="logo">
+				<img src="images/logo.jpg" alt="" />
+			</div>
+			<ul>
+				<li><a href=""><i class="cs"></i>“车事”立场</a></li>
+				<li><a href=""><i class="zy"></i>章鱼说车</a></li>
+				<li><a href=""><i class="yh"></i>优惠行情</a></li>
+				<li><a href=""><i class="ws"></i>网上4S店</a></li>
+				<li><a href=""><i class="dql"></i>“动起来”</a></li>
+				<li><a href=""><i class="ht"></i>车友话题</a></li>
+			</ul>
+		</div>
+		<div class="column">
+			<div class="article">
+				<div class="module hot">
+					<div class="tit">
+						<h3>"动"起来<i></i></h3>
+					</div>
+					<div class="bd">
+						<div class="box">
+							<div class="img">
+								<a target="_blank" href="http://in.chengdu.cn/event_new/detail/59">
+									<img height="198" alt="" src="http://pic.in.chengdu.cn/common/hdp/201306/25/201306_25_142729146_1913.jpg">
+								</a>
+							</div>
+							
+							<div class="info">
+								<a target="_blank" href="http://in.chengdu.cn/event_new/detail/59">
+								</a><h4><a target="_blank" href="http://in.chengdu.cn/event_new/detail/59"></a><a target="_blank" href="http://in.chengdu.cn/event_new/detail/59">同心卡三周年庆 7月6日相聚万象城</a></h4>
+								<span>时间：2013-03-20 ~ 2013-08-31</span>
+								<p><em>13046</em>人关注了</p>
+								<div class="btns">
+								<a class="btn btn-vertical" href="">写点评</a>
+								<a class="btn btn-inverse" target="_blank" href="http://in.chengdu.cn/event_new/detail/59#post">我要报名</a>
+								</div>
+							</div>
+						</div>
+						<div class="box">
+							<div class="img">
+								<a target="_blank" href="http://in.chengdu.cn/event_new/detail/59">
+									<img height="198" alt="" src="http://pic.in.chengdu.cn/common/hdp/201306/25/201306_25_142729146_1913.jpg">
+								</a>
+							</div>
+							
+							<div class="info">
+								<a target="_blank" href="http://in.chengdu.cn/event_new/detail/59">
+								</a><h4><a target="_blank" href="http://in.chengdu.cn/event_new/detail/59"></a><a target="_blank" href="http://in.chengdu.cn/event_new/detail/59">同心卡三周年庆 7月6日相聚万象城</a></h4>
+								<span>时间：2013-03-20 ~ 2013-08-31</span>
+								<p><em>13046</em>人关注了</p>
+								<div class="btns">
+								<a class="btn btn-vertical" href="">写点评</a>
+								<a class="btn btn-inverse" target="_blank" href="http://in.chengdu.cn/event_new/detail/59#post">我要报名</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="side">	
+				<div class="module contact">
+					<div class="tit">
+						<h3><i></i>联系我们</h3>
+					</div>
+					<div class="con">
+						<ul>
+							<li>
+								<i class="tel"></i>
+								<p>热线电话</p>
+								<p><span>85911101</span></p>
+							</li>
+							<li>
+								<p>热线电话</p>
+								<p><span>85911101</span></p>
+							</li>
+							<li>
+								<i class="group"></i>
+								<p>热线电话</p>
+								<p><span>85911101</span></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="module zysc">
+					<div class="tit">
+						<h3>汽车Voice<i></i></h3>
+					</div>
+					<div class="con">
+						<div class="img">
+							<img alt="" src="images/download.jpg">
+							<div class="caption">每周一款 深入剖析 专家问答 车型解密</div>
+						</div>
+						<div class="info">
+							<h3><a href="">车友提车作业火热征集中</a></h3>
+							<p>      通用670亿投资/四座新工厂 胖子伤不起世界上最窄小的汽车 全新荣威550用技术重新定义中级车 玛莎拉蒂将投产小跑车 国内油价明起可能小幅上调  大众推十速变速前景堪忧 全新荣威550用技术重新定义中级车 玛莎拉蒂将投... <a href="">[查看详情]</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="module ssss yhhq">
+					<div class="hd">
+						<h2>优惠行情</h2>
+						<a href="">更多&gt;</a>
+					</div>
+					<div class="con">
+						<ul>
+							<li>
+								<div class="img">
+									<img alt="" src="t.jpg">
+								</div>
+								<div class="info">
+									<a href="">君威超豪华车最高现金优惠3.1万</a>
+									<p>报恩在于行 茶马古城捐赠100万元呼吁全民行动雅安茶马古城带头向灾区捐赠100万...</p>
+									
+								</div>
+							</li>
+							<li>
+								<div class="img">
+									<img alt="" src="t.jpg">
+								</div>
+								<div class="info">
+									<a href="">君威超豪华车最高现金优惠3.1万</a>
+									<p>报恩在于行 茶马古城捐赠100万元呼吁全民行动雅安茶马古城带头向灾区捐赠100万...</p>
+									
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="module ssss">
+					<div class="hd">
+						<h2>网上4s店</h2>
+						<a href="">更多></a>
+					</div>
+					<div class="con">
+						<ul>
+							<li>
+								<div class="img">
+									<img src="t.jpg" alt="" />
+								</div>
+								<div class="info">
+									<a href="">[4S店]四川申川汽车销售服务有限公司</a>
+									<p>地址：四川省成都市五桂路37号</p>
+									<p>电话：4008-600-329</p>
+								</div>
+							</li>
+							<li>
+								<div class="img">
+									<img src="t.jpg" alt="" />
+								</div>
+								<div class="info">
+									<a href="">[4S店]四川申川汽车销售服务有限公司</a>
+									<p>地址：四川省成都市五桂路37号</p>
+									<p>电话：4008-600-329</p>
+								</div>
+							</li>
+							<li>
+								<div class="img">
+									<img src="t.jpg" alt="" />
+								</div>
+								<div class="info">
+									<a href="">[4S店]四川申川汽车销售服务有限公司</a>
+									<p>地址：四川省成都市五桂路37号</p>
+									<p>电话：4008-600-329</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+</body>
+</html>

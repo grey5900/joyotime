@@ -1,0 +1,98 @@
+<div class="pageContent" id="{$page_id}">
+    <div id="leftBox" class="unitBox" style="float:left; display:block; overflow:auto; width:300px;">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <div class="panel">
+                <h1>请选择需要生成二维码的页面</h1>
+                <div>
+                    <ul>
+                        <!--{loop $link_type $key $value}-->
+                        <li><label><input type="radio" value="{$key}" key="{$value['key']}" name="type" />{$value['value']}</label></li>
+                        <!--{/loop}-->
+                    </ul>
+                    <dl>
+                        <dt id="label_value">ID：</dt>
+                        <dd><input type="text" name="value" size="30" /></dd>
+                    </dl>
+                    <dl>
+                        <dt>大小：</dt>
+                        <dd>
+                            <select name="size">
+                                <option value="400">大(400*400)</option>
+                                <option value="200" selected>中(200*200)</option>
+                                <option value="80">小(80*80)</option>
+                            </select>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>&nbsp;</dt>
+                        <dd><button type="button" name="btn_generator">生成二维码</button></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="rightBox" class="unitBox">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <div class="panel">
+                <h1>二维码</h1>
+                <div>
+                    <div id="qrcode_view"></div>
+                </div>
+            </div>
+            <button type="button" name="btn_qr_download">下载</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("input[name=type]", $("#{$page_id}")).click(function(){
+            var type = $("input[name=type]:checked", $("#{$page_id}")).val();
+            if(type == 14) {
+                $("#label_value", $("#{$page_id}")).text("网址：");
+            } else {
+                $("#label_value", $("#{$page_id}")).text("ID：");
+            }
+            
+            $("input[name=value]", $("#{$page_id}")).val("");
+        });
+        
+        $("button[name=btn_generator]", $("#{$page_id}")).click(function(){
+            // 检查
+            var type = $("input[name=type]:checked", $("#{$page_id}")).val();
+            if(type == undefined) {
+                alertMsg.error("请选择页面链接类型");
+                return;
+            }
+            var key = $("input[name=type]:checked", $("#{$page_id}")).attr("key");
+            
+            var id = $.trim($("input[name=value]", $("#{$page_id}")).val());
+            if(id == "" || (type != 14 && (isNaN(id) || parseInt(id) <= 0))) {
+                alertMsg.error("请填写正确的ID或网址");
+                return;
+            }
+            
+            var size = $("select[name=size]", $("#{$page_id}")).val();
+            
+            // 二维码内容
+            var data = (type == 14)?id:("{$web_site}/qr/" + key + "/" + id);
+            
+            var qr_url = "https://chart.googleapis.com/chart?choe=utf-8&cht=qr&chs="
+                             + (size + "x" + size) + "&chld=L|1&chl=" + encodeURIComponent(data);
+            var qr_code = "<img id=\"qr_code_url\" src=\"" + qr_url + "\" />";
+            
+            $("#qrcode_view", $("#{$page_id}")).html(qr_code);
+        });
+        
+        $("button[name=btn_qr_download]", $("#{$page_id}")).click(function(){
+            // 下载
+            var qr_code_url = $("#qr_code_url", $("#{$page_id}")).attr("src");
+            if(qr_code_url == undefined || $.trim(qr_code_url) == "") {
+                alertMsg.error("请先生成二维码");
+                return;
+            }
+            
+            window.open("/other/qr_download/" + encodeURIComponent(qr_code_url));
+        });
+    });
+</script>

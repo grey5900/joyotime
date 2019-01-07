@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>file:config/jdbcConfig.properties</value>
+				<value>file:config/jobConfig.properties</value>
+				<value>file:config/config.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driver}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<property name="initialSize">
+			<value>${jdbc.initialSize}</value>
+		</property>
+		<property name="maxActive">
+			<value>${jdbc.maxActive}</value>
+		</property>
+		<property name="maxIdle">
+			<value>${jdbc.maxIdle}</value>
+		</property>
+		<property name="maxWait">
+			<value>${jdbc.maxWait}</value>
+		</property>
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<property name="testWhileIdle" value="true" />
+		<property name="validationQuery" value="select 1" />
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+
+	<bean class="com.joyotime.xr87.util.SpringUtil" />
+
+	<bean class="com.joyotime.xr87.job.util.BaseInfo">
+	    <property name="config">
+	       <map>
+               <entry key="sleepTime" value="${sleep.time}" />
+               <entry key="serverPort" value="${server.port}" />
+               <entry key="dataPath" value="${data.path}" />
+	       </map>
+	    </property>
+	</bean>
+	
+	<bean class="com.joyotime.xr87.job.Start" />
+
+	<!-- 任务通用配置 -->
+	<bean id="jobAbstract" abstract="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+	</bean>
+	<bean id="jobDetailAbstract" abstract="true">
+		<property name="targetMethod">
+			<value>execute</value>
+		</property>
+		 <property name="concurrent" value="false"/>
+	</bean>
+
+	<!-- 结算任务 -->
+	<bean id="jobSettle" class="com.joyotime.xr87.job.settle.JobSettle"
+		parent="jobAbstract">
+		<property name="logFile">
+			<value>/logs/settle/log.txt</value>
+		</property>
+	</bean>
+	<bean id="jobSettleDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		parent="jobDetailAbstract">
+		<property name="targetObject">
+			<ref bean="jobSettle" />
+		</property>
+	</bean>
+	<bean id="jobSettleTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="jobSettleDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>${jobSettle.expression}</value>
+		</property>
+	</bean>
+
+	<!-- 设备统计任务 -->
+	<bean id="jobDevice" class="com.joyotime.xr87.job.device.JobDevice"
+		parent="jobAbstract">
+		<property name="logFile">
+			<value>/logs/device/log.txt</value>
+		</property>
+	</bean>
+	<bean id="jobDeviceDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		parent="jobDetailAbstract">
+		<property name="targetObject">
+			<ref bean="jobDevice" />
+		</property>
+	</bean>
+	<bean id="jobDeviceTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="jobDeviceDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>${jobDevice.expression}</value>
+		</property>
+	</bean>
+
+    <!-- 交互内容数据统计任务 -->
+    <bean id="jobContentCount" class="com.joyotime.xr87.job.contentCount.JobContentCount" parent="jobAbstract">
+        <property name="logFile">
+            <value>/logs/content/log.txt</value>
+        </property>
+    </bean>
+    <bean id="jobContentCountDetail"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+        parent="jobDetailAbstract">
+        <property name="targetObject">
+            <ref bean="jobContentCount" />
+        </property>
+    </bean>
+    <bean id="jobContentCountTrigger"
+        class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="jobContentCountDetail" />
+        </property>
+        <property name="cronExpression">
+            <value>${jobContentCount.expression}</value>
+        </property>
+    </bean>
+
+	<!-- 任务管理 -->
+	<bean id="schedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+		lazy-init="true">
+		<property name="triggers">
+			<list>
+				<ref bean="jobSettleTrigger" />
+				<ref bean="jobDeviceTrigger" />
+                <ref bean="jobContentCountTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans>

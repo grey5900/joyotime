@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>牛牛福&猪猪福 美食暗访员大召集</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.4.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+			/*	background color	*/
+			.page {
+				background: #f6f6f6;
+			}
+			#content .unit .box {
+				background: #fff;
+			}
+			.touchslider-viewport {
+				background: #fff;
+			}
+			.box-db-left, .box-db-right {
+				background: #000;
+			}
+			.box-db .img img {
+				background: #fff;
+			}
+			/* font color  */
+			.unit-title {
+				color: #5ba81c;
+			}
+			#content .unit p {
+				color: #666;
+			}
+			#content .statement p {
+				color: #666;
+			}
+			.box-db-left, .box-db-right {
+				color: #5a146a;
+			}
+			.texts .info-group {
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+				color: #666;
+			}
+			.texts .inside p {
+
+			}
+			.bottons .botton span.title {
+				color: #fff;
+			}
+			.bottons .botton span.intro {
+				color: #fff;
+			}
+			.touchslider-item .touchslider-info {
+				color: #fff;
+			}
+			.multi-line dd span {
+				color: #666;
+			}
+			.multi-line dd a:hover {
+				border-radius: 0;
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+			}
+			.multi-line .viewall a {
+				color: #ef631e;
+			}
+			.multi-line .viewall a:hover {
+
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #666;
+				padding-top: 5px;
+			}
+			.touchslider-item img {
+				height: 290px;
+			}
+			.touchslider-nav-item {
+
+			}
+			.feed, .user {
+				border-bottom: 0;
+			}
+			.feed a:hover, .user a:hover {
+				border-bottom: 0;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/28/"><img border="0" src="http://icd.sc/img/m/nnf/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动说明</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  猪猪福、牛牛福，火锅烤肉一家亲。如果你是一名资深吃货，如果你“美食达人”身份货真价实。那么，请不要吝啬，尽情show出你的点评和见解吧。若你的点评够专业，有足够的感染力，那么就有机会成为本次的美食暗访员，获得价值200元的暗访基金哟。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动时间</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  11月9日--11月15日
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动说明</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+                    1.关注@成都牛牛福餐饮 的新浪微博，成为粉丝
+                    <br />
+                    2.使用IN成都，在指定的牛牛福三国烤肉&猪猪......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    1.关注@成都牛牛福餐饮 的新浪微博，成为粉丝
+                    <br />
+                    2.使用IN成都，在指定的牛牛福三国烤肉&猪猪福和式火锅这5个活动商家里，写下你对他们的专业点评。
+                    <br />
+                    同时满足以上两点，即有机会被选为牛牛福或猪猪福的暗访员，获得价值200元的暗访基金。
+                    <br /><br />
+                    <strong>11月16日，公布暗访员名单，并私信通知</strong>
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>奖品设置</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  选出4名美食暗访员，每人获得价值200元的暗访基金。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="unit-title">
+              <h3>使用商家</h3>
+            </div>
+            <div class="box">
+              <dl class="shrink" id="txl2">
+                <dd>
+                  <a href="inplace://6805" >
+                  <div class="arrow">
+                    <span>猪猪福和式火锅（伊势丹店）</span>
+                    <!--                  <div class="address">
+                    伊势丹店
+                    </div> -->
+                  </div> </a>
+                </dd>
+                <dd>
+                  <a href="inplace://319083" >
+                  <div class="arrow">
+                    <span>猪猪福和式火锅（南延线店）</span>
+                  </div> </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305367" >
+                  <div class="arrow">
+                    <span>牛牛福三国烤肉（春熙路店）</span>
+                  </div> </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305370" >
+                  <div class="arrow">
+                    <span>牛牛福三国烤肉（伊势丹店）</span>
+                  </div> </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305368" >
+                  <div class="arrow">
+                    <span>牛牛福三国烤肉（南延线店）</span>
+                  </div> </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305366" >
+                  <div class="arrow">
+                    <span>牛牛福三国烤肉（双楠店）</span>
+                  </div> </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa2">
+                <a class="showMore" id="txs2">查看全部（<em>6</em>）</a>
+              </div>
+            </div>
+          </div>
+          <div class="unit scrolls">
+            <div class="unit-title">
+              <h3>菜品推荐</h3>
+            </div>
+            <div id="showPic" class="touchslider">
+              <div class="touchslider-viewport" >
+                <div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/nnf/1.jpg" />
+                    <span class="touchslider-info">【牛牛福神户牛肉】<br />
+精心挑选品质最好的牛，取其身上最精华部分，一头牛身上，只能取得700g这种肉。
+</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/nnf/2.jpg" />
+                    <span class="touchslider-info">【韩式牛小排】<br />
+此乃上等菜品，烤制时先用大伙将一面烤制约两分钟，再翻面烤制一分钟左右，这样烤制出来的味道绝对让你回味无穷~
+</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/nnf/3.jpg" />
+                    <span class="touchslider-info">【精选牛舌】<br />
+脆香弹牙的本味牛舌，其肉质细嫩、易消化、轻薄酥脆，入口醇厚，回味悠香！
+</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/nnf/4.jpg" />
+                    <span class="touchslider-info">【雪花牛肉】<br />
+此肉在一头牛身上只能取一小部分，肉质细嫩，属于偏上等牛肉。
+</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/nnf/5.jpg" />
+                    <span class="touchslider-info">【猪猪福2人经济套餐】</span>
+                  </div>
+                </div>
+              </div>
+              <div class="touchslider-nav">
+                <span class="touchslider-nav-item touchslider-nav-item-current"></span>
+                <span class="touchslider-nav-item"></span>
+                <span class="touchslider-nav-item"></span>
+                <span class="touchslider-nav-item"></span>
+                <span class="touchslider-nav-item"></span>
+              </div>
+            </div>
+          </div>
+          <!--{if isset($feed) && !empty($feed)}-->
+          <div class="unit card">
+            <div class="unit-title">
+              <h3>活动动态</h3>
+            </div>
+            <div class="box">
+              <div class="feeds">
+                <div class="feed">
+                  <a href="/event/feeds/{$event_id}/{$uid}/0/1">
+                  <div class="arrow">
+                    <div class="icon">
+                      <img src="{$feed[avatar]}"  width="40" height="40"/>
+                    </div>
+                    <div class="detail">
+                      <h4>{$feed[uname]}</h4>
+                      <!--{if $feed[type]==1}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        签到
+                      </div>
+                      <!--{elseif $feed[type]==2}-->
+                      <div class="action">
+                        点评
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="start">
+                        <!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}-->
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <!--{elseif $feed[type]==3}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        上传照片
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <div class="photo"><img src="{$feed[photoName]}" width="200" />
+                      </div>
+                      <!--{/if}-->
+                    </div>
+                  </div> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--{/if}-->
+
+          <!--{if isset($joines) && !empty($joines)}-->
+          <div class="unit user-list">
+            <div class="unit-title">
+              <h3>您有{$count_joines}位好友参加了该活动</h3>
+            </div>
+            <div class="box">
+              <a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+              <ul class="user-list">
+                <!--{loop $joines $id $u}-->
+                <li><img src="{$u[avatar]}" />
+                </li>
+                <!--{/loop}-->
+              </ul> </a>
+            </div>
+          </div>
+          <!--{/if}-->
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>商家介绍</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+                    <strong>【牛牛福三国烤肉】</strong>
+                    <br />
+                    牛牛福三国烤肉是集中日韩三国烤肉之精华，而衍生出来的新型烤肉。具有三个国家中最美味的吃法：有中国（四川）风味的麻辣吃法......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    <strong>【牛牛福三国烤肉】</strong>
+                    <br />
+                    牛牛福三国烤肉是集中日韩三国烤肉之精华，而衍生出来的新型烤肉。具有三个国家中最美味的吃法：有中国（四川）风味的麻辣吃法、有韩国用生菜包着的吃法，还有日式甜味沾碟沾着吃。每种味道都让人赞不绝口。其牛牛福肉、特色牛排、特色牛仔骨等特色菜品已深入人心，无烟灶台的设计更让人不必担心烧烤的油烟，专心享用牛牛福为你打造的美食盛宴！
+                    <br />
+                    <strong>【猪猪福和式火锅】</strong>
+                    <br />
+                    环境十分雅致，除了传统座位以外还设立了榻榻米的位置。店内的樱花树和温和的灯光相互映衬，让人心情极度放松。自助调料区可以自己搭配味碟，还可根据自己的喜好选择各式开胃菜和饮料。每人每锅的形式进行涮烫，再搭上特别的酱料，味道甚好。清淡的日式小火锅，清淡不伤胃；各类猪肉和蔬菜，新鲜又健康。还可点一碗米饭焖煮，味道更甚。一年中，只有10月有售的金色啤酒，具有浓郁、醇厚的啤酒花和麦芽香味，口感柔滑和谐。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong>
+                <br />
+                1.暗访员选取标准：从参与点评的用户中，抽取上传了优质点评的用户；
+                <br />
+                2.4张200元暗访基金代金券分别由猪猪福和式火锅（伊势丹店）、牛牛福三国烤肉（春熙店，伊势丹店，南延线店）提供，需至成都全搜索in小分队领取，使用消费后需填写一份暗访表；
+                <br />
+                3.此暗访基金代金券使用有效2012年11月25日，请中奖用户自行安排时间前往使用；
+                <br />
+                4.请按照活动的正确参与方式进行有效参与。恶意刷屏等行为，系统将自动屏蔽，并扣除积分，严重者将取消参加资格。
+                <br />
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$(".touchslider").touchSlider({
+					mouseTouch : true,
+				});
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				})
+				$("#txl2").each(function() {
+					$("#txl2 > dd:gt(1)").hide();
+					$("#txa2").click(function() {
+						$("#txs2").toggle();
+						$("#txl2 > dd:gt(1)").toggle();
+					});
+				});
+			})
+    </script>
+  </body>
+</html>

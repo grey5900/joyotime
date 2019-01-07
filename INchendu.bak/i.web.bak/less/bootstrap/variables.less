@@ -1,0 +1,269 @@
+// Variables.less
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #333;
+@grayDark:              #666;
+@gray:                  #555;
+@grayLight:             #aaa;
+@grayLighter:           #eee;
+@grayLightest:          #cacecf;
+@white:                 #fff;
+
+@a-gray:#aaa;
+@b-gray:#e7e8e9;
+@c-gray:#cacecf;
+@d-gray:#666; 
+
+
+// Accent colors
+// -------------------------
+@blue:                  #2eacb7;
+@blueLight:             #d9e2e7;
+@blueDark:              #0064cd;
+@green:                 #5caa1d;
+@greenDarker:           #87c347;
+@greenDark:				#99cc99;
+@greenLight:			#e8ecde;
+@greenLighter:			#f8fcf7;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #c86f51;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Scaffolding
+// -------------------------
+@bodyBackground:        @white;
+@greenBackground:		#f5f7ef;
+@grayBackground:		#f6f6f6;
+@grayBackgroundHover:	#f0f0f0;
+@textColor:             @grayDark;
+@redText:				#c96e53;
+@whiteText:             @white;
+@blackText:             @black;
+@blackTextLight:        #0d0900;
+@greenText:				@green;
+@greenTextHover: 		darken(@greenText,20%);
+@orangeText:            #e57100;
+@brownText:             #654220;
+@greenSide: 			#d4ddbf;
+@graySide:				#e7e8e9;
+@graySideDark:			#e1e1e1;
+@graySideDarker:		#dcded9;
+
+// Links
+// -------------------------
+@linkColor:             @green;
+@linkColorHover:        darken(@linkColor,10%);
+@greenLink:             #89a81c;
+@greenLinkHover:        darken(@greenLink,10%);
+@blueLink:				@blue;
+@blueLinkHover: 		darken(@blueLink,20%);
+
+// Typography
+// -------------------------
+@sansFontFamily:        "Helvetica Neue", "SimSun", Helvetica, Tahoma, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+
+@baseFontSize:          12px;
+@baseFontFamily:        @sansFontFamily;
+@baseLineHeight:        18px;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+
+@paddingLarge:          11px 19px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           1px 6px;   // 24px
+
+@baseBorderRadius:      4px;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
+// Tables
+// -------------------------
+@tableBackground:                   transparent; // overall background-color
+@tableBackgroundAccent:             #f9f9f9; // for striping
+@tableBackgroundHover:              #f5f5f5; // for hover
+@tableBorder:                       #ddd; // table and cell border
+
+
+// Buttons
+// -------------------------
+@btnBackground:                     #fafafa;
+@btnBackgroundHighlight:            #f1f1f1;
+@btnBorder:                         #dcdcdc;
+
+@btnPrimaryBackground:              #7ec43f;
+@btnPrimaryBackgroundHighlight:     #5dab1e;
+
+@btnInfoBackground:                 #5bc0de;
+@btnInfoBackgroundHighlight:        #2f96b4;
+
+@btnSuccessBackground:              #fed854;
+@btnSuccessBackgroundHighlight:     #faa51d;
+
+@btnWarningBackground:              #fed854;
+@btnWarningBackgroundHighlight:     #faa51d;
+
+@btnDangerBackground:               #ee5f5b;
+@btnDangerBackgroundHighlight:      #bd362f;
+
+@btnInverseBackground:              @gray;
+@btnInverseBackgroundHighlight:     @grayDarker;
+
+
+// Forms
+// -------------------------
+@inputBackground:               @grayBackground;
+@inputBorder:                   #ccc;
+@inputBorderRadius:             0;
+@inputDisabledBackground:       @grayLighter;
+@formActionsBackground:         #f5f5f5;
+
+
+// Dropdowns
+// -------------------------
+@dropdownBackground:            #f5f7ef;
+@dropdownBorder:                #d3dcbd;
+@dropdownLinkColor:             @linkColor;
+@dropdownLinkColorHover:        @linkColorHover;
+@dropdownLinkBackgroundHover:   darken(#f5f7ef,5%);
+@dropdownDividerTop:            #e5e5e5;
+@dropdownDividerBottom:         @white;
+
+
+// Tooltips and popovers
+// -------------------------
+@tooltipColor:            #fff;
+@tooltipBackground:       #000;
+@tooltipArrowWidth:       5px;
+@tooltipArrowColor:       @tooltipBackground;
+
+@popoverBackground:       #fff;
+@popoverArrowWidth:       10px;
+@popoverArrowColor:       #fff;
+@popoverTitleBackground:  darken(@popoverBackground, 3%);
+
+// Special enhancement for popovers
+@popoverArrowOuterWidth:  @popoverArrowWidth + 1;
+@popoverArrowOuterColor:  rgba(0,0,0,.25);
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+@zindexDropdown:          1000;
+@zindexPopover:           1010;
+@zindexTooltip:           1020;
+@zindexFixedNavbar:       1030;
+@zindexModalBackdrop:     1040;
+@zindexModal:             1050;
+
+
+// Sprite icons path
+// -------------------------
+@iconSpritePath:          "../../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "../../img/glyphicons-halflings-white.png";
+@iconGraySpritePath:     "../../img/glyphicons-halflings-gray.png";
+@img-icon:				  "../img/icon.png";
+
+
+// Input placeholder text color
+// -------------------------
+@placeholderText:         @grayLight;
+
+
+// Hr border color
+// -------------------------
+@hrBorder:                @grayLighter;
+
+
+// Navbar
+// -------------------------
+@navbarHeight:                    40px;
+@navbarBackground:                @grayDarker;
+@navbarBackgroundHighlight:       @grayDark;
+
+@navbarText:                      @grayLight;
+@navbarLinkColor:                 @grayLight;
+@navbarLinkColorHover:            @white;
+@navbarLinkColorActive:           @navbarLinkColorHover;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      @navbarBackground;
+
+@navbarSearchBackground:          lighten(@navbarBackground, 25%);
+@navbarSearchBackgroundFocus:     @white;
+@navbarSearchBorder:              darken(@navbarSearchBackground, 30%);
+@navbarSearchPlaceholderColor:    #ccc;
+@navbarBrandColor:                @navbarLinkColor;
+
+
+// Hero unit
+// -------------------------
+@heroUnitBackground:              @grayLighter;
+@heroUnitHeadingColor:            inherit;
+@heroUnitLeadColor:               inherit;
+
+
+// Form states and alerts
+// -------------------------
+@warningText:             #c09853;
+@warningBackground:       #fcf8e3;
+@warningBorder:           darken(spin(@warningBackground, -10), 3%);
+
+@errorText:               #b94a48;
+@errorBackground:         #f2dede;
+@errorBorder:             darken(spin(@errorBackground, -10), 3%);
+
+@successText:             #468847;
+@successBackground:       #dff0d8;
+@successBorder:           darken(spin(@successBackground, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBackground:          #d9edf7;
+@infoBorder:              darken(spin(@infoBackground, -10), 7%);
+
+
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
+// -------------------------
+@gridColumns:             25;
+@gridColumnWidth:         30px;
+@gridGutterWidth:         10px;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// Fluid grid
+// -------------------------
+@fluidGridColumnWidth:    3.03030303030303%;
+@fluidGridGutterWidth:    1.01010101010101%;
+

@@ -1,0 +1,71 @@
+<select name="item_type">
+    <option value="0">无连接</option>
+    <!--{if $is_event}-->
+    <option value="14">网址</option>
+    <!--{else}-->
+    <!--{loop $link_type $key $row}-->
+    <option value="{$key}">{$row['value']}</option>
+    <!--{/loop}-->
+    <!--{/if}-->
+</select>
+<div id="lookup_input" style="display:none;">
+    <input type="hidden" name="content.id" id="c_id" />
+    <input type="text" name="content.name" id="c_name" size="30" readonly />
+    <a id="lookup_link" class="btnLook" href="#" lookupGroup="content" height="560">查找带回</a>
+</div>
+<div id="item_input" style="display:none;">
+    <input type="text" name="item_id" id="item_id" size="30" />
+</div>
+<script type="text/javascript">
+    function {$page_id}_link_type(obj) {
+        var parent = $(obj).parent();
+        var v = parseInt($(obj).val());
+        $("#c_id", parent).val("");
+        $("#c_name", parent).val("");
+        $("#item_id", parent).val("");
+        $("#c_id", parent).removeClass("required");
+        $("#c_name", parent).removeClass("required");
+        $("#item_id", parent).removeClass("required");
+        
+        if(v == 1 || v == 4) {
+            var link = "{eval echo site_url(array('lookup','list_lookup','type'));}";
+            if(1 == v) {
+                // 地点
+                $("#lookup_link", parent).attr("href", link + "/place");
+            } else {
+                // 用户
+                $("#lookup_link", parent).attr("href", link + "/user");
+            }
+            $("#lookup_input", parent).show();
+            $("#c_id", parent).addClass("required");
+            $("#c_name", parent).addClass("required");
+            $("#item_input", parent).hide();
+        } else if(v > 0) {
+            $("#lookup_input", parent).hide();
+            $("#item_input", parent).show();
+            $("#item_id", parent).addClass("required");
+        } else {
+            $("#lookup_input", parent).hide();
+            $("#item_input", parent).hide();
+        }
+    }
+
+    $(function() {
+        var page_obj = $("#{$page_id}");
+        <!--{if $item_type}-->
+        var item_type = "{$item_type}";
+        $("select[name=item_type]", page_obj).val("{$item_type}");
+        {$page_id}_link_type($("select[name=item_type]", page_obj));
+        if("1" == item_type || "4" == item_type) {
+            $("#c_id", page_obj).val("{$item_value['id']}");
+            $("#c_name", page_obj).val("{$item_value['value']}");
+        } else {
+            $("#item_id", page_obj).val("{$item_value}");
+        }
+        <!--{/if}-->
+        
+        $("select[name=item_type]", page_obj).change(function() {
+            {$page_id}_link_type(this);
+        });
+    });
+</script>

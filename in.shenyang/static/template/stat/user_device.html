@@ -1,0 +1,129 @@
+<form id="pagerForm" method="post" action="{$current_page}">
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="<!--{{param.orderField}}-->" />
+	<input type="hidden" name="orderDirection" value="<!--{{param.orderDirection}}-->" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<table class="searchContent">
+                <tr>
+                    <td>
+			
+				日期：<input type="text" name="startDate" value="{$startDate}" format="yyyy-MM-dd 00:00:00" class="date required"/> ~ 
+                   	 <input type="text" name="endDate" value="{$endDate}" format="yyyy-MM-dd 23:59:59" class="date required"/>
+					</td>
+					
+				</tr>
+			</table>
+			
+			
+			
+		
+		
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+							
+				<!-- li><a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a></li -->
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	{if $result}
+	<table class="table" width="1140" layoutH="210">
+		<thead>
+			<tr>
+				<th width='14%'></th>
+				<th width='14%'>累计终端数量 </th>
+				<th width='14%'> 累计注册用户数 </th>
+				<th width='14%'> 更新了3.0版本终端数量 </th>
+				<th width='14%'> 更新了3.0版本用户数量 </th>
+				<th width='15%'> 2013-01-01之后链接过的终端数</th>
+				<th width='15%'> 2013-01-01之后链接过的用户数 </th>
+				
+			</tr>
+		</thead>
+		<tbody>
+		
+			<tr >
+				<td > IOS </td>
+				<td  > {$result['device_count'][0]} </td>
+				<td > {$result['user_count'][0]}</td>
+				<td > {$result['device3'][0]} </td>
+				<td > {$result['user3'][0]} </td>
+				<td > {$result['device2013'][0]} </td>
+				<td > {$result['user2013'][0]} </td>
+			</tr>
+			<tr >
+				<td > Android </td>
+				<td  > {$result['device_count'][1]} </td>
+				<td > {$result['user_count'][1]}</td>
+				<td > {$result['device3'][1]} </td>
+				<td > {$result['user3'][1]} </td>
+				<td > {$result['device2013'][1]} </td>
+				<td > {$result['user2013'][1]} </td>
+			</tr>
+			<tr >
+				<td > WindowPhone </td>
+				<td  > {echo intval($result['device_count'][2]);} </td>
+				<td > {echo intval($result['user_count'][2]);}</td>
+				<td > {echo intval($result['device3'][2]);} </td>
+				<td > {echo intval($result['user3'][2]);} </td>
+				<td > {$result['device2013'][2]} </td>
+				<td > {$result['user2013'][2]} </td>
+			</tr>
+		
+			
+		</tbody>
+	</table>
+	{else}
+	<table class="table" width="1140" layoutH="110">
+		<thead>
+			<tr>
+				<th width='12%'>日期</th>
+				<th  width='12%'> </th>
+				<th  width='12%'>链接的设备终端（设备号去重） </th>
+				<th width='12%'> 链接的账号数量 </th>
+				<th width='12%'> 用户启动客户端次数 </th>
+				<th width='12%'> 新增设备号数量 </th>
+				<th width='12%'> 新增注册用户数</th>
+				<th width='12%'> 来自邀请接口注册的用户数 </th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			{loop $data $key $d}
+			<tr >
+				<td rowspan=2> {$key} </td>
+				<td > IOS </td>
+				<td  > {$d['deviceCount'][0]}</td>
+				<td > {$d['userCount'][0]}</td>
+				<td > {$d['deviceLoginCount'][0]} </td>
+				<td > {$d['newCount'][0]} </td>
+				<td >  {$d['newUser'][0]}</td>
+				<td > {$d['newInviteUser'][0]} </td>
+				
+			</tr>
+			<tr >
+				
+				<td > Android </td>
+				<td  > {$d['deviceCount'][1]} </td>
+				<td > {$d['userCount'][1]}</td>
+				<td > {$d['newCount'][1]} </td>
+				<td > {$d['deviceLoginCount'][1]} </td>
+				<td > {$d['newUser'][1]} </td>
+				<td > {$d['newInviteUser'][1]}</td>
+				
+			</tr>
+			{/loop}
+		
+			
+		</tbody>
+	</table>
+	{/if}
+</div>

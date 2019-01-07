@@ -1,0 +1,73 @@
+{eval $page_rel='deal_detail_cinema_ticket';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="no_zero" value="{$no_zero}"/>
+    <input type="hidden" name="start_date" value="{$start_date}"/>
+    <input type="hidden" name="end_date" value="{$end_date}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td width="300"> 时段：
+                    <input type="text" readonly="readonly" name="start_date" class="date" value="{$start_date}" />
+                    ~
+                    <input type="text" readonly="readonly" name="end_date" class="date" value="{$end_date}" />
+                    </td>
+                    <td width="120"><label>
+                        <input type="checkbox" name="no_zero" value="1"<!--{if $no_zero}--> checked="checked"<!--{/if}--> />
+                        排除0元订单 </label></td>
+                    <td>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                查询
+                            </button>
+                        </div>
+                    </div></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="4"> 
+                        {$start_date} 到 {$end_date}
+                         订单总数：{eval echo $no_zero?$stat['orderCount1']:$stat['orderCount']} 已付款订单数：{eval echo $no_zero?$stat['paidCount1']:$stat['paidCount']} 售出份数：{eval echo $no_zero?$stat['saleCount1']:$stat['saleCount']} 交易金额：{$stat['dealAmount']}元 支付宝支付：{$stat['alipayAmount']}元 银联支付：{$stat['chinapayAmount']}元 </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <table width="100%" class="table" layoutH="178" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="20%">日期</th>
+                <th width="10%">订单总数</th>
+                <th width="10%">未付款订单</th>
+                <th width="10%">已付款订单</th>
+                <th width="10%">付款率</th>
+                <th width="10%">售出份数</th>
+                <th width="10%">交易金额</th>
+                <th width="10%">支付宝支付</th>
+                <th width="10%">银联支付</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr>
+                <td>{$row['statDate']}</td>
+                <td>{eval echo $no_zero?$row['orderCount1']:$row['orderCount']}</td>
+                <td>{eval echo $no_zero?$row['nonPaymentCount1']:$row['nonPaymentCount']}</td>
+                <td>{eval echo $no_zero?$row['paidCount1']:$row['paidCount']}</td>
+                <td>{eval echo $no_zero?$row['paidRate1']:$row['paidRate']}%</td>
+                <td>{eval echo $no_zero?$row['saleCount1']:$row['saleCount']}</td>
+                <td>{$row['dealAmount']}</td>
+                <td>{$row['alipayAmount']}</td>
+                <td>{$row['chinapayAmount']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

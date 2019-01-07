@@ -1,0 +1,58 @@
+{eval $page_rel='poi_block_checked';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="type" value="{$type}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                        <option value="0">品牌名</option>
+                        <option value="1"<!--{if $type}--> selected<!--{/if}-->>碎片标题</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="edit" target="navTab" warn="请选择" title="查看碎片" rel="{eval echo build_rel(array('poi_block', 'view'))}" href="{eval echo site_url(array('poi_block', 'view', 'id'))}/<!--{{id}}-->"><span>查看</span></a>
+            </li>
+        </ul>
+    </div>
+    <table width="100%" class="table" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="30%">碎片名称</th>
+                <th width="25%">品牌名称</th>
+                <th width="15%">审核时间</th>
+                <th width="25%">连接</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['title']}</td>
+                <td>{$row['brand']}</td>
+                <td>{$row['checkDate']}</td>
+                <td>{$row['hyperLink']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

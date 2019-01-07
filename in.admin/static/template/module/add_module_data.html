@@ -1,0 +1,88 @@
+<span id="add_module_data_{$id}">
+<dl style="background-color: #38B1B9;">
+    <dt><label>{$module['name']}</label></dt>
+    <dd>
+        <label style="width:50px;">排序值：</label>
+        <input type="text" size="6" name="rank_order_{$id}" value="{$module['rankOrder']}" />
+        <button type="button" onclick="del_add_module_data({$id})">删除</button>
+        <!--{if $data}-->
+        <button type="button" status="0" onclick="hidden_add_module_data(this, {$id})">展开</button>
+        <!--{else}-->
+        <button type="button" status="1" onclick="hidden_add_module_data(this, {$id})">隐藏</button>
+        <!--{/if}-->
+    </dd>
+</dl>
+<input type="hidden" value="{$id}" name="module_id[]" />
+<span id="add_module_data_field_{$id}" style="display:<!--{eval echo $data?"none":"block"}-->;">
+<!--{loop $fields $row}-->
+<dl>
+    <dt>
+        <label>
+            <input type="checkbox" name="is_visible_{$id}[{$row['fieldId']}]" id="v_{$id}_{$row['fieldId']}" value="1"<!--{if $data[$row['fieldId']]['isVisible'] == '1'}--> checked="checked"<!--{/if}--> />
+            {$row['fieldName']}：
+        </label>
+    </dt>
+    <dd id="data_span">
+        {eval $field = $row['fieldId'];$field_id = $field_name = $row['fieldId'] . '_' . $id;}
+        <!--{if 'str' == $row['fieldType']}-->
+        <input type="text" value="{$data[$field]['value']}" name="{$field_name}" id="{$field_id}" size="<!--{if $row['fieldSize']}-->{$row['fieldSize']}<!--{else}-->20<!--{/if}-->" />
+        <!--{elseif 'text' == $row['fieldType']}-->
+        <textarea id="{$field_id}" name="{$field_name}" cols="50" rows="<!--{if $row['fieldSize']}-->{$row['fieldSize']}<!--{else}-->8<!--{/if}-->">{$data[$field]['value']}</textarea>
+        <!--{elseif 'date' == $row['fieldType']}-->
+        <input type="text" value="{$data[$field]['value']}" name="{$field_name}" id="{$field_id}" class="date" format="yyyy-MM-dd" readonly="true"/>
+        <a class="inputDateButton" href="javascript:;">选择</a>
+        <!--{elseif 'datetime' == $row['fieldType']}-->
+        <input type="text" value="{$data[$field]['value']}" name="{$field_name}" id="{$field_id}" class="date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+        <a class="inputDateButton" href="javascript:;">选择</a>
+        <!--{elseif 'time' == $row['fieldType']}-->
+        <input type="text" value="{eval echo $data[$field]['value']?$data[$field]['value']:$row['defaultValue']}" name="{$field_name}" id="{$field_id}" class="date" format="HH:mm"/>
+        <a class="inputDateButton" href="javascript:;">选择</a>
+        <!--{elseif 'radio' == $row['fieldType']}-->
+        {eval $values = explode(',', $row['defaultValue']);$default = $data[$field]['value']?$data[$field]['value']:$row['defaultSelect'];}
+        <!--{loop $values $value}-->
+        <label><input type="radio" name="{$field_name}" value="{$value}"<!--{if $value==$default}-->checked="true"<!--{/if}--> />{$value}</label>
+        <!--{/loop}-->
+        <!--{elseif 'checkbox' == $row['fieldType']}-->
+        {eval $values = explode(',', $row['defaultValue']);$selects = $data[$field]['value']?explode(',',$data[$field]['value']):explode(',',$row['defaultSelect']);}
+        <!--{loop $values $value}-->
+        <label><input type="checkbox" name="{$field_name}[]" value="{$value}"<!--{if in_array($value, $selects)}-->checked="true"<!--{/if}--> />{$value}</label>
+        <!--{/loop}-->
+        <!--{elseif 'tel' == $row['fieldType']}-->
+        <input type="text" value="{$data[$field]['value']}" name="{$field_name}" id="{$field_id}" size="60" />
+        (多个电话间用英文逗号隔开)
+        <!--{elseif 'http' == $row['fieldType']}-->
+        <input type="text" value="{$data[$field]['value']}" name="{$field_name}" id="{$field_id}" size="60" />
+        (格式如：IN成都=http://in.chengdu.cn)
+        <!--{elseif 'rewrite' == $row['fieldType']}-->
+        <input type="text" value="{$data[$field]['value']}" name="{$field_name}" id="{$field_id}" size="60" />
+        (格式如：http://in.chengdu.cn)
+        <!--{elseif 'image' == $row['fieldType']}-->
+        <button type="button" id="place_add_module_button_{$field_id}">上传图片</button>
+        <script type="text/javascript">
+            $(function(){
+                var options = "name:\"{$field_name}\", id:\"{$field_id}\", file_type:\"common\", required:false";
+                <!--{if $data[$field]['value']}-->
+                    options += ", image_name: \"{$data[$field]['value']}\"";
+                <!--{/if}-->
+                $("#place_add_module_button_{$field_id}", $("#add_module_data_{$id}")).my_upload(eval("({" + options + "})"));
+            });
+        </script>
+        <!--{elseif 'app_image' == $row['fieldType']}-->
+        <button type="button" id="place_add_module_button_{$field_id}">上传图片</button>
+        <script type="text/javascript">
+            $(function(){
+                var options = "name:\"{$field_name}\", id:\"{$field_id}\", file_type:\"default\", required:false";
+                <!--{if $data[$field]['value']}-->
+                    options += ", image_name: \"{$data[$field]['value']}\"";
+                <!--{/if}-->
+                $("#place_add_module_button_{$field_id}", $("#add_module_data_{$id}")).my_upload(eval("({" + options + "})"));
+            });
+        </script>
+        <!--{elseif 'ref' == $row['fieldType']}-->
+        
+        <!--{/if}-->
+    </dd>
+</dl>
+<!--{/loop}-->
+</span>
+</span>

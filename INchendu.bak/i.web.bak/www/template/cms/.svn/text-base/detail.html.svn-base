@@ -1,0 +1,79 @@
+<!--{template web/header}-->
+
+		<div class="container" id="container">
+			<div class="article">
+				<div class="main">
+					<div class="main-box">
+						<div class="topic">
+							<h1>{$info[subject]}</h1>
+							<p><span>来自：</span><a href="{$info[jumpLink]}" target="_blank">{$info[source]}</a><span>时间：</span>{$info[includeDate]}</p>
+						</div>
+						<div class="detail">
+							<div class="content">
+							{$info[content]}
+							</div>
+							<div id="posts-action">
+								<div class="ckepop">
+									<!-- JiaThis Button BEGIN -->
+									<div id="ckepop">
+										<span class="jiathis_txt">分享到：</span>
+										<a class="jiathis_button_tqq"></a>
+										<a class="jiathis_button_tsina"></a>
+										<a class="jiathis_button_qzone"></a>
+										<a class="jiathis_button_xiaoyou"></a>
+										<a class="jiathis_button_kaixin001"></a>
+										<a class="jiathis_button_renren"></a>
+										<a class="jiathis_button_douban"></a>
+										<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+									</div>
+									<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+									<!-- JiaThis Button END -->
+								</div>
+							</div>
+							<div class="cover-page">
+								<!--{if $prev_id==='over'}--><span class="pull-left">没有了</span><!--{else}--><a href="/cms_detail/{$prev_id}/" class="pull-left">&lt; 上一篇</a><!--{/if}-->
+								<!--{if $next_id==='over'}--><span class="pull-right">没有了</span><!--{else}--><a href="/cms_detail/{$next_id}/" class="pull-right">下一篇 &gt;</a><!--{/if}-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar">
+					<div class="panel" >
+						<div class="title">
+							<h4>搜索{$cate[category]}</h4>
+						</div>
+						<div class="content">
+							<div class="search">
+								<input type="text" id="search_key" name="search_key" value="" />
+								<a class="btn btn-primary btn-small" href="javascript:void(0);" id="search"> 搜索 </a>
+							</div>
+							<script type="text/javascript">
+								$(function(){
+									$("#search").on("click", function(){
+										var keyword = $("#search_key").val();
+										var url = keyword != "" ? "/cms_search/"+encodeURIComponent(keyword):"/cms_search";
+										window.location = url;
+									});
+								});
+							</script>
+						</div>
+					</div>
+					<div class="panel" >
+						<div class="title">
+							<h4>热门推荐</h4>
+							<a href="/cms_list/{$info[cid]}/" class="more">更多</a>
+						</div>
+						<div class="content">
+							<ul>
+								<!--{loop $tops $k $v}-->
+								<li><a href="/cms_detail/{$v[id]}/">{$v[title]}</a><a class="time">{$v[create]}</a></li>
+								<!--{/loop}-->
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+<!--{template web/footer}-->

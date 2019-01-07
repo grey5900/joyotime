@@ -1,0 +1,115 @@
+{eval $page_rel='user_stat_analysis';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="start_date" value="{$start_date}"/>
+    <input type="hidden" name="end_date" value="{$end_date}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>时段：</td>
+                    <td width="450">
+                    <input type="text" readonly="readonly" name="start_date" class="date" value="{$start_date}" />
+                    ~
+                    <input type="text" readonly="readonly" name="end_date" class="date" value="{$end_date}" />
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        分析项目：
+                    </td>
+                    <td>
+                        <!--{loop $user_analysis_item $key $value}-->
+                        <label><input type="radio" name="item" value="{$key}" <!--{if $item == $key}--> checked="checked"<!--{/if}--> />{$value}</label>
+                        <!--{/loop}-->
+                    </td>
+                    <td>
+                        <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                分析
+                            </button>
+                        </div>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" layoutH="98">
+    <div id="{$page_rel}_container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        new Highcharts.Chart({
+            chart: {
+                renderTo: "{$page_rel}_container",
+                type: "line",
+                marginRight: 130,
+                marginBottom: 25
+            },
+            title: {
+                text: "用户趋势分析图",
+                x: -20 //center
+            },
+            subtitle: {
+                text: "时间段：{$start_date} ~ {$end_date}",
+                x: -20
+            },
+            xAxis: {
+                type: "datetime",
+                labels: {
+                    formatter: function() {
+                        return  Highcharts.dateFormat('%Y-%m-%d', this.value);
+                    }
+                }
+            },
+            yAxis: {
+                title: {
+                    text: "{$user_analysis_item[$item]}"
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: "#808080"
+                }]
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        Highcharts.dateFormat('%Y-%m-%d', this.x) +': '+ this.y;
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 100,
+                borderWidth: 0
+            },
+            series: [
+            <!--{eval $delim1 = '';}-->
+            <!--{loop $series $key $value}-->
+            {$delim1}{
+                name: '{$key}',
+                data: [
+                <!--{eval $delim2 = '';}-->
+                <!--{loop $value $k $v}-->
+                {$delim2}[{$v['timestamp']}, {$v['value']}]<!--{eval $delim2 = ',';}-->
+                <!--{/loop}-->
+                ]
+            }
+            <!--{eval $delim1 = ',';}-->
+            <!--{/loop}-->
+            ]
+        });
+    });
+</script>

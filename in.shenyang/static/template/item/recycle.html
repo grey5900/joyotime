@@ -1,0 +1,27 @@
+
+<div class="pageContent">
+    <table class="table" width="100%" layoutH="100">
+    	<thead>
+    		<th width="20%">ID</th>
+    		<th width="20%">道具名称</th>
+    		<th width="20%">回收价格</th>
+    		
+    		
+    	</thead>
+    	<tbody>
+    		{loop $items $k $row}
+    		<tr>
+    		<td>{$row['id']}</td>
+    			<td>{$row['name']}</td>
+    			<td align="center"><input type="text" onfocus="modify_rank2(this,'Item',{$row['id']},'recyclePrice',1);" value="{$row['recyclePrice']}" style="text-align:right" /></td>
+    		
+    		</tr>
+    		{/loop}
+    		
+    	</tbody>
+    </table>
+</div>
+
+<script>
+
+</script>

@@ -1,0 +1,5 @@
+<!--{loop $data $row}-->
+document.writeln('    <li>');
+document.writeln('      <a href="/user/{$row['uid']}/">{eval echo addslashes($row['nickname'])}</a><span>{$row['at']}</span><!--{if in_array($row['type'], array(1,2,3,4,5))}--><a class="place-link" href="{$row['at_do_link']}">{eval echo addslashes($row['at_do'])}</a><!--{else}-->{eval echo addslashes($row['at_do'])}<!--{/if}--><span><!--{if $row['link']}--><a href="{$row['link']}">{$row['do']}</a><!--{else}-->{$row['do']}<!--{/if}--></span>');
+document.writeln('    </li>');
+<!--{/loop}-->

@@ -1,0 +1,55 @@
+<div class="pageContent" style="padding:0px 5px">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>概况</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>章鱼团每日明细</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>电影票每日明细</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>回头客</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>趋势分析</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="deal_general" class="unitBox">
+                    {eval echo include_file(site_url(array('stat', 'deal_stat_general')));}
+                </div>
+            </div>
+            <div>
+                <div id="deal_detail_groupon" class="unitBox">
+                    {eval echo include_file(site_url(array('stat', 'deal_stat_groupon')));}
+                </div>
+            </div>
+            <div>
+                <div id="deal_detail_cinema_ticket" class="unitBox">
+                    {eval echo include_file(site_url(array('stat', 'deal_stat_cinema_ticket')));}
+                </div>
+            </div>
+            <div>
+                <div id="deal_returned_customer" class="unitBox">
+                    {eval echo include_file(site_url(array('stat', 'deal_stat_customer')));}
+                </div>
+            </div>
+            <div>
+                <div id="deal_trend_analysis" class="unitBox">
+                    {eval echo include_file(site_url(array('stat', 'deal_stat_trend')));}
+                </div>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

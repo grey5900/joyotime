@@ -1,0 +1,9 @@
+.myfont{
+            font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,sans-serif;
+        }
+        
+@media (max-width: 960px){
+    .outdiv{
+        width: 840px;
+    }
+}

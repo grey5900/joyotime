@@ -1,0 +1,34 @@
+<!doctype html>
+	<head>
+		<meta charset="utf-8">
+		<title>提示信息</title>
+		<link rel="stylesheet" type="text/css" href="/static/skin/style.css" />
+	</head>
+	<body>
+	<!--{eval $url_forward = $url_forward == -1 ? "/" : $url_forward; }-->
+		<div class="notification">
+		    <div class="notification-header">
+				<h1><a href="/" class="logo">IN成都</a></h1>
+		        <h3>提示信息</h3>
+		        <ul class="user_online" id="user_online"></ul>
+		    </div>
+		    <div class="notification-body">
+		        <div class="message">{$message}</div>
+		        <div class="op"><a href="<!--{if $url_forward}-->{$url_forward}<!--{else}-->/<!--{/if}-->" class="btn btn-primary">知道了</a></div>
+		    </div>
+		    <div class="notification-footer">
+		        <div class="links"><a href="http://www.chengdu.cn/web/about/about.html">关于我们</a> | <a href="http://www.chengdu.cn/web/about/contact.html">联系方式</a> | <a href="http://www.chengdu.cn/web/about/ser.html">广告服务</a> | <a href="http://www.chengdu.cn/web/about/job.html">招聘信息</a> | <a href="http://www.chengdu.cn/web/sitemap/index.html">站点地图</a> | <a href="http://www.chengdu.cn/web/about/about.html">版权说明</a>
+</div>
+		        <div class="copyright">版权所有(C)2005&mdash;2013 <a href="http://www.chengdu.cn">成都全搜索网站</a>版权所有</div>
+		    </div>
+		</div>
+		<script type="text/javascript">
+		    $(function(){
+			    <!--{if $timeout >= 0}-->
+			    setTimeout(function(){<!--{if $url_forward}-->window.location.href="{$url_forward}";<!--{else}-->history.back();<!--{/if}-->}, {$timeout}*1000);
+			    <!--{/if}-->
+		    });
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<!--{template common/header}-->
+<link rel="stylesheet" href="/static/skin/download.css" type="text/css" media="screen" charset="utf-8"/>
+<div class="container" id="container">
+	<div class="download-wrap">
+		<div class="download-nav">
+			<ul>
+				<li class="nav-iphone<!--{if $platform === 'iphone'}--> current<!--{/if}-->">
+					<a href="/download/iphone/"></a>
+				</li>
+				<li class="nav-android<!--{if $platform === 'android'}--> current<!--{/if}-->">
+					<a href="/download/android/"></a>
+				</li>
+			</ul>
+		</div>

@@ -1,0 +1,96 @@
+<style type="text/css">
+.tag-list{display:block;clear: both;width:100%;padding:10px 0;}
+.tag-list .tag-list-tab {border-bottom: 1px solid #dddddd; background-color: #f6f6f6;padding: 4px 0 0;}
+.tag-list .tag-list-tab li {display: inline-block; *display: inline; *zoom: 1; background-color: #e1e1e1;padding: 5px 10px;margin: 0 0 0 5px;}
+.tag-list .tag-list-tab li.on {background-color: #dddddd;}
+.tag-list .tag-list-tab li a {text-decoration: none;}
+.tag-list-pane {display:none;}
+.tag-list-pane.on {display:block;}
+.tag-list-pane {margin:0;padding:4px;}
+.tag-list-pane span{margin:0 0 5px 5px;display: inline-block; *display: inline; *zoom: 1; padding:4px 5px; cursor:pointer;}
+span.tag-info{color: #000;background:#8fd6ed;border: 1px solid #6ab9d2; border-width: 0 1px 1px 0;}
+span.tag-active{color: #666;background:#dddddd;border: 1px solid #aaaaaa; border-width: 0 1px 1px 0;}
+</style>
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent" layouth="60">
+		{if $post}
+		<div class="unit">
+			<label>POST：</label>[{echo !empty($post[nickname])?$post[nickname]:$post[username];}]在 {if $post[placename]}{$post[placename]}{else}<font color=red>鬼知道哪里</font>{/if} 发布的[{$typename}]
+		</div>
+		<div class="unit">
+			<label>内容：</label>
+			<!--{if $post[type] == 3}-->
+			<a href="{$post[image]}" target="_blank"><img src="{$post[image]}" height="60"/></a><br/><br/>
+			<!--{/if}-->
+			{$post[content]}
+		</div>
+		{/if}
+		<div class="unit">
+			<label>设置TAG：</label>
+			<input name="tags" type="text" id="tags" class="textInput" value="{$post[tags]}" size="30"/>
+			<span class="info">多个TAG请用半角空格分隔</span>
+		</div>
+		<div class="unit">
+			<div class="tag-list">
+				<ul class="tag-list-tab">
+					<!--{loop $tags $k $v}-->
+					<li><a href="#" data-target="tag-{$k}">{$v[channel]}</a></li>
+					<!--{/loop}-->
+				</ul>
+				<!--{loop $tags $k $v}-->
+				<div class="tag-list-pane" id="tag-{$k}">
+					<!--{loop $v[tags] $ke $t}--><span class="{echo $t[checked] == 1 ? 'tag-active':'tag-info';}" data-tag="{$t[content]}">{$t[content]}</span><!--{/loop}-->
+				</div>
+				<!--{/loop}-->
+			</div>
+		</div>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('.tag-list .tag-list-tab li:first,.tag-list .tag-list-pane:first').addClass('on');
+		$('.tag-list-tab a').on('click',function(){
+			$('.tag-list-tab li').removeClass('on');
+			$(this).parent().addClass('on');
+			$('.tag-list-pane').removeClass('on');
+			$('.tag-list-pane#'+$(this).data('target')).addClass('on');
+		});
+		$('.tag-list').find('span').click(function(){
+			var check_tags = $('#tags').val();
+			var add_tag = $(this).data('tag');
+			if(!$(this).hasClass('tag-active')){
+				//检查并添加TAG
+				if(check_tags == '' || check_tags.length <= 0){//TAG为空
+					check_tags = add_tag;
+				}else if(check_tags.indexOf(add_tag) < 0){//已添加的TAG中没有选中的TAG
+					check_tags += ' '+add_tag;
+				}
+				$(this).addClass('tag-active');
+			}else{
+				//检查并删除TAG
+				if(check_tags.indexOf(' ') < 0){
+					check_tags = '';
+				}else{
+					var narr = new Array;
+					var tarr = check_tags.split(' ');
+					for(var i=0;i<tarr.length;i++){
+						if(tarr[i] != add_tag){
+							narr.push(tarr[i]);
+						}
+					}
+					check_tags = narr.join(' ');
+				}
+				$(this).removeClass('tag-active');
+			}
+			$('#tags').val(check_tags);
+		});
+	});
+</script>

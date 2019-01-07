@@ -1,0 +1,91 @@
+<div id="{$page_id}_{$do}" class="pageContent">
+	<form method="post" action="{$current_url}"
+		class="pageForm required-validate"
+		onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="57">
+			<!--{if !in_array($do, array('banner_footer', 'user', 'new_user'))}-->
+			<!--{if $do=='place' || $do=='topic'}-->
+			<div class="unit">
+				<label>{$label_title}：</label> <input type="text" name="name" class="required" value="{$data['name']}"
+					size="60" />
+			</div>
+			<!--{else}-->
+			<div class="unit">
+				<label>{$label_title}：</label> <input type="text" name="title"<!--{if $do!='banner_dynamic'}--> class="required"<!--{/if}--> value="{$data['title']}"
+					size="60" />
+			</div>
+			<!--{/if}-->
+			<!--{/if}-->
+			<!--{if !in_array($do, array('user', 'new_user'))}-->
+			<div class="unit">
+				<label>图片：</label> <button type="button" id="{$page_id}_image">上传({echo $conf_home_digest['home_' . $do]['size']})</button>
+				<!--{if $do == 'topic'}-->
+				(不上传,默认精彩话题图片)
+				<!--{/if}-->
+			</div>
+			<!--{/if}-->
+			<div class="unit">
+				<label>连接：</label> 
+				<select name="link_type">
+					<!--{loop $link_type $key $row}-->
+					<!--{if $conf_home_digest['home_' . $do]['type'] == 'all' || in_array($key, $conf_home_digest['home_' . $do]['type'])}-->
+					<option value="{$key}"<!--{if $data['link_type'] == $key}--> selected<!--{/if}-->>{$row['name']}</option>
+					<!--{/if}-->
+					<!--{/loop}-->
+				</select>
+				<input type="text" class="required" name="link" value="{$data['hyperLink']}"
+					size="30" /> (填写相应数据的ID，除http及任意外)
+			</div>
+			<div class="unit">
+				<label>过期时间：</label> <input type="text" name="expire_date"
+					class="required date" format="yyyy-MM-dd HH:mm:ss" id="expire_date"
+					value="{echo $data?$data['expireDate']:(now(999, now(-1) + 86400*7))}"
+					class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true" size="25" />
+			</div>
+			<div class="unit">
+				<label>排序值：</label> <input type="text" size="5" name="rank_order" value="{echo $data['rankOrder']?$data['rankOrder']:0}" /> 
+			</div>
+			<!--{if strpos($do, 'banner_')===0}-->
+			<div class="unit">
+				<label>返积分：</label> <input type="text" size="5" class="required number" name="point" value="{echo $data['extensions']['repay_point']?$data['extensions']['repay_point']:0}" /> 
+			</div>
+			<!--{/if}-->
+			<!--{if $do == 'place'}-->
+			<div class="unit">
+				<label>推荐理由：</label>
+				<textarea rows="3" cols="50" name="title" class="required">{$data['title']}</textarea> 
+			</div>
+			<!--{/if}-->
+		</div>
+
+		<div class="formBar">
+			<ul>
+				<li>
+					<div class="buttonActive">
+						<div class="buttonContent">
+							<button type="submit" id="btnSubmit">保存</button>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="button">
+						<div class="buttonContent">
+							<button type="button" class="close">取消</button>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	<!--{if !in_array($do, array('user', 'new_user'))}-->
+	var options = "name:\"image\", id:\"{$page_id}_image\", file_type:\"default\"<!--{if $do == 'topic'}-->, required:false<!--{else}-->, required:true<!--{/if}-->";
+    <!--{if $data['image']}-->
+        options += ", image_name: \"{$data['image']}\"";
+    <!--{/if}-->
+    $("#{$page_id}_image").my_upload(eval("({" + options + "})"));
+    <!--{/if}-->
+});
+</script>

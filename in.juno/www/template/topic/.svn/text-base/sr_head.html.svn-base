@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>  
+	<meta charset="UTF-8">
+	<title>“两快两射”急速成都，体验全新二环时代</title>
+	<link rel="stylesheet" type="text/css" href="/topic/styles/style.css" media="all" />
+	<script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+</head> 
+<body>
+<div id="cdqss_nav">
+
+  <div class="site-nav clearfix f12"> <span class="nav-link"> <a href="http://www.chengdu.cn">全搜索首页</a>-<a href="http://news.chengdu.cn/">新闻</a>-<a href="http://opinion.news.chengdu.cn/">言论</a>-<a href="http://ent.news.chengdu.cn"> 娱乐</a>-<a href="http:/v.chengdu.cn/">视频</a>-<a href="http://bbs.chengdu.cn/">论坛</a>-<a href="http://blog.chengdu.cn/">博客</a>-<a href="http://photo.chengdu.cn">图片网</a>-<em class="more-parent" style="position: relative;"><span>更多»</span>
+          <ul class="more-sub" id="more-sub" style="display: none;">
+            <li><a href="http://baby.chengdu.cn">母婴</a></li>
+            <li><a href="http://marry.chengdu.cn">婚庆</a></li>
+            <li><a href="http://jk.chengdu.cn">健康</a></li>
+            <li><a href="http://home.chengdu.cn/">家居</a></li>
+            <li><a href=" http://ly.chengdu.cn/">旅游</a></li>
+            <li><a href="http://job.chengdu.cn">招聘</a></li>
+            <li><a href="http://in.chengdu.cn">IN成都</a></li>
+    </ul>
+  </em> </span> <span class="nav-tuan"><a href="http://jk.chengdu.cn/">名医堂</a>-<a href="http://card.chengdu.cn/">同心卡</a>-<a href="http://tg.chengdu.cn/">章鱼团</a>-<a href="http://act.chengdu.cn/">活动</a>-<a href="http://fb.chengdu.cn/">美食</a>-<a href="http://movie.chengdu.cn/">观影</a>-<a href="http://mes.chengdu.cn/">血拼</a>-<a href="http://f.chengdu.cn/">评房网</a>-<a href="http://car.chengdu.cn/">评车网</a> </span> </div>
+</div>

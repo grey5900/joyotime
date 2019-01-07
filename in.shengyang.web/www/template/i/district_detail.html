@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>{$mytitle} - {$name}·成都</title>
+		<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}" type="text/css" />
+		<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+	</head>
+<body>
+<div id="container">
+	<div class="container">
+		<div class="lumps">
+			<!--{if $show_nav}-->
+			<div class="navigation">
+				<a onclick="goBack();" class="navigation-back"><cite>上一页</cite></a>
+				<span class="navigation-title">{$mytitle} - {$name}·成都</span>
+			</div>
+			<!--{/if}-->
+			<div class="top {if $show_nav}nav-black{/if}">
+				<img src="{$image}" alt="{$mytitle}" />
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

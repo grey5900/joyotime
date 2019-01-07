@@ -1,0 +1,81 @@
+/* map */
+.place-map{
+	.clearfix();
+	background: #fff;
+	border-bottom:1px solid #e6e6e6;
+	border-right:1px solid #e6e6e6;
+}
+.maplist {
+	float: left;
+	width: 409px;
+	//border-right: 20px solid #ddd;
+	.place-list li {
+		border-bottom: 1px dotted #aaa;
+		&.active div{
+			background-color: lighten(#acd48e,25%);
+		}
+	}
+	.media {
+		text-decoration: none;
+		padding: 10px;
+		.media-object {
+			width: 60px;
+			height: 60px;
+		}
+		.media-body {
+			.media-heading {
+				font-size: 16px;
+				line-height: 24px;
+				margin: 0px;
+				a {
+					text-decoration: none;
+				}
+			}
+			p {
+				line-height: 18px;
+				color: #aaa;
+			}
+			.addr {
+				width:290px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				display: inline-block;
+				height:20px;
+			}
+		}
+	}
+	.pagination {
+		margin: 20px 0 0;
+	}
+}
+.map-home{
+	float: right;
+	img {
+		max-width: none;
+	}
+	a {
+		font-weight: bold;
+		&:hover {
+			color: #942527;
+		}
+	}
+	p {
+		color: #aaa;
+		font-size: 12px;
+	}
+}
+.makeico {
+	background-image: url('make.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	width: 19px;
+	height: 31px;
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+	color:#fff;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+}

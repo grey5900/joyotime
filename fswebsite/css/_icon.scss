@@ -1,0 +1,70 @@
+/* -----------------------------------------
+   FishSaying Icon
+----------------------------------------- */
+
+.fs-icons{
+  background: url("/img/2.0/icons.png") no-repeat 0 0;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+}
+
+
+.fs-icons.iphone {
+  background-position: 0 0;
+  width: 43px;
+  height: 53px;
+}
+.fs-icons.iphone-b {
+  background-position: -56px 0;
+  width: 43px;
+  height: 53px;
+}
+.fs-icons.android {
+  background-position: 0 -57px;
+  width: 43px;
+  height: 53px;
+}
+.fs-icons.android-b {
+  background-position: -53px -57px;
+  width: 43px;
+  height: 53px;
+}
+
+
+.fs-icons.listen {
+  background-position: 0 -110px;
+  -webkit-background-size: 120px;
+  background-size: 120px;
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+.fs-icons.said {
+  background-position: 0 -230px;
+  -webkit-background-size: 120px;
+  background-size: 120px;
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+
+.fs-icons-logo{
+  background: url("/img/2.0/logo.nav@desktop.png") no-repeat 0 0;
+  text-indent: -9999px;
+}
+.fs-icons-logo.english {
+  background-position: 0 0;
+  width: 186px;
+  height: 34px;
+  display: block;
+  margin: $topbar-height / 6 $topbar-height / 3 0;
+}
+.fs-icons-logo.chinese {
+  background-position: 0 -34px;
+  width: 80px;
+  height: 43px;
+  display: block;
+  margin: $topbar-height / 6 $topbar-height / 3 0;
+}

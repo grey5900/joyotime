@@ -1,0 +1,71 @@
+@import "_less/_fs.font.less";
+@import "_less/_fs.home.less";
+@import "_less/_fs.index.less";
+@import "_less/_fs.error.less";
+@import "_less/_variable.less";
+@import "_less/_fs.voice.less";
+@import "_less/_fs.btn.less";
+@import "_less/_fs.star.less";
+@import "_less/_fs.play.less";
+
+.modal.pop-modal {
+  overflow: hidden;
+  .modal-content {
+    background-color: #ebebeb;
+  }
+  .modal-header {
+    display: block;
+    text-align: right;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .modal-close {
+    //background: url("/img/2.0/close-modal.png") 0 0 no-repeat;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+  }
+  .modal-title {
+    text-align: center;
+    display: block;
+    font-size: 24px;
+    line-height: 1em;
+    font-weight: 100;
+    color: #333;
+  }
+  .modal-body {
+    p {
+      color: #666;
+    }
+  }
+  .modal-graphic {
+    .clearfix();
+    .graphic-left , .graphic-right {
+      width: 50%;
+      display: inline-block;
+      text-align: left;
+      position: relative;
+      float: left;
+      img, span {
+        position: relative;
+        width: 80%;
+        display: block;
+      }
+      span {
+        color: #666;
+        font-size: 12px;
+        margin: 0 0 0 12%;
+      }
+    }
+  }
+}
+#messager_modal {
+  position: fixed;
+  z-index: 10000;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+  background: #000;
+  display: none;
+}

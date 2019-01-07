@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="zh_cn" name="language">
+		<title>发布优质内容</title>
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}">
+		<script type="text/javascript" src="/static/js/jquery.min.js?{$version}"></script>
+	</head>
+	<body>
+		<div id="container">
+			<div class="container">
+				<div class="lumps">
+					<div class="lump">
+						<div class="item">
+							<div class="item-content">
+								<dl class="cartooncont ">
+									<dd class="dotted">
+										<img src="/static/m_img/cartoon01.png" alt="" />
+										<span>在IN沈阳写点评、创建地点册
+											<br />
+											<em>点评可囊括以下内容：有趣的信息、有帮助的信息、消费提示、推荐尝试、避免去做的、消费金额、服务环境等等。最好配上精美的图片哦。
+											家附近有哪些餐厅最好吃？心目中的情调咖啡小店有哪些？你都可以使用“地点册”来收集并与朋友分享</em></span>
+									</dd>
+									<dd class="dotted">
+										<img src="/static/m_img/cartoon02.png" alt=""/>
+										<span>点评和地点册被其他用户认同或被IN沈阳小编发现就有机会推荐为精华！</span>
+									</dd>
+									<dd>
+										<img src="/static/m_img/cartoon03.png" alt=""/>
+										<span>被评为精华后，即可获得大量积分</span>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

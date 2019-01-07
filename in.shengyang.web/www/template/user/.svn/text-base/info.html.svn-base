@@ -1,0 +1,37 @@
+<!--{template common/header}-->
+<div class="container" id="container">
+	
+	<!--{template sub_header}-->
+	<div class="user-section">
+		<div class="section-header"></div>
+		<div class="section-content">
+			<div class="info">
+				<a class="avatar avatar_box pull-left"><img src="{$info[avatar_url]}"/></a>
+				<div class="detail">
+					
+					<h3>{echo $info[nickname]?$info[nickname]:$info[username];}</h3>
+					<ul>			
+						<li><span>点评：<em>{$info[tipCount]}</em></span></li>
+						<li><span>收藏：<em>{$info[favCount]}</em></span></li>
+					</ul>
+					<p>{$info[description]}</p>					
+				</div>
+			</div>
+			<div class="info-table">
+					<table>
+						<tr>
+							<td><span>性别：</span><em>{$info[gender]}</em></td>
+							<td><span>年龄：</span><em>{$info[age]}</em></td>
+						</tr>
+						<tr>
+							<td><span>星座：</span><em>{$info[star]}</em></td>
+							<td><span>最后登录：</span><em>{$info[last_signin]}</em></td>
+						</tr>
+					</table>
+				</div>
+		</div>
+		<div class="section-footer"></div>
+	</div>
+</div>
+
+<!--{template common/footer}-->

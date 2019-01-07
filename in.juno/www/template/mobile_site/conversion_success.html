@@ -1,0 +1,73 @@
+<!--{template mobile_site/elements/header}-->
+<div class="container">
+    <div class="header">
+        <h1>下载IN成都打开宝箱</h1>
+    </div>
+    <div class="content">
+    	<!--{if $show_detail}-->
+	    	<!--{if $point}-->
+	        <div class="media-stand">
+	        	<div class="alert alert-info"><em>{$point['point']}</em>积分</div>
+	        </div>
+	        <!--{/if}-->
+	        <!--{if $item}-->
+	        <div class="media-prop">
+	            <div class="modia-header">{$item['name']}</div>
+	            <div class="media">
+	              <a class="pull-left" href="#">
+	                <img class="media-object" src="{$item['image']}">
+	              </a>
+	              <div class="media-body">
+	                <h4 class="media-heading">{$item['name']}</h4>
+	                <p>{$item['description']}</p>
+	              </div>
+	            </div>
+	            <div class="headingline"></div>
+	            <div class="media-footer">
+	            	<p>{$item['notice']}</p>
+	            </div>
+	        </div>
+	        <!--{/if}-->
+	        <!--{if $story}-->
+	        <div class="media-story">
+	            <div class="modia-header">什么也没有，给你讲个故事吧</div>
+	            <div class="media">
+	            	<div class="media-body">
+	            	    <p>{$story['content']}</p>
+	            	</div>
+	            </div>
+	            <div class="headingline"></div>
+	            <div class="media-footer">
+	            	<span>了解更多精彩内容，请下载in成都</span>
+	            </div>
+	        </div>
+	        <!--{/if}-->
+        <!--{else}-->
+        <div class="media-gift">
+			<a class="gift" href="javascript:;">
+				<div class="info">
+				    <br />
+				    <br />
+				    <br />
+					<p>你已经领取了神秘宝箱</p>
+				</div>
+			</a>
+		</div>
+        <div class="media-story">
+			<div class="media">
+            	<div class="media-body">
+					<p>下载IN成都手机客户端即可打开宝箱，100%中奖，密室门票、精美马克杯、可爱抱枕、美味饮品、巨额积分等缤纷大礼等你来拿！</p>
+				</div>
+			</div>
+		</div>
+        <!--{/if}-->
+        <i class="block-line"></i>
+        
+        <div class="control-link">
+            <a href="http://icd.sc" class="btn btn-success">下载IN成都手机客户端立即兑换</a>
+        </div>
+        <!--{template mobile_site/elements/merchandise_display}-->  
+    </div>
+</div>
+
+<!--{template mobile_site/elements/footer}-->

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>{$event['subject']}</title>
+    <link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" />
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/mobile.min.js"></script>
+    <script type="text/javascript">
+	<!--{if $uid}-->
+	var online_id = {$uid};
+	<!--{else}-->
+	var online_id = 0;
+	<!--{/if}-->
+	</script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="container">
+      	<div class="lumps">
+      		<div class="top">
+				<a><img src="{$event['banner']}" /></a>
+			</div>
+  			<div class="title">
+	          <h3>{$vote['subject']}(投票时间：
+	          {if $vote['startDate']!='0000-00-00 00:00:00' && $vote['endDate']!='0000-00-00 00:00:00'}
+	          {echo explode(' ',$vote['startDate'])[0];} ~ {echo explode(' ',$vote['endDate'])[0]}
+	          {elseif $vote['startDate']=='0000-00-00 00:00:00' && $vote['endDate']!='0000-00-00 00:00:00'}
+	                           现在 ~ {echo explode(' ',$vote['endDate'])[0]}
+	          {elseif $vote['startDate']!='0000-00-00 00:00:00' && $vote['endDate']=='0000-00-00 00:00:00'}
+	          {echo explode(' ',$vote['startDate'])[0];} ~ 永远
+	          {else}
+	                           不限
+	          {/if}
+	          )</h3>
+	        </div>
+	        <div class="rank">
+	        {loop $vote['options'] $option}
+	        {if $option['link']}<a href="{$option['link']}">{/if}
+	            <div class="user-list">
+		            <div class="img"><img src="{echo image_url({$option['image']},'vote','odp');}" width="80" height="80" /></div>
+		            <div class="detail arrow">
+		            	<h4>{$option['title']}</h4>
+		            	<div class="action">
+							{$vote['countTitle']}：<b id="votes_{$option['defineId']}">{$option['votes']}</b>
+						</div>
+						<div class="gopoll {if $is_over}disabled{else}botton{/if}" data-oid="{$option['defineId']}" data-itemtype="5" data-itemid="{$event['id']}" data-loading-text="{$vote['btnTitle']} " >
+						  {$vote['btnTitle']}
+						</div>
+		            </div>
+	            </div>
+	         {if $option['link']}</a>{/if}
+	        {/loop}
+	            
+	        </div>
+	        <div class="pagination pagination-centered" >
+	        </div>
+  			<a href="/event_new/m_post_list/{$event['id']}/2" style="display:none" id="rolling_next_page"></a>
+  		
+	        <div class="footer">
+		        <p>IN沈阳</p>
+	      	</div>
+      	</div>
+      </div>
+    </div>
+  </body>
+</html>

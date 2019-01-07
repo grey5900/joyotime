@@ -1,0 +1,14 @@
+<!-- 通用交互 -->
+<form action="/reply/" method="post" class="modal hide" id="reply-form"></form>
+<form action="/share/" method="post" class="modal hide" id="share-form"></form>
+<form action="/signin/" method="post" class="modal hide form-horizontal" id="signin-modal"></form>
+<form action="/invite/" method="post" class="modal hide form-horizontal" id="invite-form">
+	<div class="modal-header">
+            <a class="close" data-dismiss="modal" >&times;</a>
+            <h3>邀请好友</h3>
+          </div>
+          <div class="modal-body">
+          	<p>把邀请链接发给你的好友，他的IN成都帐号会自动关注你。</p>
+          	<p><input type="text" name="invite_url" value="http://in.chengdu.cn/invite/{eval echo base64_encode($auth[id]);}/" id="invite_url" /> <button class="btn" onclick="$('#invite_url').copy();return false;">复制</button></p>
+	</div>
+</form>

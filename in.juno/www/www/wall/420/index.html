@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>420地震</title>
+    <link rel="stylesheet" href="http://in.chengdu.cn/static/skin/mobile_main_style.css" type="text/css" />
+    <script type="text/javascript" src="http://in.chengdu.cn/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://in.chengdu.cn/static/js/mobile.min.js"></script>
+    <style>
+    	body {
+    		background: #333;
+    	}
+    	.container >.gb {
+    		margin: 0 auto;
+    		width: 98%;
+    	}
+    	.post .feed-list {
+    		border-bottom: 0;
+    		box-shadow: none;
+    		-webkit-box-shadow: none;
+			    -moz-box-shadow: none;
+			      -ms-box-shadow: none;
+			        box-shadow: none;
+			        
+			   border-left: 1px solid #aaa;
+			   border-right: 1px solid #aaa;
+    	}
+			.post .feed-list >a {
+				border-bottom: 1px dotted #aaa;
+				margin: 0 10px;
+			}
+			.post .feed-list >a:hover {
+				background: none;
+			}
+			.post .detail .info {
+				color: #fff;
+			}
+			
+    </style>
+  </head>
+  <body>
+
+    <div id="container">
+      <div class="container">
+        <div class="gb">
+        	<div class="post">
+        	  <div class="feeds" id="feeds">
+        	    <div class="feed-list">
+        	      <a>
+        	        <div class="icon"><img src="" width="40" height="40" /></div>
+        	        <div class="detail">
+        	          <h4 class="username"></h4>
+        	          <div class="place"></div>
+        	          <div class="action"></div>
+        	          <div class="photo">
+        	          	<img class="lazy" src="" width="200"/>
+        	          </div>
+        	          <div class="time"></div>
+        	        </div>
+        	      </a>
+        	    </div>
+        	  </div>
+        	</div>
+        </div>
+      </div>
+    </div>
+   	<script type="text/javascript">
+		$(function(){
+			
+			var $ls = $('#feeds'),
+					$liTpl = $ls.find('.feed-list').hide().remove().removeClass('feed-list'),
+					lastKey = 0,
+					feedLs = [],
+					querying = false,
+					domain = 'in.chengdu.cn',
+				    wallName = '420',
+					wallPlaces = '330726';
+			function updateQueue(){
+
+				if(querying) {return;}
+			    
+				$.ajax('http://'+ domain +'/api/feed/1/100/'+wallPlaces+'/0/0/0/0/1/0/',{
+					beforeSend : function(){
+						querying = true;
+					},
+			  	complete : function(){
+			    	querying = false;
+			  	},
+			  	success : function(json, textStatus, jqXHR){
+			  		var json = eval("("+json+")");
+			  		
+					if(json ){
+				  		
+						if(json.list.length){
+				    		lastKey = json.list[0].score;				    		
+				    		//$.merge(feedLs, json.list.reverse());
+				    		$.merge(feedLs, json.list);
+				    		//loadNextFeed();
+				  		}
+					} else {
+				  		console && console.log('error feed/list');
+				    }
+			    }
+    		});
+			}
+		  function loadNextFeed(){
+			    if(!feedLs.length) {return;}
+			    
+			    var data = feedLs.shift();			  
+			    var $cur = $liTpl.clone().attr('id', 'feedLi-'+data.id).addClass('feed-list').
+			      find('.icon img').attr({
+			        'src':data.avatar,
+			        'alt':data.username+'的头像'}).end().
+			      find('.username').text(data.username+':').end();
+			      
+			      $cur.find('.place').text('#'+data.placename+'#').end().
+			        find('.action').text(data.content?'“'+data.content+'”':'').end().
+			        find('.time').text(data.create_date);				  
+			      $cur.find('.photo img').attr('src',data.photo?data.photo:'');
+			      if(!data.photo){
+			    	  $cur.find('.photo').hide();
+				  	}
+		  			
+			    $cur.prependTo($ls).slideDown();
+			      
+			    var $earlierOne = $cur.next('.li');
+			      
+			    $earlierOne.slideUp('normal', function(){
+			      $earlierOne.removeClass('feed-list').slideDown();
+			    });
+			      
+			    ('' === data.content) && $cur.find('.colon').hide();
+			  }
+
+		  
+			  	// init
+			  	updateQueue();
+			  	setInterval(updateQueue, 100000);
+			  	setInterval(loadNextFeed, 5000);
+			  	
+		});	
+	  </script>
+  </body>
+</html>

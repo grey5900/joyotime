@@ -1,0 +1,2306 @@
+/*
+ * font variable
+ * 
+ */
+@font-face {
+  font-family: OpenSans-Light;
+  font-style: normal;
+  font-weight: 300;
+  src: url("/font/OpenSans-Light.ttf");
+}
+/* 公共 */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.font\.less}line{font-family:\0000323}}
+html {
+  font-size: 100%;
+}
+@font-face {
+  font-family: OpenSans-Light;
+  font-style: normal;
+  font-weight: 300;
+  src: url("/font/OpenSans-Light.ttf");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.font\.less}line{font-family:\0000334}}
+body#eng {
+  font-family: OpenSans-Light;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.font\.less}line{font-family:\0000337}}
+body#chn {
+  font-family: \534E\6587\9ED1\4F53;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.font\.less}line{font-family:\0000342}}
+p {
+  font-weight: 100;
+  font-size: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\000031}}
+.fs-home {
+  background-color: #f5f5f3;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\000033}}
+.fs-home .container {
+  width: 1000px;
+}
+/*
+ * Header
+ *
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000315}}
+.fs-home-header {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  color: #b5dcd5;
+  background-color: #4db5a4;
+  border: 0;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  height: 80px;
+  line-height: 80px;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000325}}
+.fs-home-header .fs-nav-logo {
+  margin: 15px 0 0 15px;
+  float: left;
+  display: inline-block;
+  width: 115px;
+  height: 48px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000331}}
+.fs-home-header .fs-nav-logo .fs-logo {
+  background: transparent url('/img/logo.home.png') no-repeat 0px 0px;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  width: 115px;
+  height: 48px;
+  display: block;
+  outline: none;
+  text-indent: -9000px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000342}}
+.fs-home-header .fs-navbar-collapse {
+  margin: 15px 0 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000344}}
+.fs-home-header .fs-navbar-collapse li {
+  margin-right: 15px;
+}
+/*
+ * 
+ * Nav
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000355}}
+.navbar-inverse .navbar-nav li a.active {
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000359}}
+.navbar-inverse .navbar-nav li a {
+  color: #b5dcd5;
+  font-size: 1.54em;
+  line-height: 1.54em;
+  font-family: \534E\6587\9ED1\4F53;
+  text-shadow: 0 0 1px rgba(111, 134, 134, 0.3);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000367}}
+.navbar-inverse .navbar-nav li a::before {
+  color: #fff;
+  content: attr(data-hover);
+  position: absolute;
+  opacity: 0;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  -webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000382}}
+.navbar-inverse .navbar-nav li a:hover::before,
+.navbar-inverse .navbar-nav li a:focus::before {
+  -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  -moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  opacity: 1;
+}
+/*
+ * Footer
+ *
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000395}}
+.fs-index-footer {
+  margin: 35px 0 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\0000397}}
+.fs-index-footer p {
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 14px;
+  line-height: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003103}}
+.fs-index-footer a {
+  color: #4db5a4;
+}
+/*
+ * Container
+ *
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003113}}
+.fs-home-container {
+  background: #fff;
+  padding: 0;
+  margin: 40px auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003117}}
+.fs-home-container .row {
+  margin: 20px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003120}}
+.fs-home-container .col-md-3 {
+  border-bottom: 1px solid #e5e5e5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003125}}
+.fs-home-container-map {
+  margin: 0 0 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003127}}
+.fs-home-container-map .map-canvas {
+  width: 100%;
+  height: 560px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003133}}
+.fs-well {
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  border-radius: 0;
+  padding: 30px 30px 0 30px;
+  width: 320px;
+  top: 130px;
+  margin-left: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003144}}
+.fs-well h1 {
+  font-size: 30px;
+  color: #000;
+  margin: 0;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003151}}
+.fs-well p {
+  color: #4db5a4;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: \534E\6587\9ED1\4F53;
+  margin: 5px 0 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003158}}
+.fs-well ul {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003162}}
+.fs-well li {
+  list-style: none;
+  margin-bottom: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003165}}
+.fs-well li i {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  float: left;
+  margin: 0 5px 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003172}}
+.fs-well li p.tit {
+  color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003175}}
+.fs-well li p {
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003183}}
+i.icon-address {
+  background: url(/img/icons.png) no-repeat -5px -317px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003186}}
+i.icon-tel {
+  background: url(/img/icons.png) no-repeat -5px -363px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003189}}
+i.icon-msg {
+  background: url(/img/icons.png) no-repeat -5px -408px;
+}
+/*
+ * 
+ * Sidebar
+ * 
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003201}}
+.fs-sidebar .fs-sidenav > li > a {
+  color: #333333;
+  padding: 8px 30px;
+  font-size: 16px;
+  line-height: 32px;
+  font-family: \534E\6587\9ED1\4F53;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003207}}
+.fs-sidebar .fs-sidenav > li > a i {
+  display: table-cell;
+  vertical-align: middle;
+  margin-right: 20px;
+  width: 27px;
+  height: 30px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003215}}
+.fs-sidebar .fs-sidenav > li > a.active,
+.fs-sidebar .fs-sidenav > li > a:hover,
+.fs-sidebar .fs-sidenav > li > a:focus {
+  color: #fff;
+  background: #4db5a4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003223}}
+.fs-sidebar .fs-sidenav > li > a.profile .icon-profile {
+  background: url(/img/icons.png) no-repeat 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003230}}
+.fs-sidebar .fs-sidenav > li > a.active.profile .icon-profile,
+.fs-sidebar .fs-sidenav > li > a.profile:hover .icon-profile,
+.fs-sidebar .fs-sidenav > li > a.profile:focus .icon-profile {
+  background: url(/img/icons.png) no-repeat -34px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003235}}
+.fs-sidebar .fs-sidenav > li > a.recharge .icon-recharge {
+  background: url(/img/icons.png) no-repeat 0 -53px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003242}}
+.fs-sidebar .fs-sidenav > li > a.active.recharge .icon-recharge,
+.fs-sidebar .fs-sidenav > li > a.recharge:hover .icon-recharge,
+.fs-sidebar .fs-sidenav > li > a.recharge:focus .icon-recharge {
+  background: url(/img/icons.png) no-repeat -34px -53px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003247}}
+.fs-sidebar .fs-sidenav > li > a.withdraw .icon-withdraw {
+  background: url(/img/icons.png) no-repeat 0 -99px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003254}}
+.fs-sidebar .fs-sidenav > li > a.active.withdraw .icon-withdraw,
+.fs-sidebar .fs-sidenav > li > a.withdraw:hover .icon-withdraw,
+.fs-sidebar .fs-sidenav > li > a.withdraw:focus .icon-withdraw {
+  background: url(/img/icons.png) no-repeat -34px -99px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003259}}
+.fs-sidebar .fs-sidenav > li > a.signout .icon-signout {
+  background: url(/img/icons.png) no-repeat 0 -149px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003265}}
+.fs-sidebar .fs-sidenav > li > a.active.signout .icon-signout,
+.fs-sidebar .fs-sidenav > li > a.signout:hover .icon-signout,
+.fs-sidebar .fs-sidenav > li > a.signout:focus .icon-signout {
+  background: url(/img/icons.png) no-repeat -34px -149px;
+}
+/*
+ * 
+ * 
+ * Section
+ * 
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003281}}
+.section-profile {
+  text-align: center;
+  margin: 80px 0 100px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003284}}
+.section-profile .cover {
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003286}}
+.section-profile .cover .cover-avatar {
+  width: 161px;
+  height: 161px;
+  margin: 0 auto;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+  z-index: 500;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003299}}
+.section-profile .cover .cover-avatar img {
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  background: #f2f2f0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003308}}
+.section-profile .cover .cover-name {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 24px;
+  line-height: 32px;
+  text-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003316}}
+.section-profile .cover .cover-email {
+  color: #aaaaaa;
+  text-shadow: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003323}}
+.section-profile .cover .cover-description {
+  border-top: 1px solid #aaaaaa;
+  color: #333333;
+  font-size: 18px;
+  line-height: 32px;
+  padding: 20px 50px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003330}}
+.section-profile .cover .cover-description em {
+  color: #fe8b46;
+  font-size: 28px;
+  font-style: normal;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003338}}
+.section-recharge {
+  text-align: center;
+}
+/*
+ * 
+ * Form
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003348}}
+.fs-form-horizontal {
+  margin: 40px 35px 100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003350}}
+.fs-form-horizontal .form-group {
+  text-align: left;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0  0 20px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003356}}
+.fs-form-horizontal .form-group .control-label {
+  text-align: right;
+  width: 35%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003361}}
+.fs-form-horizontal .checkbox span {
+  color: #4db5a4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003364}}
+.fs-form-horizontal span.fco {
+  color: #fe8b46;
+}
+@media screen and (min-width: 992px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003370}}
+  .fs-navbar-collapse {
+    float: right;
+    display: inline-block;
+    margin: 15px 0 0 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003375}}
+  .fs-home-container .col-md-3 {
+    border-bottom: 0;
+    padding: 0 30px 0 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003379}}
+  .fs-home-container .col-md-9 {
+    border-left: 1px solid #e5e5e5;
+  }
+}
+@media screen and (min-width: 1140px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003384}}
+  .container {
+    width: 1000px;
+    padding: 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003388}}
+  .fs-home-container .col-md-3 {
+    border-bottom: 0;
+    padding: 0 30px 0 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003392}}
+  .fs-home-container .col-md-9 {
+    border-left: 1px solid #e5e5e5;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.home\.less}line{font-family:\00003395}}
+  .fs-navbar-collapse {
+    margin: 15px 0 0 0;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\000031}}
+.fs-index {
+  background-color: #f5f5f3;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\000033}}
+.fs-index .col-md-7,
+.fs-index .col-md-3 {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\000038}}
+.fs-index .container {
+  width: 1000px;
+}
+/*
+ * 
+ * Header
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000318}}
+.fs-index-header {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  color: #b5dcd5;
+  border: 0;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  height: 80px;
+  line-height: 80px;
+  margin-bottom: 0;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0 !important;
+  filter: alpha(opacity=20);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000330}}
+.fs-index-header .fs-nav-logo {
+  margin: 15px 0 0 15px;
+  float: left;
+  display: inline-block;
+  width: 115px;
+  height: 48px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000336}}
+.fs-index-header .fs-nav-logo .fs-logo {
+  background: transparent url('/img/logo.home.png') no-repeat 0px 0px;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  width: 115px;
+  height: 48px;
+  display: block;
+  outline: none;
+  text-indent: -9000px;
+  _background: url('/img/logo.home.gif') no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000348}}
+.fs-index-header .fs-navbar-collapse {
+  margin-top: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000350}}
+.fs-index-header .fs-navbar-collapse li {
+  margin-right: 15px;
+}
+/*
+ * 
+ * Nav
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000361}}
+.navbar-inverse .navbar-nav li a {
+  color: #b5dcd5;
+  font-size: 1.125em;
+  line-height: 1.125em;
+  font-family: \534E\6587\9ED1\4F53;
+  text-shadow: 0 0 1px rgba(111, 134, 134, 0.3);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000369}}
+.navbar-inverse .navbar-nav li a.active {
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000372}}
+.navbar-inverse .navbar-nav li a::before {
+  color: #fff;
+  content: attr(data-hover);
+  position: absolute;
+  opacity: 0;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  -webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000387}}
+.navbar-inverse .navbar-nav li a:hover::before,
+.navbar-inverse .navbar-nav li a:focus::before {
+  -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  -moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  opacity: 1;
+}
+/*
+ * 
+ * Banner
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\0000399}}
+.fs-index-banner {
+  background: url("/img/banner.bg.jpg") center center;
+  width: 100%;
+  height: 700px;
+  position: relative;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003107}}
+.fs-index-banner .fs-banner-control {
+  margin-top: 160px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003109}}
+.fs-index-banner .fs-banner-control .fs-banner-font {
+  margin-bottom: 130px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003111}}
+.fs-index-banner .fs-banner-control .fs-banner-font h1 {
+  font-family: \534E\6587\9ED1\4F53;
+  font-size: 3.250em;
+  line-height: 72px;
+  text-shadow: 0 1px 0 rgba(245, 245, 243, 0.6);
+  margin: 0;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003119}}
+.fs-index-banner .fs-banner-control .fs-banner-font h2 {
+  font-size: 2.500em;
+  font-family: \534E\6587\9ED1\4F53;
+  text-shadow: 0 1px 0 rgba(245, 245, 243, 0.6);
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003125}}
+.fs-index-banner .fs-banner-control .fs-banner-font .m-logo-veiw {
+  display: none;
+}
+/*
+ * Footer
+ *
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003137}}
+.fs-index-footer {
+  padding: 0 0 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003139}}
+.fs-index-footer p {
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 0.875em;
+  line-height: 1.25em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003145}}
+.fs-index-footer a {
+  color: #4db5a4;
+}
+/*
+ * 
+ * Container
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003156}}
+.fs-index-container .fs-index-intor.pd0 {
+  /**padding-bottom:0**/
+
+  padding: 70px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003160}}
+.fs-index-container .fs-index-intor {
+  padding: 70px 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003165}}
+.fs-index-container .fs-img-left img {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003168}}
+.fs-index-container .fs-img-left .fs-intor-txt {
+  margin-top: 50px;
+  float: right;
+  display: block;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003173}}
+.fs-index-container .fs-img-left .fs-intor-txt h1 {
+  font-size: 3.125em;
+  font-family: \534E\6587\9ED1\4F53;
+  color: #000;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003179}}
+.fs-index-container .fs-img-left .fs-intor-txt p {
+  font-size: 1.125em;
+  line-height: 1.500em;
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003187}}
+.fs-index-container .fs-img-right img {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003190}}
+.fs-index-container .fs-img-right .fs-intor-txt {
+  margin-top: 50px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003193}}
+.fs-index-container .fs-img-right .fs-intor-txt h1 {
+  font-size: 3.125em;
+  font-family: \534E\6587\9ED1\4F53;
+  margin-bottom: 20px;
+  color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003199}}
+.fs-index-container .fs-img-right .fs-intor-txt p {
+  font-size: 1.125em;
+  line-height: 1.125em;
+  color: #666;
+}
+/*
+ *
+ * Desktop view
+ * 
+ */
+@media screen and (min-width: 1058px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003214}}
+  .fs-index-banner .fs-banner-phone {
+    background: url("/img/banner.iphone.png") no-repeat 0 0;
+    display: block;
+    width: 421px;
+    height: 552px;
+    margin: 68px 0 0 0;
+    position: absolute;
+  }
+}
+@media screen and (min-width: 992px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003224}}
+  .fs-index-banner .fs-banner-phone {
+    background: url("/img/banner.iphone.png") no-repeat 0 0;
+    display: block;
+    width: 421px;
+    height: 552px;
+    margin: 68px 0 0 -30px;
+    position: absolute;
+  }
+}
+@media screen and (min-width: 1140px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003235}}
+  .fs-index-banner .fs-banner-phone {
+    background: url("/img/banner.iphone.png") no-repeat 0 0;
+    display: block;
+    width: 421px;
+    height: 552px;
+    margin: 68px 0 0 20px;
+    position: absolute;
+  }
+}
+/*
+ *
+ * Ipad view
+ * 
+ */
+@media screen and (max-width: 992px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003251}}
+  .fs-banner-btn,
+  .fs-banner-font {
+    text-align: center;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003254}}
+  .navbar-nav .nav > li {
+    float: left;
+  }
+}
+@media screen and (min-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003263}}
+  .navbar-nav {
+    float: right;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003266}}
+  .container {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003272}}
+  .navbar-nav > li {
+    float: left;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003275}}
+  .fs-index .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003279}}
+  .fs-index-header .fs-navbar-collapse {
+    display: block!important;
+    border: 0;
+    box-shadow: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003283}}
+  .fs-index-header .fs-navbar-collapse .navbar-nav {
+    float: right;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003287}}
+  .fs-banner-btn,
+  .fs-banner-font {
+    text-align: center;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003290}}
+  .fs-index-container .fs-img-left,
+  .fs-index-container .fs-img-right {
+    text-align: center;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003293}}
+  .fs-index-container .fs-img-left,
+  .fs-index-container .fs-img-right {
+    text-align: center;
+    padding: 30px 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003296}}
+  .fs-index-container .fs-img-left img,
+  .fs-index-container .fs-img-right img {
+    float: none !important;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003300}}
+  .fs-index-container .fs-img-left .fs-intor-txt,
+  .fs-index-container .fs-img-right .fs-intor-txt {
+    margin-top: 30px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003303}}
+  .fs-index-container .fs-img-left .fs-intor-txt h1,
+  .fs-index-container .fs-img-right .fs-intor-txt h1,
+  .fs-index-container .fs-img-left .fs-intor-txt p,
+  .fs-index-container .fs-img-right .fs-intor-txt p {
+    text-align: center;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003307}}
+  .fs-intor-txt.pull-right,
+  .fs-intor-txt {
+    float: none !important;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003310}}
+  .fs-index-footer a {
+    float: none!important;
+  }
+}
+/*
+ * 
+ * Moblie view
+ * 
+ */
+@media screen and (max-width: 640px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003321}}
+  .col-md-12 {
+    padding: 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003324}}
+  .fs-index-intor {
+    width: 290px;
+    margin: 0 auto;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003328}}
+  .fs-index .container {
+    width: 100%;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003331}}
+  .fs-index-banner {
+    background: url("/img/banner.bg.mobile.jpg") no-repeat center center;
+    height: 235px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003334}}
+  .fs-index-banner .fs-banner-control {
+    margin-top: 20px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003336}}
+  .fs-index-banner .fs-banner-control .fs-banner-font {
+    margin-bottom: 10px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003338}}
+  .fs-index-banner .fs-banner-control .fs-banner-font h2 {
+    font-family: \534E\6587\9ED1\4F53;
+    font-size: 1.313em;
+    line-height: 24px;
+    text-shadow: 0 1px 0 rgba(245, 245, 243, 0.6);
+    display: inline-block;
+    margin: 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003346}}
+  .fs-index-banner .fs-banner-control .fs-banner-font h1 {
+    font-size: 21px;
+    line-height: 24px;
+    margin: 0;
+    font-family: \534E\6587\9ED1\4F53;
+    text-shadow: 0 1px 0 rgba(245, 245, 243, 0.6);
+    display: inline-block;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003354}}
+  .fs-index-banner .fs-banner-control .fs-banner-font .m-logo-veiw {
+    display: block;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003357}}
+  .fs-index-banner .fs-banner-control .fs-banner-font img {
+    max-width: 60px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003363}}
+  .fs-index-header {
+    display: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003366}}
+  .fs-index-header .fs-navbar-collapse {
+    display: none !important;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003369}}
+  .fs-banner-btn,
+  .fs-banner-font {
+    text-align: center;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003372}}
+  .fs-index-container .fs-img-left,
+  .fs-index-container .fs-img-right {
+    text-align: center;
+    padding: 30px 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003375}}
+  .fs-index-container .fs-img-left img,
+  .fs-index-container .fs-img-right img {
+    float: none !important;
+    width: 100%;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003380}}
+  .fs-index-container .fs-img-left .fs-intor-txt,
+  .fs-index-container .fs-img-right .fs-intor-txt {
+    margin-top: 30px;
+    display: block;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003384}}
+  .fs-index-container .fs-img-left .fs-intor-txt h1,
+  .fs-index-container .fs-img-right .fs-intor-txt h1 {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0 0 10px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003389}}
+  .fs-index-container .fs-img-left .fs-intor-txt p,
+  .fs-index-container .fs-img-right .fs-intor-txt p {
+    text-align: center;
+    font-size: 1em;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003394}}
+  .fs-intor-txt.pull-right,
+  .fs-intor-txt {
+    display: block;
+    float: none !important;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003399}}
+  .fs-index-footer a {
+    float: none!important;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.index\.less}line{font-family:\00003402}}
+  .fs-index-footer p {
+    font-size: 0.875em;
+    width: 290px;
+    margin: 0 auto 10px;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\000031}}
+html {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\000035}}
+.fs-error {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\000037}}
+.fs-error .container {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000310}}
+.fs-error .fs-error-text,
+.fs-error .fs-error-img {
+  margin-top: 100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000314}}
+.fs-error .fs-error-text h1 {
+  font-size: 4.8em;
+  color: #4db5a4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000318}}
+.fs-error .fs-error-text p {
+  font-size: 1.625em;
+  margin-bottom: 50px;
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000323}}
+.fs-error .fs-error-text .fs-btn {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000329}}
+.fs-error-footer {
+  margin-top: -30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000331}}
+.fs-error-footer p {
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 14px;
+  line-height: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000337}}
+.fs-error-footer a {
+  color: #4db5a4;
+}
+@media screen and (max-width: 991px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000343}}
+  .fs-error-text {
+    text-align: center;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000346}}
+  .fs-error-img {
+    display: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.error\.less}line{font-family:\0000349}}
+  .fs-error-footer {
+    display: none;
+  }
+}
+/**theme**/
+/*border*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000318}}
+.bd-pic {
+  height: 4px;
+  line-height: 4px;
+  border: none;
+  margin: 15px 0;
+  background: url(/img/ico.png) no-repeat 0 bottom;
+  background-repeat: repeat-x;
+}
+/**
+ * font-color
+ * 
+ **/
+/**font-style**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000333}}
+.t14 {
+  font: bold 14px/18px "\5B8B\4F53";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000336}}
+.t16 {
+  font: bold 16px/18px "\5B8B\4F53";
+}
+/**clear**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000344}}
+.clearfix {
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000346}}
+.clearfix:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+/**layout**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000350}}
+.ie7-inline-block {
+  display: inline-block;
+  *zoom: 1;
+  _display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000355}}
+.conter {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000358}}
+.vm {
+  display: table-cell;
+  vertical-align: middle;
+}
+/**avatar,icon**/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\000032}}
+.fs-intor-voice .text-link {
+  display: block;
+  line-height: 74px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\000039}}
+.fs-intor-voice .text-link a {
+  color: #4db5a4;
+  text-decoration: none;
+}
+/* download */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000317}}
+.fs-apps-download {
+  display: inline-block;
+  padding: 20px 0 0 100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000322}}
+.fs-logo-voice a.fs-logo {
+  background: transparent url('/img/logo.voice.png') no-repeat 0px 0px;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  width: 248px;
+  height: 100px;
+  display: block;
+  outline: none;
+  text-indent: -9000px;
+  _background: url('/img/logo.home.gif') no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000333}}
+.fs-logo-voice p {
+  line-height: 74px;
+  font-size: 32px;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  display: inline-block;
+  max-width: 380px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000340}}
+.fs-logo-voice p em {
+  font-size: 40px;
+  font-style: normal;
+  margin: 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000347}}
+.fs-voice-btn {
+  margin: 160px 0 0 0;
+  width: 240px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000350}}
+.fs-voice-btn a {
+  margin-top: 20px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000356}}
+.fs-voice-btn360 {
+  display: none;
+}
+/*
+ *
+ * Ipad view
+ * 
+ */
+@media screen and (max-width: 992px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000365}}
+  .fs-voice {
+    text-align: center;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000367}}
+  .fs-voice .fs-apps-download {
+    padding: 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000370}}
+  .fs-voice .fs-apps-download .fs-logo-voice p {
+    display: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000374}}
+  .fs-voice .fs-apps-download .fs-voice-btn {
+    margin: 70px 0 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000378}}
+  .fs-voice .fs-intor-voice {
+    display: inline-block;
+    float: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000382}}
+  .fs-voice .fs-intor-voice .text-link {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000389}}
+  .fs-index-footer {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000394}}
+  .fs-index-container .fs-index-intor {
+    padding-top: 20px;
+    border-bottom: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\0000398}}
+  .fs-voice .fs-apps-download .fs-voice-btn {
+    display: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\00003101}}
+  .fs-index-footer {
+    display: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\00003105}}
+  .fs-voice-btn360 {
+    display: block;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\00003107}}
+  .fs-voice-btn360 .fs-btn {
+    width: 100%;
+    text-align: center;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\00003112}}
+  .fs-logo-voice {
+    text-align: left;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.voice\.less}line{font-family:\00003116}}
+  .fs-logo-voice a.fs-logo {
+    width: 142px;
+    height: 50px;
+  }
+}
+/**
+ *   btn-style
+ * 
+ **/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\000035}}
+.fs-btn {
+  border: 0;
+  font-size: 16px;
+  line-height: 48px;
+  padding: 8px 30px;
+  color: #fff;
+  height: 69px;
+  width: 230px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: none;
+  -webkit-transition: background-color 0.7s ease-out;
+  -moz-transition: background-color 0.7s ease-out;
+  -ms-transition: background-color 0.7s ease-out;
+  -o-transition: background-color 0.7s ease-out;
+  transition: background-color 0.7s ease-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000321}}
+.fs-btn:active,
+.fs-btn.active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000328}}
+a.fs-btn:hover {
+  -webkit-transition: background-color 0.7s ease-out;
+  -moz-transition: background-color 0.7s ease-out;
+  -ms-transition: background-color 0.7s ease-out;
+  -o-transition: background-color 0.7s ease-out;
+  transition: background-color 0.7s ease-out;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000336}}
+.fs-btn.btn-default {
+  background-color: #eee;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000339}}
+.fs-btn.btn-warning {
+  background-color: #fe8b46;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000342}}
+.fs-btn.btn-success {
+  background-color: #4db5a4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000345}}
+.fs-btn.btn-black {
+  background-color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000348}}
+.fs-btn.btn-black:hover,
+.fs-btn.btn-black:focus,
+.fs-btn.btn-black:active {
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+  padding: 5px 27px;
+  line-height: 48px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000356}}
+.fs-btn.btn-black:hover i.icon-iphone,
+.fs-btn.btn-black:focus i.icon-iphone,
+.fs-btn.btn-black:active i.icon-iphone {
+  background-position: -56px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000360}}
+.fs-btn.btn-green {
+  background-color: #2ab49d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000363}}
+.fs-btn.btn-green:hover,
+.fs-btn.btn-green:focus,
+.fs-btn.btn-green:active {
+  background-color: #fff;
+  line-height: 48px;
+  color: #2ab49d;
+  border: 3px solid #2ab49d;
+  padding: 5px 27px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000371}}
+.fs-btn.btn-green:hover i.icon-android,
+.fs-btn.btn-green:focus i.icon-android,
+.fs-btn.btn-green:active i.icon-android {
+  background-position: -53px -57px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000375}}
+.btn-vertical {
+  border-radius: 0;
+  min-width: 80px;
+  _width: 80px;
+  border-width: 1px 1px 1px 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000387}}
+.fs-btn i.icon-iphone {
+  background: url("/img/2.0/icons.png") no-repeat 0 0;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  background-position: 0 0;
+  width: 43px;
+  height: 53px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\0000393}}
+.fs-btn i.icon-android {
+  background: url("/img/2.0/icons.png") no-repeat 0 0;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  background-position: 0 -57px;
+  height: 53px;
+  width: 43px;
+}
+@media screen and (max-width: 640px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\00003101}}
+  a.fs-btn {
+    font-size: 18px;
+    padding: 5px 16px;
+    line-height: 38px;
+    height: 48px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\00003107}}
+  .fs-btn.btn-black:hover,
+  .fs-btn.btn-green:hover,
+  .fs-btn.btn-black:active,
+  .fs-btn.btn-green:active,
+  .fs-btn.btn-black:focus,
+  .fs-btn.btn-green:focus {
+    padding: 2px 13px;
+    line-height: 38px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\00003116}}
+  .fs-btn.btn-green:hover,
+  .fs-btn.btn-green:focus,
+  .fs-btn.btn-green:active {
+    background-color: #2ab49d;
+    color: #fff;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\00003123}}
+  .fs-btn i.icon-iphone {
+    background: url(/img/icons.png) no-repeat -53px -318px;
+    width: 22px;
+    height: 25px;
+    margin: 5px 5px 0 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.btn\.less}line{font-family:\00003129}}
+  .fs-btn i.icon-android {
+    background: url(/img/icons.png) no-repeat -53px -352px;
+    width: 22px;
+    height: 25px;
+    margin: 5px 5px 0 0;
+  }
+}
+/* 
+ * 星级 
+ * 
+ * */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000311}}
+.ico-star-5 {
+  background: transparent url('/img/fs.stars.png') repeat-x scroll 0 -999em;
+  width: 113px;
+  height: 18px;
+  display: inline-block;
+  background-position: 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000315}}
+.ico-star-4 {
+  background: transparent url('/img/fs.stars.png') repeat-x scroll 0 -999em;
+  width: 113px;
+  height: 18px;
+  display: inline-block;
+  background-position: 0 -18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000319}}
+.ico-star-3 {
+  background: transparent url('/img/fs.stars.png') repeat-x scroll 0 -999em;
+  width: 113px;
+  height: 18px;
+  display: inline-block;
+  background-position: 0 -36px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000323}}
+.ico-star-2 {
+  background: transparent url('/img/fs.stars.png') repeat-x scroll 0 -999em;
+  width: 113px;
+  height: 18px;
+  display: inline-block;
+  background-position: 0 -54px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000327}}
+.ico-star-1 {
+  background: transparent url('/img/fs.stars.png') repeat-x scroll 0 -999em;
+  width: 113px;
+  height: 18px;
+  display: inline-block;
+  background-position: 0 -72px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000331}}
+.ico-star-0 {
+  background: transparent url('/img/fs.stars.png') repeat-x scroll 0 -999em;
+  width: 113px;
+  height: 18px;
+  display: inline-block;
+  background-position: 0 -90px;
+}
+@media screen and (max-width: 640px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000337}}
+  .ico-star-0,
+  .ico-star-1,
+  .ico-star-2,
+  .ico-star-3,
+  .ico-star-4,
+  .ico-star-5 {
+    width: 56px;
+    height: 9px;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000343}}
+  .ico-star-5 {
+    background-position: 0 0;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000346}}
+  .ico-star-4 {
+    background-position: 0 -9px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000349}}
+  .ico-star-3 {
+    background-position: 0 -18px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000352}}
+  .ico-star-2 {
+    background-position: 0 -27px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000355}}
+  .ico-star-1 {
+    background-position: 0 -36px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.star\.less}line{font-family:\0000358}}
+  .ico-star-0 {
+    background-position: 0 -45px;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\000031}}
+div.jp-audio,
+div.jp-audio-stream,
+div.jp-video {
+  font-size: 1.25em;
+  /* 1.25em for testing in site pages */
+  /* No parent CSS that can effect the size in the demos ZIP */
+
+  border-radius: 5px;
+  font-family: Verdana, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 0 #e9e9e7;
+  -moz-box-shadow: 0 1px 0 #e9e9e7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000313}}
+div.jp-audio {
+  width: 420px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000316}}
+div.jp-audio-stream {
+  width: 182px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000319}}
+div.jp-video-270p {
+  width: 480px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000322}}
+div.jp-video-360p {
+  width: 640px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000325}}
+div.jp-video-full {
+  /* Rules for IE6 (full-screen) */
+
+  width: 480px;
+  height: 270px;
+  /* Rules for IE7 (full-screen) - Otherwise the relative container causes other page items that are not position:static (default) to appear over the video/gui. */
+
+  position: static !important;
+  position: relative;
+}
+/* The z-index rule is defined in this manner to enable Popcorn plugins that add overlays to video area. EG. Subtitles. */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000334}}
+div.jp-video-full div div {
+  z-index: 1000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000338}}
+div.jp-video-full div.jp-jplayer {
+  top: 0;
+  left: 0;
+  position: fixed !important;
+  position: relative;
+  /* Rules for IE6 (full-screen) */
+
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000343}}
+div.jp-video-full div.jp-jplayer img {
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000348}}
+div.jp-video-full div.jp-gui {
+  position: fixed !important;
+  position: static;
+  /* Rules for IE6 (full-screen) */
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  /* 1 layer above the others. */
+
+  border-radius: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000358}}
+div.jp-video-full div.jp-interface {
+  position: absolute !important;
+  position: relative;
+  /* Rules for IE6 (full-screen) */
+
+  bottom: 0;
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000364}}
+div.jp-gui {
+  height: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000367}}
+div.jp-interface {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000374}}
+div.jp-audio div.jp-type-single div.jp-interface {
+  height: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000377}}
+div.jp-audio div.jp-type-playlist div.jp-interface {
+  height: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000381}}
+div.jp-audio-stream div.jp-type-single div.jp-interface {
+  height: 80px;
+}
+/* @group CONTROLS */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000387}}
+div.jp-controls-holder {
+  clear: both;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  top: -310px;
+  /* This negative value depends on the size of the text in fs-currentTime and fs-duration */
+
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\0000396}}
+div.jp-interface ul.jp-controls {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003103}}
+div.jp-audio ul.jp-controls {
+  width: 380px;
+  padding: 20px 20px 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003108}}
+div.jp-audio-stream ul.jp-controls {
+  width: 142px;
+  padding: 20px 20px 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003113}}
+div.jp-video div.jp-type-single ul.jp-controls {
+  width: 78px;
+  margin-left: 200px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003118}}
+div.jp-video div.jp-type-playlist ul.jp-controls {
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003121}}
+div.jp-video ul.jp-controls,
+div.jp-interface ul.jp-controls li {
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003126}}
+div.jp-interface ul.jp-controls a {
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003131}}
+a.jp-play,
+a.jp-pause {
+  width: 100px;
+  height: 100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003137}}
+a.jp-play {
+  background: url("/img/fs.video.play.png") 0 0 no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003140}}
+a.jp-play:hover {
+  background: url("/img/fs.video.play.png") 0 0 no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003143}}
+a.jp-pause {
+  background: url("/img/fs.video.play.png") 0 -100px no-repeat;
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003147}}
+a.jp-pause:hover {
+  background: url("/img/fs.video.play.png") 0 -100px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003151}}
+a.jp-stop,
+a.jp-previous,
+a.jp-next {
+  width: 28px;
+  height: 28px;
+  margin-top: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003157}}
+a.jp-stop {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -83px no-repeat;
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003162}}
+a.jp-stop:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -29px -83px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003166}}
+a.jp-previous {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -112px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003169}}
+a.jp-previous:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -29px -112px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003173}}
+a.jp-next {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -141px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003176}}
+a.jp-next:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -29px -141px no-repeat;
+}
+/* @end */
+/* @group progress bar */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003184}}
+div.jp-progress {
+  overflow: hidden;
+  background-color: #ccc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003188}}
+div.jp-audio div.jp-progress {
+  position: absolute;
+  top: 32px;
+  height: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003193}}
+div.jp-audio div.jp-type-single div.jp-progress {
+  left: 110px;
+  width: 186px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003197}}
+div.jp-audio div.jp-type-playlist div.jp-progress {
+  left: 166px;
+  width: 130px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003201}}
+div.jp-video div.jp-progress {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003207}}
+div.jp-seek-bar {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -202px repeat-x;
+  width: 0px;
+  height: 6px;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003213}}
+div.jp-play-bar {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -218px repeat-x;
+  width: 0px;
+  height: 6px;
+}
+/* The seeking class is added/removed inside jPlayer */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003220}}
+div.jp-seeking-bg {
+  background: url("/img/jplayer.blue.monday.seeking.gif");
+}
+/* @end */
+/* @group volume controls */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003229}}
+a.jp-mute,
+a.jp-unmute,
+a.jp-volume-max {
+  width: 18px;
+  height: 15px;
+  margin-top: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003237}}
+div.jp-audio div.jp-type-single a.jp-mute,
+div.jp-audio div.jp-type-single a.jp-unmute {
+  margin-left: 210px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003241}}
+div.jp-audio div.jp-type-playlist a.jp-mute,
+div.jp-audio div.jp-type-playlist a.jp-unmute {
+  margin-left: 154px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003246}}
+div.jp-audio-stream div.jp-type-single a.jp-mute,
+div.jp-audio-stream div.jp-type-single a.jp-unmute {
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003251}}
+div.jp-audio a.jp-volume-max,
+div.jp-audio-stream a.jp-volume-max {
+  margin-left: 56px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003256}}
+div.jp-video a.jp-mute,
+div.jp-video a.jp-unmute,
+div.jp-video a.jp-volume-max {
+  position: absolute;
+  top: 12px;
+  margin-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003264}}
+div.jp-video a.jp-mute,
+div.jp-video a.jp-unmute {
+  left: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003269}}
+div.jp-video a.jp-volume-max {
+  left: 134px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003273}}
+a.jp-mute {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -170px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003276}}
+a.jp-mute:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -19px -170px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003279}}
+a.jp-unmute {
+  background: url("/img/jplayer.blue.monday.jpg") -60px -170px no-repeat;
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003283}}
+a.jp-unmute:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -79px -170px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003286}}
+a.jp-volume-max {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -186px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003289}}
+a.jp-volume-max:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -19px -186px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003293}}
+div.jp-volume-bar {
+  position: absolute;
+  overflow: hidden;
+  background: url("/img/jplayer.blue.monday.jpg") 0 -250px repeat-x;
+  width: 46px;
+  height: 5px;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003301}}
+div.jp-audio div.jp-volume-bar {
+  top: 37px;
+  left: 330px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003305}}
+div.jp-audio-stream div.jp-volume-bar {
+  top: 37px;
+  left: 92px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003309}}
+div.jp-video div.jp-volume-bar {
+  top: 17px;
+  left: 72px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003313}}
+div.jp-volume-bar-value {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -256px repeat-x;
+  width: 0px;
+  height: 5px;
+}
+/* @end */
+/* @group current time and duration */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003323}}
+div.jp-audio div.jp-time-holder {
+  position: absolute;
+  top: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003327}}
+div.jp-audio div.jp-type-single div.jp-time-holder {
+  left: 110px;
+  width: 186px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003331}}
+div.jp-audio div.jp-type-playlist div.jp-time-holder {
+  left: 166px;
+  width: 130px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003336}}
+div.jp-current-time,
+div.jp-duration {
+  font-size: .64em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003340}}
+div.jp-current-time {
+  float: left;
+  display: inline;
+  margin-left: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003345}}
+div.jp-duration {
+  float: right;
+  display: inline;
+  margin-right: 5px;
+}
+/* @end */
+/* @group playlist */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003363}}
+div.jp-title {
+  font-weight: bold;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003369}}
+div.jp-title,
+div.jp-playlist {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003375}}
+div.jp-type-single div.jp-title,
+div.jp-type-playlist div.jp-title,
+div.jp-type-single div.jp-playlist {
+  border-top: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003380}}
+div.jp-title ul,
+div.jp-playlist ul {
+  list-style-type: none;
+  padding: 0 20px;
+  font-size: .72em;
+  margin: 25px 0 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003388}}
+div.jp-title li {
+  padding: 5px 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003394}}
+div.jp-playlist li {
+  padding: 5px 0 4px 20px;
+  border-bottom: 1px solid #eee;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003399}}
+div.jp-playlist li div {
+  display: block;
+}
+/* Note that the first-child (IE6) and last-child (IE6/7/8) selectors do not work on IE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003406}}
+div.jp-type-playlist div.jp-playlist li:last-child {
+  padding: 5px 0 5px 20px;
+  border-bottom: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003410}}
+div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
+  padding-left: 7px;
+  line-height: 24px;
+  font-size: 18px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003418}}
+div.jp-type-playlist div.jp-playlist a {
+  color: #333;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003422}}
+div.jp-type-playlist div.jp-playlist a:hover {
+  color: #0d88c1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003425}}
+div.jp-type-playlist div.jp-playlist a.jp-playlist-current {
+  color: #333;
+  font-size: 18px;
+  font-family: \534E\6587\9ED1\4F53;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003431}}
+div.jp-type-playlist div.jp-playlist a.jp-playlist-item-remove {
+  float: right;
+  display: inline;
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003439}}
+div.jp-type-playlist div.jp-playlist a.jp-playlist-item-remove:hover {
+  color: #0d88c1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003442}}
+div.jp-type-playlist div.jp-playlist span.jp-free-media {
+  float: right;
+  display: inline;
+  text-align: right;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003448}}
+div.jp-type-playlist div.jp-playlist span.jp-free-media a {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003451}}
+div.jp-type-playlist div.jp-playlist span.jp-free-media a:hover {
+  color: #0d88c1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003454}}
+.jp-artist {
+  font-size: .8em;
+  color: #666;
+  line-height: 18px;
+  margin: 10px 0 50px;
+}
+/* @end */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003463}}
+div.jp-video-play {
+  width: 100%;
+  overflow: hidden;
+  /* Important for nested negative margins to work in modern browsers */
+
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  /* Makes IE9 work with the active area over the whole video area. IE6/7/8 only have the button as active area. */
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003469}}
+div.jp-video-270p div.jp-video-play {
+  margin-top: -380px;
+  height: 380px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003473}}
+div.jp-video-360p div.jp-video-play {
+  margin-top: -360px;
+  height: 360px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003477}}
+div.jp-video-full div.jp-video-play {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003480}}
+a.jp-video-play-icon {
+  position: relative;
+  display: block;
+  width: 160;
+  height: 160px;
+  margin-left: -56px;
+  margin-top: -50px;
+  left: 50%;
+  top: 50%;
+  background: url("/img/fs.video.play.png") 0 0 no-repeat;
+  text-indent: -9999px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003494}}
+div.jp-video-play:hover a.jp-video-play-icon {
+  background: url("/img/fs.video.play.png") 0 -100px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003498}}
+div.jp-jplayer audio,
+div.jp-jplayer {
+  width: 0px;
+  height: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003504}}
+div.jp-jplayer {
+  background-color: #fff;
+  display: block;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003508}}
+div.jp-jplayer img {
+  overflow: hidden;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+/* @group TOGGLES */
+/* The audio toggles are nested inside fs-time-holder */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003519}}
+ul.jp-toggles {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003526}}
+div.jp-audio .jp-type-single ul.jp-toggles {
+  width: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003529}}
+div.jp-audio .jp-type-playlist ul.jp-toggles {
+  width: 55px;
+  margin: 0;
+  position: absolute;
+  left: 325px;
+  top: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003537}}
+div.jp-video ul.jp-toggles {
+  margin-top: 10px;
+  width: 100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003542}}
+ul.jp-toggles li {
+  display: block;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003547}}
+ul.jp-toggles li a {
+  display: block;
+  width: 25px;
+  height: 18px;
+  text-indent: -9999px;
+  line-height: 100%;
+  /* need this for IE6 */
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003555}}
+a.jp-full-screen {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -310px no-repeat;
+  margin-left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003560}}
+a.jp-full-screen:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -30px -310px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003564}}
+a.jp-restore-screen {
+  background: url("/img/jplayer.blue.monday.jpg") -60px -310px no-repeat;
+  margin-left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003569}}
+a.jp-restore-screen:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -90px -310px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003573}}
+a.jp-repeat {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -290px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003577}}
+a.jp-repeat:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -30px -290px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003581}}
+a.jp-repeat-off {
+  background: url("/img/jplayer.blue.monday.jpg") -60px -290px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003585}}
+a.jp-repeat-off:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -90px -290px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003589}}
+a.jp-shuffle {
+  background: url("/img/jplayer.blue.monday.jpg") 0 -270px no-repeat;
+  margin-left: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003594}}
+a.jp-shuffle:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -30px -270px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003598}}
+a.jp-shuffle-off {
+  background: url("/img/jplayer.blue.monday.jpg") -60px -270px no-repeat;
+  margin-left: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003603}}
+a.jp-shuffle-off:hover {
+  background: url("/img/jplayer.blue.monday.jpg") -90px -270px no-repeat;
+}
+/* @end */
+/* @group NO SOLUTION error feedback */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003612}}
+.jp-no-solution {
+  padding: 5px;
+  font-size: .8em;
+  background-color: #eee;
+  border: 2px solid #009be3;
+  color: #000;
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003621}}
+.jp-no-solution a {
+  color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003625}}
+.jp-no-solution span {
+  font-size: 1em;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+/* @end */
+/*
+ * 
+ * Moblie view
+ * 
+ */
+@media screen and (max-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003641}}
+  div.jp-video-270p {
+    width: 290px;
+    margin-bottom: 20px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003645}}
+  .jp-jplayer {
+    width: 290px;
+  }
+  /* 播放按钮 */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003650}}
+  a.jp-play,
+  a.jp-pause {
+    width: 80px;
+    height: 80px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003656}}
+  a.jp-play {
+    -webkit-background-size: 80px;
+    background-size: 80px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003660}}
+  a.jp-play:hover {
+    -webkit-background-size: 80px;
+    background-size: 80px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003664}}
+  a.jp-pause {
+    -webkit-background-size: 80px;
+    background-size: 80px;
+    display: none;
+    background: url("/img/fs.video.play.png") 0 -80px no-repeat;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003670}}
+  a.jp-pause:hover {
+    -webkit-background-size: 80px;
+    background-size: 80px;
+    background: url("/img/fs.video.play.png") 0 -80px no-repeat;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003675}}
+  div.jp-controls-holder {
+    top: -210px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003678}}
+  .jp-artist {
+    margin-bottom: 10px 0 25px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003681}}
+  div.jp-type-playlist div.jp-playlist a.jp-playlist-current {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+/*
+ * 
+ * Moblie view
+ * 
+ */
+@media screen and (max-width: 640px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003693}}
+  div.jp-video-270p {
+    width: 290px;
+    margin-bottom: 20px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003697}}
+  .jp-jplayer {
+    width: 290px;
+  }
+  /* 播放按钮 */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003702}}
+  a.jp-play,
+  a.jp-pause {
+    width: 80px;
+    height: 80px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003708}}
+  a.jp-play {
+    -webkit-background-size: 80px;
+    background-size: 80px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003712}}
+  a.jp-play:hover {
+    -webkit-background-size: 80px;
+    background-size: 80px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003716}}
+  a.jp-pause {
+    -webkit-background-size: 80px;
+    background-size: 80px;
+    display: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003721}}
+  a.jp-pause:hover {
+    -webkit-background-size: 80px;
+    background-size: 80px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003725}}
+  div.jp-controls-holder {
+    top: -210px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003728}}
+  .jp-artist {
+    margin: 5px 0 20px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003731}}
+  div.jp-type-playlist div.jp-playlist a.jp-playlist-current {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_fs\.play\.less}line{font-family:\00003735}}
+  div.jp-title ul,
+  div.jp-playlist ul {
+    margin-top: 5px;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000311}}
+.modal.pop-modal {
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000313}}
+.modal.pop-modal .modal-content {
+  background-color: #ebebeb;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000316}}
+.modal.pop-modal .modal-header {
+  display: block;
+  text-align: right;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000322}}
+.modal.pop-modal .modal-close {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000330}}
+.modal.pop-modal .modal-title {
+  text-align: center;
+  display: block;
+  font-size: 24px;
+  line-height: 1em;
+  font-weight: 100;
+  color: #333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000339}}
+.modal.pop-modal .modal-body p {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000343}}
+.modal.pop-modal .modal-graphic {
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/_variable\.less}line{font-family:\0000346}}
+.modal.pop-modal .modal-graphic:after {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000345}}
+.modal.pop-modal .modal-graphic .graphic-left,
+.modal.pop-modal .modal-graphic .graphic-right {
+  width: 50%;
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000351}}
+.modal.pop-modal .modal-graphic .graphic-left img,
+.modal.pop-modal .modal-graphic .graphic-right img,
+.modal.pop-modal .modal-graphic .graphic-left span,
+.modal.pop-modal .modal-graphic .graphic-right span {
+  position: relative;
+  width: 80%;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000356}}
+.modal.pop-modal .modal-graphic .graphic-left span,
+.modal.pop-modal .modal-graphic .graphic-right span {
+  color: #666;
+  font-size: 12px;
+  margin: 0 0 0 12%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/style\.less}line{font-family:\0000364}}
+#messager_modal {
+  position: fixed;
+  z-index: 10000;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: none;
+}

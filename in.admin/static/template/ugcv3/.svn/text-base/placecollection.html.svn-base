@@ -1,0 +1,184 @@
+
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$pageNum}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+	<input type="hidden" name="keywords" value="{$keywords}" />
+	<input type="hidden" name="status" value="{$status}" />
+	<input type="hidden" name="begin" value="{$begin}" />
+	<input type="hidden" name="end" value="{$end}" />
+	<input type="hidden" name="poi_id" value="{$placeId}" />
+	<input type="hidden" name="user_id" value="{$uid}" />
+	<input type="hidden" name="isdesc" value="{$isdesc}" />
+	<input type="hidden" name="iswall" value="{$iswall}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" name="ugcv3_placeCollection_main_form" id="ugcv3_placeCollection_main_form" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:auto">
+				<select name="field">
+					<option value="pc.name" {if $field=="pc.name"}selected{/if}>地点册名</option>
+					<option value="pc.id" {if $field=="pc.id"}selected{/if}>地点册ID</option>
+					<option value="p.placename" {if $field=="p.placename"}selected{/if}>地点名</option>
+					<option value="p.id" {if $field=="p.id"}selected{/if}>地点ID</option>
+				</select>
+				<input type="text" name="keywords" value="{$keywords}"/>(如检索多个ID，用英文半角逗号隔开。)
+			</li>
+			<li style="width:auto">
+				<label><input type="checkbox" name="isread" {if $isread==1}checked=checked{/if} value=1>只看未读</label> 
+				<!-- <label><input type="checkbox" name="isEssence" {if $isEssence}checked=checked{/if}  value=1>只看精华 </label> 
+				<label><input type="checkbox" name="isrecommend" {if $isrecommend}checked=checked{/if} value=1>只看推荐</label> --> 				
+				<label><input type="checkbox" name="isTaboo" {if $isTaboo}checked=checked{/if} value=1>含有敏感词</label> 
+			</li>			
+			<li>
+			<select name="status" class="combox" url="{eval echo site_url(array('ugcv3', 'placeCollection', 'status'))}/">
+                       <option value="-1" {if $status==='-1' }selected{/if}>所有状态</option>
+                        <option value="0" {if $status==='0' }selected{/if}>显示中</option>
+	                    <option value="1" {if $status==='1' }selected{/if}>隐藏中</option>
+                	</select>
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				<!-- <li><a class="button" href="{eval echo site_url(array('ugc','post','advsearch'));}/op/pic" rel="{eval echo build_rel(array('ugc','post','advsearch','op','pic'));}" target="dialog" mask="true" title="高级检索"><span>高级检索</span></a></li> -->
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			
+			<li><a class="add" href="{eval echo site_url(array('ugcv3','post','edit'));}/do/read/itemtype/20" target="selectedTodo" rel="ids[]" warn="请至少选择一条纪录"><span>批量标为已读</span></a></li>
+			<li><a class="edit" href="/ugcv3/placeCollection/edit/id/<!--{{sid_pic}}-->" target="navTab" warn="请选择一条地点册"  rel="{eval echo build_rel(array('ugcv3', 'placecollection' , 'edit'))}"><span>编辑</span></a>
+
+			
+			<li><a class="edit" href="{eval echo site_url(array('ugcv3','post', 'recommend', 'has_digest', '1', 'has_home', '0', 'id' ));}/<!--{{sid_pic}}-->/type/20/has_digest/1" target="dialog" rel="{echo build_rel(array('ugcv3', 'post', 'recommend'));}" width="650" height="500" close="imgareaselect_close" ><span>设置精华推荐</span></a></li>
+			<!--<li><a class="delete" href="{eval echo site_url(array('ugc','post','edit'));}/do/status/op/pic" target="selectedTodo" rel="ids[]" title="确定要屏蔽吗？" warn="请至少选择一条纪录"><span>屏蔽</span></a></li>-->
+
+			<li>
+				<!-- select name="changeStatus">
+					<option >改变状态</option>
+					
+				</select -->
+				<select name="placecollection_change_status" warn="请选择您要改变状态的地点册" url="{eval echo site_url(array('ugcv3', 'placeCollection', 'change_status', 'id'))}/<!--{{sid_pic}}-->" >
+                    <option value="-1" selected>改变状态</option>
+                    <option value=0 cancel="2">显示</option>
+					<option value=1 target="dialog" title="隐藏地点册" cancel="2">隐藏</option>
+                </select>
+			</li>			
+			
+		</ul>
+	</div>
+
+	<div layoutH="116" id="">
+	<table class="list" width="100%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="5%">ID</th>	
+				<th width="20%" >地点册</th>
+				<th width="5%">收藏地点数</th>
+				<th width="5%" orderField="praiseCount" class="<!--{if $orderField=='praiseCount'}-->{$orderDirection}<!--{else}-->asc<!--{/if}-->">赞 | 踩</th>
+				<th width="7%" orderField="replyCount" class="<!--{if $orderField=='replyCount'}-->{$orderDirection}<!--{else}-->asc<!--{/if}-->">回复数</th>
+				<th width="5%">创建用户</th>
+				<th width="10%">最后更新</th>
+				<th width="5%"  style="display:none">状态</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="sid_pic" rel="{$val[id]}" id="row_{$val['id']}">
+				<td><input name="ids[]" value="{$val[id]}" type="checkbox"></td>
+				<td>{$val['id']}</td>	
+				<td class="style-2">
+					{if $val[isEssence]}
+					<div style=" text-align:left;font-size:12px; margin-right:10px; background-color:red;color:white; width:20px; height:20px; line-height:20px; margin-left:0 auto; border:solid black 1px; text-align:center">
+					精
+					</div>
+					{/if}
+					{if $val[isrecommend]}
+					<div style=" text-align:left;font-size:12px; margin-right:10px; background-color:{eval if($val['isrecommend']>$current_date) {}orange{eval }else{ }gray{eval } };color:white; width:20px; height:20px; line-height:20px; margin-left:0 auto; border:solid black 1px; text-align:center">
+					荐
+					</div>
+					{/if}
+					<div class="content" style="word-break:break-all;word-wrap: break-word; <!--{if $val['status']==2}--> text-decoration:line-through;<!--{/if}-->">	
+						{if $val['status']==1}<font style="color:red;font-weight:bold">隐藏中-</font>{/if}
+						{if $val['status']==2}<font style="color:red;font-weight:bold">用户删除-</font>{/if}
+						<strong>{$val['name']}</strong><br/>{$val['summary']}
+					</div>
+					{if $val[image]}
+					<div>
+					<a href="{eval echo image_url($val[image], 'placeColl', 'pcdp');}" class="image_show">
+					<img alt="pic" width="80" src="{eval echo image_url($val[image], 'placeColl', 'pcdp');}" />
+					</a>
+					</div>
+					{/if}
+					{if $val[isread]}
+					<div style=" text-align:right;font-size:16px; margin-right:10px;">
+					√
+					</div>
+					{/if}
+				</td>
+				<td>{$val[place_count]} <a href="/ugcv3/placeCollection/view_places/{$val[id]}" target="dialog" title="查看地点册下的地点">查看</a></td>
+				<td><span>{$val[praiseCount]} / {$val[stampCount]}</span></td>
+				<td>{$val[replyCount]} <a href="/ugcv3/reply/index/itemid/{$val[id]}/itemtype/20" target="navTab" rel="placecollection_show_reply" title="查看地点册回复">查看</a> | <a href="{eval echo site_url(array('ugcv3','reply','redirect', 'do', 'placecollection'));}/item_id/$val['id']/item_type/20/rel/{eval echo build_rel(array('ugcv3','placecollection','redirect'));}" rel="{eval echo build_rel(array('ugcv3','placecollection','redirect'));}" target="dialog">回复</a></td>
+				<td class="style-1">
+				<div><img alt="avatar" height="40" width="40" src="{eval echo image_url($val[user][avatar], 'head');}" /></div>
+					<div class="nameid">
+						<span>{$val[user][username]} 
+						<p>ID{$val[uid]}</p>
+						
+					<div>
+				</td>	
+				<td><span>{eval echo $val['lastUpdate']!="0000-00-00 00:00:00" ?  $val['lastUpdate'] : $val[createDate]}</span></td>
+				<td id="row_status_{$val['id']}" status="{$val['status']}" style="display:none">{$val['status']}</td>
+				<!-- <td><a href="" rel="{eval echo build_rel(array('ugc','post','setwall'));}" target="dialog" class="operating">+</a></td> -->	
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+<script type="text/javascript">
+	$(function(){
+	
+		$("a.image_show").fancybox();
+		
+		 $("select[name=placecollection_change_status]").my_table_status(function(json){
+			 
+	            $("#row_status_" + json.id).text(json.value);
+	            $("#row_" + json.id).attr("status", json.key);
+	            //document.getElementById("pagerForm").submit();
+	            navTab.reload("/ugcv3/placeCollection/index",{
+		            pageNum:<!--{$pageNum}-->,
+		            numPerPage:<!--{$numPerPage}-->,
+		            orderField: '<!--{$orderField}-->',
+		            orderDirection : '<!--{$orderDirection}-->',
+		            <!--{if $keywords}-->keywords : '<!--{$keywords}-->',<!--{/if}-->
+		            isread : <!--{$isread}-->,
+		            isEssence : <!--{$isEssence}-->,
+		            isrecommend :<!--{$isrecommend}-->,
+		            isTaboo :<!--{$isTaboo}-->
+		        });
+
+	           
+	     });
+
+
+		 
+		 	$("select[name=status]").change(function(){
+		 		//var url = $(this).attr("url") + $(this).val() ;
+		 		$("input[type=hidden][name=status]").val($(this).val());
+		 		navTabSearch($("#ugcv3_placeCollection_main_form"));
+		     });
+		
+	});
+       
+</script>
+</div>

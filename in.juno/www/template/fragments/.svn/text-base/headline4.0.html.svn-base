@@ -1,0 +1,19 @@
+<div class="headline">
+							<ul class="topline">
+							{loop $hot[headline][data] $key_h $d_h}
+								{if $key_h >= 3}{eval break;}{/if}
+								<li>
+									<h1><a href="{$d_h['link']}"  target="_blank">{$d_h.title}</a></h1>
+									<p>{$d_h['summary']}</p>
+								</li>
+							{/loop}
+							</ul>
+							
+							<ul class="list">
+							{loop $hot[headline][data] $key_h $d_h}
+								{if $key_h <= 2}{eval continue;}{/if}
+								<li>· <a href="{$d_h['link']}" target="_blank">{$d_h['title']}</a></li>
+							{/loop}
+							
+							</ul>
+						</div>

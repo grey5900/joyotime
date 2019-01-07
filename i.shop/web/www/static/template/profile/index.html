@@ -1,0 +1,82 @@
+<!--{template web/header}-->
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox">
+			<div class="main">
+				<div class="inner main-conter">
+					<div class="title">
+						<!--{template what}-->
+					</div>
+					<div class="from-detail">
+						<form action="{$current_url}" method="post" name="" id="profile-form">
+							<div class="select-steps">
+								<div class="step-first">
+									<div class="number-tit">
+										<h3>1</h3>
+										<span>选择一个要新建的扩展信息</span>
+									</div>
+									<div class="radio-tab">
+										<ul class="tabs">
+											<!--{loop $modules $k $v}-->
+											<li>
+											  <label class="radio">
+														<input class="optionsRadios" type="radio" name="moduleId" value="{$v[id]}" /> {$v[name]} 
+												</label>
+											</li>
+											<!--{/loop}-->
+											<li>
+											  <label class="radio">
+											  <input type="radio" id="optionLink" name="moduleId" value="无" />链接到页面
+											  </label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="step-next">
+									<div id="tabRadio" class="">
+										<div id="step-2" style="display:none;"></div>
+									</div>
+								</div>
+								<div class="from-actions">
+									<div class="controls">
+										<input class="btn btn-primary btn-large" type="submit" value="　提交审查　" data-loading-text="　……　">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!--{template sider}-->
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$(this).parent().parent("ul.tabs li").removeClass("action");
+		$("#optionLink").on("change", function() {
+			$("#step-2").html("");
+			var checked = $(this).attr("checked", "checked");
+			checked.parent().parent("ul.tabs li").addClass("action").siblings().removeClass("action");
+			$.get("/profile/make_step/0", function(html) {
+				$("#step-2").html(html).show();
+			});
+			return true;
+		});
+		$(".optionsRadios").on("change", function() {
+			$("#step-2").hide();
+			$("#step-2").html("");
+			var checked = $(this).attr("checked", "checked");
+			checked.parent().parent("ul.tabs li").addClass("action").siblings().removeClass("action");
+			$.get("/profile/make_step/" + $(this).val() + "/2", function(html) {
+				$("#step-2").html(html);
+				$("#step-2").show();
+			});
+			return true;
+		});
+
+	});
+	
+ 
+</script>
+<!--{template web/footer}-->

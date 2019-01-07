@@ -1,0 +1,252 @@
+@import "background-img.less";
+@import "global.less";
+
+/*
+ * header
+ */
+.header{
+	background: #ffffff url(/img/repeat_bg.png) 0 0 repeat-x;
+	.box-shadow(0 1px 1px rgba(0,0,0,.2));
+	.clearfix ();
+	.container{
+		margin: 0 auto;
+		width: 980px;
+	}
+}
+.site-nav{
+    height: 30px;
+    background-position: 0 0;
+    .nav-left{
+   		display: block;
+    	float: left;
+    	position: relative;
+    }
+   .nav-right{
+   		display: block;
+   		float: right;
+   		position: relative;
+        i{
+        	 //background: url(/img/ico_syn.gif) repeat-x scroll 0 -999em;
+			width: 16px;
+			height: 16px;
+			float: left;
+			margin: 6px 2px 0 0;
+            // &.ico-sine{
+            	// display: inline-block;
+				      // background-position: -20px 0;
+            // }
+            // &.ico-qq{
+            	// display: inline-block;
+				    // background-position: 0 0;
+            // }
+		}
+	}
+	li{ 
+		line-height: 30px;
+		display: block;
+       	float: left;
+       	padding:0 5px;
+    }
+	a {
+		color: @grayLighter;
+		text-decoration: none;
+	    &:hover{
+	    	color: @whiteText;
+	   	}
+	}
+}
+
+
+.mainheader {
+	display: block;
+	margin: 0 auto;
+	height: 72px;
+	.clearfix();
+	h1 {
+		float: left;
+		.logo {
+  			display: block;
+  			width: 125px;
+  			height: 47px;
+  			margin: 12px 0 0;
+  			text-indent: -9999px;
+  			overflow: hidden;
+  			background: url(/img/logo.png) 0 0 no-repeat;
+		}
+	}
+	.miniapp {
+		float: left;
+		margin: 21px 0 0 10px;
+		.miniapp_list {
+			li {
+				float: left;
+				a {
+					display: block;
+					width: 28px;
+					height: 28px;
+					background: url(/img/icon_miniapp.png) 0 0 no-repeat;
+	      			text-indent: -9999px;
+	      			overflow: hidden;
+	      			&.iphone {
+	      				background-position: 0 0;
+	      				&:hover {
+	      					background-position: 0 -28px;
+	      				}
+	      			}
+	      			&.android {
+	      				background-position: -28px 0;
+	      				&:hover {
+	      					background-position: -28px -28px;
+	      				}
+	      			}
+	      			&.windowsphone {
+	      				background-position: -56px 0;
+	      				&:hover {
+	      					background-position: -56px -28px;
+	      				}
+	      			}
+				}
+			}
+		}
+	}
+    .nav-sreach{
+    	float: right; 
+    	height: 30px; 
+    	margin: 12px 0;
+    	line-height: 30px;
+    	padding: 0;
+    } 
+}
+.mainmenu {
+	height: 38px;
+	.clearfix();
+	.channel_list,
+	.sns_list {
+		li {
+			float: left;
+			background: url(/img/channel_link_bg.png) -1px 0px no-repeat;
+			padding: 0 0 0 2px;
+			margin-left: -1px;
+			position: relative;
+			height: 38px;
+			a {
+				display: inline-block;
+				.ie7-inline-block();
+				position: relative;
+				font-size: 14px;
+				font-weight: bold;
+				height: 38px;
+				line-height: 38px;
+				color: #222222;
+				text-decoration: none;
+				padding: 0px 13px 0px 10px;
+				background: url(/img/channel_link_bg.png) right 0px no-repeat;
+				&:hover {
+					color: #447E16;
+				}
+			}
+			&.active {
+				padding: 0 0 0 3px;
+				margin-left: -2px;
+				background-position: 0px -38px;
+				a {
+					color: #447E16;
+					background-position: right -38px;
+				}
+			}
+		}
+	}
+	.channel_list {
+		float: left;
+		padding: 0 0 0 1px;
+		li {
+			.icon-index,
+			.icon-place,
+			.icon-photo,
+			.icon-my,
+			.icon-app {
+				display: inline-block;
+				.ie7-inline-block();
+				width: 14px;
+				height: 14px;
+				.ie7-restore-right-whitespace();
+				line-height: 14px;
+				vertical-align: text-top;
+				background-image: url("/img/icon_channel.png");
+				background-position: 0px 0px;
+				background-repeat: no-repeat;
+				margin-right: 5px;
+			}
+			.icon-index { background-position: 0px 0px; }
+			.icon-place { background-position: -14px 0px; }
+			.icon-photo { background-position: -28px 0px; }
+			.icon-my { background-position: -42px 0px; }
+			.icon-app { background-position: -56px 0px; }
+			&.active,
+			&:hover {
+				.icon-index { background-position: 0px -14px; }
+				.icon-place { background-position: -14px -14px; }
+				.icon-photo { background-position: -28px -14px; }
+				.icon-my { background-position: -42px -14px; }
+				.icon-app { background-position: -56px -14px; }
+			}
+			.icon-new,
+			.icon-hot {
+				position: absolute;
+				z-index: 1000;
+				top: -5px;
+				right: -15px;
+				width: 29px;
+				height: 16px;
+				background: url(/img/icon_newhot.png) 0px 0px no-repeat;
+			}
+			.icon-new { background-position: 0px 0px; }
+			.icon-hot { background-position: 0px -16px; }
+		}
+	}
+	.sns_list {
+		float: right;
+		.sns_sina,
+		.sns_tencent,
+		.sns_douban {
+			a {
+				display: table-cell;
+				vertical-align: middle;
+				width: 20px;
+				position: relative;
+				span {
+					position: static;
+					*position: absolute;
+					top: 50%;
+					img {
+						position: static;
+						*position: relative;
+						*top: -50%;
+						height: 18px;
+					}
+				}
+			}
+		}
+		.sns_renren {
+			a {
+				display: table-cell;
+				vertical-align: middle;
+				width: 30px;
+				position: relative;
+				span {
+					position: static;
+					*position: absolute;
+					top: 50%;
+					img {
+						position: static;
+						*position: relative;
+						*top: -50%;
+						height: 18px;
+					}
+				}
+			}
+		}
+	}
+
+
+}

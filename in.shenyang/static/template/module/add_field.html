@@ -1,0 +1,106 @@
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <div class="pageFormContent" layoutH="57">
+            <dl>
+                <dt>
+                    字段ID
+                </dt>
+                <dd>
+                    <input type="text" name="id" value="{$f['fieldId']}" size="20" maxlength="20"<!--{if $field_id}--> readonly="true"<!--{else}--> class="required"<!--{/if}--> />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    字段显示名
+                </dt>
+                <dd>
+                    <input type="text" name="name" value="{$f['fieldName']}" class="required" size="20" maxlength="20"  />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    字段类型
+                </dt>
+                <dd>
+                    <select class="combox" name="type">
+                        <option value="str">短文本</option>
+                        <option value="text">长文本</option>
+                        <option value="date">日期(2012-12-12)</option>
+                        <option value="datetime">时间(2012-12-12 12:12:12)</option>
+                        <option value="time">时分(12:12)</option>
+                        <option value="radio">单选</option>
+                        <option value="checkbox">复选</option>
+                        <option value="tel">电话号码</option>
+                        <option value="http">网址</option>
+                        <option value="image">图片</option>
+                        <option value="rich_image">多图标题描述</option>
+                        <option value="app_image">客户端图片</option>
+                        <!-- <option value="rewrite">跳转网页</option>
+                        <option value="ref">调用数据</option> -->
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    字段长度
+                </dt>
+                <dd>
+                    <input type="text" name="size" value="{$f['fieldSize']}" size="10" maxlength="10"  />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    字段默认键值
+                </dt>
+                <dd>
+                    <input type="text" name="defaultValue" value="{$f['defaultValue']}" size="80" maxlength="100" alt="多个值用英文逗号隔开" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    字段默认选中值
+                </dt>
+                <dd>
+                    <input type="text" name="defaultSelect" value="{$f['defaultSelect']}" size="80" maxlength="100" alt="多个值用英文逗号隔开" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    排序号
+                </dt>
+                <dd>
+                    <input type="text" name="orderValue" value="{$f['orderValue']}" size="10" maxlength="10"  />
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function(){
+        <!--{if $f['fieldType']}-->
+        $("select[name=type]").val("{$f['fieldType']}");
+        <!--{/if}-->
+    });
+</script>

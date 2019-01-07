@@ -1,0 +1,15 @@
+<div class="sidebar">
+	<div class="title">
+		<h3>推送消息</h3>
+	</div>
+	<ul class="nav nav-list">
+		<li<!--{if $menu === 'newpush'}--> class="active"<!--{/if}-->><a href="/message/add_new_push/">新建推送</a></li>
+		<li<!--{if $menu === 'pushed'}--> class="active"<!--{/if}-->><a href="/message/pushed/1/">已发送</a></li>
+	</ul>
+	<div class="title">
+		
+	</div>
+	<ul class="nav nav-list">
+		<li<!--{if $menu === 'index'}--> class="active"<!--{/if}-->><a href="/message">会员欢迎消息</a></li>
+	</ul>
+</div>

@@ -1,0 +1,79 @@
+<!-- 分页属性 -->
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="creator_type" value="{$creator_type}" />
+    <input type="hidden" name="checked" value="{$checked}" />
+</form>
+<!-- 页头搜索栏 -->
+<div class="pageHeader" id="house_i_commision_checked_header">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    
+                    
+                    <td>
+                    经纪人手机号：
+                    </td>
+                    <td>
+                    <input type="text" name="keywords" value="{$keywords}" size="30"/>
+                    </td>
+                    <td>
+                        <div class="buttonActive">
+                            <div class="buttonContent">
+                                <button type="submit">
+                                    检索
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<!-- 页面显示区 -->
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="edit" href="{eval echo site_url(array('house_i', 'withdraw', 'id'))}/<!--{{id}}-->" warn="请选择要提现的经纪人" target="dialog" title="提现" rel="{eval echo build_rel(array('house_i', 'withdraw'))}"><span>提现</span></a>
+            	
+            	
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="118">
+        <thead>
+            <tr>
+                <th width="10%">经纪人</th>
+                <th width="10%" orderField="dateline" class="{$orderDirection}">注册时间</th>             
+                <th width="10%" orderField="recommend_count" class="{$orderDirection}">推荐订单总数</th>
+                <th width="10%" orderField="today_recommend_count" class="{$orderDirection}">今日推荐订单</th>
+                <th width="10%" orderField="total_commision" class="{$orderDirection}">历史佣金</th>
+                <th width="10%" orderField="withdraw" class="{$orderDirection}">历史提现</th>
+                <th width="10%" orderField="commision" class="{$orderDirection}">账户金额</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $users $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['cellphone_no']} ({$row['name']})</td>
+                <td>{$row['dateline']}</td>
+                
+                <td>{$row['recommend_count']}</td>
+                <td>{$row['today_recommend_count']}</td>
+                <td>{$row['total_commision']}</td>
+                <td>{$row['withdraw']}</td>
+                <td>{$row['commision']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+

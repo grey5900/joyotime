@@ -1,0 +1,56 @@
+<!--{template common/header3.0}-->
+	<div class="main channel layout">
+		<!--{template channel_header}-->
+		<div class="column topic waterfall">
+			<div class="tit">
+				<h3>{$catname}<i></i></h3>
+			</div>
+			<div class="bd">
+				<div class="topic_nav">
+					<ul>
+					<li><a href="/category/{$catid}/0" {if !$tagid}class="active"{/if}>全部</a></li>
+					{loop $tags $t}
+						
+						<li>
+							<a href="/category/{$catid}/{$t['id']}" {if $tagid==$t['id']}class="active"{/if}>{$t['content']}</a>
+						</li>
+					{/loop}
+						
+					</ul>
+				</div>
+				<ul class="thumbnails">
+				{if !empty($postdata[data][data])}
+                  {loop $postdata[data][data] $k $v}
+					<li class="thumbnail">
+						<div class="photo">
+							{if $v[thumb]}<a href="/review/{$v['id']}" target="_blank"><img src="{$v[thumb]}"  width="{$v[photoSize][w]}" height="{$v[photoSize][h]}" alt="{$v[content]}" /></a>{/if}
+							<p><a href="/review/{$v['id']}" target="_blank">{$v[content]}</a></p>
+						</div>
+						<div class="user">
+							<div class="interact"><a href="javascript:;" class="like action-like praise <!--{if $pdata['is_praised']}-->on<!--{/if}-->" data-id="{$pdata[id]}" data-type="19" data-sort=1></a></div>
+							<div class="user_info">
+								<div class="img">
+									<a href="/user/{$v[uid]}/" target="_blank"><img src="{$v[head]}" alt="{$v[nickname]}" /></a>
+								</div>
+								<div class="info">
+									<a target="_blank" href="/user/{$v[uid]}/">{$v[nickname]}</a>
+									<p class="time">{echo idate_format(strtotime($v[createDate]),'u');}</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					{/loop}
+				{/if}
+				</ul>
+				{if $page}
+				<div class="pagination pagination-centered" >
+		          {$page['page']}
+		          </div>
+		          {else}
+		          <div class="pagination" ></div>
+		          {/if}
+				<a href="/category/{$catid}/{echo intval($tagid);}/{$sort}/2/{$curr_page}" item="{$page['loading']}" class="hide">加载更多</a>
+			</div>
+		</div>
+	</div>	
+<!--{template common/footer}-->

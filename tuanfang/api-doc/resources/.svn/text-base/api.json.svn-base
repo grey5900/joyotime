@@ -1,0 +1,569 @@
+{
+    "basePath": "http://tuanfang.joyotime.com",
+    "apiVersion": "0.1",
+    "resourcePath": "api",
+    "apis": [
+        {
+            "path": "/apply",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "nickname": "apply",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "\u697c\u76d8ID\u53f7",
+                            "dataType": "int",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "1162"
+                        },
+                        {
+                            "name": "name",
+                            "description": "\u62a5\u540d\u4eba\u59d3\u540d",
+                            "dataType": "string",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "\u5f20\u4e09"
+                        },
+                        {
+                            "name": "cellphone_no",
+                            "description": "\u62a5\u540d\u4eba\u624b\u673a\u53f7",
+                            "dataType": "string",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "13550009575"
+                        },
+                        {
+                            "name": "type",
+                            "description": "\u56e2\u8d2d\u7c7b\u578b 0\uff1a\u56e2\u8d2d 1\uff1a\u4f18\u60e0 2\uff1a\u63a8\u8350",
+                            "dataType": "int",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "cel",
+                            "description": "\u6d4b\u8bd5\u7528\uff0c\u767b\u9646\u7528\u6237\u7684\u624b\u673a\u53f7 \u63a8\u8350\u9700\u8981",
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "13550009575"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        },
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u56e2\u8d2d\u3001\u4f18\u60e0\u3001\u63a8\u8350\uff08\u9700\u8981\u9a8c\u8bc1\u7684token\uff09"
+        },
+        {
+            "path": "/get_config",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "nickname": "get_config",
+                    "parameters": [
+                        {
+                            "name": "t",
+                            "description": "\u65f6\u95f4\u6233",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": true,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "dt",
+                            "description": "\u6d4b\u8bd5\u4f7f\u7528 \u8bbe\u5907\u7c7b\u578b 0\uff1aIOS 1\uff1aANDROID",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "av",
+                            "description": "\u6d4b\u8bd5\u4f7f\u7528 \u5ba2\u6237\u7aef\u7248\u672c\u53f7 \u5982\uff1a 0.1",
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0.1"
+                        },
+                        {
+                            "name": "cel",
+                            "description": "\u6d4b\u8bd5\u4f7f\u7528 \u624b\u673a\u53f7",
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "13550009575"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        },
+                        {
+                            "reason": "Not Modified",
+                            "code": 304
+                        }
+                    ]
+                }
+            ],
+            "description": "\u83b7\u53d6\u914d\u7f6e\u4fe1\u606f\uff0c\u5982\u679c\u4f20\u5165\u7684\u65f6\u95f4\u6233\u5c0f\u4e8e\u914d\u7f6e\u6700\u540e\u4fee\u6539\u65f6\u95f4\uff0c\u90a3\u4e48\u4e0d\u66f4\u65b0\u8fd4\u56de304\uff0c\u5426\u5219\u8fd4\u56de\u7ed3\u679c"
+        },
+        {
+            "path": "/house_detail",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "nickname": "house_detail",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "\u697c\u76d8ID\u53f7",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": true,
+                            "defaultValue": "1162"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        },
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u697c\u76d8\u8be6\u60c5"
+        },
+        {
+            "path": "/house_list",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "nickname": "house_list",
+                    "parameters": [
+                        {
+                            "name": "lat",
+                            "description": "\u7eac\u5ea6",
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "30.6594620"
+                        },
+                        {
+                            "name": "lng",
+                            "description": "\u7ecf\u5ea6",
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "104.0657350"
+                        },
+                        {
+                            "name": "page",
+                            "description": "\u9875\u7801",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "area",
+                            "description": "\u533a\u57df\uff0c\u4e0d\u96500 \u7b2c\u4e00\u4e2a1... ...",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "price",
+                            "description": "\u4ef7\u683c\uff0c\u4e0d\u96500 \u7b2c\u4e00\u4e2a1... ...",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "direction",
+                            "description": "\u65b9\u4f4d\uff0c\u4e0d\u96500 \u7b2c\u4e00\u4e2a1... ...",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "loopline",
+                            "description": "\u73af\u7ebf\uff0c\u4e0d\u96500 \u7b2c\u4e00\u4e2a1... ...",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "order",
+                            "description": "\u6392\u5e8f\uff0c\u9ed8\u8ba40... ...",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "page_size",
+                            "description": "\u6bcf\u9875\u6761\u6570",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "20"
+                        },
+                        {
+                            "name": "trends",
+                            "description": "\u662f\u5426\u9700\u8981\u52a8\u6001",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "group",
+                            "description": "\u662f\u5426\u53ea\u83b7\u53d6\u56e2\u8d2d\u4fe1\u606f \u975e\u7a7a\u53ea\u83b7\u53d6\u56e2\u8d2d",
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "key",
+                            "description": "\u641c\u7d22\u5173\u952e\u8bcd",
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": ""
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u83b7\u53d6\u697c\u76d8\u5217\u8868"
+        },
+        {
+            "path": "/house_same_price",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "nickname": "house_same_price",
+                    "parameters": [
+                        {
+                            "name": "price",
+                            "description": "\u697c\u76d8\u4ef7\u683c",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": true,
+                            "defaultValue": "7000"
+                        },
+                        {
+                            "name": "page",
+                            "description": "\u9875\u7801",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "page_size",
+                            "description": "\u6bcf\u9875\u6761\u6570",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "20"
+                        },
+                        {
+                            "name": "lat",
+                            "description": "\u7eac\u5ea6",
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "30.6594620"
+                        },
+                        {
+                            "name": "lng",
+                            "description": "\u7ecf\u5ea6",
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "104.0657350"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        },
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u76f8\u540c\u4ef7\u4f4d\u697c\u76d8"
+        },
+        {
+            "path": "/index",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "nickname": "index",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "description": "\u540d\u79f0",
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "world"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        }
+                    ]
+                }
+            ],
+            "description": "API\u9996\u9875\uff0c\u53ef\u4ee5\u7528\u6765\u6d4b\u8bd5API\u662f\u5426\u8fde\u63a5\u6210\u529f"
+        },
+        {
+            "path": "/my_commision",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "nickname": "my_commision",
+                    "parameters": [
+                        {
+                            "name": "page",
+                            "description": "\u9875\u7801",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "page_size",
+                            "description": "\u6bcf\u9875\u6761\u6570",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "20"
+                        },
+                        {
+                            "name": "cel",
+                            "description": "\u6d4b\u8bd5\u7528\uff0c\u767b\u9646\u7528\u6237\u7684\u624b\u673a\u53f7",
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "13550009575"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        },
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u6211\u7684\u4f63\u91d1\uff08\u9700\u8981\u9a8c\u8bc1\u7684token\uff09"
+        },
+        {
+            "path": "/my_recommend",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "nickname": "my_recommend",
+                    "parameters": [
+                        {
+                            "name": "status",
+                            "description": "0\uff1a\u5f85\u5ba1\u6838  1\uff1a\u6709\u6548\u63a8\u8350  2\uff1a\u5931\u8d25\u63a8\u8350 3\uff1a\u63a8\u8350\u8fc7\u671f 4\uff1a\u6210\u529f\u6210\u4ea4\u7684\u63a8\u8350 \u5176\u4ed6\uff1a\u6240\u6709",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": true,
+                            "defaultValue": "99"
+                        },
+                        {
+                            "name": "page",
+                            "description": "\u9875\u7801",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "page_size",
+                            "description": "\u6bcf\u9875\u6761\u6570",
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "20"
+                        },
+                        {
+                            "name": "cel",
+                            "description": "\u6d4b\u8bd5\u7528\uff0c\u767b\u9646\u7528\u6237\u7684\u624b\u673a\u53f7",
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "defaultValue": "13550009575"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        },
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u6211\u7684\u63a8\u8350\uff08\u9700\u8981\u9a8c\u8bc1\u7684token\uff09"
+        },
+        {
+            "path": "/signin",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "nickname": "signin",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "description": "\u62a5\u540d\u4eba\u540d\u5b57",
+                            "dataType": "string",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "\u5f20\u4e09"
+                        },
+                        {
+                            "name": "cellphone_no",
+                            "description": "\u62a5\u540d\u4eba\u624b\u673a\u53f7",
+                            "dataType": "string",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "13550009575"
+                        },
+                        {
+                            "name": "code",
+                            "description": "\u624b\u673a\u6536\u5230\u7684\u9a8c\u8bc1\u7801",
+                            "dataType": "string",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "123456"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        },
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u9a8c\u8bc1\u767b\u9646"
+        },
+        {
+            "path": "/signup",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "nickname": "signup",
+                    "parameters": [
+                        {
+                            "name": "cellphone_no",
+                            "description": "\u62a5\u540d\u4eba\u624b\u673a\u53f7",
+                            "dataType": "string",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "13550009575"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        },
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u6ce8\u518c\u3001\u767b\u9646\u83b7\u53d6\u9a8c\u8bc1\u7801"
+        },
+        {
+            "path": "/update_user",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "nickname": "update_user",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "description": "\u7528\u6237\u540d",
+                            "dataType": "string",
+                            "paramType": "form",
+                            "required": true,
+                            "defaultValue": "\u98de\u5929\u732a"
+                        },
+                        {
+                            "name": "cel",
+                            "description": "\u6d4b\u8bd5\u4f7f\u7528 \u7528\u6237\u7684\u624b\u673a\u53f7",
+                            "dataType": "string",
+                            "paramType": "form",
+                            "required": false,
+                            "defaultValue": "13550009575"
+                        }
+                    ],
+                    "errorResponses": [
+                        {
+                            "reason": "File not found",
+                            "code": 404
+                        },
+                        {
+                            "reason": "Internal Server Error",
+                            "code": 500
+                        }
+                    ]
+                }
+            ],
+            "description": "\u66f4\u65b0\u7528\u6237\u4fe1\u606f \u9700\u8981token\u9a8c\u8bc1"
+        }
+    ]
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title></title>
+<link rel="stylesheet" href="skin/style.css" type="text/css" />
+<link rel="stylesheet" href="in_themes/auto/skin/style.css" type="text/css" />
+</head/>
+<body>
+	<div id="header">
+		<div class="container">
+			<a href="http://www.chengdu.cn" class="logo">成都全搜索</a>
+			<div class="user-nav">
+				<a class="avatar" href="#"><img src="_img/avatar30x30.jpg"/></a><a class="name" href="#">m2</a>
+				<a class="setting" href="#">设置</a>
+				<a class="exit" href="#">退出</a>
+			</div>
+			<ul class="site-nav">
+				<li><a href="http://www.chengdu.cn">首页</a></li>
+				<li><a href="http://news.chengdu.cn/">新闻</a></li>
+				<li><a href="http://fb.chengdu.cn/">美食</a></li>
+				<li><a href="http://baby.chengdu.cn">亲子</a></li>
+				<li><a href="http://f.chengdu.cn">评房网</a></li>
+				<li class="on"><a href="http://auto.chengdu.cn">汽车</a></li>
+				<li><a href="http://movie.chengdu.cn/">观影</a></li>
+				<li><a href="http://home.chengdu.cn">家居家电</a></li>
+				<li><a href="http://mes.chengdu.cn/">购物</a></li>
+				<li class="dropdown">
+						<a id="site-nav-more" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">更多 <b class="caret"></b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="site-nav-more">
+							<li><a href="http://tg.chengdu.cn/">章鱼团</a></li>
+							<li><a href="http://google.com">旅游</a></li>
+							<li><a href="#anotherAction">健康</a></li>
+							<li><a href="#">买购</a></li>
+							<li><a href="#">同心卡</a></li>
+						</ul>
+	            </li>
+			</ul>
+		</div>
+	</div>
+	<div id="container-page">
+		<div class="container">
+			<div class="nav">
+				<h1 class="tit nav-bg">汽车频道</h1>
+				<div class="col">
+					<a class="nav-bg on" href="#"><span class="ico"></span>首页</a>
+					<a class="nav-bg" href="#"><span class="ico"></span>车市资讯</a>
+					<a class="nav-bg" href="#"><span class="ico qss"></span>优惠行情</a>
+					<a class="nav-bg" href="#"><span class="ico mao"></span>大众评车</a>
+					<a class="nav-bg" href="#"><span class="ico fang"></span>成都团车</a>
+					<a class="nav-bg" href="#"><span class="ico che"></span>动起来</a>
+					<a class="nav-bg" href="#"><span class="ico ssss"></span>搜索经销商<span class="placeico"></span></a>
+					<a class="nav-bg" href="#"><span class="ico xin"></span>超值二手车<span class="placeico"></span></a>
+				</div>
+				<div class="tag">
+					<a href="#">新车试驾</a>
+					<a href="#">优惠</a>
+					<a href="#">尽享</a>
+					<a href="#">二手</a>
+					<a href="#">成都顺吉</a>
+					<a href="#">成都顺吉</a>
+				</div>
+			</div>
+			<div class="main">
+				<div class="main-l boxyy">
+					<div class="push">
+						<div class="tit">
+							<h2>车市资讯</h2>
+							<ul class="breadcrumbs">
+                <li><a href="#">平车网</a>&gt;</li>
+                <li><a href="#">车市资讯</a></li>
+              </ul>
+						</div>
+						<div class="con">
+						  <ul class="inform">
+						    <li>
+						      <div class="news-img">
+						        <a href="#" ><img src="_img/004.jpg" alt="" /></a>
+						      </div>
+						      <div class="detail">
+						        <div class="news-name"><a href="#">增加手动挡！新款宝马X1本月12日上市</a></div>
+                    <div class="news-con"><a href="#">今日官方获悉，改款华晨宝马X1将本月12日正式国内上市，预起步售价27万元左右。</a></div>
+                    <div class="news-time"><span>2012-9-12 12:00</span></div>
+						      </div>
+						    </li>
+						    <li>
+                  <div class="news-img">
+                    <a href="#" ><img src="_img/003.jpg" alt="" /></a>
+                  </div>
+                  <div class="detail">
+                    <div class="news-name"><a href="#">增加手动挡！新款宝马X1本月12日上市</a></div>
+                    <div class="news-con"><a href="#">今日官方获悉，改款华晨宝马X1将本月12日正式国内上市，预起步售价27万元左右。</a></div>
+                    <div class="news-time"><span>2012-9-12 12:00</span></div>
+                  </div>
+                </li>
+						  </ul>
+						  <div class="pagination pagination-centered">
+                <ul>
+                  <li><a href="auto.html?page=1">上一页</a></li>
+                  <li><a href="auto.html?page=1">1</a></li>
+                  <li><a href="auto.html?page=2">2</a></li>
+                  <li><a href="auto.html?page=3">3</a></li>
+                  <li><a href="auto.html?page=4">4</a></li>
+                  <li><a href="auto.html?page=2">下一页</a></li>
+                </ul>
+              </div>
+						</div>
+					</div>
+				</div>
+				<div class="main-r">
+					<div class="module">
+						<div class="tit"><h3>动起来</h3><a class="more" href="#">更多</a></div>
+						<div class="con">
+							<ul class="list-event">
+								<li><a href="#"><img src="_img/003.jpg"/><b></b><em class="t"><span>33人参加</span>喜狮成双明嘉标致</em></a></li>
+								<li><a href="#"><img src="_img/003.jpg"/><b></b><em class="t"><span>33人参加</span>喜狮成双明嘉标致</em></a></li>
+								<li><a href="#"><img src="_img/003.jpg"/><b></b><em class="t"><span>33人参加</span>喜狮成双明嘉标致</em></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="module">
+						<div class="tit"><h3>优惠行情</h3></div>
+						<div class="con">
+							<ul class="list-photo">
+								<li><a href="#" class="thumb"><img src="_img/004.jpg"/></a><a href="#" class="title">萨普汽车</a></li>
+								<li><a href="#" class="thumb"><img src="_img/004.jpg"/></a><a href="#" class="title">萨普汽车</a></li>
+								<li><a href="#" class="thumb"><img src="_img/004.jpg"/></a><a href="#" class="title">萨普汽车</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="module">
+						<div class="tit"><h3>本地经销商推荐</h3></div>
+						<div class="con">
+							<ul class="list-brand">
+								<li><a href="#" class="thumb"><img src="_img/005.jpg"/></a><a href="#" class="title">广汽本田汽车三和特约销售服务店</a></li>
+								<li><a href="#" class="thumb"><img src="_img/005.jpg"/></a><a href="#" class="title">广汽本田汽车三和特约销售服务店</a></li>
+								<li><a href="#" class="thumb"><img src="_img/005.jpg"/></a><a href="#" class="title">广汽本田汽车三和特约销售服务店</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+
+</html>

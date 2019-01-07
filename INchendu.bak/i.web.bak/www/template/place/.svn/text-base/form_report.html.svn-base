@@ -1,0 +1,60 @@
+<!-- 报错 -->
+<form action="/place_report/{$info[id]}/" class="modal hide form-horizontal" id="place-report-form-map">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" >&times;</a>
+		<h3>请协助我们重新确定位置</h3>
+    </div>
+    <div class="modal-body">
+		<div id="map" style="width: 560px; height: 320px;" data-lat="{$info[latitude]}" data-lng="{$info[longitude]}"></div>
+	</div>
+	<div class="modal-footer">
+		<input type="hidden" name="type" value="4" />
+		<input type="hidden" name="coordinate" id="coordinate" value="{$info[latitude]}, {$info[longitude]}" />
+		<a href="javascript:void(0);" class="btn" data-dismiss="modal">关闭</a>
+		<input type="submit" class="btn btn-primary" data-loading-text="　……　" disabled="disabled" value="　提交　" />
+	</div>
+</form>
+<form action="/place_report/{$info[id]}/" class="modal hide form-horizontal" id="place-report-form-info">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" >&times;</a>
+		<h3>请协助我们重新确定地点信息</h3>
+    </div>
+    <div class="modal-body">
+	    <div class="control-group">
+			<label class="control-label" for="place_name">地点名</label>
+			<div class="controls">
+		        <input type="text" class="input-xlarge" name="place_name" value="{$info[placename]}" data-source="{$info[placename]}" id="place_name">
+			</div>
+		</div>
+	    <div class="control-group">
+			<label class="control-label" for="place_address">地址</label>
+			<div class="controls">
+		        <input type="text" class="input-xlarge" name="place_address" value="{$info[address]}" data-source="{$info[address]}" id="place_address">
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<input type="hidden" name="type" value="3" />
+		<a href="javascript:void(0);" class="btn" data-dismiss="modal">关闭</a>
+		<input type="submit" class="btn btn-primary" data-loading-text="　……　" value="　提交　" />
+	</div>
+</form>
+<form action="/place_report/{$info[id]}/" class="modal hide form-horizontal" id="place-report-form-other">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" >&times;</a>
+		<h3>请在这写下您遇到的具体问题</h3>
+    </div>
+    <div class="modal-body">
+	    <div class="control-group">
+			<label class="control-label" for="input01">详细描述</label>
+			<div class="controls">
+		        <textarea name="content" rows="3" cols="80" class="input-xlarge"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<input type="hidden" name="type" value="0" />
+		<a href="javascript:void(0);" class="btn" data-dismiss="modal">关闭</a>
+		<input type="submit" class="btn btn-primary" data-loading-text="　……　" value="　提交　" />
+	</div>
+</form>

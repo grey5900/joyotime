@@ -1,0 +1,37 @@
+/*
+ * font variable
+ * 
+ */
+
+@font-face {
+  font-family: OpenSans-Light;
+  font-style:  normal;
+  font-weight: 300;
+  src: url("/font/OpenSans-Light.ttf");
+}
+
+@h: Helvetica,sans-serif,Arial;
+
+@yh:'Microsoft Yahei', "\5B8B\4F53", verdana, sans-serif;
+
+@font-g:Georgia;
+
+
+@ol:  OpenSans-Light,sans-serif,Arial;
+
+
+
+/* global */
+
+body#eng {
+  font-family: @ol;
+}
+body#chn {
+  font-family: @yh;
+}
+
+
+p {
+  font-weight: 100;
+  font-size: 1em;
+}

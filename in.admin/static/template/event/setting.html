@@ -1,0 +1,104 @@
+<style>
+	table{border:1px solid #dcdada;}
+	table tr{border:1px solid #dcdada;}
+	table tr td{border:1px solid #dcdada;padding:2px 4px;}
+</style>
+<div class="pageContent">
+
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+			<table width="100%" cellspacing="4" cellpadding="4">
+				<tbody>
+					<tr><td colspan="3">POST设置</td></tr>
+					<tr>
+						<td width="10" rowspan="3"></td>
+						<td width="30%"><input type="checkbox" name="item[]" value="allow_post"<!--{if !empty($conf[allow_post])}--> checked="checked"<!--{/if}-->/>参与活动的POST</td>
+						<td>
+					<!-- 		<input type="checkbox" name="allow_post[]" value="1"<!--{if !empty($conf[allow_post]) && in_array(1, $conf[allow_post])}--> checked="checked"<!--{/if}-->/>签到  -->
+							<input type="checkbox" name="allow_post[]" value="2"<!--{if !empty($conf[allow_post]) && in_array(2, $conf[allow_post])}--> checked="checked"<!--{/if}-->/>点评 
+							<input type="checkbox" name="allow_post[]" value="3"<!--{if !empty($conf[allow_post]) && in_array(3, $conf[allow_post])}--> checked="checked"<!--{/if}-->/>图片
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="item[]" value="keyword"<!--{if !empty($conf[keyword])}--> checked="checked"<!--{/if}-->/>筛选POST的关键词</td>
+						<td><input type="text" name="keyword" size="30" value="{$conf[keyword]}" /><span class="info">用于判定是否参与了活动及展示FEED到前台的内容关键词</span></td>
+					</tr>
+					<!-- <tr>
+						<td><input type="checkbox" name="item[]" value="old_event"<!--{if !empty($conf[old_event])}--> checked="checked"<!--{/if}-->/>关联活动ID</td>
+						<td><input type="text" name="old_event" size="20" value="{$conf[old_event]}" /></td>
+					</tr> -->
+					<tr><td colspan="3">报名设置</td></tr>
+					<tr>
+						<td rowspan="2"></td>
+						<td><input type="checkbox" name="item[]" value="must_apply"<!--{if !empty($conf[must_apply]) && $conf[must_apply]}--> checked="checked"<!--{/if}-->/>必须报名</td>
+						<td><input type="checkbox" name="item[]" value="apply_for_tag"<!--{if !empty($conf[apply_for_tag]) && $conf[apply_for_tag]}--> checked="checked"<!--{/if}-->/>必须选择TAG</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="item[]" value="follow_brand"<!--{if !empty($conf[follow_brand]) && !empty($conf[follow_brand])}--> checked="checked"<!--{/if}-->/>必须关注品牌</td>
+						<td><input type="text" class="number" name="follow_brand" value="{$conf[follow_brand]}" /><span class="info">必须关注的品牌ID</span></td>
+					</tr>
+					<tr><td colspan="3">奖励设置</td></tr>
+					<tr>
+						<td width="10" rowspan="7"></td>
+						<td><input type="checkbox" name="item[]" value="prize"<!--{if !empty($conf[prize]) && $conf[prize]}--> checked="checked"<!--{/if}-->/>是否抽奖</td>
+						<td><input type="checkbox" name="item[]" value="prize_log"<!--{if !empty($conf[prize_log]) && $conf[prize_log]}--> checked="checked"<!--{/if}-->/>是否记录抽奖日志</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="item[]" value="prize_day"<!--{if !empty($conf[prize_day]) && $conf[prize_day]}--> checked="checked"<!--{/if}-->/>设置抽奖持续天数</td>
+						<td><input type="text" name="prize_day" value="{$conf[prize_day]}" /><span class="info">抽奖进行多长时间</span></td>
+					</tr>
+					<tr><td colspan="2"><input type="checkbox" name="item[]" value="prize_freq"<!--{if !empty($conf[prize_freq]) && $conf[prize_freq]}--> checked="checked"<!--{/if}-->/>设置抽奖频率</td></tr>
+					<tr><td width="40" style="padding-left:3em;">抽奖次数</td><td><input type="text" name="prize_freq[]" value="{$conf[prize_freq][0]}" /><span class="info">用户在一个抽奖周期内能抽几次奖</span></tr>
+					<tr><td width="40" style="padding-left:3em;">抽奖周期</td><td><input type="text" class="number" name="prize_freq[]" value="{$conf[prize_freq][1]}" /><span class="info">多久能开始新的抽奖</span></td></tr>
+					<tr>
+						<td style="padding-left:3em;">周期单位</td>
+						<td>
+							<input type="radio" name="prize_freq[]" value="h"<!--{if $conf[prize_freq][2] === 'h'}--> checked="checked"<!--{/if}-->/>小时 
+							<input type="radio" name="prize_freq[]" value="d"<!--{if $conf[prize_freq][2] === 'd'}--> checked="checked"<!--{/if}-->/>天 
+							<input type="radio" name="prize_freq[]" value="m"<!--{if $conf[prize_freq][2] === 'm'}--> checked="checked"<!--{/if}-->/>月 
+							<input type="radio" name="prize_freq[]" value="y"<!--{if $conf[prize_freq][2] === 'y'}--> checked="checked"<!--{/if}-->/>年 
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="checkbox" name="item[]" value="gen_prize_list"<!--{if !empty($conf[gen_prize_list]) && $conf[gen_prize_list]}--> checked="checked"<!--{/if}-->/>抽奖随机投放奖品<br/><span class="info"> 会按天生成奖品清单</span></td>
+					</tr>
+					<tr><td colspan="3">中奖设置</td></tr>
+					<tr>
+						<td rowspan="2"></td>
+						<td><input type="checkbox" name="item[]" value="can_winning"<!--{if !empty($conf[can_winning])}--> checked="checked"<!--{/if}-->/>中奖次数</td>
+						<td><input type="text" name="can_winning" value="{$conf[can_winning]}" /><span class="info">一个用户可以中几次奖</span></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="item[]" value="max_index"<!--{if !empty($conf[max_index])}--> checked="checked"<!--{/if}-->/>中奖率基数</td>
+						<td><input type="text" name="max_index" value="{$conf[max_index]}" class="number" /><span class="info">基数越大，中奖几率越小</span></td>
+					</tr>
+					<tr><td colspan="3">地点设置</td></tr>
+					<tr>
+						<td></td>
+						<td><input type="checkbox" name="item[]" value="place_id"<!--{if !empty($conf[place_id])}--> checked="checked"<!--{/if}-->/>活动地点</td>
+						<td><input type="text" name="place_id" value="{$conf[place_id]}" /><span class="info">多个地点ID用半角逗号分隔</span></td>
+					</tr>
+					<tr><td colspan="3">显示设置</td></tr>
+					<tr>
+						<td></td>
+						<td><input type="checkbox" name="item[]" value="template"<!--{if !empty($conf[template])}--> checked="checked"<!--{/if}-->/>网页模板前缀</td>
+						<td><input type="text" name="template" value="{$conf[template]}" /><span class="info">不设置的话默认会以活动ID作为模板前缀</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>		
+		<!--{loop $conf[prize_role] $pid $arr}-->	
+		<input type="hidden" name="role_pid[]" value="{$pid}" />
+		<input type="hidden" name="role_max[]" value="{$arr[max]}" />
+		<!--{/loop}-->
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+
+</div>

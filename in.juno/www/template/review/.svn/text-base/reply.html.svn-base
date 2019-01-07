@@ -1,0 +1,25 @@
+<div class="reply-list" id="reply_list" data-pid="{$post[id]}"  data-type="{echo $post[type]==2 ? 'tip':'image';}">
+  <div class="reply-box">
+    <p>回复</p>
+    <textarea id="reply-write" class="reply-write" maxlength="140" rows="3" name="content" placeholder="回复内容..."></textarea>
+
+    <div class="response">
+       <input id="review_post" data-pid="{$post[id]}" data-type="{echo $post[type]==2 ? 'tip':'image';}" class="btn btn-danger" type="button" value="　回复　" data-loading-text="　……　">
+    </div>
+  </div>
+  <ul id="reply-li" class="reply-li">
+     <!--{loop $list $k $v}-->
+     <li>
+       <a href="/user/{$v[s_uid]}" class="avatar"><img src="{$v[s_avatar]}" alt="{$v[s_name]}"></a>
+       <div class="msg">{$v[content]}</div>
+       <p class="response">
+         <span class="action">
+           <a class="reply_to" data-pid="{$v[itemId]}" data-id="{$v[id]}" data-ruid="{$v[s_uid]}" data-ruser="{$v[s_name]}" data-type="reply" href="javascript:;">回复</a>
+         </span>
+         <span>{$v[createDate]}</span>
+       </p>
+     </li>
+     <!--{/loop}-->
+  </ul>
+  {$paginate}
+</div>

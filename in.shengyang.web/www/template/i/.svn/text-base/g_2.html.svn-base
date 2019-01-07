@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="zh_cn" name="language">
+		<title>每日启动IN沈阳</title>
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}">
+		<script type="text/javascript" src="/static/js/jquery.min.js?{$version}"></script>
+	</head>
+	<body>
+		<div id="container">
+			<div class="container">
+				<div class="lumps">
+					<div class="lump">
+						<div class="item">
+							<div class="item-content">
+								<div class="daily">
+									<div class="tit">
+										<h3>已连续启动<span>{echo intval($user['continuousConnectDays'])}</span>天</h3>
+									</div>
+									<ul>
+										<li class="{if $user['continuousConnectDays'] > 1}bak{elseif $user['continuousConnectDays'] == 1}ing{else}{/if}">
+											<span>连续一天</span>
+											<span class="jf">最高<em>20</em>积分</span>
+										</li>
+										<li class="{if $user['continuousConnectDays'] > 2}bak{elseif $user['continuousConnectDays'] == 2}ing{else}{/if}">
+											<span>连续两天</span>
+											<span class="jf">最高<em>30</em>积分</span>
+										</li>
+										<li class="{if $user['continuousConnectDays'] > 3}bak{elseif $user['continuousConnectDays'] == 3}ing{else}{/if}">
+											<span>连续三天</span>
+											<span class="jf">最高<em>40</em>积分</span>
+										</li>
+										<li class="{if $user['continuousConnectDays'] > 4}bak{elseif $user['continuousConnectDays'] == 4}ing{else}{/if}">
+											<span>连续四天</span>
+											<span class="jf">最高<em>50</em>积分</span>
+										</li>
+										<li class="{if $user['continuousConnectDays'] > 5}bak{elseif $user['continuousConnectDays'] == 5}ing{else}{/if}">
+											<span>连续五天</span>
+											<span class="jf">最高<em>60</em>积分</span>
+										</li>
+										<li class="{if $user['continuousConnectDays'] > 6}bak{elseif $user['continuousConnectDays'] == 6}ing{else}{/if}">
+											<span>连续六天</span>
+											<span class="jf">最高<em>70</em>积分</span>
+										</li>
+										<li class="{if $user['continuousConnectDays'] >= 7}ing{else}{/if}">
+											<span>一周全勤</span>
+											<span class="jf">最高<em>80</em>积分</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

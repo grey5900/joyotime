@@ -1,0 +1,547 @@
+textarea[disabled],
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="date"][disabled],
+input[type="month"][disabled],
+input[type="time"][disabled],
+input[type="week"][disabled],
+input[type="number"][disabled],
+input[type="email"][disabled],
+input[type="url"][disabled],
+input[type="search"][disabled] {
+  color: #999;
+}
+
+textarea,
+.uneditable-textarea {
+  height: 60px;
+}
+
+textarea[rows="1"],
+.uneditable-textarea[rows="1"] {
+  height: 40px;
+}
+
+textarea[rows="2"],
+.uneditable-textarea[rows="2"] {
+  height: 60px;
+}
+
+textarea[rows="3"],
+.uneditable-textarea[rows="3"] {
+  height: 80px;
+}
+
+textarea[rows="4"],
+.uneditable-textarea[rows="4"] {
+  height: 100px;
+}
+
+textarea[rows="5"],
+.uneditable-textarea[rows="5"] {
+  height: 120px;
+}
+
+textarea[rows="6"],
+.uneditable-textarea[rows="6"] {
+  height: 140px;
+}
+
+textarea[rows="7"],
+.uneditable-textarea[rows="7"] {
+  height: 160px;
+}
+
+textarea[rows="8"],
+.uneditable-textarea[rows="8"] {
+  height: 180px;
+}
+
+textarea[rows="9"],
+.uneditable-textarea[rows="9"] {
+  height: 200px;
+}
+
+textarea[rows="10"],
+.uneditable-textarea[rows="10"] {
+  height: 220px;
+}
+
+textarea[rows="11"],
+.uneditable-textarea[rows="11"] {
+  height: 240px;
+}
+
+textarea[rows="12"],
+.uneditable-textarea[rows="12"] {
+  height: 260px;
+}
+
+textarea[rows="13"],
+.uneditable-textarea[rows="13"] {
+  height: 280px;
+}
+
+textarea[rows="14"],
+.uneditable-textarea[rows="14"] {
+  height: 300px;
+}
+
+textarea[rows="15"],
+.uneditable-textarea[rows="15"] {
+  height: 320px;
+}
+
+textarea[rows="16"],
+.uneditable-textarea[rows="16"] {
+  height: 340px;
+}
+
+textarea[rows="17"],
+.uneditable-textarea[rows="17"] {
+  height: 360px;
+}
+
+textarea[rows="18"],
+.uneditable-textarea[rows="18"] {
+  height: 380px;
+}
+
+textarea[rows="19"],
+.uneditable-textarea[rows="19"] {
+  height: 400px;
+}
+
+textarea[rows="20"],
+.uneditable-textarea[rows="20"] {
+  height: 420px;
+}
+
+textarea[rows="21"],
+.uneditable-textarea[rows="21"] {
+  height: 440px;
+}
+
+textarea[rows="22"],
+.uneditable-textarea[rows="22"] {
+  height: 460px;
+}
+
+textarea[rows="23"],
+.uneditable-textarea[rows="23"] {
+  height: 480px;
+}
+
+textarea[rows="24"],
+.uneditable-textarea[rows="24"] {
+  height: 500px;
+}
+
+textarea[rows="25"],
+.uneditable-textarea[rows="25"] {
+  height: 520px;
+}
+
+textarea[rows="26"],
+.uneditable-textarea[rows="26"] {
+  height: 540px;
+}
+
+textarea[rows="27"],
+.uneditable-textarea[rows="27"] {
+  height: 560px;
+}
+
+textarea[rows="28"],
+.uneditable-textarea[rows="28"] {
+  height: 580px;
+}
+
+textarea[rows="29"],
+.uneditable-textarea[rows="29"] {
+  height: 600px;
+}
+
+textarea[rows="30"],
+.uneditable-textarea[rows="30"] {
+  height: 620px;
+}
+
+textarea[rows="35"],
+.uneditable-textarea[rows="35"] {
+  height: 720px;
+}
+
+textarea[rows="40"],
+.uneditable-textarea[rows="40"] {
+  height: 820px;
+}
+
+textarea[rows="45"],
+.uneditable-textarea[rows="45"] {
+  height: 920px;
+}
+
+textarea[rows="50"],
+.uneditable-textarea[rows="50"] {
+  height: 1020px;
+}
+
+textarea[rows="55"],
+.uneditable-textarea[rows="55"] {
+  height: 1120px;
+}
+
+textarea[rows="60"],
+.uneditable-textarea[rows="60"] {
+  height: 1220px;
+}
+
+textarea[rows="65"],
+.uneditable-textarea[rows="65"] {
+  height: 1320px;
+}
+
+textarea[rows="70"],
+.uneditable-textarea[rows="70"] {
+  height: 1420px;
+}
+
+textarea[rows="75"],
+.uneditable-textarea[rows="75"] {
+  height: 1520px;
+}
+
+textarea[rows="80"],
+.uneditable-textarea[rows="80"] {
+  height: 1620px;
+}
+
+textarea[rows="85"],
+.uneditable-textarea[rows="85"] {
+  height: 1720px;
+}
+
+textarea[rows="90"],
+.uneditable-textarea[rows="90"] {
+  height: 1820px;
+}
+
+textarea[rows="95"],
+.uneditable-textarea[rows="95"] {
+  height: 1920px;
+}
+
+textarea[rows="100"],
+.uneditable-textarea[rows="100"] {
+  height: 2020px;
+}
+a{ 
+  text-decoration:none;
+}
+.slect-uploadify{
+  display: block;
+  position: relative;
+  width: 170px;
+  height: 60px;
+  overflow: hidden;
+  border: 1px solid #EBEBEB;
+  background: #F3F3F3 url("../img/upload.jpg") 0 0 no-repeat;
+  cursor: pointer;
+  text-align: center;
+}
+.slect-img{
+  display: block;
+  position: relative;
+  width: 72px;slect-img
+  height: 30px;
+  overflow: hidden;
+  border: 1px solid #EBEBEB;
+  background: #F3F3F3;
+  cursor: pointer;
+  text-align: center;
+}
+.slect-img img{
+  width: 60px;
+  height: 60px;
+}
+.slect-img span {
+  display: block;
+  line-height: 30px;  
+}
+.slect-uploadify span{ 
+  display: block;
+  line-height: 60px;
+}
+.slect-img span {
+  display: block;
+  line-height: 30px; 
+  color: #666;
+  font-weight: bold; 
+}
+.filePrew {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  line-height: 60px;
+  font-size: 100px; /* 增大不同浏览器的可点击区域 */
+  opacity: 0; /* 实现的关键点 */
+  filter:alpha(opacity=0) \9;/* 兼容IE */
+  *filter:alpha(opacity=0);/* 兼容IE7 */
+  *margin-top: 4px;
+}
+.imgPrew{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 50px; /* 增大不同浏览器的可点击区域 */
+  opacity: 0; /* 实现的关键点 */
+  filter:alpha(opacity=0) \9;/* 兼容IE */
+  *filter:alpha(opacity=0);/* 兼容IE7 */
+  *margin-top: 4px;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+  cursor: pointer;
+} 
+.btn-file span {
+  display: block;
+}
+.btn-file input {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  border-width: 0 0 100px 200px;
+  background: transparent;
+  border: 0;
+  display: block;
+  left: 0;
+  top: 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 100px; /* 增大不同浏览器的可点击区域 */
+  opacity: 0; /* 实现的关键点 */
+  filter:alpha(opacity=0);/* 兼容IE */
+  *margin-top: 4px;
+}
+.fileupload {
+  clear: both;
+  display: inline-block;
+  margin-bottom: 9px;
+}
+
+.fileupload .uneditable-input {
+  display: inline-block;
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+  margin-bottom: 0;
+  vertical-align: middle;
+  cursor: text;
+}
+
+.fileupload .thumbnail {
+  display: inline-block;
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.fileupload .thumbnail > img {
+  display: inline-block;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+.fileupload .btn {
+  vertical-align: middle;
+}
+.fileupload-preview .btn {
+  width: 58px;
+  margin-top: 10px;
+}
+.fileupload-exists .fileupload-new,
+.fileupload-new .fileupload-exists {
+  font-size: 12px;
+  text-align: center;
+  line-height: 16px;
+  cursor: pointer;
+  width: 60px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #000000 \9;
+  filter: alpha(opacity=60);
+  display: block;
+}
+.filupload-move {
+  font-size: 12px;
+  text-align: center;
+  line-height: 16px;
+  cursor: pointer;
+  width: 80px;
+  position: absolute;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #000000 \9;
+  filter: alpha(opacity=60);
+  display: block;
+  margin-top: 70px;
+}
+.filupload-del {
+  font-size: 12px;
+  text-align: center;
+  line-height: 16px;
+  cursor: pointer;
+  width: 70px;
+  position: absolute;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #000000 \9;
+  filter: alpha(opacity=60);
+  display: block;
+  margin-top: -26px;
+}
+a.filupload-del,
+a.fileupload-exists,
+a.filupload-move {
+  color: #C4CCD7;
+}
+a.filupload-del:hover,
+a.fileupload-exists:hover,
+a.filupload-move:hover {
+  color: #fff;
+}
+.fileupload-add {
+  color: #fff;
+}
+.fileupload .fileupload-preview {
+  float:left;
+  margin: 0 20px 0 0;
+}
+.fileupload .fileupload-info {
+  margin-left: 110px;
+}
+.imgareaselect-border1 {
+  background: url(/img/border-v.gif) repeat-y left top;
+}
+
+.imgareaselect-border2 {
+    background: url(/img/border-h.gif) repeat-x left top;
+}
+
+.imgareaselect-border3 {
+    background: url(/img/border-v.gif) repeat-y right top;
+}
+
+.imgareaselect-border4 {
+    background: url(/img/border-h.gif) repeat-x left bottom;
+}
+
+.imgareaselect-border1, .imgareaselect-border2,
+.imgareaselect-border3, .imgareaselect-border4 {
+    filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
+.imgareaselect-handle {
+    background-color: #fff;
+    border: solid 1px #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.imgareaselect-outer {
+    background-color: #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.imgareaselect-selection {  
+}
+.imgs{
+  *zoom: 1;
+  display: inline-block;
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+  clear: both;
+  margin:0;
+  padding:0;
+  height: auto;
+}
+.imgs li{
+  margin-right:10px;
+  padding:1px;
+  float:left;
+  margin-bottom: 10px;
+}
+.up-pic {
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  width: 360px;
+  border: solid 2px #eef1e6;
+  background: #fff;
+  padding: 1em;
+}
+.up-pic #div_upload_big {
+  width: 360px;
+}
+.up-pic #div_upload_big img {
+  max-width: none;
+}
+.show-pic {
+  float: left;
+  width: 190px;
+  border: solid 2px #eef1e6;
+  background: #ffffff;
+  padding: 1em;
+}
+.show-pic #preview {
+  width: 190px;
+  overflow: hidden;
+}
+.show-pic #preview img {
+  width: 190px;
+  max-width: none;
+}
+#upload_thumb {
+  display: block;
+}
+.uploads-img {
+  width:360px;
+}
+.uploads-img > ul {
+  margin: 0;
+}
+
+.thumbnail-borderless .thumbnail {
+  padding: 0;
+  border: none;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+.modal form {
+  margin-bottom: 0;
+}

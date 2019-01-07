@@ -1,0 +1,91 @@
+<form id="pagerForm" method="post" action="{$current_page}">
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="<!--{{param.orderField}}-->" />
+	<input type="hidden" name="orderDirection" value="<!--{{param.orderDirection}}-->" />
+</form>
+
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:50px;">
+				<label>搜索：</label>
+				
+			</li>
+			<li>
+			<input type="text" name="keywords" value="{$keywords}"/>
+			</li>
+			<li style="width:auto"><label>状态：</label>
+				<input type="radio" name="status" value=0 <!--{if $status===0 || $status==='0'}-->checked="checked"<!--{/if}--> />不显示
+				<input type="radio" name="status" value=1 <!--{if $status==1}-->checked="checked"<!--{/if}--> />显示
+			</li>
+			
+			
+		</ul>
+		
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+		
+			<li><div class="button"><div class="buttonContent"><button type="button" Lookup="ids" warn="请选择宝贝">选择带回</button></div></div></li>
+	
+		
+		</ul>
+	</div>
+	<table class="list" width="1200" layoutH="138">
+		<thead>
+			<tr>
+				<th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+				<th width="20" >ID</th>
+				<th width="40" >宝贝姓名</th>
+				<th width="40" >照片</th>
+				<th width="10" >状态</th>
+				<th width="40" >基本信息</th>
+				<th width="30" >简介</th>
+				<th width="40" >支持数</th>
+				<th width="40" >点击量</th>
+				<th width="30">上传日期</th>
+				<th width="30">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!--{loop $list $k $v}-->
+			<tr target="id" rel="{$v['id']}">
+				<td><input name="ids" value="{$v['id']}" type="checkbox"></td>
+				<td>{$v['id']}</td>
+				<td>{$v['name']}</td>
+				<td><img src="{$v['thumb']}" width=100/></td>
+				<td>{eval echo $v['status']==0 ? "不显示":( $v['status']==1 ? "显示" : "删除" )}</td>
+				<td>{eval echo $v['gender']?"男":"女"} {$v['birth']} {$v['blood']} {$v['height']}cm {$v['hometown']} {$v['constellation']}</td>
+				<td>{$v['summary']}</td>
+				<td>{$v['surport']}</td>
+				<td>{$v['hits']}</td>
+				<td>{$v['createDate']}</td>
+
+				
+				<td>
+					<a title="删除将是永久不可逆的，删除后无法找回，确认？" target="ajaxTodo" href="babyclock/delete/id/{$v['id']}"  class="btnDel">删除</a>
+					<a title="编辑" target="navTab" href="babyclock/addbaby/id/{$v['id']}" class="btnEdit">编辑</a>
+				</td>
+				
+			</tr>
+		<!--{/loop}-->
+			
+			
+		</tbody>
+	</table>
+	
+	<!--{template main/page_bar}-->
+	
+</div>

@@ -1,0 +1,75 @@
+<!--{eval $page_id = 'add_global_message';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>
+                    消息内容：
+                </dt>
+                <dd>
+                    <textarea id="content" name="content" cols="80" rows="12" class="required" alt="汉字50个"></textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    消息连接：
+                </dt>
+                <dd>
+                    <!--{template main/link_page}-->
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    到期时间：
+                </dt>
+                <dd>
+                    <input type="text" readonly="readonly" id="expired_date" name="expired_date" class="required date" format="yyyy-MM-dd HH:mm:ss" />
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick="onsubmitGlobalMessageAdd()">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function onsubmitGlobalMessageAdd() {
+        var form = $("form", $("#add_global_message"));
+        if (!form.valid()) {
+            return false;
+        }
+        
+        alertMsg.confirm("请仔细检查发送全局消息是否正确哦，提交了不能修改的，您确定么？", {
+            okCall : function() {
+                $.ajax({
+                    type: 'POST',
+                    url:form.attr("action"),
+                    data:form.serializeArray(),
+                    dataType:"json",
+                    cache: false,
+                    success: navTabAjaxDone,
+                    error: DWZ.ajaxError
+                });
+            }
+        });
+    }
+</script>

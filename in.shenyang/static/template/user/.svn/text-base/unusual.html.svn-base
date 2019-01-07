@@ -1,0 +1,33 @@
+<div class="pageContent">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>7日内积分增长排行</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>7日内经验值增长排行</span></a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="unusual_point" class="unitBox">
+                    {eval echo include_file(site_url(array('user', 'unusual_point')));}
+                </div>
+            </div>
+            <div>
+                <div id="unusual_exp" class="unitBox">
+                    {eval echo include_file(site_url(array('user', 'unusual_exp')));}
+                </div>
+            </div>
+            
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

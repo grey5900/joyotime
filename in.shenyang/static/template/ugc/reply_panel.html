@@ -1,0 +1,39 @@
+<script type="text/javascript">
+	function get_first_vest(){
+		var url = "{eval echo site_url(array('ugc','reply','get_frist_vest'));}";
+		$.getJSON(url, function(data){
+			$("#vid").val(data.id);
+			$("#vname").val(data.nickname);
+		});
+	}
+</script>
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent">
+		<table width="100%" layoutH="60" cellspacing="4" cellpadding="4">
+			<tbody>
+				<tr>
+					<td width="100" align="center" valign="top">内容</td>
+					<td valign="top" colspan="3"><textarea name="content" cols="50" rows="10" class="required"></textarea></td>
+				</tr>
+				<tr height="40">
+					<td align="center">马甲</td>
+					<td><input type="radio" name="vest" value="random"{if !isset($vest)||empty($vest)} checked="checked"{/if}/> 随机选择</td>
+					<td><input type="radio" name="vest" value="check"{if isset($vest)&&!empty($vest)} checked="checkde"{/if} onclick="get_first_vest();"/> 指定</td>
+					<td>
+						<input type="hidden" id="vid" name="v.id" value="{$vest[id]}"/>
+						<input type="text" id="vname" name="v.username" value="{$vest[name]}" size="20" readonly />
+						<a class="btnLook" href="{eval echo site_url(array('ugc','post','listvest'));}/tmp/vest1" lookupGroup="v">查找带回</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">回复</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>

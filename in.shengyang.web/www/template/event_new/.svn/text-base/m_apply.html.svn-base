@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>{$event['subject']}</title>
+    <link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" />
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/mobile.min.js?v={$version}"></script>
+    <script type="text/javascript">
+    <!--{if $uid}-->
+    var online_id = {$uid};
+    <!--{else}-->
+    var online_id = 0;
+    <!--{/if}-->
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="container">
+        <div class="lumps">
+    		<div class="top">
+	          <a href="/event_new/m_index/{$event['id']}"><img src="{$event['banner']}" /></a>
+	        </div>
+	        <div class="title">
+	          <h3>报名参加</h3>
+	        </div>
+        	<div class="lump">
+		        <div class="apply">
+		          <form action="mobile_apply_submit" method="get" name="signup_form" id="mobile_apply_submit">
+		          	
+		            <!--{loop $event['properties'] $k $row}-->
+		            <div class="control-group">
+		              <label for="">{$row['label']}：</label>
+		              <input type="text" {if $row['req']} class="required"  {/if} name="{$row['label']}" value="" id="input{$k}" placeholder="{$row['tip']}"/> 
+		              {if $row['req']}<span>*</span>{/if}
+		            </div>
+		            <!--{/loop}-->
+		            <div class="from-actions">
+		              <input class="btn" type="submit" value="提交报名表" data-id="{$event['id']}" data-type="1" data-loading-text="　报名中……　" id="event-enter-btn" />
+		            </div>
+		          </form>
+		        </div>
+		        <div class="footer">
+			        <p>
+			          IN沈阳
+			        </p>
+		      </div>
+        	</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

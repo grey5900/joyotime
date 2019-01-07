@@ -1,0 +1,70 @@
+<div class="pageContent">
+	<div class="pageFormContent" layoutH="97">
+		<ul class="tree treeFolder treeCheck expand" id="cat_tree_ul">
+			{loop $list $key $value}
+			<li>
+				<!--  <a tname="cid" tvalue="{$value['id']}">{$value[content]}</a>
+				<input type="hidden" value="{$value[content]}" name="cname_{$value['id']}">
+				-->
+				<a href="javascript:;" >{$value[content]}</a>
+				{if isset($value[children]) && !empty($value[children])}
+				<ul>
+				{loop $value[children] $k $val}
+				<li><a tname="cid" tvalue="{$val['id']}">{$val[content]}</a></li>
+				<input type="hidden" value="{$val[content]}" name="cname_{$val['id']}">
+				{/loop}
+				</ul>
+				{/if}
+			</li>
+			{/loop}
+		</ul>
+	</div>
+	
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" id="cat_tree_btn" warn="请选择分类">确定</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+
+	$("#cat_tree_btn").on("click", function(){
+		var args={};
+		$("input[name=cid]", "#cat_tree_ul").filter(":checked").each(function(){
+			var id = $(this).val();
+			var name = $("input[name=cname_" + id + "]").val();
+			args["id"] = (args["id"]?(args["id"]+","):"") + id;
+			args["name"] = (args["name"]?(args["name"]+","):"") + name;
+		});
+		
+		if ($.isEmptyObject(args)) {
+			alertMsg.error($(this).attr("warn") || DWZ.msg("alertSelectMsg"));
+			return false;
+		}
+		$.bringBack(args);
+	});
+});
+
+var checkFunc = setInterval(function(){
+	var all_cids = $("input[name=cid]", "#cat_tree_ul");
+	if (all_cids.length>0) {
+		var checked_cids = $("#placeCategory_id").val().split(",");
+		cancelFunc();
+		for (var key in checked_cids) {
+			var cid = checked_cids[key];
+			$("input[name=cid]", "#cat_tree_ul").each(function(){
+				var id = $(this).val();
+				if (id == cid) {
+					$(this).click();
+				}
+			});
+		}
+	}
+}, 500);
+
+function cancelFunc() {
+	clearInterval(checkFunc);
+}
+</script>

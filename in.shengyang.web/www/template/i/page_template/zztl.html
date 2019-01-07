@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>追踪天路,拼图夺画</title>
+	<link rel="stylesheet" href="/static/skin/mobile_pages_style.css?{$version}" type="text/css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+	<script type="text/javascript">
+	<!--{if $uid}-->
+	var online_id = {$uid};
+	<!--{else}-->
+	var online_id = 0;
+	<!--{/if}-->
+	</script>
+	<style type="text/css" media="screen">
+		body {background: #241a0e;}
+		.page-template .top {-webkit-box-shadow: none;-moz-box-shadow: none;-ms-box-shadow: none;box-shadow: none;}
+		.page-template .lump ul,.page-template .lump button{position:relative;top:-50px}
+		.page-template .lump{margin:0 auto;width:100%;min-height:200px;text-align:center}
+		.page-template .lump p{color:#fff;font-size:.875em;display:block;margin:0 10px 10px;padding:5px 0 0;text-align:left;text-shadow:1px 1px 0 #643014}
+		.page-template .lump ul{width:300px;margin:0 auto}
+		.page-template .lump li{width:23%;display:inline-block;margin:0;padding:0}
+		.page-template .lump ul.small {padding:10px 10px 5px;}
+		.page-template .lump ul.small li {width:20%;display:inline-block;margin:0;padding:0}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="page-template">
+			<div class="lumps">
+				<div class="top">
+					<img src="/static/m_img/zztl/top2zn.jpg" alt="" />
+					
+				</div>
+				<div class="lump">
+					<button class="{if $status=='兑换已结束'}button-default{else}button{/if}">{$status}</button>
+					<ul class="clearfix small">
+						<li><img width="95%" src="/static/m_img/props/icon1@2x.png" alt="" /></li>
+						<li><img width="95%" src="/static/m_img/props/icon2@2x.png" alt="" /></li>
+						<li><img width="95%" src="/static/m_img/props/icon3@2x.png" alt="" /></li>
+						<li><img width="95%" src="/static/m_img/props/icon4@2x.png" alt="" /></li>
+					</ul>
+					<ul class="clearfix">
+						<li><img width="100%" src="/static/m_img/props/icon5@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon6@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon7@2x.png" alt="" /></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="item_modal_done" class="modal">
+		<div class="modal-header">
+		  <h2>兑换成功</h2>
+		  <a class="modal-close" href="javascript:;"></a>
+		</div>
+		<div class="modal-body">
+			<div class="modal-media">
+				<div class="pull-left">
+					<img src="/static/m_img/modal-correct.png" alt="" width="44px" />
+				</div>
+				<div class="media-body">
+				 	<span>兑换成功，请检查您的通知消息</span>
+				</div>
+			</div>
+			<div class="modal-button">
+			  <a href="javascript:;" class="button-gray modal-shut">关闭</a>
+			</div>
+		</div>
+	</div>
+	<div id="item_modal" class="modal">
+		<div class="modal-header">
+		  <h2>兑换失败</h2>
+		  <a class="modal-close" href="javascript:;"></a>
+		</div>
+		<div class="modal-body">
+			<div class="modal-media">
+				<div class="pull-left">
+					<img src="/static/m_img/modal-wrong.png" alt="" width="44px" />
+				</div>
+				<div class="media-body">
+				 	<p></p>
+				</div>
+			</div>
+			<div class="modal-button">
+			  <a href="javascript:;" class="button-gray modal-shut">关闭</a>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" charset="utf-8">
+var over = '{$over}';
+$(function(){
+	$('.button').bind("click",function() {
+		if(!$.checkAuth()) { return false; }
+		$.getJSON("/api/zztl?uid={$uid}", function(json){
+			if (json.result_code == 0) {
+				$.messagerModal("#item_modal_done");
+			} else if (json.result_code == 13045) {
+				$('#item_modal p').text(json.result_msg);
+				$('.button').removeClass('button').addClass('button-default').text('兑换已结束').end();
+				$.messagerModal("#item_modal");
+				return true;
+			} else {
+				$('#item_modal p').text(json.result_msg);
+				$.messagerModal("#item_modal");
+			}
+		});
+	});
+});
+</script>
+</body>
+</html>

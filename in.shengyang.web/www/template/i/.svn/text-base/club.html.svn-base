@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<title>免责声明</title>
+	<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}" type="text/css" media="screen" charset="utf-8"/>
+</head>
+	<body>
+      <div id="container">
+		<div class="container">
+			<div class="lumps">
+				<div class="lump club">
+					<ul>
+						<li>
+								<span><h3>第一条：</h3>为维护IN沈阳社区秩序，推动IN沈阳社区健康发展，制定本规定；</span>
+						</li>
+							
+						<li>
+								<span><h3>第二条：</h3>IN沈阳社区宗旨</span>
+　　							<p>IN沈阳社区，是一个旨在为用户提供生活便利服务的平台，倡导用户发表优质内容，营造文明健康的交流氛围，促进用户间的交流；
+								</p>
+						</li>
+						<li>
+								<span><h3>第三条：</h3>IN沈阳所有参与者需遵守国家法律法规、IN沈阳社区相关规则及本规定，不得发表与IN沈阳社区宗旨相悖的言论；</span>
+						</li>
+						<li>
+								<span><h3>第四条：</h3>用户发表帖子存在以下内容，管理员删帖或封号、封设备（特指能够使用IN沈阳的智能手机或平板电脑）；</span>
+								<p>(一) 反动敏感言论、泄露国家秘密；煽动民族歧视；宣扬邪教和封建迷信；散布谣言、扰乱社会秩序的；<p />
+								<p>(二) 淫秽、色情、偷窥、偷拍、暴露或朦胧暴露三点之一及表情动作猥亵下流的；<p />
+								<p>(三) 血腥、暴力、赌博、犯罪或教唆犯罪、恐怖、恶心、变态观后易引人不适的图片；<p />
+								<p>(四) 具有商业性质，未经社区管理员许可的广告性质帖文(含电话、链接地址等)；<p />
+								<p>(五) 抄袭、剽窃，侵害他人合法权益的；<p />
+								<p>(六) 公开个人隐私(含真实姓名、各类证件号码、联系方式、地址等)资料的；<p />
+								<p>(七) 侮辱谩骂或诽谤他人，具有人身攻击性质的；<p />
+								<p>(八) 其他违反IN沈阳社区相关条例的帖子；<p />
+								<p>(九) 以下恶意刷分行为：</p>
+									<p>1.同一个设备，或不同设备（手机端或能够使用IN沈阳的平板电脑）注册多个小号，完成新手任务，集中向某一个账号赠送送刮刮卡，转移积分的行为；<p />
+								<p>2.账号与账号之间，大量赠送刮刮卡，其中赠送的账号不再使用IN沈阳，疑是转移积分的行为；<p />
+								<p>3.通过特殊技术手段，同一个设备注册多个小号，使用非正常邀请机制，使某一个账号集中赠加邀请积分的行为；<p />
+								<p>4.通过注册或使用多个小号，违背抢地主规则，恶意对某一个或多个地点进行抢地主刷积分行为；<p />
+								 </p>
+						</li>
+						<li>
+								<span><h3>第五条：</h3>本规定所涉及的内容，凡法律、行政法规，从其规定；</span>
+						</li>
+						<li>
+								<span><h3>第六条：</h3>本规定解释权归IN沈阳；</span>
+						</li>
+						<li>
+								<span><h3>第七条：</h3>本规定自公布之日起实施。</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+      </div>
+	</body>
+</html>

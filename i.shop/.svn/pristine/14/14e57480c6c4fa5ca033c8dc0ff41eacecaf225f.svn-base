@@ -1,0 +1,55 @@
+.menu .nav li a:focus,
+.menu .nav li a:hover {
+  	background: transparent url("../img/nav_focus.png") 0px 0px no-repeat;
+
+}
+.menu .nav .active a,
+.menu .nav .active a:active  {
+  background: transparent url("../img/nav_focus.png") 0px 0px no-repeat;
+}
+.nav-tabs .active a,
+.nav-tabs .active a:hover {
+  background: url("../img/tab_active.png") 0 0 no-repeat;
+}
+.nav-tabs .active-large a,
+.nav-tabs .active-large a:hover {
+  background: url("../img/tab_active_large.png") 0 0 no-repeat;
+}
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+  background: url("../img/navlist_active.png") 0 0 no-repeat;
+}
+.icon-sound {
+	background: transparent url("../img/icon-sound.png") 0 0 no-repeat;
+	display: block;
+	width: 25px;
+	height: 24px;
+}
+.icon-count {
+	background: transparent url("../img/icon-count.png") 0 0 no-repeat;
+	display: block;
+	width: 25px;
+	height: 24px;
+}
+.updown {
+	width: 24px;
+	height: 26px;
+	background:transparent url(/static/img/arrow_move.png) repeat-x scroll 0 -999em;
+	display:block;
+}
+.up-move {
+	.updown();
+	background-position: -37px -26px;
+}
+.down-move {
+	.updown();
+	background-position: 0px 0px;
+}
+.up-stop {
+	.updown();
+	background-position: -37px 0px;
+}
+.down-stop {
+	.updown();
+	background-position: 0px -26px;
+}

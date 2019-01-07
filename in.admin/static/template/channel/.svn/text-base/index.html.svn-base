@@ -1,0 +1,61 @@
+<div class="pageHeader">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type" class="combox">
+                        <option value="1"<!--{eval echo '1'==$type?' selected':''}-->>渠道名</option>
+                        <option value="2"<!--{eval echo '2'==$type?' selected':''}-->>渠道商名</option>
+                        <option value="3"<!--{eval echo '3'==$type?' selected':''}-->>渠道ID号</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="channel_index">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="dialog" height="350" title="添加渠道" rel="{eval echo build_rel(array('channel', 'add'))}" href="{eval echo site_url(array('channel', 'add'))}"><span>添加</span></a>
+            </li>
+            <li>
+                <a class="edit" target="dialog" height="350" title="编辑渠道" warn="请选择需要编辑的渠道" rel="{eval echo build_rel(array('channel', 'add'))}" href="{eval echo site_url(array('channel', 'edit', 'id'))}/<!--{{id}}-->"><span>修改</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="138">
+        <thead>
+            <tr>
+                <th width="10%">渠道ID号</th>
+                <th width="20%">渠道名</th>
+                <th width="20%">渠道商</th>
+                <th width="15%">合作时间</th>
+                <th width="10%">扣量比列</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['name']}</td>
+                <td>{$row['merchantName']}</td>
+                <td>{$row['startDate']}</td>
+                <td>{$row['ratio']}</td>
+                <td>{$row['remark']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

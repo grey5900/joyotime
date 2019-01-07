@@ -1,0 +1,55 @@
+{eval $page_rel='membercard_apply';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="title" value="{$title}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <input type="text" name="title" value="{$title}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="edit" target="navTab" warn="请选择会员卡" title="编辑会员卡" rel="{eval echo build_rel(array('membercard', 'edit'))}" href="{eval echo site_url(array('membercard', 'edit', 'id'))}/<!--{{id}}-->"><span>编辑</span></a>
+            </li>
+        </ul>
+    </div>
+    <table width="100%" class="table" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="15%">会员卡</th>
+                <th width="20%">提交品牌</th>
+                <th width="15%">提交时间</th>
+                <th width="20%">简介</th>
+                <th width="25%">详情</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['title']}</td>
+                <td>{$row['brand']}</td>
+                <td>{$row['createDate']}</td>
+                <td title="{$row['summary']}">{$row['summary']}</td>
+                <td title="{$row['content']}">{$row['content']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

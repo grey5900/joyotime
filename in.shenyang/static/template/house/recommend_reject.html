@@ -1,0 +1,38 @@
+<script type="text/javascript">
+function handle_reject(json) {
+	DWZ.ajaxDone(json);
+	if(json.statusCode == 200) {
+		$("#house_recommend_precheck_" + json.value.id).html("");
+		$.pdialog.closeCurrent();
+	}
+}
+</script>
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, handle_reject);">
+        <div class="pageFormContent" layoutH="58">
+            <textarea name="comment" rows="12" cols="75">你推荐的朋友不是该楼盘的有效新客户</textarea>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

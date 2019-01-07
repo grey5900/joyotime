@@ -1,0 +1,97 @@
+<!-- 地图 -->
+<div class="modal fade" id="showMap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-map">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">地图</h4>
+            </div>
+            <div class="modal-body">
+                <div id="map-modal" style="width: 778px;height: 430px;" data-lat="{$info['lat']}" data-lng="{$info['lng']}" >
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.modal -->
+<!-- 参团报名 -->
+<div class="modal fade" id="showJoin" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">参团报名</h4>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="" class="modal-form form-horizontal" id="ct-modal-form">
+                  <div class="alert alert-danger hide"></div>
+                  <input type="hidden" id="modal_type" value="0" />
+                  <div class="form-group">
+                    <div class="col-lg-12">
+                      <input type="text" class="form-control" name="tel" placeholder="请输入您的手机号码" maxlength=11>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-12">
+                      <input type="text" class="form-control" name="username" placeholder="请输入您的姓名" maxlength=20>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-12">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"  name="agreed" checked><a href="#">我同意成都团房使用电子协议</a>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-12">
+                      <button type="submit" data-loading-text="Loading..." class="btn btn-danger">立即报名</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /.modal -->
+<!-- 优惠报名 -->
+<div class="modal fade" id="showSela" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">优惠报名</h4>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="" class="modal-form form-horizontal" id="yh-modal-form">
+                    <div class="alert alert-danger hide"></div>
+                  <input type="hidden" id="modal_type" value="0" />
+                  <div class="form-group">
+                    <div class="col-lg-12">
+                      <input type="text" class="form-control"  name="tel" placeholder="请输入您的手机号码" maxlength=11 >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-12">
+                      <input type="text" class="form-control" name="username" placeholder="请输入您的姓名" maxlength=20>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-12">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="agreed" checked><a href="#">《成都团房使用电子协议》</a>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-12">
+                      <button type="submit" data-loading-text="Loading..." class="btn btn-danger">我想要优惠</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /.modal -->

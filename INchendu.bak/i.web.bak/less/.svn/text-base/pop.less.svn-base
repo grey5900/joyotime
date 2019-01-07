@@ -1,0 +1,18 @@
+.conment-reply{position:relative; margin:10px 0 0 0; padding:9px; border:1px @graySideDarker solid; background:@whiteText;zoom:1;height:100px;
+  .arrow{position:absolute;left:512px;top:-8px; width:11px; height:8px;background:url(/img/arrow.gif) no-repeat;}
+  .textarea{width:540px;}
+  .action{float:right;
+     .btn-primary{margin:0 0 0 5px;width:70px;}
+  }
+}
+
+.modal{
+  .modal-body{
+    h2{text-align: center;}
+  }
+  .modal-footer{
+    .del{ text-align: center;padding:0 10px;
+      input{width:70px;margin:0;}
+    }
+  }
+}

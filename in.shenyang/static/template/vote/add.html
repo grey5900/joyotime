@@ -1,0 +1,148 @@
+<fieldset>
+                    <legend>活动投票</legend>
+                    <dl>
+                        <dt>
+                            	需要投票
+                        </dt>
+                        <dd>
+                            <input type="radio" name="need_vote" value=0 {if !$info}checked{/if} />否
+                            <input type="radio" name="need_vote" value=1 {if $info}checked{/if} />是
+                        </dd>
+                    </dl>
+  		<div id="vote_add_info_space" style="display:none">
+	
+                <dl>
+                    <dt>
+                       	 标题:
+                    </dt>
+                    <dd>
+                        <input type="text" {if $info}class="required"{/if} id="vote_subject" name="vote_subject" value="{$info[subject]}" size="50" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                       	 可投票时段:
+                    </dt>
+                    <dd>
+                        <input type="text"   class="date" format="yyyy-MM-dd HH:mm:ss" name="vote_startDate" value="{$info[startDate]}"  />
+						<input type="text"   class="date" format="yyyy-MM-dd HH:mm:ss" name="vote_endDate" value="{$info[endDate]}"  />
+                    </dd>
+                </dl>
+                
+               
+                
+                <dl>
+                    <dt>
+                       	每 X 天 每个ID最多 Y 票：
+                    </dt>
+                    <dd>
+                       <input type="text" class="required"  name="vote_during" value="{if $info[during]}{$info[during]}{else}1{/if}"  /><input type="text" class="required"  name="vote_votePerDay" value="{if $info[votePerDay]}{$info[votePerDay]}{else}5{/if}"  />
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt>
+                       	 每次投票扣除积分:
+                    </dt>
+                    <dd>
+                        <input type="text" class="required"   name="vote_point" value="{if $info[point]}{$info[point]}{else}0{/if}"  />
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt>
+                       	每次投票赠送道具:
+                    </dt>
+                    <dd>
+                       <select name="vote_relatedItem">
+                       		<option value=0>无</option>
+                       	{loop $items $i}
+                       		<option value="{$i['id']}" {if $i['id'] == $info['relatedItem']}selected{/if}>{$i['name']}</option>
+                       	{/loop}
+						</select>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt>
+                       	引导按钮标题:
+                    </dt>
+                    <dd>
+                       <input type="text"  class="required"  name="vote_indexTitle" value="{if $info[indexTitle]}{$info[indexTitle]}{else}去投票{/if}"  />
+                    </dd>
+                </dl>
+                
+                 <dl>
+                    <dt>
+                       	投票按钮标题:
+                    </dt>
+                    <dd>
+                       <input type="text"  class="required"  name="vote_btnTitle" value="{if $info[btnTitle]}{$info[btnTitle]}{else}投Ta一票{/if}"  />
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt>
+                       	得票数标题:
+                    </dt>
+                    <dd>
+                       <input type="text"  class="required"  name="vote_countTitle" value="{if $info[countTitle]}{$info[countTitle]}{else}票数{/if}"  />
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt>
+                       	排列样式:
+                    </dt>
+                    <dd>
+                       <select class="required" name="vote_theme">
+                       		<option value="0" {if $info[theme]==0}selected{/if}>默认列表</option>
+                       		<option value="1" {if $info[theme]==1}selected{/if}>PK(只有两个选项时)</option>
+                       </select>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt>
+                       	排序规则:
+                    </dt>
+                    <dd>
+                    	<select name="vote_rankOrder">
+                    		<option {if $info['rankOrder']==0}selected{/if} value=0>按票数倒叙排序</option>
+                    		<option {if $info['rankOrder']==1}selected{/if} value=1>按添加时间正序排序</option>
+                    		<option {if $info['rankOrder']==2}selected{/if} value=2>随机排序</option>
+                    	</select>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt>
+                       	候选项:
+                    </dt>
+                    <dd>
+                       <div style="height:auto;width:100%" id="vote_upload_rich_img_<!--{$timestamp}-->" text="添加候选项(160*160)"></div> 
+                    </dd>
+                </dl>
+                </div>
+     </fieldset>
+<script type="text/javascript">
+
+$(function(){
+	init_vote_select();
+	var options2 = {name:"vote_option_images",file_type:'vote', field:[{key:"vote_option_title", name:"标题", type:"input",style:"width:400px;"},{key:"vote_option_link", name:"链接", type:"input",style:"width:400px;"},{key:"id", name:"ID", type:"hidden"},{key:'defineId',name:'自定义ID',type:'input',value:0,tip:'<font color=red>* 一旦指定，不要随意修改</font>'}], required:false,data:<!--{$chosen_json}-->};
+	
+	$("#vote_upload_rich_img_<!--{$timestamp}-->").my_rich_upload(options2);
+	//动态载入控件newsType
+
+	 $("input[type=radio][name=need_vote]").change(function(){
+		 init_vote_select();
+		});
+});
+
+function init_vote_select(){
+	var need_if = $("input[type=radio][name=need_vote]:checked").val();
+	var display = need_if == 1 ? "block" : "none";
+	$("#vote_add_info_space").css("display",display);
+}
+
+</script>

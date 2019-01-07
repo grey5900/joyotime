@@ -1,0 +1,22 @@
+{if $v3_fragments['v3_f_fresh_estate']}
+<div class="column house_preview">
+			<div class="hd">
+				<h2>{$v3_fragments['v3_f_fresh_estate']['frag']['name']}</h2>
+				{if $v3_fragments['v3_f_fresh_estate']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_fresh_estate']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+			</div>
+			<div class="bd">
+				<div class="panel">
+					<ul>
+					{loop $v3_fragments['v3_f_fresh_estate']['data'] $fresh_key $fresh}
+						<li>
+							<a href="{$fresh['link']}" target="_blank"><img src="{$fresh['image']}" alt="{$fresh['title']}" /></a>
+							<div class="caption"><a href="{$fresh['link']}" target="_blank">{$fresh['title']}</a></div>
+						</li>
+					{/loop}
+						
+					</ul>
+				</div>
+				<a href="#" class="trigger prev"><i></i></a><a href="#" class="trigger next"><i></i></a>
+			</div>
+		</div>
+{/if}

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta content="zh_cn" name="language">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+		<title>来福士VS万象城，购物新天地PK大作战！</title>
+		<link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.2.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+		<style type="text/css" media="screen">
+      /*	background color	*/
+     .page {
+        background: #f5f5f5;
+      }
+     #content .unit .box {
+        background: #ffffff;
+      }
+     .touchslider-viewport {
+        background: #fcadcd;
+      } 
+      .box-db-left ,
+      .box-db-right {
+        background: #fcadcd;
+      }
+      .box-db .img img {
+        background: #fff;
+      }
+     /* font color  */
+			.unit-title {
+        color: #5ba81c;
+      }
+      #content .unit p {
+        color: #666;
+      }
+      #content .statement p {
+       color: #353434;
+     }
+     .box-db-left ,
+     .box-db-right {
+       color: #5a146a;
+     }
+			.texts .info-group {
+			  color: #0c425c;
+			  border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+			
+			}
+			.texts .inside p {
+			
+			}
+			.bottons .botton span.title {
+			  color: #a1400b;
+			}
+			.bottons .botton span.intro {
+			  color: #a1400b;
+			}
+			.touchslider-item .touchslider-info {
+			  color: #fff;
+			}
+			.multi-line dd span {
+				color: #353434;
+			}
+			.multi-line .viewall a {
+				color: #e94083;
+			}
+			.multi-line .viewall a:hover{
+			  
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #666;
+				padding-top: 5px;
+			}
+			.touchslider-item img { 
+			 	height:280px;
+			 }
+			 .touchslider-nav-item {
+
+			 }
+			 .feed , .user {
+			   border-bottom: 0;
+			 }
+			 .feed a:hover, .user a:hover {
+			   border-bottom: 0;
+         border-radius: 6px;
+         -webkit-border-radius: 6px;
+         -moz-border-radius: 6px;
+       }
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<div id="content">
+				<div class="grid">
+					<div class="img-unit">
+						<a href="/event/index/32/"><img border="0" src="http://icd.sc/img/m/32/header.jpg" width="100%" border="0" /></a>
+					</div>
+<!-- 					<div class="unit bottons">
+            <a class="botton bottonColor-orange" href="inplace://13350">
+              <span class="title">报名参加</span>
+              <span class="intro">参加人数：<span id="joins_num">{$feed_count}</span> 人</span>
+            </a>
+          </div> -->
+					<div class="unit texts">
+            <div class="unit-title"><h3>活动说明</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+                                                            万象城和来福士可谓今年成都炙手可热的新地标，无论是逛街购物、休闲娱乐、餐饮美食全部囊括在其中，两大地产巨头的商业地标到底对于老百姓来说...
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                                                          万象城和来福士可谓今年成都炙手可热的新地标，无论是逛街购物、休闲娱乐、餐饮美食全部囊括在其中，两大地产巨头的商业地标到底对于老百姓来说好不好，够不够实惠，公道自在人心啊，今天小编就带大家从各个方面打探一下两大新天地的实用价值！Inner们可写下自己心目中的来福士或者万象城值得推荐商家的榜单，参与本次活动。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                                                 点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title"><h3>Inner心中的“她们”</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/s1.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/s2.jpg" width="128px" height="86px" /></li>
+                 </ul>
+                <div class="expand-simple">
+                  <p>
+                    关于万象城我们的Inner怎么说：“最喜欢来万象城谈事情了！她们上班的地方太适合我了！各种吃的。”、“里面东西好贵啊亲！”、“二环木有想象的堵，就是万象城这里堵，好堵又堵！”...
+关于来福士我们的Inner怎么说...
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    关于万象城我们的Inner怎么说：“最喜欢来万象城谈事情了！她们上班的地方太适合我了！各种吃的。”、“里面东西好贵啊亲！”、“二环木有想象的堵，就是万象城这里堵，好堵又堵！”。
+关于来福士我们的Inner怎么说：“感受一下新的购物街，离地铁那么近，很是方便，不知里面如何？走！”、“总的觉得来福士比万象城要安逸些…东西还是要亲民一点～格局也比万象城好…开业活动也挺给力～”、“亲眼所见后，绝对没有传闻好！品牌的确比较多，但布局太紧密。还有作为一所商场，楼层高度也太低了嘛，灯光也很昏暗。”
+
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                                                 点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title"><h3>交通大PK获胜者：来福士</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/s3.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/s4.jpg" width="128px" height="86px" /></li>
+                 </ul>
+                <div class="expand-simple">
+                  <p>
+                    获胜理由：交通线路多、坐拥地铁2号线
+无论是自驾还是公交、地铁，在交通方面万象城和来福士一个坐落城东、一个占据城南，选址自然经过多方考证，交通也相对方便快捷；去万象城Inner们可以乘坐：2路、5路、8路...
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    获胜理由：交通线路多、坐拥地铁2号线
+无论是自驾还是公交、地铁，在交通方面万象城和来福士一个坐落城东、一个占据城南，选址自然经过多方考证，交通也相对方便快捷；去万象城Inner们可以乘坐：2路、5路、8路、20路、51路、52路、60路、71路、80路、97路、98路、101路、112路、182路、301路、313路、341路、537路、541路至万年场站下车即可！去来福士可以选择的公交就更多了，步行两分钟以内的线路主要有：省体育馆站：16路、45路、78路、99路；一环路南二段站：10路、12路、19路、27路、72路；一环路南三段站：34路、904路，当然你还可以选择乘坐地铁到省体育馆下即可到达！
+
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                                                 点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title"><h3>环境PK大获胜者：不好意思还是来福士</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/s5.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/s6.jpg" width="128px" height="86px" /></li>
+                 </ul>
+                <div class="expand-simple">
+                  <p>
+                    获胜理由：每一座来福士建筑均出自世界知名大师的手笔， 每一座来福士都是城市核心地标，是来福士能够获胜的精神支柱，由世界建筑大师Steven Holl...
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    获胜理由：每一座来福士建筑均出自世界知名大师的手笔， 每一座来福士都是城市核心地标，是来福士能够获胜的精神支柱，由世界建筑大师Steven Holl主导设计的来福士无论在外观还是内部以及能源的高效利用方面都达到了节能环保的标准；而万象城的设计万象城首次在成都采用“退台式”设计，同样出自大师手笔的万象城矗立在城东却像一个傻大个，和周围的环境几多不协调之处。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                                                 点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title"><h3>服务大PK获胜者：终于变成了万象城</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/s7.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/s8.jpg" width="128px" height="86px" /></li>
+                 </ul>
+                <div class="expand-simple">
+                  <p>
+                    获奖理由：首先万象城在一楼和五楼都有服务和会员中心，特别方便消费者进行咨询；一个服务台的接待人员不少于两名；而小编实地探访了来福士，在服务台...
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    获奖理由：首先万象城在一楼和五楼都有服务和会员中心，特别方便消费者进行咨询；一个服务台的接待人员不少于两名；而小编实地探访了来福士，在服务台前只有一名接待人员，态度也不是很热情；其次，商场楼层品牌索引的牌子上面既有英文又有品牌中文名称，方便顾客查询，而来福士的索引牌只有英文，让小编以为这是要搞哪样啊，好好的江南布衣硬是要写JNBY
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                                                 点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title"><h3>客流量大PK：获胜者：来福士</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/s9.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/s10.jpg" width="128px" height="86px" /></li>
+                 </ul>
+                <div class="expand-simple">
+                  <p>
+                    获胜理由：下午2时左右，5分钟之内进出来福士主要入口的人数为52人；5分钟之内进出万象城主要入口人数为42人...
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    获胜理由：下午2时左右，5分钟之内进出来福士主要入口的人数为52人；5分钟之内进出万象城主要入口人数为42人；但是小编观察，工作日逛街的人数还是偏少哦，基本上没有什么人在逛。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                                                 点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title"><h3>入驻品牌大PK：获胜者：怎么还是来福士</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/s11.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/s12.jpg" width="128px" height="86px" /></li>
+                 </ul>
+                <div class="expand-simple">
+                  <p>
+                    获胜理由：来福士新开业的商家里有50%都是成都首次入驻的品牌，诸如迷你唐卡、ALDO、双妹等等，入驻品牌也考虑了消费者的消费能力...
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    获胜理由：来福士新开业的商家里有50%都是成都首次入驻的品牌，诸如迷你唐卡、ALDO、双妹等等，入驻品牌也考虑了消费者的消费能力，还有一些小编可以买得起的牌子。而万象城，啥也不说了就仨字：贵、贵、贵。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                                                 点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title"><h3>吃吃喝喝大PK：平分秋色</h3></div>
+            <div class="box">
+              <div class="inside expand">
+                <p>说了那么多终于来到了本次活动的重点环节，就是吃货们最关心的美食啦！</p>
+                <div class="expand-simple">
+                  <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/1.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/2.jpg" width="128px" height="86px" /></li>
+                  </ul>
+                  <p>
+                    <strong>（1）美味轻食类之咖啡香：</strong><br />
+                    万象城和来福士几乎同时拥有了星巴克、COSTA COFFEE以及来自香港的太平洋咖啡...</p>
+                </div>
+                <div class="expand-more">
+                  <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/1.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/2.jpg" width="128px" height="86px" /></li>
+                  </ul>
+                  <p><strong>（1）美味轻食类之咖啡香：</strong><br />万象城和来福士几乎同时拥有了星巴克、COSTA COFFEE以及来自香港的太平洋咖啡，酷爱咖啡的你在这里绝对可以享受到醇香的咖啡，而万象城在这一环节获胜的原因就是在西西弗的矢量咖啡店，你能一边看书一边品尝咖啡香！</p>
+                   <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/3.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/4.jpg" width="128px" height="86px" /></li>
+                  </ul>
+                  <p><strong>（2）美味轻食类之甜品浓：</strong><br />万象城的甜品店有香港知名的甜品品牌糖百府以及满记甜品，小编爱极了糖百府的绵绵冰，最近还有刚刚开业的芋贵人哦！当然来福士也绝不示弱，不仅入驻了哈根达斯的形象店，同时也拥有了诸如仙草宓、DQ、冰果贝果、超级芒果冰等知名甜品店，当然值得推荐的还有法国贵妇甜品，有少女的酥胸之称的马卡龙糖果屋，从数量和新意上来评判，来福士可谓小占优势哦！</p>
+                  <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/5.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/6.jpg" width="128px" height="86px" /></li>
+                  </ul>
+                  <p><strong>（3）美味轻食类之面包蜜：</strong><br />甜甜蜜蜜的面包香是不是足够诱惑你的味蕾，面包新语和早安巴黎早已在成都人心目中成为优质面包的代表，他们分据万象城和来福士的一隅，可以给自己买一个美味的早餐面包哦！来福士是来自新加坡的购物广场，自然也就少不了来自新加坡的面包糕点，秋尼尔是新加坡的泡芙品牌，奶油丝滑不油腻，就在来福士的B2层，吃货们走起来吧！面包类，还是要选来福士哦！</p>
+                  <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/7.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/8.jpg" width="128px" height="86px" /></li>
+                  </ul>
+                  <p><strong>（4）美味轻食类之小吃美：</strong><br />万象城走的似乎是中高端的消费路线，因此除了五层的美食广场以外似乎没有什么廉价的小吃摊摊，来福士的大时代同样是来自新加坡的美食广场，囊括了各种性价比高的简餐之外，B2层你还可以找到美珍香肉干、艾薯薯条、弹丸滋地（升级版章鱼烧）、士林小弟（来自台湾的传统夜市小吃）、广仔小吃（档口式广东小吃）、棕林园南洋风味（以娘惹菜系的甜品为主）等等等等，这么多美味小编都开始犯愁，到底先吃哪个呢？</p>
+                  <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/9.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/10.jpg" width="128px" height="86px" /></li>
+                  </ul>
+                  <p><strong>（5）美味大餐之日料鲜：</strong><br />万象城内的日料馆子主要有禾绿回转寿司和花里和食屋，且不说味道怎么样，花里和食屋的装修就很让人有想走进去吃一餐的欲望；来福士自然也不甘示弱，不仅有名为驰走三昧的正宗日料也有来自日本江户的精致便当牟当屋，孰优孰劣，Inner们自己评价吧！</p>
+                  <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/11.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/12.jpg" width="128px" height="86px" /></li>
+                  </ul>
+                  <p><strong>（6）美味大餐之涮锅烫：</strong><br />万象城的千味涮每天似乎排队的人都很多，大骨汤锅很香浓，菜品也都十分新鲜，分量十足；迷尚澳门豆捞在成都也算是开了不少店，来福士的有没有什么不同呢？Inner们快去对比一下吧！</p>
+                  <ul class="contr">
+                    <li><img src="http://icd.sc/img/m/32/13.jpg" width="128px" height="86px" /></li>
+                    <li><img src="http://icd.sc/img/m/32/14.jpg" width="128px" height="86px" /></li>
+                  </ul>
+                  <p><strong>（7）美味大餐之川菜尚：</strong><br />把川菜做成时尚的概念餐厅似乎是现在的流行趋势，万象城就有诸如花醉、粉彩、成都映像小场合这种披着时尚外衣的新川菜馆子；来福士在整体餐厅方面就似乎有些逊色，除了三朵米以外似乎就没有什么大的可以聚餐的馆子了。在Inner的心中，你们喜欢万象城还是来福士呢？</p>
+                  <br />
+                  <p>依小编之见，万象城是一个适合商务宴请、家庭聚餐、姐妹淘聚会、情侣吃吃喝喝的好地方，除了以上推荐的餐厅，还有王品台塑牛排、彼得西餐、大渔铁板烧、港九茶餐厅等等餐饮美食，您还可以顺便可以买一些小面包以及在ole'超市买一些进口产品；而来福士的餐饮环境就适合你逛街逛累了的休闲小憩，选择更多，也无拘无束。吃吃喝喝大PK环节两家可谓平分秋色呢。</p>
+                </div>
+                <div class="expand-arrow">
+                                                 点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>结语：</strong>
+                综合来说，万象城和来福士真的是两家各有特色的综合购物休闲娱乐场所，或许因为定位不同，因此在消费者体验上就出现了不同的感受，来福士在交通、环境、客流量入驻品牌上小胜万象城，而万象城的服务质量和细节却超越了来福士，餐饮由于定位不同，因此平分秋色！那么亲爱的Inner，你是喜欢来福士还是喜欢万象城，写下你的心中最棒的榜单吧！
+              </p>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title"><h3>活动时间</h3></div>
+            <div class="box">
+              <div class="inside">
+                <p>2012.10.19-2012.11.2</p>
+              </div>
+            </div>
+          </div>
+					<div class="unit texts">
+						<div class="unit-title"><h3>参与方式</h3></div>
+						<div class="box">
+							<div class="inside">
+								<p>
+								 在活动地点“万象城”和“来福士”写下你推荐的商家名称以及上榜理由，5家以上成榜，不局限于吃喝，可推荐服装及娱乐项目；只要是万象城以及来福士的商家即可推荐，用户自拟主题，如“那些年，在万象城喝过的咖啡”。写榜单，即视为成功参与。
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="unit multi-line">
+            <div class="unit-title"><h3>适用商家介绍</h3></div>
+            <div class="box">
+              <dl class="shrink">
+                <dd>
+                  <a href="inplace://13350" class="arrow">
+                    <span>成都来福士广场</span>
+                    <div class="address">
+                                                           武侯区人民南路四段3号(省体育馆对面)<br />
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://304715" class="arrow">
+                    <span>华润万象城</span>
+                    <div class="address">
+                                                            二环路万年场的华润二十四城<br />
+                    </div>
+                  </a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+					<div class="unit texts">
+            <div class="unit-title"><h3>活动奖励</h3></div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                 一等奖：杯子一组（3个）+抱枕（IN成都定制）<br />
+二等奖：杯子（1个）+抱枕<br />
+三等奖：抱枕一个<br />
+参与奖：5名 杯子各1个<br />
+                </p>
+              </div>
+            </div>
+          </div>
+					
+					<!--{if isset($feed) && !empty($feed)}-->
+					<div class="unit card">
+						<div class="unit-title"><h3>活动动态</h3></div>
+						<div class="box">
+							<div class="feeds">
+								<div class="feed">
+									<a href="/event/feeds/{$event_id}/{$uid}/0/1">
+										<div class="arrow">
+											<div class="icon">
+												<img src="{$feed[avatar]}"  width="40" height="40"/>
+											</div>
+											<div class="detail">
+												<h4>{$feed[uname]}</h4>
+												<!--{if $feed[type]==1}-->
+												<div class="action">在</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="action">签到</div>
+												<!--{elseif $feed[type]==2}-->
+												<div class="action">点评</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="start"><!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}--></div>
+												<div class="info">{$feed[content]}</div>
+												<!--{elseif $feed[type]==3}-->
+												<div class="action">在</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="action">上传照片</div>
+												<div class="info">{$feed[content]}</div>
+												<div class="photo"><img src="{$feed[photoName]}" width="200" /></div>
+												<!--{/if}-->
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--{/if}-->
+					
+					<!--{if isset($joines) && !empty($joines)}-->
+					<div class="unit user-list">
+						<div class="unit-title"><h3>您有{$count_joines}位好友参加了该活动</h3></div>
+						<div class="box">
+							<a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+								<ul class="user-list">
+									<!--{loop $joines $uid $u}-->
+									<li><img src="{$u[avatar]}" /></li>
+									<!--{/loop}-->
+								</ul>
+							</a>
+						</div>
+					</div>
+					<!--{/if}-->
+					<div class="unit texts">
+						<div class="statement">
+							<p>
+								<strong>特别说明：</strong>
+								<br />
+             1、选取优秀榜单予以奖励，以质优量多为选取标准。<br />
+          2、活动结束次日通知获奖用户，奖品领取时间及地点私信用户<br />
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<p>IN.CHENGDU.CN</p>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+		<script type="text/javascript">
+      $(function() {
+        $(".expand").each(function() {
+          $(this).on("click", function() {
+            $(this).toggleClass("on");
+          });
+        })
+        $(".touchslider").touchSlider({
+          mouseTouch : true,
+        });
+      })
+    </script>
+	</body>
+</html>

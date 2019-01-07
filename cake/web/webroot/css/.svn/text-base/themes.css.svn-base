@@ -1,0 +1,94 @@
+/**
+ * Created by Jaskang on 14-3-6.
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+.th-index {
+  font-family: "Microsoft Yahei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+.th-center {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.th-banner {
+  display: inline-block;
+  max-width: 100%;
+}
+.th-banner img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+}
+.th-sub {
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+  margin-left: 12px;
+  padding: 9px 12px 10px 0;
+  border-bottom: 1px solid #cccccc;
+}
+.th-list {
+  list-style: none;
+}
+.th-list > li > a {
+  display: block;
+  margin-left: 12px;
+  text-decoration: none;
+}
+.th-list > li > a:hover {
+  background: #f3f3f3;
+  text-decoration: none;
+}
+.th-list > li > a .item {
+  padding: 15px 12px 15px 0;
+  border-bottom: 1px solid #cccccc;
+  height: 72px;
+  position: relative;
+}
+.th-list > li > a .item .item-img {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  height: 72px;
+  widows: 72px;
+}
+.th-list > li > a .item .item-box {
+  margin-left: 80px;
+}
+.th-list > li > a .item .item-box .title {
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+  line-height: 18px;
+  max-height: 18px;
+  overflow: hidden;
+  margin: 5px 0 8px 0;
+}
+.th-list > li > a .item .item-box .meta {
+  font-size: 12px;
+  line-height: 20px;
+  max-height: 40px;
+  overflow: hidden;
+  color: #aaa;
+  text-decoration: none;
+}
+.th-footer {
+  margin-top: 30px;
+  display: block;
+  height: 48px;
+  line-height: 48px;
+  width: 100%;
+  background: #eee;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}

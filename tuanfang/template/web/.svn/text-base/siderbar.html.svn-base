@@ -1,0 +1,58 @@
+<div class="sidebar">
+   <div class="model-side">
+       <div class="model-header">报名实况</div>
+       <div class="info">
+           <p>总共有<span>{$join_count}</span>人参与过团购</p>
+           <p>总共有<span>{$lp_count}</span>个楼盘参与过团购</p>
+       </div>
+       <table class="table scroll">
+            <tbody class="list">
+            {loop $latest_join $lj}
+                <tr>
+                    <td>{$lj['name']}</td>
+                    <td>{$lj['cellphone_no']}</td>
+                    <td><a href="/web/detail/{$lj[house_id]}" target="_blank">{echo cut_string($lj['house_name'],14);}</a></td>
+                </tr>
+            {/loop}
+            </tbody>
+        </table>
+   </div>
+   
+   <div class="model-site">
+       <a href="/web/download" class="model-download"><img src="/images/download.png" alt="下载成都团房" /></a>
+   </div>
+   
+   <div class="model-site model-download">
+   		<img src="/images/weixin_01.jpg" alt="欢迎关注 房观察" />
+   		<img src="/images/weixin_02.jpg" alt="欢迎关注 置业大咖" />
+   </div>
+   
+   <div class="model-side">
+       <div class="model-header">活动播报</div>
+       <iframe width="100%" height="640" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=640&fansRow=2&ptype=1&speed=250&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2363261922&verifier=c46ba8aa&dpc=1"></iframe>
+   </div>
+   <div class="model-side">
+        <div class="model-header">
+            团购排行榜
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>楼盘名</th>
+                    <th>区域</th>
+                    <th>人数</th>
+                </tr>
+            </thead>
+            <tbody>
+            {loop $top7 $t}
+                <tr>
+                    <td><a href="/web/detail/{$t['house_id']}" target="_blank" title="{$t['name']}">{echo cut_string($t['name'],14);}</a></td>
+                    <td>{$t['area']}</td>
+                    <td>{$t['group_count']}</td>
+                </tr>
+            {/loop}
+                
+            </tbody>
+        </table>
+    </div>
+</div>

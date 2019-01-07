@@ -1,0 +1,156 @@
+@import "../../../skin/_bootstrap/variables.less";
+@import "../../../skin/_bootstrap/mixins.less";
+
+/* 频道主色调 */
+@channel-fore: #593c34;
+@channel-back: #f56c03;
+@channel-back-image: 'channel-style.png';
+
+#container {
+	background: url('fullscreen.jpg') center 0 no-repeat;
+	.container {
+		background: url(@channel-back-image) -230px top repeat-y;
+	}
+}
+#container-page {
+	.container {
+		background: url(@channel-back-image) -230px top repeat-y;
+	}
+}
+.main-l {
+}
+.nav-bg {
+	background: url(@channel-back-image) no-repeat;
+}
+.channel-nav {
+	float: left;
+	width: 190px;
+	.tit {
+		height: 70px;
+		margin: 0px;
+		padding: 0px;
+		text-indent: -9999px;
+	}
+	.col {
+		.cleartype();
+		a {
+			background-color: @channel-back;
+			&:hover,
+			&.on {
+				background-color: @channel-fore;
+			}
+			.ico {
+				background-image: url('nav-ico.png');
+				&.home { background-position: 0 -9px; }
+				&.channel-nav-8 { background-position: 0 -53px; }
+				&.channel-nav-9 { background-position: 0 -97px; }
+				&.channel-nav-10 { background-position: 0 -141px; }
+				&.channel-nav-11 { background-position: 0 -185px; }
+				&.channel-nav-12 { background-position: 0 -229px; }
+				&.channel-nav-13 { background-position: 0 -273px; }
+			}
+		}
+	}
+	.tag {
+		a {
+			background: lighten(@channel-back,8);
+			color: lighten(@channel-back,50);
+			&:hover {
+				background-color: lighten(@channel-back,16);
+			}
+		}
+	}
+	.service {
+		//background: url(@channel-back-image) 0 -250px no-repeat;
+	}
+}
+/* 热点*/
+.hot {
+	border-top: 2px solid @channel-back;
+}
+
+.push {
+	.tit {
+      border-top-color: @channel-back;
+		.say {
+			background: url(@channel-back-image) 0 -160px no-repeat;	
+		}
+		.tab {
+			a {
+				&.current {
+					background: url(@channel-back-image) -140px -160px no-repeat;
+				}
+			}
+		}
+	}
+}
+
+/* 重设频道头部样式 */
+#header {
+	border-bottom-color: @channel-back;
+	.site-nav {
+		li {
+			&.back {
+				border-color: @channel-back;
+			}
+		}
+	}
+	.site-nav-more {
+		.dropdown {
+			.dropdown-menu {
+				background: @channel-back;
+				border-color: @channel-back;
+				li {
+					a{
+						&:hover,
+						&:focus {
+							color: @channel-back;
+						}
+					}
+				}
+			}
+		}
+	}
+	.sub-nav{
+		background-image:url(sb_nav.png);
+		.site-nav{
+			a{
+				background-repeat:repeat-x;
+				&.current{
+					background-image:url(nav_crt_hover.png);
+				}
+				&:hover{
+					background-image:url(nav_crt.png);
+					span{
+						display:block;
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+/* 重设频道模块样式 */
+.module {
+	.tit {
+		h3 {
+			background: url(@channel-back-image) 0px -200px no-repeat;
+		}
+	}
+	.con {}
+	.list-groupon {
+		.price {
+			.p { color: @channel-back;}
+		}
+	}
+}
+
+.place-map {
+  border-top: 2px solid @channel-back;
+ }
+
+/* 重设新闻样式 */
+.article {
+  border-top-color: @channel-back;
+}

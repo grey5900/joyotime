@@ -1,0 +1,51 @@
+        <div class="footer">
+            <div class="container">
+            	<div class="section">
+            		<div class="footer-copyright">
+            		    <div class="footer-nav">
+	                        <a href="http://www.chengdu.cn/web/about/about.html">关于我们</a>-
+	                        <a href="http://www.chengdu.cn/web/about/contact.html">联系方式</a>-
+	                        <a href="http://www.chengdu.cn/web/about/ser.html">广告服务</a>-
+	                        <a href="http://www.chengdu.cn/web/about/job.html">招聘信息</a>-
+	                        <a href="http://www.chengdu.cn/web/sitemap/index.html">站点地图</a>-
+	                        <a href="http://www.chengdu.cn/web/about/about.html">版权说明</a>
+	                    </div>
+	                    <div class="copyright">
+	                        <p>© 2005—2013成都全搜索网站版权所有 All Rights Reserved</p>
+	                        <p>经营许可证编号：蜀ICP备07003170号 网络文化经营许可证：文网文[2006]026号 川B2-20060070</p>
+	                    </div>
+            		</div>
+            		<ul class="footer-list">
+            		    <li>
+            		        <a class="social service" data-toggle="modal" href="#onlineAdvice">
+                                <div class="pull-left" href="#">
+                                    <i class="icon-service"></i>
+                                </div>
+                                <div class="social-body">
+                                    <h4>点击立即咨询</h4>
+                                    <p>在线客服</p>
+                                </div>
+                            </a>
+            		    </li>
+            		    <li>
+            		        <a href="#" class="social call">
+                                <div class="pull-left" href="#">
+                                    <i class="icon-call"></i>
+                                </div>
+                                <div class="social-body">
+                                    <h4>24小时服务热线</h4>
+                                    <p class="tel">4000-400-101</p>
+                                </div>
+                            </a>
+            		    </li>
+            		</ul>
+            	</div>
+            </div>
+        </div>
+        
+        <!--{template /common/modal_advice}-->
+        <!--  core JavaScript
+        ================================================== -->
+        <script src="/js/extend.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/js/jquery.placeholder.min.js" type="text/javascript" charset="utf-8"></script>
+</html>

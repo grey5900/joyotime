@@ -1,0 +1,46 @@
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+	<div class="pageFormContent" style="display:block;overflow:auto;" layoutH="55">
+		<div class="panel">
+			<h1>文章内容</h1>
+			<div><table border="0" cellpadding="4" cellspacing="4" width="100%">
+					<tbody><tr>
+						<td width="80">标题：</td>
+						<td><input type="text" name="subject" class="required" value="<!--{if !empty($info)&&!empty($info[subject])}-->{$info[subject]}<!--{/if}-->" size="170" /></td>
+					</tr>
+					<tr>
+						<td valign="top">内容：</td>
+						<td><textarea name="content" class="editor required" cols="120" rows="25" upImgUrl="<!--{eval echo site_url(array('main','upload'));}-->" upImgExt="jpg,jpeg,gif,png"><!--{if !empty($info)&&!empty($info[content])}-->{$info[content]}<!--{/if}--></textarea></td>
+					</tr></tbody>
+			</table></div>
+		</div>
+		<div class="panel">
+			<h1>文章来源</h1>
+			<div><table border="0" cellpadding="4" cellspacing="4" width="100%">
+				<tbody><tr>
+					<td>媒体：</td><td><input type="text" name="source" class="required" value="<!--{if !empty($info) && !empty($info[source])}-->{$info[source]}<!--{/if}-->" size="60" /></td>
+					<td>链接：</td><td><input type="text" name="jumpLink" class="required" value="<!--{if !empty($info) && !empty($info[jumpLink])}-->{$info[jumpLink]}<!--{/if}-->" size="60" /></td>
+					<td>时间：</td><td>
+						<input type="text" name="includeDate" class="date required" format="yyyy-MM-dd HH:mm" yearstart="-5" value="<!--{if !empty($info) && !empty($info[includeDate])}-->{$info[includeDate]}<!--{/if}-->" readonly/>
+						<a class="inputDateButton" href="javascript:;">选择</a>
+					</td>
+				</tr></tbody>
+			</table></div>
+		</div>
+		<div class="panel">
+			<h1>文章分类</h1>
+			<div><ul>
+				<!--{loop $cates $cid $c}-->
+				<li style="width:100px;"><input type="radio" name="cid" value="{$cid}"<!--{if !empty($info)&&!empty($info[cid])&&$info[cid]==$cid}--> checked="checked"<!--{/if}-->/>{$c}</li>
+				<!--{/loop}-->
+			</ul></div>
+		</div>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit"> 提 交 </button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" class="close"> 取 消 </button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>

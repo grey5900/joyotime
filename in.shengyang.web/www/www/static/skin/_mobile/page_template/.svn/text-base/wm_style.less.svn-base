@@ -1,0 +1,65 @@
+.page-template {
+  article {
+    margin: 0 10px;
+  }
+  h1 {
+    margin: 20px 0 30px;
+  }
+  h3 {
+    margin: 0 10px 20px;
+  }
+  span.center {
+    margin: 0 0 50px;
+    display: block;
+  }
+  .table {
+    thead {
+      td,
+      th {
+        text-align: center;
+      }
+    }
+    tbody {
+      td,
+      th {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+h1 {
+  color: red;
+  font-size: 1.750em;
+  font-family: 'Microsoft YaHei','Hiragino Sans GB',Arial,sans-serif;
+  line-height: 30px;
+  text-align: center;
+}
+h3 {
+  color: #000;
+  font-size: 1.313em;
+  text-align: center;
+}
+
+p {
+  text-indent: 2em;
+  color: #000;
+  font-size: 1em;
+}
+
+span {
+  font-size: 1em;
+  color: #000;
+}
+
+.rt {
+  text-align: right;
+}
+
+.rf {
+  float: right;
+}
+.ml {
+  display: block;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="zh_cn" name="language">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>{$brandname}联盟商户</title>
+	<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}"type="text/css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="container">
+			<!--{if $show_nav}-->
+			<div class="navigation">
+				<a onclick="goBack();" class="navigation-back"><cite>上一页</cite></a>
+				<span class="navigation-title">{$brandname}联盟商户</span>
+			</div>
+			<!--{/if}-->
+			<div class="post {if $show_nav}nav-black{/if}">
+				<div class="feeds">
+					<!--{loop $list $row}-->
+					<div class="place-list">
+						<a href="inplace://{$row['id']}">
+							<div class="icon">
+								<img src="{$row['icon']}" width="40" height="40" />
+							</div>
+
+							<div class="detail">
+								<div class="place">
+									<h4>{$row['placename']}</h4>
+									<!--{if $row['isRepayPoint']}-->
+									<i class="m_earn"></i>
+									<!--{/if}-->
+								</div>
+								<div class="star">
+									<i class="ico-star-{$row['star']}"></i>
+									<!--{if $row['show_distance']}-->
+									<span>{$row['distance']}</span>
+									<!--{/if}-->
+								</div>
+							</div>
+
+							<div class="tips">
+								<!--{if $row['eventCount'] > 0}-->
+								<div class="tip">
+									<i class="tips-green"></i><span>{$row['eventCount']}个活动正在进行</span>
+								</div>
+								<!--{/if}-->
+								<!--{if $row['atCollectionCount'] > 0}-->
+								<div class="tip">
+									<i class="tips-brown"></i><span>{$row['atCollectionCount']}个地点册收录了这里</span>
+								</div>
+								<!--{/if}-->
+								<!--{if $row['productCount'] > 0}-->
+								<div class="tip">
+									<i class="tips-orange"></i><span>{$row['productCount']}个商品支持积分兑换</span>
+								</div>
+								<!--{/if}-->
+							</div>
+						</a>
+					</div>
+					<!--{/loop}-->
+				</div>
+			</div>
+			<div class="pagination pagination-centered"></div>
+		</div>
+		<div class="footer">
+			<p>IN.CHENGDU.CN</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<div class="sidebar">
+	<div class="side-nav">
+		<ul>
+			<li{if $op==='privacy'} class="current"{/if}>
+				<a href="/privacy/">使用条款和隐私政策</a>
+			</li>
+			<li{if $op==='about'} class="current"{/if}>
+				<a href="/about/">关于我们</a>
+			</li>
+			<li{if $op==='contact'} class="current"{/if}>
+				<a href="/contact/">联系我们</a>
+			</li>
+			<li{if $op==='jobs'} class="current"{/if}>
+				<a href="/jobs/">人才招聘</a>
+			</li>
+			<li{if $op==='help'} class="current"{/if}>
+				<a href="/help/">帮助</a>
+			</li>
+		</ul>
+	</div>
+</div>

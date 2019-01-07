@@ -1,0 +1,85 @@
+<!--{template common/header3.0}-->
+	<div class="main layout detail">
+		<div class="column intro_banner">
+			<div class="img">
+				<img src="/index3.0/images/lord.png" alt="" />
+			</div>
+			<div class="info">
+				<h1>IN沈阳3.0三大炮：抢地主</h1>
+				<p>抢地主、玩道具，积分送大礼！<br />IN沈阳3.0来了，抢地主，收积分，小心推土机，关注钓鱼岛……</p>
+				<a href="http://in.jin95.com/download" class="down" target="_blank">下载IN沈阳客户端，玩转积分</a>
+			</div>
+			<div class="btns">
+				
+				<a href="/mall/"><i class="item"></i>去道具商城</a>
+				<a href="/store/"><i class="mall"></i>去积分商城</a>
+			</div>
+		</div>
+		<div class="column lord">
+			<div class="article">
+				<div class="tit">
+					<h3><i></i>硝烟弥漫的战场 </h3> <a href="/lord/index/point/" {if $order=='point'}style="color:blue"{/if}>按积分存量排序</a> | <a href="/lord/index/" {if $order=='robCount'}style="color:blue"{/if}>按争夺次数排序</a>
+				</div>
+				<div class="con">
+					<ul>
+					{loop $battleField $key $b}
+						<li class="{if $key==0}first{elseif $key==1}sec{elseif $key==2}thd{else}{/if}">
+							<div class="rank">
+								{if $key<3}<i></i>{else}
+								{echo str_pad($key+1,2,0,STR_PAD_LEFT);}{/if}
+							</div>
+							<div class="address">
+								<a href="/place/{$b['id']}/" target="_blank"><img src="{echo image_url($b['icon'],'common');}" alt="" /></a>
+								<a href="/place/{$b['id']}/" target="_blank">{$b['placename']}</a>
+							</div>
+							<div class="info">
+								<span>积分存量：<em>{$b['point']}</em></span>
+							</div>
+							<div class="info">
+								<span>争夺次数：<em class="red">{echo intval($b['robCount']);}</em></span>
+							</div>
+						</li>
+					{/loop}
+						
+					</ul>
+				</div>
+			</div>
+			<div class="side">
+				<div class="module lord_rank">
+					<div class="tit">
+						<h3><i></i>包租婆收租排行榜</h3>
+					</div>
+					<div class="con">
+						<ul>
+						{loop $rent $k $r}
+							<li class="{if $k<3}front{/if}">
+								<div class="img">
+									<a href="/user/{$r['uid']}" target="_blank"><img src="{$r['user']['avatar_m']}" alt="" /></a>
+								</div>
+								<div class="info">
+									<a href="/user/{$r['uid']}" target="_blank">{$r['user']['name']}</a>
+									<p>昨日收租获得积分：<em>{$r['total']}</em></p>
+								</div>
+								<i class="num">{echo $k+1;}</i>
+							</li>
+						{/loop}
+						
+						</ul>
+						<i class="line"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+<script type="text/javascript" src="/lord/flush_rent_list/"></script>
+
+<script type="text/javascript">
+	seajs.use('jquery',function(){
+		$('.line')[0].style.height = ($('.line')[0].offsetHeight - 66)+'px';
+	})
+</script>
+<!--{template common/footer}-->
+</body>
+</html>

@@ -1,0 +1,90 @@
+<div id="{$page_id}_module_select">
+	<div class="selector" style="clear: both;">
+	    <select name="source_module" id="source_module" multiple style="width:320px;height:250px;">
+	        
+	    </select>
+	    <div class="selectorbtns" style="float:left;width:40px;text-align:center;">
+		    <button id="del_btn" type="button"> &lt;&lt; </button>
+		    <button id="add_btn" type="button"> &gt;&gt; </button>
+	    </div>
+	    <select name="module_id[]" id="module_id" multiple style="width:320px;height:250px;">
+	        
+	    </select>
+	</div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#add_btn", $("#{$page_id}_module_select")).click(function(){
+            // 获取所有备选
+            {$page_id}_module_edit_list("source_module", "module_id");
+        });
+        
+        $("#source_module", $("#{$page_id}_module_select")).dblclick(function(){
+            // 双击
+            {$page_id}_module_edit_list("source_module", "module_id");
+        });
+        
+        $("#del_btn", $("#{$page_id}_module_select")).click(function(){
+            // 删除已经选中的
+            {$page_id}_module_edit_list("module_id", "source_module");
+        });
+        
+        $("#module_id", $("#{$page_id}_module_select")).dblclick(function(){
+            // 双击
+            {$page_id}_module_edit_list("module_id", "source_module");
+        });
+        
+        // 初始之前的选中的
+        var selected_mid = new Array();
+        <!--{if $module}-->
+        <!--{loop $module $p}-->
+        $("#module_id", $("#{$page_id}_module_select")).append("<option value=\"{$p['id']}\">({$p['id']}){$p['name']}</option>");
+        selected_mid[{$p['id']}] = true;
+        <!--{/loop}-->
+        {$page_id}_select_module_list();
+        <!--{/if}-->
+        
+        $.getJSON("/block/get_module", function(json){
+            var len = json.length;
+            for(var i = 0; i < len; i++) {
+                var p = json[i];
+                if(selected_mid && selected_mid[p.id]) continue;
+                $("#source_module", $("#{$page_id}_module_select")).append("<option value=\"" + p.id + "\">(" + p.id + ")" + p.name + "</option>");
+            }
+        });
+        
+    });
+
+/**
+ * 移动select里面的数据
+ * 从id1到id2的select
+ */
+function {$page_id}_module_edit_list(id1, id2) {
+    var selected_items = $("#" + id1, $("#{$page_id}_module_select")).find("option:selected");
+    if(selected_items.length < 1) {
+        alert("请选择地点列表数据");
+        return;
+    }
+    
+    for(var i=0; i<selected_items.length; i++) {
+        $(selected_items[i]).remove();
+        
+        // CHECK一次是否已经在选择列表中存在
+        if(in_select($(selected_items[i]).val(), $("#" + id2, $("#{$page_id}_module_select")))) {
+            continue;
+        }
+        
+        var option_str = "<option value=\"" + $(selected_items[i]).val() + "\">" + $(selected_items[i]).text() + "</option>";
+        $("#" + id2, $("#{$page_id}_module_select")).append(option_str);
+    }
+    
+    {$page_id}_select_module_list();
+}
+
+/**
+ * 选择地点列表，这样子提交才会有数据
+ */
+function {$page_id}_select_module_list() {
+    $("#module_id", $("#{$page_id}_module_select")).find("option").attr("selected", "selected");
+}
+</script>

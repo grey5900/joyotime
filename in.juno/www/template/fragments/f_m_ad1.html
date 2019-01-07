@@ -1,0 +1,10 @@
+{if $v3_fragments['v3_f_m_ad1']}
+{eval $v3_f_m_ad1 = $v3_fragments['v3_f_m_ad1']['data'][0];}
+<div class="module report">
+{if $v3_f_m_ad1['summary']}
+<embed width="280" height="345" src="{$v3_f_m_ad1['summary']}">
+{else}
+<a href="{$v3_f_m_ad1['link']}" target="_blank"><img src="{$v3_f_m_ad1['image']}" alt="{$v3_f_m_ad1['title']}" style="width:280px;height:345px;" /></a>	
+{/if}	
+</div>
+{/if}

@@ -1,0 +1,159 @@
+<div id="{$page_id}_tag_select_{$ext_condition}">
+ <input type="text" size="20" name="keywords" id="keywords_{$ext_condition}" />
+    <input type="text" name="query_tag_num_{$ext_condition}" value="50" size="3" />
+    <input type="hidden" name="ext_condition_{$ext_condition}" value="{$ext_condition}" />
+    <button id="search" type="button"> 搜 索 </button>
+   <!--{if $customer_tip}--><!--{$customer_tip}--><!--{/if}-->
+<div class="selector" style="clear: both;">
+	    <select name="source_tag" id="source_tag_{$ext_condition}" multiple="multiple" {if $ext_condition}style="width:320px;height:50px;"{else}style="width:320px;height:250px;"{/if}>
+	        
+	    </select>
+	    <div class="selectorbtns" style="float:left;width:40px;text-align:center;">
+		    <button id="del_btn_{$ext_condition}" type="button"> &lt;&lt; </button>
+		    <button id="add_btn_{$ext_condition}" type="button"> &gt;&gt; </button>
+	    </div>
+	    {if $ext_condition}
+	    <select name="{$ext_condition}_id[]" id="tag_id_{$ext_condition}" multiple {if $ext_condition}style="width:320px;height:50px;"{else}style="width:320px;height:250px;"{/if}>
+	        
+	    </select>
+	    {else}
+	    
+	    <select name="tag_id[]" id="tag_id_{$ext_condition}" multiple {if $ext_condition}style="width:320px;height:50px;"{else}style="width:320px;height:250px;"{/if}>
+	        
+	    </select>
+	    {/if}
+	</div>
+</div>
+<script type="text/javascript">
+    $(function(){
+
+    	// 搜索标签
+        $("#search", $("#{$page_id}_tag_select_{$ext_condition}")).click(function(){
+            var keywords = $.trim($("#keywords_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).val());
+            if("" == keywords) {
+                alert("请输入查询的关键词");
+                return;
+            }
+            $("#source_tag", $("#{$page_id}_tag_select_{$ext_condition}")).html("");
+            var num = parseInt($("input[name=query_tag_num_{$ext_condition}]", $("#{$page_id}_tag_select_{$ext_condition}")).val());
+            $.getJSON("{eval echo site_url(array('block', 'get_tag', 'keywords'))}/" + encodeURIComponent(keywords) + "/num/" + num, {{echo $ext_condition?'ext_condition:"'.$ext_condition.'"':''}}, function(data){
+				//alert(data.tags.length);
+                
+                if(data.tags){
+                	var len_tags = data.tags.length;
+	                for(var i=0; i<len_tags; i++) {
+	                    var option_str = "<option value=\"0-" + data.tags[i].id + "\">" + "标签：(" + data.tags[i].id + ")" + data.tags[i].content  + "</option>";
+	                    $("#source_tag_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).append(option_str);    
+	                }
+                }
+                
+                
+                if(data.placecate){
+                	var len_placecate = data.placecate.length;
+	                for(var i=0; i<len_placecate; i++) {
+	                    var option_str = "<option value=\"1-" + data.placecate[i].id + "\">" + "地点分类：(" + data.placecate[i].id + ")" + data.placecate[i].content  + "</option>";
+	                    $("#source_tag_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).append(option_str);    
+	                }
+                }
+                
+                
+                if(data.places){
+                	var len_places = data.places.length;
+	                for(var i=0; i<len_places; i++) {
+	                    var option_str = "<option value=\"2-" + data.places[i].id + "\">" + "地点：(" + data.places[i].id + ")" + data.places[i].placename  + "</option>";
+	                    $("#source_tag_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).append(option_str);    
+	                }
+                }
+
+                
+                if(data.users){
+                	var len_users = data.users.length;
+	                for(var i=0; i<len_users; i++) {
+	                    var option_str = "<option value=\"3-" + data.users[i].id + "\">" + "用户：(" + data.users[i].id + ")" + data.users[i].username +'-'+ data.users[i].nickname  + "</option>";
+	                    $("#source_tag_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).append(option_str);    
+	                }
+                }
+
+                
+            });
+            {$page_id}_select_tag_list_{$ext_condition}();
+        });
+       
+        $("#add_btn_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).click(function(){
+            // 获取所有备选
+            {$page_id}_tag_edit_list_{$ext_condition}("source_tag_{$ext_condition}", "tag_id_{$ext_condition}");
+        });
+        
+        $("#source_tag_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).dblclick(function(){
+            // 双击
+            {$page_id}_tag_edit_list_{$ext_condition}("source_tag_{$ext_condition}", "tag_id_{$ext_condition}");
+        });
+        
+        $("#del_btn_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).click(function(){
+            // 删除已经选中的
+            {$page_id}_tag_edit_list_{$ext_condition}("tag_id_{$ext_condition}", "source_tag_{$ext_condition}");
+        });
+        
+        $("#tag_id_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).dblclick(function(){
+            // 双击
+            {$page_id}_tag_edit_list_{$ext_condition}("tag_id_{$ext_condition}", "source_tag_{$ext_condition}");
+        });
+        
+        // 初始之前的选中的
+        var selected_mid = new Array();
+
+        <!--{if $tag && !$ext_condition}-->
+        <!--{loop $tag $p}-->
+        <!--{eval if(empty($p['id'])) continue;}-->
+        $("#tag_id_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).append("<option value=\"{$p['type']}-{$p['id']}\">{$p[desc]}:({$p['id']})<!--{eval echo $p['name'] ? $p['name'] : ($p['content'] ? $p['content'] : ($p['username'] ? $p['username'] : $p['placename']))}-->{$p['name']}</option>");
+        selected_mid[{echo $p['id']?$p['id']:0}] = true;
+        <!--{/loop}-->
+        {$page_id}_select_tag_list_{$ext_condition}();
+        <!--{else}-->
+        <!--{loop $ext_data $p}-->
+        $("#tag_id_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).append("<option value=\"{$p['type']}-{$p['id']}\">{$p[desc]}:({$p['id']})<!--{eval echo $p['name'] ? $p['name'] : ($p['content'] ? $p['content'] : ($p['username'] ? $p['username'] : $p['placename']))}-->{$p['name']}</option>");
+        selected_mid[{echo $p['id']?$p['id']:0}] = true;
+        <!--{/loop}-->
+        {$page_id}_select_tag_list_{$ext_condition}();
+        <!--{/if}-->
+            
+
+       
+       
+        
+    });
+
+/**
+ * 移动select里面的数据
+ * 从id1到id2的select
+ */
+function {$page_id}_tag_edit_list_{$ext_condition}(id1, id2) {
+    var selected_items = $("#" + id1, $("#{$page_id}_tag_select_{$ext_condition}")).find("option:selected");
+    if(selected_items.length < 1) {
+        alert("请选择标签");
+        return;
+    }
+    
+    for(var i=0; i<selected_items.length; i++) {
+        $(selected_items[i]).remove();
+        
+        // CHECK一次是否已经在选择列表中存在
+        if(in_select($(selected_items[i]).val(), $("#" + id2, $("#{$page_id}_tag_select_{$ext_condition}")))) {
+            continue;
+        }
+        
+        var option_str = "<option value=\"" + $(selected_items[i]).val() + "\">" + $(selected_items[i]).text() + "</option>";
+        $("#" + id2, $("#{$page_id}_tag_select_{$ext_condition}")).append(option_str);
+    }
+    
+    {$page_id}_select_tag_list_{$ext_condition}();
+}
+
+/**
+ * 选择地点列表，这样子提交才会有数据
+ */
+function {$page_id}_select_tag_list_{$ext_condition}() {
+    $("#tag_id_{$ext_condition}", $("#{$page_id}_tag_select_{$ext_condition}")).find("option").attr("selected", "selected");
+	return true;
+}
+</script>

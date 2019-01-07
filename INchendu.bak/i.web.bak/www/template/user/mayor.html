@@ -1,0 +1,96 @@
+<!--{template web/header}-->
+
+<div class="container" id="container">
+	<!--{template f_header}-->
+	<div class="section">
+		<div class="total">在<em>{$info[mayorshipCount]}</em>个地方是地主</div>
+		<div class="mayor_block">
+			<div class="console_sidebar">
+				<!--{if !isset($prev) || $prev <= 0}-->
+					<span class="console_up">上一页</span>
+				<!--{else}-->
+					<a href="/user_mayor/{$info[id]}/{$prev}/" id="console_up" class="console_up">上一页</a>
+				<!--{/if}-->
+				<ul class="mayor_list" id="console_container">
+					<!--{loop $places $k $v}-->
+					<li><a href="/place/{$v[id]}/" onmouseover="moveCenter({$v[lat]}, {$v[lng]}, $(this).parent());"><span class="title">{$k}. {$v[name]}</span><span class="time">{$v[date]}</span></a></li>
+					<!--{/loop}-->
+				</ul>
+				<!--{if !isset($next) || $next <= 0}-->
+					<span class="console_down">下一页</span>
+				<!--{else}-->
+					<a href="/user_mayor/{$info[id]}/{$next}/" id="console_down" class="console_down">下一页</a>
+				<!--{/if}-->
+			</div>
+			<div class="console_main" id="map">
+			</div>
+		</div>
+	</div>
+</div>
+<!--{template web/cur_event}-->
+<script type="text/javascript">
+	var center = null;
+	var map = null;
+	
+	$(function(){
+		center = new soso.maps.LatLng(30.657517,104.065847);
+		map = new soso.maps.Map(document.getElementById("map"), {center:center,zoomLevel:15});
+		moveCenter(center.getLat(),center.getLng());
+		
+		//标记地图
+		<!--{loop $cooditions $k $position}-->
+		var latLng = new soso.maps.LatLng({$position[lat]}, {$position[lng]});
+		var marker = new soso.maps.Marker({map:map, draggable:false, click:false, position:latLng, title:"{$k}. {$position[title]}"});
+		var decor = new soso.maps.MarkerDecoration({content:"{$k}", margin:new soso.maps.Size(0, -4), align:soso.maps.ALIGN.CENTER, marker:marker});
+		<!--{/loop}-->
+		
+	    var navControl = new soso.maps.NavigationControl({
+	        align: soso.maps.ALIGN.TOP_LEFT,
+	        margin: new soso.maps.Size(5, 15),
+	        map: map
+	    });
+	    //setAlign
+	    var sAlign=document.getElementById("sAlign");
+	    var aIndex=0;
+	    soso.maps.Event.addDomListener(sAlign,"click",function(){
+	        navControl.setMap(map);
+	        switch(aIndex){
+	            case 0:
+	                navControl.setAlign(soso.maps.ALIGN.TOP_RIGHT);
+	                aIndex++;
+	                break;
+	            case 1:
+	                navControl.setAlign(soso.maps.ALIGN.TOP_LEFT);
+	                aIndex=0;
+	        }
+	    });
+	    //setStyle
+	    var sStyle=document.getElementById("sStyle");
+	    var sIndex=0;
+	    soso.maps.Event.addDomListener(sStyle,"click",function(){
+	        navControl.setMap(map);
+	        switch(sIndex){
+	            case 0:
+	                navControl.setStyle(soso.maps.NavigationControlStyle.NORMAL);
+	                sIndex++;
+	                break;
+	            case 1:
+	                navControl.setStyle(soso.maps.NavigationControlStyle.LARGE);
+	                sIndex=0;
+	        }
+	    });
+	});
+	
+	//移动中心点
+	function moveCenter(lat, lng, li){
+		center = new soso.maps.LatLng(lat, lng);
+		map.setCenter(center);
+		if(li != null){
+			$(".console_sidebar li").each(function(){
+				$(this).removeAttr("class");
+			});
+			$(li).attr("class", "active");
+		}
+	}
+</script>
+<!--{template web/footer}-->

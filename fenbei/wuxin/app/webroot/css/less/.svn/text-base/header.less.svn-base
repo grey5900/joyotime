@@ -1,0 +1,79 @@
+.header {
+	z-index:9999;
+	.navbar-inner {
+		padding:0 5%;
+		height: 32px;
+		.clearfix();
+		.btn-group {
+			margin-top: 0;
+		}
+		.logo {
+			float: left;
+			display: inline-block;
+			h1 {
+				overflow: hidden;
+				font-size: 28px;
+			  font-weight: 200;
+			  text-shadow: 0 1px 0 #db3c14;
+			  color: #db3c14;
+			  line-height: 33px;
+			}
+		}
+		.menu {
+			.btn {
+				border: none;
+				.border-radius(none);
+				background: #fff;
+				min-width: 80px;
+				padding: 8px 20px;
+				&:hover,
+			  &:focus,
+			  &:active {
+			    text-decoration: none;
+			    outline:none;
+			    .box-shadow(none);
+			    background: #fff;
+		  	}
+		  	.caret {
+		  		margin-left: 3px;
+		  	}
+			}
+			.dropdown-menu {
+				.border-radius(0);
+				min-width: 130px;
+				height: 30px;
+				right:8px;
+				color: #333;
+				li {
+					display: block;
+					a {
+						font-size: 14px;
+						&:hover,
+					  &:focus,
+					  &:active {
+					    text-decoration: none;
+					    background: #f5f5f5;
+					    color: #333;
+				  	}
+					}
+				}
+			}
+			.msg {
+				border-right: 1px solid #ddd;
+				padding-right: 20px;
+				font-size: 10px;
+				line-height: 28px;
+				display: inline-block;
+				color: #666;
+				.icon-envelope {
+					width: 16px;
+				}
+				span {
+					display: inline-block;
+					margin-left: 10px;
+					line-height: 14px;
+				}
+			}
+		}
+	}
+}

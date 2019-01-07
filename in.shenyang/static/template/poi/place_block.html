@@ -1,0 +1,73 @@
+<!--地点碎片数据页面-->
+<dl>
+    <dt>碎片管理：</dt><dd><button id="{$page_id}_add_block" type="button">添加一个碎片</button></dd>
+</dl>
+<div id="{$page_id}_list_block">
+    
+</div>
+<script type="">
+    $(function(){
+        $("#{$page_id}_add_block", $("#{$page_id}")).click(function(){
+            get_{$page_id}_block();
+        });
+    });
+    
+    var {$page_id}_block_id = 0;
+    
+    /**
+     * 获取添加的HTML
+     * @param 
+     */
+    function get_{$page_id}_block(module_id, property_id) {
+        var block_id = {$page_id}_block_id++;
+        var url = '/poi/poi/poi_block/place_id/{$place_id}/page_id/{$page_id}/block_id/' + block_id
+                                                          + (module_id?'/module_id/' + module_id:'')
+                                                          + (property_id?'/property_id/' + property_id:'');
+        
+        var block_div = $('<div id="{$page_id}_' + block_id + '"></div>');
+        $("#{$page_id}_list_block", $("#{$page_id}")).append(block_div);
+        block_div.loadUrl(url);
+    }
+    
+    /**
+     * 删除一个碎片
+     */
+    function del_{$page_id}_block(block_id) {
+        $("#{$page_id}_" + block_id, $("#{$page_id}_list_block")).remove();
+    }
+    
+    /**
+     * 隐藏一个碎片
+     */
+    function hidden_{$page_id}_block(obj, block_id) {
+        var status = parseInt($(obj).attr("status"));
+        var b = status == 1?false:true;
+        $("#{$page_id}_" + block_id + "_detail", $("#{$page_id}_list_block")).toggle(b);
+        $(obj).attr("status", status == 1?0:1);
+        $(obj).text(b?"隐藏":"展开");
+    }
+    
+    /**
+     * 获取扩展模型
+     */
+    function get_{$page_id}_extends(obj, block_id, module_id, property_id) {
+        var url = "/poi/poi/poi_block_module/place_id/{$place_id}/page_id/{$page_id}/block_id/" + block_id
+                                                          + (module_id?'/module_id/' + module_id:'')
+                                                          + (property_id?'/property_id/' + property_id:'');
+        obj.loadUrl(url);
+    }
+    
+    <!--{loop $properties $row}-->
+    get_{$page_id}_block($row['moduleId'], $row['id']);
+    <!--{/loop}-->
+</script>
+<style>
+    .poi_block {
+        background: #999999;
+        padding: 4px;
+    }
+    .poi_block_module {
+        background: #eeeeee;
+        padding: 2px;
+    }
+</style>

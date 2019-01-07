@@ -1,0 +1,116 @@
+<form id="pagerForm" method="post" action="{$current_page}">
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="<!--{{param.orderField}}-->" />
+	<input type="hidden" name="orderDirection" value="<!--{{param.orderDirection}}-->" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:50px;">
+				<label>搜索：</label>
+				
+			</li>
+			<li>
+			<input type="text" name="keywords" value="{$keywords}"/>
+			</li>
+			<li style="width:50px;"><label>分类：</label></li>
+			<li><select name="catId">
+			<option value='0'>所有分类</option>
+			{$category}
+			</select></li>
+			<li><label>排序：</label><select name="orderby">
+			<option value="new" {if $orderby == "new"}selected="selected"{/if}>最新</option>
+			<option value="hot" {if $orderby == "hot"}selected="selected"{/if}>最热</option>
+			</select></li>
+			<!-- <li style="width:auto"><label>状态：</label>
+				<input type="radio" name="status" value=0 {if $status===0 || $status==='0'}checked="checked"{/if} />未审核
+				<input type="radio" name="status" value=1 {if $status==1}checked="checked"{/if} />审核
+				<input type="radio" name="status" value=2 {if $status==2}checked="checked"{/if} />可能含有敏感词
+				<input type="radio" name="status" value=3 {if $status==3}checked="checked"{/if} />已屏蔽
+			</li>  -->
+			
+			
+		</ul>
+		
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				
+			</ul>
+		</div>
+		
+		
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+		<li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="ids" postType="string" href="post/delthem" class="delete"><span>批量删除</span></a></li>
+		
+		</ul>
+	</div>
+	<table class="list" width="1200" layoutH="115">
+		<thead>
+			<tr>
+				<th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+				<th width="20" >ID / 栏目</th>
+				<th width="80" >地点 </th>
+				<th width="100" >内容</th>
+				<th width="1" >图片</th>
+				<th width="30" >赞</th>
+				<th width="30" >回复</th>
+				<th width="30" >分享</th>
+				<th width="30" >点击</th>
+				<th width="30" >用户</th>
+				<th width="30" >标签</th>
+				<th width="30" >权重</th>
+				<th width="30" >额外权重</th>
+				<th width="30" title="（仅供观看，不能修改状态）" warn="（仅供观看，不能修改状态）">状态</th>
+				<th width="30" >创建日期</th>
+				<th width="30">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!--{loop $data $k $v}-->
+			<tr target="id" rel="{$v['postId']}/catId/{$v['catId']}/channelId/{$v['channelId']}/score/{$v['score']}" >
+				<td><input name="ids" value="{$v['postId']}-{$v['catId']}-{$v['channelId']}" type="checkbox"></td>
+				<td>{$v['id']} / {eval echo $cates[$v['channelId']][$v['catId']]['catName'] ? $cates[$v['channelId']][$v['catId']]['catName'] : $cates[$v['channelId']]['catName'];}</td>
+				<td>{$place[$v['placeId']]['placename']} </td>
+				<td>{$v['content']}</td>
+				<td>{if !$v['photo']}无{else}<a href="{eval echo image_url($v['photo'],'user','mdp')}" class="image_show" ><img src="{eval echo image_url($v['photo'],'user')}" width="150" />{/if}</td>
+				<td>{$v['praiseCount']}</td>
+				<td>{$v['replyCount']}</td>
+				<td>{$v['shareCount']}</td>
+				<td>{$v['hitCount']}</td>
+				<td><img src="{eval echo image_url($user[$v['uid']]['avatar'],'head','mdpl')}" width=40 height=40 /><br/>{$user[$v['uid']]['username']}</td>
+				<td>{$v['tags']}</td>
+				<td>{$v['score']}</td>
+				<td>
+				<input type="text" size="4" onfocus="modify_boost(this, 'WebNewsCategoryData', <!--{$v['postId']}-->,<!--{$v['catId']}-->,<!--{$v['channelId']}-->, 'boost')" value="{$v['boost']}" name="boost" />
+				</td>
+				<td>{if $v['status']==0}未审核{elseif $v['status']==1}审核{elseif $v['status']==2}可能有敏感词{else}已屏蔽{/if}</td>
+				<td>{$v['createDate']}</td>
+				
+				<td>
+					<a title="删除" target="ajaxTodo" href="post/delete/{$v['postId']}/{$v['channelId']}/{$v['catId']}" class="btnDel">删除</a>
+					<!-- <a title="修改权重" target="dialog" href="post/edit/postId/{$v['postId']}/channelId/{$v['channelId']}/catId/{$v['catId']}/score/{$v['score']}"  class="btnEdit">修改权重</a>-->
+				</td>
+				
+			</tr>
+		<!--{/loop}-->
+			
+			
+		</tbody>
+	</table>
+	
+	<!--{template main/page_bar}-->
+	<script type="text/javascript">
+	$(function(){
+		$("a.image_show").fancybox();
+	});
+</script>
+</div>

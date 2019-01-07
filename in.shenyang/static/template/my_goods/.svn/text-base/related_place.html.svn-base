@@ -1,0 +1,18 @@
+<div class="pageContent">
+    <table class="table" width="100%" layoutH="28">
+        <thead>
+            <tr>
+                <th width="15%">地点ID</th>
+                <th width="85%">地点名称</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $place $row}-->
+            <tr>
+                <td>{$row['id']}</td>
+                <td>{$row['placename']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+</div>

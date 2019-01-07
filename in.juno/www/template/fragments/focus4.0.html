@@ -1,0 +1,21 @@
+{if $hot[focus][data]}
+<div class="carousel slide">
+							<div class="carousel-inner">
+							{loop $hot[focus][data] $k $d}
+								<div class="item {if $k==0}active{/if}">
+									<a href="{$d['link']}" target="_blank"><img alt="{$d['title']}" src="{$d['image']}"></a>
+									<div class="carousel-caption">
+										<a href="{$d['link']}" target="_blank">{$d['title']}</a>
+									</div>
+								</div>
+							{/loop}
+								
+								
+							</div>
+							<ol class="carousel-indicators">
+								{loop $hot[focus][data] $k $d}
+							      <li class="{if $k==0}active{/if}" ></li>
+								{/loop}
+							</ol>
+						</div>
+{/if}

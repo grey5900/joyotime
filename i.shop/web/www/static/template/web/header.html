@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>IN成都商家平台</title>
+		<!-- Date: 2012-08-27 -->
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+    	<meta http-equiv="pragma" content="no-cache" />
+
+		<link rel="stylesheet" href="/static/css/wrapper.css?v={$css_v}" >
+		<link rel="stylesheet" href="/static/css/uploadify.css?v={$css_v}" >
+		<link rel="stylesheet" href="/static/css/phone_style.css?v={$css_v}">
+		<link rel="stylesheet" href="/static/css/others.css?v={$css_v}" >
+		<link rel="stylesheet" href="/static/css/timepicker.css?v={$css_v}">
+		<link rel="shortcut icon" href="/static/img/favicon.ico">
+		
+		<script src="/static/js/jquery.min.js?v={$css_v}"></script>
+		<script src="/static/js/jquery.ui.js?v={$css_v}"></script>
+		<script src="/static/js/bootstrap.js?v={$css_v}"></script>
+		<script src="/static/js/bootstrap-timepicker.js?v={$css_v}"></script>
+		<script src="/static/js/jquery.validate.js?v={$css_v}"></script>
+		<script src="/static/js/jquery.jqModal.js?v={$css_v}"></script>
+
+		<script src="/static/js/plugins.js?v={$css_v}"></script>
+		<script src="/static/js/main.js?v={$css_v}"></script>
+		<script src="/static/js/common.js?v={$css_v}"></script>
+		
+	  <script src="/static/js/jquery.uploadify.min.js?v={$css_v}"></script>
+		<script src="/static/js/jquery.imgareaselect.min.js?v={$css_v}"></script>
+    <!-- 图片上传 -->
+    <script type="text/javascript" src="/static/js/ajaxFileUpload.js?v={$css_v}"></script>
+    <script type="text/javascript" src="/static/js/profile.js?v={$css_v}"></script>		
+        <!-- Highcharts -->
+        <script src="/static/js/charts/highcharts.js?v={$css_v}" type="text/javascript"></script>
+        <script src="/static/js/charts/modules/exporting.js?v={$css_v}" type="text/javascript"></script>
+        <!-- END Highcharts -->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="navbar-link">
+						<h3><a class="logo" href="/">
+							<img width="354" height="55" title="IN成都商家平台" src="/static/img/logo_header.png">
+						</a></h3>
+					</div>
+					<div class="navbar-link pull-right">
+						欢迎您！<span>{$auth[brand_name]}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu">
+			<div class="container">
+				<div id="fixed-header">
+					<div class="navbar">
+						<ul class="nav">
+					    	<li<!--{if empty($active)||$active==='index'}--> class="active"<!--{/if}-->><a href="/">首页</a></li>
+						    <li<!--{if $active==='prefer'}--> class="active"<!--{/if}-->><a href="/prefer">优惠管理</a></li>
+							<li<!--{if $active==='profile'}--> class="active"<!--{/if}-->><a href="/profile">扩展信息</a></li>
+						    <li<!--{if $active==='member'}--> class="active"<!--{/if}-->><a href="/member">会员管理</a></li>
+						    <li<!--{if $active==='message'}--> class="active"<!--{/if}-->><a href="/message">消息中心</a></li>
+					   </ul>
+					</div>
+				</div>
+				<div class="navbar-link pull-right">
+					<a href="/modify_pass">修改密码</a><span>|</span>
+					<a href="/logout">退出登录</a>
+				</div>
+			</div>
+		</div>

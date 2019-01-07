@@ -1,0 +1,40 @@
+<!--{template common/header}-->
+<link rel="stylesheet" href="/static/skin/user_style.css" type="text/css" />
+<div id="container">
+	<!--{template sub_header}-->
+	<div class="container">
+		<div class="pagelet">
+			<ul class="nav nav-pills">
+				<li<!--{if !$type}--> class="active"<!--{/if}-->><a href="/user_friend/{$info[id]}">关注<span>({$info[followCount]})</span></a></li>
+				<li<!--{if $type}--> class="active"<!--{/if}-->><a href="/user_friend/{$info[id]}/1/">粉丝<span>({$info[beFollowCount]})</span></a></li>
+			</ul>
+			<ul class="user_list">
+				<!--{loop $list $k $v}-->
+				<li class="user">
+					<div class="avatar xlarge"><a href="/user/{$v[id]}/"><i></i><img src="{$v[avatar]}" /></a></div>
+					<div class="username"><a href="/user/{$v[id]}/">{echo $v[nickname]?$v[nickname]:$v[username]}</a></div>
+				</li>
+				<!--{/loop}-->
+			</ul>
+			<hr class="divider" />
+			{$paginate}
+		</div>
+	</div>
+	<form action="/user_mnemonic" class="modal hide form-horizontal" id="user-setmnemonic-form" method="post">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal" >&times;</a>
+			<h3>设置备注名</h3>
+	    </div>
+	    <div class="modal-body">
+		    <div class="control-group">
+			        <input type="text" class="input-large" name="mnemonic" value="" maxlength="6" placeholder="备注名" id="user_mnemonic">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="javascript:void(0);" class="btn" data-dismiss="modal">关闭</a>
+			<input type="submit" class="btn btn-primary" data-loading-text="　……　" value="　提交　" />
+		</div>
+	</form>
+</div>
+
+<!--{template common/footer}-->

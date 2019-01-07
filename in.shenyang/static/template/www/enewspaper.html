@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>手机报</title>
+		<meta name="Keywords" content="{$paper['subject']}">
+		<meta name="Description" content="{$paper['subject']}">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<style type="text/css" media="screen">
+			* {
+				-webkit-tap-highlight-color:rgba(0,0,0,0);
+				outline: none;
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+			}
+			body {
+				margin: 0px;
+				padding: 10px;
+				font-size: 16px;
+				line-height: 1.4;
+			}
+			h1 {
+				font-size: 18px;
+				font-weight: bold;
+				color: #5caa1d;
+				margin: 0px;
+				padding: 0px;
+				line-height: 30px;
+			}
+			.contents {
+			}
+			.contents img {
+				width: 100%;
+			}
+			.contents .content {
+				border-bottom: 1px dotted #cccccc;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				margin-bottom: 10px;
+			}
+			.buttom_bar {
+			}
+			.buttom_bar:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.buttom_bar a.button {
+				display: block;
+				width: 48%;
+				text-align: center;
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size: 14px;
+				text-decoration: none;
+				color: #ffffff;
+				padding: 8px 0px;
+				background: #87cb49;
+				background: -moz-linear-gradient( top, #ace76f 0%, #5eab1f);
+				background: -webkit-gradient( linear, left top, left bottom, from(#ace76f), to(#5eab1f));
+				border-radius: 5px;
+				-moz-border-radius: 60px;
+				-webkit-border-radius: 60px;
+				border: 1px solid #3e8208;
+				-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.1), inset 0px 1px 0px rgba(255,255,255,0.4);
+				-webkit-box-shadow: 0px 1px 0px rgba(000,000,000,0.2), inset 0px 1px 0px rgba(255,255,255,0.5);
+				text-shadow: 0px -1px 0px rgba(56,140,13,0.8), 0px 0px 0px rgba(255,255,255,0);
+			}
+			.buttom_bar a.button:hover {
+				background: #66b127;
+				background: -moz-linear-gradient( top, #87cb49 0%, #5eab1f);
+				background: -webkit-gradient( linear, left top, left bottom, from(#87cb49), to(#5eab1f));
+			}
+			.buttom_bar .prev {
+				float: left;
+			}
+			.buttom_bar .next {
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="subject">{$paper['subject']}</h1>
+		<ul class="contents">
+			<!--{loop $content $row}-->
+			<li>
+				<!--{if $row['image']}--><div><img src="{eval echo image_url($row['image'], 'common', 'odp');}" /></div><!--{/if}-->
+				<div class="content">
+					{echo nl2br($row['content']);}
+				</div>
+			</li>
+			<!--{/loop}-->
+		</ul>
+		<div class="buttom_bar">
+			<!--{if $prev}-->
+			<a class="button prev" href="/www/enewspaper/{$prev['id']}">上一期</a>
+			<!--{/if}-->
+			<!--{if $next}-->
+			<a class="button next" href="/www/enewspaper/{$next['id']}">下一期</a>
+			<!--{/if}-->
+		</div>
+	</body>
+</html>

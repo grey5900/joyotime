@@ -1,0 +1,23 @@
+@import "_module/_template.less";
+@import "_module/_images.less";
+@import "_module/_boxs.less";
+@import "_module/_select2.less";
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.ui-selectee {
+  padding: 5px;
+}
+.ui-selecting,.ui-selected { 
+  background: #3498DB; 
+  color: #fff; 
+}

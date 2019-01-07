@@ -1,0 +1,95 @@
+
+	<div class="mini-header">
+		<div class="card">
+		  <a class="avatar" href="/user/{$info[id]}"><img src="{$info[avatar_h]}" /></a>
+		  <div class="info">
+		    <h2>
+		      <a href="/user/{$info[id]}">{echo $info[nickname]?$info[nickname]:$info[username];}</a>
+		    </h2>
+		    <p>{$info[description]}</p>
+		  </div>
+		</div>
+	</div>
+
+	<!-- 
+	<div class="column user_banner">
+			<div class="cover">
+				<img src="{$info[background]}" alt="" />
+			</div>
+			<div class="avatar">
+				<a href="/user/{$info[id]}/"><img src="{$info[avatar_h]}" alt="" /></a>
+			</div>
+			<div class="sub">
+				<div class="name">
+					
+					<!--{if $info[can_follow] > -1}-->
+	                   	<!--{if $info[can_follow]}-->
+	                   		<a class="btn btn-danger action-follow" data-loading-text="关注中..." data-uid="{$info[id]}">加关注</a>
+	                   	<!--{else}-->
+	                   		<a class="btn btn-danger action-unfollow" data-loading-text="取消中..." data-uid="{$info[id]}">取消关注</a>
+	                   	<!--{/if}-->
+                  	<!--{/if}-->
+                  	<!--{if $info[can_follow] == -1}-->
+					<a href="/profile/setting/" class="btn btn-success btn-vertical">个人设置</a>
+					<!--{/if}-->
+					<h2>{echo $info[nickname] ? $info[nickname] : $info[username];}
+					<a href="#" class="item-qrcode" rel="popover" data-placement="right" data-html="true" data-content="<div class='qr-popover'><div class='thumb'><img width='200' height='200' src='http://chart.googleapis.com/chart?chs=200x200&amp;cht=qr&amp;chl=http://in.chengdu.cn/qr/inuser/{$info[id]}' /></div></div>"><i class="icon-qrcode"></i></a></h2>
+					<p>{$info['description']} </p>
+					
+				</div>
+				<hr class="fadeOut" />
+			</div>
+			<div class="info">
+				
+				<div class="intro">
+					<p>性别：{$info['gender']}</p>
+					<p>星座：{$info[star]}</p>
+					<p>年龄：{$info[age]}</p>
+					<p>{$info[levelname]}：Lv{$info[level]}</p>
+				</div>
+				<div class="score">
+					<p>点评：<em>{$info['tipCount']}</em></p>
+					<p>被赞：<em>{$info['bePraiseCount']}</em></p>
+					<p>地主：<em>{$info['mayorshipCount']}</em></p>
+					<p>积分：<em>{$info['point']}</em></p>
+				</div>
+				<div class="album">
+					<div class="box friends">
+						<ul>
+						{loop $ulist  $u}
+							<li class="mini"><img src="{$u[avatar]}" alt="{$u[nickname]}" /></li>
+						{/loop}
+							
+						</ul>
+						<div class="title">
+							<a href="/user_friend/{$info['id']}/">{echo $info['followCount']+$info['beFollowCount'];}个好友</a>
+							
+						</div>
+					</div>
+					<div class="box photo">
+						<ul>
+							<li class="large"><img src="{$photo['photoName']}" alt="" /></li>
+						</ul>
+						<div class="title">
+							<a href="/user_photo/{$info['id']}/">{$info['photoCount']}张图片</a>
+							
+						</div>
+					</div>
+					<div class="box location">
+						<ul>
+						{loop $place_collection $k $pc}
+							<li class="{if $k==0}small{else}mini{/if}">
+								<img src="{echo image_url($pc['photo'],'placeColl','pcdp');}" alt="" />
+							</li>
+						{/loop}
+							
+						</ul>
+						<div class="title">
+							<a href="/user_collection/{$info['id']}/">{$info['placeCollectionCount']}个地点册</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		 -->

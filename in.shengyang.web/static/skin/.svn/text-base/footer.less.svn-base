@@ -1,0 +1,76 @@
+#footer {
+	background: #f3f3f3;
+	.friendlink {
+		background: #ededed;
+		border-top: 1px #d7d7d7 solid;
+		border-bottom: 1px #d7d7d7 solid;
+		height: 35px;
+		line-height: 35px;
+		overflow: hidden;
+		.con {
+			width: 880px;
+			height: 35px;
+			overflow: hidden;
+		}
+		a {
+			padding-right: 12px;
+		}
+		.btn {
+			float: right;
+			width: 30px;
+			height: 15px;
+			margin-top: 10px;
+			background-position: right -34px;
+			overflow: hidden;
+		}
+		.btn b {
+			display: block;
+			width: 14px;
+			height: 15px;
+			cursor: pointer;
+			float: left;
+			margin-right: 1px;
+		}
+		.btn .prev {
+		}
+	}
+	.about {
+		height: 93px;
+		padding: 22px 0 0 78px;
+		border-bottom: 1px #d4d4d4 dashed;
+		h2 {
+			font-size: 16px;
+			line-height: 18px;
+			height: 18px;
+			padding-bottom: 5px;
+		}
+		p {
+			line-height: 22px;
+		}
+		.index {
+			width: 213px;
+		}
+		.down {
+			width: 383px;
+		}
+		.ab {
+			width: 320px;
+		}
+		b {
+			float: left;
+			width: 46px;
+			height: 46px;
+			margin-right: 10px;
+		}
+		.c {
+			color: #aaa;
+			padding-top: 22px;
+			height: 56px;
+			text-align: center;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		a {
+			color: #666;
+		}
+	}
+}

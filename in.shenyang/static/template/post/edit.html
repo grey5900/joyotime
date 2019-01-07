@@ -1,0 +1,28 @@
+<div class="pageContent">
+<form method="post" action="{$current_url}}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent" layoutH="57">
+			<input type="hidden" value="{$info[postId]}" name="postId"/>
+			<input type="hidden" value="{$info[channelId]}" name="channelId"/>
+			<input type="hidden" value="{$info[catId]}" name="catId"/>
+			<input type="hidden" value="{$info[boost]}" name="c_boost" id="c_boost" />
+			<input type="hidden" value="{$info[score]}" name="score" id="score" />
+			<div class="unit">
+				<label>当前热度：</label>
+				{$score}
+			</div>
+			<div class="unit">
+				<label>额外权重：</label>
+				<input type="text" name="boost" id="boost" value="{$info[boost]}" />
+			</div>
+			
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

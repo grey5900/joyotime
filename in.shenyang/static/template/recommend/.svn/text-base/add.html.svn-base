@@ -1,0 +1,190 @@
+<div class="pageContent">
+    <form method="post" id="fragment_add_form" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <div class="pageFormContent" layoutH="57">
+            <dl>
+                <dt>
+                    名称
+                </dt>
+                <dd>
+                    <input type="text" name="name" value="{$fragment['name']}" size="20" maxlength="20" class="required" />
+                </dd>
+            </dl>
+            <dl style="height:auto;">
+                <dt>
+                    描述
+                </dt>
+                <dd>
+                    <textarea name="description" rows="5" cols="40" class="textInput">{$fragment['description']}</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    更新对象
+                </dt>
+                <dd>
+                    <input type="text" name="update_object" value="{$fragment['updateObject']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>排序号</dt>
+                <dd>
+                    <input type="text" value="{$fragment['orderNo']}" size="5" name="order_no" class="number" />
+                </dd>
+            </dl>
+            <!--{if $parent_id}-->
+            <!--添加碎片，而不是分类-->
+            <dl>
+                <dt>分类</dt>
+                <dd>
+                    <select class="combox" name="parent_id">
+                        <!--{loop $all_fragment $row}-->
+                        <!--{if $row['parentId'] == '0'}-->
+                        <option value="{$row['id']}"<!--{if $row['id'] == $parent_id}--> selected<!--{/if}-->>{$row['name']}</option>
+                        <!--{/if}-->
+                        <!--{/loop}-->
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>内链数据</dt>
+                <dd>
+                    <input name="fragment.id" value="{$fragment['linkId']}" type="hidden" />
+                    <input name="fragment.name" type="text" value="{$all_fragment[$fragment['linkId']]['name']}" readonly />
+                    <a class="btnLook" href="{eval echo site_url(array('lookup', 'recommend_fragment'))}" lookupGroup="fragment">查找带回</a> 
+                    <a href="javascript:;" id="remove_link_id">清空</a>
+                </dd>
+            </dl>
+            <span id="fragment_field"<!--{if $fragment['linkId']}--> style="display:none;"<!--{/if}-->>
+            <dl>
+                <dt>数据来源</dt>
+                <dd>
+                    <select class="combox" name="data_source">
+                        <option value="">请选择</option>
+                        <!--{loop $fragment_category $key $value}--> 
+                        <option value="{$key}">{$value}</option>
+                        <!--{/loop}-->
+                    </select>
+                </dd>
+            </dl>
+            <dl style="height:auto;">
+                <dt>字段设置</dt>
+                <dd>
+                    <table>
+                        <!--{loop $field $key $value}-->
+                        <tr height="25">
+                            <td><label><input type="checkbox" name="field[]" value="f_{$key}" />{$value}</label></td>
+                            <td><input type="text" name="f_{$key}" value="{$fragment['fields']['f_'.$key]}" disabled="disabled" /></td>
+                        </tr>
+                        <!--{/loop}-->
+                    </table>
+                </dd>
+            </dl>
+            </span>
+            <dl>
+                <dt>自动更新</dt>
+                <dd>
+                    <label><input type="checkbox" name="auto_update" value="1"<!--{if $fragment['autoUpdate']}--> checked="checked"<!--{/if}--> />自动？</label>
+                </dd>
+            </dl>
+            <dl>
+                <dt>跳转连接</dt>
+                <dd>
+                    <label><input type="checkbox" name="rewrite" value="1"<!--{if $fragment['rewrite']}--> checked="checked"<!--{/if}--> />跳转？</label>
+                </dd>
+            </dl>
+            <!--{/if}-->
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("input[name='field[]']").each(function(){
+            setDisabled(this, false);
+        });
+        $("input[name='field[]']").click(function(){
+            setDisabled(this, true);
+        });
+        function setDisabled(obj, isSet) {
+            $("input[name='" + $(obj).val() + "']").attr("disabled", !($(obj).attr("checked")=="checked"));
+            if(isSet) {
+                // 点击checkbox
+                if(($(obj).attr("checked")=="checked")) {
+                    $("input[name='" + $(obj).val() + "']").val($(obj).parent().text());
+                    $("input[name='" + $(obj).val() + "']").addClass("required");
+                } else {
+                    $("input[name='" + $(obj).val() + "']").val("");
+                    $("input[name='" + $(obj).val() + "']").removeClass("required");
+                }
+            } else {
+                if($("input[name='" + $(obj).val() + "']").val()) {
+                    // 输入框有值，反选checkbox
+                    $(obj).attr("checked", "checked");
+                    $("input[name='" + $(obj).val() + "']").addClass("required");
+                    $("input[name='" + $(obj).val() + "']").attr("disabled", false);
+                }
+            }
+        }
+        // 数据源
+        <!--{if $fragment['dataSource']}-->
+        $("select[name=data_source]").val("{$fragment['dataSource']}");
+        init_fields("{$fragment['dataSource']}", false);
+        <!--{/if}-->
+        $("#remove_link_id").click(function(){
+            $("input[name='fragment.id']").val("");
+            $("input[name='fragment.name']").val("");
+            $("#fragment_field").show();
+        });
+        $("select[name=data_source]").change(function(){
+            init_fields($(this).val(), true);
+        });
+        
+        /**
+         * 初始化字段选中状态
+         */
+        function init_fields(ds, isChange) {
+            <!--{loop $default_field $key $value}-->
+            if("{$key}" == ds) {
+                $("input[name='field[]']", $("#fragment_add_form")).each(function(){
+                    var input = $("input[name='"+$(this).val()+"']", $("#fragment_add_form"));
+                    if(isChange) {
+                        $(this).attr("checked", false);
+                        input.attr("disabled", true);
+                        input.removeClass("required");
+                        input.val("");
+                    }
+                    <!--{loop $value $k $v}-->
+                    if("f_{$k}" == $(this).val()) {
+                        $(this).attr("checked", "checked");
+                        input.attr("disabled", false);
+                        input.addClass("required");
+                        input.val("{$v}");
+                    }
+                    <!--{/loop}-->
+                });
+            }
+            <!--{/loop}-->
+        }
+    });
+</script>

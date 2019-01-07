@@ -1,0 +1,160 @@
+<!--{template web/header}-->
+<div id="container" class="container">
+	<div class="section fixed clearfix">
+		<div class="main">
+			<div class="inner clearfix">
+				<div class="main-header">
+					<h2 class="pull-left">个人设置</h2>
+				</div>
+				<div class="main-content">
+					<!--{template tit}-->
+					<div class="con">
+						<form id="user-settings-form" class="form-horizontal" action="/user_settings/" method="post">
+							<div class="control-group">
+								<label class="control-label">
+									用户名：
+								</label>
+								<div class="controls">
+									<span class="controls-text">
+									{if !empty($profile[username])}
+									{$profile[username]}
+									{else}
+									<a href="/complete/{$profile[id]}/">完善帐号信息</a>
+									{/if}
+									</span>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">
+									积分/等级：
+								</label>
+								<div class="controls">
+									<span class="controls-text">{$profile[point]}</span>/<span class="controls-text">LV{$profile[level]}</span>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="nickname">
+									昵称：
+								</label>
+								<div class="controls">
+									<input class="controls-ipt input-medium" id="nickname" type="text" placeholder="昵称" maxlength="15" size="15" value="{$profile[nickname]}" name="nickname">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="description">
+									签名：
+								</label>
+								<div class="controls">
+									<textarea id="description" type="text" cols="40" rows="3" maxlength="30" name="description">{$profile[description]}</textarea>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="gender_male">生日：</label>
+									<div class="controls">
+										<select id="year" class="span2" name="birth_year"></select>
+										<select id="month" class="span2" name="birth_month"></select>
+										<select id="day" class="span2" name="birth_day"></select> 
+								<script type="text/javascript">
+									$(function () {  
+									    var year = $("#year");  
+									    var month = $("#month");  
+									    var day = $("#day");  
+									    var date = new Date();  
+									    var y = date.getFullYear().toString();  
+									    MonDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  
+									    //初始化年份  
+									    year.get(0).options.add(new Option("年", "0"));  
+									    for (var i = 1960; i <= y - 8; i++) {  
+									        year.get(0).options.add(new Option(i, i));  
+									    }  
+									    year.attr("value", "{$profile[b_year]}"); //初始化默认值，1989应该是从数据库取出来的字段  
+									    //初始化月份  
+									    month.get(0).options.add(new Option("月", "0"));  
+									    for (var i = 1; i < 13; i++) {  
+									        month.get(0).options.add(new Option(i, i));  
+									    }  
+									    month.attr("value", "{$profile[b_month]}"); //初始化默认值，同上  
+									    //初始化天数  
+									    var mn = month.val();  
+									    var ye = year.val();  
+									    var n = MonDays[mn - 1];  
+									    if ((ye % 4 == 0 && ye % 100 != 0) || ye % 400 == 0) {  
+									        if (mn == 2) {  
+									            n++;  
+									        }  
+									    }  
+									    day.get(0).options.add(new Option("日", "0"));  
+									    for (var i = 1; i < n + 1; i++) {  
+									        day.get(0).options.add(new Option(i, i));  
+									    }  
+									    day.attr("value", "{$profile[b_day]}"); //初始化默认值，同上
+									    //月份改变时加载天数  
+									    $("#month").change(function () {  
+									        var mn = month.val();  
+									        var ye = year.val();  
+									        var n = MonDays[mn - 1];  
+									        day.empty();  
+									        if ((ye % 4 == 0 && ye % 100 != 0) || ye % 400 == 0) {  
+									            if (mn == 2) {  
+									                n++;  
+									            }  
+									        }  
+									        day.get(0).options.add(new Option("日", "0"));  
+									        for (var i = 1; i < n + 1; i++) {  
+									            day.get(0).options.add(new Option(i, i));  
+									        }  
+									    });  
+									});  
+									</script>
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="gender_male">性别：</label>
+								<div class="controls">
+									<label class="radio inline">
+										<input id="gender_male" type="radio" value="2" name="gender"{if $profile[gender] === '1'} checked="checked"{/if} />
+											男
+									</label>
+									<label class="radio inline">
+										<input id="gender_female" type="radio" value="1" name="gender"{if $profile[gender] === '0'} checked="checked"{/if} />
+										女
+									</label>
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="telephone">手机号码：</label>
+								<div class="controls">
+									<input class="controls-ipt input-medium" id="telephone" type="text" maxlength="11" size="11" value="{$profile[cellphoneNo]}" name="tel" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inviteuid">推荐人ID：</label>
+								<div class="controls">
+									<!--{if !empty($profile[inviter])}-->
+									{$profile[inviter]}
+									<!--{else}-->
+									<input class="controls-ipt input-medium" id="inviteuid" name="invite_uid" type="text" />
+									<!--{/if}-->
+								</div>
+							</div>
+							<div class="from-actions">
+								<label class="control-label"></label>
+								<div class="controls">
+									<input class="btn btn-primary" type="submit" data-loading-text="　……　" value="　确定　">
+									<input class="btn" type="reset" value="重置" />
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="main-footer">
+					
+				</div>
+			</div>
+		</div>
+		<!--{template side_bar}-->
+	</div>
+</div>
+<!--{template web/footer}-->

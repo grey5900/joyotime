@@ -1,0 +1,43 @@
+<!--{template web/header}-->
+
+<div class="container" id="container">
+	<div class="block">
+		<div class="block-header"><h2>申请重设密码</h2></div>
+		<div class="block-content">
+			<!--{if isset($err) && $err == 1}-->
+				<p>{$msg}</p>
+			<!--{else}-->
+			<form class="form-horizontal" id="resetpassword-form{if $step > 0}-1{/if}" action="/reset_pwd_{$step}/">
+				<!--{if $step == 0}-->
+				<div class="control-group">
+					<label class="control-label" for="email">电子邮箱：</label>
+					<div class="controls">
+						<input type="text" name="email" value="" id="email" placeholder="请输入您注册时所填的电子邮箱" />
+					</div>
+				</div>
+				<div class="form-actions">
+					<input type="submit" name="submit" class="btn btn-primary btn-large" data-loading-text="　……　" value="找回密码" />
+				</div>
+				<!--{else}-->
+				<input type="hidden" name="email" value="{$email}" />
+				<input type="hidden" name="rp_id" value="{$rpid}" />
+				<div class="control-group">
+					<label class="control-label" for="newpwd">重置密码：</label>
+					<div class="controls"><input type="password" name="newpwd" id="newpwd" placeholder="请输入您的新密码" /></div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="repwd">再输入一次：</label>
+					<div class="controls"><input type="password" name="repwd" id="repwd" placeholder="请重复输入一次您的新密码" /></div>
+				</div>
+				<div class="form-actions">
+					<input type="submit" name="submit" class="btn btn-primary btn-large" data-loading-text="　……　" value="重设密码" />
+				</div>
+				<!--{/if}-->
+			</form>
+			<!--{/if}-->
+		</div>
+		<div class="block-footer"></div>
+	</div>
+</div>
+
+<!--{template web/footer}-->

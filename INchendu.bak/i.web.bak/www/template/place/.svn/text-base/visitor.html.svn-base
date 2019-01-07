@@ -1,0 +1,40 @@
+<!--{template web/header}-->
+<div class="container" id="container">
+	<!--{template f_header}-->
+	<div class="section">
+		<div class="total">共<em>{$info[visitorCount]}</em>人到过这里</div>
+		<ul class="user_list">
+			<!--{loop $list $uid $user}-->
+			<li class="user dropdown" data-id="{$uid}">
+					<div class="toggle dropdown-toggle">
+						<div class="avatar xlarge"><a href="/user/{$uid}/"><i></i><img border="0" width="76" height="76" src="{$user[avatar]}" /></a></div>
+						<div class="username"><a href="/user/{$uid}/">{$user[uname]}</a></div>
+					</div>
+					<div class="panel dropdown-panel">
+						<div class="head">
+							<div class="avatar xlarge"><a href="/user/{$uid}/"><i></i><img border="0" width="76" height="76" src="{$user[avatar]}" /></a></div>
+							<div class="username"><a href="/user/{$uid}/">{$user[uname]}</a></div>
+						</div>
+						<div class="data">签到:<span class="num">{$user[checkinCount]}</span> 点评:<span class="num">{$user[tipCount]}</span> 照片:<span class="num">{$user[photoCount]}</span></div>
+						<div class="state">{$user[description]}</div>
+						{if $auth[id] != $key}
+						<div class="actions">
+							{if $user[has_follow]>0}
+								<a href="javascript:void(0)" data-id="{$uid}" data-action="uf" data-loading-text="……" class="btn followed">取消关注</a>
+							{else}
+								<a href="javascript:void(0)" data-id="{$uid}" data-action="f" data-loading-text="……" class="btn btn-primary follow">加关注</a>
+							{/if}
+						</div>
+						{/if}
+					</div>
+			</li>
+			<!--{/loop}-->
+		</ul>
+		<hr class="divider" />
+		{$paginate}
+	</div>
+</div>
+<form action="/reply/" method="post" class="modal hide" id="reply-form"></form>
+<form action="/share/" method="post" class="modal hide" id="share-form"></form>
+<form action="/signin/" method="post" class="modal hide form-horizontal" id="signin-modal"></form>
+<!--{template web/footer}-->

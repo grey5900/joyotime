@@ -1,0 +1,37 @@
+<div class="pageContent" id="background_set_bg">
+	<form method="post" action="{$current_url}"
+		class="pageForm required-validate"
+		onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent nowrap" layoutH="57">
+			<dl>
+				<dt>启动画面图片1136*640：</dt>
+				<dd>
+					<button type="button" id="bg_upload">上传背景图</button>
+				</dd>
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive">
+						<div class="buttonContent">
+							<button type="submit" id="btnSubmit">保存</button>
+						</div>
+					</div></li>
+				<li><div class="button">
+						<div class="buttonContent">
+							<button type="button" class="close">取消</button>
+						</div>
+					</div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var option = "name:\"image\",id:\"image\",file_type:\"default\",required:false";
+		<!--{if $bg}-->
+		option += ", image_name:\"{$bg['image']}\"";
+		<!--{/if}-->
+		$("#bg_upload", "#background_set_bg").my_upload(eval("({"+option+"})"));
+	});
+</script>

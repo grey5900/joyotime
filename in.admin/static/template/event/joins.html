@@ -1,0 +1,24 @@
+<form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+</form>
+<div class="pageContent">
+
+	<table class="table" width="100%" cellpadding="4" cellspacing="4" layoutH="56">
+		<thead><tr>
+			<th width="10%">ID</th>
+			<th>用户</th>
+			<th>报名时间</th>
+		</tr></thead>
+		<tbody>
+			<!--{loop $list $k $v}-->
+			<tr>
+				<td>{$v[uid]}</td>
+				<td>{$v[showName]}({$v[username]})</td>
+				<td>{eval echo substr($v[createDate], 0, -3);}</td>
+			</tr>
+			<!--{/loop}-->
+		</tbody>
+	</table>
+    <!--{template main/page_bar}-->
+</div>

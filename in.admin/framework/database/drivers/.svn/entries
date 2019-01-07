@@ -1,0 +1,92 @@
+10
+
+dir
+42063
+svn://svn.joyotime.com/Incd20/XR87/trunk/framework/database/drivers
+svn://svn.joyotime.com/Incd20
+
+
+
+2012-11-13T10:22:38.442955Z
+13263
+zhucl
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+86661628-28bb-49c0-9a6f-c8e3782614a9
+
+cubrid
+dir
+
+index.html
+file
+
+
+
+
+2013-08-28T07:57:42.000000Z
+0227cfd904e99656279202032b98d4a7
+2012-03-01T07:08:04.717989Z
+28
+zhucl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+114
+
+mssql
+dir
+
+mysql
+dir
+
+mysqli
+dir
+
+oci8
+dir
+
+odbc
+dir
+
+pdo
+dir
+
+postgre
+dir
+
+sqlite
+dir
+
+sqlsrv
+dir
+

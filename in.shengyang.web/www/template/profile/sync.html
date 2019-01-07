@@ -1,0 +1,40 @@
+<!--{template common/header}-->
+<div id="container">
+  <div class="container-fluid">
+    <div class="row">
+    <!--{template side_bar}-->
+      <div class="main">
+        <!--{template navigation}-->
+        <div class="con">
+          <div class="fill">
+            <dl>
+              <dt>通过简单的设置，将你在IN沈阳的动态同步到其他社交网站，让你的其他朋友也能随时知道你的动态</dt>
+              <!--{loop $syncs $key $val}-->
+              <dd>
+                <a href="javascript:void(0)"><img width="58" height="58" src="/{$val[icon]}" alt="{$val[name]}" /></a>
+                <!--{if !$val[has_bind]}-->
+                <a class="action blueLink" href="{$api_uri}?stage_code={$key}&uid={$uid}&is_redirect=1">同步到{$val[name]}</a>
+                <!--{else}-->
+                <a class="action blueLink" href="/oauth/unbind/{$key}/{$uid}" onclick="do_unbind($(this));return false;">解除对{$val[name]}的绑定</a>
+                <!--{/if}-->
+                <span class="grayLight"><!--{if $val[has_bind]}-->已绑定账号<!--{else}-->未绑定账号<!--{/if}--></span>
+              </dd>
+              <!--{/loop}-->
+            </dl>
+          </div>
+          <script type="text/javascript">
+            function do_unbind(dom){
+              $.getJSON(dom.attr("href"), function(json){
+                $.messager(json.msg);
+                if(json.code == 1)
+                  setTimeout(function(){window.location.reload();}, 3000);
+              });
+              return false;
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--{template common/footer}-->

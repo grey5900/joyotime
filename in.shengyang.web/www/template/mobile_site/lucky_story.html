@@ -1,0 +1,42 @@
+<!--{template mobile_site/elements/header}-->
+<div class="container">
+	<div class="header">
+		<h1>IN沈阳</h1>
+	</div>
+	<div class="content">
+		<div class="media-story">
+            <div class="media">
+                <div class="media-body media-block">
+                    <p>{$story}</p>
+                </div>
+            </div>
+        </div>
+		<div class="media-gift">
+            <div class="gift">
+                <div class="info">
+                    <p>{$gift['name']}为你提供惊喜宝箱</p>
+                    <p>密室门票？精美马克杯？可爱抱枕？美味饮品？巨额积分？</p>
+                </div>
+            </div>
+        </div>
+        <div class="media-story">
+            <div class="media">
+                <div class="media-body media-block">
+                    <p>下载IN沈阳手机客户端即可打开宝箱，100%中奖，密室门票、精美马克杯、可爱抱枕、美味饮品、巨额积分等缤纷大礼等你来拿！</p>
+                </div>
+            </div>
+        </div>
+		
+		<div class="control-link">
+			<a href="/signup?referer={echo urlencode($referer);}"
+				class="btn btn-success">注册领取宝箱</a>
+			<div class="headingline">
+				<span>已经有账号了？</span>
+			</div>
+			<a href="/signin?referer={echo urlencode($referer);}"
+				class="btn btn-default">登录IN沈阳</a>
+		</div>
+		<!--{template mobile_site/elements/merchandise_display}-->
+	</div>
+</div>
+<!--{template mobile_site/elements/footer}-->

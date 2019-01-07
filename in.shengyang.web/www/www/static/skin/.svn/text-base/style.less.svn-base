@@ -1,0 +1,347 @@
+/*!
+ * Bootstrap v3.0.0
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// CSS Reset
+@import "_bootstrap/reset.less";
+
+// Core variables and mixins
+@import "_bootstrap/variables.less";
+@import "_bootstrap/mixins.less";
+
+// Grid system and page structure
+@import "_bootstrap/scaffolding.less";
+@import "_bootstrap/grid.less";
+
+// Base CSS
+@import "_bootstrap/type.less";
+@import "_bootstrap/code.less";
+@import "_bootstrap/forms.less";
+@import "_bootstrap/tables.less";
+
+// Components: common
+@import "_bootstrap/glyphicons.less";
+@import "_bootstrap/dropdowns.less";
+@import "_bootstrap/wells.less";
+@import "_bootstrap/component-animations.less";
+@import "_bootstrap/close.less";
+
+// Components: Buttons & Alerts
+@import "_bootstrap/buttons.less";
+@import "_bootstrap/button-groups.less";
+@import "_bootstrap/alerts.less";
+
+// Components: Nav
+@import "_bootstrap/navs.less";
+@import "_bootstrap/navbar.less";
+@import "_bootstrap/breadcrumbs.less";
+@import "_bootstrap/pagination.less";
+@import "_bootstrap/pager.less";
+
+// Components: Popovers
+@import "_bootstrap/modals.less";
+@import "_bootstrap/tooltip.less";
+@import "_bootstrap/popovers.less";
+
+// Components: Misc
+@import "_bootstrap/thumbnails.less";
+@import "_bootstrap/media.less";
+@import "_bootstrap/labels-badges.less";
+@import "_bootstrap/progress-bars.less";
+@import "_bootstrap/accordion.less";
+@import "_bootstrap/carousel.less";
+@import "_bootstrap/hero-unit.less";
+
+// Utility classes
+@import "_bootstrap/utilities.less";
+
+
+// Responsive
+// -------------------------------------------------------------
+
+// Responsive utility classes
+// @import "_bootstrap/responsive-utilities.less";
+
+
+// Media queries
+// ------------------
+
+// Large desktops
+// @import "_bootstrap/responsive-1200px-min.less";
+
+// Tablets to regular desktops
+// @import "_bootstrap/responsive-768px-979px.less";
+
+// Phones to portrait tablets and narrow desktops
+// @import "_bootstrap/responsive-767px-max.less";
+
+
+// Responsive navbar
+// From 979px and below, show a button to toggle navbar contents
+// @import "_bootstrap/responsive-navbar.less";
+
+@import "_notification.less";
+@import "_header.less";
+@import "_footer.less";
+@import "_module.less";
+@import "_inform.less";
+@import "_article.less";
+@import "_search.less";
+@import "_main.less";
+@import "_map.less";
+@import "_sign.less";
+@import "_upload.less";
+@import "_photo.less";
+@import "_ad.less";
+
+// 默认主题颜色
+@default-theme: #31548a;
+
+#returntop {
+	display: none;
+	cursor: pointer;
+	position: fixed;
+	right: 50%;
+	margin-right: -580px;
+	bottom: 20px;
+	width: 50px;
+	height: 50px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background: url(returntop.png) 0px 0px no-repeat;
+	_background: url(returntop.gif) 0px 0px no-repeat;
+	&:hover {
+		background-position: 0px -50px;
+	}
+}
+
+#messager {
+	min-width: 200px;
+	max-width: 300px;
+	_width: 200px;
+	padding: 20px 15px;
+	line-height: 20px;
+	overflow: hidden;
+	position: absolute;
+	z-index: 9999;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #ffffff;
+	border: 1px solid rgba(0,0,0,.2);
+	border: 1px solid #666 ~"\9";
+	border-radius: 3px;
+	.box-shadow(0 1px 3px rgba(0,0,0,.3));
+	.opacity(0);
+}
+
+
+.placeico {
+	background-image: url('ico.png');
+	background-repeat: no-repeat;
+	background-position: -191px 0;
+	width: 11px;
+	height: 13px;
+	display: inline-block;
+	.ie7-inline-block();
+	margin-left: 5px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.placedico {
+	background-image: url('ico-light.png');
+	background-repeat: no-repeat;
+	background-position: -1px -2px;
+	width: 12px;
+	height: 13px;
+	display: inline-block;
+	.ie7-inline-block();
+	margin-right: 5px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+.peopleico {
+	background-image: url('ico-light.png');
+	background-repeat: no-repeat;
+	background-position: 0 -17px;
+	width: 14px;
+	height: 13px;
+	display: inline-block;
+	.ie7-inline-block();
+	margin-right: 5px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+.vico {
+	background-image: url('ico.png');
+	background-repeat: no-repeat;
+	background-position: -109px 0;
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	.ie7-inline-block();
+	vertical-align: middle;
+	overflow: hidden;
+}
+.praise {
+	background: url("icon_praise.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: inline-block;
+	.ie7-inline-block();
+    height: 20px;
+    text-indent: -9999px;
+    width: 20px;
+	&.on {
+	    background-position: 0 -40px;
+	}
+}
+/* 星级 */
+.ico-star{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-1px -38px;width:15px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-half{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-1px -20px;width:15px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-empty{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-1px -2px;width:15px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-0{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -2px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-1{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -20px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-2{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -38px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-3{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -54px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-4{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -72px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-5{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -88px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-6{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -106px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-7{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -122px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-8{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -140px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-9{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -157px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+.ico-star-10{background:transparent url(stars.png) repeat-x scroll 0 -999em;background-position:-2px -174px;width:83px;height:15px;display:inline-block;*display: inline;*zoom: 1;}
+
+.push {
+	border-right: 1px #e6e6e6 solid;
+	border-bottom: 1px #e6e6e6 solid;
+	background: #fff;
+	.tit {
+		height: 33px;
+		line-height: 33px;
+		background: #eee;
+		padding-left: 15px;
+        border-top: 2px solid @default-theme;
+		.clearfix();
+		h2 {
+			padding: 0px;
+			margin: 0 10px 0 0;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 33px;
+			float: left;
+			.cleartype();
+		}
+		.say {
+			width: 68px;
+			height: 25px;
+			margin: 4px 0 0 0;
+			background: url("channel-style.png") 0 -160px no-repeat;
+			display: block;
+			float: left;
+			color: #fff;
+			font-weight: bold;
+			font-size: 14px;
+			text-align: center;
+			text-decoration: none;
+			line-height: 28px;
+			padding-left: 10px;
+		}
+		.tab {
+			float: right;
+			width: 180px;
+			height: 33px;
+			a {
+				display: block;
+				width: 90px;
+				height: 40px;
+				line-height: 30px;
+				text-align: center;
+				color: #333;
+				font-size: 18px;
+				float: left;
+				text-decoration: none;
+				.cleartype();
+				&.current {
+					color: #fff;
+					background: url('tab-bg.png') no-repeat;
+				}
+			}
+		}
+		.breadcrumbs {
+			float: right;
+		}
+	}
+	.con {
+		//padding-bottom: 45px;
+	}
+}
+
+/* 二维码 */
+.item-qrcode {
+ 	display: inline-block;
+ 	.ie7-inline-block();
+ 	background: url("icon_qrcode.png") center center no-repeat #fff;
+	width: 17px;
+	height: 17px;
+	line-height:16px;
+	text-indent: -9999px;
+	overflow: hidden;
+	border: 1px solid #f0f0f0;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	&:hover {
+		border: 1px solid #e1e1e1;
+	}
+}
+
+.qr-popover {
+	width: 200px;
+	.thumb {
+		 text-align: center;
+		 img {
+		 	width: 200px !important;
+		 	height: 200px !important;
+		 	border-radius: 0 !important;
+		 	float: none !important;
+		 	margin: 0 !important;
+		 }
+	}
+	.notic {
+		 color: #aaa;
+		 font-size: 14px;
+		 font-weight: normal;
+		 padding: 10px;
+	}
+}
+
+#place-map-container {
+	img {
+		max-width: none;
+	}
+}
+#tip-post{
+	.textarea-edit{
+		position:relative;
+		.txt_tip{
+			position:absolute;
+			line-height:80px;
+			text-align:center;
+			width:100%;
+			a{
+				color:#7FB612;
+			}
+		}
+	}
+} 
+#content{
+	table,table td{
+		border:1px solid #DDDDDD;
+	}
+}

@@ -1,0 +1,37 @@
+10
+
+dir
+2844
+svn://svn.joyotime.com/yushuo/cake/admin/tmp/cache
+svn://svn.joyotime.com/yushuo
+
+
+
+2014-03-12T07:56:17.327514Z
+2114
+panxp
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d6eadc75-1f2b-44c6-861c-a7f0569d512d
+
+models
+dir
+
+persistent
+dir
+
+views
+dir
+

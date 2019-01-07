@@ -1,0 +1,188 @@
+<!--{if !isset($info) || empty($info)}-->
+<div class="number-tit">
+  <h3>2</h3>
+  <span>添加内容</span>
+</div>
+<!--{/if}-->
+<div class="hd">
+  <ul class="nav nav-tabs">
+    <li class="active-large">
+      <a>编辑封面内容</a>
+    </li>
+  </ul>
+</div>
+<div class="fill">
+  <ul class="style-tabs" id="active-switch">
+    <input type="hidden" name="style" id="style" value="{eval echo isset($info) && !empty($info) ? $info[style]+1 : '3';}" />
+    <li>
+      <a>
+      <input class="styleTab" type="radio" name="s_style" value="3"<!--{if !isset($info) || (isset($info) && $info[style] == 2)}--> checked="checked"<!--{/if}-->/>
+      样式一</a>
+    </li>
+    <li>
+      <a>
+      <input class="styleTab" type="radio" name="s_style" value="1"<!--{if isset($info) && $info[style] == 0}--> checked="checked"<!--{/if}-->/>
+      样式二</a>
+    </li>
+    <li>
+      <a>
+      <input class="styleTab" type="radio" name="s_style" value="2"<!--{if isset($info) && $info[style] == 1}--> checked="checked"<!--{/if}-->/>
+      样式三</a>
+    </li>
+  </ul>
+  <div id="myTabContent">
+    <div class="span5">
+      <div class="controls">
+        <input onblur="pretitle($(this).val());" id="module-title" class="controls-ipt w-fill text-input" type="text" name="title" placeholder="{$module[name]}" value="{eval echo isset($info) && !empty($info) ? $info[title] : $module[name];}">
+      </div>
+      <div class="controls">
+        <textarea name="content" class="w-fill" id="module-content" maxlength="30" onblur="preview_cur($('#pre-cover-content-'+$('#style').val()), $(this).val());"
+          rows="3" cols="80" type="text"
+          placeholder="{$module[description]}">{eval echo isset($info) && !empty($info) ? $info[content] : $module[description];}</textarea>
+      </div>
+      <div class="controls">
+        <ul class="imgs" id="covers">
+          <!--{if isset($info) && !empty($info) && !empty($info[images])}-->
+          <!--{if is_array($info[covers])}-->
+          <!--{eval $imgs = explode(',',$info[images]);}-->
+          <!--{loop $info[covers] $k $v}-->
+          <!--{eval list($dom_id,$d) = explode('.',$imgs[$k]);}-->
+          <li id="covers_{$dom_id}">
+            <div class="fileupload fileupload-new">
+              <span class="slect-img">
+                <img src="{$v}" alt="{$imgs[$k]}" width="60px" height="60px"/>
+                <input type="hidden" name="covers[]" class="img-covers" value="{$imgs[$k]}" class="imgPrew"/>
+                <a href='javascript:;' class="fileupload-exists" onclick="delCover('{$dom_id}');"> 删除 </a>
+              </span>
+            </div>
+          </li>
+          <!--{/loop}-->
+          <!--{else}-->
+          <!--{eval list($dom_id,$d) = explode('.',$info[images]);}-->
+          <li id="covers_{$dom_id}">
+            <div class="fileupload fileupload-new">
+              <span class="slect-img">
+                <img src="{$info[covers]}" alt="{$info[covers]}" width="60px" height="60px"/>
+                <input type="hidden" name="covers[]" class="img-covers" value="{$info[images]}" class="imgPrew" />
+                <a href='javascript:;' class="fileupload-exists" onclick="delCover('{$dom_id}');"> 删除 </a>
+              </span> 
+            </div>
+          </li>
+          <!--{/if}-->
+          <!--{/if}-->
+        </ul>
+      </div>
+    </div>
+
+    <!-- 封面预览 -->
+    <div class="span4">
+      <div class="tab-content">
+        <div id="style_3" class="<!--{if !isset($info) || (isset($info) && $info[style]==2)}-->tab-pane fade in active<!--{else}-->tab-pane fade<!--{/if}-->">
+          <div class="phone-style">
+            <div class="unit">
+              <div class="box">
+                <div class="inside arrow" id="style-preview">
+                  <div class="unit-title">
+                    <h3 class="pre-cover-title">{eval echo isset($info) && !empty($info) ? $info[title] : '扩展信息标题';}</h3>
+                    <ul id="pre-cover-list">
+                      <!--{if isset($info) && $info[style]==2}-->
+                      <!--{loop $info[covers] $k $v}-->
+                      <li><img src="{$v}" width="52" height="52"/>
+                      </li>
+                      <!--{/loop}-->
+                      <!--{else}-->
+                      <li><img src="/static/img/temp03.jpg" width="52" height="52" />
+                      </li>
+                      <li><img src="/static/img/temp03.jpg" width="52" height="52" />
+                      </li>
+                      <li><img src="/static/img/temp03.jpg" width="52" height="52" />
+                      </li>
+                      <li><img src="/static/img/temp03.jpg" width="52" height="52" />
+                      </li>
+                      <!--{/if}-->
+                    </ul>
+                    <p id="pre-cover-content-3">
+                      {eval echo isset($info) && !empty($info) ? $info[content] : '';}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="style_1" class="<!--{if isset($info) && $info[style]==0}-->tab-pane fade in active<!--{else}-->tab-pane fade<!--{/if}-->">
+          <div class="phone-style">
+            <div class="unit">
+              <div class="box">
+                <div class="inside arrow">
+                  <div class="unit-title">
+                    <h3 class="pre-cover-title">{eval echo isset($info) && !empty($info) ? $info[title] : '扩展信息标题';}</h3>
+                  </div>
+                  <a class="img-lt" id="pre-cover-1"><img src="{eval echo isset($info)&&!empty($info[covers]) ? $info[covers] : '/static/img/temp03.jpg';}" width="52px" height="52px" /></a>
+                  <span id="pre-cover-content-1">{eval echo isset($info) && !empty($info) ? $info[content] : '';}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="style_2" class="<!--{if isset($info) && $info[style]==1}-->tab-pane fade in active<!--{else}-->tab-pane fade<!--{/if}-->">
+          <div class="phone-style">
+            <div class="unit">
+              <div class="box">
+                <div class="inside arrow">
+                  <div class="unit-title">
+                    <h3 class="pre-cover-title">{eval echo isset($info) && !empty($info) ? $info[title] : '扩展信息标题';}</h3>
+                  </div>
+                  <a class="img-bar" id="pre-cover-2"><img src="{eval echo isset($info)&&!empty($info[covers]) ? $info[covers] : '/static/img/bar_img.jpg';}" width="250px" height="60px" /></a>
+                  <p id="pre-cover-content-2">
+                    {eval echo isset($info) && !empty($info) ? $info[content] : '';}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 封面预览 END -->
+
+</div>
+<script type="text/javascript">
+
+function pretitle(val){
+  // $(".phone-header").html("");
+  $(".pre-cover-title").html("");
+  if(val != ""){
+  var pre_t = $("<h3></h3>").append(val);
+  //  $(".phone-header").append(pre_t);
+  $(".pre-cover-title").html(val);
+  }
+}
+
+ $(function(){
+    $("input[class=styleTab]").bind("change",function(){
+      var style = $(this).val();
+      $("#style").val(style);
+      $(".tab-pane").attr("class","tab-pane fade");
+      $("#style_"+style).removeAttr("class").attr("class","tab-pane fade in active");
+      var size = 1;
+      if(style == 3){
+        size = 4;
+        $("#pre-cover-list").find('img').attr('src','/static/img/temp03.jpg');
+      }else{
+        $("#pre-cover-"+style).find('img').attr('src',style == 1 ? '/static/img/temp03.jpg' : '/static/img/bar_img.jpg');
+      }
+      initCover(size);
+      var title = $("#module-title").val();
+      var content = $("#module-content").val();
+      if(title != '')
+        pretitle(title);
+      if(content != '')
+        $("#pre-cover-content-"+style).html("").html(content);
+    });
+    <!--{if !isset($info) || empty($info) || empty($info[image])}-->
+    initCover($("#style").val() == 3 ? 4 : 1);
+    <!--{/if}-->
+ });
+</script>

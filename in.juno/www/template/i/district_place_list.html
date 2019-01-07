@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="zh_cn" name="language">
+	<meta name="viewport"content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>{$name}地主大作战</title>
+	<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}" type="text/css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="container">
+			<div class="lumps">
+				<!--{if $show_nav}-->
+				<div class="navigation">
+					<a onclick="goBack();" class="navigation-back"><cite>上一页</cite></a>
+					<span class="navigation-title">{$name}地主大作战</span>
+				</div>
+				<!--{/if}-->
+				<div class="post {if $show_nav}nav-black{/if}">
+				<!--{loop $list $row}-->
+				<div class="lump land-page">
+			  		<div class="box">
+						<div class="feed">
+							<a href="inplace://{$row['id']}">
+								<div class="arrow">
+									<div class="icon">
+									<!--{if $row['mayorId']}-->
+										<img src="{$row['avatar_url']}" width="40" height="40" />
+									<!--{/if}-->
+									</div>
+									<div class="detail">
+										<h3>{$row['placename']}</h3>
+										<!--{if $row['mayorId']}-->
+										<p>地主：{$row['username']}<em>(lv{$row['userlevel']})</em></p>
+										<!--{/if}-->
+										<div class="info">目前累计<em>{$row['point']}</em>积分</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!--{/loop}-->
+				</div>
+			</div>
+			<div class="pagination pagination-centered"></div>
+		</div>
+		<div class="footer">
+			<p>IN.CHENGDU.CN</p>
+		</div>
+	</div>
+</body>
+</html>

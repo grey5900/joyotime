@@ -1,0 +1,32 @@
+<div class="pageContent">
+	<div layoutH="60" id="">
+	<table class="list" width="100%" targetType="navTab" >
+		<thead>
+			<tr>				
+				<th width="5%">ID</th>	
+				<th width="10%" >POI名</th>
+				<th width="20%">描述</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $places $key $val}
+			<tr target="sid_pic" >				
+				<td>{$val['id']}</td>					
+				<td>{$val[placename]}</td>				
+				<td>{$val[des]}</td>
+			</tr>
+			{/loop}
+		</tbody>
+		
+	</table>
+	</div>
+	<div style="float:right">
+	<!-- a href="/poi/poi/index/0/0/{$place_ids_string}" target="navTab">
+		在POI中查看这些地点
+	</a -->
+	<form action="/poi/poi/index/" method="post"  onsubmit="navTab.openTab('poi_poi_index', '/poi/poi/index/', { title:'在POI中查看这些地点', fresh:false, data:{pids:'<!--{$place_ids_string}-->'} });return false;">
+		<input type="hidden" value="{$place_ids_string}" name="pids" />
+		<input type="submit" value="在POI中查看这些地点" />
+	</form>
+	</div>
+</div>

@@ -1,0 +1,87 @@
+<div class="pageHeader">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <label>
+                        <input type="checkbox" name="is_confirm" id="is_confirm" value="1"<!--{if $is_confirm}--> checked="checked"<!--{/if}--> /> 已确认
+                    </label>
+                    <select name="type">
+                        <option value="nickname"<!--{if $type == 'nickname'}--> selected<!--{/if}-->>用户昵称</option>
+                        <option value="uid"<!--{if $type == 'uid'}--> selected<!--{/if}-->>用户ID</option>
+                        <option value="content"<!--{if $type == 'content'}--> selected<!--{/if}-->>反馈内容</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="message_feedback">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="ajaxTodo" callback="callback_feedback_confirm" title="您真的要确定该条反馈？" warn="请选择反馈内容" href="{eval echo site_url(array('message', 'confirm_feedback', 'id'))}/<!--{{id}}-->"><span>确认反馈</span></a>
+            </li>
+            <li>
+                <a class="edit" warn="请选择发送私信的反馈记录" href="{eval echo site_url(array('message', 'send_user_message', 'id'))}/<!--{{id}}-->" target="dialog"><span>发送私信</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="list" width="100%" layoutH="128">
+        <thead>
+            <tr>
+                <th width="20%">用户</th>
+                <th width="20%">反馈时间</th>
+                <th width="15%">IP</th>
+                <th width="40%">内容</th>
+                <th width="5%">状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>
+                    <!--{if $row['uid']}-->
+                    <a href="{eval echo site_url(array('user', 'detail', 'type', 'id', 'keywords', $row['uid']));}" rel="{eval echo build_rel(array('user', 'detail'));}" title="用户详情" target="navTab">
+                    <img src="{eval echo image_url($row['avatar'], 'head')}" width="60" />
+                    {$row['nickname']}
+                    <br/>
+                    {$row['uid']}
+                    </a>
+                    <!--{/if}-->
+                </td>
+                <td>{$row['createDate']}</td>
+                <td><!--{if $row['uid']}-->{$row['lastIp']}<!--{/if}--></td>
+                <td>{$row['content']}</td>
+                <td id="feedback_status_{$row['id']}">{eval echo $row['status']?'已处理':'未处理'}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+function callback_feedback_confirm(json) {
+    DWZ.ajaxDone(json);
+    if(json.statusCode == 200) {
+        $("#feedback_status_" + json.value.id, $("#message_feedback")).text('已处理');
+    }
+}
+
+// function callback_feedback_send_message(json) {
+    // if(json.statusCode == 200) {
+        // $.pdialog.open("{eval echo site_url(array('ugc', 'reply', 'send', 'reply_type', '2', 'receiver'))}/" + json.value.id, "{eval echo build_rel(array('poi', 'report', 'private_message'))}", "发送私信", {maxable:false, width:"500", height:"300"});
+    // } else {
+        // DWZ.ajaxDone(json);
+    // }
+// }
+</script>

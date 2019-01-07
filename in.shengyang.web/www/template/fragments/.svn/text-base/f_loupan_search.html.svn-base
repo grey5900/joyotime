@@ -1,0 +1,25 @@
+{if $v3_fragments['v3_f_loupan_search']}
+<div class="module h_search">
+					<div class="hd">
+						<h2>{$v3_fragments['v3_f_loupan_search']['frag']['name']}</h2>
+						{if $v3_fragments['v3_f_loupan_search']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_loupan_search']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+					</div>
+					<div class="con">
+						<div class="list">
+							<ul>
+							{loop $v3_fragments['v3_f_loupan_search']['data'] $search_key $search}
+								<li>
+									<div class="img"><a href="{$search['link']}" target="_blank"><img src="{$search['image']}" alt="" /></a></div>
+									<div class="info">
+										<a href="{$search['link']}" target="_blank">{$search['title']}</a>
+										<p>均价：<em>{$search['extraData']['price']['data']}元/㎡ </em></p>
+										<p>地址：{echo cut_string($search['extraData']['address']['data'],21)}</p>
+									</div>
+								</li>
+							{/loop}
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+{/if}

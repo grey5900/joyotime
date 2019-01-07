@@ -1,0 +1,276 @@
+<!--{template cover}-->
+<!--{eval $def_val = gmdate($v[fieldType] === 'datetime' ? 'Y-m-d H:i' : 'Y-m-d',time()+8*3600);}-->
+<!--/end fill-->
+<div class="hd">
+  <ul class="nav nav-tabs">
+    <li class="active-large">
+      <a>编辑链接页内容</a>
+    </li>
+  </ul>
+</div>
+<script type="text/javascript">
+  function check_field(id, title, type, checked) {
+    var dom = $("#cbd-" + id);
+    if (checked == true) {
+      dom.show();
+      /*预览*/
+      var id_name = "preview-data-" + id;
+      var pre_dom = $("<dl></dl>").attr('id', id_name);
+      $("dl:even").css("background", "#fff");
+      var pre_dom_title = $("<dt class='tit'></dt>").prepend($("<h3></h3>").append(title).append(":"));
+      pre_dom.append(pre_dom_title);
+      if (type == 'rich_image') {
+        var id_ul = "pre-data-imgs-" + id;
+        pre_dom.append($("<ul></ul>").attr({
+          "class" : "img-col",
+          "id" : id_ul
+        }));
+        //pre_dom.append($("<div></div>").attr("class","dotted-line"));
+      } else if (type == 'image') {
+        var id_dd = "pre-data-dd-" + id;
+        var pre_dd = $("<dd></dd>").attr("id", id_dd);
+        pre_dom.append(pre_dd);
+      }
+      $("#preview-content").append(pre_dom);
+    } else {
+      dom.hide();
+      $("#preview-data-" + id).remove();
+    }
+  }
+
+  function preview_data(id, type, val, clear) {
+    if (type == "rich_image") {//多图
+      var img_list = $("#pre-data-imgs-" + id);
+      img_list.append($("<li></li>").append($("<img />").attr({
+        src : val,
+        width : "52px"
+      })));
+    } else if (type == "image") {//单图
+      var pre = $("#preview-data-" + id);
+      if (clear)
+        pre.find(".img-bar").remove();
+      pre.append($("<dd id='pre-data-dd-" + id + "'><span class='img-bar'></span></dd>").append($("<img />").attr({
+        src : val,
+        width : "250px"
+      })));
+    } else {
+      var pre = $("#preview-data-" + id);
+      if (clear)
+        $("#preview-data-" + id + " dd").remove();
+      //     pre.find("dd").remove();
+      pre.append($("<dd></dd>").append($("<p></p>").append(val)));
+    }
+  }
+</script>
+<div class="fill">
+  <div class="span5">
+    <!--{loop $fields $k $v}-->
+    <div class="hide-column">
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" name="fieldIds[]"  onclick="check_field('{$v[fieldId]}', '{$v[fieldName]}', '{$v[fieldType]}', this.checked);" value="{$v[fieldId]}" id="chk{$k}"<!--{if isset($v[selected])}--> checked="checked"<!--{/if}--> >
+          {$v[fieldName]} </label>
+      </div>
+      <!--{if $v[fieldType] === 'radio'}-->
+      <!-- 单选框 -->
+      <!--{eval $radios = explode(',', $v[defaultValue]);}-->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd li-list"<!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <ul>
+          <!--{loop $radios $i $r}-->
+          <li>
+            <input onchange="preview_data('{$v[fieldId]}', '{$v[fieldType]}', $(this).val(), true);" id="" type="radio" name="{$v[fieldId]}" value="{$r}"<!--{if isset($v[app_value]) && $v[app_value] === $r}--> checked="checked"<!--{/if}-->>
+            {$r}
+          </li>
+          <!--{/loop}-->
+        </ul>
+      </div>
+      <!--{elseif $v[fieldType] === 'rewrite' || $v[fieldType] === 'http'}-->
+      <!-- 跳转或URL链接 -->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd"<!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <label class="checkbox">
+          <input onblur="preview_data('{$v[fieldId]}', '{$v[fieldType]}', $(this).val(), true);" type="text" class="text-input" name="{$v[fieldId]}" value="{eval echo isset($v[app_value]) ? $v[app_value] : '';}" size="30" />
+        </label>
+      </div>
+      <!--{elseif $v[fieldType] === 'image'}-->
+      <!-- 图片 -->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd"<!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <div class="uploads-img">
+          <p id="profile-data-field-{$v[fieldId]}" class="fileupload fileupload-new">
+            <!--{if isset($v[img]) && !empty($v[img])}-->
+            <a href="javascript:;" class="filupload-move" onclick="delImage('{$v[fieldId]}');">删除</a>
+            <img src="{$v[img]}" alt="{$v[img]}" height="100px" width="100px"/>
+            <input type="hidden" name="{$v[fieldId]}" value="{$v[app_value]}" />
+            <!--{else}-->
+            <span class="btn btn-small btn-primary btn-file"> <span class="fileupload-new">图片上传</span>
+              <input type="file" name="uploader" id="uploader" size="8" onchange="uploadImage('uploader', $(this), '{$v[fieldId]}');" class="uploadff" />
+            </span>
+            <!-- <button type="button" onclick="uploadImage('uploader', $(this), '{$v[fieldId]}');">上传</button> -->
+            <!--{/if}-->
+          </p>
+        </div>
+      </div>
+      <!--{elseif $v[fieldType] === 'rich_image'}-->
+      <!-- 批量图片 -->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd"<!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <div class="uploads-img">
+          <ul id="rimg-list-{$v[fieldId]}">
+            <!--{if isset($v[riches]) && !empty($v[riches])}-->
+            <!--{loop $v[riches] $k $r}-->
+            <!--{eval $rs = explode('.', $r[image]);}-->
+            <li id="pre-data-riches-{$rs[0]}" class="fileupload">
+              <div class="fileupload-preview">
+                <div class="thumbnail"><img src="{$r[img]}" width="80px" height="80px" /></div>
+                <input type="hidden" name="{$v[fieldId]}_imgs[]" value="{$r[image]}" />
+                <a href="javascript:;"  class="fileupload-move" onclick="delRich('{$v[fieldId]}','{$rs[0]}');"> 删除 </a>
+                <a href="javascript:;" class="fileupload-add btn" onclick="addRich('{$v[fieldId]}');"> 增加 </a>
+              </div>
+              <div class="fileupload-info">
+                <input type="text" class="text-input" name="{$v[fieldId]}_titles[]" value="{$r[title]}" size="20"/>
+                <textarea name="{$v[fieldId]}_ds[]" cols="16" rows="4">{$r[detail]}</textarea>
+              </div>
+            </li>
+            <!--{/loop}-->
+            <!--{else}-->
+            <li class="fileupload">
+              <span class="btn btn-file btn-small btn-primary"> <span class="fileupload-new">上传图片</span>
+                <input class="uploadff" type="file" name="richUploader" id="richUploader" size="8" onchange="uploadRich($(this), 'richUploader', '{$v[fieldId]}');"/>
+              </span>
+            </li>
+            <!--{/if}-->
+          </ul>
+        </div>
+      </div>
+      <!--{elseif $v[fieldType] === 'time'}-->
+      <!-- 时间 -->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox"<!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <input onblur="preview_data('{$v[fieldId]}', '{$v[fieldType]}', $(this).val(), true);" class="text-input time" type="text" name="{$v[fieldId]}" value="{eval echo isset($v[app_value]) ? $v[app_value] : $v[defaultValue];}" id="" size="16"  readonly="readonly" style="cursor:pointer;"/>
+      </div>
+      <!--{elseif $v[fieldType] === 'checkbox'}-->
+      <!--{eval $checks = explode(',', $v[defaultValue]);}-->
+      <!-- 复选框 -->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd li-list"<!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <ul>
+          <!--{loop $checks $i $c}-->
+          <li>
+            <label class="checkbox">
+              <input onchange="preview_data('{$v[fieldId]}', '{$v[fieldType]}', $(this).val(), false);" type="checkbox" name="{$v[fieldId]}_checks[]" value="{$c}"<!--{if isset($v[app_value]) && strpos($v[app_value], $c) !== false}--> checked="checked"<!--{/if}-->>
+              {$c}</label>
+          </li>
+          <!--{/loop}-->
+        </ul>
+      </div>
+      <!--{elseif $v[fieldType] === 'text'}-->
+      <!-- 文本 -->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd" <!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <div class="controls">
+          <textarea id="intro_w" name="{$v[fieldId]}" onblur="preview_data('{$v[fieldId]}', '{$v[fieldType]}', $(this).val(), true);" 
+            class="input-xlarge" rows="3" cols="80" type="text" placeholder="">{eval echo isset($v[app_value]) ? $v[app_value] : '';}</textarea>
+        </div>
+      </div>
+      <!--{elseif $v[fieldType] === 'date'}-->
+      <!-- 日期+时间控件 -->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd" <!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <input onblur="preview_data('{$v[fieldId]}', '{$v[fieldType]}', $(this).val(), true);" type="text" id="intro_wwww" name="{$v[fieldId]}" class="input-text date" style="cursor:pointer;"  value="{eval echo isset($v[app_value]) ? $v[app_value] : $def_val;}"  readonly="readonly" />
+      </div>
+      <!--{elseif $v[fieldType] === 'datetime'}-->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd" <!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <input onblur="preview_data('{$v[fieldId]}', '{$v[fieldType]}', $(this).val(), true);" type="text" id="intro_ww" name="{$v[fieldId]}" class="input-text datetime" style="cursor:pointer;" value="{eval echo isset($v[app_value]) ? $v[app_value] : $def_val;}"  readonly="readonly" />
+      </div>
+      <!--{else}-->
+      <!-- 文本框 -->
+      <div id="cbd-{$v[fieldId]}" class="cheackbox-bd" <!--{if empty($v[selected]) || !$v[selected]}--> style="display:none;"<!--{/if}-->>
+        <div class="controls">
+          <input onblur="preview_data('{$v[fieldId]}', '{$v[fieldType]}', $(this).val(), true);" type="text" class="text-input" id="intro_www" name="{$v[fieldId]}" size="30" value="{eval echo isset($v[app_value]) ? $v[app_value] : '';}" />
+        </div>
+      </div>
+      <!--{/if}-->
+    </div>
+    <!--{/loop}-->
+  </div>
+
+  <!-- 详情页预览 -->
+  <div class="span4">
+    <div class="phone-body">
+      <div class="phone-header"></div>
+      <div id="phone-container">
+        <div class="items" id="preview-panel">
+          <div id="preview-content">
+            <!--{loop $fields $k $v}-->
+            <!--{if isset($v[selected]) && $v[selected]}-->
+            <dl id="preview-data-{$v[fieldId]}">
+              <dt class="tit">
+                <h3>{$v[fieldName]}：</h3>
+              </dt>
+              <dd id="pre-data-dd-{$v[fieldId]}">
+                <!--{if $v[fieldType] === 'rich_image'}-->
+                <ul class="img-col" id="pre-data-imgs-{$v[fieldId]}">
+                  <!--{loop $v[riches] $i $img}-->
+                  <li><img src="{$img[img]}" alt="{$img[img]}" width="275px"/>
+                  </li>
+                  <!--{/loop}-->
+                </ul>
+                <!--{elseif $v[fieldType] === 'image'}-->
+                <span class="img-bar"> <img src="{$v[img]}" alt="{$v[fieldName]}" id="pre-data-image-{$v[fieldId]}" title="{$v[fieldName]}" width="250px" height="60px" /> </span>
+                <!--{else}-->
+                <p>
+                  {$v[app_value]}
+                </p>
+                <!--{/if}-->
+              </dd>
+              <!--{/if}-->
+              <!--{/loop}-->
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="phone-footer"></div>
+    </div>
+  </div>
+  <!-- 详情页预览 END -->
+
+</div>
+
+<!--{if !isset($edit_publish) || !$edit_publish}-->
+<div class="number-tit">
+  <h3>3</h3>
+  <span>将此扩展信息应用到适用店铺</span>
+</div>
+<div class="fill">
+  <div class="li-list">
+    <label class="checkbox">
+      <input class="" type="checkbox" id="ctlAll" value="1"<!--{if !isset($sels) || empty($sels) || count($sels) == count($list)}--> checked="checked"<!--{/if}-->/>
+      全选</label>
+    <ul>
+      <!--{loop $list $k $v}-->
+      <li>
+        <label class="checkbox">
+          <input class="places" type="checkbox" name="places[]" checked="checked" value="{$v[id]}"<!--{if !isset($sels) || empty($sels) || (isset($sels) && in_array($v[id], $sels))}--> checked="checked"<!--{/if}-->>
+          {$v[placename]}</label>
+      </li>
+      <!--{/loop}-->
+    </ul>
+  </div>
+</div>
+<!--{/if}-->
+<script type="text/javascript">
+  $(function() {
+    $('#ctlAll').attr("checked", true);
+    $('.places').attr("checked", true);
+    $("#ctlAll").click(function() {
+      if ($(this).attr("checked") == "checked") {// 全选
+        $(".places").each(function() {
+          if ($(this).attr("disabled") != "disabled")
+            $(this).attr("checked", true);
+        });
+      } else {// 取消全选
+        $(".places").each(function() {
+          if ($(this).attr("disabled") != "disabled")
+            $(this).attr("checked", false);
+        });
+      }
+    });
+    $('.datetime').datetimepicker();
+    $('.date').datepicker();
+    $('.time').timepicker();
+  });
+</script>

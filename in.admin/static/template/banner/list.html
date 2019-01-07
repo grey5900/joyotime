@@ -1,0 +1,59 @@
+	
+<div class="pageHeader">
+	<div class="panel" defH="40">
+		<h1>未启用的Banner</h1>
+		<form method="post" action="{$current_url}" id="pagerForm" onsubmit="return divSearch(this,'jbsxBox2');">
+			<input type="hidden" name="pageNum" value="{$cur_page}" />
+			<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+			<div class="searchBar">
+				<table class="searchContent">
+					<tr>
+						<td width="60">Banner名称</td>
+						<td width="150"><input type="text" name="keyword" value="{$keyword}" size="30" /></td>
+						<td><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('client','banner','add'));}" rel="{eval echo build_rel(array('banner','add'));}" target="dialog" title="添加新Banner" height="450"><span>添加</span></a></li>
+			<li><a class="delete" href="{eval echo site_url(array('client','banner','delete'));}/id/<!--{{sid_banner}}-->" target="ajaxTodo" title="请选择一个Banner" warn="请选择一个Banner"><span>删除</span></a></li>
+		</ul>
+	</div>
+	<div style="display:block;overflow:auto;">
+	<table class="list" width="100%" layoutH="368">
+		<thead>
+                        <tr>
+                            <th width="5%">ID</th>
+                            <th width="40%">描述</th>
+                            <!-- <th width="20%">标题</th> -->
+                            <th width="25%">图片</th>
+                            <th width="20%">链接</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+		<tbody>
+			{loop $disables $key $val}
+                        <tr target="sid_banner" rel="{$key}">
+                            <td>{$val['id']}</td>
+                            <td>{$val[name]}</td>
+                            <!-- <td>{$val['title']}</td> -->
+                            <td>{if !empty($val[image])}<a class="image_show" href="{eval echo image_url($val[image], 'default');}?{eval echo time();}"><img src="{eval echo image_url($val[image], 'default');}?{eval echo time();}" alt="banner-{$val[name]}" /></a>{/if}</td>
+                            <td>{$val[hyperLink]}</td>
+                            <td><a class="btnEdit" target="dialog" rel="{eval echo build_rel(array('banner','edit',$key));}" href="{eval echo site_url(array('client','banner','edit','type',$type));}/id/{$key}" title="编辑 [{$val[name]}]" minheight="450" height="450">编辑</a><a class="btnAdd" target="ajaxTodo" title="该操作将使这个Banner在客户端显示，确定要执行吗？" href="{eval echo site_url(array('client','banner','onoff','do','on','type',$type));}/id/{$key}">启用</a></td>
+                        </tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("a.image_show").fancybox();
+	});
+</script>

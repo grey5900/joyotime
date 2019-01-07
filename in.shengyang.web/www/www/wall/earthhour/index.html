@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>420地震</title>
+    <link rel="stylesheet" href="http//:in.chengdu.cn/static/skin/mobile_main_style.css" type="text/css" />
+    <script type="text/javascript" src="http//:in.chengdu.cn/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http//:in.chengdu.cn/static/js/mobile.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="container">
+        <div class="post">
+          <div class="feeds" id="feeds">
+            <div class="feed-list">
+              <a href="inpost://{$v['id']}">
+                <div class="icon"><img src="{$v[avatar_url]}" width="40" height="40" /></div>
+                <div class="detail">
+                  <h4></h4>
+                  <div class="action"> 在</div>
+                  <div class="place">{$v[placename]}</div>
+                  <div class="action"> {echo $v[type]<4 ?'发布了点评':($v[type]==4?'发布了YY':'分享')} </div>
+                  <div class="info">{$v[content]}</div>
+                  <div class="photo"><img class="lazy" src="{$v[photoName]}" data-original="{$v[photoName]}" width="200" /></div>
+                  <div class="time">{$v[createDate]}</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pagination pagination-centered" >
+        </div>
+        <a href="/event_new/m_post_list/{$event['id']}/2" style="display:none" id="rolling_next_page"></a>
+      </div>
+      <div class="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+   	<script type="text/javascript">
+	  
+		$(function(){
+	
+			var $ls = $('#bd'),
+				$liTpl = $ls.find('.tpl').hide().remove().removeClass('tpl'),
+				lastKey = 0,
+				feedLs = [],
+				querying = false,
+				domain = 'in3.joyotime.com',
+			    wallName = 'earthhour',
+				wallPlaces = '10586';
+					    
+			function updateQueue(){
+				if(querying) {return;}
+			    $.ajax('http://'+ domain +'/wall/list/'+ wallName +'/'+ lastKey +'/',{
+					beforeSend : function(){
+						querying = true;
+					},
+				  	complete : function(){
+				    	querying = false;
+				  	},
+				  	success : function(json, textStatus, jqXHR){
+				  		var json = eval("("+json+")");
+						//console.log(json.data);
+						if(json && (0 == json.status)){
+					  		if(json.data.length){
+					    		lastKey = json.data[0].score;
+					    		$.merge(feedLs, json.data.reverse());
+					    		
+					  			//console && console.log(feedLs);
+					  		}
+						} else {
+					  		console && console.log('error feed/list');
+					    }
+				    }
+	    		});
+			}
+		  function loadNextFeed(){
+		    if(!feedLs.length) {return;}
+		    var data = feedLs.shift();
+		    var $cur = $liTpl.clone().attr('id', 'feedLi-'+data.postId).addClass('cur').
+		      find('.avatar img').attr({
+		        'src':data.avatar,
+		        'alt':data.username+'的头像'}).end().
+		      find('.username').text(data.username).end();
+		      
+		      $cur.find('.placename').text(data.placename).end().
+		        find('.txt').text(data.content?'“'+data.content+'”':'');
+		      $cur.prependTo($ls).slideDown();
+		      
+		   var $earlierOne = $cur.next('.li');
+		      $('.username_p').text($earlierOne.find('.username').text());
+			  $('.placename_p').text($earlierOne.find('.placename').text());
+			  $('.txt_p').text($earlierOne.find('.txt').text());
+			  
+		      $earlierOne.slideUp('normal', function(){
+		        $earlierOne.removeClass('cur').slideDown();
+		      });
+		    ('' === data.content) && $cur.find('.colon').hide();
+		  }
+		    var t = parseInt(Math.random() * 4000 + 1000);
+		  	// init
+		  	updateQueue();
+		  	setInterval(updateQueue, 5000);
+		  	setInterval(loadNextFeed, 5000);
+		  	setInterval("document.getElementById(\"joins\").innerHTML = parseInt(document.getElementById(\"joins\").innerHTML)+1",t);
+		})(jQuery);	
+	  </script>
+  </body>
+</html>

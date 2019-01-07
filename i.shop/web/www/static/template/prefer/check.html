@@ -1,0 +1,79 @@
+<!--{template web/header}-->
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox">
+			<div class="main">
+				<div class="inner main-conter">
+					<div class="title">
+						<h3>等待审核</h3>
+					</div>
+					<div class="from-detail">
+						<div class="hd">
+							<div class="span7"><div class="cutoff"><span>优惠卷</span></div></div>
+							<div class="span2"><span>提交时间</span></div>
+						</div>
+						<div class="bd">
+							<dl>
+								<!--{loop $list $k $v}-->
+								<dd>
+									<div class="span7">
+										<div class="event">
+											<div class="icon">
+												<a href="/prefer/preview/{$k}/0" class="jqView checkview"><img src="{$v[image]}"/></a>
+											</div>
+											<div class="details">
+												<h3><a href="/prefer/preview/{$k}/0" class="jqView checkview">{$v[title]}</a></h3>
+												<div class="timeing"><span><i class="icon-time"></i>有效期 <!-- {$v[s_begin]} -->至{$v[s_end]}</span></div>
+												<div class="info">{$v[detail]}</div>
+												<div class="others"><span></span><a class="pull-right jqView checkview place_show" href="/prefer/view_place/{$k}/0">{$v[p_count]}适用店</a></div>
+											</div>
+										</div>
+									</div>
+									<div class="span2">
+										<div class="preview">
+											<span>{$v[createDate]}</span>
+											<div class="review">
+											  <!--{if $v[status]==10}-->
+											  <a class="modal-tips jqModal" href="javascript:;" onclick="showReason('驳回原因','{$v[remark]}');return false;"><i></i>{$v[s_status]}</a>
+											  <!--{else}-->
+											  <span>{$v[s_status]}</span>
+											  <!--{/if}-->
+											  </div>
+											<div class="setting">
+												<!--{if $v[status] == 10}--><a href="/prefer/edit/{$v[id]}">编辑</a>|<a href="javascript:;" onclick="return del_check('{$v[id]}');">删除</a><!--{/if}-->
+											</div>
+										</div>
+									</div>
+								</dd>
+								<!--{/loop}-->
+							</dl>
+							{$paginate}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--{template sider}-->
+		</div>
+	</div>
+</div>
+ <div id="view_M" class="modal-preview hide">
+  </div>
+<script type="text/javascript">
+$(function(){
+	$("#view_M").jqm({ajax:'@href',overlay: 0, modal: true, trigger: 'a.jqView'});
+});
+
+function del_check(id) {
+  if (confirm("确定要删除这个优惠吗?")) {
+    $.getJSON("/prefer/delete/" + id, function(json) {
+      if (json.code == 0) {
+        window.location.reload();
+      } else {
+        alert(json.msg);
+      }
+    });
+  }
+  return false;
+}
+</script>
+<!--{template web/footer}-->

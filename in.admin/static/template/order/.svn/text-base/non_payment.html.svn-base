@@ -1,0 +1,92 @@
+<div class="pageHeader">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this, '{$page_rel}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="item_type">
+                        <option value="0"<!--{if $item_type == 0}--> selected<!--{/if}-->>订单类型</option>
+                        <option value="12"<!--{if $item_type == 12}--> selected<!--{/if}-->>团购</option>
+                        <option value="13"<!--{if $item_type == 13}--> selected<!--{/if}-->>电影票</option>
+                    </select>
+                    <select name="type">
+                        <option value="id"<!--{if $type == 'id'}--> selected<!--{/if}-->>订单号</option>
+                        <option value="itemTitle"<!--{if $type == 'itemTitle'}--> selected<!--{/if}-->>商品名</option>
+                        <option value="nickname"<!--{if $type == 'nickname'}--> selected<!--{/if}-->>用户昵称</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="order_non_payment">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="navTab" warn="请选择订单" title="订单详情" rel="{eval echo build_rel(array('order', 'detail'))}" href="{eval echo site_url(array('order', 'detail', 'id'))}/<!--{{id}}-->"><span>订单详情</span></a>
+            </li>
+            <li>
+                <a class="add" target="ajaxTodo" warn="请选择要作废的订单" title="您真的要作废这个订单么？" href="{eval echo site_url(array('order', 'destory', 'id'))}/<!--{{id}}-->"><span>关闭订单</span></a>
+            </li>
+            <li>
+                <a class="add" target="ajaxTodo" warn="请选择要删除的订单" title="您真的要删除这个订单么？" href="{eval echo site_url(array('order', 'del', 'id'))}/<!--{{id}}-->"><span>删除订单</span></a>
+            </li>
+            <li>
+                <a class="add" target="dialog" warn="请选择订单" title="订单备注" rel="{eval echo build_rel(array('order', 'add_remark'))}" maxable="false" width="500" height="380" href="{eval echo site_url(array('order', 'add_remark', 'id'))}/<!--{{id}}-->"><span>备注</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="128" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="12%">订单号</th>
+                <th width="13%">下单时间</th>
+                <th width="13%">下单用户</th>
+                <th width="30%">商品标题</th>
+                <th width="5%">数量</th>
+                <th width="8%">订单金额</th>
+                <th width="7%">来源商家</th>
+                <th width="7%">提货方式</th>
+                <th width="5%">状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}
+                    <!--{if $row['isDelete']}--><span class="order-delete">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--{/if}-->
+                    <!--{if $row['remark']}--><a href="javascript:;" content="{$row['remark']}" class="order-remark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><!--{/if}-->
+                </td>
+                <td>{$row['createDate']}</td>
+                <td>{$row['nickname']} {$row['cellphoneNo']}</td>
+                <td>{$row['itemTitle']}</td>
+                <td>{$row['quantity']}</td>
+                <td>{$row['money']}<!--{if $row['isRefund']}--><span class="order-refund">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--{/if}--></td>
+                <td>{$row['sourceName']}</td>
+                <td>{$row['shipTypeName']}</td>
+                <td title="{$row['shipStatusName']}">{$row['shipStatusName']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".order-remark", $("#order_non_payment")).poshytip({
+                content:function(){
+                    return $(this).attr("content");
+                }
+            });
+        }, 500);
+    });
+</script>

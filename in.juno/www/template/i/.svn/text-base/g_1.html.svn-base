@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="zh_cn" name="language">
+		<title>在手机客户端完成新手任务</title>
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}">
+		<script type="text/javascript" src="/static/js/jquery.min.js?{$version}"></script>
+	</head>
+	<body>
+		<div id="container">
+			<div class="container">
+				<div class="lumps">
+					<div class="lump">
+						<div class="item">
+							<div class="item-content">
+								<ul class="rounded">
+									<!--{loop $task_list $row}-->
+									<li>
+										<div class="tit">
+											{$row['caseName']}<em class="s">（{$row['point']}）</em>
+										</div>
+										<!--{if $row['isCompleted']}-->
+										<i class="done"></i>
+										<!--{else}-->
+										<i class="undone">未完成</i>
+										<!--{/if}-->
+									</li>
+									<!--{/loop}-->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

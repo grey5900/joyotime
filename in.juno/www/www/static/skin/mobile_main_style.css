@@ -1,0 +1,3975 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\000031}}
+.ui-icon {
+  background: url("/static/m_img/m_icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: inline-block;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\000039}}
+.ui-text {
+  -moz-user-select: none;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000315}}
+.ui-icon-minus {
+  background-position: -36px 0;
+  margin-top: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000319}}
+.ui-icon-plus {
+  background-position: 0 0;
+  margin-top: 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000323}}
+.ui-btn-up-c {
+  background: #eee;
+  color: #5CAA1D;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000329}}
+.ui-btn-hover-c {
+  background: #f1f1f1;
+  color: #5CAA1D;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000336}}
+.ui-btn-down-c {
+  color: #5CAA1D;
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000342}}
+.ui-btn-up-c,
+.ui-btn-hover-c,
+.ui-btn-down-c {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000347}}
+a.ui-link-inherit {
+  text-decoration: none !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000351}}
+.ui-btn-active:visited,
+.ui-btn-active:hover,
+.ui-btn-active a.ui-link-inherit {
+  color: #5caa1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000355}}
+.ui-corner-all {
+  -webkit-border-radius: .4em;
+  border-radius: 0.4em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000361}}
+.ui-mobile,
+.ui-mobile body {
+  height: 99.9%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000364}}
+.ui-mobile fieldset,
+.ui-page {
+  padding: 0;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000368}}
+.ui-mobile a img,
+.ui-mobile fieldset {
+  border-width: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000371}}
+.ui-mobile-viewport {
+  margin: 0;
+  overflow-x: visible;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000378}}
+body.ui-mobile-viewport,
+div.ui-mobile-viewport {
+  overflow-x: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000381}}
+.ui-mobile [data-role=page],
+.ui-mobile [data-role=dialog],
+.ui-page {
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  display: none;
+  border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000390}}
+.ui-mobile .ui-page-active {
+  display: block;
+  overflow: visible;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000395}}
+.ui-loading .ui-loader {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\0000398}}
+.ui-loader {
+  display: none;
+  z-index: 9999999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003106}}
+.ui-loader .ui-icon {
+  background-color: #000;
+  display: block;
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  padding: 1px;
+  -webkit-border-radius: 36px;
+  border-radius: 36px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003117}}
+.ui-corner-all > .ui-header:first-child,
+.ui-corner-all > .ui-content:first-child,
+.ui-corner-all > .ui-footer:first-child {
+  -webkit-border-top-left-radius: inherit;
+  border-top-left-radius: inherit;
+  -webkit-border-top-right-radius: inherit;
+  border-top-right-radius: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003123}}
+.ui-corner-all > .ui-header:last-child,
+.ui-corner-all > .ui-content:last-child,
+.ui-corner-all > .ui-footer:last-child {
+  -webkit-border-bottom-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  -webkit-border-bottom-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003129}}
+.ui-btn {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  margin: .5em 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003138}}
+.ui-btn-inner {
+  font-size: 16px;
+  padding: .5em 20px;
+  min-width: .75em;
+  display: block;
+  position: relative;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003150}}
+.ui-btn-inner,
+.ui-btn-text {
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003155}}
+.ui-btn-inner:hover,
+.ui-btn-text:hover {
+  color: #5CAA1D;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003159}}
+.ui-btn-icon-notext .ui-icon {
+  display: block;
+  z-index: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003163}}
+.ui-btn-icon-left .ui-icon {
+  left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003166}}
+.ui-btn-icon-right .ui-icon {
+  right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003169}}
+.ui-btn-icon-top .ui-icon {
+  top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003172}}
+.ui-btn-icon-bottom .ui-icon {
+  top: auto;
+  bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003177}}
+.ui-collapsible-inset {
+  margin: .5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003180}}
+.ui-collapsible-inset .ui-collapsible-heading {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003183}}
+.ui-collapsible-heading .ui-btn {
+  text-align: left;
+  margin: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003189}}
+.ui-collapsible-inset .ui-collapsible-heading .ui-btn {
+  border-right-width: 1px;
+  border-left-width: 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003193}}
+.ui-collapsible-heading .ui-btn-icon-left .ui-btn-inner {
+  padding-left: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003196}}
+.ui-collapsible-heading .ui-btn-icon-right .ui-btn-inner {
+  padding-right: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003200}}
+.ui-collapsible-heading .ui-btn span.ui-btn {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  margin: -12px 0 0 0;
+  width: 20px;
+  height: 20px;
+  padding: 1px 0 1px 2px;
+  text-indent: -9999px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003210}}
+.ui-collapsible-heading .ui-btn span.ui-btn .ui-btn-inner {
+  padding: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003213}}
+.ui-collapsible-heading .ui-btn span.ui-btn .ui-icon {
+  left: 0;
+  margin-top: -10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003217}}
+.ui-collapsible-heading-status {
+  position: absolute;
+  top: -9999px;
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003223}}
+.ui-collapsible-heading-collapsed {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003226}}
+.ui-collapsible-content {
+  display: block;
+  margin: 0 -15px;
+  padding: 10px 15px;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top: none;
+  background: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003238}}
+.ui-collapsible-inset .ui-collapsible-content {
+  margin: 0;
+  border-right-width: 1px;
+  border-left-width: 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003243}}
+.ui-collapsible-content-collapsed {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003246}}
+.ui-collapsible-set > .ui-collapsible.ui-corner-all {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003250}}
+.ui-collapsible-heading,
+.ui-collapsible-heading > .ui-btn {
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mobile_ui\.less}line{font-family:\00003254}}
+.ui-collapsible-themed-content:not(.ui-collapsible-collapsed) .ui-collapsible-heading {
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 1px solid #5CAA1D;
+}
+/* ==========================================================================
+   基本样式：默认值
+   ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\000038}}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000315}}
+html,
+button,
+input,
+select,
+textarea {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000323}}
+body {
+  font: normal 100% Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  background: url('/static/m_img/bg2@2x.png') repeat scroll 0 0 #f5f5f5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000329}}
+a {
+  color: #666;
+  font-size: 1em;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-drag: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000337}}
+a:visited {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000341}}
+a:hover {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000344}}
+span {
+  font-size: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000347}}
+h1 {
+  font-size: 1.5em;
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000351}}
+h2 {
+  font-size: 1.75em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000354}}
+h3 {
+  font-size: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000357}}
+p {
+  font-size: 0.875em;
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000361}}
+em {
+  font-style: normal;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000364}}
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+code,
+del,
+dfn,
+em,
+img,
+q,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/reset\.less}line{font-family:\0000376}}
+li {
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\0000323}}
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\0000329}}
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+/* Overthrow CSS:
+   Enable overflow: auto on elements with overthrow class when html element has overthrow class too */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\00003212}}
+.overthrow-enabled .overthrow {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/banners\.less}line{font-family:\000035}}
+.top {
+  height: auto;
+  width: 100%;
+  -webkit-box-shadow: 0 1px 2px rgba(165, 165, 165, 0.55);
+  -moz-box-shadow: 0 1px 2px rgba(165, 165, 165, 0.55);
+  -ms-box-shadow: 0 1px 2px rgba(165, 165, 165, 0.55);
+  box-shadow: 0 1px 2px rgba(165, 165, 165, 0.55);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/banners\.less}line{font-family:\000039}}
+.top img {
+  max-width: 100%;
+  width: 100%;
+  border: 0;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\000036}}
+.orange-button {
+  border: 1px solid #e5810b;
+  background: #ffde76;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 0.5px rgba(51, 51, 51, 0.1);
+  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 0.5px rgba(51, 51, 51, 0.1);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 0.5px rgba(51, 51, 51, 0.1);
+  color: #a1400b;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #fdc352;
+  background-image: -moz-linear-gradient(top, #ffde76, #f99b1d);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffde76), to(#f99b1d));
+  background-image: -webkit-linear-gradient(top, #ffde76, #f99b1d);
+  background-image: -o-linear-gradient(top, #ffde76, #f99b1d);
+  background-image: linear-gradient(top, #ffde76, #f99b1d);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffde76', endColorstr='#fff99b1d', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.orange-button:active,
+.orange-button.active,
+.orange-button.disabled,
+.orange-button[disabled] {
+  color: #a1400b;
+  background-color: #f99b1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.orange-button:active,
+.orange-button.active {
+  background-color: #dd8106 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000319}}
+.green-button {
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.green-button:active,
+.green-button.active,
+.green-button.disabled,
+.green-button[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.green-button:active,
+.green-button.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.green-button:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000332}}
+.gray-button {
+  border: 1px solid #b7c1cb;
+  background: #ced8e1;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #738695;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #e5ebf0;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#ced8e1));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -o-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: linear-gradient(top, #f5f8fa, #ced8e1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffced8e1', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.gray-button:active,
+.gray-button.active,
+.gray-button.disabled,
+.gray-button[disabled] {
+  color: #738695;
+  background-color: #ced8e1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.gray-button:active,
+.gray-button.active {
+  background-color: #aebfce \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000340}}
+.gray-button:hover {
+  background: #becbd7;
+  background-color: #d9e1e8;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#aebfce));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -o-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: linear-gradient(top, #f5f8fa, #aebfce);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffaebfce', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/form\.less}line{font-family:\000031}}
+select,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 30px;
+  padding: 5px;
+  min-height: 0 \9;
+  height: 30px \9;
+  *padding: 4px 0;
+  *height: 20px;
+  font-size: 12px;
+  line-height: 34px;
+  color: #555;
+  background-color: #fbfbfb;
+  border: 1px solid #e0e0e0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear .2s, box-shadow linear .2s;
+  -moz-transition: border linear .2s, box-shadow linear .2s;
+  -o-transition: border linear .2s, box-shadow linear .2s;
+  transition: border linear .2s, box-shadow linear .2s;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/form\.less}line{font-family:\0000336}}
+textarea {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 34px;
+  padding: 6px 9px;
+  height: auto;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #555;
+  background-color: #fbfbfb;
+  border: 1px solid #e0e0e0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear .2s, box-shadow linear .2s;
+  -moz-transition: border linear .2s, box-shadow linear .2s;
+  -o-transition: border linear .2s, box-shadow linear .2s;
+  transition: border linear .2s, box-shadow linear .2s;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/form\.less}line{font-family:\0000354}}
+.fixed-bottom {
+  position: fixed;
+  bottom: 0px;
+  top: auto;
+  background: #fff;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/form\.less}line{font-family:\0000363}}
+.fixed-bottom .button {
+  display: inline-block;
+  padding: 4px 0;
+  margin: 0;
+  width: 220px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.fixed-bottom .button:active,
+.fixed-bottom .button.active,
+.fixed-bottom .button.disabled,
+.fixed-bottom .button[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.fixed-bottom .button:active,
+.fixed-bottom .button.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.fixed-bottom .button:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/form\.less}line{font-family:\0000372}}
+.center {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\000033}}
+.undone {
+  display: inline-block;
+  padding: 1px;
+  margin: 0;
+  min-height: 12px;
+  font-size: 10px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  width: 40px;
+  background-color: #f04747;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000316}}
+.done {
+  background-image: url(/static/m_img/done.png);
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000324}}
+.arrow {
+  background-image: url('/static/m_img/arrow.png');
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 7px 12px;
+  -moz-background-size: 7px 12px;
+  -o-background-size: 7px 12px;
+  background-size: 7px 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000335}}
+.m_earn {
+  background-image: url('/static/m_img/m_earn.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 56px 20px;
+  -moz-background-size: 56px 20px;
+  -o-background-size: 56px 20px;
+  background-size: 56px 20px;
+  width: 56px;
+  height: 20px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000343}}
+.icon-arrow {
+  background-image: url('/static/m_img/arrow.png');
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000348}}
+.dotted {
+  background: url('/static/m_img/dotted.jpg') repeat-x scroll 0 bottom transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000351}}
+.doneColor {
+  background-color: #f04747;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000355}}
+.boxTitleNormal {
+  color: #5caa1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000358}}
+.blockTitle {
+  margin-left: 8px;
+}
+/* 星级 */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000362}}
+.ico-star {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -47px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000363}}
+.ico-star-half {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -23px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000364}}
+.ico-star-empty {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 0;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000366}}
+.ico-star-10 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -233px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000367}}
+.ico-star-1 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -23px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000368}}
+.ico-star-2 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -47px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000369}}
+.ico-star-3 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -70px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000370}}
+.ico-star-4 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -95px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000371}}
+.ico-star-5 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -118px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000372}}
+.ico-star-6 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -140px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000373}}
+.ico-star-7 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -164px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000374}}
+.ico-star-8 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -187px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/icon\.less}line{font-family:\0000375}}
+.ico-star-9 {
+  background: transparent url('/static/m_img/start_new.png') repeat-x scroll 0 -999em;
+  background-position: 0 -210px;
+  width: 111px;
+  height: 19px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/message\.less}line{font-family:\000034}}
+#messager {
+  min-width: 200px;
+  max-width: 300px;
+  _width: 200px;
+  padding: 20px 15px;
+  line-height: 20px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 9999;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #212121 \9;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0 / 100;
+  filter: alpha(opacity=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\000031}}
+#messager_modal {
+  position: fixed;
+  z-index: 10000;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000312}}
+.modal {
+  width: 300px;
+  padding-bottom: 2px;
+  display: none;
+  background: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+  -ms-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000320}}
+.modal-header {
+  background: #f6f6f6;
+  padding: 10px 0 9px;
+  line-height: 20px;
+  display: block;
+  height: 20px;
+  border-bottom: 1px solid #e2e2e2;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-top-left-radius: 3px;
+  color: #666666;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #f3f3f3;
+  background-image: -moz-linear-gradient(top, #f5f5f5, #f1f1f1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f1f1f1));
+  background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+  background-image: -o-linear-gradient(top, #f5f5f5, #f1f1f1);
+  background-image: linear-gradient(top, #f5f5f5, #f1f1f1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff1f1f1', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.modal-header:active,
+.modal-header.active,
+.modal-header.disabled,
+.modal-header[disabled] {
+  color: #666666;
+  background-color: #f1f1f1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.modal-header:active,
+.modal-header.active {
+  background-color: #d8d8d8 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000329}}
+.modal-header h2 {
+  color: #666;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 3px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000338}}
+.modal-body {
+  overflow-y: auto;
+  margin: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000342}}
+.modal-body .modal-center {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000344}}
+.modal-body .modal-center img {
+  margin: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000347}}
+.modal-body .modal-center em {
+  color: #f71111;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000351}}
+.modal-body .modal-media {
+  padding: 0 0 0 10px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000354}}
+.modal-body .modal-media .pull-left {
+  float: left;
+  display: inline-block;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000358}}
+.modal-body .modal-media .pull-left img {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000362}}
+.modal-body .modal-media .media-body {
+  width: 280px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000364}}
+.modal-body .modal-media .media-body h3 {
+  font-size: 1em;
+  color: #333;
+  line-height: 26px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000371}}
+.modal-body .modal-button {
+  border-top: 1px solid #eee;
+  margin: 8px;
+  text-align: center;
+  padding: 15px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000376}}
+.modal-body .modal-button p {
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000379}}
+.modal-body .modal-button .button {
+  display: inline-block;
+  padding: 4px 0;
+  margin: 10px 0 0;
+  width: 220px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.modal-body .modal-button .button:active,
+.modal-body .modal-button .button.active,
+.modal-body .modal-button .button.disabled,
+.modal-body .modal-button .button[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.modal-body .modal-button .button:active,
+.modal-body .modal-button .button.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.modal-body .modal-button .button:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000387}}
+.modal-body .modal-button .button-gray {
+  display: inline-block;
+  padding: 4px 0;
+  margin: 10px 0 0;
+  width: 220px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  border: 1px solid #b7c1cb;
+  background: #ced8e1;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #738695;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #e5ebf0;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#ced8e1));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -o-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: linear-gradient(top, #f5f8fa, #ced8e1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffced8e1', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.modal-body .modal-button .button-gray:active,
+.modal-body .modal-button .button-gray.active,
+.modal-body .modal-button .button-gray.disabled,
+.modal-body .modal-button .button-gray[disabled] {
+  color: #738695;
+  background-color: #ced8e1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.modal-body .modal-button .button-gray:active,
+.modal-body .modal-button .button-gray.active {
+  background-color: #aebfce \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000340}}
+.modal-body .modal-button .button-gray:hover {
+  background: #becbd7;
+  background-color: #d9e1e8;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#aebfce));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -o-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: linear-gradient(top, #f5f8fa, #aebfce);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffaebfce', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\0000396}}
+.modal-body p {
+  color: #666;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\00003100}}
+.modal-body span {
+  display: block;
+  font-size: 0.875em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\00003105}}
+.modal-body article {
+  padding: 0 10px;
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/modals\.less}line{font-family:\00003110}}
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  display: block;
+  width: 23px;
+  height: 24px;
+  background: url('/static/m_img/modal-close.png');
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 23px 24px;
+  -moz-background-size: 23px 24px;
+  -o-background-size: 23px 24px;
+  background-size: 23px 24px;
+  z-index: 2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/table\.less}line{font-family:\000031}}
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-collapse: separate;
+  border-left: 0;
+  max-width: 100%;
+  background-color: transparent;
+  border-spacing: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/table\.less}line{font-family:\0000310}}
+.table th {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/table\.less}line{font-family:\0000313}}
+.table th,
+.table td {
+  border-left: 1px solid #ddd;
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  border-top: 1px solid #ddd;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/table\.less}line{font-family:\0000321}}
+.table thead th {
+  vertical-align: bottom;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/table\.less}line{font-family:\0000324}}
+.table tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/table\.less}line{font-family:\0000328}}
+.table caption + thead tr:first-child th,
+.table caption + tbody tr:first-child th,
+.table caption + tbody tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + tbody tr:first-child th,
+.table colgroup + tbody tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table tbody:first-child tr:first-child th,
+.table tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/table\.less}line{font-family:\0000340}}
+.table tbody tr:nth-child(odd) td,
+.table tbody tr:nth-child(odd) th {
+  background-color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/nav\.less}line{font-family:\000031}}
+.navigation {
+  background: url("/static/m_img/bg_navigation.png") repeat-x scroll 0 0 transparent;
+  width: 100%;
+  height: 44px;
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/nav\.less}line{font-family:\0000310}}
+.navigation-back {
+  background: url("/static/m_img/icon_nav_back@2x.png") no-repeat scroll 0 0 transparent;
+  height: 20px;
+  width: 20px;
+  -webkit-background-size: 20px 20px;
+  -moz-background-size: 20px 20px;
+  -o-background-size: 20px 20px;
+  background-size: 20px 20px;
+  display: inline-block;
+  margin: 10px 15px 0 10px;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/nav\.less}line{font-family:\0000318}}
+.navigation-back cite {
+  line-height: 31px;
+  display: none;
+  text-indent: -999px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/nav\.less}line{font-family:\0000324}}
+.navigation-title {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
+  font-size: 1.125em;
+  line-height: 20px;
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 10px;
+  left: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/nav\.less}line{font-family:\0000337}}
+#container .nav-black {
+  padding-top: 44px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/nav\.less}line{font-family:\0000340}}
+#container .touchslider-nav-black {
+  top: 144px;
+}
+/* ==========================================================================
+   自定义样式
+   ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000330}}
+#container {
+  height: 100%;
+  width: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000335}}
+.container {
+  overflow: hidden !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\000037}}
+.container:before,
+.container:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\0000312}}
+.container:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000341}}
+.scrolls .touchslider .touchslider-viewport {
+  height: 120px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000349}}
+.scrolls .touchslider .touchslider-viewport .touchslider-wrapper {
+  position: relative;
+  width: 100%;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  transition-duration: 0s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000355}}
+.scrolls .touchslider .touchslider-viewport .touchslider-wrapper .touchslider-item {
+  width: 100%;
+  height: 120px;
+  float: left;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000360}}
+.scrolls .touchslider .touchslider-viewport .touchslider-wrapper .touchslider-item img {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000371}}
+.touchslider-nav {
+  top: 100px;
+  position: absolute;
+  z-index: 20;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000379}}
+.touchslider-nav .swiper-pagination-switch {
+  width: 7px;
+  height: 7px;
+  background: url("/static/m_img/dot.png") no-repeat scroll -10px 0 transparent;
+  display: inline-block;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  margin: 0 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000389}}
+.touchslider-nav .swiper-active-switch {
+  background: url("/static/m_img/dot.png") no-repeat scroll 0 0 transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\0000393}}
+.item {
+  min-height: 370px;
+  overflow: hidden;
+  background: #fff;
+  border-right: 1px solid #eaeaea;
+  border-left: 1px solid #eaeaea;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 1px 0 rgba(165, 165, 165, 0.3);
+  -moz-box-shadow: 0 1px 0 rgba(165, 165, 165, 0.3);
+  -ms-box-shadow: 0 1px 0 rgba(165, 165, 165, 0.3);
+  box-shadow: 0 1px 0 rgba(165, 165, 165, 0.3);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003101}}
+.item .item-content {
+  margin: 0 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003103}}
+.item .item-content .btnlink {
+  display: inline-block;
+  padding: 4px 0;
+  margin: 0;
+  width: 220px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.item .item-content .btnlink:active,
+.item .item-content .btnlink.active,
+.item .item-content .btnlink.disabled,
+.item .item-content .btnlink[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.item .item-content .btnlink:active,
+.item .item-content .btnlink.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.item .item-content .btnlink:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003111}}
+.item .item-content .rounded {
+  background: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003113}}
+.item .item-content .rounded li {
+  height: 35px;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003117}}
+.item .item-content .rounded li:nth-child(even) {
+  background: #f5f5f5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003120}}
+.item .item-content .rounded .tit {
+  text-decoration: none;
+  line-height: 35px;
+  display: inline-block;
+  float: left;
+  padding-left: 10px;
+  font-size: 14px;
+  max-width: 215px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003131}}
+.item .item-content .rounded .tit .t {
+  color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003134}}
+.item .item-content .rounded .tit .s {
+  color: #5caa1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003138}}
+.item .item-content .rounded span {
+  float: right;
+  color: #5caa1d;
+  line-height: 35px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003143}}
+.item .item-content .rounded i {
+  float: right;
+  font-size: 10px;
+  color: #fff;
+  font-style: italic;
+  margin: 8px 10px 0 0;
+  line-height: 16px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003154}}
+.item .item-content .daily .tit {
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #eee;
+  height: 38px;
+  line-height: 38px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003160}}
+.item .item-content .daily .tit h3 {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003163}}
+.item .item-content .daily .tit span {
+  color: #5caa1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003167}}
+.item .item-content .daily li {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  display: block;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003175}}
+.item .item-content .daily .bak span,
+.item .item-content .daily .bak .jf em {
+  color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003179}}
+.item .item-content .daily .ing {
+  background: #c1ce88;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003181}}
+.item .item-content .daily .ing span,
+.item .item-content .daily .ing .jf em {
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003185}}
+.item .item-content .daily span {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003188}}
+.item .item-content .daily .jf {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003190}}
+.item .item-content .daily .jf em {
+  color: #5caa1d;
+  font-style: italic;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003198}}
+.item .item-content .cartooncont p,
+.item .item-content .cartooncont span {
+  color: #666;
+  font-size: 14px;
+  display: block;
+  margin-left: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003204}}
+.item .item-content .cartooncont em {
+  color: #666;
+  font-size: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003208}}
+.item .item-content .cartooncont b {
+  color: #5caa1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003211}}
+.item .item-content .cartooncont img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70px;
+  margin-right: 10px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003218}}
+.item .item-content .cartooncont dd {
+  display: inline-block;
+  padding: 10px 0;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003225}}
+.item .item-content .cartooncont .invite img {
+  vertical-align: baseline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003229}}
+.item .item-content .cartooncont .sharelist {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003231}}
+.item .item-content .cartooncont .sharelist ul {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003234}}
+.item .item-content .cartooncont .sharelist li {
+  background: #f5f5f5;
+  height: 50px;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003239}}
+.item .item-content .cartooncont .sharelist li a {
+  text-decoration: none;
+  line-height: 50px;
+  display: block;
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003244}}
+.item .item-content .cartooncont .sharelist li a img {
+  margin-top: 10px;
+  width: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003249}}
+.item .item-content .cartooncont .sharelist li span {
+  line-height: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003252}}
+.item .item-content .cartooncont .sharelist li:hover,
+.item .item-content .cartooncont .sharelist li:focus {
+  background-color: #e8e8e8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003257}}
+.item .item-content .cartooncont .sharelist li:last-child {
+  border-top: 0;
+  border-bottom: 0;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003261}}
+.item .item-content .cartooncont .sharelist li:last-child a:hover,
+.item .item-content .cartooncont .sharelist li:last-child a:focus {
+  background-color: #e8e8e8;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003270}}
+.item .item-content .cartooncont .sharelist li:first-child {
+  border-top: 0;
+  border-bottom: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -webkit-border-top-left-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003275}}
+.item .item-content .cartooncont .sharelist li:first-child a:hover,
+.item .item-content .cartooncont .sharelist li:first-child a:focus {
+  background-color: #e8e8e8;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -webkit-border-top-left-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003284}}
+.item .item-content .integ {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003286}}
+.item .item-content .integ dd {
+  padding: 10px 0;
+  margin: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003289}}
+.item .item-content .integ dd span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003295}}
+.item .item-content .integ a {
+  color: #738695;
+  line-height: 28px;
+  font-size: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003301}}
+.item .item-content .steps {
+  padding: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003303}}
+.item .item-content .steps dd {
+  line-height: 36px;
+  height: 36px;
+  display: block;
+  padding-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003308}}
+.item .item-content .steps dd.dnext {
+  height: 28px;
+  line-height: 28px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003311}}
+.item .item-content .steps dd.dnext i.dn-icon {
+  background: url('/static/m_img/dnext.png') no-repeat 0 0;
+  width: 12px;
+  height: 21px;
+  display: block;
+  margin-left: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003319}}
+.item .item-content .steps dd img {
+  float: left;
+  display: inline-block;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003324}}
+.item .item-content .steps dd p {
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  float: left;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003332}}
+.item .item-content .steps .viewbtn {
+  width: 220px;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003335}}
+.item .item-content .steps .viewbtn a {
+  margin: 20px 0 10px;
+  width: 220px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003345}}
+.letter {
+  margin: 0 auto;
+  width: 95%;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003349}}
+.letter h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5caa1d;
+  margin: 0px;
+  padding: 0px;
+  line-height: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003357}}
+.letter dt {
+  text-align: center;
+  padding: 15px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003361}}
+.letter dd {
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003365}}
+.letter .contents img {
+  width: 95%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003368}}
+.letter .contents .content {
+  border-bottom: 1px dotted #cccccc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003375}}
+.letter .buttom_bar {
+  margin: 0 0 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003377}}
+.letter .buttom_bar a.button {
+  display: block;
+  width: 48%;
+  padding: 8px 0px;
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.letter .buttom_bar a.button:active,
+.letter .buttom_bar a.button.active,
+.letter .buttom_bar a.button.disabled,
+.letter .buttom_bar a.button[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.letter .buttom_bar a.button:active,
+.letter .buttom_bar a.button.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.letter .buttom_bar a.button:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003385}}
+.letter .buttom_bar:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003390}}
+.letter .buttom_bar .prev {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003393}}
+.letter .buttom_bar .next {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003398}}
+.block {
+  height: 100%;
+  width: auto;
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003402}}
+.block .block-header {
+  height: 25%;
+  margin: 0 auto;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003406}}
+.block .block-header h2 {
+  color: #5caa1d;
+  margin: 14px 13px 0 15px;
+  height: 45px;
+  font: bold 28px/44px "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003413}}
+.block .block-content {
+  margin: 20px auto 0;
+  padding-bottom: 25px;
+  background: transparent;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\000037}}
+.block .block-content:before,
+.block .block-content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\0000312}}
+.block .block-content:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003419}}
+.block .block-content .form-horizontal {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003423}}
+.block .block-content .form-horizontal .control-group {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003432}}
+.block .block-content .form-horizontal .control-group .controls {
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003435}}
+.block .block-content .form-horizontal .control-group .controls input {
+  width: 97.5%;
+  padding: 10px 0 10px 8px;
+  display: block;
+  margin: 0;
+  border: 0;
+  font: 14px "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  line-height: 19px;
+  height: 26px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003446}}
+.block .block-content .form-horizontal .control-group .controls input:active,
+.block .block-content .form-horizontal .control-group .controls input.active,
+.block .block-content .form-horizontal .control-group .controls input.disabled,
+.block .block-content .form-horizontal .control-group .controls input[disabled],
+.block .block-content .form-horizontal .control-group .controls input:hover {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003452}}
+.block .block-content .form-horizontal .form-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003455}}
+.block .block-content .form-horizontal .form-actions .button {
+  margin: 0 0 0 2px;
+  padding: 8px 0px;
+  height: 40px;
+  width: 75%;
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.block .block-content .form-horizontal .form-actions .button:active,
+.block .block-content .form-horizontal .form-actions .button.active,
+.block .block-content .form-horizontal .form-actions .button.disabled,
+.block .block-content .form-horizontal .form-actions .button[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.block .block-content .form-horizontal .form-actions .button:active,
+.block .block-content .form-horizontal .form-actions .button.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.block .block-content .form-horizontal .form-actions .button:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003463}}
+.block .block-content .form-horizontal .form-actions .disabled {
+  margin: 0 0 0 2px;
+  padding: 8px 0px;
+  height: 40px;
+  width: 75%;
+  border: 1px solid #b7c1cb;
+  background: #ced8e1;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #738695;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #e5ebf0;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#ced8e1));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -o-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: linear-gradient(top, #f5f8fa, #ced8e1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffced8e1', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.block .block-content .form-horizontal .form-actions .disabled:active,
+.block .block-content .form-horizontal .form-actions .disabled.active,
+.block .block-content .form-horizontal .form-actions .disabled.disabled,
+.block .block-content .form-horizontal .form-actions .disabled[disabled] {
+  color: #738695;
+  background-color: #ced8e1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.block .block-content .form-horizontal .form-actions .disabled:active,
+.block .block-content .form-horizontal .form-actions .disabled.active {
+  background-color: #aebfce \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000340}}
+.block .block-content .form-horizontal .form-actions .disabled:hover {
+  background: #becbd7;
+  background-color: #d9e1e8;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#aebfce));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -o-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: linear-gradient(top, #f5f8fa, #aebfce);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffaebfce', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003474}}
+.block .block-footer {
+  height: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003478}}
+.lumps {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  background: url('/static/m_img/bg2@2x.png') repeat scroll 0 0 #f5f5f5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003483}}
+.lumps .lump {
+  margin: 0 10px;
+  padding: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003487}}
+.lumps .lump .tit h3 {
+  color: #d63737;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003489}}
+.lumps .lump .tit h3 em {
+  margin-left: 5px;
+  color: #aaa;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-size: .75em;
+  font-weight: normal;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003497}}
+.lumps .lump .tit img {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003500}}
+.lumps .lump .tit .center {
+  text-align: center;
+  display: block;
+  height: 33px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003504}}
+.lumps .lump .tit .center img {
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003509}}
+.lumps .lump .box {
+  height: auto;
+  width: 100%;
+  -webkit-box-shadow: 0 1px 2px rgba(165, 165, 165, 0.55);
+  -moz-box-shadow: 0 1px 2px rgba(165, 165, 165, 0.55);
+  -ms-box-shadow: 0 1px 2px rgba(165, 165, 165, 0.55);
+  box-shadow: 0 1px 2px rgba(165, 165, 165, 0.55);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  background: #ffffff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003515}}
+.lumps .lump .box .m_hot_icon {
+  background-image: url('/static/m_img/m_hot_icon.png');
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 34px;
+  display: block;
+  -webkit-background-size: 30px 31px;
+  -moz-background-size: 30px 31px;
+  -o-background-size: 30px 31px;
+  background-size: 30px 31px;
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003524}}
+.lumps .lump .box .m_new_icon {
+  background-image: url('/static/m_img/m_new_icon.png');
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 34px;
+  display: block;
+  -webkit-background-size: 30px 31px;
+  -moz-background-size: 30px 31px;
+  -o-background-size: 30px 31px;
+  background-size: 30px 31px;
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003534}}
+.lumps .lump .inside {
+  display: block;
+  overflow: hidden;
+  margin: 0 10px;
+  padding: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003539}}
+.lumps .lump .inside .title-box {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003544}}
+.lumps .lump .inside .title-box em {
+  font-size: 14px;
+  color: #666;
+  margin-left: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003551}}
+.lumps .lump p {
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003554}}
+.lumps .lump .btn {
+  width: 100%;
+  display: inline-block;
+  padding: 5px 0px;
+  margin-bottom: 0;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.lumps .lump .btn:active,
+.lumps .lump .btn.active,
+.lumps .lump .btn.disabled,
+.lumps .lump .btn[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.lumps .lump .btn:active,
+.lumps .lump .btn.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.lumps .lump .btn:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003561}}
+.lumps .lump .btn h2 {
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003565}}
+.lumps .lump .disabled {
+  width: 100%;
+  display: inline-block;
+  padding: 5px 0px;
+  margin-bottom: 0;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+  border: 1px solid #b7c1cb;
+  background: #ced8e1;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #738695;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #e5ebf0;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#ced8e1));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -o-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: linear-gradient(top, #f5f8fa, #ced8e1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffced8e1', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.lumps .lump .disabled:active,
+.lumps .lump .disabled.active,
+.lumps .lump .disabled.disabled,
+.lumps .lump .disabled[disabled] {
+  color: #738695;
+  background-color: #ced8e1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.lumps .lump .disabled:active,
+.lumps .lump .disabled.active {
+  background-color: #aebfce \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000340}}
+.lumps .lump .disabled:hover {
+  background: #becbd7;
+  background-color: #d9e1e8;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#aebfce));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -o-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: linear-gradient(top, #f5f8fa, #aebfce);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffaebfce', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003572}}
+.lumps .lump .disabled h2 {
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003576}}
+.lumps .lump .applylable {
+  display: inline-block;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003579}}
+.lumps .lump .applylable em {
+  background: #e6e6e6;
+  border: 1px solid #aaa;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  -ms-border-radius: 70px;
+  border-radius: 70px;
+  line-height: 26px;
+  height: 26px;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003592}}
+.lumps .lump .btn.half,
+.lumps .lump .disabled.half {
+  width: 48%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003597}}
+.lumps .text {
+  padding: 10px 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003599}}
+.lumps .text h3 {
+  font-size: 14px;
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003603}}
+.lumps .text em {
+  font-size: 12px;
+  color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003607}}
+.lumps .text p {
+  display: block;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003611}}
+.lumps .text b {
+  color: #5dab1e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003619}}
+.texts .expand span {
+  color: #aaa;
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+  text-align: left;
+  margin: 0px 10px;
+  padding: 0 0 10px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003630}}
+.texts .expand:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003635}}
+.texts .expand .expand-simple {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003638}}
+.texts .expand .expand-more {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003641}}
+.texts .expand .expand-arrow {
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+  color: #666666;
+  text-align: left;
+  margin: 10px 0 0 0;
+  background-image: url('/static/skin/expand-arrow.png');
+  background-position: right 0;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003655}}
+.texts .expand.on .expand-simple {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003658}}
+.texts .expand.on .expand-more {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003661}}
+.texts .expand.on .expand-arrow {
+  text-indent: -9999px;
+  background-position: right 23px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003667}}
+.lists dl {
+  display: block;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003671}}
+.lists dd:first-child {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003674}}
+.lists dd:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003678}}
+.lists dd {
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003681}}
+.lists dd a {
+  margin: 0;
+  display: block;
+  padding: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003685}}
+.lists dd a:hover {
+  background-color: #e8e8e8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003689}}
+.lists dd em {
+  float: right;
+  margin-right: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003693}}
+.lists dd span {
+  color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003696}}
+.lists dd:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003701}}
+.lists dd .list {
+  margin: 0;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003705}}
+.lists dd .list .img {
+  display: inline-block;
+  margin-right: 5px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003709}}
+.lists dd .list .img img {
+  width: 80px;
+  height: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003714}}
+.lists dd .list .info {
+  min-height: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003716}}
+.lists dd .list .info span {
+  margin-top: 10px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003720}}
+.lists dd .list .info b {
+  color: #5caa1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003728}}
+.lists .guides dd p {
+  font-size: 16px;
+  color: #333;
+  line-height: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003732}}
+.lists .guides dd p i.undone {
+  font-size: 12px;
+  margin-left: 5px;
+  line-height: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003740}}
+.lists .viewall {
+  background: url('/static/skin/view_bg.jpg') 0 0 repeat-x;
+  width: 100%;
+  height: 32px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003745}}
+.lists .viewall a {
+  width: 100%;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  line-height: 30px;
+  font-size: 14px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003755}}
+.lists .address {
+  font-size: 12px;
+  color: #aaa;
+  padding-top: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003760}}
+.lists ul {
+  height: 45px;
+  overflow: hidden;
+  margin: 0 10px;
+  padding: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003765}}
+.lists ul li {
+  float: left;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003768}}
+.lists ul li img {
+  width: 45px;
+  height: 45px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003772}}
+.lists ul li i {
+  position: absolute;
+  margin-top: -15px;
+  margin-left: -20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003780}}
+.lists p.center {
+  font-size: 0.75em;
+  margin: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003784}}
+.lists .ranking {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003786}}
+.lists .ranking table {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003790}}
+.lists .ranking table > tr {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003793}}
+.lists .ranking td:last-child {
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003796}}
+.lists .ranking td:first-child > em {
+  text-align: left;
+  display: block;
+  width: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003801}}
+.lists .ranking td {
+  max-width: 140px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003807}}
+.lists .ranking td > img {
+  display: block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003812}}
+.lists .ranking em {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003814}}
+.lists .ranking em.r {
+  color: #f04747;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003817}}
+.lists .ranking em.o {
+  color: #ffbb03;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003820}}
+.lists .ranking em.g {
+  color: #5caa1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003827}}
+.rank a {
+  display: block;
+  color: #000;
+  margin: 0;
+  font-size: 1em !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003832}}
+.rank a:hover {
+  background-color: #e8e8e8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003836}}
+.rank .user-list {
+  font-size: 14px;
+  line-height: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003844}}
+.rank .user-list h4 {
+  font-weight: bold;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003848}}
+.rank .user-list .detail {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003850}}
+.rank .user-list .detail .action {
+  margin: 10px 0 10px 100px ;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003852}}
+.rank .user-list .detail .action b {
+  color: #5caa1d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003856}}
+.rank .user-list .detail .botton {
+  width: 40%;
+  margin-left: 100px;
+  display: block;
+  padding: 5px 0px;
+  margin-bottom: 0;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.rank .user-list .detail .botton:active,
+.rank .user-list .detail .botton.active,
+.rank .user-list .detail .botton.disabled,
+.rank .user-list .detail .botton[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.rank .user-list .detail .botton:active,
+.rank .user-list .detail .botton.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.rank .user-list .detail .botton:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003865}}
+.rank .user-list .detail .disabled {
+  width: 40%;
+  margin-left: 100px;
+  display: block;
+  padding: 5px 0px;
+  margin-bottom: 0;
+  border: 1px solid #b7c1cb;
+  background: #ced8e1;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #738695;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #e5ebf0;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#ced8e1));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: -o-linear-gradient(top, #f5f8fa, #ced8e1);
+  background-image: linear-gradient(top, #f5f8fa, #ced8e1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffced8e1', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.rank .user-list .detail .disabled:active,
+.rank .user-list .detail .disabled.active,
+.rank .user-list .detail .disabled.disabled,
+.rank .user-list .detail .disabled[disabled] {
+  color: #738695;
+  background-color: #ced8e1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.rank .user-list .detail .disabled:active,
+.rank .user-list .detail .disabled.active {
+  background-color: #aebfce \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000340}}
+.rank .user-list .detail .disabled:hover {
+  background: #becbd7;
+  background-color: #d9e1e8;
+  background-image: -moz-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f8fa), to(#aebfce));
+  background-image: -webkit-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: -o-linear-gradient(top, #f5f8fa, #aebfce);
+  background-image: linear-gradient(top, #f5f8fa, #aebfce);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f8fa', endColorstr='#ffaebfce', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003875}}
+.rank .user-list .img {
+  float: left;
+  margin: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003878}}
+.rank .user-list .img img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  -webkit-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003888}}
+.post .feed-list,
+.post .user-list {
+  font-size: 14px;
+  line-height: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003894}}
+.post .feed-list a,
+.post .user-list a {
+  display: block;
+  color: #000;
+  margin: 0;
+  padding: 8px;
+  font-size: 1em !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003900}}
+.post .feed-list a:hover,
+.post .user-list a:hover {
+  background-color: #e8e8e8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003904}}
+.post .feed-list .place,
+.post .user-list .place,
+.post .feed-list h4,
+.post .user-list h4 {
+  font-weight: bold;
+  color: #5CAA1D;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003910}}
+.post .feed-list .star,
+.post .user-list .star {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\000037}}
+.post .feed-list .star:before,
+.post .user-list .star:before,
+.post .feed-list .star:after,
+.post .user-list .star:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\0000312}}
+.post .feed-list .star:after,
+.post .user-list .star:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003913}}
+.post .feed-list .star span,
+.post .user-list .star span {
+  font-size: 12px;
+  color: #aaa;
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003921}}
+.post .feed-list .detail,
+.post .user-list .detail {
+  margin-left: 50px;
+  min-height: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003925}}
+.post .feed-list .icon,
+.post .user-list .icon {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003927}}
+.post .feed-list .icon img,
+.post .user-list .icon img {
+  display: block;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003934}}
+.post .user-list:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003940}}
+.post .feed-list .action {
+  color: #999999;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003944}}
+.post .feed-list .content {
+  color: #333333;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003948}}
+.post .feed-list .photo {
+  clear: both;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003951}}
+.post .feed-list .photo img {
+  background: #ffffff;
+  padding: 4px;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003957}}
+.post .feed-list .time {
+  color: #666666;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003962}}
+.post .feed,
+.post .user {
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003968}}
+.post .feed a,
+.post .user a {
+  display: block;
+  color: #000;
+  margin: 0;
+  padding: 8px;
+  font-size: 1em !important;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003975}}
+.post .feed a:hover,
+.post .user a:hover {
+  background-color: #e8e8e8;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003980}}
+.post .feed .place,
+.post .user .place,
+.post .feed h4,
+.post .user h4 {
+  font-weight: bold;
+  color: #5CAA1D;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003986}}
+.post .feed .detail,
+.post .user .detail {
+  margin-left: 50px;
+  min-height: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003990}}
+.post .feed .icon,
+.post .user .icon {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003992}}
+.post .feed .icon img,
+.post .user .icon img {
+  display: block;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\00003999}}
+.post .user:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031005}}
+.post .user ul {
+  height: 45px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031008}}
+.post .user ul li {
+  float: left;
+  margin-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031011}}
+.post .user ul li img {
+  width: 45px;
+  height: 45px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031015}}
+.post .user ul li i {
+  position: absolute;
+  margin-top: -15px;
+  margin-left: -20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031024}}
+.post .feed .action {
+  color: #999999;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031028}}
+.post .feed .content {
+  color: #333333;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031032}}
+.post .feed .photo {
+  clear: both;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031035}}
+.post .feed .photo img {
+  background: #ffffff;
+  padding: 4px;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031041}}
+.post .feed .time {
+  color: #666666;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031047}}
+.club {
+  color: #666;
+  margin: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031050}}
+.club li {
+  line-height: 28px;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031054}}
+.club li h3 {
+  color: #5CAA1D;
+  display: inline-block;
+  float: left;
+  font-size: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031060}}
+.club li p,
+.club li span {
+  font-size: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031063}}
+.club li p {
+  text-indent: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031068}}
+.apply {
+  text-align: center;
+  padding: 10px 0 ;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031071}}
+.apply .control-group {
+  display: block;
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031074}}
+.apply .control-group input {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  min-height: 21px;
+  padding: 6px 9px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #666;
+  vertical-align: middle;
+  background-color: #fbfbfb;
+  border: 1px solid #e0e0e0;
+  -webkit-appearance: none;
+  outline: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear .2s, box-shadow linear .2s;
+  -moz-transition: border linear .2s, box-shadow linear .2s;
+  -o-transition: border linear .2s, box-shadow linear .2s;
+  transition: border linear .2s, box-shadow linear .2s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031093}}
+.apply .control-group label {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031101}}
+.apply .from-actions {
+  border-top: 1px solid #e6e6e6;
+  margin-top: 10px;
+  padding: 10px 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031105}}
+.apply .from-actions input {
+  font-size: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031112}}
+.title h3 {
+  text-align: center;
+  background: url(/static/skin/view_bg.jpg) 0 0 repeat-x;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #999;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031131}}
+.footer p {
+  color: rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 32px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031140}}
+.pagination {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031144}}
+.forms .control-group {
+  width: 100%;
+  margin-bottom: 5px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031150}}
+.forms .control-group label {
+  line-height: 20px;
+  display: inline-block;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031155}}
+.forms .control-group input {
+  background: #fff;
+  border: 0;
+  color: #5caa1d;
+  font-size: 14px;
+  min-width: 200px;
+  max-width: 200px;
+  line-height: 25px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031166}}
+.forms .from-actions {
+  margin-top: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031170}}
+.place-list {
+  font-size: 14px;
+  line-height: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031175}}
+.place-list a {
+  display: block;
+  color: #000;
+  margin: 0;
+  padding: 8px 0 8px 8px;
+  font-size: 1em !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031181}}
+.place-list a:hover {
+  background-color: #e8e8e8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031185}}
+.place-list .place {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031188}}
+.place-list .place .m_earn {
+  float: right;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031192}}
+.place-list .place h4 {
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+  display: inline-block;
+  float: left;
+  width: 200px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031201}}
+.place-list .detail {
+  margin-left: 50px;
+  min-height: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031205}}
+.place-list .icon {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031207}}
+.place-list .icon img {
+  display: block;
+  z-index: 999;
+  position: relative;
+  -webkit-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031215}}
+.place-list .action {
+  color: #999999;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031219}}
+.place-list .star {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\000037}}
+.place-list .star:before,
+.place-list .star:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\0000312}}
+.place-list .star:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031222}}
+.place-list .star span {
+  font-size: 12px;
+  color: #aaa;
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031230}}
+.place-list .tips {
+  margin-left: 17px;
+  border-left: 3px solid #e6e6e6;
+  margin-bottom: 10px;
+  top: -13px;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\000037}}
+.place-list .tips:before,
+.place-list .tips:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/mixins\.less}line{font-family:\0000312}}
+.place-list .tips:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031237}}
+.place-list .tips .tip {
+  padding: 0 20px 0 15px;
+  background: #e6e6e6;
+  border: 1px solid #dbdbdb;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  display: inline;
+  clear: both;
+  float: left;
+  margin-bottom: 5px;
+  position: relative;
+  left: -1px;
+  top: 17px;
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031250}}
+.place-list .tips .tip span {
+  color: #666;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031255}}
+.place-list .tips .tips-green,
+.place-list .tips .tips-brown,
+.place-list .tips .tips-orange {
+  -webkit-background-size: 8px 8px;
+  -moz-background-size: 8px 8px;
+  -o-background-size: 8px 8px;
+  background-size: 8px 8px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  position: relative;
+  left: -20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031265}}
+.place-list .tips .tips-green {
+  background-image: url('/static/m_img/tip-green.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031270}}
+.place-list .tips .tips-brown {
+  background-image: url('/static/m_img/tip-brown.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031275}}
+.place-list .tips .tips-orange {
+  background-image: url('/static/m_img/tip-orange.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031283}}
+.stand-wall .tit h3 {
+  color: #333;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031287}}
+.stand-wall ul {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031290}}
+.stand-wall li {
+  width: 50%;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031294}}
+.stand-wall .district-event-list {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031297}}
+.stand-wall .stand {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031302}}
+.stand-wall .wall {
+  padding: 2px;
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ededed;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031308}}
+.stand-wall .wall img {
+  width: 100%;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031312}}
+.stand-wall .wall span {
+  background: #000;
+  opacity: 80 / 100;
+  filter: alpha(opacity=80);
+  color: #fff;
+  font-size: 10px;
+  display: block;
+  line-height: 18px;
+  position: relative;
+  padding: 0 5px;
+  margin: -18px 1px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031325}}
+.gift-page {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031330}}
+.gift-page .flipwall {
+  display: inline-block;
+  border-bottom: 1px solid #e6e6e6;
+  width: 320px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031334}}
+.gift-page .flipwall .wall {
+  width: 85px;
+  height: 85px;
+  float: left;
+  position: relative;
+  cursor: pointer;
+  margin: 10px 6px 10px 10px;
+  border: 2px solid #5dab1e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031345}}
+.gift-page .flip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #f9f9f9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031352}}
+.gift-page .flip img {
+  width: 85px;
+  height: 85px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031357}}
+.gift-page .flip:hover {
+  -webkit-box-shadow: 0 0 30px #999999 inset;
+  -moz-box-shadow: 0 0 30px #999999 inset;
+  -ms-box-shadow: 0 0 30px #999999 inset;
+  box-shadow: 0 0 30px #999999 inset;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031361}}
+.gift-page .fliped {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031364}}
+.gift-page .info {
+  margin: 10px;
+  display: block;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031368}}
+.gift-page .info p {
+  display: block;
+  font-size: 1em;
+  color: #666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031376}}
+.download .download-button {
+  margin: 0 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031380}}
+.download .download-button a.app {
+  background: url('/static/m_img/down_app.png') no-repeat 0 0 transparent;
+  display: inline-block;
+  margin: 0 15px 0 0;
+  height: 57px;
+  width: 140px;
+  -webkit-background-size: 140px 57px;
+  -moz-background-size: 140px 57px;
+  -o-background-size: 140px 57px;
+  background-size: 140px 57px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031388}}
+.download .download-button a.app:active {
+  background: url('/static/m_img/down_app_active.png') no-repeat 0 0 transparent;
+  -webkit-background-size: 140px 57px;
+  -moz-background-size: 140px 57px;
+  -o-background-size: 140px 57px;
+  background-size: 140px 57px;
+  height: 57px;
+  width: 140px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031395}}
+.download .download-button a.pak {
+  background: url('/static/m_img/down_pak.png') no-repeat 0 0 transparent;
+  display: inline-block;
+  height: 57px;
+  width: 140px;
+  -webkit-background-size: 140px 57px;
+  -moz-background-size: 140px 57px;
+  -o-background-size: 140px 57px;
+  background-size: 140px 57px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031402}}
+.download .download-button a.pak:active {
+  background: url('/static/m_img/down_pak_active.png') no-repeat 0 0 transparent;
+  -webkit-background-size: 140px 57px;
+  -moz-background-size: 140px 57px;
+  -o-background-size: 140px 57px;
+  background-size: 140px 57px;
+  height: 57px;
+  width: 140px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031411}}
+.download .download-info .tit {
+  margin: 15px 10px 0;
+  border-top: 2px solid #64af25;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031415}}
+.download .download-info .tit .dtit {
+  background-image: url('/static/m_img/download_tit.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 134px 27px;
+  -moz-background-size: 134px 27px;
+  -o-background-size: 134px 27px;
+  background-size: 134px 27px;
+  width: 134px;
+  height: 27px;
+  top: -16px;
+  position: relative;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031426}}
+.download .download-info .step {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031432}}
+.download .download-info .step .st1 {
+  background-image: url('/static/m_img/download_1.png');
+  background-repeat: 100% 50%;
+  -webkit-background-size: 40px 35px;
+  -moz-background-size: 40px 35px;
+  -o-background-size: 40px 35px;
+  background-size: 40px 35px;
+  width: 40px;
+  height: 35px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031440}}
+.download .download-info .step .st2 {
+  background-image: url('/static/m_img/download_2.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 40px 35px;
+  -moz-background-size: 40px 35px;
+  -o-background-size: 40px 35px;
+  background-size: 40px 35px;
+  width: 40px;
+  height: 35px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031448}}
+.download .download-info .step .st3 {
+  background-image: url('/static/m_img/download_3.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 40px 35px;
+  -moz-background-size: 40px 35px;
+  -o-background-size: 40px 35px;
+  background-size: 40px 35px;
+  width: 40px;
+  height: 35px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031456}}
+.download .download-info .step .st4 {
+  background-image: url('/static/m_img/download_4.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 40px 35px;
+  -moz-background-size: 40px 35px;
+  -o-background-size: 40px 35px;
+  background-size: 40px 35px;
+  width: 40px;
+  height: 35px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031464}}
+.download .download-info .step .dd {
+  margin: 0 10px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031467}}
+.download .download-info .step .dd i {
+  float: left;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031471}}
+.download .download-info .step .dd span {
+  color: #666;
+  font-size: 14px;
+  float: left;
+  width: 250px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031479}}
+.download .download-info p {
+  margin: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031486}}
+.land-page .detail h3 {
+  font-size: 16px;
+  color: #333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031490}}
+.land-page .detail p {
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031493}}
+.land-page .detail em {
+  color: #89a81c;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031497}}
+.land-page .detail .info {
+  font-size: 12px;
+  color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031500}}
+.land-page .detail .info em {
+  color: #5dab1e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031507}}
+.priv h3 {
+  font-size: 1em;
+  color: #5caa1d;
+  text-align: center;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031513}}
+.priv p {
+  font-size: 14px;
+  color: #666;
+  line-height: 21px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031518}}
+.priv span {
+  font-size: 16px;
+  color: #666;
+  line-height: 21px;
+  display: block;
+  margin: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031526}}
+.ad-banner {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031528}}
+.ad-banner .banner {
+  width: 300px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  display: inline-block;
+  height: 175px;
+  background: url('/static/m_img/district/gif_giftnew.gif') no-repeat 0 0 transparent;
+  -webkit-background-size: 300px 175px;
+  -moz-background-size: 300px 175px;
+  -o-background-size: 300px 175px;
+  background-size: 300px 175px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031536}}
+.ad-banner .banner img {
+  width: 300px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031542}}
+.linkbanner {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031544}}
+.linkbanner img {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031550}}
+.lump .contrast .contrast-left {
+  width: 35%;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031554}}
+.lump .contrast .contrast-right {
+  width: 35%;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031558}}
+.lump .contrast .contrast-middle {
+  width: 27%;
+  display: inline-block;
+  margin-top: 50px;
+  text-align: center;
+  vertical-align: top;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031564}}
+.lump .contrast .contrast-middle img {
+  width: 35px;
+  height: 48px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031569}}
+.lump .contrast .img {
+  background: #fff;
+  border: #dad9d9;
+  padding: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031573}}
+.lump .contrast .img img {
+  width: 100%;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031578}}
+.lump .contrast .btnvs {
+  width: 100%;
+  display: inline-block;
+  padding: 5px 0px;
+  margin-bottom: 0;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0.5px rgba(51, 51, 51, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(56, 140, 13, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #8dcf4f;
+  background-image: -moz-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ace76f), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: -o-linear-gradient(top, #ace76f, #5eab1f);
+  background-image: linear-gradient(top, #ace76f, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f', endColorstr='#ff5eab1f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: broder-box;
+  -moz-box-sizing: broder-box;
+  box-sizing: broder-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000360}}
+.lump .contrast .btnvs:active,
+.lump .contrast .btnvs.active,
+.lump .contrast .btnvs.disabled,
+.lump .contrast .btnvs[disabled] {
+  color: #ffffff;
+  background-color: #5eab1f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000364}}
+.lump .contrast .btnvs:active,
+.lump .contrast .btnvs.active {
+  background-color: #468017 \9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/_mobile\/buttons\.less}line{font-family:\0000327}}
+.lump .contrast .btnvs:hover {
+  background: #66b127;
+  background-color: #77be38;
+  background-image: -moz-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#87cb49), to(#5eab1f));
+  background-image: -webkit-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: -o-linear-gradient(top, #87cb49, #5eab1f);
+  background-image: linear-gradient(top, #87cb49, #5eab1f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff87cb49', endColorstr='#ff5eab1f', GradientType=0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031586}}
+.lump .contrast p {
+  display: block;
+  text-align: center;
+  line-height: 12px;
+  font-size: 14px;
+  margin: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031593}}
+.lump .contrast h3 {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  margin: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/in\.juno\/www\/www\/static\/skin\/mobile_main_style\.less}line{font-family:\000031599}}
+.lump .contrast em {
+  color: #e71919;
+}

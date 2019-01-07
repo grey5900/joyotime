@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>媒体报道 - IN成都</title>
+		<link rel="stylesheet" href="css/in.css" type="text/css"/>
+		<link rel="stylesheet" href="css/business.css" type="text/css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<?php include 'header.php'; ?>
+		<div class="container" id="container">
+			<div class="block gap">
+				<a href="#"><img src="img/banner1.jpg" /></a>
+			</div>
+			<div class="block gap">
+				<div class="block-header"><h2>媒体报道</h2></div>
+				<div class="block-content">
+					<div class="ap-list">
+						<div class="ap" id="ap">
+							<ul>
+								<li>
+									<span class="message">
+										<i class="ico-point"></i><a href="#" target="_blank">今日二本开录 成都热门院校今年爆冷</a>
+									</span>
+									<span class="data">2012年1月1日 12:00</span>
+								</li>
+								<li>
+									<span class="message">
+										<i class="ico-point"></i><a href="#" target="_blank">今日二本开录 成都热门院校今年爆冷</a>
+									</span>
+									<span class="data">2012年1月1日 12:00</span>
+								</li>
+							</ul>
+						</div>
+						<div class="pagination pagination-centered">
+							<ul>
+								<li>
+									<a href="#">上一页</a>
+								</li>
+								<li>
+									<a href="#" class="active">1</a>
+								</li>
+								<li>
+									<a href="#">2</a>
+								</li>
+								<li>
+									<a href="#">3</a>
+								</li>
+								<li>
+									<a href="#">下一页</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="block-footer"></div>
+			</div>
+		</div>
+		<?php include 'footer.php'; ?>
+	</body>
+	<script type="text/javascript">
+	    var targetId = document.getElementById("ap");
+	    var li = targetId.getElementsByTagName("li");
+	    for (i = 0; i < li.length; i++) {
+	        if (i % 2 == 1) { 
+	            li[i].style.background = "#f8f8f8"
+	        }
+	    }
+	</script>
+</html>

@@ -1,0 +1,101 @@
+
+
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<!--  input type="hidden" name="orderField" value="Topic.createDate" /-->
+	<input type="hidden" name="orderField" value="{$orderField}" />
+	<input type="hidden" name="orderDirection" value="{$orderDirection}" />
+	<input type="hidden" name="is_sensored" value="{$is_sensored}" />
+	<input type="hidden" name="keyword" value="{$keyword}"/> 
+	<input type="hidden" name="begin" value="{$begin}" />
+	<input type="hidden" name="end" value="{$end}" />
+	<input type="hidden" name="user_id" value="{$user_id}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+
+			<li style="width:200px;">
+				<input type="text" name="keyword" value="{$keyword}" placeholder="话题标题..." />
+			</li>
+			
+			<li style="width:auto">
+				<input type="checkbox" name="isRecommend" {if $isRecommend==1}checked=checked{/if} value=1>精彩话题
+				<input type="checkbox" name="lastSevenDaysAgo" {if $lastSevenDaysAgo}checked=checked{/if}  value=1>最近7天创建的话题 
+			</li>
+	
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent tableside">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a href="{eval echo site_url(array('ugc','topic','add'));}" rel="{eval echo build_rel(array('ugc','topic','add'));}" class="add" target="navTab" title="创建"><span>创建</span></a></li>
+			<li><a href="{eval echo site_url(array('ugc','topic','add'));}/id/<!--{{sid_tid}}-->/" rel="{eval echo build_rel(array('ugc','topic','edit'));}" class="edit" target="navTab" title="编辑"><span>编辑</span></a></li>
+		</ul>
+	</div>
+
+	<div layoutH="116" id="w_list_print">
+	<table class="list" width="100%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="5%">id</th>
+				<th width="14%" orderField="createDate" class="{$orderDirection}">创建时间</th>
+				<th width="10%" orderField="rankOrder" class="{$orderDirection}">热度</th>
+				<th>话题</th>
+				<th width="10%" orderField="posts" class="{$orderDirection}">POST数</th>
+				<th width="20%" orderField="rank" class="{$orderDirection}">排序值</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="sid_tid" rel="{$val[id]}">
+				<td><input type="checkbox" name="ids[]" value="{$val[id]}"></td>
+				<td>{$val[id]}</td>
+				<td>{$val[createDate]}</td>
+				<td>{$val[rankOrder]}</td>
+				<td>
+				<!-- {if $val[isOfficial]} -->
+					<div style=" text-align:left;font-size:12px; margin-right:10px; background-color:orange;color:white; width:20px; height:20px; line-height:20px; margin-left:0 auto; border:solid black 1px; text-align:center">精</div>
+				<!-- {/if} -->
+					#{$val[subject]}#
+					<img src="{eval echo image_url($val[image], 'default');}" style="max-width: 80px;" />
+					{$val[description]}
+				</td>
+				<!-- {if $val[posts] == 0} -->
+				<td>POST({$val[posts]})</td>
+				<!-- {else} -->
+				<td><a href="/ugcv3/post/index/topic_id/{$val[id]}/from/topic" target="navTab">POST({$val[posts]})</a></td>
+				<!-- {/if} -->
+				<td>{$val[posts]} + <input tid="{$val[id]}" type="text" name="rankOrder" value="{eval echo ($val[rankOrder]) ? $val[rankOrder] : 0}" /></td>
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+
+</div>
+<script type="text/javascript">
+$(function(){
+	$('input[name="rankOrder"]').blur(function(){
+		var rankOrder = $(this).val();
+		var id = $(this).attr('tid');
+		if(rankOrder && rankOrder >= 0 && id) {
+			$.getJSON('/ugc/topic/update_rank/id/'+id+'/rank/'+rankOrder, function(resp){
+				console.log(resp);
+			});
+		}
+	});
+});
+</script>

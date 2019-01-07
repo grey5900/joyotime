@@ -1,0 +1,13 @@
+<div class="pageContent">
+<form method="post" action="{$current_url}" onsubmit="return validateCallback(this,dialogAjaxDone);">
+
+密码：<input type="text" name="password"/>
+
+<div class="formBar">
+        <ul>
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">确定</button></div></div></li>
+            <li><div class="buttonActive"><div class="buttonContent"><button onclick="$.pdialog.closeCurrent();" type="button">取消</button></div></div></li>
+        </ul>
+</div>
+</form>
+</div>

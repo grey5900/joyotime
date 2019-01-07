@@ -1,0 +1,51 @@
+<!--{template web/header}-->
+
+<div id="container" class="container">
+	<div class="section fixed clearfix">
+		<div class="main">
+			<div class="inner clearfix">
+				<div class="main-header">
+					<h2 class="pull-left">个人设置</h2>
+				</div>
+				<div class="main-content">
+					<!--{template tit}-->
+					<div class="con">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>动作</th>
+										<th>得分</th>
+										<th>可重复次数/天</th>
+										<th>说明</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!--{loop $list $key $case}-->
+									<tr>
+										<td>{$case[caseName]}</td>
+										<td>{eval echo $case[point] >= 0 ? '+'.$case[point] : $case[point]}</td>
+										<td>
+											{if $case[isOnly]}
+											首次操作
+											{else}
+											{$case[frequency]} / {$case[isCycle]}
+											{/if}
+										</td>
+										<td>{$case[description]}</td>
+									</tr>
+									<!--{/loop}-->
+								</tbody>
+							</table>
+					</div>
+				</div>
+				<div class="main-footer">
+					
+				</div>
+			</div>
+		</div>
+		<!--{template side_bar}-->
+		</div>
+	</div>
+</div>
+
+<!--{template web/footer}-->

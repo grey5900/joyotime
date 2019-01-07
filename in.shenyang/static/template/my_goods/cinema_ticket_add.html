@@ -1,0 +1,44 @@
+<div class="pageContent">
+    <form method="post" action="{$current_url}" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this);">
+        <div class="pageFormContent" layoutH="57">
+            <dl>
+                <dt style="width:120px;">
+                    选择导入文件：
+                </dt>
+                <dd>
+                    <input type="file" name="import_file" />
+                </dd>
+            </dl>
+            <dl>
+                <dt style="width:120px;">
+                    观影券到期时间：
+                </dt>
+                <dd>
+                    <input type="text" name="expire_date" class="date" format="yyyy-MM-dd" readonly="readonly" size="20" maxlength="20"  />
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

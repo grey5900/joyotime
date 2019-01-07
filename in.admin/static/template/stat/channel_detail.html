@@ -1,0 +1,76 @@
+<div class="pageContent" id="channel_detail_top">
+    <table class="table" width="100%">
+        <thead>
+            <tr>
+                <th width="5%">渠道号</th>
+                <th width="15%">渠道名</th>
+                <th width="15%">所属渠道商</th>
+                <th width="15%">合作开始时间</th>
+                <th width="10%">激活设备数</th>
+                <th width="10%">四川激活设备数</th>
+                <th width="10%">成都激活设备数</th>
+                <th width="5%">扣量比例</th>
+                <th width="15%">结算数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{$channel['code']}</td>
+                <td>{$channel['name']}</td>
+                <td>{$channel['merchantName']}</td>
+                <td>{$channel['startDate']}</td>
+                <td>{$channel['totalCount']}</td>
+                <td>{$channel['scCount']}</td>
+                <td>{$channel['cdCount']}</td>
+                <td>{$channel['ratio']}</td>
+                <td>{eval echo floor($channel['scCount']*$channel['ratio'])}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="pageHeader" id="channel_detail_header">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    时段：
+                    <input type="text" readonly="readonly" name="start_date" class="date" format="yyyy-MM-dd" value="{$start_date}" />
+                    ~
+                    <input type="text" readonly="readonly" name="end_date" class="date" format="yyyy-MM-dd" value="{$end_date}" />
+                    <button type="submit">
+                        检索
+                    </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="channel_detail_content">
+    <table class="table" width="100%" layoutH="138">
+        <thead>
+            <tr>
+                <th width="50%">设备号</th>
+                <th width="15%">激活时间</th>
+                <th width="15%">激活IP</th>
+                <th width="20%">归属地</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr>
+                <td>{$row['deviceCode']}</td>
+                <td>{$row['createDate']}</td>
+                <td>{$row['ip']}</td>
+                <td>{$row['ipArea']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

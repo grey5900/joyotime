@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css">
+            body {
+                margin: 0
+            }
+            #ctn {
+                position: relative;
+                width: <!--{echo $w?$w:($full==20?420:370)}-->px;
+                height: <!--{echo $h?$h:($full==20?320:178)}-->px;
+                font-size: 12px;
+                overflow: hidden
+            }
+            .post {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                padding: 3px;
+                width: 270px;
+                background: #888;
+                color: #eee;
+                z-index: 5
+            }
+            .post .avatar {
+                float: left;
+            }
+            .post .subject {
+                margin: 2px 0 0 50px;
+                width: 165px
+            }
+            .post .content {
+                margin: 3px 0 0 50px
+            }
+            .post .time {
+                position: absolute;
+                right: 5px;
+                top: 5px
+            }
+            .hlTxt {
+                color: #ff0
+            }
+            .post .arrow {
+                position: absolute;
+                left: 20px;
+                top: 100%;
+                width: 11px;
+                height: 6px;
+                background: url('/static/img/downArrow.gif') no-repeat
+            }
+        </style>
+        <script src="http://skin.news.cdqss.com/js/jquery-1.4.2.js"></script>
+    </head>
+    <body>
+        <div id="ctn">
+            <!--{loop $list $row}-->
+                <div class="postCtn" style="display:none">
+                    
+                    <div class="map">
+                        <img src="http://api.map.baidu.com/staticimage?center={$row[longitude]},{$row[latitude]}&width={echo $w?$w:($full==20?420:370)}&height={echo $h?$h:($full==20?320:178)}&zoom=14&markers={$row[longitude]},{$row[latitude]}" width="{echo $w?$w:($full==20?420:370)}" height="{echo $h?$h:($full==20?320:178)}" border="0" alt="地图">
+                    </div>
+                    <div class="post">
+                        <div class="avatar"><img src="{$row['avatar_udpl']}" width="44px" />
+                        </div>
+                        <div class="subject">
+                            <span class="username hlTxt">{$row['name']}</span>&nbsp;在&nbsp; <span class="placename hlTxt">{$row['placename']}</span>
+                        </div>
+                        <div class="content">
+                            {$row['text']}
+                        </div>
+                        <div class="time">
+                            {$row['time']}
+                        </div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+            <!--{/loop}-->
+        </div>
+        <script>
+            jQuery.noConflict();
+            (function($) {
+                var postCount = $('.postCtn').length, curIdx = 0;
+
+                $('.postCtn:first').show();
+
+                setInterval(function() {
+                    $('.postCtn:visible').fadeOut('normal', function() {
+                        curIdx++;
+                        (curIdx === postCount) && ( curIdx = 0);
+                        $('.postCtn:eq(' + curIdx + ')').fadeIn();
+                    });
+                }, 4000);
+            })(jQuery);
+
+        </script>
+    </body>
+</html>

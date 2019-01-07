@@ -1,0 +1,389 @@
+<!--{template common/header3.0}-->
+	<div class="main layout">
+		<!--div class="column banner">
+			<div class="content">
+				
+				
+			</div>
+			<a href="" class="left"></a>
+			<a href="" class="right"></a>
+		</div-->
+		<div class="column act">
+			<div class="hd">
+				<h2>活动</h2>
+				<a href="http://in.jin95.com/download" target="_blank">下载IN沈阳客户端 &gt;</a>
+			</div>
+			<div class="bd">
+				<div class="article">
+					<div class="module hot">
+						<div class="tit"><h3>热门推荐<i></i></h3></div>
+						<div class="con">
+							{loop $event $ke $e}
+							{if $ke>1}{eval break;}{/if}
+							<div class="box">
+								<div class="img">
+									<a href="{$e['link']}" target="_blank"><img src="{$e['image']}" width="318" height="198" alt="" /></a>
+								</div>
+								<div class="info">
+									<h4><a href="{$e['link']}" target="_blank">{$e['title']}</a></h4>
+									<span>时间：{$e['startDate']} ~ {$e['endDate']}</span>
+									<p><em>{$e['hits']}</em>人关注了</p>
+									<div class="btns">
+									
+										<a href="{$e['link']}#post" target="_blank" class="btn btn-warning">写点评</a>
+										{if $e['form']}
+										<a href="{$e['link']}" target="_blank" class="btn btn-success">我要报名</a>
+										{/if}
+									</div>
+								</div>
+							</div>
+							{/loop}
+							
+						</div>
+					</div>
+				</div>
+				<div class="side">
+					<div class="module more_act">
+						<div class="tit">
+							<h3><a href="/event_new/" target="_blank">更多活动</a><i></i></h3>
+						</div>
+						<div class="con">
+							<ul>
+							{loop $event $ke $e}
+							{if $ke>1}
+								<li><a href="{$e['link']}" target="_blank"><img src="{$e['image']}"  alt="{$e['title']}" /></a></li>
+							{/if}
+							{/loop}
+							
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="column contact">
+			<div class="hd">
+				<h2>积分合作商户</h2>
+				<a href="http://in.jin95.com/download" target="_blank">下载IN沈阳客户端 &gt;</a>
+			</div>
+			<div class="bd">
+				<div class="article">
+					<div class="module con_news">
+						<!-- <div class="small_banner">
+							<div class="imgs">
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+							<div class="titles">
+								<ul>
+									<li><a href="">科麦罗变形</a></li>
+								</ul>
+								<div class="mask"></div>
+							</div>
+							<div class="ctrls">
+								<ul>
+									<li class="current"></li>
+									<li></li>
+								</ul>
+							</div>
+						</div> -->
+						<div id="myCarousel" class="carousel slide">
+						  
+						  <div class="carousel-inner">
+						  {loop $brand_ppt $kp $bp}
+							<div class="{if $kp==0}active{/if} item">
+								<a href="{$bp['link']}" target="_blank"><img src="{$bp['image']}" alt="" /></a>
+								<div class="carousel-caption">
+									<a href="{$bp['link']}" target="_blank">{$bp['title']}</a>
+									
+								</div>
+							</div>
+						  {/loop}
+							
+							
+						  </div>
+						  <ol class="carousel-indicators">
+						  {loop $brand_ppt $kp $bp}
+							<li data-target="#myCarousel" data-slide-to="{$kp}" {if $kp==0}class="active"{/if}></li>
+						  {/loop}
+							
+						  </ol>
+						</div>
+						<div class="head_line">
+						{loop $brand_news $kn $bn}
+							{if $kn==0}
+							<div class="box">
+								<h1><a href="{$bn['link']}" target="_blank">{$bn['title']}</a></h1>
+								<p>{$bn['summary']} <a href="{$bn['link']}" target="_blank" class="sort">[详情]</a></p>
+							</div>
+							{/if}
+						{/loop}
+							<div class="box">
+								<ul>
+								{loop $brand_news $kn $bn}
+									{if $kn>=10}{eval break;}{/if}
+									{if $kn>0}
+										<li>
+										{if $bn['extraData']}
+											{if $bn['extraData']['catlink']}
+												<a href="{$bn['extraData']['catlink']['data']}" target="_blank" class="sort">
+											{/if}
+											{if $bn['extraData']['catname']}[{$bn['extraData']['catname']['data']}]{/if}
+											{if $bn['extraData']['catlink']}
+												</a>
+											{/if}
+										{/if}
+										<a href="{$bn['link']}" target="_blank">{$bn['title']}</a>
+										{if $bn['extraData']}
+											{if $bn['extraData']['brandlink']}
+											<a href="{$bn['extraData']['brandlink']['data']}" target="_blank" class="address">
+											{/if}
+											{if $bn['extraData']['brandname']}{$bn['extraData']['brandname']['data']}{/if}
+											{if $bn['extraData']['brandlink']}
+											</a>
+											{/if}
+										{/if}
+										</li>
+										{if $kn==4}
+								</ul>
+							</div>
+							<div class="box">
+								<ul>
+										{/if}
+									{/if}
+								{/loop}
+								</ul>
+							</div>
+							
+						</div>
+						<div class="score_repo">
+						{loop $top3pointTickeet $tpt}
+							<div class="box">
+								<div class="img">
+									<a href="/user/{$tpt['uid']}/" target="_blank"><img src="{$tpt['avatar']}"  alt="" /></a>
+								</div>
+								<div class="info">
+									<a href="/user/{$tpt['uid']}/" target="_blank">{$tpt['nickname']}</a> 刚刚在 <a href="/place/{$tpt['placeid']}/"  target="_blank">{$tpt['placename']}</a> 拿到了<b>{$tpt['point']}</b>积分
+								</div>
+							</div>
+						{/loop}
+							
+						</div>
+					</div>
+				</div>
+				<div class="side">
+					<div class="module new_cont">
+						<div class="tit">
+							<h3><i></i>新增商户</h3>
+							<a href="/brand/" target="_blank">更多 ></a>
+						</div>
+						<div class="con">
+							<ul>
+							{loop $brand_newbe $kb $bb}
+								{if $kb>=4}{eval break;}{/if}
+								<li>
+									<div class="img">
+										<a href="{$bb['link']}" target="_blank"><img src="{$bb['image']}"  alt="" /></a>
+									</div>
+									<div class="info">
+										<a href="{$bb['link']}" target="_blank">{$bb['title']}</a>
+										<p>{$bb['summary']}</p>
+									</div>
+								</li>
+							{/loop}
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column community">
+			<div class="hd">
+				<h2>社区</h2>
+				<a href="http://in.jin95.com/download" target="_blank">下载IN沈阳客户端 &gt;</a>
+			</div>
+			<div class="bd">
+				<div class="col_l">
+					<div class="module talent">
+						<div class="tit">
+							<h3><i></i>本月达人</h3>
+							<a href="/review/1890320/" target="_blank">查看达人特权 ></a>
+						</div>
+						<div class="con">
+							<ul>
+							{loop $topuser $kt $tu}
+								<li {if $kt==0}class="active"{/if}>									
+									<div class="img">
+										<a href="/user/{$tu['itemId']}/" target="_blank" title="{$tu['name']}"><img src="{$tu['avatar']}"  alt="{$tu['name']}" /></a>
+									</div>
+									<div class="info">
+										<a href="/user/{$tu['itemId']}/" target="_blank" class="user" title="{$tu['name']}">{$tu['name']}</a>
+										<p>{$tu['description']}</p>
+									</div>
+									
+								</li>
+							{/loop}
+								
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col_m">
+					<div class="module land_lord">
+						<div class="tit">
+							<h3><i></i><a href="/lord/" target="_blank">抢地主</a></h3>
+							<a href="/lord/" target="_blank">更多 ></a>
+						</div>
+						<div class="con">
+							<ul class="location">
+							{loop $place_rob_most $prm}
+								<li>
+									<div class="lords">
+										<div class="s_tit"><i class="icon-time"></i>历任地主</div>
+										<div class="img">
+										{loop $prm['mayors'] $m}
+											<a href="/user/{$m['uid']}/" target="_blank" title="{$m['name']}"><img src="{$m['avatar_m']}"  alt="{$m['name']}" /></a>
+										{/loop}
+										</div>
+									</div>
+									<div class="address">
+										<div class="img">
+											<a href="/place/{$prm['id']}/" target="_blank"><img src="{$prm['icon']}"  alt="" /></a>
+										</div>
+										<div class="info">
+											<a href="/place/{$prm['id']}/" target="_blank" title="{$prm['placename']}">{echo cut_string($prm['placename'],20);}</a>
+											<p>目前累计<em>{$prm['point']}</em>积分</p>
+										</div>
+									</div>
+								</li>
+							{/loop}
+								
+							</ul>
+						</div>
+					</div>
+					<div class="module items">
+						<div class="tit">
+							<h3><i></i><a href="/mall/" target="_blank">我为道具狂</a></h3>
+							<a href="/mall/" target="_blank">更多 ></a>
+						</div>
+						<div class="con">
+						{loop $items $is}
+							<div class="box">
+								<div class="img">
+									<a href="/mall/" target="_blank"><img src="http://pic.in.jin95.com/common/item100x100/{$is['image']}" alt="" /></a>
+								</div>
+								<div class="info">
+									<a href="/mall/" target="_blank">{$is['name']}</a>
+									<p><b>效果：</b>{$is['description']}</p>
+								</div>
+							</div>
+						{/loop}
+							
+						</div>
+					</div>
+				</div>
+				<div class="side">
+					<div class="module mall">
+						<div class="tit">
+							<h3><i></i>IN沈阳1.0</h3>
+							
+						</div>
+						<div class="con">
+							<div class="down"><a href="http://in.jin95.com/download" target="_blank"><img src="/index3.0/download.png" alt="" /></a></div>
+							<div class="des">
+								IN沈阳1.0，最了解沈阳的手机软件！
+								在这里，你可以：<br />
+								探索城市，发现沈阳 积分有价，消费有券
+								圈地运动，抢占地主 同城交友，拉帮结派
+							</div>
+							<div class="follow">
+								关注我们的“微信”<a class="qrcode" data-content="<img src='/index3.0/wechat_qrcode.jpg' />" href="###"><i class="icon-qrcode"></i></a> 关注官方“新浪微博”<a href="###" data-content="<img src='/index3.0/weibo_qrcode.jpg' />" class="qrcode"><i class="icon-qrcode"></i></a>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="column album">
+			<div class="hd">
+				<h2>地点册</h2>
+				<a href="http://in.jin95.com/download" target="_blank">下载IN沈阳客户端 &gt;</a>
+			</div>
+			<div class="bd">
+				<div class="article">
+					<div class="module loc_album">
+						{if $placecoll}
+						<div class="tit">
+							<h3><i></i>{$placecoll['frag']['name']}</h3>
+						</div>
+						<div class="con">
+							{loop $placecoll['data'] $kpc $pc}
+							{if $kpc>3}{eval break;}{/if}
+							<div class="box">
+								<div class="img">
+									<a href="{$pc['link']}" target="_blank"><img src="{$pc['image']}" alt="{$pc['title']}" /></a>
+									<i class="book"></i>
+								</div>
+								<div class="info">
+									<h4><a href="{$pc['link']}" target="_blank" title="{$pc['title']}">{echo cut_string($pc['title'],21);}</a></h4>
+									<p title="{$pc['summary']}">{echo cut_string($pc['summary'],60);}</p>
+									<div class="user">
+										<a href="/user/{$pc['uid']}/" target="_blank" title="{$pc['nickname']}"><img src="{$pc['avatar']}"  alt="{$pc['nickname']}" /></a><a href="/user/{$pc['uid']}/" target="_blank" title="{$pc['nickname']}">{$pc['nickname']}</a> 创建
+									</div>
+								</div>	
+							</div>
+							{if $kpc==1}<hr />{/if}
+							{/loop}
+						</div>
+						{/if}
+					</div>
+				</div>
+				<div class="side">
+					<div class="module more_la">
+						<div class="tit">
+							<h3><i></i><a href="/placecoll/" target="_blank">更多地点册</a></h3>
+						</div>
+						<div class="con">
+							<ul>
+							{loop $placecoll['data'] $kpc $pc}
+							{if $kpc<=3}{eval continue;}{/if}	
+								<li>
+									<a href="{$pc['link']}" class="address" target="_blank" title="{$pc['title']}">{echo cut_string($pc['title'],27);}</a>
+									<a class="user" href="/user/{$pc['uid']}/" class="user" title="{$pc['nickname']}" target="_blank">{$pc['nickname']}</a> <span>创建</span>
+								</li>
+							{/loop}
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column waterfall">
+			<div class="hd">
+				<h2>热点动态 </h2>
+				<a href="/channel/all_posts/1/1" target="_blank">更多 &gt;</a>
+			</div>
+			<div class="bd">
+				<!--{template index_post}-->
+			</div>
+			<div class="pages">
+				<a id="nextPage" href="/channel/index_post/2"></a>
+			</div>
+		</div>
+	</div>
+
+
+
+<script type="text/javascript">
+	var bData = {$home_data};
+	seajs.use('seajs/banner.min',function(fun){
+		fun.slide('.banner',bData);
+	});
+</script>
+<!--{template common/footer}-->

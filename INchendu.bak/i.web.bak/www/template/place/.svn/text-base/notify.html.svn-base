@@ -1,0 +1,13 @@
+<!--{if $has_notify > 0}-->
+<div class="timeline-column">
+<div class="column-hd"></div>
+<div class="feed">
+	<div class="timeline-ad">
+		<p>
+			{$content}
+		</p>
+	</div>
+</div>
+<div class="column-ft clearfix"></div>
+</div>
+<!--{/if}-->

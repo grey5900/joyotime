@@ -1,0 +1,424 @@
+﻿<!--{template common/header}-->
+<div id="container-page">
+  <div class="container">
+    <div class="level">
+       <div class="main-left">
+         <div class="calendar">
+           <div class="month-show">{$year_month}</div>
+           <div class="day-show">{$day}</div>
+         </div>
+       </div>
+       <div class="main-right">
+        <!--{if $markers}-->
+         <div class="module">
+          <div class="tit-first"></div>
+          <div class="con">
+            <div class="list-first">
+                <img src="http://api.map.baidu.com/staticimage?center={$markers}&width=260&height=200&zoom=14&markers={$markers}" width="260" height="260" border="0" id="place-map">
+            </div>
+			<div class="trip">
+				
+				<form action="http://map.baidu.com/" method="get" target="_blank">
+				<label for="">我要去</label>
+				<input type="hidden" name="c" value="成都" />
+				<input type="hidden" name="type" value="bus" />
+				<select name="to">
+				<!--{loop $places $place}-->
+					<option value="{$place['address']}" >{$place['placename']}</option>
+				<!--{/loop}-->
+				</select>
+				<label for="">输入出发地点</label>
+				<input type="text" class="type" name="from" />
+				<input type="submit" class="btn btn-success" value="查询" />
+				</form>
+			</div>
+          </div>
+        </div>
+        <!--{/if}-->
+        <div class="module">
+          <div class="tit"><h3>他们参加了这个活动</h3></div>
+          <div class="con">
+            <div class="list-user">
+              <ul>
+                
+              </ul>
+              <div class="interact">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="module">
+            <div class="tit"><h3>你可能感兴趣的活动</h3></div>
+            <div class="con">
+              <ul class="list-like">
+              <!--{loop $relation_event $row}-->
+                <li>
+                <a href="/event_new/detail/{$row['id']}" target="_blank">
+                <img src="{echo image_url($row['image'], 'common', 'hdp')}" width="260" height="104"/><b></b><em class="t"><span>{$row['hits']}人关注</span>{eval echo cut_string(strip_tags($row['subject']),'26');}</em>
+                </a>
+                </li>
+              <!--{/loop}-->
+              </ul>
+            </div>
+          </div>
+       </div>
+       <div class="main-middle">
+         <div class="event-desc">
+           <div class="mold">
+             <div class="ads">
+               <img src="{$event['banner']}" width="580" height="230"/>
+             </div>
+             <div class="event-intro">
+               <div class="enter dropdown">
+                <!--{if $is_apply&&$event['apply_form']}-->
+				  <p>{$event['hits']} <span>人关注了</span></p>
+                  <a class="btn btn-small disabled">报名表已填</a>
+               
+                <!--{else}-->
+                  
+                  <!--{if $is_expired}-->
+                  <a class="btn btn-large disabled">已结束</a>
+                  <!--{elseif $is_begin}-->
+                  
+                  
+                  <p>{$event['hits']} <span>人关注了</span></p>
+                  
+                  <!--{if $event['apply_form']}-->
+                  	
+                  	<a href="#" data-toggle="modal" data-target="#modal-event-enter" class="btn btn-success" id="modal-event-enter-btn">填写报名表</a>
+                    <form class="modal hide form-horizontal" id="modal-event-enter" name="signup_form">
+                      <div class="modal-header"><button type="button" class="close" data-dismiss="modal">×</button><h3>填写报名表</h3></div>
+                      <div class="modal-body">
+                          <!--{loop $event['apply_form'] $row}-->
+                          <div class="control-group">
+                            <label class="control-label">{$row['label']}</label>
+                            <div class="controls">
+                              <!--{if $row['req']==1}-->
+                              <input type="text" name="{$row['label']}" placeholder="{$row['tip']}" class="required"/> *必填项
+                              <!--{else}-->
+                              <input type="text" name="{$row['label']}" placeholder="{$row['tip']}" />
+                              <!--{/if}-->
+                            </div>
+                            
+                          </div>
+                          <!--{/loop}-->
+                      </div>
+                      <div class="modal-footer"><a href="#" id="event-enter-btn" class="btn btn-primary" data-id="{$event['id']}" data-type="1">提交</a></div>
+                    </form>
+                    
+                 <!--{/if}--> 
+                    
+                 
+                  <!--{else}-->
+                  <a class="btn btn-large disabled">敬请期待</a>
+                  <!--{/if}-->
+                  
+                <!--{/if}-->
+                
+                
+               </div>
+               <div class="name">{$event['subject']}</div>
+               <div class="time">时间：{$event['startDate']} ～ {$event['endDate']}</div>
+             </div>
+             <div class="event-intro">
+               <div class="title">活动简介</div>
+               <!--{loop $event['intro'] $intro}-->
+               <!--{if $intro['link']}-->
+				<a href="{$intro['link']}">
+				<!--{/if}-->
+               <dl>
+                <dt>{$intro['title']}：</dt>
+                <dd>
+                   {echo format_html($intro['intro'])}
+                </dd>
+               </dl>
+               <!--{if $intro['link']}-->
+				</a>
+				<!--{/if}-->
+               <!--{/loop}-->
+             </div>
+           </div>
+         </div>
+         <div class="blankfix20"></div>
+         <div class="dynamic">
+		 
+         <!-- 写点评 begin -->
+         <a name=post></a>
+         <div class="review-form" id="review-form">
+			
+             <form id="tip-post" method="post" action="/common/send/" data-refer="/event_new/detail/{$event['id']}">
+				<div class="hd">
+					<div class="tit">
+						我要写
+					</div>
+					{if $places}
+					<div class="address">
+						<div class="box choose"><i></i>
+							<div class="con">选择地点</div>
+							<input id="place" type="hidden" name="place_id" value="" />
+							<span class="icon"></span>
+							<ul class="drop">
+							{loop $places $place}
+								<li name="{$place['id']}">{$place[placename]}</li>
+							{/loop}
+								
+							</ul>
+						</div>
+						<!-- <div class="box place">
+							<div class="con">选择地点</div>
+							<input id="place" type="hidden" name="place_id" value="" />
+							<ul class="drop">
+							{loop $places $place}
+								<li name="{$place['id']}">{$place[placename]}</li>
+							{/loop}
+								
+							</ul>
+						</div> -->
+					</div>
+					{/if}
+					<!--{if $event['apply_tags']}-->
+					<div class="keyword">
+						关键字：						<!--{loop $event['apply_tags'] $tag}-->
+							<a href="javascript:;">{$tag}</a>
+						<!--{/loop}-->
+						
+					</div>
+					<!--{/if}--> 
+				</div>
+				<div class="bd">
+					<input type="hidden" name="event_id" value="{$event['id']}">
+									 
+					
+					 
+					 <div class="section-release">
+						 <div class="textarea-edit">
+							 <textarea rows="3" id="textarea" name="content" class="reply-write" maxlength="500">{if $event['default_tags']}#{$event['default_tags']}#{/if}</textarea>
+							 <div class="imgupload">
+								 <label class="imgselect" id="cover" for="imgbtn">
+									 <input type="file" class="imgbtn" name="Filedata" value="" id="imgbtn" />
+								 </label>
+							 </div>
+						 </div>
+						 <div class="action">
+							 <label class="checkbox inline">
+								 <input class="labelbox" type="checkbox" name="synchronous" id="synchronous" /> 同步到第三方平台
+							 </label>
+							 <input class="btn btn-primary" type="submit" data-loading-text="发布中..." value="发布" />
+						 </div>
+					 </div>
+				</div>
+             	  
+             </form>
+         </div>
+         <!-- 写点评 end -->
+		 <!-- 投票 -->
+		 {if $vote}
+		 <div class="vote">
+			<div class="hd">
+				<div class="tit">
+					{$vote['subject']}
+					<div class="dl"><a href="http://in.chengdu.cn/download" target="_blank">下载<span>IN沈阳</span>客户端</a> 参与投票</div>
+				</div>
+			</div>
+			<div class="bd">
+				<ul>
+					{loop $vote['options'] $option}
+					<li>
+						{if $option['link']}<a href="{$option['link']}" target="_blank">{/if}<img src="{echo image_url($option['image'],'vote','odp');}" alt="" />{if $option['link']}</a>{/if}
+						<div class="info">
+							<p>{if $option['link']}<a href="{$option['link']}" target="_blank">{/if}{$option['title']}{if $option['link']}</a>{/if}</p>
+							<p>{$vote['countTitle']}：<span>{$option['votes']}</span></p>
+						</div>
+					</li>
+					{/loop}
+					
+				</ul>
+			</div>
+			<div class="timeline">
+				<div id="voteLoad" class="load">点击加载...</div>
+			</div>
+		 </div>
+		 {/if}
+		 <!-- 投票end -->		 
+          <div class="push">
+            <div class="tit">
+              <h2>活动动态</h2>
+            </div>
+            {if $feeds}
+              <div class="con">
+              <div class="timeline">
+                <ul class="posts">
+                  <!--{loop $feeds $k $v}-->
+                  <li class="post" data-id="{$v[id]}" data-type="{echo $post[type]==2 ? 'tip':'image';}">
+                    <div class="arr"></div>
+              <div class="link hide"><a href="/review/{$v[id]}" target="_blank">详情</a></div>
+                    <div class="avatar"><a href="/user/{$v[uid]}"><img src="{$v[avatar_url]}" rel="tooltip" data-original-title="{$v['nickname']}" /></a></div>
+                    <div class="item">
+                      <h2>{$v[title]}</h2>
+                      <!--{if $v[star] > 0 || !empty($v[pcc])}-->
+                      <div class="pf">
+                        <!--{if $v[star] > 0}--><span class="ico-star-{$v[star]}"></span><!--{/if}-->
+                        <!--{if !empty($v[pcc])}--><span>人均：{$v[pcc]}</span><!--{/if}-->
+                      </div>
+                      <!--{/if}-->
+                      <!--{if !empty($v[content])}--><p>{echo format_html($v[content])}</p><!--{/if}-->
+                      <!--{if !empty($v[photoName])}--><div class="photo"><img src="{$v[photoName]}" width="{$v[photoSize][w]}" height="{$v[photoSize][h]}" /></div><!--{/if}-->
+                    </div>
+                    <div class="footbar">
+                      <div class="tags">{$v[tag]}</div>
+                      <div class="actions">
+              <a class="action-reply">回复<span class="num" id="reply_count_$v[id]"><!--{if $v[replyCount] > 0}-->({$v[replyCount]})<!--{/if}--></span></a>
+              <em>|</em>
+              <div class="action-share dropdown" data-id='{$v[id]}' data-type='19'>
+                  <a class="dropdown-toggle" data-toggle="dropdown">分享<span class="num" id="share_count_$v[id]"><!--{if $v[shareCount] > 0}-->({$v[shareCount]})<!--{/if}--></span></a>
+                  <ul class='dropdown-menu'>
+                      <li><a class='action-share-icd' data-s='0'>IN沈阳</a></li>
+                      <li><a class='action-share-weibo' data-s='1' data-content='http://in.chengdu.cn/review/{$v[id]} 分享自#IN沈阳#'>新浪微博</a></li>
+                      <li><a class='action-share-qq' data-s='2' data-content='http://in.chengdu.cn/review/{$v[id]} 分享自#IN沈阳#'>腾讯微博</a></li>
+                  </ul>
+              </div>
+              <em>|</em>
+              <a class="action-like" data-id="{$v[id]}" data-type="19">赞<span class="num" id="praise_count_$v[id]"><!--{if $v[praiseCount] > 0}-->({$v[praiseCount]})<!--{/if}--></span></a>
+                      </div>
+                    </div>
+            <div class="replys hide">
+              <form class="reply-form" data-pid="{$v[id]}" data-uid="{$auth[uid]}" data-user="{$auth[nickname]}" data-type="19"><input class="txt" type="text" placeholder="回复内容..."/><span class="btn">发布</span></form>
+              <ul class="reply-list">
+              <!--{if $v[replyCount]}-->
+                <!--{loop $v[replies] $k $r}-->
+                <li>
+                  <a href="/user/{$r[uid]}" class="avatar"><img src="{$r[avatar]}"/></a>
+                  <div class="actions"><a href="javascript:;" class="action-replyto" data-pid="{$v[id]}" data-type=19 data-id="{$r[id]}" data-uid="{$r[uid]}" data-user="{$r[name]}">回复</a></div>
+                  <p><a href="/user/{$r[uid]}" class="name">{$r[name]}：</a>{$r[content]}<br /><span class="time">{$r[createDate]}</span></p>
+                </li>
+                <!--{/loop}-->
+              <!--{/if}-->
+              </ul>
+            </div>
+            
+            <div class="clock">{$v[createDate]}</div>
+                  </li>
+                  <!--{/loop}-->
+                </ul>
+                {if $paginate}
+          {$paginate}
+          {else}
+          <div class="pagination" ></div>
+          {/if}
+                <a href="/event_new/detail/{$event[id]}/2/{$page}" class="hide">加载更多</a>
+              </div>
+           </div>
+            {/if}
+          </div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+<div class="modal hide" id="place-map-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>活动地点</h3>
+    </div>
+    <div class="modal-body">
+        <div id="map" class="map" style="width: 530px; height: 290px;" data-lat="{$info[latitude]}" data-lng="{$info[longitude]}"></div>
+  </div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7dc3e4b24f182c84b3843400d2b83bbe"></script>
+<script type="text/javascript" src="/static/js/mapper.min.js"></script>
+<script type="text/javascript">
+var is_have_place = {if $places}1{else}0{/if};
+
+    $(function(){
+        apply_list(1);
+
+        /*if(document.location.href.indexOf('#form')>=0){
+         $("#modal-event-enter-btn").click();
+         }*/
+        $('#place-map').on('click', function() {
+            $('#place-map-modal').modal('show');
+        });
+
+        <!--{if $places}-->
+        $('#place-map-modal').on('shown', function() {
+            $("#map").html('');
+
+
+            <!--{loop $places $place}-->
+            var marker_{$place['id']} = new BMap.Marker(new BMap.Point("{$place['longitude']}", "{$place['latitude']}"));
+            <!--{/loop}-->
+            $("#map").mapper({
+                zoomLevel : 15,
+                lat: {$places[0]['latitude']},
+                lng: {$places[0]['longitude']},
+                marker : [
+                    <!--{loop $places $place}-->
+                    marker_{$place['id']} ,
+                    <!--{/loop}-->
+                ]
+            });
+        });
+        <!--{/if}-->
+
+
+        $(".keyword a").click(function(){
+            $("#textarea").val('#'+$(this).html()+'#');
+            $(this)
+                    .addClass('chosen')
+                    .siblings()
+                    .removeClass('chosen');
+        });
+
+    });
+
+    function apply_list(page) {
+        $.getJSON("/event_new/apply_list/{$event['id']}/" + page + '?'+new Date().getTime(), function(data){
+            var html = '';
+            for(k in data.list) {
+                var row = data.list[k];
+                html += '<li><a href="/user/' + row.uid + '" target="_blank" title="' + row.name + '"><img src="' + row.avatar + '" alt="' + row.name + '"/></a></li>';
+            }
+            var paginate = data.paginate;
+            var paginate_html = '';
+            if(page > 1) {
+                paginate_html += '<a class="" href="javascript:;" onclick="apply_list(' + (page - 1) + ')">上一页</a>';
+            }
+
+            if(paginate.total_page > page) {
+                paginate_html += (paginate_html?"|":"") + '<a class="" href="javascript:;" onclick="apply_list(' + (page + 1) + ')">下一页</a>';
+            }
+
+            $(".interact").html(paginate_html);
+            $("ul", $(".list-user")).html(html);
+        });
+    }
+//下拉!
+    $('.choose').click(function(e){
+        var e = e || window.event;
+        e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+        $('.drop').is(':visible') ? $('.drop').slideUp() : $('.drop').slideDown('fast');
+    });
+    $(document).click(function(e){
+        var e = e || window.event
+                ,_tar = e.target || e.srcElement;
+        $(_tar).closest('.drop').length ? '' : $('.drop').slideUp('fast');
+    });
+    $('.drop li').click(function(){
+
+        var _name = $(this).text();
+        var _val = $(this).attr('name');
+        $('.choose .con').text(_name);
+        $('#place').val(_val);
+    })
+    if($('.vote .bd').find('li').length <= 4)$('#voteLoad').hide();
+    $('#voteLoad').click(function(){
+        $('.vote .bd').css('height','auto');
+        $(this).hide();
+    });
+
+
+</script>
+<script type="text/javascript" src="/event_new/flush_apply_list/{$event['id']}?{echo TIMESTAMP}"></script>
+
+<!--{template common/footer}-->

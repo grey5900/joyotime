@@ -1,0 +1,20 @@
+<div class="action">
+	{if $has_praise}<span class="praised">已赞</span>{else}<a href="javascript:void(0)" class="praise" data-id="{$info[id]}" data-type="{$info[type]}">赞</a>{/if}<em class="praise-num">{if $info[praiseCount] > 0}({$info[praiseCount]}){/if}</em>
+	<a href="javascript:void(0)" class="reply" data-id="{$info[id]}">回复</a><em class="reply-num">{if $info[replyCount] > 0}({$info[replyCount]}){/if}</em>
+	{if $has_favorite}<span class="favorited">已收藏</span>{else}<a href="javascript:void(0)" class="favorite" data-id="{$info[id]}" data-type="{$info[type]}">收藏</a>{/if}
+</div>
+<div class="ckepop">
+	<!-- JiaThis Button BEGIN -->
+	<div id="ckepop">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tqq"></a>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_qzone"></a>
+		<a class="jiathis_button_xiaoyou"></a>
+		<a class="jiathis_button_kaixin001"></a>
+		<a class="jiathis_button_renren"></a>
+		<a class="jiathis_button_douban"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+	</div>
+	<!-- JiaThis Button END -->
+</div>

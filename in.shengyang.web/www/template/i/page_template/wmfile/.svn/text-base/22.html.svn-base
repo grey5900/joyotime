@@ -1,0 +1,32 @@
+<!--{template i/page_template/wmfile/header}-->
+                <article>
+                    <br />
+                    <h3>二十二、图书、音像制品市场（销售点）</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="20%">序号</th>
+                                <th width="70%">指标内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>在醒目位置放置有《文化经营许可证》并在法定有效期内；</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>在醒目位置放置有《营业执照》并在法定有效期内；</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>无淫秽、色情、暴力出版物销售；</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>无盗版出版物销售。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+<!--{template i/page_template/wmfile/footer}-->

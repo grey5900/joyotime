@@ -1,0 +1,250 @@
+/* list*/
+.timeline {
+	border-left: 2px #f0f0f0 solid;
+	margin: 0 20px;
+	padding: 26px 0 0;
+	list-style: none;
+	.post {
+		background: #f0f0f0;
+		padding: 2px;
+		margin: 0 0 47px 17px;
+		position: relative;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		.avatar {
+			display: block;
+			position: absolute;
+			left: 13px;
+			top: -10px;
+			img {
+				width: 40px;
+				height: 40px;
+				border-radius: 3px;
+			}
+		}
+		//内容详情
+		.item {
+			background: #fff;
+			border: 1px #e8e8e8 solid;
+			h2 {
+				padding: 0px;
+				margin: 0px;
+				color: #666666;
+				font-size: 16px;
+				font-weight: normal;
+				height: 32px;
+				line-height: 20px;
+				height: 20px;
+				padding: 7px 0 5px 60px;
+				.cleartype();
+				.vico {
+					background-image: url('ico.png');
+					background-repeat: no-repeat;
+					background-position: -109px 0;
+					width: 18px;
+					height: 18px;
+					display: inline-block;
+					vertical-align: middle;
+					overflow: hidden;
+					margin-left: 5px;
+				}
+
+			}
+			img {
+				max-width: 494px;
+				display: block;
+				margin: 10px auto 0;
+			}
+			p {
+				padding: 10px 10px;
+				line-height: 20px;
+				font-size: 14px;
+			}
+		}
+		.bottom {
+			height: 32px;
+			line-height: 32px;
+			color: #aaa;
+			.tags {
+				float: left;
+			padding-left: 5px;
+			}
+			.actions {
+				float: right;
+				padding: 0px 10px 0 0;
+				color: #76b012;
+				a {
+					cursor: pointer;
+					vertical-align: middle;
+					margin-left: 10px;
+					i {
+						width: 12px;
+						height: 14px;
+						display: inline-block;
+						*display: inline;
+						*zoom: 1;
+						vertical-align: middle;
+						overflow: hidden;
+						text-indent: -9999px;
+						background-image: url('ico.png');
+						background-repeat: no-repeat;
+					}
+					.num {
+						line-height: 14px;
+						font-family: Arial,sans-serif;
+						font-weight: bold;
+						font-size: 9px;
+						color: #76b012;
+						display: inline-block;
+						*display: inline;
+						*zoom: 1;
+						margin-left: 2px;
+					}
+					&.action-reply {
+						i {background-position: -109px -27px;}
+						&.on,
+						&:hover {
+							i {background-position: -109px -46px;}
+						}
+					}
+					&.action-share {
+						i {background-position: -129px -27px;}
+						&.on,
+						&:hover {
+							i {background-position: -129px -46px;}
+						}
+					}
+					&.action-like {
+						i {background-position: -147px -27px;}
+						&.on,
+						&:hover {
+							i {background-position: -147px -46px;}
+						}
+					}
+				}
+			}
+		}
+		.clock {
+			background-image: url('ico.png');
+			background-repeat: no-repeat;
+			background-position: right -213px;
+			height: 20px;
+			width: 90px;
+			text-align: right;
+			padding: 10px 24px 0 0;
+			line-height: 20px;
+			position: absolute;
+			right: 0;
+			bottom: -30px;
+			color: #aaa;
+		}
+		.arr {
+			position: absolute;
+			left: -19px;
+			top: 16px;
+			width: 8px;
+			height: 12px;
+			background-image: url('ico.png');
+			background-repeat: no-repeat;
+			background-position: right -17px;
+		}
+		/* reply*/
+		.replys {
+			.reply-list {
+				margin: 0px;
+				padding: 0 10px;
+				list-style: none;
+				border-top: 1px #ccc dashed;
+				li {
+					padding: 15px 0;
+					border-bottom: 1px #ccc dashed;
+					.avatar {
+						position: static;
+						float: left;
+						margin-right: 10px;
+						img {
+							width: 30px;
+							height: 30px;
+							border-radius: 3px;
+						}
+					}
+					.name {
+						font-weight: bold;
+					}
+					.time {
+						color: #aaa;
+					}
+					p {
+						line-height: 16px;
+						margin: 0px;
+						padding: 0px;
+					}
+					.actions {
+						float: right;
+						display: none;
+						height: 30px;
+						line-height: 30px;
+						color: #aaa;
+						a {
+							color: #aaa;
+						}
+					}
+					&:hover {
+						.actions {
+							display: block;
+						}
+					}
+				}
+			}
+			.reply-form {
+				padding: 15px 10px;
+				.txt {
+					width: 455px;
+					height: 28px;
+					line-height: 28px;
+					border: 1px #e0e0e0 solid;
+					color: #aaa;
+					padding: 0 10px;
+				}
+			}
+		}
+
+	}
+	.load {
+		padding: 55px 0 0 227px;
+		margin: 0;
+		height: 25px;
+		background: url(more.png) 0 bottom no-repeat;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		color: #aaa;
+		font-weight: bold;
+	}
+}
+
+/* 评分*/
+.pf {
+	line-height: 16px;
+	height: 16px;
+	padding: 0 0 5px 10px;
+}
+.pf b {
+	display: inline-block;
+	vertical-align: middle;
+	width: 80px;
+	height: 16px;
+	background-image: url('ico.png');
+	background-position: -1px -211px;
+	position: relative;
+}
+.pf i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 16px;
+	background-position: 0 -227px;
+}
+.pf span {
+	color: #ff6000;
+}

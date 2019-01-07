@@ -1,0 +1,58 @@
+<script type="text/javascript">
+	function view_right(id){
+		$.getJSON('{eval echo site_url(array('poi','category','get_info','id'));}/'+id, function(data){
+			$("#parent", $("#category_index")).html(data.content);
+			$(".delete", $("#category_index")).attr('href','{eval echo site_url(array('poi','category','delete','id'));}/'+data.id);
+			$(".edit", $("#category_index")).attr('href','{eval echo site_url(array('poi','category','edit','id'));}/'+data.id);
+			$(".add", $("#category_index")).attr('href','{eval echo site_url(array('poi','category','add','id'));}/'+data.id);
+			if(data.image_url != '')
+				$("#icon", $("#category_index")).attr("src",data.image_url+"?"+new Date().getTime());
+		});
+	}
+</script>
+<div class="pageContent" id="category_index">
+	<div layoutH="98" style="float:left;display:block;margin:10px;overflow:auto;width:300px;border:solid 1px #ccc;line-height:21px;background:#fff;">
+		<h2 class="contentTitle">POI分类</h2>
+		<ul class="tree treeFolder collapse">
+			{loop $list $key $val}
+			<li>
+				<a href="javascript:;" onclick="view_right('{$key}');">{$val[content]}({$val[orderValue]})</a>
+				{if isset($val[children]) && !empty($val[children])}
+				<ul>
+				{loop $val[children] $k $v}
+				<li><a href="javascript:;" onclick="view_right('{$k}');">{$v[content]}($v[orderValue])</a></li>
+				{/loop}
+				</ul>
+				{/if}
+			</li>
+			{/loop}
+		</ul>
+	</div>
+	<div layoutH="98" style="float:left;display:block;margin:10px;overflow:none;width:500px;border:solid 1px #ccc;line-height:21px;background:#fff;">
+		<h2 class="contentTitle">当前选中：<span id="parent">一级分类</span></h2>
+		<div class="panelBar">
+			<ul class="toolBar">
+				<li><a class="add" href="{eval echo site_url(array('poi','category','add'));}" target="ajax" rel="jbsxBox" onclick="$('#c').hide();return true;"><span>添加</span></a></li>
+				<li><a class="edit" href="{eval echo site_url(array('poi','category','edit'));}" target="ajax" rel="jbsxBox" onclick="$('#c').hide();return true;"><span>编辑</span></a></li>
+				<li><a class="delete" href="{eval echo site_url(array('poi','category','edit'));}" target="ajaxTodo" title="删除操作不可恢复，确定要删除吗？"><span>删除</span></a></li>
+			</ul>
+		</div>
+		<div id="jbsxBox" class="unitBox block" style="width:500px;display:block;overflow:none;">
+		<div id="c" style="display:block;overflow:none;margin:16px;width:68px;padding:2px;border:1px solid #ccc;">
+			<img id="icon" src="" alt="category_icon" width="68" height="68" align="absmiddle" />
+		</div>
+		</div>
+	</div>	
+</div>
+
+		<script type="text/javascript">
+			$(function(){
+				$("#isbrand").bind("chang",function(){
+					if($("#isbrand").attr("checked") == true){
+						$("input[@name='parentId[]']").each($(this).attr("type","radio"));
+					}else{
+						$("input[@name='parentId[]']").each($(this).attr("type","checkbox"));
+					}
+				});
+			});
+		</script>

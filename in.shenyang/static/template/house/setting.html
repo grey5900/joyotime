@@ -1,0 +1,51 @@
+<h2 class="contentTitle"></h2>
+<div class="pageContent" id="{$page_id}">
+    <div class="tabs" currentIndex="0" eventType="click">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>系统设定</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+                    <div class="pageFormContent nowrap" layoutH="100">
+                        <!--{loop $settings $row}-->
+                        <dl>
+                            <dt>
+                               {$row['n']}：
+                            </dt>
+                            <dd>
+                            	<input type="hidden" name="name[{$row['k']}]" value="{$row['n']}" />
+                                <textarea rows="6" cols="100" name="value[{$row['k']}]">{$row['v']}</textarea>
+                            </dd>
+                        </dl>
+                        <!--{/loop}-->
+                    </div>
+                    <div class="formBar">
+                        <ul>
+                            <li>
+                                <div class="buttonActive">
+                                    <div class="buttonContent">
+                                        <button type="submit">
+                                            提交
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="type" value="common" />
+                </form>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,74 @@
+<!--{eval $page_id = 'point_qouta';}-->
+<div class="pageHeader">
+  <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+    <div class="searchBar">
+      <table class="searchContent">
+        <tr>
+          <td>
+            <select class="combox" name="type">
+              <option value="oper_name"<!--{if 'oper_name' == $type}--> selected<!--{/if}-->>
+                管理员帐号
+              </option>
+              <option value="oper_realname"<!--{if 'oper_realname' == $type}--> selected<!--{/if}-->>
+                管理员真实姓名
+              </option>
+            </select>
+            <input type="text" name="keywords" value="{$keywords}" />
+            <button type="submit">
+              检索
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+</div>
+<div class="pageContent" id="{$page_id}">
+<table class="table" width="100%" layoutH="98">
+  <thead>
+    <tr>
+      <th width="20%">
+        管理员
+      </th>
+      <th width="20%">   
+		今日剩余配额
+      </th>
+      <th width="25%">
+        每日配额上限
+      </th>
+      <th width="20%">
+        历史发放积分累计
+      </th>
+      <th width="15%">
+        最近一次配额操作
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--{loop $list $row}-->
+    <tr>
+      <td>
+        {$row['name']}($row['truename'])
+      </td>
+      <td>
+        {echo $row['everydayPoint'] - $row['todayPoint']}
+      </td>
+      <td>
+        <input type="text" size="10" onfocus="modify_rank2(this, 'MorrisAdmin', '{$row['id']}', 'everydayPoint')" value="{$row['everydayPoint']}" name="rank_order" />
+      </td>
+      <td>
+      	{$row['totalPoint']}
+      </td>
+      <td>
+        {$row['lastQuotaDate']}
+      </td>
+    </tr>
+    <!--{/loop}-->
+  </tbody>
+</table>
+<!--{template main/page_bar}-->
+</div>

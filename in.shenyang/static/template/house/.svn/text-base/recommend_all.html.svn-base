@@ -1,0 +1,72 @@
+<div class="pageHeader">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_id}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                    	<option value="0">楼盘名</option>
+                    	<option value="1"<!--{if $type}--> selected<!--{/if}-->>楼盘ID</option>
+                    </select>
+                    <input type="text" name="house" value="{$house}" />
+                    创建时间：
+	            	<input type="text" size="18" name="start_date" value="{$start_date}" class="date" format="yyyy-MM-dd HH:mm:ss" readonly="true" />
+	            	-
+	            	<input type="text" size="18" name="end_date" value="{$end_date}" class="date" format="yyyy-MM-dd HH:mm:ss" readonly="true" />
+                    <select name="status">
+                    	<option value="0">全部状态</option>
+                    	<!--{loop $house_order_status $k $v}-->
+                    	<option value="{echo $k+1}"<!--{if $status==$k+1}--> selected<!--{/if}-->>{$v}</option>
+                    	<!--{/loop}-->
+                    </select>
+                   	</td>
+                 </tr>
+                 <tr>
+                 	<td>
+                 	经纪人手机号：
+                 	<input type="text" name="recommend_cellphone_no" value="{$recommend_cellphone_no}" />
+                 	推荐用户手机号：
+                 	<input type="text" name="cellphone_no" value="{$cellphone_no}" />
+                    订单号：
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <table class="table" width="100%" layoutH="158" rel="{$page_id}">
+        <thead>
+            <tr>
+                <th width="5%">订单号</th>
+                <th width="15%">最后更新时间</th>
+                <th width="10%">创建时间</th>
+                <th width="20%">经纪人</th>
+                <th width="25%">推荐楼盘</th>
+                <th width="20%">推荐用户</th>
+                <th width="5%">状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['last_dateline']}</td>
+                <td>{$row['dateline']}</td>
+                <td>{$row['recommend_name']}({$row['recommend_cellphone_no']})</td>
+                <td>{$row['house_name']}({$row['house_id']})</td>
+                <td>{$row['name']}({$row['cellphone_no']})</td>
+                <td>{$house_order_status[$row['status']]}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

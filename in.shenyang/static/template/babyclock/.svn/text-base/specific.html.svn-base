@@ -1,0 +1,31 @@
+<div class="pageContent">
+<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent" layoutH="57">
+			<input type="hidden" value="{$hour}" name="hour"/>
+			<input type="hidden" value="{$minute}" name="minute"/>		
+			<div class="unit"> 
+				<label>选定宝贝：</label> 
+				<!--{template block/lookup_baby}-->
+			</div>
+			{if $info}
+			<div class="unit">
+				<label>当前宝贝：</label><br/>
+				<img src="{$info['thumb']}" width=100 height=100 />
+				{$info['name']} - 
+				{eval echo $info['gender']?"男":"女"}
+			</div>
+			<div class="unit">
+			<label>清空这分钟：</label>
+				<input type=radio name="delete" value=1>是<input name="delete"  type=radio value=0>否
+			</div>
+			{/if}
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div> 

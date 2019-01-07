@@ -1,0 +1,167 @@
+<!--{template common/header}-->
+	<div id="container-page">
+		<div class="container-fluid">
+		   <div class="main">
+		     <div class="article">
+		       <div class="place-title">
+		         <h1>{$post[title]}</h1>
+		         <div class="cfrom"><span class="ico-star-{$post[star]}"></span><!--{if !empty($post[pcc])}--><span>人均：{$post[pcc]}</span><!--{/if}--></div>
+		       </div>
+		       <div class="art-content">
+		         <div class="contxt">
+		      		<!--{if !empty($post[photoName])}-->
+		            <div class="mid">
+		              <img src="{$post[photoName]}" alt="{$post[content]}">
+		            </div> 
+		            <!--{/if}-->
+		            <div class="art-p">{echo format_html($post[content])}</div>
+		         </div>
+	             <!--{if $post[tag]}-->
+	             <div class="tags">
+	               {$post[tag]}
+	             </div>
+	             <!--{/if}-->
+		         <div class="conend">
+		           <div class="action">
+		            <a href="javascript:;" class="action-like" data-id="{$post[id]}" data-type="19">赞<span class="num" id="praise_count_$post[id]"><!--{if $post[praiseCount] > 0}-->({$post[praiseCount]})<!--{/if}--></span></a>
+		            <em>|</em>
+	                <div class="action-share dropdown" data-id='{$post[id]}' data-type='19'>
+	                	<a class="dropdown-toggle" data-toggle="dropdown">分享<span class="num" id="share_count_$post[id]"><!--{if $post[shareCount] > 0}-->({$post[shareCount]})<!--{/if}--></span></a>
+		                <ul class='dropdown-menu'>
+		                    <li><a class='action-share-icd' data-s='0'>IN成都</a></li>
+		                    <li><a class='action-share-weibo' data-s='1' data-content='http://in.chengdu.cn/review/{$post[id]} 分享自#IN成都#'>新浪微博</a></li>
+		                    <li><a class='action-share-qq' data-s='2' data-content='http://in.chengdu.cn/review/{$post[id]} 分享自#IN成都#'>腾讯微博</a></li>
+		                </ul>
+	                </div>
+	            	<em>|</em>
+	            	<a href="javascript:;" class="action-reply">
+	            		回复
+	            		<span class="num" id="reply_count_$post[id]">
+	            			<!--{if $post[replyCount] > 0}-->({$post[replyCount]})<!--{/if}-->
+	            		</span>
+	            	</a>
+		           </div>
+		           <span class="action-time">{$post[createDate]}</span>
+		         </div>
+		         <div class="next-page">
+		           <!--{if $post[prev_id] > -1}--><a class="pull-left" href="/review/{$post[prev_id]}">查看上一条</a><!--{/if}-->
+		           <!--{if $post[next_id] > -1}--><a class="pull-right" href="/review/{$post[next_id]}">查看下一条</a><!--{/if}-->
+		         </div>
+		         <!--{if !empty($imgs) && !empty($imgs[list])}-->
+		         <div class="photowall">
+		           <div class="title">
+		             <h3>更多{echo $post['type'] < 4?($post[placename].'的'):''}照片 <em>({$post[place_photo_count]})</em></h3>
+		             <!--{if $post['type'] < 4}-->
+		             <span><a href="/place_photo/{$post[placeId]}">图片墙</a></span>
+		             <!--{/if}-->
+		           </div>
+		           <div class="thumb-list">
+		             <<!--{if $post[prev_id] <= -1}-->span<!--{else}-->a<!--{/if}--> class="prev" href="/review/{$imgs[img_prev]}"></<!--{if $post[prev_id] <= -1}-->span<!--{else}-->a<!--{/if}-->>
+		             <ul>
+			            <!--{loop $imgs[list] $k $img}-->
+		                <li>
+		                  <a href="/review/{$img[id]}">
+		                    <img alt="{$img[title]}" src="{$img[photoName]}">
+		                  </a>
+		                </li>
+		             	<!--{/loop}-->
+	             	</ul>
+	             	<<!--{if $post[next_id] <= -1}-->span<!--{else}-->a<!--{/if}--> class="next" href="/review/{$imgs[img_next]}"></<!--{if $post[next_id] <= -1}-->span<!--{else}-->a<!--{/if}-->>
+		           </div>
+		         </div>		       	
+		         <!--{/if}-->
+		       </div>
+		     </div>
+		     <div class="article">
+		       <div class="area">
+		         <!--{template reply}-->
+		       </div>
+		     </div>
+		   </div>
+		   <div class="sidebar">
+		   	<div class="module">
+		  		<div class="tit-first">
+		  			
+		  		</div>
+		  		<div class="con">
+					<div class="list-first">
+					  <div class="place-card">
+						<img src="{$post[owner][avatar_h]}" alt="{echo $post[owner][nickname] ? $post[owner][nickname] : $post[owner][username];}" />
+						<div class="info">
+						  <h3>
+						  	<a href="/user/{$post[owner][id]}">
+						  	{echo $post[owner][nickname] ? $post[owner][nickname] : $post[owner][username];}
+						  	</a>
+						  </h3>
+						  <p>{$post[owner][description]}</p>
+						</div>
+						<div class="details">
+						  <ul>
+							<li><a href="/user_friend/{$post[owner][id]}/1">{$post[owner][beFollowCount]}</a><p>粉丝</p></li>
+							<li class="bor"><a href="/user/{$post[owner][id]}">{$post[owner][tipCount]}</a><p>点评</p></li>
+							<li><a href="/user_photo/{$post[owner][id]}">{$post[owner][photoCount]}</a><p>图片</p></li>
+						  </ul>
+						</div>
+					  </div>
+					  
+					  <!--{if $post[owner][is_followed] != 2}-->
+					  <div class="link-sj">
+						<!--{if !$post[owner][is_followed]}-->
+						<a id="do_follow" class="btn btn-danger btn-large action-follow" data-loading-text="关注中..." data-uid="{$post[owner][id]}">加关注</a>
+						<!--{else}-->
+						<a id="do_follow" class="btn btn-danger btn-large action-unfollow" data-loading-text="取消中..." data-uid="{$post[owner][id]}">取消关注</a>
+						<!--{/if}-->
+					  </div>
+					  <!--{/if}-->
+					</div>
+		  		</div>
+			</div>
+		  	<!--{if !empty($user_imgs)}-->
+			<div class="module">
+			  <div class="tit">
+				<h3>{echo $post[owner][nickname] ? $post[owner][nickname] : $post[owner][username];}的图片墙</h3>
+				<!--{if $post[owner][photoCount] > 4}--><div class="more"><a href="/user_photo/{$post[owner][id]}">更多</a></div><!--{/if}-->
+			  </div>
+			  <div class="con">
+				<ul class="list-photowall">
+				  <!--{loop $user_imgs $k $ui}-->
+				  <li>
+					<a href="/review/{$ui[id]}"><img src="{$ui[photoName]}" alt="{$ui[content]}" /></a>
+				  </li>
+				  <!--{/loop}-->
+				</ul>
+			  </div>
+			</div>
+		  	<!--{/if}-->
+		  	<!--{if !empty($interest)}-->
+		  	<div class="module">
+				<div class="tit">
+				  <h3>你可能感兴趣的</h3>
+				</div>
+				<div class="con">
+				  <div class="list-mvp-post">
+					<div class="user-posts">
+					  <ul class="list-post">
+						<!--{loop $interest $k $v}-->
+						<li>
+						  <div class="content">
+						  	{$v[title]}
+						  	<p><a href="/review/{$v[id]}">{echo cut_string($v[content], 60)}</a></p>
+						  </div>
+						  <div class="info">
+							<div class="time">{$v[createDate]}</div>
+							<div class="count">$v[praiseCount] 个赞</div>
+						  </div>
+						</li>
+						<!--{/loop}-->
+					  </ul>
+					</div>
+				  </div>
+				</div>
+		  	</div>
+		  <!--{/if}-->
+		  </div>
+		</div>
+	</div>
+	<img src="/review/flush_post_cache/{$post['id']}" width="1px" height="1px">
+<!--{template common/footer}-->

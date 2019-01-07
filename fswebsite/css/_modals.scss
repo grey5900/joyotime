@@ -1,0 +1,136 @@
+//
+// Modals
+// --------------------------------------------------
+
+
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+
+  // When fading in the modal, animate it to slide down
+//  &.fade .modal-dialog {
+//    .translate(0, -25%);
+//    .transition-transform(~"0.3s ease-out");
+//  }
+//  &.in .modal-dialog { .translate(0, 0)}
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  padding: 10px;
+  z-index: 1050;
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  background-color: #ebebeb;
+  border: 1px solid rgba(0,0,0,0.2); //old browsers fallback (ie8 etc)
+  border-radius: 6px;
+  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: none;
+}
+
+
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 16.428571429px;
+}
+// Close icon
+.modal-header .close {
+  margin-top: -2px;
+}
+
+// Title text within header
+.modal-title {
+  margin: 0;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  padding: 20px;
+}
+
+.modal.pop-modal {
+  overflow: hidden;
+  .modal-header {
+    display: block;
+    text-align: right;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .modal-close {
+    background: url("/img/2.0/close-modal.png") 0 0 no-repeat;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+  }
+  .modal-title {
+    text-align: center;
+    display: block;
+    font-size: 24px;
+    line-height: 1em;
+    font-weight: 100;
+    color: #333;
+  }
+  .modal-body {
+    p {
+      color: #666;
+    }
+  }
+  .modal-graphic {
+    background-color: #ebebeb;
+    @include clearfix;
+    .graphic-left , .graphic-right {
+      width: 50%;
+      display: inline-block;
+      text-align: left;
+      position: relative;
+      float: left;
+      img, span {
+        position: relative;
+        width: 80%;
+        display: block;
+      }
+      span {
+        color: #666;
+        font-size: 12px;
+        margin: 0 0 0 12%;
+      }
+    }
+  }
+}
+
+#messager_modal {
+  position: fixed;
+  z-index: 10000;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+  background: #000;
+  display: none;
+}

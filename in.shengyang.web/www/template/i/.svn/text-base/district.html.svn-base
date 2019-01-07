@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <title>品质华侨城·幸福千万家</title>
+        <link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}" type="text/css" />
+        <script type="text/javascript" src="/static/js/jquery.min.js?{$version}"></script>
+        <script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="container">
+                <div class="lumps">
+                    <!--{if $show_nav}-->
+                    <div class="navigation">
+                        <span class="navigation-title">品质华侨城·幸福千万家</span>
+                    </div>
+                    <!--{/if}-->
+                    <div class="top {if $show_nav}nav-black{/if}">
+                        <div class="scrolls">
+                            <div class="touchslider">
+                                <div class="touchslider-viewport" >
+                                    <div class="touchslider-wrapper">
+                                        <!--{loop $slider $row}-->
+                                        <div class="touchslider-item">
+                                            <a href="/district/detail?image={echo urlencode($row['titleLink'])}&title={echo urlencode($row['title'])}"> <img  class="touchslider-img" src="{$row['image']}" alt="{$row['title']}" /> </a>
+                                        </div>
+                                        <!--{/loop}-->
+                                    </div>
+                                </div>
+                                <div class="touchslider-nav {if $show_nav}touchslider-nav-black{/if}"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--{if $add_point || $login_tip || $gift}-->
+                    <div id="gift_banner" class="lump ad-banner">
+                        <a class="banner"> </a>
+                    </div>
+                    <!--{/if}-->
+
+                    <!--{if empty($member)}-->
+                    <div class="lump post">
+                        <div class="box">
+                            <i class="m_hot_icon"></i>
+                            <div class="feed">
+                                <a href="/district/rules">
+                                <div class="arrow">
+                                    <span class="boxTitleNormal blockTitle">立即申请，成为{$brandname}会员</span>
+                                    <p>
+                                        获得更多优惠特权
+                                    </p>
+                                </div> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--{else}-->
+                    <div class="lump post">
+                        <div class="box">
+                            <div class="feed">
+                                <a href="/district/privilege">
+                                <div class="arrow">
+                                    <span class="boxTitleNormal">你已是{$brandname}会员</span>
+                                    <p>
+                                        查看会员优惠特权
+                                    </p>
+                                </div> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--{/if}-->
+
+                    <div class="lump post">
+                        <div class="box">
+                            <div class="feed">
+                                <a id="play_game">
+                                <div class="arrow">
+                                    <span class="boxTitleNormal">{$brandname}会员特权游戏</span>
+                                    <p>
+                                        每日领取积分大礼
+                                    </p>
+                                </div> </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lump linkbanner">
+                        <a href="/district/event?district_id=1">
+                            <img src="/static/m_img/district/banner.png" alt="" width="100%" />
+                        </a>
+                    </div>
+                    
+                    <div class="lump stand-wall">
+                        <div class="tit">
+                            <h3>小侨带您游华侨城</h3>
+                        </div>
+                        <div class="stand">
+                            <ul>
+                                <!--{loop $recommend $row}-->
+                                <li>
+                                    <a href="{$row['titleLink']}" class="wall"> <img src="{$row['image']}" alt="{$row['title']}" /> <span>{$row['title']}</span> </a>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="lump post">
+                        <div class="tit">
+                            <div class="center">
+                                <img src="/static/m_img/district/gif_01.gif" width="228px" alt="" />
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="feed">
+                                <a href="/district/rob_place_list?district_id={$district_id}">
+                                <div class="arrow">
+                                    <span class="boxTitleNormal">{$name}地主大作战</span>
+                                    <p>
+                                        全城抢地主，不限距离
+                                    </p>
+                                </div> </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lump post">
+                        <div class="box">
+                            <div class="feed">
+                                <a href="/district/place_list?district_id={$district_id}">
+                                <div class="arrow">
+                                    <span class="boxTitleNormal">{$brandname}联盟商户</span>
+                                    <p>
+                                        低价优惠全年不停歇
+                                    </p>
+                                    <p>
+                                        会员在部分商户消费，可获得双倍IN沈阳积分票
+                                    </p>
+                                </div> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <p>
+                            IN.CHENGDU.CN
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="gift_modal" class="modal">
+                <div class="modal-header">
+                    <h2>发现积分</h2>
+                    <a class="modal-close" href="#"></a>
+                </div>
+                <div class="modal-body">{$version}
+                    <div class="modal-center">
+                        <img src="/static/m_img/district/gif-03.png" alt="" width="72px" />
+                        <p>
+                            恭喜你获得<em>{$add_point}</em>积分
+                        </p>
+                    </div>
+                    <div class="modal-button">
+                        <a href="/district/rules" class="button">成为会员领取</a>
+                    </div>
+                </div>
+            </div>
+            <div id="item_modal" class="modal">
+                <div class="modal-header">
+                    <h2>领取大礼包</h2>
+                    <a class="modal-close" href="#"></a>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-media">
+                        <div class="pull-left">
+                            <img src="{$gift['item']['image']}" alt="" width="75px" />
+                        </div>
+                        <div class="media-body">
+                            <h3>{$gift['item']['name']}</h3>
+                            <p>
+                                {$gift['item']['notice']}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-button">
+                        {echo nl2br($gift['item']['description'])}
+                        <a href="#" class="button">放入包包</a>
+                    </div>
+                </div>
+            </div>
+            <script  src="/static/js/swiper.min.js?{$version}"></script>
+            <script type="text/javascript" charset="utf-8">
+            $(function(){
+                try {
+                var agent = navigator.userAgent;
+
+                if (agent.indexOf("Android") > -1) {
+                    if(window.mobile && window.mobile.clearHistory) {
+                    window.mobile.clearHistory();}
+                } else if (agent.indexOf("iPhone") > -1 || agent.indexOf("iPad") > -1) {
+                    window.location.href = "objc://clearHistory";
+                }
+                } catch(e) {}
+                
+                $.ajaxSetup({cache:false});
+
+                $("#play_game").click(function(){
+                    <!--{if $show_game}-->
+                    window.location.href = "/district/game";
+                    //alert('ok');
+                    <!--{else}-->
+                    $.messager("今天已经玩过游戏了，明天再来试试");
+                    <!--{/if}-->
+                });
+                
+                try {
+                //console.log($(".touchslider-img").height);
+                var swiper = new Swiper('.touchslider-viewport', {
+                    pagination : '.touchslider-nav',
+                    slideClass : 'touchslider-item',
+                    wrapperClass : 'touchslider-wrapper',
+                    autoplay: 5000
+                });
+                } catch(e) {}
+
+                $("a[class=banner]").on("click",function(){
+                    <!--{if $gift}-->
+                    //window.location.href = "{$gift}";
+                    $.messagerModal("#item_modal");
+                    <!--{else}-->
+                    $.messagerModal("#gift_modal");
+                    <!--{/if}-->
+                });
+
+                $("a[class=button]", "#item_modal").on("click", function(){
+                // 点击放入包包
+                    $.getJSON("/district/item_bag?uid={$uid}", function(json){
+                        $("#messager_modal").fadeOut(200);
+                        $("#item_modal").css("display", "none");
+                        $.messager(json.message);
+                        if (json.code != 0) {
+                            setTimeout(function(){
+                            // 去整理包包
+                            window.location.href = "inmybag://0";
+                            }, 2000);
+                        } else {
+                            $("#gift_banner").hide();
+                        }
+                    });
+                });
+            })
+            </script>
+    </body>
+</html>

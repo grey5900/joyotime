@@ -1,0 +1,256 @@
+<!--{eval $page_id = 'brand_add';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>
+                    品牌名称：
+                </dt>
+                <dd>
+                    <input type="text" name="name" class="required" size="60" value="{$brand['name']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    品牌Logo(80*80)：
+                </dt>
+                <dd>
+                    <button type="button" id="logo">上传Logo</button>
+                </dd>
+            </dl>
+           <!--  <dl>
+                <dt>
+                    WP品牌Logo(80*80)：
+                </dt>
+                <dd>
+                    <button type="button" id="wp_logo">上传Logo</button>
+                </dd>
+            </dl>  
+            <dl>
+                <dt>&nbsp;</dt>
+                <dd>
+                    <label><input type="checkbox" name="is_category" value="1" />分类列表显示品牌</label>
+                </dd>
+            </dl>-->
+        <!--     <span id="category_icon_span">
+            <dl>
+                <dt>
+                    分类(80*80)：
+                </dt>
+                <dd>
+                    <button type="button" id="category_icon">上传分类图标</button>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    WP分类(80*80)：
+                </dt>
+                <dd>
+                    <button type="button" id="wp_category_icon">上传分类图标</button>
+                </dd>
+            </dl>
+            </span>  -->
+    <!--         <dl>
+                <dt>
+                    品牌描述：
+                </dt>
+                <dd>
+                   <textarea name="description" rows="8" cols="60">{$brand['description']}</textarea>  
+                </dd>            
+            </dl>
+            <dl style="display:none;">
+                <dt>
+                    主页网址：
+                </dt>
+                <dd>
+                    <input type="text" name="url" size="40" value="{$brand['websiteUri']}" />
+                </dd>
+            </dl>
+            <dl style="display:none;">
+                <dt>
+                    邮件：
+                </dt>
+                <dd>
+                    <input type="text" name="email" size="40" value="{$brand['email']}" />
+                </dd>
+            </dl>
+            <dl style="display:none;">
+                <dt>
+                    电话：
+                </dt>
+                <dd>
+                    <input type="text" name="tel" size="40" value="{$brand['tel']}" />
+                </dd>
+            </dl>  -->
+            <dl>
+                <dt>关联地点：</dt>
+                <dd><!--{eval $place_select_required = false;$brand_place_tip = true;}--><!--{template block/place_select}--></dd>
+            </dl>
+            <dl>
+                <dt>
+                    关联店长：
+                </dt>
+                <dd>
+                    {eval $c_id = $brand['lordId'];}
+                    {eval $no_required = true;}
+                    <!--{template block/lookup_user}-->
+                </dd>
+            </dl>  
+            <dl>
+                <dt>状态：</dt>
+                <dd>
+                    <label><input type="radio" name="status"<!--{if 0 == $brand['status']}--> checked="checked"<!--{/if}--> value="0" />启动</label>
+                    <label><input type="radio" name="status"<!--{if 1 == $brand['status']}--> checked="checked"<!--{/if}--> value="1" />停用</label>
+                </dd>
+            </dl>
+          <!--   <dl>
+                <dt>显示优惠图标：</dt>
+                <dd>
+                    <label><input type="radio" name="has_prefer"{if empty($brand) || 1 == $brand['hasPrefer']} checked="checked"{/if} value="1" />是</label>
+                    <label><input type="radio" name="has_prefer"{if 0 === $brand['hasPrefer']} checked="checked"{/if} value="0" />否</label>
+                </dd>
+            </dl>
+            <dl style="display:none;">
+                <dt>
+                    备注：
+                </dt>
+                <dd>
+                   <textarea name="content" rows="8" cols="60">{$brand['content']}</textarea>  
+                </dd>            
+            </dl>
+            <dl class="dl-line">
+                关联模型
+            </dl>
+            <dl>
+                <dt>&nbsp;</dt>
+                <dd>{template block/module_select}</dd>
+            </dl>
+            <dl class="dl-line">
+                会员卡
+            </dl>
+           <dl>
+                <dt>
+                    会员卡名称：
+                </dt>
+                <dd>
+                    <input type="text" name="card_title" class="required" size="60" value="{$card['title']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>会员卡图片详情(640*420)：</dt>
+                <dd>
+                    <button type="button" id="card_image_detail">上传图片</button>
+                </dd>
+            </dl>
+            <dl>
+                <dt>会员卡图片(260*170)：</dt>
+                <dd>
+                    <button type="button" id="card_image">上传图片</button>
+                </dd>
+            </dl>
+            <dl>
+                <dt>会员卡特权：</dt>
+                <dd>
+                    <textarea name="card_detail" rows="8" cols="60" class="required">{$card['content']}</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>特权摘要：</dt>
+                <dd>
+                    <textarea name="card_summary" rows="4" cols="60" class="required">{$card['summary']}</textarea>
+                </dd>
+            </dl>-->
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick="{$page_id}_select_place_list();onsubmitBrandAdd();"><!-- {$page_id}_select_module_list(); -->
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        var brand_add_options = "name:\"logo[]\", id:\"logo\", file_type:\"common\", required:false, resolution:'odp'";
+        <!--{if $brand['logo']}-->
+            brand_add_options += ", image_name: \"{$brand['logo']}\"";
+        <!--{/if}-->
+        $("#logo", $("#{$page_id}")).my_upload(eval("({" + brand_add_options + "})"));
+        
+        //var brand_add_options = "name:\"category_icon[]\", id:\"category_icon\", file_type:\"common\", required:true, resolution:\"odp\"";
+        //var brand_add_options_wp = "name:\"category_icon[]\", id:\"wp_category_icon\", file_type:\"common\", required:true, resolution:\"wdp\"";
+        //<!--{if $category['categoryIcon']}-->
+        //    brand_add_options += ", image_name: \"{$category['categoryIcon']}\"";
+        //    brand_add_options_wp += ", image_name: \"{$category['categoryIcon']}\"";
+        //<!--{/if}-->
+        //$("#category_icon", $("#{$page_id}")).my_upload(eval("({" + brand_add_options + "})"));
+        //$("#wp_category_icon", $("#{$page_id}")).my_upload(eval("({" + brand_add_options_wp + "})"));
+        
+        //var member_card_image = "name:\"card_image[]\", id:\"card_image\", file_type:\"common\", required:true, resolution:\"thumb\"";
+        //var member_card_image_detail = "name:\"card_image[]\", id:\"card_image_detail\", file_type:\"common\", resolution:\"odp\", required:true";
+        //<!--{if $card['image']}-->
+        //    member_card_image += ", image_name: \"{$card['image']}\"";
+        //    member_card_image_detail += ", image_name: \"{$card['image']}\"";
+        //<!--{/if}-->
+        //$("#card_image", $("#{$page_id}")).my_upload(eval("({" + member_card_image + "})"));
+        //$("#card_image_detail", $("#{$page_id}")).my_upload(eval("({" + member_card_image_detail + "})"));
+        
+        //<!--{if $show_category}-->
+        //$("input[name=is_category]", $("#{$page_id}")).attr("checked", true);
+        //<!--{/if}-->
+        
+        //$("input[name=is_category]", $("#{$page_id}")).click(function(){
+        //    brand_add_category_icon();
+        //});
+        
+        //brand_add_category_icon();
+    });
+    
+    /*function brand_add_category_icon() {
+        if($("input[name=is_category]", $("#{$page_id}")).attr("checked")) {
+            $("#category_icon_span", $("#{$page_id}")).show();
+            $("input[name='category_icon[]']", $("#{$page_id}")).val("");
+        } else {
+            $("#category_icon_span", $("#{$page_id}")).hide();
+            $("input[name='category_icon[]']", $("#{$page_id}")).val("xx");
+        }
+    }*/
+
+    function onsubmitBrandAdd() {
+        var form = $("form", $("#{$page_id}"));
+        if (!form.valid()) {
+            return false;
+        }
+        
+        alertMsg.confirm("确定要提品牌么？", {
+            okCall : function() {
+                $.ajax({
+                    type: 'POST',
+                    url:form.attr("action"),
+                    data:form.serializeArray(),
+                    dataType:"json",
+                    cache: false,
+                    success: navTabAjaxDone,
+                    error: DWZ.ajaxError
+                });
+            }
+        });
+    }
+</script>

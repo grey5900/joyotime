@@ -1,0 +1,36 @@
+<!--{template web/header}-->
+<div class="container" id="container">
+	<!--{template f_header}-->
+	<div class="section-photo">
+		<ul class="thumbnails">
+			<!--{loop $list $id $photo}-->
+			<li class="thumbnail">
+				<div class="photo{if $photo[h] > 800} cut{/if}">
+					<a href="/review/{$id}/" target="_blank"><img border="0" width="200" height="{$photo[h]}" src="{$photo[photo]}" alt="{$photo[content]}" /></a>
+					{if $photo[h] > 800}<span class="shadow"></span>{/if}
+				</div>
+				<div class="caption">
+					{$photo[content]}
+				</div>
+				<div class="user">
+					<div><a href="/user/{$photo[uid]}/" class="avatar small" target="_blank"><i></i><img border="0" src="{$photo[avatar]}" width="30" height="30" title="{$photo[uname]}" /></a></div>
+					<div class="detail">
+						<a href="/review/{$id}/" target="_blank">{$photo[createDate]}</a> 在 <a href="/place/{$photo[placeId]}/" class="poi" target="_blank">{$photo[placename]}</a> 上传
+					</div>
+				</div>
+				<div class="actions" id="action_{$id}">
+					{if !empty($photo[praise])}<span class="praised">已赞</span>{else}<a class="praise" date-id="{$id}" date-target="image">赞</a>{/if}
+					<div class="more">
+						<!-- 判断登录状态，如果需要登录在链接上加“rel="signin"” -->
+						<a href="javascript:void(0)" class="reply" date-id="{$id}" date-target="{$photo[uname]}" date-type="image" date-uid="{$photo[uid]}">回复</a><em class="reply-num" id="reply-count-{$id}" date-count="{$photo[replyCount]}">{if $photo[replyCount] > 0}({$photo[replyCount]}){/if}</em>
+						{if !empty($photo[favorite])}<span class="favorited">已收藏</span>{else}<a href="javascript:void(0)" class="favorite" date-id="{$id}" date-target="image">收藏</a>{/if}
+					</div>
+				</div>
+			</li>
+			<!--{/loop}-->
+		</ul>
+		{$paginate}
+	</div>
+</div>
+<!--{template web/cur_event}-->
+<!--{template web/footer}-->

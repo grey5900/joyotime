@@ -1,0 +1,13 @@
+
+  <div class="mini-header">
+    <div class="card">
+      <a class="avatar" href="/place/{$info[id]}"><img src="{$info[icon]}" /></a>
+      <div class="info">
+        <h2>
+          <a href="/place/{$info[id]}">{$info[placename]}</a>
+          <span class="vico"></span>
+        </h2>
+        <p>地址：{$info[address]}  <!--{if !empty($info[tel])}-->电话：{$info[tel]}<!--{/if}--></p>
+      </div>
+    </div>
+  </div>

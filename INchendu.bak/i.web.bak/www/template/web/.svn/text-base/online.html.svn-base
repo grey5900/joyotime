@@ -1,0 +1,25 @@
+<!--{if $auth}-->
+<li>
+    <a href="/user/{$auth['id']}/">{eval echo $auth['nickname']?$auth['nickname']:$auth['username']}</a>
+</li>
+<li>
+    <a href="/user_settings/">设置</a>
+</li>
+<li>
+    <a href="javascript:void(0)" onclick="$.signout();">退出</a>
+</li>
+<!--{else}-->
+<li>
+    <i class="ico-sine"></i><a href="{$api_uri}oauth/login?stage_code=0&is_redirect=1">新浪微博登录</a>
+</li>
+<li>
+    <i class="ico-qq"></i><a href="{$api_uri}oauth/login?stage_code=1&is_redirect=1">腾讯微博登录</a>
+</li>
+<li>
+    <a href="/signup/">注册</a>
+</li>
+<li>
+    <a href="/signin/">登录</a>
+</li>
+<!--{/if}-->
+

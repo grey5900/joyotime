@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title></title>
+    <link rel="stylesheet" href="skin/style.css" type="text/css" />
+    <link rel="stylesheet" href="skin/icd.css" type="text/css" />
+    </head/>
+    <body>
+      <div id="header">
+        <div class="container">
+          <a href="http://www.chengdu.cn" class="logo">成都全搜索</a>
+          <div class="user-nav">
+            <a class="avatar" href="#"><img src="_img/avatar30x30.jpg"/></a><a class="name" href="#">m2</a>
+            <a class="setting" href="#">设置</a>
+            <a class="exit" href="#">退出</a>
+          </div>
+          <ul class="site-nav">
+            <li>
+              <a href="http://www.chengdu.cn">首页</a>
+            </li>
+            <li>
+              <a href="http://news.chengdu.cn/">新闻</a>
+            </li>
+            <li>
+              <a href="http://opinion.news.chengdu.cn/">美食</a>
+            </li>
+            <li>
+              <a href="http://ent.news.chengdu.cn">亲子</a>
+            </li>
+            <li>
+              <a href="http://f.chengdu.cn">评房网</a>
+            </li>
+            <li>
+              <a href="http://blog.chengdu.cn" class="on">汽车</a>
+            </li>
+            <li>
+              <a href="http://v.chengdu.cn/">观影</a>
+            </li>
+            <li>
+              <a href="http://photo.chengdu.cn/">购物</a>
+            </li>
+            <li>
+              <a href="http://tg.chengdu.cn/">章鱼团</a>
+            </li>
+            <li class="dropdown">
+              <a id="site-nav-more" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">更多 <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="site-nav-more">
+                <li>
+                  <a href="http://google.com">旅游</a>
+                </li>
+                <li>
+                  <a href="#anotherAction">健康</a>
+                </li>
+                <li>
+                  <a href="#">买购</a>
+                </li>
+                <li>
+                  <a href="#">同心卡</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="container">
+        <!-- 用户时光轴 -->
+        <div class="container">
+          <div class="top-profile">
+            <div class="bg-photo">
+              <img src="_img/ads001.jpg" />
+            </div>
+            <b></b>
+            <div class="btnpro">
+              <a class="btn">上传背景图</a>
+            </div>
+            <div class="avatar"><img src="_img/003.jpg" />
+            </div>
+            <div class="boxpro">
+              <ul>
+                <li>
+                  <div class="name">
+                    <dl>
+                      <dd>
+                        <h3>成老师</h3><a></a>
+                      </dd>
+                      <dd>
+                        <p>
+                          积分：33234
+                        </p>
+                      </dd>
+                    </dl>
+                  </div>
+                </li>
+                <li>
+                  <div class="details">
+                    <ul>
+                      <li>
+                        <a href="#">123123</a>
+                        <p>
+                          图片
+                        </p>
+                      </li>
+                      <li class="bor">
+                        <a href="#">222</a>
+                        <p>
+                          好友
+                        </p>
+                      </li>
+                      <li>
+                        <a href="#">22</a>
+                        <p>
+                          地主
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <div class="info">
+                <div class="box">
+                  <dl>
+                    <dd>
+                      <span>签到：<em>31</em> 点评：<em>32</em> 图片：<em>32</em> 收藏：<em>43</em> </span>
+                    </dd>
+                    <dd>
+                      <p>
+                        女人最大的骄傲不是她的长相有多出众，而是她的男人有多疼她女人<a href="#">[更多资料]</a>
+                      </p>
+                    </dd>
+                  </dl>
+                  <div class="follow">
+                    <a class="btn btn-danger">+加关注</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main">
+            
+          </div>
+          <div class="sidebar"></div>
+          <div class="sidebar">
+            <div class="module">
+              <div class="tit-first"></div>
+              <div class="con">
+                <div class="list-first">
+                  <div class="place-card">
+                    <img src="_img/tag.png" alt="" />
+                    <div class="info">
+                      <h3><a href="#">四川申蓉长安福特</a></h3>
+                      <div class="star-info">
+                        <span class="ico-star-2"></span>
+                      </div>
+                      <p>地址：成都市机场路近都段15号 </p>
+                      <p>电话：028-88888888</p>
+                    </div>
+                    <div class="details">
+                      <ul>
+                        <li><a href="#">45324</a><p>图片</p></li>
+                        <li class="bor"><a href="#">4534</a><p>访客</p></li>
+                        <li><a href="#">22</a><p>收藏</p></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="link-sj"><a class="btn btn-success btn-large">商家主页</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="module">
+                <div class="tit"><h3>正在团购</h3></div>
+                <div class="con">
+                  <ul class="list-groupon-sider">
+                    <li>
+                      <div class="thumb"><a href="#"><img src="_img/004.jpg"/><em class="t">喜狮成双明嘉标致</em></a></div>
+                      <div class="summary"><a href="#">抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购</a></div>
+                      <div class="count"><strong>86</strong> 人已购买</div>
+                      <div class="price">
+                        <del class="o">原价 ￥434</del>
+                        <span class="p">￥299</span>
+                        <a href="#" class="btn btn-success" target="_blank">立即购买</a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="thumb"><a href="#"><img src="_img/004.jpg"/><em class="t">喜狮成双明嘉标致</em></a></div>
+                      <div class="summary"><a href="#">抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购抢购</a></div>
+                      <div class="count"><strong>86</strong> 人已购买</div>
+                      <div class="price">
+                        <del class="o">原价 ￥434</del>
+                        <span class="p">￥299</span>
+                        <a href="#" class="btn btn-success" target="_blank">立即购买</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="module">
+                <div class="tit">
+                  <h3>本周热门推荐</h3>
+                </div>
+                <div class="con">
+                  <ul class="list-hot">
+                    <li><a href="#">2012第十届广州车展今日开幕 </a></li>
+                    <li><a href="#">斯柯达中国换帅</a></li>
+                    <li><a href="#">药驾？桑姜感冒胶囊无药驾问题</a></li>
+                    <li><a href="#">成都油价回归“7元时代”</a></li>
+                    <li><a href="#">持A2驾照开“迈巴赫”扣12分</a></li>
+                    <li><a href="#">安全气囊故障吉普召回92万辆</a></li>
+                    <li><a href="#">车市银十 自主品牌扭转颓势</a></li>
+                    <li><a href="#">奥迪RS入列 豪车三大品牌交火</a></li>
+                    <li><a href="#">成都新西亚西雅特全系七折起售最低17.98...</a></li>
+                    <li><a href="#">奥迪RS入列 豪车三大品牌交火</a></li>
+                  </ul>
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+    </body>
+</html>

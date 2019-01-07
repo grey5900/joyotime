@@ -1,0 +1,117 @@
+<!--{eval $page_id = 'event_add';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <input type="hidden" name="status" value="{$event['status']}"/>
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>
+                    大图(600x240)：
+                </dt>
+                <dd>
+                    <button type="button" id="image_big">上传大图</button>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    中图(450x180)：
+                </dt>
+                <dd>
+                    <button type="button" id="image_middle">上传中图</button>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    小图(300x120)：
+                </dt>
+                <dd>
+                    <button type="button" id="image_small">上传小图</button>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    标题：
+                </dt>
+                <dd>
+                    <input type="text" name="title" class="required" size="60" value="{$event['name']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    连接：
+                </dt>
+                <dd>
+                    <!--{eval $is_event = true;}-->
+                    <!--{template main/link_page}-->   
+                </dd>            
+            </dl>
+            <dl>
+                <dt>
+                    排序号：
+                </dt>
+                <dd>
+                    <input type="text" name="rank_order" class="required number" size="10" value="{$event['rankOrder']}" />
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick="onsubmitEventAdd();">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function onsubmitEventAdd() {
+        var form = $("form", $("#event_add"));
+        if (!form.valid()) {
+            return false;
+        }
+        
+        alertMsg.confirm("确定要提交新的活动么？", {
+            okCall : function() {
+                $.ajax({
+                    type: 'POST',
+                    url:form.attr("action"),
+                    data:form.serializeArray(),
+                    dataType:"json",
+                    cache: false,
+                    success: navTabAjaxDone,
+                    error: DWZ.ajaxError
+                });
+            }
+        });
+    }
+        
+    $(function() {
+        var options_b = "name:\"image[]\", id:\"image_big\", file_type:\"common\", required:true, resolution:\"udp\"";
+        var options_m = "name:\"image[]\", id:\"image_middle\", file_type:\"common\", required:true, resolution:\"hdp\"";
+        var options_s = "name:\"image[]\", id:\"image_small\", file_type:\"common\", required:true, resolution:\"mdp\"";
+        <!--{if $event['image']}-->
+            options_b += ", image_name: \"{$event['image']}\"";
+            options_m += ", image_name: \"{$event['image']}\"";
+            options_s += ", image_name: \"{$event['image']}\"";
+        <!--{/if}-->
+        $("#image_big", $("#event_add")).my_upload(eval("({" + options_b + "})"));
+        $("#image_middle", $("#event_add")).my_upload(eval("({" + options_m + "})"));
+        $("#image_small", $("#event_add")).my_upload(eval("({" + options_s + "})"));
+
+    });
+
+</script>

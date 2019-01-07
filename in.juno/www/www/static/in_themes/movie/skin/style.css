@@ -1,0 +1,115 @@
+/* 频道主色调 */
+#container {
+  background: url('fullscreen.jpg') center 0 no-repeat;
+}
+#container .container {
+  background: url('channel-style.png') -230px top repeat-y;
+}
+#container-page .container {
+  background: url('channel-style.png') -230px top repeat-y;
+}
+.nav-bg {
+  background: url('channel-style.png') no-repeat;
+}
+.channel-nav {
+  float: left;
+  width: 190px;
+}
+.channel-nav .tit {
+  height: 70px;
+  margin: 0px;
+  padding: 0px;
+  text-indent: -9999px;
+}
+.channel-nav .col {
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+.channel-nav .col a {
+  background-color: #f55303;
+}
+.channel-nav .col a:hover,
+.channel-nav .col a.on {
+  background-color: #272727;
+}
+.channel-nav .col a .ico {
+  background-image: url('nav-ico.png');
+}
+.channel-nav .col a .ico.home {
+  background-position: 0 -9px;
+}
+.channel-nav .col a .ico.channel-nav-39 {
+  background-position: 0 -53px;
+}
+.channel-nav .col a .ico.channel-nav-40 {
+  background-position: 0 -97px;
+}
+.channel-nav .col a .ico.channel-nav-41 {
+  background-position: 0 -141px;
+}
+.channel-nav .col a .ico.channel-nav-42 {
+  background-position: 0 -185px;
+}
+.channel-nav .tag a {
+  background: #fc6c24;
+  color: #fffaf8;
+}
+.channel-nav .tag a:hover {
+  background-color: #fd874d;
+}
+/* 热点*/
+.hot {
+  border-top: 2px solid #f55303;
+}
+.push .tit {
+  border-top-color: #f55303;
+}
+.push .tit .say {
+  background: url('channel-style.png') 0 -160px no-repeat;
+}
+.push .tit .tab a.current {
+  background: url('channel-style.png') -140px -160px no-repeat;
+}
+/* 重设频道头部样式 */
+#header {
+  border-bottom-color: #f55303;
+}
+#header .site-nav li.back {
+  border-color: #f55303;
+}
+#header .site-nav-more .dropdown .dropdown-menu {
+  background: #f55303;
+  border-color: #f55303;
+}
+#header .site-nav-more .dropdown .dropdown-menu li a:hover,
+#header .site-nav-more .dropdown .dropdown-menu li a:focus {
+  color: #f55303;
+}
+#header .sub-nav {
+  background-image: url(sb_nav.png);
+}
+#header .sub-nav .site-nav a {
+  background-repeat: repeat-x;
+}
+#header .sub-nav .site-nav a.current {
+  background-image: url(nav_crt_hover.png);
+}
+#header .sub-nav .site-nav a:hover {
+  background-image: url(nav_crt.png);
+}
+#header .sub-nav .site-nav a:hover span {
+  display: block;
+}
+/* 重设频道模块样式 */
+.module .tit h3 {
+  background: url('channel-style.png') 0px -200px no-repeat;
+}
+.module .list-groupon .price .p {
+  color: #f55303;
+}
+.place-map {
+  border-top: 2px solid #f55303;
+}
+/* 重设新闻样式 */
+.article {
+  border-top-color: #f55303;
+}

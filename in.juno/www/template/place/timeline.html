@@ -1,0 +1,395 @@
+<!--{template common/header}-->
+<!-- test ag -->
+<div id="container-page">
+<div class="container">
+<div class="main">
+    <div class="section">
+        <div class="review-form" id="review-form">
+            <form id="tip-post" method="post" action="/common/send/" data-refer="/place/{$info[id]}/1/1/new">
+                <input type="hidden" name="place_id" value="{$info[id]}" />
+                <div class="review-fill">
+                    <div id="star-ranker">
+                        <span class="ranker"></span><span class="hint"></span>
+                    </div>
+                    {if $info['isBusiness']}
+                    <div class="percapita">
+                        人均：<input type="text" maxlength="5" name="pcc" id="pcc" /> 元
+                    </div>
+                    {/if}
+                </div>
+                <div class="section-release">
+                    <div class="textarea-edit">
+                        <textarea rows="3" id="textarea" name="content" class="reply-write" maxlength="500"></textarea>
+                        <div class="imgupload">
+                            <label class="imgselect" id="cover" for="imgbtn">
+                                <input type="file" class="imgbtn" name="Filedata" value="" id="imgbtn" />
+                            </label>
+                        </div>
+                        <!--{if empty($this->auth)}-->
+                        <div class="txt_tip">您还没有登陆哦，点击<a href="###">登陆</a></div>
+                        <!--{/if}-->
+                    </div>
+                    <div class="action">
+                        <label class="checkbox inline">
+                            <input class="labelbox" type="checkbox" name="synchronous" id="synchronous" /> 同步到第三方平台
+                        </label>
+                        <input class="btn btn-primary" type="submit" data-loading-text="发布中..." value="发布" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="push">
+            <div class="tit">
+                <h2>大家都在说</h2>
+                <div class="tab">
+                    <a<!--{if $order === 'new'}--> class="current nav-bg"<!--{/if}--> href="/place/{$info[id]}/1/1/new">最新</a>
+                    <a<!--{if $order === 'hot'}--> class="current nav-bg"<!--{/if}--> href="/place/{$info[id]}/1/1/hot">最热</a>
+                </div>
+            </div>
+            <div class="con">
+                <div class="timeline">
+                    <ul class="posts">
+                        <!--{if !empty($list)}-->
+                        <!--{loop $list $ke $post}-->
+                        <li class="post" data-id="{$post[id]}" data-type="{echo $post[type]==2 ? 'tip':'image';}">
+                            <div class="arr"></div>
+                            <div class="link hide"><a href="/review/{$post[id]}" target="_blank">详情</a></div>
+                            {if $post['isEssence']}<div class="elite"></div>{/if}
+                            <div class="avatar"><a href="/user/{$post[uid]}"><img src="{$post[avatar_url]}" rel="tooltip" data-original-title="{$post['nickname']}" /></a></div>
+                            <div class="item">
+                                <h2>{$post[title]}</h2>
+                                <!--{if $post[star] > 0 || !empty($post[pcc])}-->
+                                <div class="pf">
+                                    <!--{if $post[star] > 0}--><span class="ico-star-{$post[star]}"></span><!--{/if}-->
+                                    <!--{if !empty($post[pcc])}--><span>人均：<!--{if $post[pcc]>=0}-->{$post[pcc]}<!--{else}-->-<!--{/if}-->元</span><!--{/if}-->
+                                </div>
+                                <!--{/if}-->
+                                <!--{if !empty($post[content])}-->
+                                <p>{echo format_html($post[content]);}</p>
+                                <!--{/if}-->
+                                <!--{if $post[photoName]}-->
+                                <div class="photo"><img src="{$post[photoName]}" alt="{$post['content']}" width="{$post[photoSize][w]}" height="{$post[photoSize][h]}" /></div>
+                                <!--{/if}-->
+                            </div>
+                            <div class="footbar">
+                                <div class="tags">{$post[tag]}</div>
+                                <div class="actions">
+                                    <a class="action-like <!--{if $post['mpid']}-->on<!--{/if}-->" data-id="{$post[id]}" data-type="19"><span class="text">赞</span><span class="num" id="praise_count_$post[id]"><!--{if $post[praiseCount] > 0}-->({$post[praiseCount]})<!--{/if}--></span></a>
+                                    <em>|</em>
+                                    <div class="action-share dropdown" data-id='{$post[id]}' data-type='19'>
+                                        <a class="dropdown-toggle" data-toggle="dropdown">分享<span class="num" id="share_count_$post[id]"><!--{if $post[shareCount] > 0}-->({$post[shareCount]})<!--{/if}--></span></a>
+                                        <ul class='dropdown-menu'>
+                                            <li><a class='action-share-icd' data-s='0'>IN成都</a></li>
+                                            <li><a class='action-share-weibo' data-s='1' data-content='http://in.chengdu.cn/review/{$post[id]} 分享自#IN成都#'>新浪微博</a></li>
+                                            <li><a class='action-share-qq' data-s='2' data-content='http://in.chengdu.cn/review/{$post[id]} 分享自#IN成都#'>腾讯微博</a></li>
+                                        </ul>
+                                    </div>
+                                    <em>|</em>
+                                    <a class="action-reply"><span class="text">回复</span><span class="num" id="reply_count_$post[id]"><!--{if $post[replyCount] > 0}-->({$post[replyCount]})<!--{/if}--></span></a>
+                                </div>
+                            </div>
+                            <div class="replys hide">
+                                <form class="reply-form" data-pid="{$post[id]}" data-uid="{$auth[uid]}" data-user="{$auth[nickname]}" data-type="{echo $post[type]==2 ? 'tip':'image';}">
+                                    <!-- <input class="txt" type="text" maxlength="140" placeholder="回复内容..."/> -->
+                                    <textarea name="" id="" class="txt" placeholder="回复内容..."></textarea>
+                                    <span class="btn">发布</span>
+                                </form>
+                                <ul class="reply-list">
+                                    <!--{if $post[replyCount]}-->
+                                    <!--{loop $post[replies] $k $v}-->
+                                    <li>
+                                        <a href="/user/{$v[uid]}" class="avatar"><img src="{$v[avatar]}" alt="{$v['nickname']}" /></a>
+                                        <div class="actions"><a href="javascript:;" class="action-replyto" data-pid="{$v[itemId]}" data-id="{$v[id]}" data-uid="{$v[uid]}" data-user="{$v[name]}">回复</a></div>
+                                        <p><a href="/user/{$v[uid]}" class="name">{$v[name]}</a>{$v[re_string]}：{$v[content]}<br /><span class="time">{$v[createDate]}</span></p>
+                                    </li>
+                                    <!--{/loop}-->
+                                    <!--{/if}-->
+                                </ul>
+                                {if $post[replyCount]>10}<div class="more_comm" style="">更多评论请<a href="/review/{$post[id]}" target="_blank">点击查看</a></div>{/if}
+                            </div>
+                            <div class="clock">{$post[createDate]}</div>
+                            {if $post['lat']}<div class="source">用IN成都客户端发布，<a href="http://in.chengdu.cn/download/" target="_blank">点击下载></a></div>{/if}
+                        </li>
+                        <!--{/loop}-->
+                        <!--{else}-->
+                        <li class="empty">{$info[placename]}还没有动态</li>
+                        <!--{/if}-->
+                    </ul>
+                    {if $paginate}
+                    {$paginate}
+                    {else}
+                    <div class="pagination" ></div>
+                    {/if}
+                    <a href="/place/{$info[id]}/2/{$page}/{$order}" class="hide">加载更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side">
+        <!--{if !empty($visitors)}-->
+        <div class="mod">
+            <div class="tit"><h3>访客</h3></div>
+            <div class="con">
+                <ul class="list-user">
+                    <!--{loop $visitors $k $v}-->
+                    <li>
+                        <div class="avatar"><a href="/user/{$v[id]}"><img src="{$v[avatar_url]}" alt="{$v['nickname']}" /></a></div>
+                        <div class="username"><a href="/user/{$v[id]}">{echo !empty($v[nickname]) ? $v[nickname] : $v[username];}</a></div>
+                        <div class="actions">
+                            <!--{if $v[followDate]}-->
+                            <a class="action-unfollow" data-loading-text="取消中..." data-uid="{$v[id]}" title="取消关注">取消关注</a>
+                            <!--{else}-->
+                            <a class="action-follow" data-loading-text="关注中..." data-uid="{$v[id]}" title="加关注">加关注</a>
+                            <!--{/if}-->
+                        </div>
+                    </li>
+                    <!--{/loop}-->
+                    <li class="more"><a href="/place_visitor/{$info[id]}">更多 &gt;</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--{/if}-->
+        <!--{if !1==1 && !empty($members)}-->
+        <div class="mod">
+            <div class="tit"><h3>会员</h3></div>
+            <div class="con">
+                <ul class="list-user">
+                    <!--{loop $members $k $v}-->
+                    <li>
+                        <div class="avatar"><a href="/user/{$v[id]}"><img src="{$v[avatar_url]}" alt="{$v['nickname']}" /></a></div>
+                        <div class="username"><a href="/user/{$v[id]}">{echo !empty($v[nickname]) ? $v[nickname] : $v[username];}</a></div>
+                        <div class="actions">
+                            <!--{if $v[followDate]}-->
+                            <a class="action-unfollow" data-loading-text="取消中..." data-uid="{$v[id]}" title="取消关注">取消关注</a>
+                            <!--{else}-->
+                            <a class="action-follow" data-loading-text="关注中..." data-uid="{$v[id]}" title="加关注">加关注</a>
+                            <!--{/if}-->
+                        </div>
+                    </li>
+                    <!--{/loop}-->
+                    <li class="more"><a href="/place_member/{$info[id]}">更多 &gt;</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--{/if}-->
+    </div>
+</div>
+<div class="sidebar">
+    <div class="module">
+        <div class="tit-first"></div>
+        <div class="con">
+            <div class="list-first">
+                <div class="place-card">
+                    <img src="{$info[icon]}" alt="{$info[placename]}" />
+                    <div class="info">
+                        <h3>
+                            <a href="/place/{$info[id]}">{$info[placename]}</a>{if $info['isVerify']}<span class='vico'></span>{/if}
+                            <a href="#" class="item-qrcode" rel="popover" data-placement="right" data-html="true" data-content="<div class='qr-popover'><div class='thumb'><img width='200' height='200' src='http://chart.googleapis.com/chart?chs=200x200&amp;cht=qr&amp;chl=http://in.chengdu.cn/qr/inplace/{$info[id]}' alt='{$info[placename]}的二维码' /></div></div>">{$info[placename]}的二维码</a>
+
+                </h3>
+                <div class="star-info">
+                    <span class="ico-star-{$info[star]}"></span>
+                </div>
+                <p>地址：{$info[address]}</p>
+                <p><!--{if !empty($info[tel])}-->电话：{$info[tel]}<!--{/if}--></p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li><a href="/place_photo/{$info[id]}">{$info[photoCount]}</a><p>图片</p></li>
+                    <li class="bor"><a>{$info[point]}</a><p>积分</p></li>
+                    <li><a href="/place_favorite/{$info[id]}">{$info[favoriteCount]}</a><p>收藏</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--{if !1==1 && !empty($info[member_card])}-->
+<div class="module">
+    <div class="tit">
+        <h3>会员特权</h3>
+    </div>
+    <div class="con">
+        <div class="list-mvp">
+            <div class="vip-card">
+                <div class="thumb">
+                    <img src="{echo image_url($info[member_card][image],'common','thumb')}" alt="{$info[member_card][content]}" />
+                </div>
+                <div class="summary">{$info[member_card][content]}</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--{/if}-->
+<!--{if !1==1 && !empty($groupon)}-->
+<div class="module">
+    <div class="tit"><h3>正在团购</h3></div>
+    <div class="con">
+        <ul class="list-groupon-sider">
+            <li>
+                <div class="thumb"><a href="#"><img src="{echo image_url($groupon[imageUri],'common','mdp')}" alt="{$groupon[title]}" /><em class="t">{$groupon[title]}</em></a></div>
+                <div class="summary"><a href="#">{$groupon[content]}</a></div>
+                <div class="price">
+                    <del class="o">原价 ￥{$groupon[marketPrice]}</del>
+                    <span class="p">￥{$groupon[grouponPrice]}</span>
+                    <a href="#" class="btn btn-success" target="_blank">立即购买</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--{/if}-->
+{if $is_loupan}
+<div class="profile-building">
+    {if $loupan}
+    <div class="detail">
+        <div class="tit">
+            <h3>楼盘详情</h3>
+            <div class="more"><a href="/place_info/{$info['id']}/{$profile_id['info']}">更多</a></div>
+        </div>
+        <div class="con">
+            <dl>
+                <dt>楼盘名称：</dt>
+                <dd>{$info['placename']}</dd>
+            </dl>
+            {loop $display_fields $key $p}
+            <!--{eval if(!empty($loupan[$p]['mValue'])){ }-->
+            <dl class="{$p}">
+                <dt>{$module_fields[$p]}：</dt>
+                <dd>{if $p=="v-avgprice"}<em>{/if}{eval echo cut_string($loupan[$p]['mValue'],100)}{if $p=="v-avgprice"}</em>{/if}{eval echo $p=="v-avgprice" && intval($loupan[$p]['mValue'])>0 ? " 元/㎡" : ""} </dd>
+            </dl>
+            <!--{eval } }-->
+            {/loop}
+
+        </div>
+    </div>
+    {/if}
+    {if $loupan_imgs}
+    <div class="photo">
+        <div class="tit">
+            <h3>楼盘图片</h3>
+            <div class="more"><a href="/place_info/{$info['id']}/{$profile_id['imgs']}">更多</a></div>
+        </div>
+        <div class="con">
+            <ul class="mulitthumb">
+                {loop $loupan_imgs $img}
+                <li><a href="/place_info/{$info['id']}/{$profile_id['imgs']}"><img src="{$img}" alt="{$info[placename]}" width="50" height="50" /></a></li>
+                {/loop}
+
+            </ul>
+        </div>
+    </div>
+    {/if}
+</div>
+{/if}
+<!--{if !empty($info[profiles])}-->
+<div class="profiles-menu">
+    <!--{loop $info[profiles] $k $pro}-->
+    <!--{if $pro['hyperLink']}-->
+    <!--{eval $url = '/place_info/' . $info['id'] . '/' . $pro['id'];}-->
+    <!--{else}-->
+    <!--{eval $url = "";}-->
+    <!--{/if}-->
+    <!--{if $pro['moduleId']==28 || $pro['moduleId']==29}-->
+    <!--{eval continue;}-->
+    <!--{/if}-->
+
+    <a {if $url} href="{$url}"{/if} class="profile-item {if !$url}non-link{/if}">
+
+    <!--{if !empty($pro[images]) || !empty($pro[content])}-->
+					<span class="profile-detail">
+			            <!--{if $pro[images] &&  count($pro[images]) > 1}-->
+			            	<span class="mulitthumb">
+					            <!--{loop $pro[images] $k $img}-->
+					            <img src="{$img}" width="50" height="50" alt="{$pro[show_name]}" />
+					            <!--{/loop}-->
+					            <span class="title">{$pro[show_name]}</span>
+					            <span class="content">{$pro[content]}</span>
+			            	</span>
+			            <!--{elseif !empty($pro[images])}-->
+				            <!--{if $pro[style] == 1}-->
+				            <!-- 一张图一行显示 -->
+			            	<span class="singlebanner">
+					            <img src="{$pro[images][0]}" width="260" height="60" alt="{$pro[show_name]}" />
+					            <span class="title">{$pro[show_name]}</span>
+					            <span class="content">{$pro[content]}</span>
+			            	</span>
+				            <!--{else}-->
+				            <!-- 一张图左显示 -->
+			            	<span class="singlethumb">
+					            <img src="{$pro[images][0]}" width="80" height="80" alt="{$pro[show_name]}" />
+					            <span class="title">{$pro[show_name]}</span>
+					            <span class="content">{$pro[content]}</span>
+			            	</span>
+				            <!--{/if}-->
+			            <!--{elseif !empty($pro[content])}-->
+			            	<span class="text">
+					            <span class="title">{$pro[show_name]}</span>
+					            <span class="content">{$pro[content]}</span>
+			            	</span>
+			            <!--{/if}-->
+					</span>
+    <!--{else}-->
+    <span class="profile-title">{$pro[show_name]}</span>
+    <!--{/if}-->
+    </a>
+    <!--{/loop}-->
+</div>
+<!--{/if}-->
+
+<!--{if !empty($news)}-->
+<div class="module">
+    <div class="tit">
+        <h3>相关新闻</h3>
+    </div>
+    <div class="con">
+        <div class="list-news">
+            <ul class="list-news-more">
+                <!--{loop $news $k $v}-->
+                <li><a href="{$v[domain]}/article/{$v[id]}">{$v[subject]}</a></li>
+                <!--{/loop}-->
+            </ul>
+        </div>
+    </div>
+</div>
+<!--{/if}-->
+<!-- 地图 begin -->
+<div class="module map">
+    <div class="tit-first"></div>
+    <div class="con">
+
+        <img src="http://api.map.baidu.com/staticimage?center={$info[longitude]},{$info[latitude]}&width=260&height=200&zoom=14&markers={$info[longitude]},{$info[latitude]}" width="260" height="200" border="0" id="place-map">
+    </div>
+</div>
+<!-- 地图 end -->
+<!--{if !empty($info[description])}-->
+<div class="module place-basic-info">
+    <div class="tit">
+        <h3>基本信息</h3>
+    </div>
+    <div class="con">
+        <div class="text">
+            {echo cut_string($info[description], 100);}
+            <a href="javascript:void(0);" class="text-more" data-full-text="{$info[description]}">展开</a>
+        </div>
+    </div>
+</div>
+<!--{/if}-->
+</div>
+</div>
+</div>
+<div class="modal hide" id="place-map-modal">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3>地图</h3>
+    </div>
+    <div class="modal-body">
+        <div id="map" class="map" style="width: 530px; height: 290px;" data-lat="{$info[latitude]}" data-lng="{$info[longitude]}"></div>
+    </div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7dc3e4b24f182c84b3843400d2b83bbe"></script>
+<script type="text/javascript" src="/static/js/mapper.min.js"></script>
+
+<!--{template common/footer}-->

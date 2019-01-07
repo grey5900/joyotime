@@ -1,0 +1,56 @@
+<!--{template header}-->
+
+<script type="text/javascript" charset="utf-8">
+   //图片墙
+   $(function(){
+	function relayout(){
+		if ($(window).width() < '1228') {
+			$("body")
+				.addClass("xga");
+		} else {
+			$("body")
+				.removeClass("xga")
+		}
+	}
+	relayout();
+	$(window).resize(relayout);
+   });
+</script>
+<div id="container" class="container-fluid">
+	<div class="section">
+		<ul class="thumbnails">
+			<!--{loop $list $id $photo}-->
+			<li class="thumbnail">
+				<div class="photo{if $photo[h] > 800} cut{/if}">
+					<a href="/review/{$id}/" target="_blank"><img border="0" width="200" height="{$photo[h]}" src="{$photo[photo]}" alt="{$photo[content]}" /></a>
+					{if $photo[h] > 800}<span class="shadow"></span>{/if}
+				</div>
+				<div class="caption">
+					{$photo[content]}
+				</div>
+				<div class="user">
+					<div class="avatar small"><a href="/user/{$photo[uid]}/" target="_blank"><i></i><img border="0" src="{$photo[avatar]}" width="30" height="30" title="{$photo[uname]}" /></a></div>
+					<div class="detail">
+						<a href="/user/{$photo[uid]}/" class="username" target="_blank">{$photo[uname]}</a> 在 <a href="/place/{$photo[placeId]}/" class="poi" target="_blank">{$photo[placename]}</a>
+						<a class="data" href="/review/{$id}/" target="_blank">{$photo[createDate]}</a> 上传
+					</div>
+				</div>
+				<div class="actions" id="action_{$id}">
+					{if !empty($photo[praise])}<span class="praised">已赞</span>{else}<a class="praise" date-id="{$id}" date-target="image">赞</a>{/if}
+					<div class="more">
+						<!-- 判断登录状态，如果需要登录在链接上加“rel="signin"” -->
+						<a href="javascript:void(0)" class="reply" date-id="{$id}" date-target="{$photo[uname]}" date-uid="{$photo[uid]}" date-type="image">回复</a><em class="reply-num" id="reply-count-{$id}" date-count="{$photo[replyCount]}">{if $photo[replyCount] > 0}({$photo[replyCount]}){/if}</em>
+						{if !empty($photo[favorite])}<span class="favorite">已收藏</span>{else}<a href="javascript:void(0)" class="favorite" date-id="{$id}" date-target="image">收藏</a>{/if}
+					</div>
+				</div>
+			</li>
+			<!--{/loop}-->
+		</ul>
+		{$paginate}
+	</div>
+</div>
+<form action="/reply/" method="post" class="modal hide" id="reply-form"></form>
+<form action="/share/" method="post" class="modal hide" id="share-form"></form>
+<form action="/signin/" method="post" class="modal hide form-horizontal" id="signin-modal"></form>
+
+<!--{template footer}-->

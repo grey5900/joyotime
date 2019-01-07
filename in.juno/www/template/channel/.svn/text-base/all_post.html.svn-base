@@ -1,0 +1,24 @@
+<!--{template common/header3.0}-->
+	<div class="main layout">
+		
+		<div class="column waterfall">
+			<div class="hd">
+				<h2>全城动态 </h2>
+				<a href="http://in.chengdu.cn/download" target="_blank">下载IN成都客户端 &gt;</a>
+			</div>
+			<div class="bd">
+				<!--{template web/index_post}-->
+			</div>
+		  {if $paginate}
+          {$paginate}
+          {else}
+          <div class="pagination" ></div>
+          {/if}
+          <div class="pages">
+				
+				<a id="nextPage" href="/channel/all_posts/2/{$page}" class="hide">加载更多</a>
+			</div>
+		
+		</div>
+	</div>
+<!--{template common/footer}-->

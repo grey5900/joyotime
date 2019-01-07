@@ -1,0 +1,617 @@
+//热门推荐
+.hot{
+	.box{
+		.clearfix;
+		margin-bottom:10px;
+		padding-left:420px;
+		.img{
+			float:left;
+			margin-left:-420px;
+			_display:inline;
+			width:420px\0;
+			height:168px\0;
+			img{
+				width:420px;
+				height:168px;
+			}
+		}
+		.info{
+			margin-left:10px;
+			h4{
+				
+				a{
+					font:16px/18px @yh;
+					color:@light-black;
+					display:block;
+					max-height:36px;
+					_height:36px;
+					overflow:hidden;
+				}
+			}
+			span{
+				color:@light-grey;
+			}
+			p{
+				padding-bottom:15px;
+				border-bottom:@dot;
+				em{
+					color:#d63333;
+					font-family:Georgia,@yh;
+					font-size:24px;
+				}
+			}
+			.btns{
+				margin-top:15px;
+				a{
+					width:112px;
+					padding-left:0;
+					padding-right:0;
+				}
+				.btn{
+					border-radius:0;
+					font:bold 14px/20px "\5B8B\4F53";
+				}
+				.btn-warning{
+					border:1px solid #DA7800;
+				}
+				.btn-success{
+					border:1px solid #448317;
+					margin-left:10px;
+				}
+			}
+		}
+	}
+}
+.contact{
+	.bd{
+		padding-bottom:15px;
+	}
+}
+//更多活动
+.more_act{
+	li{
+		margin-bottom:5px;
+		img{
+			width:280px;
+			height:112px;
+		}
+	}
+}
+
+//地点册
+.loc_album{
+	.con{
+		padding-bottom:15px;
+	}
+	.box{
+		width:50%;
+		*width:49%;
+		overflow:hidden;
+		float:left;
+		.img{
+			float:left;
+			width:110px;
+			overflow:hidden;
+			position:relative;
+			i{
+				position:absolute;
+				width:110px;
+				height:110px;
+				background:url(images/book.png) no-repeat;
+				_background-image:url(images/book-8.png);
+				top:0;
+				left:0;
+				cursor:pointer;
+			}
+			img{
+				width:110px;
+				height:110px;
+				
+			}
+		}
+		.info{
+			padding:0 10px 0 120px;
+			height:110px;
+			*height:auto;
+			h4{
+				a{
+					font:bold 16px/18px "\5B8B\4F53";
+					color:@font-green;
+				}
+			}
+			p{
+				padding:10px 0;
+				word-break:break-all;
+			}
+			.user{
+				color:#999;
+				img{
+					.avatar(30px);
+					margin-right:5px;
+				}
+			}
+		}
+		li{
+			margin-bottom:10px;
+			padding-left:30px;
+			width:100%;
+			position:relative;
+			font-size:14px;
+			i{
+				position:absolute;
+				left:5px;
+				top:3px;
+			}
+		}
+	}
+	hr{
+		border-top:@dot;
+		margin:15px 0;
+		float:left;
+		width:100%;
+		*width:675px;
+	}
+}
+
+//更多地点册
+.more_la{
+	.con{
+		ul{
+			margin-top:-10px;
+			_zoom:1;
+		}
+		li{
+			margin-top:10px;
+			border-bottom:@dot;
+			padding-bottom:10px;
+			background:url(images/icons.png) no-repeat -368px top;
+			_background-image:url(images/icons-8.png);
+			padding-left:42px;
+			a{
+				display:block;
+				&.address{
+					font:bold 14px/18px "\5b8b\4f53";
+				}
+				&.user{
+					color:@light-grey;
+					display:inline;
+				}
+			}
+			span{
+				color:#aaa;
+			}
+		}
+	}
+}
+
+/**社区**/
+.community{
+	.bd{
+		padding-bottom:15px !important;
+		height:600px;
+		overflow:hidden;
+	}
+}
+
+//本月达人
+.talent{
+	.con{
+		overflow:hidden;
+	}
+	li{
+		margin-bottom:5px;
+		border-bottom:@dot;
+		padding-bottom:5px;
+		min-height:60px\9;
+		.clearfix;
+		&.active{
+			.img{
+				margin-left:5px;
+				height:60px;
+				
+			}
+			.info{
+				padding-left:75px;
+			}
+		}
+		.img{
+			float:left;
+			margin-left:-60px;
+			_display:inline;
+			height:0;
+			height:60px\0;
+			width:60px\0;
+			.tansition(margin-left,ease,0.3s);
+			img{
+				.avatar(60px);
+			}
+		}
+		.info{
+			.tansition(all,ease,0.3s);
+			padding-left:10px;
+			//height:60px;
+		}
+		a{
+			.t14;
+		}
+		p{
+			color:@light-grey;
+		}
+	}
+}
+
+/*地点公共*/
+.module .location,.module.location{
+	li{
+		height:60px;
+		padding-bottom:10px;
+		border-bottom:@dot;
+		margin-bottom:10px;
+		.address{
+			overflow:hidden;
+			img{
+				.avatar(60px);
+			}
+			.img{
+				float:left;
+				width:60px\0;
+				height:60px\0;
+			}
+			.info{
+				padding-left:70px;
+				margin-top:10px;
+				a{
+					.t16;
+					color:@font-green;
+				}
+				p{
+					em{
+						color:#CF3431;
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+//抢地主
+.land_lord{
+	li{
+		/*height:60px;
+		padding-bottom:10px;
+		border-bottom:@dot;
+		margin-bottom:10px;*/
+		.lords{
+			float:right;
+			width:140px;
+			*width:150px;
+			height:60px\0;
+			.s_tit{
+				font-weight:bold;
+				i{
+					filter:alpha(opacity=50);
+					opacity:.5;
+				}
+			}
+			.img{
+				margin-left:-10px;
+				_zoom:1;
+				font-size:0;
+			}
+			img{
+				.avatar(40px);
+				margin-left:10px;
+				_display:inline;
+			}
+		}
+		.address{
+			float:left;
+			/*img{
+				.avatar(60px);
+			}
+			.img{
+				float:left;
+			}
+			.info{
+				padding-left:70px;
+				margin-top:10px;
+				a{
+					.t16;
+					color:@font-green;
+				}
+				p{
+					em{
+						color:#CF3431;
+					}
+				}
+			}*/
+		}
+	}
+}
+
+//道具
+.items{
+	.box{
+		float:left;
+		width:50%;
+		overflow:hidden;
+		.img{
+			float:left;
+			width:80px;
+			height:80px;
+			overflow:hidden;
+			img{
+				width:80px;
+				height:80px;
+			}
+		}
+		.info{
+			padding:0 10px 0 90px;
+			a{
+				.t14;
+			}
+			p{
+				margin-top:5px;
+				color:#999;
+				b{
+					color:#666;
+				}
+			}
+		}
+	}
+}
+
+/**商户**/
+.con_news{
+	.head_line{
+		padding:0 0 0 265px;
+		height:300px;
+		*height:auto;
+		h1{
+			text-align:center;
+			line-height:20px;
+			a{
+				color:@light-black;
+				font-size:18px;
+			}
+		}
+		p{
+			line-height:2;
+			a.sort{
+				color:#2eacb7;
+			}
+		}
+		.box{
+			//margin-bottom:15px;
+			//padding-bottom:20px;
+			//border-bottom:@dot;
+			ul{
+				margin-top:10px;
+				border-top:@dot;
+				padding-top:10px;
+			}
+			li{
+				.sort{
+					color:@font-green;
+					margin-right:10px;
+				}
+				.address{
+					color:@l-blue;
+					margin-left:10px;
+					font-size:12px;
+				}
+				a{
+					font-size:14px;
+				}
+			}
+		}
+	}
+	
+	.score_repo{
+		width:100%;
+		border-top:@bd-grey;
+		margin-top:15px;
+		padding-top:15px;
+		.box{
+			float:left;
+			width:33.3%;
+			.img{
+				float:left;
+				margin-right:10px;
+				width:60px\0;
+				height:60px\0;
+				img{
+					.avatar(60px);
+				}
+			}
+			.info{
+				padding:0 20px 0 0;
+				color:@light-grey;
+				height:60px;
+				.vm;
+				a{
+					color:#666;
+				}
+				b{
+					color:@red;
+				}
+			}
+			&:nth-child(3n){
+				.info{
+					padding-right:0;
+				}
+			}
+		}
+	}
+	.carousel{
+		width:250px;
+		height:300px;
+		overflow:hidden;
+		float:left;
+		margin-bottom:0;
+	}
+}
+.con_news,.channel{
+	.carousel-indicators{
+		bottom:0;
+		right:0;
+		left:0;
+		top:auto;
+		width:100%;
+		z-index:99;
+		text-align:center;
+		height:20px;
+		background:#000;
+		bottom:0;
+		li{
+			text-indent:0;
+			cursor:pointer;
+			float:none;
+			.ib;
+			width:17px;
+			height:3px;
+			margin-left:3px;
+			background:#727272;
+			margin-top:9px;
+			_overflow:hidden;
+			&.active{
+				background:@green;
+			}
+		}
+	}
+	.carousel-caption{
+		padding:0;
+		text-align:center;
+		bottom:20px;
+		height:30px;
+		_width:100%;
+		filter:alpha(opacity=75);
+		a{
+			line-height:30px;
+			color:#fff;
+		}
+	}
+	.carousel-inner{
+		_height:100%;
+		_overflow:hidden;
+		.item{
+			img{
+				width:250px;
+				height:300px;
+			}
+		}
+	}
+}
+//新增商户
+.new_cont{
+	li{
+		margin-bottom:10px;
+		.clearfix;
+		.img{
+			float:left;
+			margin-right:10px;
+			img{
+				width:80px;
+				height:80px;
+			}
+		}
+		.info{
+			a{
+				.t14;
+			}
+			p{
+				color:#999;
+			}
+		}
+	}
+}
+
+/*积分商城*/
+.mall{
+	.des{
+		margin-top:10px;
+		padding-left:60px;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		.icons(-350px,-54px);
+		border-bottom:@bd-grey;		
+	}
+	.follow{
+		.qrcode{
+			font-size:11px;
+			border:1px solid #000;
+			i{
+				
+			}
+		}
+	}
+}
+
+/**全城动态**/
+.waterfall{
+	.thumbnails{
+		li{
+			width:222px;
+			padding:0;
+			.photo{
+				padding:6px;
+				text-align:center;
+				overflow:hidden;
+				p{
+					text-align:left;
+					line-height:20px;
+					margin:9px 0 0;
+				}
+			}
+			.user{
+				padding:9px;
+				border-top:1px solid #F3F3F3;
+				background:#FAFAFA;
+				.clearfix;
+				.user_info{
+					//float:left;
+					.img{
+						float:left;
+						margin-right:5px;
+						img{
+							.avatar(30px);
+						}
+					}
+					.info{
+						line-height:14px;
+						height:30px;
+						a{
+							font-weight:bold;
+							color:@font-green;
+						}
+						p{
+							color:@light-grey;
+						}
+					}
+				}
+				.interact{
+					float:right;
+					margin-top:5px;
+					a{
+						.ib;
+						width:18px;
+						height:18px;
+						&.reply{
+							.icons(-193px,-60px);
+						}
+						&.like{
+							.icons(-216px,-60px);
+							&.on{
+								background-position:-216px -82px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.pagination{
+		display:none;
+	}
+}

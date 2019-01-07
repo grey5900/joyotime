@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>{$event['subject']}</title>
+	<link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+	<script type="text/javascript">
+	<!--{if $uid}-->
+	var online_id = {$uid};
+	<!--{else}-->
+	var online_id = 0;
+	<!--{/if}-->
+	</script>
+</head>
+<body>
+<!--{eval $ghost_festival_id = 115;}-->
+
+	<div id="container">
+		<div class="container">
+			<div class="lumps">
+				<div class="top">
+					<a href="/event_new/m_index/{$event['id']}"><img src="{$event['banner']}" /></a>
+				</div>
+				<div class="lump">
+					<span class="applylable">
+	          	<em> 
+	          	<!--{if $special}-->
+	          	有效评价：{echo $join_count} 
+	          	<!--{else}-->
+	          	关注人数：{$event['hits']}
+	          	<!--{/if}-->
+	          	</em>
+	        </span>
+				</div>
+				
+				<!--{if $special}-->
+				<div class="lump push">
+					<a href="javascript:;" class="btn" id="view_join_rules">
+						查看参与规则
+					</a>
+				</div>
+				
+                <!-- div class="lump texts">
+                    <div class="tit">
+                        <h3>详细评价标准请点击</h3>
+                    </div>
+                    <div class="box">
+                        <div class="inside">
+                            <a href="http://in3.joyotime.com/i/wmfile/1">
+                            <div class="arrow">
+                                <p>
+                                    文明城市，我们共同建造。
+                                </p>
+                            </div></a>
+                        </div>
+                    </div>
+                </div -->
+				<div id="join_rules_modal" class="modal">
+					<div class="modal-header">
+					  <h2>参与规则</h2>
+					  <a class="modal-close" href="#"></a>
+					</div>
+					<div class="modal-body">
+						<div class="modal-center">
+							<article>
+								<p>【参与方式】</p>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;选择你身边的文明测评地点，发布带图点评参与测评</span>
+								<p>【评分标准】</p>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;环境是否整洁、秩序是否良好、证照是否齐全、服务是否规范、设施是否完备、行为是否文明等方面进行综合测评。详情测评标准请点击【详细测评标准】</span>
+							</article>
+						</div>
+						<div class="modal-button">
+						  <a href="javascript:;" id="join_rules_button" class="button">知道了</a>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+				$(function(){
+					$("#view_join_rules").on("click", function(){
+						$.messagerModal("#join_rules_modal");
+					});
+					$("#join_rules_button").on("click", function(){
+						$("#messager_modal").fadeOut(200);
+			            $("#join_rules_modal").css({ 'display' : 'none' });
+					});
+				});
+				</script>
+				<!--{if $near_places}-->
+				<div class="lump lists">
+					<div class="tit">
+						<h3>文明地点就在身边，等待你的评价</h3>
+					</div>
+					<div class="box">
+						<dl class="shrink" id="placelist">
+							<!--{loop $near_places $row}-->
+							<div class="place-list">
+								<a href="inchengdu://inplace/{$row['id']}">
+									<div class="icon">
+										<img src="{$row['icon']}" width="40" height="40" />
+									</div>
+		
+									<div class="detail">
+										<div class="place">
+											{$row['placename']}
+										</div>
+										<div class="star">
+											<i class="ico-star-{$row['star']}"></i>
+											<!--{if $row['show_distance']}-->
+											<span>{$row['distance']}</span>
+											<!--{/if}-->
+										</div>
+									</div>
+								</a>
+							</div>
+							<!--{/loop}-->
+						</dl>
+						<div class="viewall">
+							<a href="/event_new/m_near_place?n={$near_num}&cid={$cid}" class="showMore">
+								查看附近20个文明地点
+							</a>
+						</div>
+					</div>
+				</div>
+				<!--{/if}-->
+			
+				<!--{else}-->
+				
+				  <!--{if $event['id']!=$ghost_festival_id}-->
+	                <!--{if $is_apply}-->
+						<div class="lump push">
+		                  <!--  <a class="disabled <!--{if count($places) >= 1 || $is_apply}-->half<!--{/if}-->">
+		                  	<h2>已报名</h2>
+		                  </a> -->
+		                  <!--{if count($places) >= 1}-->
+							<a href="<!--{if count($places) > 1}-->#place_list<!--{else}-->inplace://{$places[0]['id']}<!--{/if}-->" class="btn">
+								<h2>去点评</h2> 
+							</a>
+						<!--{/if}-->
+						</div>
+	                <!--{else}-->
+	                  <!--{if $is_expired}-->
+	                  	<div class="lump push">
+		                  <a class="disabled">
+	                          <h2>已结束</h2>
+		                  </a>
+						</div>
+	                  <!--{elseif $is_begin}-->
+					
+						 <div class="lump push">
+						<!--{if $event['apply_form']}-->
+							<a href="/event_new/m_apply/{$event['id']}?uid={$uid}" class="btn <!--{if count($places) >= 1 && $event['apply_form']}-->half<!--{/if}-->">
+								<h2>填写报名表</h2>
+							</a>
+						<!--{/if}-->
+						<!--{if count($places) >= 1}-->
+							<a href="<!--{if count($places) > 1}-->#place_list<!--{else}-->inplace://{$places[0]['id']}<!--{/if}-->" class="btn <!--{if count($places) >= 1 && $event['apply_form']}-->half<!--{/if}-->">
+								<h2>去点评</h2> 
+							</a>
+						<!--{/if}-->
+						</div>
+					  <!--{else}-->
+					    <div class="lump push">
+		                  <a class="disabled">
+	                          <h2>敬请期待</h2>
+		                  </a>
+						</div>
+					  <!--{/if}-->
+					<!--{/if}-->
+				 <!--{/if}-->
+				
+				<!--{/if}-->
+				<!-- 活动简介  -->
+				<!--{loop $event['intro'] $kintro $intro}-->
+				<!--{if $ghost_festival_id==$event['id']}-->
+					<!--{if $kintro>=3}-->
+						<!--{eval break;}-->
+					<!--{/if}-->
+				<!--{/if}-->
+				<div class="lump texts">
+					<div class="tit">
+						<h3>{$intro['title']}</h3>
+					</div>
+					<div class="box">
+						<div class="inside expand">
+						<!--{eval $length = cstrlen($intro['intro']);}-->
+						<!--{if $length<=100}-->
+							<!--{if $intro['link']}-->
+							<a href="{$intro['link']}">
+							<div class="arrow">
+							<!--{/if}-->
+							<p>{echo format_html($intro['intro'])}</p>
+							<!--{if $intro['link']}-->
+							</div></a>
+							<!--{/if}-->
+						<!--{else}-->
+							<div class="expand-simple">
+					          <p> <!-- 150 -->
+					            {echo cut_string(format_html($intro['intro'],100))}
+					          </p>
+					        </div>
+					        <div class="expand-more">
+					          <p>
+					            {echo format_html($intro['intro'])}
+					          </p>
+					        </div>
+					        <div class="expand-arrow">
+					                                点击查看全部内容
+					        </div>
+                		<!--{/if}-->
+						</div>
+					</div>
+				</div>
+				<!--{/loop}-->
+				
+				<!-- 投票 -->
+				{if $vote}
+				{if $vote['theme'] == 0}
+				<div class="lump lists">
+					<div class="tit">
+						<h3>投票<em>(时间：
+						{if $vote['startDate']!='0000-00-00 00:00:00' && $vote['endDate']!='0000-00-00 00:00:00'}
+            	          {echo explode(' ',$vote['startDate'])[0];} ~ {echo explode(' ',$vote['endDate'])[0]}
+            	          {elseif $vote['startDate']=='0000-00-00 00:00:00' && $vote['endDate']!='0000-00-00 00:00:00'}
+            	                           现在 ~ {echo explode(' ',$vote['endDate'])[0]}
+            	          {elseif $vote['startDate']!='0000-00-00 00:00:00' && $vote['endDate']=='0000-00-00 00:00:00'}
+            	          {echo explode(' ',$vote['startDate'])[0];} ~ 永远
+            	          {else}
+            	                           不限
+            	          {/if})
+            	          </em>
+            	       </h3>
+					</div>
+					<div class="box">
+						<dl class="shrink">
+							{loop $vote['options'] $option}
+							<dd>
+								<div class="list">
+									<a href="/event_new/vote_list/{$event['id']}?uid={$uid}">
+									<div class="arrow">
+										<span class="img"><img src="{echo image_url({$option['image']},'vote','odp');}" alt="" width="80" height="80" /></span>
+										<div class="info">
+											<p>{$option['title']}</p>
+											<span>{$vote['countTitle']}：<b>{$option['votes']}</b></span>
+										</div>
+									</div>
+									</a>
+								</div>
+							</dd>
+							{/loop}
+							
+						</dl>
+						<div class="viewall">
+							<a class="showMore" href="/event_new/vote_list/{$event['id']}?uid={$uid}">
+								{$vote['indexTitle']}
+							</a>
+						</div>
+					</div>
+				</div>
+				{elseif $vote['theme'] == 1}
+				<div class="lump">
+				    <div class="tit">
+                        <h3>投票<em>(时间：
+                        {if $vote['startDate']!='0000-00-00 00:00:00' && $vote['endDate']!='0000-00-00 00:00:00'}
+                          {echo explode(' ',$vote['startDate'])[0];} ~ {echo explode(' ',$vote['endDate'])[0]}
+                          {elseif $vote['startDate']=='0000-00-00 00:00:00' && $vote['endDate']!='0000-00-00 00:00:00'}
+                                           现在 ~ {echo explode(' ',$vote['endDate'])[0]}
+                          {elseif $vote['startDate']!='0000-00-00 00:00:00' && $vote['endDate']=='0000-00-00 00:00:00'}
+                          {echo explode(' ',$vote['startDate'])[0];} ~ 永远
+                          {else}
+                                           不限
+                          {/if})
+                          </em>
+                       </h3>
+                    </div>
+				    <div class="contrast">
+                        <div class="contrast-left">
+                            <div class="img">
+                                <img src="{echo image_url({$vote['options'][0]['image']},'vote','odp');}" alt="" />
+                            </div>
+                            <h3>{$vote['options'][0]['title']}</h3>
+                            <p>票数：<em id="votes_{$vote['options'][0]['defineId']}">{$vote['options'][0]['votes']}</em></p>
+                            <a class="gopoll btn" data-oid="{$vote['options'][0]['defineId']}" data-itemtype="5" data-itemid="{$event['id']}" data-loading-text="{$vote['btnTitle']}" href="javascript:;" >{$vote['btnTitle']}</a>
+                        </div>
+                        <div class="contrast-middle">
+                            <img src="/static/m_img/m_vs.png" alt="" />
+                        </div>
+                        <div class="contrast-right">
+                            <div class="img">
+                                <img src="{echo image_url({$vote['options'][1]['image']},'vote','odp');}" alt="" />
+                            </div>
+                            <h3>{$vote['options'][1]['title']}</h3>
+                            <p>票数：<em id="votes_{$vote['options'][1]['defineId']}">{$vote['options'][1]['votes']}</em></p>
+                            <a class="gopoll btn" data-oid="{$vote['options'][1]['defineId']}" data-itemtype="5" data-itemid="{$event['id']}" data-loading-text="{$vote['btnTitle']}" href="javascript:;" >{$vote['btnTitle']}</a>
+                        </div>
+                    </div>
+				</div>
+				{/if}
+				{/if}
+				<!-- start 中元节 -->
+				{if $event['id']==$ghost_festival_id}
+				{eval $placeId = 361846;}
+				{eval $festival_place = get_data('place',$placeId);}
+				<div class="lump lists">
+					<div class="tit">
+						<h3>灵异事件分享地</h3>
+					</div>
+					<div class="box">
+						<dl class="shrink" >							
+							<dd>
+								<a href="inplace://{$festival_place['id']}">
+									<div class="arrow">
+										<span>{$festival_place['placename']}</span>
+										<div class="address">{$festival_place['address']}</div>
+									</div>
+								</a>
+							</dd>
+							
+						</dl>
+					</div>
+				</div>
+				<div class="lump push">
+						<a href="inplace://{$festival_place['id']}" class="btn">
+							<h2>我也要分享一个</h2> 
+						</a>
+				</div>
+				<div class="lump lists">
+					<div class="tit">
+						<h3>精选话题</h3>
+					</div> 
+					<div class="box">				
+						<a href="intopic://5136">#电梯#</a>
+						<a href="intopic://5137">#酒店#</a>
+						<a href="intopic://5138">#校园#</a>
+						<a href="intopic://5139">#荒郊野外#</a>
+						<a href="intopic://5135">#悬话灵异#</a>						
+					</div>
+				</div>
+				<!--{loop $event['intro'] $kintro $intro}-->
+					<!--{if $kintro>3}-->
+						<div class="lump texts">
+					<div class="tit">
+						<h3>{$intro['title']}</h3>
+					</div>
+					<div class="box">
+						<div class="inside expand">
+						<!--{eval $length = cstrlen($intro['intro']);}-->
+						<!--{if $length<=100}-->
+							<!--{if $intro['link']}-->
+							<a href="{$intro['link']}">
+							<div class="arrow">
+							<!--{/if}-->
+							<p>{echo format_html($intro['intro'])}</p>
+							<!--{if $intro['link']}-->
+							</div></a>
+							<!--{/if}-->
+						<!--{else}-->
+							<div class="expand-simple">
+					          <p> <!-- 150 -->
+					            {echo cut_string(format_html($intro['intro'],100))}
+					          </p>
+					        </div>
+					        <div class="expand-more">
+					          <p>
+					            {echo format_html($intro['intro'])}
+					          </p>
+					        </div>
+					        <div class="expand-arrow">
+					                                点击查看全部内容
+					        </div>
+                		<!--{/if}-->
+						</div>
+					</div>
+				</div>
+					<!--{/if}-->
+				<!--{/loop}-->
+				
+				{/if}
+				<!-- over 中元节 -->
+				<!--{if !$special}-->
+				<!-- 活动地点  -->
+				{if $places}
+				<a id="place_list"></a>
+				<div class="lump lists">
+					<div class="tit">
+						<h3>活动地点 <!-- <!--{if count($places) > 1}--><em>(点击地点去点评)</em><!--{else}--><!--{/if}--> --></h3>
+					</div>
+					<div class="box">
+						<dl class="shrink" id="placelist">
+							<!--{loop $places $place}-->
+							<dd>
+								<a href="inplace://{$place['id']}">
+									<div class="arrow">
+										<span>{$place['placename']}</span>
+										<div class="address">{$place['address']}</div>
+									</div>
+								</a>
+							</dd>
+							<!--{/loop}-->
+						</dl>
+						{if count($places)>4}
+						<div class="viewall" id="viewall">
+							<a class="showMore" id="more">
+								查看全部（{echo count($places);}）
+							</a>
+						</div>
+						{/if}
+					</div>
+				</div>
+				{/if}
+				<!--{/if}-->
+				<!-- 活动动态  -->
+				{eval $post = $feeds[0];}
+				
+				{if $post}
+				<div class="lump post">
+					<div class="tit">
+						<h3>活动动态</h3>
+					</div>
+					<div class="box">
+						<div class="feed">
+							<a href="/event_new/m_post_list/{$event['id']}">
+								<div class="arrow">
+									<div class="icon">
+										<img src="{$post['avatar_url']}" width="40" height="40" />
+									</div>
+									<div class="detail">
+										<h4>{echo
+											$post['nickname']?$post['nickname']:$post['username']}</h4>
+										<div class="action">在</div>
+										<div class="place">{$post['placename']}</div>
+										<!--{if $post['type'] == 1}-->
+										<div class="action">签到</div>
+										<!--{elseif 2 == $post['type']}-->
+										<div class="action">点评</div>
+										<!--{else}-->
+										<div class="action">上传照片</div>
+										<!--{/if}-->
+										<div class="start">
+											<i class="ico-star-{$post['star']}"></i>
+											<!--{if $post['pcc']}--><em>人均 {$post['pcc']}</em><!--{/if}-->
+										</div>
+										<!--{if $post['photoName']}-->
+										<div class="photo">
+											<img src="{$post['photoName']}" width="200" />
+										</div>
+										<!--{/if}-->
+										<div class="info">{$post['content']}</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				{/if}
+				<!-- 他们参加  -->
+				{if $joines && $event['show_joins'] }
+				<div class="lump post">
+					<div class="tit">
+						<h3>他们参加了这个活动</h3>
+					</div>
+					<div class="box">
+						<div class="user">
+							<a href="/event_new/m_apply_list/{$event['id']}">
+								<ul class="arrow">
+									<!--{loop $joines $u}-->
+									<li><img src="{$u['avatar']}" /></li>
+									<!--{/loop}-->
+								</ul>
+							</a>
+						</div>
+					</div>
+				</div>
+				{/if}
+				<div class="footer">
+					<p>IN沈阳</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="/event_new/flush_apply_list/{$event['id']}?{echo TIMESTAMP}"></script>
+</body>
+</html>

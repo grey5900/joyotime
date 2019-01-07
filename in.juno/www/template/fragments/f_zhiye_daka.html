@@ -1,0 +1,53 @@
+{if $v3_fragments['v3_f_zhiye_daka']}
+<div class="module zydk">
+					<div class="hd">
+						<h2>{$v3_fragments['v3_f_zhiye_daka']['frag']['name']}</h2>
+						{if $v3_fragments['v3_f_zhiye_daka']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_zhiye_daka']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+					</div>
+					<div class="bd">
+						<div class="col_left">
+							<div class="wx">
+								<h4>置业大咖微信账号</h4>
+								<img src="t.jpg" alt="置业大咖微信账号" />
+								<p>关注获取一手专家点评</p>
+							</div>
+							<div class="sub">
+								<p>{$v3_fragments['v3_f_zhiye_daka']['frag']['description']}</p>
+							</div>
+						</div>
+						<div class="col_right">
+						{loop $v3_fragments['v3_f_zhiye_daka']['data'] $zhiye_key $zhiye}
+							{if $zhiye_key>0}{eval break;}{/if}
+							<div class="showcase">
+								<div class="img">
+									<a href="{$zhiye['link']}" target="_blank"><img src="{$zhiye['image']}" alt="{$zhiye['title']}" /></a>
+								</div>
+								<div class="info">
+									<a href="{$zhiye['link']}" target="_blank">{$zhiye['title']}</a>
+									<p>均价：<em>{$zhiye['extraData']['price']['data']}元/㎡ </em></p>
+									<p>地址：{$zhiye['extraData']['address']['data']}</p>
+								</div>
+							</div>
+						{/loop}
+							<ul>
+						{loop $v3_fragments['v3_f_zhiye_daka']['data'] $zhiye_key $zhiye}
+							{if $zhiye_key>0 && $zhiye_key<=3}
+								<li>
+									<a href="{$zhiye['link']}" target="_blank">
+										<div class="img">
+											<img src="{$zhiye['image']}" alt="{$zhiye['title']}" />
+										</div>
+										<div class="info">
+											<p>{echo cut_string($zhiye['summary'],180)}</p>
+											
+										</div>
+									</a>
+								</li>
+							{/if}
+						{/loop}
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				{/if}

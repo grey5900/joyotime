@@ -1,0 +1,67 @@
+{eval $page_id='event_apply_list';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        搜索
+                    </button></td>
+                    <td>
+                    活动：{$event['subject']}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="icon" target="myDwzExport" title="确定要导出报名列表么？" href="{eval echo site_url(array('new_event', 'apply_list_export', 'id', $event['id']))}"><span>导出报名列表</span></a>
+            </li>
+        </ul>
+    </div>
+    <table width="100%" class="table" layoutH="128" rel="{$page_id}">
+        <thead>
+            <tr>
+                <th width="5%">用户ID</th>
+                <th width="25%">用户名/昵称</th>
+                <th width="15%">报名时间</th>
+                <!--{loop $event['property']['form'] $property}-->
+                <th width="10%">{$property['label']}</th>
+                <!--{/loop}-->
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['uid']}">
+                <td>{$row['uid']}</td>
+                <td>{$row['username']} {$row['nickname']}</td>
+                <td>{$row['createDate']}</td>
+                <!-- 先循环label再取值 -->
+                <!--{loop $event['property']['form'] $key $property}-->
+                <!--{eval $signInfo = @array_values($row['signInfo']);}-->
+                <td><!--{echo $row['signInfo'][$property['label']] ? $row['signInfo'][$property['label']] : $signInfo[$key];}--></td>
+                <!--{/loop}-->
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+    $(function(){
+        if ($.fn.myDwzExport) {
+            $("a[target=myDwzExport]", $(document)).myDwzExport();
+        }
+    });
+</script>

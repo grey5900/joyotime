@@ -1,0 +1,43 @@
+<form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, 'detail_photo');">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+</form>
+{eval $page_rel='detail_photo';}
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="icon" warn="请选择您要回复的信息" href="{eval echo site_url(array('ugc', 'reply', 'send', 'reply_type', '0', 'id'))}/<!--{{id}}-->" target="dialog" title="回复" rel="{eval echo build_rel(array('poi', 'poi', 'reply'))}"><span>回复</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="list" width="100%" layoutH="280" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="25%">地点</th>
+                <th width="15%" orderField="createDate" class="<!--{if $order_field=='createDate'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">时间</th>
+                <th width="40%">内容</th>
+                <th width="10%" orderField="praiseCount" class="<!--{if $order_field=='praiseCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">赞</th>
+                <th width="10%" orderField="replyCount" class="<!--{if $order_field=='replyCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">回复</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['uid']}_{$row['id']}">
+                <td><a href="{eval echo site_url(array('poi', 'poi', 'detail', 'type', 'id', 'keywords', $row['pid']));}" rel="{eval echo build_rel(array('poi', 'poi', 'detail'));}" title="POI详情" target="navTab">{$row['placename']}</a></td>
+                <td>{$row['createDate']} </td>
+                <td>{$row['content']} 
+                    <!--{if $row['photoName']}-->
+                    <img src="{eval echo image_url($row['photoName'], 'user', 'odp');}" height="100"/>
+                    <!--{/if}-->
+                    </td>
+                <td>{$row['praiseCount']} </td>
+                <td>{$row['replyCount']} </td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

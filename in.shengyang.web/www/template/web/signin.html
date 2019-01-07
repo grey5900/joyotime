@@ -1,0 +1,208 @@
+<script type="text/javascript" src="/static/js/jquery.cookies.min.js"></script>
+<script type="text/javascript" src="/static/js/crypto-js/rollups/aes.js"></script>
+<script type="text/javascript">
+    /*
+     * 检测online_id是否被赋值，赋值后关闭登录、注册窗口
+     */
+    var timer;
+    function checkOnlineId(message) {
+        if (!online_id) {
+            timer = setTimeout("checkOnlineId()", 100);
+        }else{
+            if(!timer)clearTimeout(timer);
+            $.messager(message);
+            /*$('.user-nav').html('\
+             <a class="avatar" href="/user/'+online_id+'"><img src="'+online_avatar+'"/></a>\
+             <div class="person"><a class="name" href="/user/'+online_id+'">'+online_name+'</a></div>\
+             <div class="person"><a class="setting" href="/profile/setting">设置</a></div>\
+             <div class="person"><a class="exit" href="javascript:$.signout();">退出</a></div>');
+             */
+            $('.header .reg').hide();
+            var signInBox = $('.header .sign_in');
+            signInBox
+                    .show()
+                    .find('.name')
+                    .attr('href','/user/'+online_id)
+                    .text(online_name)
+                    .siblings('.exit')
+                    .attr('href','javascript:$.signout()')
+                    .siblings('.yy')
+                    .popover({
+                        html:true,
+                        placement:'bottom',
+                        trigger:'click',
+                        content:'<div class="yy_panel"><div class="con"><form id="tip-post" action="/common/send"><textarea id="yText" placeholder="心情如何，写下来吧……" name="content" id="" maxlength="500" rows="10"></textarea><input id="ySmt" type="submit" value="发表" class="btn btn-vertical btn-success" /><label id="cover" class="upload" for="upload"><input type="file" id="upload" name="Filedata" /></label><div id="preview"></div></form>	</div></div>'
+                    });
+
+            $("#modal").modal('hide');
+            if($.browser.msie && $.browser.version == 6){$('#modal').hide()}
+            $('.txt_tip').hide();
+            //点击关注之后登陆
+            if($('.btn.focusing').length){$('.btn.focusing').trigger('click').removeClass('focusing')};
+        }
+    }
+//    $(function(){
+        var animateing = false;
+        $('#signup-modal-form, #signin-modal-form').on('focusin',function(){
+            if (animateing==false) {
+                animateing = true;
+                $(this)
+                        .addClass('on')
+                        .animate({
+                            width: '310px'},
+                        300)
+                        .siblings('form')
+                        .removeClass('on')
+                        .animate({
+                            width: '210px'},
+                        300,
+                        function() {
+                            animateing = false;
+                        });
+            }
+        });
+        $('#signin-modal-form').on('submit',function(){
+
+            if($(this).find('input[name=username]').is_empty() || $(this).find('input[name=password]').is_empty()) {
+                return false;
+            }
+
+            // 提交的时候对password加密
+            var username = encodeURIComponent($(this).find("input[name=username]").val());
+            var password = $(this).find("input[name=password]").val();
+            var salt = $.cookies.get("salt");
+            password = encodeURIComponent(CryptoJS.AES.encrypt(password, salt));
+            var sign = encodeURIComponent(CryptoJS.AES.encrypt(password, salt));
+            var rememberme = $(this).find("input[name=rememberme]:checked").val() ? 1:0;
+            var btn = $(this).find("input[type=submit]");
+
+            btn.button('loading');
+
+            $.ajax({
+                url: "{$passport_signin_url}",
+                data: {username: username, password: password, sign: sign, salt: salt , rememberme:rememberme},
+                dataType: "jsonp",
+                jsonpCallback: "callback",
+                success: function(data){
+                    if(data.code) {
+                        $('#signin-modal-form')
+                                .find('.caption p')
+                                .addClass('error')
+                                .text(data.message);
+                    } else {
+                        $('#signin-modal-form')
+                                .find('.caption p')
+                                .removeClass('error')
+                                .text('已有IN沈阳帐号，请登录。');
+                        if($(".txt_info").length)$(".txt_info").hide();
+                        // 登陆成功那么去访问同步登录接口
+                        $.getScript("{$passport_sso_url}",function(){
+
+                            // check登录状态
+                            checkOnlineId(data.message);
+                        });
+                    }
+                    btn.button('reset');
+                }
+            });
+            return false;
+        });
+        $("input[name=username]", $("#signup-modal-form")).on("blur", function(){
+            var content = $.trim($(this).val());
+            if("" == content) {
+                return;
+            }
+            $.ajax({
+                type:'POST',
+                url: "{$passport_taboo_url}",
+                data: {content: content},
+                dataType: "jsonp",
+                jsonpCallback: "callback",
+                success: function(data){
+                    if(data.code) {
+                        $('#signup-modal-form')
+                                .find('.caption p')
+                                .addClass('error')
+                                .text(data.message);
+                    } else {
+                        $('#signup-modal-form')
+                                .find('.caption p')
+                                .removeClass('error')
+                                .text('没有IN沈阳帐号？5秒钟急速注册。');
+                    }
+                }
+            });
+        });
+        $('#signup-modal-form').on('submit',function(){
+
+            if($(this).find('input[name=username]').is_empty() || $(this).find('input[name=password]').is_empty() || $(this).find('input[name=repwd]').is_empty()) {
+                return false;
+            }
+
+            var username = encodeURIComponent($(this).find("input[name=username]").val());
+            var password = $(this).find("input[name=password]").val();
+            var repwd = $(this).find("input[name=repwd]").val();
+            var btn = $(this).find("input[type=submit]");
+
+            btn.button('loading');
+            $.ajax({
+                type:'POST',
+                url: "{$passport_signup_url}",
+                data: {username: username, password: password, repwd: repwd},
+                dataType: "jsonp",
+                jsonpCallback: "callback",
+                success: function(data){
+                    if(data.code) {
+                        $('#signup-modal-form')
+                                .find('.caption p')
+                                .addClass('error')
+                                .text(data.message);
+                    } else {
+                        $('#signup-modal-form')
+                                .find('.caption p')
+                                .removeClass('error')
+                                .text('没有IN沈阳帐号？5秒钟急速注册。');
+                        // 注册成功那么去访问同步登录接口
+                        $.getScript("{$passport_sso_url}",function(){
+                            // check登录状态
+                            checkOnlineId(data.message);
+                        });
+                    }
+                    btn.button('reset');
+                }
+            });
+            return false;
+        });
+//    });
+</script>
+<div id="signin-modal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>请注册或登录</h3>
+    </div>
+    <div class="modal-body">
+        <form method="post" action="" class="signup-modal-form form-horizontal" id="signup-modal-form">
+            <div class="caption"><h3>注册</h3><p>没有IN沈阳帐号？5秒钟急速注册。</p></div>
+            <div class="inputs">
+                <p><input type="text" name="username" placeholder="用户名" maxlength=15 class="required" value="" /></p>
+                <p><input type="password" name="password" placeholder="密码" maxlength=15 class="required" value="" /></p>
+                <p><input type="password" name="repwd" placeholder="确认密码" maxlength=15 class="required" value="" /></p>
+            </div>
+            <div class="btns">
+                <input type="submit" class="btn btn-success" data-loading-text="注册" value="注册" />
+            </div>
+        </form>
+        <div class="divider"></div>
+        <form method="post" action="" class="signin-modal-form form-horizontal" id="signin-modal-form">
+            <div class="caption"><h3>登录</h3><p>已有IN沈阳帐号，请登录。</p></div>
+            <div class="inputs">
+                <p><input type="text" name="username" placeholder="用户名" class="required" value="" /></p>
+                <p><input type="password" name="password" placeholder="密码" class="required" value="" /></p>
+                <p><label class="checkbox rememberme"><input type="checkbox" name="rememberme" value="1" /> 记住我</label> <a href="/reset_pwd" class="forgot">忘记密码？</a></p>
+            </div>
+            <div class="btns">
+                <input type="submit" class="btn btn-primary" data-loading-text="登录" value="登录" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,494 @@
+{if !isset($do) || empty($do)}
+<style>
+    .block {
+        float: left;
+        display: block;
+        overflow: auto;
+        margin: 4px;
+        height: 100%;
+    }
+    .boxBorder {
+        border: 1px solid #b8d0d6;
+    }
+    .gray {
+        color: #747575;
+        font-size: 11px;
+    }
+    .vest {
+        display: block;
+        overflow: none;
+        height: 46px;
+        margin: 0;
+    }
+    .vest img {
+        width: 44px;
+        height: 44px;
+        display: block;
+        overflow: none;
+        float: left;
+        margin: 1px;
+        padding: 1px;
+    }
+    .vest .info {
+        margin: 0;
+    }
+    .vest .info ul {
+        margin: 0;
+    }
+    .vest .info ul li {
+        margin: 10px 4px;
+    }
+    table.list th, table.list td {
+        text-align: left;
+        padding-left: 16px;
+    }
+    table.list td a {
+        color: #000;
+    }
+    table.list td a.unRead {
+        color: #f00;
+    }
+    .i_msg {
+        color: #f00;
+        font-size: 12px;
+    }
+    .pm_info {
+        display: block;
+        overflow: none;
+        margin: 0;
+        padding: 2px;
+    }
+    .pm_info h1 {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .pm_info img {
+        width: 42px;
+        display: block;
+        overflow: none;
+        margin: 2px;
+        padding: 1px;
+    }
+    .pm_info .intro {
+        margin: 2px;
+        padding: 0 4px;
+    }
+    .pm_info .intro ul {
+        margin: 0;
+    }
+    .pm_info .intro ul li {
+        margin: 4px 0;
+    }
+    .user {
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .date {
+        width: 120px;
+        float: right;
+        margin-right: 2px;
+    }
+    img.left {
+        float: left;
+        left: 0;
+        margin: 2px 0 2px 2px;
+        width: 40px;
+        height: 40px;
+    }
+    img.right {
+        float: right;
+    }
+</style>
+<div class="page unitBox" style="display:block;">
+    <div class="pageContent" style="width:1100px;display:block;overflow:auto;">
+        <!-- 马甲列表 -->
+        <div id="jbsxBox1" class="unitBox block" style="width:244px;">
+            <div class="pageHeader boxBorder" id="my_vest_head">
+                <form id="pagerForm" action="{$current_url}" method="post" onsubmit="return divSearch(this,'jbsxBox1');">
+                    <input type="hidden" name="pageNum" value="{$vl_cur_page}"/>
+                    <input type="hidden" name="numPerPage" value="{$vl_per_page_num}"/>
+                    <input type="hidden" name="keyword" value="{$keyword}"/>
+                    <div class="searchBar">
+                        <table class="searchContent">
+                            <tr>
+                                <td> 昵称：
+                                <input type="text" name="keyword" value="{$keyword}"/>
+                                </td>
+                                <td>
+                                <div class="buttonActive">
+                                    <div class="buttonContent">
+                                        <button type="submit">
+                                            检索
+                                        </button>
+                                    </div>
+                                </div></td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid;border-bottom:1px #b8d0d6 solid;">
+                <div class="panelBar">
+                    <ul class="toolBar">
+                        <li>
+                            <a href="{eval echo site_url(array('vest','my_vest','set_first'));}/uid/<!--{{sid_vest}}-->" class="add" target="ajaxTodo" title="确定要把这个马甲设为首选马甲吗？" warn="请选择一个马甲"><span>设为首选马甲</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <table class="list" width="100%" layoutH="146" target="navTab" rel="jbsxBox1">
+                    <thead>
+                        <tr>
+                            <th width="85%">马甲帐户(<span class="i_msg">新消息数</span>)</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>所有马甲(<span class="i_msg">{$all_count}</span>)</td>
+                            <td><a href="{eval echo site_url(array('vest','my_vest','list_msg'));}/uid/all" class="btnInfo" target="ajax" rel="jbsxBox2">查看</a></td>
+                        </tr>
+                        {loop $list $key $val}
+                        <tr target="sid_vest" rel="{$key}">
+                            <td>
+                            <div class="vest">
+                                <img src="{eval echo image_url($val[avatar], 'head');}" alt="avatar" width="40" height="40" />
+                                <div class="info">
+                                    <ul>
+                                        <li>
+                                            {$val[nickname]}{if !empty($val[mc])&&$val[mc]>0}(<span class="i_msg">{$val[mc]}</span>){/if}
+                                        </li>
+                                        {if $val[isFirst]}
+                                        <li class="gray">
+                                            首选马甲
+                                        </li>
+                                        {/if}
+                                    </ul>
+                                </div>
+                            </div></td>
+                            <td><a href="{eval echo site_url(array('vest','my_vest','list_msg'));}/uid/{$key}" class="btnInfo" target="ajax" rel="jbsxBox2">查看</a></td>
+                        </tr>
+                        {/loop}
+                    </tbody>
+                </table>
+                <div class="panelBar" style="height:50px;" >
+                    <div class="pages">
+                        <span>显示</span>
+                        <select name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                        </select>
+                        <span>条，共{$vl_total_num}条</span>
+                    </div>
+                    <div class="pagination" rel="jbsxBox1" totalCount="{$vl_total_num}" numPerPage="{$vl_per_page_num}" pageNumShown="3" currentPage="{$vl_cur_page}"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 消息列表 -->
+        <div id="jbsxBox2" class="unitBox block" style="width:324px;">
+            <div class="pageHeader boxBorder">
+                <form id="pagerForm" action="{eval echo site_url(array('vest','my_vest','list_msg'));}/uid/all" method="post" onsubmit="return divSearch(this,'jbsxBox2');">
+                    <input type="hidden" name="pageNum" value="{$ml_cur_page}"/>
+                    <input type="hidden" name="numPerPage" value="{$ml_per_page_num}"/>
+                    <input type="hidden" name="mtype" value="{$mtype}"/>
+                    <input type="hidden" name="is_read" value="{$is_read}"/>
+                    <div class="searchBar">
+                        <table class="searchContent">
+                            <tr>
+                                <td>
+                                <select name="mtype">
+                                    <option value=""{if !isset($type)||empty($type)} selected{/if}>消息类型</option>
+                                    <option value="1"{if $type == 1} selected{/if}>私信</option>
+                                    <option value="2"{if $type == 2} selected{/if}>回复</option>
+                                </select></td>
+                                <td>
+                                <input type="checkbox" name="is_read" value="1"/>
+                                未读?</td>
+                                <td>
+                                <div class="buttonActive">
+                                    <div class="buttonContent">
+                                        <button type="submit">
+                                            检索
+                                        </button>
+                                    </div>
+                                </div></td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid;border-bottom:1px #b8d0d6 solid;">
+                <div class="panelBar">
+                    <ul class="toolBar">
+                        <li>
+                            <a href="{eval echo site_url(array('vest','my_vest','read_all'));}{if isset($uid)}/uid/{$uid}{/if}" class="edit" target="ajaxTodo"><span>全部标记为已读</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <table class="list" width="100%" layoutH="126" target="navTab" rel="jbsxBox2">
+                    <thead>
+                        <tr>
+                            <th width="75%">发送用户 &raquo; 接收马甲</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {loop $mlist $k $val}
+                        <tr>
+                            <td>{if $val['type']==2 || $type==2}回复{else}{$val[s_name]}{/if} &raquo; {$val[r_name]}
+                            <p class="gray">
+                                {$val[createDate]}
+                            </p></td>
+                            <td><a href="{$val[jump_url]}" target="ajax" rel="jbsxBox3"{if !$val[isRead]} class="unRead"{/if} onclick="$(this).removeAttr('class');$(this).html($(this).html().replace('未读','已读'));return true;">{if !$val[isRead]}未读{else}已读{/if}-查看&raquo;</a></td>
+                        </tr>
+                        {/loop}
+                    </tbody>
+                </table>
+                <!--{eval $customer_page_style = "height:50px;";$page_rel="jbsxBox2";}-->
+                <!--{template main/page_bar}-->
+                <!--{eval unset($page_rel);}-->
+                <!-- <div class="panelBar" >
+                <div class="pages">
+                <span>显示</span>
+                <select name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                </select>
+                <span>条，共{$ml_total_num}条</span>
+                </div>
+                <div class="pagination" rel="jbsxBox2" totalCount="{$ml_total_num}" numPerPage="{$ml_per_page_num}" pageNumShown="3" currentPage="{$ml_cur_page}"></div>
+                </div> -->
+            </div>
+        </div>
+        <!-- 消息详情 -->
+        <div id="jbsxBox3" class="unitBox block" style="width:430px;"></div>
+    </div>
+</div>
+{elseif $do==='list_msg'}
+<div class="pageHeader boxBorder">
+    <form id="pagerForm" action="{$current_url}" method="post" onsubmit="return divSearch(this,'jbsxBox2');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="mtype">
+                        <option value=""{if !isset($mtype)||empty($mtype)} selected{/if}>消息类型</option>
+                        <option value="1"{if $mtype == 1} selected{/if}>私信</option>
+                        <option value="2"{if $mtype == 2} selected{/if}>回复</option>
+                    </select></td>
+                    <td>
+                    <input type="checkbox" name="is_read" value="1"{if isset($is_read) && $is_read==1} checked="checked"{/if}/>
+                    未读?</td>
+                    <td>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                检索
+                            </button>
+                        </div>
+                    </div></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid;border-bottom:1px #b8d0d6 solid;">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a href="{eval echo site_url(array('vest','my_vest','read_all'));}{if isset($uid)}/uid/{$uid}{/if}" class="edit" target="ajaxTodo"><span>全部标记为已读</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="list" width="100%" layoutH="161" target="navTab" rel="jbsxBox2">
+        <thead>
+            <tr>
+                <th width="75%">发送用户 &raquo; 接收马甲</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {loop $list $k $val}
+            <tr>
+                <td>{if $val['type']==2 || $type==2}回复{else}{$val[s_name]}{/if} &raquo; {$val[r_name]}
+                <p class="gray">
+                    {$val[createDate]}
+                </p></td>
+                <td><a href="{$val[jump_url]}" target="ajax" rel="jbsxBox3"{if !$val[isRead]} class="unRead"{/if} onclick="$(this).removeAttr('class');$(this).html($(this).html().replace('未读','已读'));return true;">{if !$val[isRead]}未读{else}已读{/if}-查看&raquo;</a></td>
+            </tr>
+            {/loop}
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+    <!-- <div class="panelBar" >
+    <div class="pages">
+    <span>显示</span>
+    <select name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+    <option value="20">20</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+    </select>
+    <span>条，共{$ml_total_num}条</span>
+    </div>
+    <div class="pagination" rel="jbsxBox2" totalCount="{$ml_total_num}" numPerPage="{$ml_per_page_num}" pageNumShown="3" currentPage="{$ml_cur_page}"></div>
+    </div> -->
+</div>
+{elseif $do==='view_msg'}
+<form id="pagerForm" method="post" action="{$search_url}" onsubmit="return divSearch(this,'jbsxBox3');">
+    <input type="hidden" name="pageNum" value="{$cur_page}" />
+    <input type="hidden" name="numPerPage" value="{$per_page_num}" />
+</form>
+<div class="pageContent" style="border:1px #B8D0D6 solid;">
+    <table class="list" width="100%" layoutH="77" target="navTab" rel="jbsxBox3">
+        <thead>
+            <tr>
+                <th width="85%">系统消息</th>
+                <th>回复</th>
+            </tr>
+        </thead>
+        <tbody>
+            {loop $list $key $val}
+            <tr>
+                <td><img src="{$val[avatar]}" alt="avatar" width="40" class="left"/>
+                <div class="pm_info">
+                    <h1>{$val[title]}</h1>
+                    <div class="intro" style="margin:4px 0;">
+                        <ul>
+                            <li style="word-break:break-all">
+                                {$val[content]}
+                            </li>
+                            <li>
+                                <span class="date gray">{$val[createDate]}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div></td>
+                <td><a class="btnEdit" target="dialog" rel="{eval echo build_rel(array('vest','my_vest','pm','reply',$value[id]));}" title="回复{$val[s_name]}" href="{$val[reply_url]}">回复</a></td>
+            </tr>
+            {/loop}
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+    <!-- <div class="panelBar" >
+    <div class="pages">
+    <span>显示</span>
+    <select name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+    <option value="20">20</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+    </select>
+    <span>条，共{$ml_total_num}条</span>
+    </div>
+    <div class="pagination" rel="jbsxBox2" totalCount="{$ml_total_num}" numPerPage="{$ml_per_page_num}" pageNumShown="3" currentPage="{$ml_cur_page}"></div>
+    </div> -->
+</div>
+{elseif $do==='view_topic'}
+<form id="pagerForm" method="post" action="{$search_url}" onsubmit="return divSearch(this,'jbsxBox3');">
+    <input type="hidden" name="pageNum" value="{$cur_page}" />
+    <input type="hidden" name="numPerPage" value="{$per_page_num}" />
+</form>
+<div class="pageHeader" style="border:1px #B8D0D6 solid;">
+    <form method="post" action="{$reply_url}/nodialog/1/receiver/{$to}/sender/{$from}" onsubmit="return validateCallback(this, navTabAjaxDone);" class="pageForm required-validate">
+        <div class="searchBar">
+            <table class="searchContent" width="100%">
+                <tr>
+                    <td width="90">                    <textarea name="content" cols="40" rows="5"></textarea></td>
+                    <td valign="bottom">
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                发送私信
+                            </button>
+                        </div>
+                    </div>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid;border-bottom:1px #B8D0D6 solid;">
+    <table class="list" width="100%" layoutH="170" target="navTab" rel="jbsxBox3">
+        <thead>
+            <tr>
+                <th width="100%">私信列表</th>
+            </tr>
+        </thead>
+        <tbody>
+            {loop $list $key $val}
+            <tr>
+                <td>
+                <div class="pm_info">
+                    <img class="{if $val[is_my_send]==0}left{else}right{/if}" src="{eval echo image_url($val[avatar],'head');}" alt="avatar" width="40" height="40" />
+                    <div class="intro">
+                        <ul>
+                            <li>
+                                <span class="date gray">{$val[createDate]}</span><span class="user">{$val[nickname]}</span>
+                            </li>
+                            <li>
+                                {$val[content]}
+                            </li>
+                        </ul>
+                    </div>
+                </div></td>
+            </tr>
+            {/loop}
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+    <!-- <div class="panelBar" >
+    <div class="pages">
+    <span>显示</span>
+    <select name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+    <option value="20">20</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+    </select>
+    <span>条，共{$ml_total_num}条</span>
+    </div>
+    <div class="pagination" rel="jbsxBox2" totalCount="{$ml_total_num}" numPerPage="{$ml_per_page_num}" pageNumShown="3" currentPage="{$ml_cur_page}"></div>
+    </div> -->
+</div>
+{elseif $do==='reply'}
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <div class="pageFormContent" layoutH="68">
+            <table class="searchContent" width="100%">
+                <tr>
+                    <td>                    <textarea name="content" cols="77" rows="12">{$insert}</textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button class="close" type="button" onclick="$.pdialog.closeCurrent()">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+{/if}

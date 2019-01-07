@@ -1,0 +1,50 @@
+<div class="nav">
+  <div class="level-box">
+    <div class="myinfo">
+      <div class="info">
+        <a href="/user/{$info[id]}/" class="avatar" ><img id="uAvatar" src="{$info[avatar_m]}" alt="{$info[nickname]}"/></a>
+        <ul>
+          <li>
+            <a href="/user/{$info[id]}/">{$info[nickname]}</a>
+          </li>
+          <li>
+            <span>经验：<em>{$info[exp]}</em></span>
+          </li>
+        </ul>
+      </div>
+      <div class="details">
+        <ul>
+          <li>
+            <a href="/user_mayor/{$info[id]}">{$info[mayorshipCount]}</a><span>地主</span>
+          </li>
+          <li class="bor">
+            <a href="/user/{$info[id]}">{$info[tipCount]}</a><span>点评</span>
+          </li>
+          <li>
+            <a >{$info[point]}</a><span>积分</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="leftnav">
+      <div class="lev">
+        <a href="/user/{$info[id]}/" ><i class="timeico incd-style"></i>时光轴</a>
+      </div>
+      <div class="lev">
+        <a href="/user_photo/{$info[id]}/" ><i class="photoico incd-style"></i>图片墙</a>
+      </div>
+      <div class="lev">
+        <a href="/user_friend/{$info[id]}/" ><i class="friendico incd-style"></i>好友</a>
+      </div>
+      <div class="lev">
+        <a href="/user_mayor/{$info[id]}/" ><i class="sideico incd-style"></i>地盘</a>
+      </div>
+     <!--  <div class="lev">
+        <a href="/user_cards/{$info[id]}/" ><i class="vipico incd-style"></i>会员卡</a>
+      </div> -->
+      <div class="lev">
+        <a href="/profile/setting/" ><i class="settingico incd-style"></i>设置</a>
+      </div>
+    </div>
+  </div>
+</div>

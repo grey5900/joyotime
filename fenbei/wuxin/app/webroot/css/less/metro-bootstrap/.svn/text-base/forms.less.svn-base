@@ -1,0 +1,126 @@
+// Forms.less
+// Base styles for various input types, form layouts, and states
+// -------------------------------------------------------------
+
+
+
+
+// FOCUS STATE
+// -----------
+
+.search-query {
+  padding-right: 0px;
+  padding-left: 0px;
+ 
+  .border-radius(0px);
+}
+
+.input-append .btn {
+    height: 36px;
+    padding: 6px 10px;
+    vertical-align: top;
+}
+
+.controls select{
+	height: 36px;
+}
+
+.controls select[multiple="multiple"]{
+	height: auto;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  .border-radius(0);
+
+}
+
+.input-append,
+.input-prepend {
+  input,
+  select,
+  .uneditable-input {
+    .border-radius(0);
+  }
+}
+
+
+.input-prepend {
+  .add-on:first-child,
+  .btn:first-child {
+    .border-radius(0);
+  }
+}
+
+.input-append {
+  input,
+  select,
+  .uneditable-input {
+    .border-radius(0);
+    + .btn-group .btn:last-child {
+      .border-radius(0);
+    }
+  }
+  .add-on:last-child,
+  .btn:last-child,
+  .btn-group:last-child .dropdown-toggle {
+    .border-radius(0);
+  }
+}
+
+.input-prepend.input-append {
+  input,
+  select,
+  .uneditable-input {
+    .border-radius(0);
+    + .btn-group .btn {
+      .border-radius(0);
+    }
+  }
+  .add-on:first-child,
+  .btn:first-child {
+
+    .border-radius(0);
+  }
+  .add-on:last-child,
+  .btn:last-child {
+
+    .border-radius(0);
+  }
+}
+
+input.search-query {
+  .border-radius(0);
+}
+
+.form-search .input-append .search-query,
+.form-search .input-prepend .search-query {
+  .border-radius(0); 
+}
+.form-search .input-append .search-query {
+  .border-radius(0);
+}
+.form-search .input-append .btn {
+  .border-radius(0);
+}
+.form-search .input-prepend .search-query {
+  .border-radius(0);
+}
+.form-search .input-prepend .btn {
+  .border-radius(0);
+}

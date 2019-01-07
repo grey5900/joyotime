@@ -1,0 +1,16 @@
+seajs.config({
+	//plugins:['shim','nocache'],
+	plugins:['shim'],
+	alias:{
+		'jquery':{
+			src:'lib/jquery-1.8.3.min.js',
+			exports:'jQuery'
+		},
+		'combine':{
+			src:'dest/lib.min.js',
+			exports:'jQuery'
+		}		
+	}
+	//,debug:true
+	//,preload:['combine']
+});

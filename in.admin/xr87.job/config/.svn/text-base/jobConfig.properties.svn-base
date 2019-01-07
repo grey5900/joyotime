@@ -1,0 +1,4 @@
+jobSettle.expression=0 5 2 * * ?
+jobDevice.expression=30 38 16 * * ?
+jobContentCount.expression=0 0 3 * * ?
+

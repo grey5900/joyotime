@@ -1,0 +1,10 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/mobile\/main\.less}line{font-family:\000031}}
+.container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Grey\/Develop\/sites\/yushuo\.web\/app\/webroot\/css\/_less\/mobile\/main\.less}line{font-family:\000036}}
+.box {
+  padding: 20px;
+}

@@ -1,0 +1,49 @@
+{if $v3_fragments['v3_f_daka_rating']}
+<div class="module con_news">
+						<div class="showcase">
+						
+							<img src="{$v3_fragments['v3_f_daka_rating']['data'][0]['image']}" alt="{$v3_fragments['v3_f_daka_rating']['data'][0]['title']}" />
+						</div>
+						
+						<div class="head_line">
+						{loop $v3_fragments['v3_f_daka_rating']['data'] $auto_lichang_key $lichang}
+							{if $auto_lichang_key == 0}
+							<div class="box">
+								<h1><a href="{$lichang['link']}" target="_blank">{$lichang['title']}</a></h1>
+								<p>{$lichang['summary']} <a href="{$lichang['link']}" target="_blank">[详细]</a>
+		</p>
+							</div>
+							{else}
+							{eval break;}
+							{/if}
+						{/loop}
+							<div class="box">
+								<ul>
+								{loop $v3_fragments['v3_f_daka_rating']['data'] $auto_lichang_key $lichang}
+									{if $auto_lichang_key > 0 && $auto_lichang_key<=3}
+									<li><a href="{$lichang['link']}" target="_blank">{$lichang['title']}</a></li>
+									{/if}
+								{/loop}
+									
+								</ul>
+							</div>
+						</div>
+						
+						<hr />
+						<div class="exibition">
+							<ul>
+							{loop $v3_fragments['v3_f_daka_rating']['data'] $auto_lichang_key $lichang}
+									{if $auto_lichang_key > 3 && $auto_lichang_key<=6}
+								<li>
+									<a href="{$lichang['link']}" target="_blank">
+										<img src="{$lichang['image']}" alt="{$lichang['title']}" />
+									</a>
+									<p><a href="{$lichang['link']}" target="_blank">{$lichang['title']}</a></p>
+								</li>
+									{/if}
+								{/loop}
+								
+							</ul>
+						</div>
+					</div>
+					{/if}

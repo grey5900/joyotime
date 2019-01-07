@@ -1,0 +1,14 @@
+<select name="type">
+    <option value="nickname">昵称</option>
+    <option value="id">ID</option>
+    <option value="username">账号</option>
+</select>
+<input type="text" name="name" size="15" />
+<script type="text/javascript">
+    function get_ds_form_data(){
+        var type = $("select[name='type']", $("#ds_search_clientUser")).val();
+        var name = $("input[name='name']", $("#ds_search_clientUser")).val();
+        return {type:type, name:name};
+    }
+</script>
+

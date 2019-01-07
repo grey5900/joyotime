@@ -1,0 +1,46 @@
+<div class="main-box-list">
+	<div class="main-header"></div>
+	<div class="main-content">
+		<!--{if $info[praiseCount] > 0}-->
+		<div class="praise-box">
+			<div class="tit">
+				<h4>他们觉得很赞 <em class="praise-num">({$info[praiseCount]})</em></h4>
+				<!--{if $info[praiseCount] > 8}-->
+					<a href="javascript:void(0)" class="more" id="praise-expand">展开全部</a>
+				<!--{/if}-->
+			</div>
+			<ul class="avatar-list" id="praise-list">
+				<!--{loop $praisers $uid $user}-->
+				<li>
+					<a href="/user/{$uid}/" class="avatar large"><i></i><img src="{$user[avatar]}" alt="{$user[uname]}"></a>
+					<a href="/user/{$uid}/" class="username">{$user[uname]}</a>
+				</li>
+				<!--{/loop}-->
+			</ul>
+		</div>
+		<!--{/if}-->
+		<div class="reply-box">
+			<div class="tit">
+				<h4>回复 <em class="reply-num"><!--{if $info[replyCount] > 0}-->({$info[replyCount]})<!--{/if}--></em></h4>
+			</div>
+			<input type="hidden" name="pid" value="{$info[id]}" id="pid" />
+			<textarea id="reply-write" name="content" class="reply-write" rows="3" maxlength="140"></textarea>
+			<div class="action">
+				<input class="btn" type="button" id="review_post" data-loading-text="　……　" value="　回复　" />
+			</div>
+		</div>
+		<div id="reply_list"></div>
+		<script type="text/javascript">
+			$(function(){
+				load_reply("/review_replies","{$info[id]}",null);
+			});
+			
+			//加载回复列表
+			function load_reply(url, post_id, page){
+				page = page == null ? 1 : page;
+				$("#reply_list").load(url+"/"+post_id+"/"+page+"/");
+			}
+		</script>
+	</div>
+	<div class="main-footer"></div>
+</div>

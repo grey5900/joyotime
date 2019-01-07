@@ -1,0 +1,81 @@
+@import "less/bootstrap.less";
+@import "less/header.less";
+@import "less/footer.less";
+@import "less/models.less";
+@import "less/icons.less";
+@import "less/download.less";
+
+.ad {
+  margin-bottom: 20px;
+}
+.main {
+  float: left;
+  width: 700px;
+}
+
+.sidebar {
+  float: right;
+  width: 280px;
+}
+
+#returntop {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  right: 50%;
+  margin-right: -580px;
+  bottom: 20px;
+  width: 68px;
+  height: 68px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url('/images/icon.returntop.png') 0 0 no-repeat;
+}
+
+.block-top{
+  margin-top: 20px;
+}
+
+#messager {
+  min-width: 200px;
+  max-width: 300px;
+  _width: 200px;
+  padding: 20px 15px;
+  line-height: 20px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 9999;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid #666 ~"\9";
+  border-radius: 3px;
+  .box-shadow(0 1px 3px rgba(0,0,0,.3));
+  .opacity(0);
+}
+
+.text-view {
+  .text-simple {
+    display: block;
+  }
+  .text-more {
+    display: none;
+  }
+  .text-arrow {
+    color: @gray-dark;
+    display: block;
+  }
+}
+
+.text-view.on .text-simple {
+  display: none;
+}
+.text-view.on .text-more {
+  display: block;
+}
+.text-view.on .text-arrow {
+  text-indent: -9999px;
+  display: none;
+}

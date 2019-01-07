@@ -1,0 +1,33 @@
+			<div id="footer">
+  			<div class="copyright">
+  				<p><a href="http://in.chengdu.cn/about/">关于我们</a>|<a href="http://in.chengdu.cn/contact/">联系我们</a>|<a href="http://in.chengdu.cn/help/">帮助  </a></p>
+  				<p ><span>©2011 in.chengdu.cn  All Rights Reserved</span><span>蜀ICP备：07003170号 ICP许可证编号：川B2-20060070	</span></p>
+  			</div>
+		</div>
+		<div id="tip-fail" class="modal hide">
+	      <div class="modal-header">
+	        <button type="button" class="close jqmClose" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h3 id="myModalLabel">驳回理由</h3>
+	      </div>
+	      <div class="modal-body">
+	        <p id="myModalContent">
+	          
+	        </p>
+	      </div>
+	      <div class="modal-footer">
+	        
+	      </div>
+	  </div>
+		<script type="text/javascript">
+		function showReason(title, reason){
+		//	$("#myModalLabel").html("").html(title);
+			$("#myModalContent").html("").html(reason);
+	 	    $('#tip-fail').jqmShow().end();
+		}
+		$(function(){
+			$("#tip-fail").jqm({overlay: 0, modal: true, trigger: false});
+		});
+		</script>
+	</body>
+</html>
+

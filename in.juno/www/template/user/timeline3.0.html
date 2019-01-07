@@ -1,0 +1,225 @@
+<!--{template common/header3.0}-->
+	<div class="main layout">
+		<!--{template sub_header}-->
+		<div class="column timeline">
+			<div class="article">
+				<div class="col_l">
+					<div class="nav">
+						<ul>
+						<!--{eval $idx = 0;}-->
+                		<!--{loop $timelines $k $v}-->
+                			<li class="<!--{if ($idx++ <= 0 && !$year) || $year==$k || !$base_on_time}-->active<!--{else}--><!--{/if}-->">
+                				<a href="/user/{$info[id]}/1/1/{$k}" class="slide"><i class="icon-minus icon-white"></i></a>{$k} 
+                				<div class="month">
+                				  <!--{loop $v $ki $m}-->
+				                  <a href="/user/{$info[id]}/1/1/{$k}-{$m[0]}">{$m[1]}</a>
+				                  <!--{/loop}-->
+				                </div>
+                			</li>
+                		<!--{/loop}-->
+						</ul>
+					</div>
+				</div>
+				<div class="col_m">
+					<div class="comment">
+						<div class="c_area">
+							<textarea placeholder="写下值得分享的事情吧" name="" id="" cols="30" rows="10"></textarea>
+							<div class="upload">
+								<label for="" class="up_label">
+									<input type="file" />
+								</label>
+							</div>
+						</div>
+						<div class="action">
+							<a href="" class="btn btn-success btn-vertical">写点评</a>
+							<label class="sync" for="sync">
+								<input type="checkbox" id="sync" />
+								同步到第三方平台
+							</label>
+						</div>
+					</div>
+					<ul>
+					 <!--{if !empty($list)}-->
+                  		<!--{loop $list $k $v}-->
+						<li class="post" data-id="{$v[id]}">
+							<i class="arr"></i>
+							<div class="elite"></div>
+							<i class="ico"></i>
+							<div class="avatar">
+								<a href=""><img src="{$info['avatar_m']}" alt="" /></a>
+							</div>
+							<div class="item">
+								<h2>在<a href="">飞机场</a></h2>
+								<div class="p_con">
+									<p>我要赏金！！北极贝寿司的口感不是很好，比较干！米都很不错！软糯香醇，寿司醋放得刚好合适，食材也都比较新鲜！手卷上来的时候，服务员都还提醒要趁热吃，不然海苔软了就不好吃了！</p>
+								</div>
+							</div>
+							<div class="footbar">
+								<div class="tags">
+									<ul>
+										<li><span>正能量</span></li>
+										<li><span>正能量</span></li>
+										<li><span>正能量</span></li>
+									</ul>
+								</div>
+								<div class="actions">
+									<a class="action-like " data-id="1820511" data-type="19">赞<span class="num" id="praise_count_1820511"></span></a>
+									<em>|</em>
+									  <div class="action-share dropdown" data-id="1820511" data-type="19">
+										  <a class="dropdown-toggle" data-toggle="dropdown">分享<span class="num" id="share_count_1820511"></span></a>
+										  <ul class="dropdown-menu">
+											  <li><a class="action-share-icd" data-s="0">IN成都</a></li>
+											  <li><a class="action-share-weibo" data-s="1" data-content="http://in.chengdu.cn/review/1820511 分享自#IN成都#">新浪微博</a></li>
+											  <li><a class="action-share-qq" data-s="2" data-content="http://in.chengdu.cn/review/1820511 分享自#IN成都#">腾讯微博</a></li>
+										  </ul>
+									  </div>
+									<em>|</em>
+									<a class="action-reply">回复<span class="num" id="reply_count_1820511"></span></a>
+								</div>
+							</div>
+						</li>
+						  <!--{/loop}-->
+		                <!--{else}-->
+		                  <li class="empty">{echo $info[nickname] ? $info[nickname] : $info[username];}还没有动态</li>
+		                <!--{/if}-->
+						
+					</ul>
+					{if $paginate}
+          {$paginate}
+          {else}
+          <div class="pagination" ></div>
+          {/if}
+          <a href="/user/{$info[id]}/2/{$page}/{$time}" class="hide">加载更多</a>
+					<hr class="fadeOut" />
+				</div>
+			</div>
+			<div class="side">
+				<div class="module user_achieve">
+					<div class="tit">
+						<h3>{$info['name']}的成就<i></i></h3>
+					</div>
+					<div class="con">
+						<ul>
+							<li><img src="t.jpg" alt="" /></li>
+							<li><img src="t.jpg" alt="" /></li>
+							<li><img src="t.jpg" alt="" /></li>
+							<li><img src="t.jpg" alt="" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="module user_tags">
+					<div class="tit">
+						<h3>XXX的标签<i></i></h3>
+					</div>
+					<div class="con">
+						<ul>
+							<li>IT民工</li>
+							<li>IT民工</li>
+							<li>IT民工</li>
+							<li>IT民工IT民工IT民工IT民工</li>
+							<li>IT民工IT民工IT民工IT</li>
+						</ul>
+						<p>标签要在客户端设置 <a href="">点击下载</a></p>
+					</div>
+				</div>
+				<div class="module user_track">
+					<div class="tit">
+						<h3>XXX的足迹<i></i></h3>
+					</div>
+					<div class="con">
+						<p>这个家伙飘忽的可怕，竟然没留下任何踪迹……</p>
+						<div class="map">
+							
+						</div>
+						<ul class="location">
+							<li>
+								<div class="address">
+									<div class="img">
+										<img src="t.jpg" alt="" />
+									</div>
+									<div class="info">
+										<a href="">俏江南抚琴</a>
+										<p><a href="">23个点评</a>地主中</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="address">
+									<div class="img">
+										<img src="t.jpg" alt="" />
+									</div>
+									<div class="info">
+										<a href="">俏江南抚琴</a>
+										<p><a href="">23个点评</a>地主中</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="address">
+									<div class="img">
+										<img src="t.jpg" alt="" />
+									</div>
+									<div class="info">
+										<a href="">俏江南抚琴</a>
+										<p><a href="">23个点评</a>地主中</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+	$(function(){
+		
+		$('.timeline-nav').affix({
+	          offset: {
+	            top: $('.timeline-nav').offset().top
+	          , bottom: 210
+	          }
+	        });
+	  			//关注的人
+	  			$.getJSON('/user_get_friends/{$info[id]}?'+new Date().getTime(), function(json){
+	  				var dom = $('#follows');
+	  				for(var i=0;i<json.length;i++){
+	  					var item = json[i];
+	  					var i_img = $('<img />').attr('src', item.avatar);
+	  					if(json.nickname != '')
+	  						i_img.attr('title', item.nickname);
+	  					else
+	  						i_img.attr('alt', item.username);
+	  					var i_a = $('<a></a>').attr('href', '/user/'+item.id).append(i_img);
+	  					$('<li></li>').append(i_a).appendTo(dom);
+	  				}
+	  			});
+	  			//关注我的人
+	  			$.getJSON('/user_get_friends/{$info[id]}/1?'+new Date().getTime(), function(json){
+	  				var dom = $('#be_follows');
+	  				for(var i=0;i<json.length;i++){
+	  					var item = json[i];
+	  					var i_img = $('<img />').attr('src', item.avatar);
+	  					if(json.nickname != '')
+	  						i_img.attr('title', item.nickname);
+	  					else
+	  						i_img.attr('alt', item.username);
+	  					var i_a = $('<a></a>').attr('href', '/user/'+item.id).append(i_img);
+	  					$('<li></li>').append(i_a).appendTo(dom);
+	  				}
+	  			});
+	});
+	var cData = ["BC9F78","A5CD84","C1CF8A"];
+	var forbid;
+	$('.user_tags li').each(function(i,n){
+		var num = Math.floor(Math.random()*3);
+		while(num == forbid){
+			num = Math.floor(Math.random()*3);
+		}
+		forbid = num;
+		n.style.backgroundColor = "#" + cData[num];
+	});
+</script>
+<!--{template common/footer}-->

@@ -1,0 +1,26 @@
+<form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, 'detail_mayor');">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+</form>
+{eval $page_rel='detail_mayor';}
+<div class="pageContent">
+    <table class="table" width="100%" layoutH="280" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="70%">地点</th>
+                <th width="30%" orderField="mayorDate" class="<!--{if $order_field=='mayorDate'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr>
+                <td><a href="{eval echo site_url(array('poi', 'poi', 'detail', 'type', 'id', 'keywords', $row['pid']));}" rel="{eval echo build_rel(array('poi', 'poi', 'detail'));}" title="POI详情" target="navTab">{$row['placename']}</a></td>
+                <td>{$row['mayorDate']} </td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

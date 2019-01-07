@@ -1,0 +1,75 @@
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="type" value="{$type}" />
+    <input type="hidden" name="iaafoId" value="{$iaafoId}" />
+    <input type="hidden" name="itemAwardActionId" value="{$itemAwardActionId}" />
+</form>
+<div class="pageHeader" id="item_{$page_id}">
+    <form rel="pagerForm" method="post" name="ial_main_form" id="ial_main_form" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                     	<option value="poi" {if $type=='poi'}selected="selected"{/if}>POI</option>
+                        <option value="nickname" {if $type=='nickname'}selected="selected"{/if}>用户昵称</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                    <td><select name="itemAwardActionId" class="combox" url="{eval echo site_url(array('item', 'itemAwardLog', 'itemAwardActionId'))}/">
+                       
+                        <option value="0" {if $itemAwardActionId===0 }selected{/if}>全部动作</option>
+	                    {loop $actions $a}
+	                    	<option value="{$a['id']}" {if $a['id']==$itemAwardActionId}selected="selected"{/if}>{$a['actionName']}</option>
+	                    {/loop}
+                	</select></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+	
+    <table class="list" width="100%" layoutH="108">
+    	<thead>
+    		<th width="20%">用户</th>
+    		<th width="20%">获得时间</th>
+    		<th width="20%">动作</th>
+    		<th width="20%">物品渠道</th>
+    		<th width="20%">获得物品</th>
+    	</thead>
+    	<tbody>
+    		{loop $list $k $row}
+    		<tr target="id" rel="{$row['id']}">
+    			<td><img src="{echo image_url($row['avatar'],'head');}" width=20 height=20 /> {echo $row['nickname']?$row['nickname']:$row['username']}({$row['uid']})</td>
+    			<td align="left">{$row['createDate']}</td>
+    			<td align="left">
+    			{$row['actionName']}
+    			</td>
+    			<td>
+    			{echo $row['iaafoId']?"POI:".$row['placename']:'公共渠道'} {if $row['iaafoId']}(iaafoId:{$row['iaafoId']}){/if}
+    			</td>
+    			<td>
+    			{$row['name']}
+    			</td>
+    		</tr>
+    		{/loop}
+    		
+    	</tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script>
+$(function(){
+
+	$("#ial_main_form select[name=itemAwardActionId]").change(function(){
+		//var url = $(this).attr("url") + $(this).val() ;
+		$("input[type=hidden][name=itemAwardActionId]").val($(this).val());
+		navTabSearch($("#ial_main_form"));
+    });
+});
+</script>

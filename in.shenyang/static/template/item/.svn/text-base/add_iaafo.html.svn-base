@@ -1,0 +1,104 @@
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+	<!--{if !empty($info[id])}--><input type="hidden" name="id" value="{$info[id]}" /><!--{/if}-->
+	<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+			<label>选择POI：</label>
+			<input type="hidden" name="poi.id" id="iaafo_place_id" value="{$info.itemId}"  />
+				<input type="text" name="poi.name" value="{$info.placename}" id="iaafo_place" readonly="readonly" class="required" size=20 />
+				<a id="lookup_link" class="btnLook" href="{eval echo site_url(array('ugc','post','list_lookup'));}/type/place" lookupGroup="poi" height="560">查找带回</a>
+		</div>
+		<div class="unit">
+			<label>选择动作:</label>
+			<select name="itemAwardActionId" id="select_itemAwardActionId" class="required">
+			<option >请选择动作</option>
+			{loop $actions $a}
+				<option value="{$a['id']}" {if $a['id']==$info['itemAwardActionId']}selected="selected"{/if}>{$a['actionName']}</option>
+			{/loop}
+			</select>
+		</div>
+		
+		<div class="unit">
+			<label>动作爆率:</label><input type="text" id="probability"  name="probability" value="{$info[probability]}" class="required"   />% 
+		</div>
+		<div class="unit">
+			<label>每日中奖上限:</label>
+		<input type="text"  name="frequency" value="{if $info[frequency]}{$info[frequency]}{else}0{/if}"   />
+		
+		
+		</div> 
+		<div class="unit" style="line-height:30px">
+			<label>物品:</label>
+		<select id="items">
+		{loop $items $i}
+			<option value="{$i['id']}">{$i['name']}</option>
+		{/loop}
+		</select> <input type="button" id="iaafo_addItem" value="添加"/>
+		</div> 
+		<div class="unit" > 
+			<label></label>
+			<table id="item_list">
+				{loop $info['items'] $ii}
+				<tr id="tr{$ii['itemId']}">
+				<td>{$ii['name']}</td>
+				<td><label>库存</label><input type="text" name="quantity[]" id="quantity" value="{$ii['quantity']}" class="required" /><input type="hidden" name="itemId[]" value="{$ii['itemId']}" /></td>
+				<td> <a onclick="javascript:delThisTr(this)">删除</a></td></tr>
+				{/loop}
+			</table>
+		</div>
+				
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+<script type="text/javascript">
+var infoid = '{$info[id]}';
+var actionId = "{$info['itemAwardActionId']}";
+function delThisTr(t){
+	var name = $(t).parent().parent().find("td:first").html();	
+	var id = $(t).parent().parent().attr("id").replace('tr','');
+	$("#items").append("<option value="+id+">"+name+"</option>");
+	$(t).parent().parent().remove();
+}
+function callback(){
+	
+	var poi = $("#iaafo_place_id").val();
+	
+	$("#select_itemAwardActionId").html("");
+	$.post("/item/list_actions",{poi:poi,infoid:infoid},function(data){
+		
+		var obj = eval('('+data+')');
+		$.each(obj,function(k,v){
+			if(actionId==v.id){
+				$("#select_itemAwardActionId").append('<option selected="selected" value='+v.id+'>'+v.actionName+'</option>');
+			}
+			else{
+				$("#select_itemAwardActionId").append('<option value='+v.id+'>'+v.actionName+'</option>');
+			}
+		});
+	})
+}
+
+$(function(){
+	
+	$("#iaafo_addItem").click(function(){
+		var itemName = $("#items").find('option:selected').html();
+		var index = $("#items").find('option:selected').index();
+		var itemId = $("#items").val();
+		if(!itemId) return false;
+		if(!$("#item_list").find("tr#tr"+itemId).html()){
+			//然后删除选来的选项
+			
+			$("#items").find('option').eq(index).remove();
+			$("#item_list").append('<tr id="tr'+itemId+'"><td>'+itemName+'</td><td><label>库存</label><input type="text" name="quantity[]" id="quantity'+itemId+'" class="required" /><input type="hidden" name="itemId[]" value="'+itemId+'" /></td><td> <a onclick="javascript:delThisTr(this)">删除</a></td></tr>');
+			
+		}
+	});
+	callback();
+});
+</script>

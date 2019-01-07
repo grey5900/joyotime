@@ -1,0 +1,26 @@
+<div class="pageContent">
+	<form method="post" action="{$uri}" class="pageForm required-validate" onsubmit="return validateCallback(this, {if isset($act)&&$act==='edit'}navTab{else}dialog{/if}AjaxDone);">
+		<div class="pageFormContent" layoutH="57">
+			<div class="unit">
+				<label>角色名称：</label>
+				<input class="required" name="name" id="name" type="text" minlength="1" maxlength="20" value="{$role[name]}"/>
+			</div>
+			<div class="unit">
+				<label>角色描述：</label>
+				<textarea cols="45" rows="5" name="description" id="description">{$role[description]}</textarea>
+			</div>
+			<div class="unit">
+				<label>绑定频道：</label>
+				<!--{loop $cats $k $c}-->
+				<input type="checkbox" class="checkbox" name="cids[]" value="{$c[id]}"<!--{if $c[checked]}--> checked="checked"<!--{/if}-->/>{$c[catName]} 
+				<!--{/loop}-->
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,27 @@
+<!--{template common/header}-->
+<div class="download-page">
+    <div class="container">
+        <div class="qrcode-box">
+            <div class="qrcode"><img src="/images/qrcode.jpg" alt="" />扫描二维码下载</div>
+        </div>
+        <div class="switch-phone">
+            <div class="imitation">
+            	<ul id="switch">
+            	    <li><img alt="" width="255" height="455" src="/images/switch.download.01.jpg" /></li>
+            	    <li><img alt="" width="255" height="455" src="/images/switch.download.01.jpg" /></li>
+            	    <li><img alt="" width="255" height="455" src="/images/switch.download.01.jpg" /></li>
+            	</ul>
+            </div>
+        </div>
+        <div class="btns">
+            <a href="https://itunes.apple.com/ca/app/cheng-dou-tuan-fang/id689593686?mt=8" class="btn btn-default"><i class="icon-i"></i><p>download iphone</p>苹果客户端</a>
+            <a href="http://tf.chengdu.cn/dl/tuanfang1.0.0.apk" class="btn btn-default"><i class="icon-a"></i><p>download android</p>安卓客户端</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+        $("#switch").phone_switch("switch");
+    });
+</script>
+<!--{template common/footer}-->	

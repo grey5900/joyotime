@@ -1,0 +1,43 @@
+10
+
+dir
+38580
+svn://182.140.139.153/Incd20/Web/trunk/www/data
+svn://182.140.139.153/Incd20
+
+
+
+2012-12-19T06:05:26.343183Z
+15241
+grey
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+86661628-28bb-49c0-9a6f-c8e3782614a9
+
+cache
+dir
+
+compiled
+dir
+
+images
+dir
+
+inc
+dir
+
+recommend
+dir
+

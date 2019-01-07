@@ -1,0 +1,79 @@
+{if $v3_fragments['v3_search']}
+					<div class="search">
+						<div class="condition">
+							<a class="active" href="javascript:;">楼盘搜索</a>
+						</div>
+						<div class="s_con">
+							<form action="/search/building/" id="search_buildings_form" class="form-inline" method='get'>
+								<div class="input_box">
+									<input id="keywords" type="text" name="keywords" placeholder="请输入关键字（楼盘名/地名/开发商等）" />
+									<input type="submit" class="btn btn-vertical btn-danger" value="搜索" />
+									<a href="{$v3_fragments['v3_search']['frag']['rule']['jump_link']}" target="_blank" class="btn btn-vertical">地图找房</a>
+								</div>
+								<div class="sub">
+									<select name="area" id="search_building_area">
+										<option selected="selected" value="0">区域</option>
+										<option value="0">不限</option>
+										<option value="1">锦江区</option>
+										<option value="2">青羊区</option>
+										<option value="3">成华区</option>
+										<option value="4">金牛区</option>
+										<option value="5">武侯区</option>
+										<option value="6">新都</option>
+										<option value="7">温江</option>
+										<option value="8">龙泉驿区</option>
+										<option value="9">青白江</option>
+										<option value="10">都江堰</option>
+										<option value="11">邛崃</option>
+										<option value="12">崇州</option>
+										<option value="13">彭州</option>
+										<option value="14">双流</option>
+										<option value="15">郫县</option>
+										<option value="16">大邑</option>
+										<option value="17">新津</option>
+										<option value="18">蒲江</option>
+										<option value="19">金堂</option>
+										<option value="20">高新区</option>
+										<option value="21">高新西区</option>
+										<option value="22">温江</option>
+										<option value="23">绵阳</option>
+									</select>
+									<select name="price" id="search_building_price">
+										<option selected="selected" value="0">目标价位</option>
+										<option value="0">全部</option>
+										<option value="1">4000以下</option>
+										<option value="2">4000-6000</option>
+										<option value="3">6000-8000</option>
+										<option value="4">8000-10000</option>
+										<option value="5">10000-14000</option>
+										<option value="6">14000以上</option>
+
+									</select>
+									<select name="house_type" id="search_building_type">
+										<option selected="selected" value="0">物业类型</option>
+
+										<option value="0">全部</option>
+										<option value="1">住宅</option>
+										<option value="2">经济适用房</option>
+										<option value="3">别墅</option>
+										<option value="4">写字楼</option>
+										<option value="5">商铺</option>
+										<option value="6">商住两用</option>
+
+									</select>
+									<select name="loop" id="search_building_loop">
+										<option selected="selected" value="0">环线</option>
+
+										<option value="0">全部</option>
+										<option value="1">一环内</option>
+										<option value="2">一环-二环</option>
+										<option value="3">二环-三环</option>
+										<option value="4">三环-绕城</option>
+										<option value="5">绕城外</option>
+
+									</select>
+								</div>
+							</form>
+						</div>
+					</div>
+					{/if}

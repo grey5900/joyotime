@@ -1,0 +1,85 @@
+<!--{template common/header}-->
+	<div id="container-page">
+	  <div class="crumbs">
+      <ul>
+        <li><a href="/">{$channel['catName']}</a>&gt;</li>
+        <li><a href="/nlist/{$category['id']}">{$category['catName']}</a>&gt;</li>
+        <li><a href="javascript:;">{$detail['subject']}</a></li>
+      </ul>
+    </div>
+		<div class="container-fluid">
+		   <div class="main">
+		     <div class="article">
+		       <div class="art-title">
+		         <h1>{$detail['subject']}</h1>
+		         <div class="cfrom"><span>{eval echo date("Y-m-d G:i:s",$detail['dateline']);}</span><span>来自：{$detail['source']}</span></div>
+		       </div>
+		       <div class="art-content">
+		         <div class="contxt">
+		           {if $attach}
+		           	{loop $attach $at}
+		           		<div style="text-align:center;"><img src="{$at['attachment']}" /></div>
+		           		<div style="text-align:center;">{$at['description']}</div>
+		           	{/loop}
+		           {/if}
+		           {$detail['content']}
+		         </div>
+		         <div class="conend">
+		           <div class="pagination">
+                {$page_string}
+              	</div>
+              <div class="ckepop">
+                <!-- JiaThis Button BEGIN -->
+                <div id="ckepop">
+                  <span class="jiathis_txt">分享到：</span>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_xiaoyou"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+                </div>
+                <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+              </div>
+		         </div>
+		         <div class="next-page">
+		           {if $prev}<a class="pull-left" href="/article/{$prev['id']}">上一篇 {$prev['subject']}</a>{else}<a class="pull-left">上一篇 没有了</a>{/if}
+		           {if $next}<a class="pull-right" href="/article/{$next['id']}">下一篇 {$next['subject']}</a>{else}<a class="pull-right">下一篇 没有了</a>{/if}
+		         </div>
+		       </div>
+		     </div>
+		    {if $related} 
+		     <div class="article">
+         
+        
+         
+		     </div>
+		     {/if}
+		   </div>
+		   <div class="sidebar">
+		   
+		  
+        
+       
+          <div class="module">
+            <div class="tit">
+              <h3>本周热门推荐</h3>
+            </div>
+            <div class="con">
+             <div class="list-news">
+               <ul class="list-news-more">
+              {loop $hotnews $n}
+                <li><a href="/article/{$n['id']}">{$n['subject']}</a></li>
+              {/loop}  
+              
+              </ul>
+            </div>
+          </div>
+		   </div>
+		</div>
+	</div>
+
+<!--{template common/footer}-->

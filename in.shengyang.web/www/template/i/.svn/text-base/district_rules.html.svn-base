@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>申请{$brandname}会员</title>
+		<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}" type="text/css" />
+		<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+	</head>
+<body>
+	<div id="container">
+		<div class="container">
+			<div class="lumps">
+				<!--{if $show_nav}-->
+				<div class="navigation">
+					<a onclick="goBack();" class="navigation-back"><cite>上一页</cite></a>
+					<span class="navigation-title">申请{$brandname}会员</span>
+				</div>
+				<!--{/if}-->
+				<div class="lump {if $show_nav}nav-black{/if}">
+					<div class="priv">
+						<h3>会员权益</h3>
+						<p>1、所有申请成为侨城会会员的用户，都将获得IN沈阳赠送的会员帽一个。</p>
+						<p>2、周五侨城日，礼包大放送。用户可以登录华侨城商圈页面，点击“小侨送礼包”专栏，将有机会获取华侨城大礼包一份，参与页面游戏互动更有机会拿神秘大奖。</p>
+						<p>3、每月会员福利，侨城会礼包大放送。每月1日将从所有登录华侨城商圈页面的会员中选出10名幸运会员，将直接获得价值100元的侨城会大礼包一份。</p>
+						<p>4、侨城会会员可以参与华侨城无距离抢地主游戏，在指定合作商户消费可获会员优惠，同时消费还可获IN沈阳双倍积分。</p>
+						<br />
+						<h3>成都华侨城侨城会会员章程</h3>
+                        <span>一、侨城会简介</span>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;侨城会是由成都天府华侨城实业发展有限公司(以下简称“成都华侨城”)发起成立，面向成都华侨城地产业主、欢乐谷公园年卡用户、商业商家、商业消费者以及创新欢乐体验的崇尚者和崇尚优质生活的人士的俱乐部。</p>
+                        <span>二、侨城会宗旨</span>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;侨城会遵循“以人为本，创享无限欢乐”为宗旨，通过整合成都华侨城丰富的优质资源，为会员提供全面、优越的生活服务，休闲娱乐、旅游和欢乐体验；侨城会提供优质、高效的华侨城文化交流平台，致力于与您共同创想欢乐、传播欢乐，从而体现华侨城“优质生活的创想家”的品牌理念。</p>
+                        <span>三、会籍</span>
+                        <p>1、 会籍申请</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;凡对成都华侨城旗下产品：房产、商业、公园进行购买、租用或消费，关注成都华侨城的社会各界朋友，能自愿接受和遵守《侨城会会员手册》之规定，前往成都华侨城侨城会客服中心填写入会申请表，便可申请加入成都华侨城侨城会。享受成都华侨城侨城会会员优惠权益。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;所有会籍申请须经本会批准，本会有批准或保留有关申请的权力，而无须做任何解释。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;一旦入会申请获得确认，即成为会员，同时被视为接受本会会员手册。</p>
+                        <p>2、 会籍管理</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;侨城会实行入会自愿和退会自由的原则。<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;本会会籍不得代理或转让，会员的权利须由本人行使，不能由他人代为行使。<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;如登记的个人信息有变更需要，需经入会机构备案更新。<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;若会员行为对本会有损害或违反会员守则的条款，本会有权解除会员资质。
+                        </p>
+                        <p>3、退会处理</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;以书面形式通知本会，侨城会将做出退会处理。<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;退还会员卡，已累积的积分作废。<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;一旦退出侨城会，会员卡将失效并停止拥有会员的任何权利，不再有权接受及享有本会提供的各项优惠及服务。
+                        </p>
+                        <span>四、会员卡如何领取及挂失补办</span>
+                        <p>1、会员卡领取</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;前往成都华侨城侨城会客服中心填写相关申请入会表单，现场立即发放。</p>
+                        <p>2、会员卡补办</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;办卡时需带有效身份证件，缴纳10元补卡费即可领用新卡。注：旧卡注销，不能再使用；新卡类型和旧卡一致；有效期延续旧卡有效期；旧卡剩余积分和累计积分结转到新卡；旧卡余额和累计余额结转到新卡；旧卡次数和累计次数结转到新卡。</p>
+                        <span>五、会员卡</span>
+                        <p>（一）银卡</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;1、欢乐谷年卡用户。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;2、IN沈阳用户。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;3、参与商业消费或活动入会。</p>
+                        <p>（二）金卡</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;购房金额300万以下的成都华侨城业主。</p>
+                        <p>（三）钻石卡</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;1、购房金额300万以上(含300万) 的成都华侨城业主。</p>
+                        <span>六、会员守则</span>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;1、 侨城会守则对本会的所有会员和商家均有约束力。成为本会会员，同时被视作同意接受本会会员守则。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;2、 成为会员后，即有资格接受及享用本会提供的各种宣传、推广服务，同时须遵守协议中的有关规定，会员不得利用本会或本会提供的设施、优惠、服务、资料或文件从事任何商业的或有损于本会的活动。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;3、 本会有权随时更改会员守则，并以本会认为合适的方式通知会员有关的更改。</p>
+                        <span>七、会员权益</span>
+                        <p>（一）银卡会员</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;1、享受欢乐谷、商业商家所提供的折扣优惠和优质服务。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;2、凭积分可兑换精美礼品或购物券</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;3、优先获邀参与各项会员活动。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;4、优先获取成都华侨城最新信息与资讯。</p>
+                        <p>（二）金卡会员</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;1、享受银卡会员权益的同时，还可享受以下会员权益：</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;2、自购或直系亲属（仅指父母、配偶、子女，须提供有效法律证明）自购成都华侨城房产可获得额外1%的折扣（除非现场另有说明）。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;3、可享受侨城会不定期的节日礼品。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;4、可参与侨城会不定期组织的社区活动、生活讲座等。</p>
+                        <p>（三）钻石卡会员</p>
+                        <p>享受银卡和金卡会员权益的同时，还可享受以下会员权益：</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;1、免费享用成都华侨城机场贵宾厅6人次/年服务。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;2、购房金额1000万以上(含1000万) 的成都华侨城业主，每年获赠专业体检医院体检一次。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;3、高尔夫计划：可免费享受2次侨城会包间。可参与华侨城高尔夫球队，每年6次高尔夫场地免费使用机会。</p>
+                        <span>八、联盟商家优惠折扣</span>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;持侨城会会员卡以现金或银行卡消费方式（不含畅享卡）可享受</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th width="30%">类别</th>
+                                    <th width="40%">商家名称</th>
+                                    <th width="30%">优惠折扣</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="7">门票类</td>
+                                    <td>欢乐谷年卡</td>
+                                    <td>8.5折</td>
+                                </tr>
+                                <tr>
+                                    <td>欢乐谷日场门票</td>
+                                    <td>9折</td>
+                                </tr>
+                                <tr>
+                                    <td>天府蜀韵门票</td>
+                                    <td>5折</td>
+                                </tr>
+                                <tr>
+                                    <td>极速空间站门票</td>
+                                    <td>8.5折</td>
+                                </tr>
+                                <tr>
+                                    <td>华侨城户外攀岩俱乐部</td>
+                                    <td>25元/张</td>
+                                </tr>
+                                <tr>
+                                    <td>高尔夫会所</td>
+                                    <td>8折</td>
+                                </tr>
+                                <tr>
+                                    <td>麦鲁小城</td>
+                                    <td>9折</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="17">餐饮娱乐类</td>
+                                    <td>老房子水墨红食府</td>
+                                    <td>菜品8.8折（海鲜、河鲜、特价菜品除外）</td>
+                                </tr>
+                                <tr>
+                                    <td>墨宴</td>
+                                    <td>菜品8.8折（酒水、海鲜、河鲜除外）</td>
+                                </tr>
+                                <tr>
+                                    <td>丹桂轩粤菜馆</td>
+                                    <td>菜品8.8折，折上满百返十元代金券（海鲜、河鲜、特价菜品除外）</td>
+                                </tr>
+                                <tr>
+                                    <td>贡院北京烤鸭</td>
+                                    <td>菜品8.8折（特价、海鲜、酒水除外）</td>
+                                </tr>
+                                <tr>
+                                    <td>卡萨米亚意式餐厅</td>
+                                    <td>8.8折</td>
+                                </tr>
+                                <tr>
+                                    <td>樱花屋</td>
+                                    <td>满100送30（酒水除外）</td>
+                                </tr>
+                                <tr>
+                                    <td>挑灯talking火锅</td>
+                                    <td>菜品8.8折（酒水、海鲜、河鲜除外）</td>
+                                </tr>
+                                <tr>
+                                    <td>金丰翔精品湘菜馆</td>
+                                    <td>4人套餐：原价362元会员价198元<br />
+                                    8人套餐：原价536元，会员价348元<br />
+                                    会员生日当天5折
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>朱林世家冒菜</td>
+                                    <td>菜品9折</td>
+                                </tr>
+                                <tr>
+                                    <td>相约家常菜</td>
+                                    <td>菜品9折（特价菜品除外）</td>
+                                </tr>
+                                <tr>
+                                    <td>百度烤肉</td>
+                                    <td>9.5折</td>
+                                </tr>
+                                <tr>
+                                    <td>FF纯K•PARTY量贩KTV</td>
+                                    <td>享受会员价</td>
+                                </tr>
+                                <tr>
+                                    <td>城市客栈</td>
+                                    <td>享受会员价</td>
+                                </tr>
+                                <tr>
+                                    <td>上风上水国际养生会馆</td>
+                                    <td>足浴、指压、SPA、品茗8折、棋牌7折</td>
+                                </tr>
+                                <tr>
+                                    <td>星巴克</td>
+                                    <td>免费升杯，糕点买3赠1</td>
+                                </tr>
+                                <tr>
+                                    <td>莱伟斯健身会所</td>
+                                    <td>办卡9折</td>
+                                </tr>
+                                <tr>
+                                    <td>盖尔森击剑馆</td>
+                                    <td>单次体验5折</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">零售类</td>
+                                    <td>52camp</td>
+                                    <td>9折</td>
+                                </tr>
+                                <tr>
+                                    <td>骆驼户外CAN-TOPP</td>
+                                    <td>9.5折</td>
+                                </tr>
+                                <tr>
+                                    <td>LU户外旅行用品工厂店</td>
+                                    <td>9.5折</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">外部商户</td>
+                                    <td>利美新亚洲美食荟</td>
+                                    <td>菜品8.8折</td>
+                                </tr>
+                                <tr>
+                                    <td>如舍会馆</td>
+                                    <td>中餐单点菜品8.5折（不与店内其他优惠同享）</td>
+                                </tr>
+                                <tr>
+                                    <td>重庆德庄火锅</td>
+                                    <td>单点菜品8.5折（不与店内其他优惠同享）</td>
+                                </tr>
+                                <tr>
+                                    <td>亚米天阁</td>
+                                    <td>菜品8.8折</td>
+                                </tr>
+                                <tr>
+                                    <td>歌迷量贩KTV</td>
+                                    <td>房费9折，超市享受会员价（不与店内其他优惠同享）</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;更多商户即将加盟，敬请期待。</p>
+                        <span>九、积分说明</span>
+                        <p>1、积分方式：持侨城会会员卡以现金或银行卡消费方式消费后，凭会员卡进行积分。</p>
+                        <p>2、积分标准：</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;（1）自购房已经享受折扣、畅享卡等多种优惠，不在享受积分。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;（2）零售类、门票类和餐饮娱乐类的积分标准均为1元/1分。</p>
+                        <p>3、兑换方式：</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;会员积分可兑付成都华侨城提供的相应礼品。</p>
+                        <br />
+                        <p>详细内容可登陆成都华侨网站www.octcd.com查询</p>
+					</div>
+				</div>
+				<div class="footer" style="margin-bottom:80px">
+					<p>IN.CHENGDU.CN</p>
+				</div>
+			</div>
+			<div class="fixed-bottom">
+				<a class="button">同意以上章程</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		$("a[class=button]").on("click", function(){
+			<!--{if empty($uid)}-->
+			$.messager("请先登录IN沈阳");
+			<!--{else}-->
+			window.location.href = "/district/apply";
+			<!--{/if}-->
+		});
+	});
+	</script>
+</body>
+</html>

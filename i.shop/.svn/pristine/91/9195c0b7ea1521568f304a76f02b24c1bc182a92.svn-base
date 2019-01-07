@@ -1,0 +1,25 @@
+#footer{
+	left: 0;
+	right: 0;
+	text-align: center;
+	width: 100%;
+	padding-top:20px;
+	height: 120px;
+	z-index: 0;
+	.copyright{
+		p,a{
+			color: #647081;
+			font-size: 12px;
+		}
+		a{
+			padding:0 5px;
+			text-decoration: none;
+			&:hover{
+				color: #000;
+			}
+		}
+		span{
+			padding:0 5px;
+		}
+	}
+}

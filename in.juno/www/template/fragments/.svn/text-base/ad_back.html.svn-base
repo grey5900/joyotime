@@ -1,0 +1,20 @@
+<!--{if $back_ad}-->
+
+{$back_ad['description']}
+<!-- contentBagLoader closedLayer  -->
+
+<script>
+var interval = setInterval(function(){
+	if($('#contentBagLoader').length){
+		$('#contentBagLoader').hide();
+		clearInterval(interval);
+	};
+	
+},5);
+setTimeout(function(){
+	$('#contentBagLoader').show();
+	
+},10000);
+
+</script>
+<!--{/if}-->

@@ -1,0 +1,63 @@
+	<div class="con">
+		<div class="timeline">
+			<ul class="posts">
+				{loop $postdata['data']['data'] $pdata}
+				<li class="post" data-id="<!--{$pdata['id']}-->" data-type="{echo $pdata[type]==2 ? 'tip':'image';}">
+					<div class="arr"></div>
+					<div class="link hide"><a href="/review/{$pdata['id']}" target="_blank">详情</a></div>
+					{if $pdata['isEssence']}<div class="elite"></div>{/if}
+					<div class="avatar"><a href="/user/{$pdata['uid']}"><img alt="{$pdata['nickname']}" src="{$pdata['head']}" rel="tooltip" data-original-title="{$pdata['nickname']}" /></a></div>
+					<div class="item">
+						<h2>{if $postdata['data']['place'][$pdata['placeId']]['placename']}在 <a href="/place/{$pdata['placeId']}">{$postdata['data']['place'][$pdata['placeId']]['placename']}</a>{else}发布了{/if}{if $postdata['data']['place'][$pdata['placeId']]['isVerify']}<span class="vico"></span>{/if}</h2>
+						{if $pdata['level'] || $pdata['pcc']}
+						<div class="pf"><span class="ico-star-{eval echo round($pdata['level']);}"></span> {if $pdata['pcc']}<span>人均：￥{$pdata['pcc']}</span>{/if}</div>{/if}
+						{if !empty($pdata[content])}<p>{$pdata['content']}</p>{/if}
+						{if $pdata['photo']}<div class="photo"><img alt="{$pdata['content']}" src="{$pdata['thumb']}" width="{$pdata[photoSize][w]}" height="{$pdata[photoSize][h]}" /></div>{/if}
+					</div>
+					<div class="footbar">
+						<div class="tags"><ul>{loop $pdata[tags] $pt}<li><span>{$pt[tagName]}</span></li>{/loop}</ul></div>
+							<div class="actions">
+								<a class="action-like <!--{if !$pdata['is_praised']}-->on<!--{/if}-->" data-id="{$pdata[id]}" data-type="19" data-sort=1>赞<span class="num" id="praise_count_$pdata[id]">{if $pdata[praiseCount] > 0}({$pdata['praiseCount']}){/if}</span></a>
+								<em>|</em>
+                                <div class="action-share dropdown" data-id='{$pdata[id]}' data-type='19'>
+                                    <a class="dropdown-toggle" data-toggle="dropdown">分享<span class="num" id="share_count_$pdata[id]"><!--{if $pdata[shareCount] > 0}-->({$pdata[shareCount]})<!--{/if}--></span></a>
+                                    <ul class='dropdown-menu'>
+                                        <li><a class='action-share-icd' data-s='0'>IN成都</a></li>
+                                        <li><a class='action-share-weibo' data-s='1' data-content='http://in.chengdu.cn/review/{$pdata[id]} 分享自#IN成都#'>新浪微博</a></li>
+                                        <li><a class='action-share-qq' data-s='2' data-content='http://in.chengdu.cn/review/{$pdata[id]} 分享自#IN成都#'>腾讯微博</a></li>
+                                    </ul>
+                                </div>
+								<em>|</em>
+								<a class="action-reply" data-id="{$pdata[id]}">回复<span class="num" id="reply_count_$pdata[id]">{if $pdata[replyCount] > 0}({$pdata['replyCount']}){/if}</span></a>
+							</div>
+					</div>
+					<div class="replys hide">
+						<form class="reply-form" data-pid="{$pdata[id]}" data-uid="{$auth[uid]}" data-user="{$auth[nickname]}" data-type="{echo $pdata[type]==2 ? 'tip':'image';}">
+							<textarea name="" class="txt" maxlength="140" placeholder="回复内容..." id="" cols="" rows=""></textarea>
+							<span class="btn">发布</span>
+						</form>
+						<ul class="reply-list">
+							{if $pdata['replyCount']>0 and $pdata['reply']}	
+								{loop $pdata['reply'] $rp}
+									<li>
+										<a href="/user/{$rp['uid']}" class="avatar"><img src="{$rp['head']}" alt="{$rp['nickname']}" /></a>
+										<div class="actions"><a href="javascript:;" class="action-replyto" data-pid="{$rp['itemId']}" data-id="{$rp[id]}" data-uid="{$rp[uid]}" data-user="{$rp[nickname]}">回复</a></div>
+										<p><a href="/user/{$rp['uid']}" class="name">{$rp['nickname']}</a>{$rp['re_string']}：{$rp['content']}<br /><span class="time">{$rp['createDate']}</span></p>
+									</li>
+								{/loop}
+							{/if}
+						</ul>
+						{if $pdata[replyCount]>10}<div class="more_comm" style="">更多评论请<a href="/review/{$pdata[id]}" target="_blank">点击查看</a></div>{/if}
+					</div>
+					<div class="clock">{eval echo get_date($pdata['createDate'])}</div>
+					{if $pdata['lat']}<div class="source">用IN成都客户端发布，<a href="http://in.chengdu.cn/download/" target="_blank">点击下载></a></div>{/if}
+					</li>
+					{/loop}
+							
+			</ul>
+			<div class="pagination">
+				{$page['page']}
+			</div>
+			<a href="{$page['loding']}" class="hide">加载更多</a>
+		</div>
+	</div>

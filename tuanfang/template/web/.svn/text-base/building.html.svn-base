@@ -1,0 +1,119 @@
+<!--{template common/header}-->
+<div class="container block-top">
+    <section>
+        <div class="main">
+            <div class="model-details">
+                <div class="model-header">
+                    <h3>{$info['name']}{if $info['area']}<span>[{$info['area']}]</span>{/if}</h3>
+                    <p>
+                        {$info['group_title']}
+                    </p>
+                </div>
+                <div class="model-nav">
+                    <ul>
+                        <li class="active">
+                            {if $info['group_status']==0}
+                            <a data-toggle="modal" href="#showJoin" data-type="0" data-id="{$info['house_id']}">立即报名</a>
+                            {elseif $info['group_status']==1}
+                            <a data-toggle="modal" href="#showSela" data-type="1"data-id="{$info['house_id']}">我想要优惠</a>
+                            {/if}
+                        </li>
+                        <li>
+                            <span><i>{$info['group_count']}</i>人已团购</span>
+                        </li>
+                        <li class="time" data-time="{$info['end_sc']}" data-hour="{$info['end_sc']['hours']}" data-mins="{$info['end_sc']['mins']}" data-scs="{$info['end_sc']['scs']}">
+                            <i class="icon-time"></i>
+                            {if ( $info['end_sc']['days']<0 || $info['end_sc']['hours']<0 || $info['end_sc']['mins']<0 ) || $info['group_status']==1 }
+                            已经结束
+                            {else}
+                            剩余：{$info['end_sc']['days']}天{$info['end_sc']['hours']}小时{$info['end_sc']['mins']}分
+                            {/if}
+
+                        </li>
+                        <li class="service" >
+                           <a data-toggle="modal" href="#onlineAdvice"><i class="icon-service-small"></i>在线客服</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="model-cont">
+                    {if $info['ext_detail']['pic_ext_id']}
+                    <a href="{$house_pic_domain}/{$info['house_id']}/{$info['ext_detail']['pic_ext_id']}" target="_blank" class="show-photo"> {/if} <img src="{$info['cover']}" width=660 height=330 alt="" /> <span class="more-link">更多图片</span> {if $info['ext_detail']['pic_ext_id']} </a>
+                    {/if}
+                    <p>
+                        {$info['group_detail']}
+                    </p>
+                </div>
+                {if $info['has_recommend']}
+                <div class="model-ft">
+                    <a href="/web/download" class="arrow">{$info['recommend_title']}</a>
+                </div>
+                {/if}
+            </div>
+            <div class="model-wrap">
+                <div class="model-title">
+                    <h3>楼盘地址</h3>
+                </div>
+                <div class="model-address-list">
+                    <div class="mapbody">
+                        <div id="map-canvas" style="width: 308px;height: 240px;" data-lat="{$info['lat']}" data-lng="{$info['lng']}" ></div>
+                        <a class="link" data-toggle="modal" href="#showMap" title="点击查看完整地图" ><i class="icon-view-map"></i>查看完整地图</a>
+                    </div>
+                    <div class="wrap">
+                        <h3>详细地址：</h3>
+                        <p>
+                            {$info['address']}
+                        </p>
+                        <h3>楼盘介绍：</h3>
+                        <div class="text-view">
+                            <p class="text-simple">
+                                {echo cut_string($info['ext_detail']['introduce']['value'],330);}
+                            </p>
+                            <p class="text-more">
+                                {echo $info['ext_detail']['introduce']['value']}
+                            </p>
+                            {if $info['ext_detail']['detail_ext_id']}
+                            <a href="javascript:void(0)" class="text-arrow">[查看更多]</a>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+                {if $info['ext_detail']['dongtai']['value']}
+                <div class="model-title">
+                    <h3>最新动态</h3>
+                </div>
+                <div class="model-content">
+                    <p>
+                        {$info['ext_detail']['dongtai']['value']}
+                    </p>
+                </div>
+                {/if}
+                <div class="model-title">
+                    <h3>楼盘参数</h3>
+                    <a href="{$house_pic_domain}/{$info['house_id']}/{$info['ext_detail']['detail_ext_id']}" target="_blank" class="more-link">更多参数 >></a>
+                </div>
+                <div class="model-content">
+                    {loop $info['ext_detail'] $k_detail $des}
+                    {if in_array($k_detail,$config_detail)}
+                    {if $des['value']}
+                    <p>
+                        {$des['field']['fieldName']}：{$des['value']}
+                    </p>
+                    {/if}
+                    {/if}
+                    {/loop}
+                </div>
+            </div>
+        </div>
+        <!--{template siderbar}-->
+    </section>
+</div>
+<!--{template common/footer}-->
+
+
+<script type="text/javascript" charset="utf-8">
+var appy_house_id ="{$info['house_id']}";
+</script>
+<!--{template /common/modals}-->
+
+<script charset="utf-8" src="http://api.map.soso.com/v1.0/main.js"></script>
+<script src="/js/map.canvas.js" type="text/javascript" charset="utf-8"></script>

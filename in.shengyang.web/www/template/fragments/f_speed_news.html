@@ -1,0 +1,20 @@
+{if $v3_fragments['v3_f_speed_news']}
+<div class="module lskx">
+					<div class="hd">
+						<h2>{$v3_fragments['v3_f_speed_news']['frag']['name']}</h2>
+						{if $v3_fragments['v3_f_speed_news']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_speed_news']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+					</div>
+					<div class="con">
+						<div class="img">
+							<img src="{$v3_fragments['v3_f_speed_news']['data'][0][image]}" alt="{$v3_fragments['v3_f_speed_news']['data'][0][title]}" />
+						</div>
+						<div class="list">
+							<ul>
+							{loop $v3_fragments['v3_f_speed_news']['data'] $speed_news}
+								<li><a href="{$speed_news['link']}" target="_blank" title="{$speed_news['title']}">• {echo cut_string($speed_news['title'],44,'')}</a></li>
+							{/loop}
+							</ul>
+						</div>
+					</div>
+				</div>
+{/if}

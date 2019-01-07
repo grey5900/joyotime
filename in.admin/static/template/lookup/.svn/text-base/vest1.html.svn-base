@@ -1,0 +1,38 @@
+<form id="pagerForm" action="{$current_url}">
+	<input type="hidden" name="pageNum" value="{$cur_page}"/>
+	<input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+	<input type="hidden" name="aid" value="{$aid}"/>
+	<input type="hidden" name="tmp" value="{$tmp}" />
+</form>
+
+<div class="pageContent">
+	
+	<table class="list" layoutH="40" targetType="dialog" width="100%">
+		<thead>
+			<tr>
+				<th width="50" rowspan="2" align="center" valign="middle">头像</th>
+				<th colspan="3" align="center">资料</th>
+				<th width="120" align="center" rowspan="2" valign="middle">最后使用时间</th>
+				<th rowspan="2" valign="middle">选择</th>
+			</tr>
+			<tr>
+				<th width="100" align="center">登录名</th>
+				<th width="100" align="center">昵称</th>
+				<th width="100" align="center">真实姓名</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr>
+				<td align="center" valign="middle"><img src="{eval echo image_url($val[avatar],'head','odp');}" alt="avatar" width="48" height="48" /></td>
+				<td align="center">{$val[username]}</td>
+				<td align="center">{$val[nickname]}</td>
+				<td align="center">{$val[realName]}</td>
+				<td align="center">{$val[lastSignin]}</td>
+				<td><a class="btnSelect" href="javascript:$.bringBack({id:'{$key}', username:'{eval echo !empty($val[nickname])?$val[nickname]:(!empty($val[realName])?$val[realName]:$val[username])}'})" title="查找带回">选择</a></td>				
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	<!--{template main/page_bar}-->
+</div>

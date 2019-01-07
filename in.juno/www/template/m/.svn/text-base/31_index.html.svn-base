@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta content="zh_cn" name="language">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+		<title>带着S720出行，游走在城市的每个角落。</title>
+		<link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.1.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+		<style type="text/css" media="screen">
+      /*	background color	*/
+     .page {
+        background: #e64082;
+      }
+     #content .unit .box {
+        background: #fcadcd;
+      }
+     .touchslider-viewport {
+        background: #fcadcd;
+      } 
+      .box-db-left ,
+      .box-db-right {
+        background: #fcadcd;
+      }
+      .box-db .img img {
+        background: #fff;
+      }
+     /* font color  */
+			.unit-title {
+        color: #fff;
+      }
+      #content .unit p {
+        color: #5a146a;
+      }
+      #content .statement p {
+       color: #fcadcc;
+     }
+     .box-db-left ,
+     .box-db-right {
+       color: #5a146a;
+     }
+			.texts .info-group {
+			  color: #0c425c;
+			  border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+			
+			}
+			.texts .inside p {
+			
+			}
+			.bottons .botton span.title {
+			  color: #a1400b;
+			}
+			.bottons .botton span.intro {
+			  color: #a1400b;
+			}
+			.touchslider-item .touchslider-info {
+			  color: #fff;
+			}
+			.multi-line dd span {
+				color: #5a146a;
+			}
+			.multi-line .viewall a {
+				color: #e94083;
+			}
+			.multi-line .viewall a:hover{
+			  
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #fff;
+				padding-top: 5px;
+			}
+			.touchslider-item img { 
+			 	height:280px;
+			 }
+			 .touchslider-nav-item {
+
+			 }
+			 .feed,.user {
+			   box-shadow: none;
+			 }
+			 .feed a:hover,
+       .user a:hove {
+         border-radius: 6px;
+       }
+
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<div id="content">
+				<div class="grid">
+					<div class="img-unit">
+						<a href="/event/index/31/"><img border="0" src="http://icd.sc/img/m/31/header.jpg" width="100%" border="0" /></a>
+					</div>
+					<div class="unit texts">
+						<div class="unit-title"><h3>活动说明</h3></div>
+						<div class="box">
+							<div class="inside">
+									<p>
+									  &nbsp;&nbsp;这世界不缺乏色彩，只缺乏出色的勇气。拥有纤薄荧光亮彩外衣的联想乐Phone S720智能手机现已全面上线。成都联想携手IN成都特别推出“S720•我的出色搭配”活动，只要你敢秀爱秀，一部出色的联想乐Phone S720就归你所有！
+									</p>
+							</div>
+						</div>
+					</div>
+					<div class="unit texts">
+						<div class="unit-title"><h3>奖项设置</h3></div>
+						<div class="box-db">
+							<div class="box-db-left">
+							  <div class="inside">
+							    <h3>特等奖</h3>
+							    <div class="img">
+							      <img src="http://icd.sc/img/m/31/02.jpg" width="125px" height="125px" />
+							      <span>联想S720手机一部<br />（1名）</span>
+							    </div>
+							  </div>
+							</div>
+							<div class="box-db-right">
+							  <div class="inside">
+							    <h3>一等奖</h3>
+							    <div class="img">
+                    <img src="http://icd.sc/img/m/31/01.jpg" width="125px" height="125px" />
+                    <span>精美茶具<br />（5名）</span>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+					<div class="unit texts">
+            <div class="box-db">
+              <div class="box-db-left">
+                <div class="inside">
+                  <h3>二等奖</h3>
+                  <div class="img">
+                    <img src="http://icd.sc/img/m/31/03.jpg" width="125px" height="125px" />
+                    <span>水壶<br />（5名）</span>
+                  </div>
+                </div>
+              </div>
+              <div class="box-db-right">
+                <div class="inside">
+                  <h3>三等奖 </h3>
+                  <div class="img">
+                    <img src="http://icd.sc/img/m/31/04.jpg" width="125px" height="125px" />
+                    <span>双面折叠化妆镜<br />（10名）</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+					<div class="unit texts">
+						<div class="unit-title"><h3>参与方式</h3></div>
+						<div class="box">
+							<div class="inside">
+								<p>
+&nbsp;&nbsp;1.在指定“成都地区联想手机专卖店”现场签到，签到计5分/店；发布带“联想S720•我的出色搭配”关键字的点评，如你对“要出色”的理解，计8分/条；现场上传与联想乐Phone S720的合影照片，并写下“联想S720•我的出色搭配”计10分/张；<br />
+&nbsp;&nbsp;2.发布的点评及图片，同步至微博，还将获得额外奖励分哦（最高可计50分）；<br />
+&nbsp;&nbsp;3.考虑到亲们的隐私，可不必本人出镜。照片越多分数越多，照片中必须有S720元素；<br />
+&nbsp;&nbsp;4.活动结束后，统计用户综合得分，根据得分由高到低排名依次获得联想乐Phone S720手机、精美茶具、水壶、双面折叠化妆镜等奖品！<br />
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="unit texts">
+            <div class="unit-title"><h3>活动时间</h3></div>
+            <div class="box">
+              <div class="inside">
+                <p>2012年10月17日-10月30日</p>
+              </div>
+            </div>
+          </div>
+					<div class="unit multi-line">
+            <div class="unit-title"><h3>适用商家介绍</h3></div>
+            <div class="box">
+              <dl class="shrink">
+                <dd>
+                  <a href="inplace://316667" class="arrow">
+                    <span>龙翔赛格航母店</span>
+                    <div class="address">
+                                                           太升南路222号 <br />
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316878" class="arrow">
+                    <span>迪信通财富店</span>
+                    <div class="address">
+                                                            金牛区一环路府青立交桥1号财富又一城负一楼 <br />
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316879" class="arrow">
+                    <span>迪信通创发太升路店</span>
+                    <div class="address">
+                                                              锦江区太升南路85号<br />
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316668" class="arrow">
+                    <span>迪信通春熙店</span>
+                    <div class="address">
+                                                              锦江区春熙路大科甲巷25号2楼
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316880" class="arrow">
+                    <span>迪信通都江堰店</span>
+                    <div class="address">
+                                                           都江堰市建设路1号嘉城电子2楼
+                    </div>
+                  </a>
+                </dd>
+                 <dd>
+                  <a href="inplace://316881" class="arrow">
+                    <span>迪信通高笋塘店</span>
+                    <div class="address">
+                                                           金牛区二环路北三段98号（红花北路路口） 
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316882" class="arrow">
+                    <span>迪信通荷花池店</span>
+                    <div class="address">
+                                                             成华区二环路245号
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316883" class="arrow">
+                    <span>迪信通金堂店</span>
+                    <div class="address">
+                                                             金堂县三江路212号 
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316884" class="arrow">
+                    <span>迪信通科华北路川大店</span>
+                    <div class="address">
+                                                             武侯区科华北路139号附6号（亚太广场对面）
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316885" class="arrow">
+                    <span>迪信通科华一店</span>
+                    <div class="address">
+                                                           科华北路68号附7号
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316886" class="arrow">
+                    <span>迪信通乐宾店</span>
+                    <div class="address">
+                                                              青羊区光华村街48号大地新光华广场乐宾百货2楼
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316670" class="arrow">
+                    <span>迪信通蜀汉二店</span>
+                    <div class="address">
+                                                              成都市金牛区蜀汉路128#
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://212661" class="arrow">
+                    <span>迪信通蜀汉店</span>
+                    <div class="address">
+                                                             金牛区蜀汉路3# 
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316887" class="arrow">
+                    <span>迪信通双林路店</span>
+                    <div class="address">
+                                                              金牛区双林北支路2、4、6、8、10、12号   
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316888" class="arrow">
+                    <span>迪信通双桥店</span>
+                    <div class="address">
+                                                              成华区双桥路100号
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316889" class="arrow">
+                    <span>迪信通沃尔玛店</span>
+                    <div class="address">
+                                                             金牛区交大路183号沃尔玛三楼
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316669" class="arrow">
+                    <span>迪信通五块石店</span>
+                    <div class="address">
+                                                              金牛区蓉北大道一段18号
+                    </div>
+                  </a>
+                 </dd>
+              </dl>
+              <div class="viewall">
+                <a class="showMore">查看全部（<em>17</em>）</a>
+              </div>
+            </div>
+          </div>
+					<div class="unit scrolls">
+						<div class="unit-title"><h3>联想S720•靓丽出色</h3></div>
+						<div id="showPic" class="touchslider">
+							<div class="touchslider-viewport" >
+								<div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/31/1.jpg" />
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/31/2.jpg" />
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/31/3.jpg" />
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/31/4.jpg" />
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/31/5.jpg" />
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/31/6.jpg" />
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/31/7.jpg" />
+									</div>
+									<div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/31/8.jpg" />
+                  </div>
+								</div>
+							</div>
+							<div class="touchslider-nav">
+								<span class="touchslider-nav-item touchslider-nav-item-current"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+							</div>
+						</div>
+					</div>
+					<!--{if isset($feed) && !empty($feed)}-->
+					<div class="unit card">
+						<div class="unit-title"><h3>活动动态</h3></div>
+						<div class="box">
+							<div class="feeds">
+								<div class="feed">
+									<a href="/event/feeds/{$event_id}/{$uid}/0/1">
+										<div class="arrow">
+											<div class="icon">
+												<img src="{$feed[avatar]}"  width="40" height="40"/>
+											</div>
+											<div class="detail">
+												<h4>{$feed[uname]}</h4>
+												<!--{if $feed[type]==1}-->
+												<div class="action">在</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="action">签到</div>
+												<!--{elseif $feed[type]==2}-->
+												<div class="action">点评</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="start"><!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}--></div>
+												<div class="info">{$feed[content]}</div>
+												<!--{elseif $feed[type]==3}-->
+												<div class="action">在</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="action">上传照片</div>
+												<div class="info">{$feed[content]}</div>
+												<div class="photo"><img src="{$feed[photoName]}" width="200" /></div>
+												<!--{/if}-->
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--{/if}-->
+					
+					<!--{if isset($joines) && !empty($joines)}-->
+					<div class="unit user-list">
+						<div class="unit-title"><h3>您有{$count_joines}位好友参加了该活动</h3></div>
+						<div class="box">
+							<a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+								<ul class="user-list">
+									<!--{loop $joines $uid $u}-->
+									<li><img src="{$u[avatar]}" /></li>
+									<!--{/loop}-->
+								</ul>
+							</a>
+						</div>
+					</div>
+					<!--{/if}-->
+					<div class="unit texts">
+						<div class="statement">
+							<p>
+								<strong>特别说明：</strong>
+								<br />
+                1.活动结束后将进行积分统计，获奖信息请关注官方账户“小in”动态，并以官方私信通知为准；<br />
+2.请按照活动正确的参与方式，进行有效参与，为确保IN客们发布信息真实有效，公平竞争，请不到发布重复图片，有恶意刷屏等行为，若出现系统将会自动屏蔽，并扣除100积分，行为严重者将取消参加活动资格；<br />
+3.本次活动积分不累计记入IN成都积分；<br />
+4.本次活动最终解释权归联想（成都）有限公司所有。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<p>IN.CHENGDU.CN</p>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".touchslider").touchSlider({
+					mouseTouch : true,
+				});
+				 $(".shrink").each(function(){
+             $(".shrink > dd:gt(2)").hide(); 
+              $(".viewall").click(function(){
+                  $(".showMore").toggle();
+                  $(".shrink > dd:gt(2)").toggle();
+               });        
+          });
+
+			})
+
+		</script>
+	</body>
+</html>

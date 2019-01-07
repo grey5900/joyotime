@@ -1,0 +1,267 @@
+@import "_bootstrap/variables.less";
+@import "_bootstrap/mixins.less";
+
+#container {
+	margin: 20px auto;
+}
+.download-wrap{
+	.download-nav{
+		height:65px; 
+		background:url(download_nav_bg.png) 0 0 no-repeat;
+		li{
+			float:left; 
+			a{
+				display:block;  
+				background:transparent url(download_nav_bg.gif) no-repeat scroll 0 -999em;
+			}	
+		}
+		.nav-iphone{
+				a{
+					width:181px;
+					height: 65px;
+					background-position:0 0;
+					&:active{background-position:0 0;}
+				}
+				&.current{
+					a{
+						background-position:0 -65px;
+					}
+				}
+			}
+		.nav-android{
+				a{
+					width:180px;
+					height: 65px;
+					background-position:0 -130px;
+					&:active{background-position:0 -130px;}
+				}
+				&.current{
+					a{
+						background-position:0 -195px;
+					}
+				}
+			}
+		.nav-wp{
+				a{
+					width: 300px;
+					height: 65px;
+					background-position:0 -260px;		
+				}
+				&.current{
+					a{
+						background-position:0 -325px;
+					}
+				}
+			}
+		
+	}
+	.iphone-bd{
+		height:598px; 
+    width: 100%;
+		background:url(bg_download_banner.jpg) center center repeat;
+    position: relative;
+    display: block;
+		h3{
+			position:absolute; 
+			top:50px; 
+			left:360px; 
+			line-height:42px; 
+			font-size:36px; 
+			color:#E57100;
+			.cleartype();
+		}
+		a{
+			text-indent:-9999em;
+		}
+		.summary{
+			position:absolute; 
+			top:100px; 
+			left:360px; 
+			width:530px; 
+			line-height:28px; 
+			font-size:16px; 
+			//color:@brownText;
+			.cleartype();
+		}
+		.btn-ipa {
+		  background:url('btn_download_app.png') repeat-y scroll 0 -999em;
+      background-position: 0 -165px;
+      width:154px;
+      height: 55px;
+      position:absolute; 
+      bottom:135px; 
+      left:360px;
+      cursor:pointer;
+      border:none;
+		}
+		.btn-appstore{
+			background:url('btn_download_app.png') repeat-y scroll 0 -999em;
+			background-position: 0 -55px;
+			width:154px;
+			height: 55px;
+			//display: block;
+			position:absolute; 
+			bottom:135px; 
+			left:360px;
+			cursor:pointer;
+			border:none;
+			}
+		.two-dimensional-code{
+			position:absolute; 
+			bottom:135px; 
+			left:760px;
+		}
+		.imitation-iphone{
+			position:absolute; 
+			left:92px; 
+			top:132px; 
+			width:211px; 
+			height:317px; 
+			overflow:hidden;
+			li{
+				float:left; 
+				width:211px;
+			}
+		}
+	}
+	.android-bd{
+    height:598px; 
+    width: 100%;
+    background:url(bg_download_banner.jpg) center center repeat;
+    position: relative;
+    display: block;
+		h3{
+			position:absolute; 
+			top:50px; 
+			left:70px; 
+			line-height:42px; 
+			font-size:36px;
+			//color: @greenText;
+			.cleartype();
+		}
+		a{
+			text-indent:-9999em;
+		}
+		
+		.summary{
+			position:absolute; 
+			top:100px; 
+			left:70px; 
+			width:530px; 
+			line-height:28px; 
+			font-size:16px;
+			.cleartype();
+		}
+		.btn-apk{
+			background:url(btn_download_app.png) no-repeat scroll 0 -999em;
+			background-position: 0 0;
+			width:154px;
+			height: 55px;
+			display: block;
+			position:absolute; 
+			bottom:130px; 
+			left:70px;
+			cursor:pointer;
+			border:none;
+		}
+		.two-dimensional-code{
+			position:absolute; 
+			bottom:135px; 
+			left:350px;
+		}
+		.imitation-android{
+			height: 310px;
+		    overflow: hidden;
+		    position: absolute;
+		    right: 68px;
+		    top: 114px;
+		    width: 200px;
+			li{
+				float:left; 
+				width:200px; 
+				height:298px;
+			}
+		}
+	}
+	.wp-bd{
+		position:relative; 
+		height:594px; 
+		background:url(bg_download_banner.jpg) 0 0 no-repeat;
+		h3{
+			position:absolute; 
+			top:50px; 
+			left:360px; 
+			line-height:42px; 
+			font-size:36px; 
+			color:#fff;
+			.cleartype();
+		}
+		a{
+			text-indent:-9999em;
+		}
+		.summary{
+			position:absolute; 
+			top:100px; 
+			left:360px; 
+			width:530px; 
+			line-height:28px; 
+			font-size:16px; 
+			color:#fff;
+			.cleartype();
+		}
+		
+		.btn-appstore{
+			background:url(btn_download_app.png) repeat-y scroll 0 -999em;
+			background-position: 0 -110px;
+			width:154px;
+			height: 55px;
+			//display: block;
+			position:absolute; 
+			bottom:135px; 
+			left:360px;
+			cursor:pointer;
+			border:none;
+			}
+		.two-dimensional-code{
+			position:absolute; 
+			bottom:135px; 
+			left:560px;
+		}
+		.imitation-wp{
+			position:absolute; 
+			left:82px; 
+			top:82px; 
+			width:216px; 
+			height:360px; 
+			overflow:hidden;
+			li{
+				float:left; 
+				width:216px;
+			}
+		}
+	}
+}
+.concern-us{
+	position:relative; 
+	height:54px; 
+	margin:20px 0 0 0; 
+	padding:0 0 0 150px; 
+	background:#e8ecde;
+	h3{
+		position:absolute; 
+		margin:5px 0 0 -90px; 
+		font-size:18px;
+		.cleartype();
+	}
+	ul {
+		margin-left: 30px;
+	}
+	li{
+		float:left; 
+		width: 19%; 
+		margin-top: 5px;
+		overflow:hidden;
+	}
+}
+
+	

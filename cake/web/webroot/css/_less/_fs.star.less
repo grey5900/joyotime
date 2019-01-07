@@ -1,0 +1,98 @@
+/* 
+ * 星级 
+ * 
+ * */
+.bgstars() {
+  background:transparent url('/img/fs.stars.png') repeat-x scroll 0 -999em;
+  width:113px;
+  height:18px;
+  display:inline-block;
+}
+
+.ico-star-5{
+  .bgstars();
+  background-position:0 0;
+  }
+.ico-star-4{
+  .bgstars();
+  background-position:0 -18px;
+  }
+.ico-star-3{
+  .bgstars();
+  background-position:0 -36px;
+  }
+.ico-star-2{
+  .bgstars();
+  background-position:0 -54px;
+  }
+.ico-star-1{
+  .bgstars();
+  background-position:0 -72px;
+  }
+.ico-star-0{
+  .bgstars();
+  background-position:0 -90px;
+  }
+
+@media screen and (max-width: 640px) {
+  .ico-star-0, .ico-star-1, .ico-star-2, .ico-star-3, .ico-star-4, .ico-star-5{
+    width: 56px;
+    height: 9px;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .ico-star-5{
+    background-position:0 0;
+    }
+  .ico-star-4{
+    background-position:0 -9px;
+    }
+  .ico-star-3{
+    background-position:0 -18px;
+    }
+  .ico-star-2{
+    background-position:0 -27px;
+    }
+  .ico-star-1{
+    background-position:0 -36px;
+    }
+  .ico-star-0{
+    background-position:0 -45px;
+    }
+}
+
+.share() {
+  background:transparent url('/img/ico-share.png') repeat-x scroll 0 -999em;
+  width:24px;
+  height:24px;
+  display:inline-block;
+  margin-left:8px;
+}
+.ico-share-weibo{
+  .share();
+  background-position:0 0;
+}
+.ico-share-QQweibo{
+  .share();
+  background-position:-35px 0;
+}
+.ico-share-Qzone{
+  .share();
+  background-position:-70px 0;
+}
+.ico-share-facebook{
+  .share();
+  background-position:-106px 0;
+}
+.ico-code{
+  width:20px;
+  height:50px;
+  line-height:50px;
+  display:inline-block;
+  margin-left:8px;
+  img{
+    width:20px;
+    height:20px;
+    display:inline-block;
+  }
+}

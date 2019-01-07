@@ -1,0 +1,190 @@
+{if !isset($do) || empty($do)}
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="orderField" value="{$orderField}" />
+	<input type="hidden" name="orderDirection" value="{$orderDirection}" />
+	<input type="hidden" name="begin" value="{$begin}" />
+	<input type="hidden" name="end" value="{$end}" />
+	
+	<input type="hidden" name="user_id" value="{$user}" />
+	<input type="hidden" name="status" value="{$status}" />
+	<input type="hidden" name="keyword" value="{$keyword}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				内容：
+				<input type="text" name="keywords" value="{$keywords}"/>
+			</li>
+			<li style="width:auto">
+				<label><input type="checkbox" name="isread" {if $isread}checked=checked{/if} value=1>只看未读 </label>
+				<label><input type="checkbox" name="isTaboo" {if $isTaboo}checked=checked{/if} value=1>含有敏感词</label>
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				
+				 <li><a class="button" href="{eval echo site_url(array('ugcv3','reply','advsearch'));}" rel="{eval echo build_rel(array('ugcv3','reply','index'));}" target="dialog" title="高级检索"><span>高级检索</span></a></li>
+				 
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('ugcv3','post','edit'));}/do/read/itemtype/100" target="selectedTodo" rel="ids[]" warn="请至少选择一条纪录"><span>批量标为已读</span></a></li>
+
+			<li><a class="delete" href="{eval echo site_url(array('block','ban_reply','reply',  'Reply' ));}/<!--{{sid_reply}}-->" target="dialog" title="确定要屏蔽吗？" warn="请选择要屏蔽的记录"><span>屏蔽</span></a></li>
+			
+		</ul>
+	</div>
+
+	<div layoutH="116">
+	<table class="list" width="100%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="5%">ID</th>
+				<th width="15%">用户</th>
+				<th width="10%" orderField="createDate" class="{$orderDirection}">时间</th>
+				<th width="30%">主题</th>
+				<th>内容</th>
+				<th width="5%">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="sid_reply" rel="{$val['id']}">
+				<td><input name="ids[]" value="{$val['id']}" type="checkbox"></td>
+				<td>{$val['id']}</td>
+				<td class="style-1">
+					<div><img alt="avatar" height="40" width="40" src="{eval echo image_url($val[avatar],'head');}" /></div>
+					<div class="nameid">
+					<span>{$val[username]}</span>
+					<p>ID{$val[uid]}</p>
+					<div>
+				</td>
+				<td><span>{$val[createDate]}</span></td>
+				<td class="style-2" style="word-break:break-all">
+					{$val[orignal_title]}			
+					{if $val[post_ispic]}<div>
+					<a href="{eval echo image_url($val[photoName], 'user', 'mdp');}" class="image_show">
+					<img alt="pic" width="100" height="100" src="{eval echo image_url($val[photoName], 'user', 'mdp');}" />
+					</a></div>{/if}
+				</td>
+				<td style="word-break:break-all; <!--{if $val['status']==3 || $val['status']==1}--> text-decoration:line-through;<!--{/if}-->">
+					{if $val['status']==3}<font style="color:red;font-weight:bold">屏蔽</font>{/if}
+						{if $val['status']==1}<font style="color:red;font-weight:bold">用户删除</font>{/if}
+						{$val[content]}
+				{if $val[isread]}
+				<div style=" text-align:right;font-size:16px; margin-right:10px;">
+				√
+				</div>
+				{/if}
+				</td>	
+				<td >
+				<a href="{eval echo site_url(array('ugcv3','reply','redirect', 'do', 'reply'));}/item_id/{$val['itemId']}/item_type/{$val['itemType']}/reply_id/{$val['id']}/rel/{eval echo build_rel(array('ugcv3','reply','redirect'));}" rel="{eval echo build_rel(array('ugcv3','reply','redirect'));}" target="dialog">回复</a>
+				</td>		
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+<script type="text/javascript">
+	$(function(){
+		$("a.image_show").fancybox();
+	});
+</script>
+</div>
+
+{elseif $do==='reply'}
+<div class="pageContent">
+	<form method="post" action="{$post_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent">
+		<input type="hidden" name="itemId" value="{$item_id}" />
+		<table border="0" cellspacing="8" cellpadding="8" width="100%" layoutH="60">
+			<tbody>
+				<tr>
+					<td width="120" valign="top" align="right"><label>回复内容</label></td>
+					<td align="left" valign="top" colspan="2"><textarea name="content" cols="50" rows="6" class="required">{$insert}</textarea></td>
+				</tr>
+				<tr>
+					<td align="right"><label>回复时间</label></td>
+					<td align="left" colspan="2">
+						<input type="text" name="created_txt" value="{$now}" readonly />
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label>选择马甲</label></td>
+					<td align="left" class="nowrap">
+					<input type="radio" name="uid" value="random" checked="checked"/>随机 
+					<input type="radio" name="uid" value="select" />指定:</td>
+					<td><input type="hidden" name="user.id" value="" />
+					<input type="text" name="user.name" size="20" value="" readonly class="required"/>
+					<a class="btnLook" href="{eval echo site_url(array('ugc','post','listvest'));}/aid/{$aid}/tmp/vest1" lookupGroup="user">查找带回</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">回复</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+{elseif $do==='advsearch'}
+<div class="pageContent">
+	<form method="post" action="{eval echo site_url(array('ugcv3','reply','index'));}" onsubmit="return navTabSearch(this);">
+		<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+				<label>内容：</label>
+				<input type="text" name="keywords" size="30" />
+			</div>
+			<div class="unit">
+				<label>指定时间段：</label>
+				<input type="text" name="begin" class="date textInput readonly" readonly="true" format="yyyy-MM-dd 00:00:00"/><a class="inputDateButton" href="javascript:;">选择</a>
+				<label style="text-align: center; width:10px;">~</label>
+				<input type="text" name="end" class="date textInput readonly" readonly="true" format="yyyy-MM-dd 23:59:59"/><a class="inputDateButton" href="javascript:;">选择</a>
+			</div>
+			
+			<div class="unit">
+				<label>指定用户：</label>
+				<input type="hidden" name="user.id" value=""/>
+				<input type="text" name="user.name" value="" readonly />
+				<a id="lookup_link" class="btnLook" href="{eval echo site_url(array('ugc','post','list_lookup'));}/type/user" lookupGroup="user" height="560">查找带回</a>
+			</div>
+			<div class="unit">
+				<label>审核状态：</label>
+				<select name="status">
+					<option value="-1">请选择</option>
+					<option value="0">正常</option>
+					<option value="3">屏蔽</option>
+					<option value="4">被用户删除</option>
+				</select>
+			</div>
+			<div class="unit">
+			
+				<label><input type="checkbox" name="isread" {if $isread}checked=checked{/if} value=1>只看未读 </label>
+				<label><input type="checkbox" name="isTaboo" {if $isTaboo}checked=checked{/if} value=1>含有敏感词</label>
+			
+			</div>
+		</div>		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检 索</button></div></div></li>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取 消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+{/if}

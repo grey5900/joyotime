@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	
+	
+</head>
+<body>
+	<div class="header">
+		<div class="nav_bar">
+			<div class="layout">
+				<div class="user_nav">
+					<div class="reg">
+						<a href="">登录</a> -
+						<a href="">注册</a>
+					</div>
+					<div class="sign_in">
+						<a href="" class="name">小妖妖</a>
+						<a href="" class="edit"></a>
+						<a href="" class="exit"></a>
+					</div>
+				</div>
+				<div class="more_nav">
+					<a id="clt" href="">加入收藏夹</a> -
+					<a href="http://in.chengdu.cn/download" target="_blank">下载IN成都客户端</a>
+					<span>|</span>
+				</div>
+				<div class="site-nav">
+					<a href="http://www.chengdu.cn" target="_blank">全搜索首页</a> -
+					<a href="http://news.chengdu.cn" target="_blank">新闻</a> -
+					<a href="http://tg.chengdu.cn" target="_blank">章鱼团</a> -
+					<a href="http://photo.chengdu.cn" target="_blank">成都图片网</a>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<div class="layout">
+				<div class="search_bar">
+					<button type="submit"><i class="icon-search"></i></button>
+					<input type="text" class="txt" placeholder="搜地点/点评/新闻/楼盘" />
+					
+				</div>
+				<div class="site_nav">
+					<a href="">IN成都</a>
+					<a href="">美食</a>
+					<a href="">观影</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main layout">
+		<div class="column user_banner">
+			<div class="cover">
+				<img src="t.jpg" alt="" />
+			</div>
+			<div class="avatar">
+				<img src="t.jpg" alt="" />
+			</div>
+			<div class="sub">
+				<div class="name">
+					<a href="" class="btn btn-success btn-vertical">个人设置</a>
+					<h2>陈老师 <a href="" class="qrcode"><i class="icon-qrcode"></i></a></h2>
+					<p>女人最大的骄傲不是她的长相有多出众，而是她的男人有多疼她女人 </p>
+					
+				</div>
+				<hr class="fadeOut" />
+			</div>
+			<div class="info">
+				
+				<div class="intro">
+					<p>性别：男</p>
+					<p>星座：金毛</p>
+					<p>年龄：24</p>
+					<p>有志青年：Lv4</p>
+				</div>
+				<div class="score">
+					<p>点评：<em>2456</em></p>
+					<p>被赞：<em>2456</em></p>
+					<p>地主：<em>2456</em></p>
+					<p>积分：<em>2456</em></p>
+				</div>
+				<div class="album">
+					<div class="box friends">
+						<ul>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+						</ul>
+						<div class="title">
+							253个好友
+							
+						</div>
+					</div>
+					<div class="box photo">
+						<ul>
+							<li class="large"><img src="t.jpg" alt="" /></li>
+						</ul>
+						<div class="title">
+							253个好友
+							
+						</div>
+					</div>
+					<div class="box location">
+						<ul>
+							<li class="small">
+								<img src="t.jpg" alt="" />
+							</li>
+							<li class="mini">
+								<img src="t.jpg" alt="" />
+							</li>
+							<li class="mini">
+								<img src="t.jpg" alt="" />
+							</li>
+						</ul>
+						<div class="title">
+							253个好友
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column user_lord">
+			<div class="module">
+				<div class="tit">
+					<h3>xxx的地主<i></i></h3>
+				</div>
+				<div class="con">
+					<div class="slide_menu">
+						<div class="inner">
+							<ul>
+								<li>
+									<a href="">好实惠中餐</a>
+									<p>2013-3-12 16:18</p>
+								</li>
+								<li>
+									<a href="">好实惠中餐</a>
+									<p>2013-3-12 16:18</p>
+								</li>
+							</ul>
+						</div>
+						<a href="" class="prev"><i class="icon-chevron-up icon-white"></i></a><a href="" class="next"><i class="icon-chevron-down icon-white"></i></a>
+					</div>
+					<div class="map"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+<div class="friendlink">
+<div class="container">
+<div id="hzbtn" class="btn ico">
+<b class="prev"></b>
+<b class="next"></b>
+</div>
+<span class="f14 fleft">合作伙伴：</span>
+<div id="hz" class="con"><a href="#">QQ网址导航</a><a href="#">音悦台MV</a><a href="#">5w导航</a><a href="#">91手机娱乐门户</a><a href="#">安卓软件园</a><a href="#">豆豆网</a> <a href="#">途牛旅游网</a><a href="#">1616网址导航</a><a href="#">265上网导航</a><a href="#">iPad导航</a><a href="#">图乐网</a><a href="#">金山网址导航</a><a href="#">乐华娱乐</a></div> 
+</div>
+</div>
+<div class="footer-nav">
+<a href="http://www.chengdu.cn/web/about/about.html">关于我们</a>-<a href="http://www.chengdu.cn/web/about/contact.html">联系方式</a>-<a href="http://www.chengdu.cn/web/about/ser.html">广告服务</a>-<a href="http://www.chengdu.cn/web/about/job.html">招聘信息</a>-<a href="http://www.chengdu.cn/web/sitemap/index.html">站点地图</a>-<a href="http://www.chengdu.cn/web/about/about.html">版权说明</a>
+</div>
+<div class="copyright">版权所有(C)2005—2013 <a href="http://www.chengdu.cn">成都全搜索网站</a>版权所有 All Rights Reserved<br>Copyright2013 www.chengdu.cn All Rights Reserved 成都市人民政府新闻办主管 成都传媒集团主办 版权所有 未经书面允许不得转载信息内容、建立镜像<br>国新网许可证编号：5112010001 蜀ICP备：07003170号 ICP许可证编号：川B2-20060070热线电话：028-82002022</div>
+<div class="network-monitor">
+<ul>
+<li><div class="monitor s1"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.cdnet110.com/Alertindex.aspx">成都市公安局网监处</a></li>
+<li><div class="monitor s2"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.miibeian.gov.cn/">网站备案信息登录</a></li>
+<li><div class="monitor s3"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://net.china.com.cn/index.htm">不良信息举报中心</a></li>
+<li><div class="monitor s4"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.cdnet.org.cn/">成都网络行业协会</a></li>
+<li><div class="monitor s5"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.cdnet110.com/Alertindex.aspx">网络 110 报警服务</a></li>
+<li><div class="monitor s6"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.ctws.com.cn/">无线互联网业自律同盟</a></li>
+</ul>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="js/ie6.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	$(function(){
+		$('.carousel-indicators li').bind('mouseenter',function(){
+			var $this = $(this);
+			$('.carousel').carousel($this.index());
+		});
+	})
+	var cData = ["BC9F78","A5CD84","C1CF8A"];
+	var forbid;
+	$('.user_tags li').each(function(i,n){
+		var num = Math.floor(Math.random()*3);
+		while(num == forbid){
+			num = Math.floor(Math.random()*3);
+		}
+		forbid = num;
+		n.style.backgroundColor = "#" + cData[num];
+	});
+</script>
+</body>
+</html>

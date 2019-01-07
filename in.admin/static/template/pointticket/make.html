@@ -1,0 +1,66 @@
+<!--{eval $page_id = 'pointticket_make';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <input type="hidden" name="brand_id" value="1" />
+        <div class="pageFormContent" layoutH="58">
+            <dl>
+            	<dt>面值：</dt>
+            	<dd>
+            	<table>
+            		<tr>
+            			<td>
+	            		<input type="radio" name="point" value="10" class="required" />10
+	            		</td><td>
+	            		<input type="radio" name="point" value="50" class="required" />50
+	            		</td><td>
+	            		<input type="radio" name="point" value="100" class="required" />100
+	            		</td><td>
+	            		<input type="radio" name="point" value="200" class="required" />200
+	            		</td><td>
+	            		<input type="radio" name="point" value="300" class="required" />300
+	            		</td><td>
+	            		<input type="radio" name="point" value="500" class="required" />500
+	            		</td><td>
+	            		<input type="radio" name="point" value="1000" class="required" />1000
+            			</td>
+            		</tr>
+            	</table>
+            	</dd>
+            </dl>
+            <dl>
+            	<dt>数量：</dt>
+            	<dd><input type="text" size="8" name="num" class="required" /></dd>
+            </dl>
+            <dl>
+            	<dt style="width:70px;">过期时间：</dt>
+            	<dd><input type="text" name="expire_date" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/></dd>
+            </dl>
+            <dl>
+            	<dt>绑定POI：</dt>
+            	<dd><!--{template block/lookup_place}--></dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>  

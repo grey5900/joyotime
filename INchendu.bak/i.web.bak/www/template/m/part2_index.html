@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>江湖悬赏令 PART 2</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.5.0.css"/>
+    <style type="text/css" media="screen">
+      /*  background color  */
+      .page {
+        background: #f6f6f6;
+      }
+      #content .unit .box {
+        background: #fff;
+      }
+      .touchslider-viewport {
+        background: #fff;
+      }
+      /* font color  */
+      .unit-title {
+        color: #de3c00;
+      }
+      #content .unit p {
+        color: #666;
+      }
+      #content .unit .mid h2 {
+        color: #41443f;
+      }
+      #content .unit .mid span {
+        color: #757575;
+      }
+      .texts .mid-tit h3 {
+        color: #000;
+      }
+      #content .statement p {
+        color: #666;
+      }
+      .texts .info-group {
+        color: #0c425c;
+        border-bottom: 1px dotted #e1d5c5;
+      }
+      .texts .inside strong {
+        color: #666;
+      }
+      .texts .inside p {
+
+      }
+      .bottons .botton span.title {
+      }
+      .bottons .botton span.intro {
+      }
+      .touchslider-item .touchslider-info {
+        color: #fff;
+      }
+      .multi-line dd span {
+        color: #666;
+      }
+      .multi-line dd {
+
+      }
+      .multi-line .viewall a {
+        color: #0190d6;
+      }
+      .multi-line .viewall a:hover {
+
+      }
+      .multi-line .address {
+        font-size: 12px;
+        color: #666;
+        padding-top: 5px;
+      }
+      .touchslider-item img {
+        height: 290px;
+      }
+      .touchslider-nav-item {
+
+      }
+      .feed, .user {
+        border-bottom: 0;
+      }
+      .feed a:hover, .user a:hover {
+        border-bottom: 0;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+      }
+      .scrolling span {
+          color: #5ba81c;
+      }
+      .scrolling li {
+        line-height: 20px;
+      }
+
+          /*-----------------*/
+      .lottery {
+        margin: 0 auto!important;
+        position: relative;
+        text-align: center;
+        width: 290px;
+        height: 200px;
+      }
+      .lottery .turnplate {
+        width: 290px;
+        height: 200px;
+      }
+      .turnplate li {
+        width: 72px;
+        height: 67px;
+        position: absolute;
+      }
+      .turnplate {
+        background-image: url("/img/m2/lot.gif");
+        background-repeat: no-repeat;
+        background-position: initial;
+      }
+      .lottery .pabtn {
+        position: absolute;
+        top: 76px;
+        left: 72px;
+      }
+      .lottery .pabtn a {
+        background: url("/img/m2/pabtn.gif") no-repeat;
+        display: block;
+        width: 146px;
+        height: 68px;
+        background-position: 0 0;
+      }
+      .lottery .pabtn a.disabled {
+        background: url("/img/m2/disbtn.gif") no-repeat
+      }
+      .turnplate .i0 {left: 0px; top: 10px;}
+      .turnplate .i1 {left: 72px; top: 10px;}
+      .turnplate .i2 {left: 145px; top: 10px;}
+      .turnplate .i3 {left: 217px; top: 10px;}
+      .turnplate .i4 {left: 217px; top: 76px;}
+      .turnplate .i5 {left: 217px; top: 143px;}
+      .turnplate .i6 {left: 145px; top: 143px;}
+      .turnplate .i7 {left: 73px; top: 143px;}
+      .turnplate .i8 {left: 0; top: 143px;}
+      .turnplate .i9 {left: 0; top: 76px;}
+      
+      
+      .runplate i {display: block; width: 72px; height: 67px; background: url("/img/m2/lot.gif") no-repeat -1000px -1000px;}
+      .retplate i {display: block; width: 72px; height: 67px; background: url("/img/m2/lot.gif") no-repeat -1000px -1000px;}
+      .runplate .i0 .run, .retplate .i0 .ret {background-position: 0 0;}
+      .runplate .i1 .run, .retplate .i1 .ret {background-position: -72px 0;}
+      .runplate .i2 .run, .retplate .i2 .ret {background-position: -145px 0;}
+      .runplate .i3 .run, .retplate .i3 .ret {background-position: -217px 0;}
+      .runplate .i4 .run, .retplate .i4 .ret {background-position: -217px -67px;}
+      .runplate .i5 .run, .retplate .i5 .ret {background-position: -217px -133px;}
+      .runplate .i6 .run, .retplate .i6 .ret {background-position: -145px -133px;}
+      .runplate .i7 .run, .retplate .i7 .ret {background-position: -73px -133px;}
+      .runplate .i8 .run, .retplate .i8 .ret {background-position: 0 -133px;}
+      .runplate .i9 .run, .retplate .i9 .ret {background-position: 0 -66px;}
+          /*-----------------*/
+    #alerter {
+      min-width: 200px;
+      max-width: 260px;
+      _width: 200px;
+      padding: 20px;
+      line-height: 20px;
+      overflow: hidden;
+      position: absolute;
+      z-index: 9999;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #212121;
+      border: 1px solid rgba(0,0,0,.2);
+      border: 1px solid #666 ~"\9";
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.3);
+      opacity: 0;
+    }
+
+    </style>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/{$event[id]}/"><img border="0" src="http://icd.sc/img/m/jh/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit bottons">
+            <a id="join-btn" class="botton bottonColor-orange">
+              <span class="title">报名参加</span>
+              <span class="title-m">即可抽奖</span>
+              <span class="intro">参加人数：<span id="joins_num">{$event[joins]}</span> 人</span>
+            </a>
+          </div>
+          <div class="unit">
+            <div class="mid">
+              <h2>【领取鉴赏】</h2>
+              <span>（每日三抽，直到抽中为止）</span>
+            </div>
+          </div>
+          
+          <div class="unit lottery">
+            <div class="turnplate">
+              <ul>
+                <li class="i0"><i></i></li>
+                <li class="i1"><i></i></li>
+                <li class="i2"><i></i></li>
+                <li class="i3"><i></i></li>
+                <li class="i4"><i></i></li>
+                <li class="i5"><i></i></li>
+                <li class="i6"><i></i></li>
+                <li class="i7"><i></i></li>
+                <li class="i8"><i></i></li>
+                <li class="i9"><i></i></li>
+                <li class="i10"><i></i></li>
+              </ul>
+            </div>
+            <div class="pabtn pa">
+              <a id="lottery-btn" class="png"></a>
+              <!-- <a href="#@" class="disabled"></a> -->
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="box">
+              <div class="inside">
+                <div class="scrolling">
+                <ul class="scrolling-list">
+                  <!--{loop $logs $k $v}-->
+                  <li>{$v}</li>
+                  <!--{/loop}-->
+                </ul>
+              </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动简介</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+50进20，晒攻略，加入好友拉票制；悬赏令一出，江湖风起云涌，蜀中各路耍客玩家惊现IN成都，秘籍神卷、各显神通。帮派势力初分，门中俊杰已成，玩乐江湖新......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+50进20，晒攻略，加入好友拉票制；悬赏令一出，江湖风起云涌，蜀中各路耍客玩家惊现IN成都，秘籍神卷、各显神通。帮派势力初分，门中俊杰已成，玩乐江湖新一代的俊秀们，你们大显身手、积累人气的时候到了！晒攻略、锻宝器，招兵买马、纵横天下！玩乐江湖风云争霸，且看谁能问鼎盟主宝座！ 
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>【参与方式】</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="mid-tit">
+                  <h3>50晋级达人通道</h3>
+                </div>
+                <div class="expand-simple">
+                  <p>
+1. 50位晋级第二阶段的达人用户，需在活动地点“IN成都敢耍爱泡地点册”，发布至少20.....
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+1. 50位晋级第二阶段的达人用户，需在活动地点“IN成都敢耍爱泡地点册”，发布至少20条“玩转成都攻略”地点册，即为成功完成任务，可争夺前20个高级达人名额；
+2. 邀请好友或用户，为自己的攻略加“赞”，最后评选出地点册“赞”数最多的前20名达人进入第三阶段终极pk赛，赢终极大奖；
+                    
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="box">
+              <div class="inside expand">
+                <div class="mid-tit">
+                  <h3>亲友团投票通道</h3>
+                </div>
+                <div class="expand-simple">
+                  <p>
+进入“IN成都敢耍爱泡地点册”地点页面，为您中意的点评攻略“赞”一个（可多选），选......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+进入“IN成都敢耍爱泡地点册”地点页面，为您中意的点评攻略“赞”一个（可多选），选出你心目中合格的成都玩乐帮主！还可乐享抽奖礼…每日三抽，直到抽中为止。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit">
+            <div class="unit-title">
+              <h3>活动发布攻略通道</h3>
+            </div>
+             <dl>
+                <dd>
+                  <a href="inplace://320389 ">
+                    <img src="http://icd.sc/img/m/jh/pl.png" width="300px">
+                  </a>
+                </dd>
+              </dl>
+          </div>
+          
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>地点册参考模板</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+50进20，晒攻略，加入好友拉票制；悬赏令一出，江湖风起云涌，蜀中各路耍客玩家惊现IN成都，秘籍神卷、各显神通。帮派势力初分，门中俊杰已成，玩乐江湖新......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+50进20，晒攻略，加入好友拉票制；悬赏令一出，江湖风起云涌，蜀中各路耍客玩家惊现IN成都，秘籍神卷、各显神通。帮派势力初分，门中俊杰已成，玩乐江湖新一代的俊秀们，你们大显身手、积累人气的时候到了！晒攻略、锻宝器，招兵买马、纵横天下！玩乐江湖风云争霸，且看谁能问鼎盟主宝座！ 
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit user-list">
+            <div class="unit-title">
+              <h3>前10强达人排行榜</h3>
+            </div>
+            <div class="box">
+              <a href="" class="arrow">
+                <ul class="user-list">
+                  <li><img src="http://icd.sc/img/m/jh/av1.png" /><i class="rk-1"></i></li>
+                  <li><img src="http://icd.sc/img/m/jh/av1.png" /><i class="rk-2"></i></li>
+                  <li><img src="http://icd.sc/img/m/jh/av1.png" /><i class="rk-3"></i></li>
+                  <li><img src="http://icd.sc/img/m/jh/av1.png" /></li>
+                  <li><img src="http://icd.sc/img/m/jh/av1.png" /></li>
+                </ul> 
+              </a>
+            </div>
+          </div>
+
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动规则</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+1.  攻略形式：纯文字点评，题目+形式自拟，每条攻略至少推荐3个以上地点+推荐理由；<br />
+2.  参与活动的用户，内容不能重复，不能恶意刷屏，一旦发现取消参与资格；......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    1.  攻略形式：纯文字点评，题目+形式自拟，每条攻略至少推荐3个以上地点+推荐理由；<br />
+2.  参与活动的用户，内容不能重复，不能恶意刷屏，一旦发现取消参与资格；<br />
+3.  进入第三阶段终极PK赛评判标准采用用户评分制：<br />
+总分=攻略总数x2分+每条攻略赞人数总和x1分，若某条攻略下无赞数，此条攻略将不纳入总分统计中（用户可自行采取拉票制行为，可邀请好友投票，也可以邀请新用户参与帮忙，全民参与投票活动）；<br />
+4.  活动地点“IN成都敢耍爱泡地点册”，鼓励其他非达人用户发布攻略，可按照活动要求分享您的宝典，如对活动有恶意破坏者，IN成都将屏蔽此条点评攻略。
+
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>奖项设置</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+1.  总评分排名在前20位达人用户将进入第三阶段终极PK，赢万元赏金；......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+1.  总评分排名在前20位达人用户将进入第三阶段终极PK，赢万元赏金；<br />
+2.  未晋级的30位用户，其中7位发布火锅攻略的用户将获得400元大风炊VIP储值卡…；
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="unit">
+            <h2>【活动三：店庆促销  现场更多惊喜等你来】</h2>
+          </div>
+
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong><br />
+1、第一阶段：100进50，已结束<br />
+2、第二阶段：50进20，晒攻略，加入好友拉票制；<br />
+3、第三阶段：终极PK，20进10，通过“专业评分+人气票选”综合评定出10位达人用户，每人将获得千元美食基金大奖以及最高荣誉权限；<br />
+4、第四阶段：10名达人用户利用千元基金完成终极任务，用户评选，竞争唯一特别奖：最新小米手机一部。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+          $("#join-btn").on("click", function(){
+            $.ajax({
+              type:'POST',
+              url:'/event/join_v2',
+              data:{event_id:'{$event_id}',uid:'{$uid}',lat:'{$lat}', lng:'{$lng}'},
+              dataType:'jsonp',
+              cache: false,
+              success:function(json){
+                if(json.code == -1) {
+                      window.mobile && window.mobile.login ? window.mobile.login() : alert('请先登录IN成都！');
+                }else if(json.code == 0){//报名成功
+                  alert('报名成功，下一步');
+                  var num = new Number($("#joins_num").html());
+                  num = num + 1;
+                  $("#joins_num").html(num);
+                }else if(json.code == 1){
+                  alert('真抱歉！报名的人太多了，请稍后再试试');
+                }else if(json.code == 2){
+                  alert('您已经报名参与了这个活动');
+                }else if(json.code == 3){
+                  alert('真抱歉！这个活动已停止报名了');
+                }else if(json.code == 4){
+                  alert('对不起！请您先登录');
+                }else{//系统错误了
+                  alert('真抱歉！这个活动已停止报名了');
+                }
+              }
+            });
+          });
+
+        <!--{if $cfg['gen_prize_list']}-->
+        //生成奖品清单
+               $.get('/event/put_prize/{$event_id}?'+new Date().getTime(), function(html){});
+        <!--{/if}-->
+        $(".expand").each(function() {
+          $(this).on("click", function() {
+            $(this).toggleClass("on");
+          });
+        });
+        $(".touchslider").touchSlider({
+          mouseTouch : true,
+        });
+        var settime;
+        $(".scrolling").hover(function() {
+          clearInterval(settime);
+        }, function() {
+          settime = setInterval(function() {
+            //wtf
+            var fst = $(".scrolling ul:first");
+            var height = fst.find("li:first").outerHeight();
+            fst.animate({
+              "marginTop" : -height + "px"
+            }, 600, function() {
+              fst.css({
+                marginTop : 0
+              }).find("li:first").appendTo(fst);
+            });
+          }, 3000);
+        }).trigger("mouseleave");
+
+      })
+    </script>
+    <script type="text/javascript">
+    // 抽獎
+    var ito, speed, total, step;
+    var btn_start = $('#lottery-btn'),
+      turnplate = $('.turnplate'),
+      is_running = false, 
+      max_loop = 5, // 循环总圈数
+      i = 0, // 奖品默认开始索引
+      all_awards = 10, // 奖品总数
+      prizeId = 0,
+    prizenum = 3;
+    
+    btn_start.on('click',function () {
+    
+      var arrPrize = {
+        0:'0',
+        4:'2', //飞利浦耳麦大礼包
+        5:'4', //七彩虹无线鼠标
+        6:'6', //招财猫
+        7:'0', //雨伞
+        8:'9', //鼠标垫
+        9:'1', //马克杯
+        10:'5' //IN成都T恤
+      };
+
+
+      $.ajax({
+      type:'POST',
+      url:'/event/lottery/{$event_id}?'+new Date().getTime(),
+      data:{uid:'{$uid}'},
+      dataType:'jsonp',
+      cache: false,
+      success:function(json){
+              if(json.code == -1){
+              window.mobile && window.mobile.login ? window.mobile.login() : alert('请先登录IN成都！');
+              }else if(json.code == 0){//获奖了
+        prizeId = json.msg.prizeId;
+        prizenum = arrPrize[prizeId];
+          if (is_running) {
+            return false;
+          } else {
+            // 初始化设置
+            step = 0; // 记录已跑的格数
+            speed = 80; // 初始速度
+            is_running = true;
+            if(total){
+              step = total - 50;
+            }
+            total = parseInt(prizenum) + max_loop * all_awards; // 总共格数加上一个随机数
+            turnplate.css('background', 'url(/img/m2/wlot.gif) no-repeat');
+            turnplate.removeClass('retplate').addClass('runplate');
+            turnplate.find('i').removeClass();
+            $(".i"+i).find('i').addClass('run');
+            btn_start.addClass('disabled');
+            ito = setTimeout(rolling, 100);
+          }
+        alert('恭喜您获得【' + json.msg.prizeName + '】。')
+              }else if(json.code == 1){//未获奖，还能抽奖
+                  if (json.msg != 3) { //不满3次
+            prizenum = 7;
+                  } else {  //满3次
+            prizenum = 3;
+                  }
+            if (is_running) {
+              return false;
+            } else {
+              // 初始化设置
+              step = 0; // 记录已跑的格数
+              speed = 80; // 初始速度
+              is_running = true;
+              if(total){
+                step = total - 50;
+              }
+              total = parseInt(prizenum) + max_loop * all_awards; // 总共格数加上一个随机数
+              turnplate.css('background', 'url(/img/m2/wlot.gif) no-repeat');
+              turnplate.removeClass('retplate').addClass('runplate');
+              turnplate.find('i').removeClass();
+              $(".i"+i).find('i').addClass('run');
+              btn_start.addClass('disabled');
+              ito = setTimeout(rolling, 100);
+            }
+              }else if(json.code == 2){//未关注指定品牌
+                alert('您还不是成都A世界电脑城的会员，请成为会员后再参与抽奖');
+              }else if(json.code == 5){//已得过奖了
+                alert('您已经获得过奖品了,请把机会留给其他人吧');
+              }else if(json.code == 6){//抽奖已结束
+                alert('抽奖已结束');
+              }else if(json.code == 7){//未获奖，不能抽奖了
+                alert('每天只能抽3次哦，没关系，明天继续来挑战吧~');
+              }else if(json.code == 9){//没报名
+              alert('您还没有报名！请先报名');
+              }
+
+      
+          }
+        });
+
+});
+    
+    function rolling () {
+      if ( step >= total ) {
+        // 停止
+        clearTimeout(ito);
+        is_running = false;
+        turnplate.removeClass('runplate').addClass('retplate');
+        $(".i"+i).find('i').addClass('ret');
+        btn_start.removeClass('disabled');
+        return false;
+      }
+      i++;
+      step++;
+      if ( i >= 10 ) i = 0;
+      if ( step < all_awards ) speed -= 5; // 第一圈加速
+      if ( step >= (total - all_awards) ) speed += 15; // 最后一圈减速
+      if ( speed <= 10 ) speed = 10; // 中间稳住
+      
+      turnplate.find('i').removeClass();
+      $(".i"+i).find('i').addClass('run');
+      ito = setTimeout(rolling, speed);
+    }
+
+        function alert( message ){
+          var el = $("#alerter");
+          //add dom
+          if (!el[0]) {
+              var el = $("<div id=\"alerter\"></div>");
+              $("body").append(el);
+          }
+          el.html(message);
+              var sTop = $(document).scrollTop(),
+                sHeight = $(window).height(),
+                sWidth = $(window).width(),
+                elHeight = el.outerHeight(),
+                elWidth = el.outerWidth(),
+                elTop = (sHeight - elHeight) / 2 + sTop,
+                elLeft = (sWidth - elWidth) / 2;
+              el.css({
+                  top: elTop + 10,
+                  left: elLeft,
+                  opacity: '0'
+              })
+              .animate({
+                  opacity: '1',
+                  top: elTop,
+                  queue: true
+              }, 200)
+              .delay('3000')
+              .animate({
+                  opacity: '0',
+                  top: elTop + 10,
+                  queue: true
+              }, 200,
+              function() {
+                el.remove();
+              });
+        }
+//用户TOP
+		$(function(){
+			$.ajax({
+				type:'get',
+				url:'/event/top_user_praise/{$event_id}/10/1',
+				dataType:'json',
+				success:function(json){
+					var ul = $('.user-list');
+					if(json.length > 0){
+						for(var i=0;i<json.length;i++){
+							var r = json[i];
+							var li = $('<li></li>').appendTo(ul);
+							var avatar = $('<img />').attr({src:r.avatar}).appendTo(li);
+							var name = $('<i></i>').append(typeof r.nickname != 'undefined' && r.nickname != '' ? r.nickname : r.username).appendTo(li);
+							if(i <= 2){
+								name.addClass('rk-'+(i+1));
+							}
+						}
+					}
+				}
+			});
+		});
+    </script>
+
+  </body>
+</html>

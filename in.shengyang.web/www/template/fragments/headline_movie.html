@@ -1,0 +1,10 @@
+<!-- headline_movie -->
+<div class="headline">
+						<ul class="movie-list">
+						{loop $hot[headline_movie][data] $k $d}
+						{if $k>5} {eval break;} {/if}
+							<li><div class="thumb"><a href="{$d['link']}" target="_blank"><img src="{$d['image']}" height=145 width=115 alt="" /><em class="t">{$d['title']}</em></a></div></li>
+						{/loop}
+						</ul>
+					</div>
+<!-- headline_movie -->

@@ -1,0 +1,66 @@
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="type" value="{$type}" />
+    <input type="hidden" name="iaafoId" value="{$iaafoId}" />
+    <input type="hidden" name="itemAwardActionId" value="{$itemAwardActionId}" />
+</form>
+<div class="pageHeader" id="item_{$page_id}">
+    <form rel="pagerForm" method="post" name="ial_main_form" id="ial_main_form" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    
+                    <input type="text" name="date" value="{$date}" class='date' />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                    
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+	
+    <table class="list" width="100%" layoutH="50">
+    	<thead>
+    		<th width="10%">道具</th>
+    		<th width="10%">使用次数</th>
+    		<th width="10%">道具商城售出</th>
+    		<th width="10%">首页礼包获得</th>
+    		<th width="10%">刮刮彩爆出</th>
+    		<th width="10%">抢地主失败</th>
+    		<th width="10%">UGC产生（包括YY、点评、回复、分享爆出的）</th>
+    		<th width="10%">扫描积分票爆出</th>
+    	</thead>
+    	<tbody>
+    		{loop $items $k $row}
+    		<tr target="id" rel="{$row['id']}">
+    			<td align="left">{$row['name']}</td>
+    			<td align="left">{$row['use_count']}</td>
+    			<td align="left">{$row['buy_count']}</td>
+    			<td align="left">{echo intval($row['actions_count'][6]);}</td>
+    			<td align="left"></td>
+    			<td align="left">{echo intval($row['actions_count'][1]);}</td>
+    			<td align="left">{echo intval($row['actions_count'][3]+$row['actions_count'][4]+$row['actions_count'][5]);}</td>
+    			<td align="left">{echo intval($row['actions_count'][2]);}</td>
+    		</tr>
+    		{/loop}
+    		
+    	</tbody>
+    </table>
+    
+</div>
+<script>
+$(function(){
+
+	$("#ial_main_form select[name=itemAwardActionId]").change(function(){
+		//var url = $(this).attr("url") + $(this).val() ;
+		$("input[type=hidden][name=itemAwardActionId]").val($(this).val());
+		navTabSearch($("#ial_main_form"));
+    });
+});
+</script>

@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="/static/skin/zTreeStyle/zTreeStyle.css" type="text/css">
+<script type="text/javascript" src="/static/js/jquery.ztree.all-3.1.js"></script>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" maxable="false" width="500" height="300" href="{eval echo site_url(array('recommend', 'add_fragment', 'do', 'category'))}" rel="{eval echo build_rel(array('recommend', 'add', 'do', 'category'))}" target="dialog" title="新建碎片分类" rel=""><span>创建碎片分类</span></a>
+            </li>
+        </ul>
+    </div>
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <ul id="fragment_ztree" class="ztree"></ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function() {
+        var setting = {
+            edit : {
+                enable : true,
+                removeTitle : "删除碎片",
+                renameTitle : "编辑碎片",
+                drag : {
+                    isCopy : false,
+                    isMove : false
+                }
+            },
+            view : {
+                addHoverDom : addHoverDom,
+                removeHoverDom : removeHoverDom
+            },
+            callback : {
+                beforeEditName : beforeEditName,
+                beforeRemove : beforeRemove
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+        
+        var newCount = 1;
+        function addHoverDom(treeId, treeNode) {
+            if(treeNode.getParentNode() != null) return;
+            var sObj = $("#" + treeNode.tId + "_span");
+            if (treeNode.editNameFlag || $("#addBtn_"+treeNode.id).length>0) return;
+            var addStr = "<button type='button' class='add' id='addBtn_" + treeNode.id
+                + "' title='添加碎片' onfocus='this.blur();'></button>";
+            sObj.append(addStr);
+            var btn = $("#addBtn_"+treeNode.id);
+            if (btn) btn.bind("click", function(){
+                $.pdialog.open("{eval echo site_url(array('recommend', 'add_fragment', 'parent_id', ''))}/" + treeNode.id, "{eval echo build_rel(array('recommend', 'add_fragment'))}", "添加碎片", {width:"500", height:"400", maxable:false});
+                return false;
+            });
+        }
+        
+        function removeHoverDom(treeId, treeNode) {
+            $("#addBtn_"+treeNode.id).unbind().remove();
+        }
+        
+        function beforeEditName(treeId, treeNode) {
+            // 弹出窗口修改
+            $.pdialog.open("{eval echo site_url(array('recommend', 'edit_fragment', 'id'))}/" + treeNode.id + (treeNode.pId==null?"":("/parent_id/" + treeNode.pId)), "{eval echo build_rel(array('recommend', 'edit_fragment'))}", "修改碎片", {width:"500", height:"400", maxable:false});
+            return false;
+        }
+        
+        function beforeRemove(treeId, treeNode) {
+            // 提示用户是否真的删除
+            alertMsg.confirm("您确定要删除碎片【" + treeNode.name + "】么？", {
+                okCall:function(){
+                    if(treeNode.children) {
+                        alertMsg.error("节点为空才能删除，请先删除节点下数据");
+                        return false;
+                    }
+                    ajaxTodo("{eval echo site_url(array('recommend', 'del_fragment', 'id'))}/" + treeNode.id);
+                }
+            });
+            
+            return false;
+        }
+        
+        var zTree = $.fn.zTree.init($("#fragment_ztree"), setting, {eval echo json_encode($nodes)});
+    });
+</script>

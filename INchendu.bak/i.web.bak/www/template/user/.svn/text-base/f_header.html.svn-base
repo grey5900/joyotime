@@ -1,0 +1,19 @@
+<div id="mini-header">
+	<dl class="info">
+		<dt><a href="/user/{$info[id]}/" class="avatar middle"><i></i><img border="0" src="{$info[avatar]}" /></a></dt>
+		<dd>
+			<h1><a href="/user/{$info[id]}/">{$nickname}</a></h1>
+			<div class="state">{$info[description]}</div>
+		</dd>
+	</dl>
+	{if $auth[id] != $info[id]}
+	<div class="actions">
+		{if $has_followed}
+			<a href="javascript:void(0)" data-id="{$info[id]}" data-action="uf" data-loading-text="……" class="btn followed">取消关注</a>
+		{else}
+			<a href="javascript:void(0)" data-id="{$info[id]}" data-action="f" data-loading-text="……" class="btn btn-primary follow">加关注</a>
+		{/if}
+	</div>
+	{/if}
+
+</div>

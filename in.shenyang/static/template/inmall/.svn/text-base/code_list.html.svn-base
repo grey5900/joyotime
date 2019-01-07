@@ -1,0 +1,50 @@
+{eval $page_rel='inmall_code_list';}
+<div class="pageHeader" id="order_{$page_rel}">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                        <option value="product_id"<!--{if $type == 'product_id'}--> selected<!--{/if}-->>商品ID</option>
+                        <option value="product_name"<!--{if $type == 'product_name'}--> selected<!--{/if}-->>商品名</option>
+                        <option value="order_id"<!--{if $type == 'order_id'}--> selected<!--{/if}-->>订单号</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="order_paid">
+    <table class="table" width="100%" layoutH="138" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="15%">兑换时间</th>
+                <th width="20%">兑换码</th>
+                <th width="35%">商品</th>
+                <th width="15%">订单号</th>
+                <th width="15%">购买人</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['exchangeDate']}</td>
+                <td>{$row['code']}</td>
+                <td>{$row['productName']}</td>
+                <td>{$row['orderId']} <a target="navTab" title="订单详情" href="/inmall/order_detail/id/{$row['orderId']}">详情</a></td>
+				<td>({$row['uid']}){$row['nickname']} {$row['cellphoneNo']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

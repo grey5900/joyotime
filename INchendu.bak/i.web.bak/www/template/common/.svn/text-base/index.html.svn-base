@@ -1,0 +1,52 @@
+<!--{if $form === 'reply'}-->
+<input type="hidden" name="reply_uid" value="" id="reply_uid" />
+<input type="hidden" name="reply_to" value="" id="reply_to" />
+<input type="hidden" name="reply_id" value="" id="reply_id"/>
+<div class="modal-header">
+	<a class="close" data-dismiss="modal" >&times; </a>
+	<h3>回复</h3>
+</div>
+<div class="modal-body">
+	<div class="message_input"><textarea name="message" rows="4" cols="80" maxlength="140"></textarea></div>
+</div>
+<div class="modal-footer">
+	<input type="submit" value="发布" class="btn" />
+</div>
+<!--{elseif $form === 'share'}-->
+<input type="hidden" name="share_id" value="" id="share_id"/>
+<div class="modal-header">
+	<a class="close" data-dismiss="modal" >&times; </a>
+	<h3>分享给我的好友 </h3>
+</div>
+<div class="modal-body">
+	<div class="message_input"><textarea name="message" rows="4" cols="80" placeholder="分享理由" maxlength="140"></textarea> </div>
+</div>
+<div class="modal-footer">
+	<input type="submit" value="分享" class="btn" /></div>
+<!--{else}-->
+<div class="modal-header">
+	<a class="close" data-dismiss="modal" >&times; </a>
+	<h3>登录后才能继续操作</h3>
+</div>
+<div class="modal-body">
+	<div class="control-group">
+		<div class="controls"><input type="text" name="username" value="" id="username" placeholder="用户名或邮箱" /></div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<input type="password" name="password" value="" id="password" placeholder="密码" size="10" />
+			<!-- 
+			<input type="text" name="verifycode" id="verifycode" placeholder="验证码" size="10" />
+			<p class="help-inline">
+				<img id="i_valicode" src="/captcha" style="cursor:pointer;" alt="验证码" title="看不清？点击图片更换一下" onclick="$(this).attr('src','/captcha');" />
+			</p>
+			-->
+		</div>
+	</div>
+	<div class="form-actions">
+		<div class="tips"><a href="{$api_uri}oauth/login?stage_code=0&is_redirect=1">新浪微博登录</a> | <a href="{$api_uri}oauth/login?stage_code=1&is_redirect=1">腾讯微博登录</a><br /><a href="/signup/">注册</a> | <a href="/reset_pwd/">找回密码？</a></div>
+		<label class="checkbox inline"><input type="checkbox" name="remberpassword" value="1" id="remberpassword"/> 记住我 </label>
+		<input type="submit" class="btn btn-primary btn-large" data-loading-text="　……　" value="　登录　" /> 
+	</div>
+</div>
+<!--{/if}-->

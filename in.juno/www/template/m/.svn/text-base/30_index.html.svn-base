@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta content="zh_cn" name="language">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+		<title>川菜好吃嘴集结令</title>
+		<link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+		<link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.css"/>
+		<style type="text/css" media="screen">
+			.unit-title {
+				color: #5ba81c;
+			}
+
+			.page {
+			  background: #f5f5f5;
+			}
+			.grid {
+			 
+			}
+			
+			#content .unit .box {
+			  background: #fff;
+			 }
+			.texts .info-group {
+			  color: #0c425c;
+			  border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+			
+			}
+			.texts .inside p {
+			
+			}
+			.bottons .botton span.title {
+			  color: #a1400b;
+			}
+			.bottons .botton span.intro {
+			  color: #a1400b;
+			}
+			.touchslider-item .touchslider-info {
+			  color: #fff;
+			}
+			.multi-line dd span {
+				color: #666;
+			}
+			.multi-line .viewall a {
+				
+			}
+			.multi-line .viewall a:hover{
+			  
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #aaa;
+				padding-top: 5px;
+			}
+			.touchslider-item img { 
+			 	height: 290px;
+			 }
+
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<div id="content">
+				<div class="grid">
+					<div class="img-unit">
+						<a href="/event/index/30/"><img border="0" src="http://icd.sc/img/m/30/header.jpg" width="100%" border="0" /></a>
+					</div>
+					<div class="unit bottons">
+						<a class="botton bottonColor-orange" href="inplace://307271">
+							<span class="title">立即点评</span>
+							<span class="intro">参加人数：<span id="joins_num">{$feed_count}</span> 人</span>
+						</a>
+					</div>
+					<div class="unit texts">
+						<div class="unit-title"><h3>活动说明</h3></div>
+						<div class="box">
+							<div class="inside expand">
+								<div class="expand-simple">
+									<p>“川菜试吃军团成员召集”：【万里号酒楼】这个大船绝对是成都的地标，独特的地理位置、舒适的环境、美味可口的...</p>
+								</div>
+								<div class="expand-more">
+									<p>
+										“川菜试吃军团成员召集”：【万里号酒楼】这个大船绝对是成都的地标，独特的地理位置、舒适的环境、美味可口的川菜。试想一下，在“船上”吹着微风、看着窗外水波摆动，在这种环境下面就餐，何尝不是一种惬意的享受？现在，Inner们的福利来啦，只要你在活动期间（10月11日-10月18日）在“万里号酒楼”的POI地址下推荐你钟爱的川菜名品，就有机会成为我们“大船”美食先锋的一员。赶紧来参加活动吧，IN成都准备带你登船咯~~~~~
+									</p>
+								</div>
+								<div class="expand-arrow">
+									点击查看全部内容
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="unit texts">
+						<div class="unit-title"><h3>活动时间</h3></div>
+						<div class="box">
+							<div class="inside">
+								<p>10月11日-10月18日</p>
+							</div>
+						</div>
+					</div>
+					<div class="unit texts">
+						<div class="unit-title"><h3>参与方式</h3></div>
+						<div class="box">
+							<div class="inside">
+								<p>
+									1.在“万里号酒楼”写点评，推荐你钟爱的川菜名品，就有机会加入我们的万里号试吃军团！<br />
+									2.线下试吃活动时间：2012年10月20日中午12:00
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="unit texts">
+						<div class="unit-title"><h3>活动奖励</h3></div>
+						<div class="box">
+							<div class="inside">
+								<p>选出8位用户成为美食达人先锋队，前往品鉴万里号饭店的浓郁川香盛宴 </p>
+							</div>
+						</div>
+					</div>
+					<div class="unit multi-line">
+						<div class="unit-title">
+							<h3>活动地点</h3>
+						</div>
+						<div class="box">
+							<dl>
+								<dd>
+									<a href="inplace://307271" class="arrow">
+										<span>万里号酒楼</span>
+										<div class="address">
+											商家地址：浆洗街29号万里号大饭店<br />
+											商家电话：028-85555628
+
+										</div>
+									</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="unit scrolls">
+						<div class="unit-title"><h3>菜品推荐</h3></div>
+						<div id="showPic" class="touchslider">
+							<div class="touchslider-viewport" >
+								<div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/1.jpg" />
+										<span class="touchslider-info">板栗烧土鸡</span>
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/2.jpg" />
+										<span class="touchslider-info">风干兔</span>
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/3.jpg" />
+										<span class="touchslider-info">贵妃蜜藕</span>
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/4.jpg" />
+										<span class="touchslider-info">酱肉粗粮包</span>
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/5.jpg" />
+										<span class="touchslider-info">酱鸭拼鸭智舌</span>
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/6.jpg" />
+										<span class="touchslider-info">美味香芹拱嘴</span>
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/7.jpg" />
+										<span class="touchslider-info">三鲜烩鱼饺</span>
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/8.jpg" />
+										<span class="touchslider-info">水煮口口脆</span>
+									</div>
+									<div class="touchslider-item">
+										<img src="http://icd.sc/img/m/30/9.jpg" />
+										<span class="touchslider-info">鲜炒豇豆</span>
+									</div>
+									
+								</div>
+							</div>
+							<div class="touchslider-nav">
+								<span class="touchslider-nav-item touchslider-nav-item-current"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+								<span class="touchslider-nav-item"></span>
+							</div>
+						</div>
+					</div>
+					<!--{if isset($feed) && !empty($feed)}-->
+					<div class="unit card">
+						<div class="unit-title"><h3>活动动态</h3></div>
+						<div class="box">
+							<div class="feeds">
+								<div class="feed">
+									<a href="/event/feeds/{$event_id}/{$uid}/0/1">
+										<div class="arrow">
+											<div class="icon">
+												<img src="{$feed[avatar]}"  width="40" height="40"/>
+											</div>
+											<div class="detail">
+												<h4>{$feed[uname]}</h4>
+												<!--{if $feed[type]==1}-->
+												<div class="action">在</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="action">签到</div>
+												<!--{elseif $feed[type]==2}-->
+												<div class="action">点评</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="start"><!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}--></div>
+												<div class="info">{$feed[content]}</div>
+												<!--{elseif $feed[type]==3}-->
+												<div class="action">在</div>
+												<div class="place">{$feed[placename]}</div>
+												<div class="action">上传照片</div>
+												<div class="info">{$feed[content]}</div>
+												<div class="photo"><img src="{$feed[photoName]}" width="200" /></div>
+												<!--{/if}-->
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--{/if}-->
+					
+					<!--{if isset($joines) && !empty($joines)}-->
+					<div class="unit user-list">
+						<div class="unit-title"><h3>您有{$count_joines}位好友参加了该活动</h3></div>
+						<div class="box">
+							<a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+								<ul class="user-list">
+									<!--{loop $joines $uid $u}-->
+									<li><img src="{$u[avatar]}" /></li>
+									<!--{/loop}-->
+								</ul>
+							</a>
+						</div>
+					</div>
+					<!--{/if}-->
+					<div class="unit texts">
+						<div class="unit-title"><h3>商家介绍</h3></div>
+						<div class="box">
+							<div class="inside expand">
+								<div class="expand-simple">
+									<p>万里号邮轮大饭店占据西南的标志性建筑——万里号邮轮绝佳楼层五至八楼，是一间以邮轮文化为主题的特色饭店。饭店拥有近5000平方米的经营场地, 五楼、六楼品牌特色餐饮……</p>
+								</div>
+								<div class="expand-more">
+									<p>
+										万里号邮轮大饭店占据西南的标志性建筑——万里号邮轮绝佳楼层五至八楼，是一间以邮轮文化为主题的特色饭店。饭店拥有近5000平方米的经营场地, 五楼、六楼品牌特色餐饮、粤式早晚茶；七楼高尚会所（茶艺、咖啡、浴足）；八楼空中露台式花园观景茶楼、露天式烧烤休闲吧。交通便利，环境优雅，以传统工艺制作，各种菜品都是品质保证。
+									</p>
+								</div>
+								<div class="expand-arrow">
+									点击查看全部内容
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="unit texts">
+						<div class="statement">
+							<p>
+								<strong>特别说明：</strong>
+								<br />
+								1. 试吃团选取标准：10月18日从参与点评的用户中，抽取创优了优质有效的点评用户，并官方公布，私信通知；<br />
+								2. 如中奖用户因个人原因未能参与线下活动，机会将留给其他用户；<br />
+								3. 本次活动由“万里号大饭店”特别赞助。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<p>IN.CHENGDU.CN</p>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+		<script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				})
+				$(".touchslider").touchSlider({
+					mouseTouch : true,
+				});
+			})
+		</script>
+
+
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<div class="pull-left">
+	<h3>等待审核</h3><a href="#" class="modal-what">什么是扩展信息</a>
+</div>
+<div id="whatMoal" class="modal hide">
+</div>
+<script type="text/javascript">
+  $().ready(function() {
+    $("#whatMoal").jqm({
+      ajax: '/static/template/profile/modal.html' , 
+      trigger: 'a.modal-what'
+      });
+      // $('a.modal-what').click( function(e) {
+        // e.preventDefault();
+        // $('.jqmOverlay').remove();
+     // });
+  });
+</script>

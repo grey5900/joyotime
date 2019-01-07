@@ -1,0 +1,78 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+.section-content {
+	.clearfix ();
+	background: @grayLighter;
+}
+.wall {
+	display: block;
+	width: 960px;
+	.clearfix ();
+	ul {
+		background: @black;
+		.clearfix ();
+		li {
+			//position: absolute;
+			float: left;
+			border: 1px solid @black;
+			border-width: 0 1px 1px 0;
+			a {
+				display: block;
+				position: relative;
+				float: left;
+				overflow: hidden;
+				text-align: center;
+				.link {
+					position: absolute;
+					left: 0px;
+					right: 0px;
+					//bottom: -30px;
+					bottom: 0px;
+					height: 30px;
+					line-height: 30px;
+					width: 100%;
+					overflow: hidden;
+					color: @whiteText;
+					background-color: rgba(0,0,0,.7);
+					//.transition(all linear 0.2s);
+				}
+				&:hover {
+					.link {
+						//bottom: 0px;
+						display: block;
+					}
+				}
+			}
+			img {
+				max-width: none;
+			}
+			&.i1 {
+				width: 191px;
+				height: 191px;
+				line-height: 191px;
+				img {
+					height: 191px;
+					width: 191px;
+				}
+			}
+			&.i2 {
+				width: 191px;
+				height: 383px;
+				line-height: 383px;
+				img {
+					width: 191px;
+					height: 383px;
+				}
+			}
+			&.i3 {
+				width: 383px;
+				height: 191px;
+				line-height: 191px;
+				img {
+					width: 383px;
+					height: 191px;
+				}
+			}
+		}
+	}
+}

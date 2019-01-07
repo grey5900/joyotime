@@ -1,0 +1,70 @@
+{eval $page_rel='product_waiting';}
+<div class="pageHeader" id="inmall_{$page_rel}">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="search_type">
+                        <option value="0">商品名</option>
+                        <option value="1"<!--{if $search_type}--> selected<!--{/if}-->>商品ID</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="navTab" title="新建商品" rel="{eval echo build_rel(array('inmall', 'product_add'))}" href="{eval echo site_url(array('inmall', 'product_add'))}"><span>创建</span></a>
+            </li>
+            <li>
+                <a class="edit" target="navTab" title="编辑商品" rel="{eval echo build_rel(array('inmall', 'product_add'))}" warn="请选择要编辑的商品" href="{eval echo site_url(array('inmall', 'product_add', 'id'))}/<!--{{id}}-->"><span>编辑</span></a>
+            </li>
+            <li>
+                <a class="delete" target="ajaxTodo" title="您确定要删除商品么？" rel="{eval echo build_rel(array('inmall', 'product_del'))}" warn="请选择要删除的商品" href="{eval echo site_url(array('inmall', 'product_del', 'id'))}/<!--{{id}}-->"><span>删除</span></a>
+            </li>
+            <li>
+                <a class="icon" target="ajaxTodo" title="您确定要上架该商品么？" href="{eval echo site_url(array('inmall', 'onsale', 'id'))}/<!--{{id}}-->" warn="请选择您要上架的商品"><span>上架</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="30%">商品名</th>
+                <th width="9%">价格(积分)</th>
+                <th width="15%">库存(实际/销售)</th>
+                <th width="13%">开始时间</th>
+                <th width="13%">结束时间</th>
+                <th width="15%">电子码</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}" id="{$page_rel}_{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['name']}</td>
+                <td>{$row['price']}</td>
+                <td>{$row['stock']}/{$row['quantity']}</td>
+                <td>{echo dt2($row['startDate'], 'Y-m-d H:i')}</td>
+                <td>{echo dt2($row['endDate'], 'Y-m-d H:i')}</td>
+                <td>{echo $row['tradeCodeType']?'导入':'生成'}({echo dt2($row['expireDate'], 'Y-m-d')})</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+

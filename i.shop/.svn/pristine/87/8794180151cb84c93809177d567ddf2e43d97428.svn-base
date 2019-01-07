@@ -1,0 +1,139 @@
+<!--{template web/header}-->
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox">
+			<div class="main">
+				<div class="inner main-conter">
+					<div class="title">
+						<div class="pull-left"><h3>已通过</h3></div>
+						<form method="get" action="{$current_url}" onsubmit="return divSearch();">
+						<div class="pull-right">
+						    <input type="text" class="input-medium search-query" id="keyword" value="{$keyword}">
+						    <button type="submit" class="btn btn-primary btn-small">搜索</button>
+						</div>
+						</form>
+					</div>
+					<div class="from-detail">
+						<div class="hd">
+							<div class="span7"><div class="cutoff"><span>优惠卷</span></div></div>
+							<div class="span2"><span>通过时间</span></div>
+						</div>
+						<div class="bd">
+							<!--{if empty($list)}-->
+							<h3>未找到你需要的结果</h3>
+							<!--{else}-->
+							<dl>
+								<!--{loop $list $k $v}-->
+								<dd>
+									<div class="span7">
+										<div class="event">
+											<div class="icon">
+												<a href="/prefer/preview/{$k}" class="jqView"><img src="{$v[image]}"/></a>
+											</div>
+											<div class="details">
+												<h3><a href="/prefer/preview/{$k}" class="jqView">{$v[title]}</a></h3>
+												<div class="timeing"><span><i class="icon-time"></i>有效期至 {$v[s_end]}</span><!--{if $v[ended]}--><i><img src="/static/img/expired.png" /></i><!--{/if}--></div>
+												<div class="info">{$v[detail]}</div>
+												<div class="others"><span></span><a class="pull-right jqView" href="/prefer/view_place/{$k}/1">{$v[p_count]}适用店</a></div>
+											</div>
+										</div>
+									</div>
+									<div class="span2">
+										<div class="preview">
+											<span>{$v[createDate]}</span>
+											<div class="info">
+												<p><em>{$v[gotCount]}</em>人获得</p>
+												<p><em>{$v[usedCount]}</em>次使用</p>
+											</div>
+											<div class="setting">
+												<!--{if $v[isSend] == 1}-->
+												<span class="btn btn-large">已发布</span>
+												<!--{elseif $v[status] != -1 && $v[isSend] == 0}-->
+												<div id="action_{$v[id]}"><a href="/prefer/edit/{$v[id]}/1">编辑</a> |<a href="javascript:void(0);" onclick="del_publish('{$v[id]}');">删除</a></div>
+												<a id="sendclick" class="btn btn-primary"  href="javascript:void(0)" onclick="send_msg('{$v[id]}',$(this));">发布优惠</a>
+												<!--{elseif $v[status] == -1 && $v[isSend] != 0}-->
+												已过期
+												<!--{/if}-->
+											</div>
+										</div>
+									</div>
+								</dd>
+								<!--{/loop}-->
+							</dl>
+							{$paginate}
+							<!--{/if}-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--{template sider}-->
+		</div>
+	</div>
+</div>
+ <div id="view_M" class="modal-preview hide">
+  </div>
+<script type="text/javascript">
+	$(function(){
+		$("#view_M").jqm({ajax: '@href', modal: true, trigger: 'a.jqView', overlay: 0});
+	});
+
+	function divSearch() {
+		var url = "/prefer/publish/";
+		var key = $("#keyword").val();
+		if (key != "")
+			url += key;
+		window.location = url;
+		return false;
+	}
+  function enableButton(flag) {
+      $("#sendclick").attr("disabled", flag? "" : "disabled");
+  }
+  $(document).ready(
+    function () {
+        $("#sendclick").click(function(){
+          enableButton( false );
+          $(this).text("......").removeClass("btn-primary").addClass("btn-large");
+        });
+     }
+  );
+	function send_msg(id, dom) {
+		var url = "/prefer/send_publish";
+		$.ajax({
+			type:'POST',
+			url:url,
+			data:{'id':id},
+			dataType:'json',
+			success:function(json){
+				if (json.code == 0){
+			//	  window.location = '{$current_url}';
+				  var p = $(dom).parent();
+				  $(dom).remove();
+				  p.append($("<span>已发布</span>").attr("class","btn btn-large"));
+				  $("#action_"+id).html("");
+				}else{
+					alert(json.msg);
+				}
+			}
+		});
+	}
+	
+	function del_publish(id){
+		if(confirm('确定要删除这个优惠吗？')){
+			var url = "/prefer/del_publish/";
+			$.ajax({
+				type:'POST',
+				url:url,
+				data:{'id':id},
+				dataType:'json',
+				success:function(json){
+					if(json.code == 0){
+						window.location = json.refer;
+					}else{
+						alert(json.msg);
+					}
+				}
+			});
+		}
+	}
+</script>
+<!--{template web/footer}-->

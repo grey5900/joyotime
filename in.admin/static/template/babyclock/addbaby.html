@@ -1,0 +1,84 @@
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+	<!--{if !empty($info[id])}--><input type="hidden" name="id" value="{$info[id]}" /><!--{/if}-->
+	<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+			<label>姓名:</label><input type="text" class="required" name="name" value="{$info[name]}" size="50" />
+		</div>
+		
+		<div class="unit">
+			<label>性别:</label>
+			<input type="radio" name="gender" value="0" {if $info['gender']==0}checked="checked"{/if}>女
+			<input type="radio" name="gender" value="1" {if $info['gender']==1}checked="checked"{/if}>男
+		</div>
+		
+		
+		<div class="unit"> 
+			<label>状态:</label>
+			<input type="radio" name="status" value="0" {if $info['status']==0}checked="checked"{/if}>不显示
+			<input type="radio" name="status" value="1" {if $info['status']==1}checked="checked"{/if}>显示
+		</div>
+		
+		
+		<div class="unit" id="{$page_id}upload_news0" >
+			<label>上传图片: </label>
+			<button type="button" id="upload_img_<!--{$timestamp}-->">上传图片</button>
+			
+		</div>  
+		<div class="unit">
+			<label>简介:</label>
+			<textarea name="summary" rows=5 cols=50>{$info['summary']}</textarea>
+		</div>
+		
+		
+		
+		<div class="unit">
+			<label>出生日期:</label><input type="text" class="date" readonly="readonly" format="yyyy-MM-dd"  name="birth" value="{if $info[birth]!='0000-00-00'}{$info[birth]}{/if}"   /> 
+		</div>
+		<div class="unit">
+			<label>出生地:</label><input type="text"  name="hometown" value="{$info[hometown]}"   /> 
+		</div>
+		<div class="unit">
+			<label>血型:</label><input type="text"  name="blood" value="{$info[blood]}"   /> 
+		</div>
+		<div class="unit">
+			<label>星座:</label><input type="text"  name="constellation" value="{$info[constellation]}"   /> 
+		</div>
+		<div class="unit">
+			<label>身高:</label><input type="text"  name="height" value="{$info[height]}"   /><label>cm</label>
+		</div>
+
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+
+<script>
+$(function(){
+	$("input[type=radio][name=newsType]").change();
+	var plugins = {pagination:{c:"plugin",t:"分页",e:function(){
+		this.pasteHTML("[next]");
+		}}
+	};
+	$("#editor<!--{$timestamp}-->").xheditor({plugins: plugins, tools:"full"});
+
+	
+	//, thumb_height:100, up_url:'/upload/index',width:350,height:400,
+	var options = {file_type:'baby',name:"newsimg",resolution:'odp',id:"newsimg<!--{$timestamp}-->",required:true<!--{if $info['image']}-->,image_name:'<!--{$info[thumb]}-->'<!--{/if}-->};
+	
+	$("#upload_img_<!--{$timestamp}-->").my_upload(options);
+
+	
+	
+
+	function get_size(str){
+		return intval($("#thumb_"+str).val());
+	}
+
+})
+</script>

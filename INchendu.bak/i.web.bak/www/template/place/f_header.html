@@ -1,0 +1,18 @@
+<div id="mini-header">
+	<dl class="info">
+		<dt><a href="/place/{$info[id]}/" class="avatar middle"><i></i><img border="0" src="{$info[icon]}" /></a></dt>
+		<dd>
+			<h1><a href="/place/{$info[id]}/">{$info[placename]}</a></h1>
+			<div class="state">
+				<!--{if !empty($info[address])}-->地址：{$info[address]}<!--{/if}--> <!--{if !empty($info[tel])}-->电话：{$info[tel]}<!--{/if}-->
+			</div>
+		</dd>
+	</dl>
+	<div class="actions">
+		{if $has_favorite}
+			<a href="javascript:void(0)" class="btn favorited disabled" date-id="{$info[id]}" date-target="place">已收藏</a>
+		{else}
+			<a href="javascript:void(0)" class="btn btn-primary favorite" date-id="{$info[id]}" date-target="place">加收藏</a>
+		{/if}
+	</div>
+</div>

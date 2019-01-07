@@ -1,0 +1,47 @@
+<div class="pageContent" id="{$page_id}">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>待审核</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>推荐成功</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>已成交</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>全部订单查询</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="{$page_id}_precheck" class="unitBox">
+                    {eval echo include_file(site_url(array('house', 'recommend_precheck')));}
+                </div>
+            </div>
+            <div>
+                <div id="{$page_id}_checked" class="unitBox">
+                    {eval echo include_file(site_url(array('house', 'recommend_checked')));}
+                </div>
+            </div>
+            <div>
+                <div id="{$page_id}_deal" class="unitBox">
+                    {eval echo include_file(site_url(array('house', 'recommend_deal')));}
+                </div>
+            </div>
+            <div>
+                <div id="{$page_id}_all" class="unitBox">
+                    {eval echo include_file(site_url(array('house', 'recommend_all')));}
+                </div>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

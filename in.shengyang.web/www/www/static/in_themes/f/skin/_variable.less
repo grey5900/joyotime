@@ -1,0 +1,114 @@
+// 默认主题颜色
+
+@default-theme: #31548a;
+
+
+/**theme**/
+@green:#63AB2A;
+@grey:#31548a;
+@red:#dd3333;
+/*border*/
+@bd-green:2px solid @green;
+@dot:1px dotted #D9D9D9;
+@bd-grey:1px solid @grey;
+
+.bd(@width:1px 0 0 0,@style:solid,@color:@grey){
+	border-width:@width;
+	border-style:@style;
+	border-color:@color;
+}
+
+/*font-color*/
+@light-black:#333;
+@light-grey:#aaa;
+@font-green:#5caa1d;
+@red:#CE302D;
+@l-blue:#2eacb7;
+
+/**font-style**/
+.t14{
+	font:bold 14px/18px "\5B8B\4F53";
+}
+.t16{
+	font:bold 16px/18px "\5B8B\4F53";
+}
+@font-g:Georgia;
+@yh:Microsoft Yahei;
+@st:"\5B8B\4F53";
+/**btn-style**/
+
+.btn-vertical{
+	border-radius:0;
+	min-width:80px;
+	_width:80px;
+	border-width:1px 1px 1px 1px;
+}
+
+/**clear**/
+.clearfix{
+	zoom:1;
+	&:after{clear:both;content:'.';height:0;line-height:0;display:block;visibility:hidden;}
+}
+
+/**layout**/
+.ib{
+	display:inline-block;
+	*zoom:1;
+	_display:inline;
+}
+.vm{
+	display:table-cell;
+	vertical-align:middle;
+}
+.mask(@n){
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#000;
+	filter:alpha(opacity=@n);
+	opacity:@n/100;
+	left:0;
+	z-index:1;
+}
+.fadeOut(@from,@to){
+	margin:0;
+	border:none;
+	height:2px;
+	background:@from;
+	background:-webkit-linear-gradient(left,@from,@to);
+	background:-moz-linear-gradient(left,@from,@to);
+	background:-o-linear-gradient(left,@from,@to);
+	background:-ms-linear-gradient(left,@from,@to);
+	background:linear-gradient(left,@from,@to);
+	
+}
+.tansition(@pro,@type,@time){
+	-webkit-transition:@pro,@type,@time;
+	-moz-transition:@pro,@type,@time;
+	-ms-transition:@pro,@type,@time;
+	-o-transition:@pro,@type,@time;
+	transition:@pro,@type,@time;
+}
+
+/**avatar,icon**/
+.avatar(@n){
+	width:@n;
+	height:@n;
+	border-radius:3px;
+	//behavior:url(js/pie.htc);
+}
+.icons(@x,@y){
+	background:url(images/icons.png) no-repeat @x @y;
+	
+	_background-image:url(images/icons-8.png);
+}
+.ico(@x,@y){
+	background:url(images/ico.png) no-repeat @x @y;
+	_background-image:url(images/ico-8.png);
+}
+.bgp(@x,@y){
+	background-position:@x @y;
+}
+.bg(@url){
+	background:@url;
+}

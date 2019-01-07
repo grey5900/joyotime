@@ -1,0 +1,141 @@
+<form id="pagerForm" method="post" action="{$current_page}">
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="<!--{{param.orderField}}-->" />
+	<input type="hidden" name="orderDirection" value="<!--{{param.orderDirection}}-->" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<table class="searchContent">
+                <tr>
+                    <td>
+			
+				日期：</td>
+				<td><input type="text" name="startDate" value="{$startDate}" format="yyyy-MM-dd 00:00:00" class="date required"/> </td><td>~</td>
+                  <td> 	 <input type="text" name="endDate" value="{$endDate}" format="yyyy-MM-dd 23:59:59" class="date required"/>
+					</td>
+					<td>
+				查询内容：
+				<select name="type">
+					<option {if $type!='essence'}selected="selected"{/if} value="">其他</option>
+					<option {if $type=='essence'}selected="selected"{/if} value="essence">精华</option>
+				</select>
+
+					</td>
+				</tr>
+			</table>
+			
+			
+			
+		
+		
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+							
+				<!-- li><a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a></li -->
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	
+	<table class="table" width="1200" layoutH="110">
+		<thead>
+			<tr>
+				<th width='5%'> 日期</th>
+				{if $type!='essence'}
+				<th  width='5%'> YY </th>
+				<th width='5%'> 点评 </th>
+				<th width='5%'> 图片 </th>
+				<th width='5%'> 分享 </th>
+				<th width='5%'>点评人数</th>
+				<th width='5%'>POST表人数</th>
+				<th width='5%'> 回复 </th>
+				<th width='5%'> 回复人数 </th>
+				
+				
+				<th width='5%' > 地点册 </th>
+				<th width='5%' > 地点册人数  </th>
+				<th width='5%' > 屏或删 点/回/地</th>
+				
+				<th width='5%' > 私信 </th>
+				<th width='5%' > 私信人数  </th>
+				
+				{/if}
+				{if $type=='essence'}
+				<th width='5%'> 点评100精</th>
+				<th width='5%'> 点评300精</th>
+				<th width='5%'> 点评其他分值</th>
+				<th width='5%'> 点评总分值</th>
+				<th width='5%'> 地点册100精</th>
+				<th width='5%'> 地点册300精</th>
+				<th width='5%'> 地点册其他分值</th>
+				<th width='5%'> 地点册总分值</th>
+				{/if}
+				
+				<th  width='5%'> 操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+		<!--{loop $date_list $k $v}-->
+			<tr >
+				<td > {$v} </td>
+				{if $type!='essence'}
+				<td  > {$timetable['yy_count'][$v]['total']} </td>
+				<td > {$timetable['tip_count'][$v]['total']} </td>
+				<td > {$timetable['photo_count'][$v]['total']} </td>
+				<td > {$timetable['share_count'][$v]['total']} </td>
+				<td>{$timetable['post_user_count'][$v]['total']}</td>
+				<td>{$timetable['post_all_user_count'][$v]['total']}</td>
+				<td > {$timetable['reply_count'][$v]['total']} </td>
+				<td >{$timetable['reply_user_count'][$v]['total']} </td>
+				<td  > {$timetable['placecoll_count'][$v]['total']} </td>
+				<td  > {$timetable['placecoll_user_count'][$v]['total']}  </td>
+				<td  > {$timetable['post_cancel_count'][$v]['total']} / {$timetable['reply_cancel_count'][$v]['total']} / {$timetable['placecoll_cancel_count'][$v]['total']}</td>
+				<td  > {$timetable['pm_count'][$v]['total']} </td>
+				<td  > {$timetable['pm_user_count'][$v]['total']}  </td>
+				{/if}
+				{if $type=='essence'}
+				<td width='5%'> {$timetable['post_jing100'][$v]['total']}}</td>
+				<td width='5%'> {$timetable['post_jing300'][$v]['total']}</v>
+				<td width='5%'> {$timetable['post_jingother'][$v]['total']}</td>
+				<td width='5%'> {$timetable['post_sumjing'][$v]['total']}</td>
+				<td width='5%'> {$timetable['placecoll_jing100'][$v]['total']}</td>
+				<td width='5%'> {$timetable['placecoll_jing300'][$v]['total']}</v>
+				<td width='5%'> {$timetable['placecoll_jingother'][$v]['total']}</td>
+				<td width='5%'> {$timetable['placecoll_sumjing'][$v]['total']}</td>
+				{/if}
+				
+				<td  > <a href="/ugcv3/counter/export_counter/{$k}" target="_blank">导出时间分布</a></td>
+				
+			</tr>
+		<!--{/loop}-->
+			{if $type!='essence' && $timetable}
+			<tr >
+				<td colspan=3> 当前选择时间内... </td>
+				
+				<td > 总点评人数 </td>
+				<td>{$total_post_user_count.uc}</td>
+				<td > 总POST人数 </td>
+				<td>{$total_all_post_user_count.uc}</td>
+				<td > 总回复人数</td>
+				<td > {$total_reply_user_count.uc} </td>
+				<td  > 总地点册人数</td>
+				<td  > {$total_placecoll_user_count.uc}  </td>
+				<td  > </td>
+				<td  > 总私信人数</td>
+				<td  > {$total_pm_user_count.uc} </td>
+				<td  > </td>
+				
+			</tr>
+			{/if}
+		</tbody>
+	</table>
+	
+	
+</div>

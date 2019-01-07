@@ -1,0 +1,9 @@
+<%= tmpMsg.username %></span>,<%= tmpMsg.hyjr %>
+
+<%= tmpMsg.msks %>
+
+<%= tmpMsg.ysdr %>
+
+<%= tmpMsg.xtyj %> | <%= tmpMsg.lxwm %>contact@fishsaying.com
+
+Copyright &copy;2013 Fishsaying Technology Co.,Ltd. All right reserved

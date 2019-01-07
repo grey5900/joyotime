@@ -1,0 +1,148 @@
+{if isset($do) && $do === 'advsearch'}
+<div class="pageContent">
+	<form method="post" action="{$search_url}" onsubmit="return navTabSearch(this);">
+	<div class="pageFormContent" layoutH="60">	
+		<div class="unit">
+			<label>内容：</label>
+			<input type="text" name="keyword" size="30" />
+		</div>
+		<div class="unit">
+			<label>指定时间段：</label>
+			<input type="text" name="begin" class="date textInput readonly" readonly="true" format="yyyy-MM-dd 00:00:00"/><a class="inputDateButton" href="javascript:;">选择</a>
+			<label style="width: 10px;">~</label>
+			<input type="text" name="end" class="date textInput readonly" readonly="true" format="yyyy-MM-dd 23:59:59"/><a class="inputDateButton" href="javascript:;">选择</a>					
+		</div>
+		<div class="unit">
+			<label>指定用户：</label>
+			<input type="hidden" name="user.id" value=""/>
+			<input type="text" name="user.name" value="" readonly />
+			<a id="lookup_link" class="btnLook" href="{eval echo site_url(array('ugc','post','list_lookup'));}/type/user" lookupGroup="user" height="560">查找带回</a>
+		</div>
+		<div class="unit">
+			<label>审核状态：</label>
+			<select name="is_sensored">
+				<option value="">请选择</option>
+				<option value="1">已审核</option>
+				<option value="2">未审核</option>
+				<option value="3">屏蔽</option>
+			</select>
+		</div>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检 索</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取 消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+{else}
+<style>
+	.searchBar label{width: 40px;}
+	.searchBar ul.searchContent li{width:200px;}
+	.tableside td{border:1px solid #D0D0D0;}
+	.pageFormContent div.unit{margin:10px;padding:10px 0;}
+	.f-red{color: #fd0b0b;line-height:20px;width:380px;}
+	.f-blue{color: #1c0bfd;line-height:20px;width:380px;}
+	.f-purple{color:#de00de;line-height:20px;width:380px;}
+.f-close{color:#800080;line-height:20px;}
+	.style-1{}
+		.style-1 div{float:left;padding:0 10px}
+		.style-1 .nameid{width: 120px;line-height:21px;}
+	.style-2{}
+		.style-2 .content{float:left;;width:60%;padding:10px 5px;}
+		.style-2 div{padding:10px;}	
+.info{display:block;overflow:hidden;width:100%;}
+.info img{display:block;overflow:hidden;width:50px;height:50px;float:left;margin:2px;padding:1px;}
+.info .info_c{margin:0;padding:2px 2px;}
+.info .info_c ul{margin:0 6px;}
+.info .info_c ul li{margin:8px 4px;}
+.info .sensored{display:block;overflow:hidden;width:50px;float:left;margin:14px 2px;}
+</style>
+
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="orderField" value="lastUpdate" />
+	<input type="hidden" name="orderDirection" value="{$orderDirection}" />
+	<input type="hidden" name="is_sensored" value="{$is_sensored}" />
+	<input type="hidden" name="keyword" value="{$keyword}"/> 
+	<input type="hidden" name="begin" value="{$begin}" />
+	<input type="hidden" name="end" value="{$end}" />
+	<input type="hidden" name="user_id" value="{$user_id}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+
+			<li style="width:300px;"><select class="combox" name="is_sensored">
+				<option value=""{if !isset($is_sensored) || $is_sensored==0} selected{/if}>是否审核</option>
+				<option value="1"{if isset($is_sensored) && $is_sensored==1} selected{/if}>已审核</option>
+				<option value="2"{if isset($is_sensored) && $is_sensored==2} selected{/if}>未审核</option>
+				<option value="3"{if isset($is_sensored) && $is_sensored==3} selected{/if}>屏蔽</option>
+			</select>
+		
+
+				<label>内容：</label>
+				<input type="text" name="keyword" value="{$keyword}"/></li>
+	
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				<li><a class="button" href="{eval echo site_url(array('ugc','profile','advsearch'));}" rel="{eval echo build_rel(array('ugc','profile','advsearch'));}" target="dialog" mask="true" title="高级检索"><span>高级检索</span></a></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent tableside">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('ugc','profile','examine'));}" target="selectedTodo" rel="ids[]" warn="请至少选择一条纪录"><span>标为已审</span></a></li>
+		</ul>
+	</div>
+
+	<div layoutH="116" id="w_list_print">
+	<table class="list" width="100%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="10%">用户</th>
+				<th width="10%" orderField="lastUpdate" class="{$orderDirection}">修改时间</th>
+				<th width="30%">审核内容</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr>
+				<td><input type="checkbox" name="ids[]" value="{$key}"></td>
+				<td>{$val[username]}</td>
+				<td>{$val[lastUpdate]}</td>
+				<td valign="middle">
+					<div class="info">
+						<span class="{if $val[isSensored]}{if $val[isSensored] == 3}taboo{elseif $val[isSensored] == 2}f-purple{else}f-blue{/if}{else}f-red{/if} sensored">{if $val[isSensored]}{if $val[isSensored] == 3}敏感 - {elseif $val[isSensored]==2}屏蔽 - {$val[off]}{else}已审 - {/if}{else}未审 - {/if}</span>
+						<img src="{eval echo image_url($val[avatar], 'head');}" alt="avatar" width="40" height="40" />
+						<div class="info_c"><ul>
+							<li><strong>昵称：</strong>{$val[nickname]}</li>
+							<li><strong>签名：</strong>{$val[description]}</li>
+						</ul></div>
+					</div>
+				</td>
+				<td>
+					<a class="actDel" href="{eval echo site_url(array('ugc','profile','edit','do','avatar'));}/id/{$key}" target="ajaxTodo" title="屏蔽操作无法恢复，确定要执行此操作吗？"><span>屏蔽头像</span></a>
+					<a class="actDel" href="{eval echo site_url(array('ugc','profile','edit','do','nickname'));}/id/{$key}" target="ajaxTodo" title="屏蔽操作无法恢复，确定要执行此操作吗？"><span>屏蔽昵称</span></a>
+					<a class="actDel" href="{eval echo site_url(array('ugc','profile','edit','do','description'));}/id/{$key}" target="ajaxTodo" title="屏蔽操作无法恢复，确定要执行此操作吗？"><span>屏蔽签名</span></a>
+				</td>
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+
+</div>
+{/if}

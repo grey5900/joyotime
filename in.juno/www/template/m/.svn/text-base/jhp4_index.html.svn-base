@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>江湖悬赏令 PART 4</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.5.0.css"/>
+    <style type="text/css" media="screen">
+      /*  background color  */
+      .page {
+        background: #f6f6f6;
+      }
+      #content .unit .box {
+        background: #fff;
+      }
+      .touchslider-viewport {
+        background: #fff;
+      }
+      /* font color  */
+      .unit-title {
+        color: #de3c00;
+      }
+      #content .unit p {
+        color: #666;
+      }
+      #content .unit .mid h2 {
+        color: #41443f;
+      }
+      #content .unit .mid span {
+        color: #757575;
+      }
+      .texts .mid-tit h3 {
+        color: #000;
+      }
+      #content .statement p {
+        color: #666;
+      }
+      .texts .info-group {
+        color: #0c425c;
+        border-bottom: 1px dotted #e1d5c5;
+      }
+      .texts .inside strong {
+        color: #e80000;
+      }
+      .texts .inside p {
+
+      }
+      .bottons .botton span.title {
+      }
+      .bottons .botton span.intro {
+      }
+      .touchslider-item .touchslider-info {
+        color: #fff;
+      }
+      .multi-line dd span {
+        color: #fff;
+      }
+      .multi-line dd {
+
+      }
+      .multi-line .viewall a {
+        color: #de3c00;
+      }
+      .multi-line .viewall a:hover {
+
+      }
+      .multi-line .address {
+        font-size: 12px;
+        color: #666;
+        padding-top: 5px;
+      }
+      .touchslider-item img {
+        height: 290px;
+      }
+      .touchslider-nav-item {
+
+      }
+      .feed, .user {
+        border-bottom: 0;
+      }
+      .feed a:hover, .user a:hover {
+        border-bottom: 0;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+      }
+      .scrolling span {
+        color: #DE3C00;
+      }
+      .scrolling li {
+        line-height: 20px;
+      }
+
+
+      #content .multi-line .box {
+        background: #9b9b9b;
+      }
+      #content .unit-title p {
+        color: #595959;
+      }
+      #content .unit-title span {
+        color: #595959;
+      }
+      .multi-line dd a:hover {
+        border-radius: 0;
+      }
+      .multi-line dd a {
+        padding: 15px 10px;
+      }
+      .contr .photos {
+        clear: both;
+        text-align: center;
+      }
+    </style>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/41"><img border="0" src="http://icd.sc/img/m/jh/header04.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit">
+            <div class="mid">
+              <h2>【十强达人终极PK赛】 </h2>
+            </div>
+          </div>
+
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动简介</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <p>2012年度IN成都10强达人强势诞生，“盟主之争”OL隐藏副本荣耀开启！究竟谁能最终贡献出耀世宝典，得全服膜拜，称霸“武”林，终极加冕，成为蜀中地道吃货、神级玩咖，夺得盟主奖励圣器小米2.0呢？！让我们擦亮手机，拭目以待吧！！</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>IN成都10强达人参与方式</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <p>
+                  1.  10强达人使用敢耍爱泡基金，吃遍玩翻整个成都；<br />
+2.  活动期间，推荐<strong>至少10个</strong>最IN成都地点（有趣，好玩，创意，特色地点），每个地点以“图片+文字”游玩攻略方式推荐，一个地点可以多条推荐带图点评，也可以推荐超过10个地点以上（小in偷偷告诉你：多推荐，评委打分时会加分哦！）；<br />
+3.  发布形式：以游记方式推荐美食，每条攻略里需分别带有类似“xx第一站，第二站…第十站”的字样，鼓励达人们在攻略中使用<strong>“个性标签”</strong>和<strong>“特色语言”</strong>，有加分哦~例如“#小in寻寻觅觅#第一站”；<br />
+4.  每条推荐需带关键字<strong>#最IN成都#</strong>；
+
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动奖励</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="contr">
+                  <div class="photos">
+                    <img width="190" src="http://icd.sc/img/m/jh/xiaomi.jpg">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit scrolls">
+            <div class="unit-title">
+              <h3>攻略模板</h3>
+            </div>
+            <div id="showPic" class="touchslider">
+              <div class="touchslider-viewport" >
+                <div>
+                  <div class="touchslider-item">
+                    <a href="inuser://191575"><img src="http://icd.sc/img/m/jh/g1.jpg" /></a>
+                  </div>
+                  <div class="touchslider-item">
+                    <a href="inuser://379871"><img src="http://icd.sc/img/m/jh/g2.jpg" /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="touchslider-nav">
+                <span class="touchslider-nav-item touchslider-nav-item-current"></span>
+                <span class="touchslider-nav-item"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动规则</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+                    1.攻略形式：推荐至少10个最IN成都地点，一共完成10条“图片+文字”攻略。每条攻略需以游记推荐路线（或玩法）的方式发布，例如：xx第一站，第二站…第十站；......
+                </div>
+                <div class="expand-more">
+                  <p>
+                    1.  攻略形式：推荐至少10个最IN成都地点，一共完成10条“图片+文字”攻略。每条攻略需以游记推荐路线（或玩法）的方式发布，例如：xx第一站，第二站…第十站；<br />
+2.  必须带关键字#最IN成都#；<br />
+3.  图片形式：可一张图片或者多张组合；<br />
+4.  第四阶段终极PK赛评判标准采用评分制：<br />
+<strong>a.总分=专业评委平均分（评委总分/发布有效推荐攻略数）+额外奖励分</strong><br />
+<strong>b.专业评分标准（100分制）：创意性+内容价值性+语言特色。</strong><br />
+5.  前10名达人用户参与活动发布攻略截止时间2013-1-20，24点。<br />
+6.  10强达人用户发布的攻略必须是原创内容，不能恶意刷屏，一旦发现取消参与资格。<br />
+7.  鼓励其他用户按照活动规则积极参与，分享自己的玩乐攻略；<br />
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+
+ <!--{if isset($feed) && !empty($feed)}-->
+          <div class="unit card">
+            <div class="unit-title">
+              <h3>活动动态</h3>
+            </div>
+            <div class="box">
+              <div class="feeds">
+                <div class="feed">
+                  <a href="/event/feeds/{$event_id}/{$uid}/0/1">
+                  <div class="arrow">
+                    <div class="icon">
+                      <img src="{$feed[avatar]}"  width="40" height="40"/>
+                    </div>
+                    <div class="detail">
+                      <h4>{$feed[uname]}</h4>
+                      <!--{if $feed[type]==1}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        签到
+                      </div>
+                      <!--{elseif $feed[type]==2}-->
+                      <div class="action">
+                        点评
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="start">
+                        <!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}-->
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <!--{elseif $feed[type]==3}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        上传照片
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <div class="photo"><img src="{$feed[photoName]}" width="200" />
+                      </div>
+                      <!--{/if}-->
+                    </div>
+                  </div> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--{/if}-->
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong>
+                <br />
+1. 如10强达人未参与最终PK，将视为放弃，名额将依次留给top11-20达人用户，与前10强达人一同赢取终极大奖；<br />
+2. 1月22日公布最终赢家名单；<br />
+3. 最终解释权归IN成都所有。
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $(".expand").each(function() {
+          $(this).on("click", function() {
+            $(this).toggleClass("on");
+          });
+        });
+        $(".touchslider").touchSlider({
+          mouseTouch : true,
+        });
+        $("#txl1").each(function() {
+          $("#txl1 > dd:gt(1)").hide();
+          $("#txa1").click(function() {
+            $("#txs1").toggle();
+            $("#txl1 > dd:gt(1)").toggle();
+          });
+        });
+      })
+    </script>
+  </body>
+</html>

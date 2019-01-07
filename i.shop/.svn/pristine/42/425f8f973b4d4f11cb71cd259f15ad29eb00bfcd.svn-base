@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>IN成都商家平台</title>
+		<!-- Date: 2012-08-27 -->
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+		<link rel="stylesheet" href="css/wrapper.css" >
+		<link rel="shortcut icon" href="img/favicon.ico">
+		
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/jquery.validate.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="navbar-link">
+						<h3><a class="logo" href="#">
+							<img width="354" height="55" title="IN成都商家平台" src="img/logo_header.png">
+						</a></h3>
+					</div>
+					<div class="navbar-link pull-right">
+						欢迎您！<span>多梦科技</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu">
+			<div class="container">
+				<div id="fixed-header">
+					<div class="navbar">
+						<ul class="nav">
+					    	<li><a href="#">首页</a></li>
+						    <li class="active"><a href="#">优惠管理</a></li>
+						    <li><a href="#">扩展信息</a></li>
+						    <li><a href="#">会员管理</a></li>
+					   </ul>
+					</div>
+				</div>
+				<div class="navbar-link pull-right">
+					<a href="#">修改密码</a><span>|</span>
+					<a href="#">退出登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="container">
+				<div class="mainbox">
+					<div class="main">
+						<div class="inner main-conter">
+							<div class="title">
+								<h3>密码修改</h3>
+							</div>
+							<div class="detail">
+								<form id="revisepassword-form" class="form-horizontal" action="" method="post" novalidate="novalidate">
+									<div class="control-group">
+										<label class="control-label" for="password_again">原密码：</label>
+										<div class="controls">
+											<input class="controls-ipt text-input" type="password" name="oldpwd" value="" id="oldpwd">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="password_again"> 新密码：</label>
+										<div class="controls">
+											<input class="controls-ipt text-input" type="password" name="newpwd" value="" id="newpwd">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="password_again">重复密码：</label>
+										<div class="controls">
+											<input class="controls-ipt text-input" type="password" name="renew" value="" id="renew" placeholder="重复以上密码">
+										</div>
+									</div>
+									<div class="from-actions">
+										<label class="control-label"></label>
+										<div class="controls">
+											<input class="btn btn-primary" data-loading-text="　……　" type="submit" value="　确定　">
+											<input class="btn" type="reset" value="重置">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar">
+						<div class="title">
+							<h3>多美科技</h3>
+						</div>
+						<dl>
+							<dd>开发合作:<span>2012-11-11</span></dd>
+							<dd>渠道编号:<span>11111</span></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="copyright">
+				<p><a href="#">关于我们</a>|<a href="#">联系我们</a>|<a href="#">帮助  </a></p>
+				<p ><span>©2011 in.chengdu.cn  All Rights Reserved</span><span>蜀ICP备：07003170号 ICP许可证编号：川B2-20060070	</span></p>
+			</div>
+		</div>
+	</body>
+</html>
+

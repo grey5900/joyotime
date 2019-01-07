@@ -1,0 +1,21 @@
+					{if $v3_fragments['v3_f_book']}
+					<div class="module movie_info">
+						<div class="tit">
+							<h3>
+								<i></i>
+								{$v3_fragments['v3_f_book']['frag']['name']}
+							</h3>
+						</div>
+						<div class="con">
+							<ul>
+							{loop $v3_fragments['v3_f_book']['data'] $auto_lichang_news_key $lichang_news}
+								<li>
+									<a href="{$lichang_news['link']}" target="_blank" title="{$lichang_news['title']}"><i>•</i> {eval echo cut_string($lichang_news['title'],33,'')}</a>
+									<p title="{$lichang_news['summary']}">{eval echo cut_string($lichang_news['summary'],36,'')}</p>
+								</li>
+							{/loop}
+								
+							</ul>
+						</div>
+					</div>
+					{/if}

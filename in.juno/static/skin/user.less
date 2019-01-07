@@ -1,0 +1,173 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+//@import "incd_style.less";
+
+.container .row {
+	margin: 90px 0 60px 0;
+	background: url("incd-navbg.jpg") repeat-y 0 0 #fff;
+	color: #666;
+}
+.incd-style {
+	background: url("incd-style.png") no-repeat;
+}
+.nav {
+	float: left;
+	width: 220px;
+    width: 220px;
+	.level-box {
+		margin: 15px 10px;
+		width: 200px;
+		.clearfix();
+	}
+}
+.myinfo {
+	.info {
+		.clearfix();
+		.avatar {
+			display: inline-block;
+			text-decoration: none;
+			float: left;
+			img {
+				width: 80px;
+				height: 80px;
+			}
+		}
+		ul {
+			margin: -10px 0 0 90px;
+			padding: 0;	
+		}
+		a {
+			color: #d52f2f;
+			font-size: 16px;
+			line-height: 30px;
+			.cleartype();
+		}
+		span {
+			color: #666;
+			font-size: 12px;
+			line-height: 18px;
+		}
+	}
+	.details {
+		display: inline-block;
+		margin: 15px 0;
+		border-top: 1px dotted #b9b9b9;
+		border-bottom: 1px dotted #b9b9b9;
+		padding: 5px 0;
+		width: 200px;
+		line-height: 22px;
+		ul {
+			margin: 10px 0;
+			padding: 0px;
+		}
+		li {
+			float: left;
+			width: 66px;
+			text-align: center;
+			a {
+				font-size: 24px;
+			}
+			span {
+				font-size: 14px;
+				font-weight: bold;
+				display: block;
+			}
+		}
+		.bor {
+			border-left: 1px solid #c5c5c5;
+			border-right: 1px solid #c5c5c5;
+		}
+	}
+}
+.leftnav {
+	.lev {
+		border-bottom: 1px solid #c5c5c5;
+		line-height: 35px;
+		font-size: 16px;
+		.cleartype();
+		padding: 6px 5px 3px;
+		i {
+			width: 32px;
+			height: 32px;
+			display: block;
+			float: left;
+			margin: 0 10px 0 0;
+		}
+		.timeico {
+			background-position: 0 -41px;
+		}
+		.photoico {
+			background-position: 0 -74px;
+		}
+		.friendico {
+			background-position:0 -107px;
+		}
+		.sideico {
+			background-position:0 -140px;
+		}
+		.vipico {
+			background-position:0 -174px;
+		}
+		.settingico {
+			background-position:0 -208px;
+		}
+	}
+}
+.main {
+	float: right;
+	border-top: 2px solid #d52f2f;
+	background: #fff;
+	display: block;
+    width: 780px;
+	.tit {
+		background: none repeat scroll 0 0 #EEEEEE;
+	    height: 33px;
+	    line-height: 33px;
+	    .tab {
+			width: 540px;
+			height: 40px;
+			a {
+				display: block;
+				width: 90px;
+				height: 40px;
+				line-height: 30px;
+				text-align: center;
+				color: #333;
+				font-size: 16px;
+				float: left;
+				text-decoration: none;
+				.cleartype();
+				&.current {
+					color: #fff;
+					background-position: 0px 0px;
+				}
+			}
+		}
+	}
+	.con {
+		padding: 50px;
+		.fill {
+			.control-group {
+				font-size: 14px;
+				line-height: 18px;
+				.cleartype();
+				ul {
+					margin: 0 0 0 105px;
+					padding: 0;
+				}
+				li {
+					float: left;
+					margin: 0 30px 0 0;
+
+					label {
+						margin: 0 20px 0 0;
+					}
+					span {
+						color: #d52f2f;
+					}
+				}
+			}
+		}
+	}
+
+}

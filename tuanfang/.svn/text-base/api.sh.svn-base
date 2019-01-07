@@ -1,0 +1,1 @@
+/home/piggy/Applications/swagger-php/bin/swagger -p /home/piggy/works/project/inchengdu/tuanfang/application/controllers -o /home/piggy/works/project/inchengdu/tuanfang/api-doc --default-base-path=http://tuanfang.joyotime.com --default-api-base-path=http://tuanfang.joyotime.com/doc/api-doc

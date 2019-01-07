@@ -1,0 +1,35 @@
+<!--{if $has_prefer > 0}-->
+<div class="timeline-column pull-right">
+	<div class="column-hd"></div>
+	<div class="feed">
+		<i class="friangle-rt"></i>
+		<div class="timeliine-event">
+			<div class="tit">
+				<i class="event"></i>
+			</div>
+			<div class="con">
+				<a class="pull-left" href="#"><img width="150" height="150"
+					src="http://pic.in.chengdu.cn/event/139/logo/20120415132338_7418.jpg"
+					alt="">
+				</a>
+				<ul>
+					<li>
+						<h3>
+							<a href="#">因为颤栗而相遇—零度诗社作者暨民间诗人缘聚</a>
+						</h3></li>
+					<li><span> 开始时间：2012年04月15日 周日 14:00 </span></li>
+					<li class="dotted-line"><span>
+							结束时间：2012年05月01日 周二 23:59 </span></li>
+					<!-- <i class="dotted-line"></i> -->
+					<li>
+						<p>写点评，让IN成都与万达一起携手带您进入成都第一巨幕厅的观影时代盛宴！</p></li>
+					<li><span> 已有<em>102</em>人参加
+					</span></li>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="column-ft"></div>
+</div>
+<!--{/if}-->

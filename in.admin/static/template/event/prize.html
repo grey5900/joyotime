@@ -1,0 +1,35 @@
+<div class="pageContent">
+
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a href="{eval echo site_url(array('event', 'add_prize', 'id', {$id}));}" class="add" target="dialog" rel="{eval build_rel(array('event', 'set_prize'));}" title="添加奖品" width="420" height="200"><span>添加</span></a></li>
+			<li><a href="{eval echo site_url(array('event', 'edit_prize', 'id', {$id}, 'pid'));}/<!--{{pid}}-->" class="edit" target="dialog" rel="{eval build_rel(array('event', 'set_prize'));}" title="编辑奖品" width="420" height="200"><span>编辑</span></a></li>
+			<li><a href="{eval echo site_url(array('event', 'del_prize', 'id', {$id}));}" class="delete" target="selectedTodo" rel="pids[]" title="删除数据后无法恢复！确定要删除吗？" warn="请选择奖品"><span>删除</span></a></li>
+			<li class="line">line</li>
+			<!-- <li><a href="{eval echo site_url(array('event', 'stat_prize', 'id', {$id}));}" class="icon" target="selectedTodo" rel="pids[]" title="确定要修改奖品状态吗?" warn="请选择奖品"><span>修改状态</span></a></li> -->
+		</ul>
+	</div>
+	<table class="table" width="100%" cellspacing="4" cellpadding="4" layoutH="80">
+		<thead><tr>
+			<th width="5%"><input type="checkbox" group="pids[]" class="checkboxCtrl"/></th>
+			<th width="30%">奖品</th>
+			<th width="20%">创建时间</th>
+			<th width="20%">奖品数量</th>
+			<th width="20%">已发数量</th>
+			<th>状态</th>
+		</tr></thead>
+		<tbody>
+			<!--{loop $list $k $v}-->
+			<tr target="pid" rel="{$v[prizeId]}">
+				<td><input type="checkbox" class="pids" name="pids[]" value="{$v[prizeId]}" />{$v[prizeId]}</td>
+				<td>{$v[prizeName]}</td>
+				<td>{eval echo substr($v[createDate], 0, -9);}</td>
+				<td>{$v[prizeCount]}</td>
+				<td>{$v[grantCount]}</td>
+				<td>{eval echo $v[status] ? '<font color="red">已停用</font>' : '<font color="blue">使用中</font>';}</td>
+			</tr>
+			<!--{/loop}-->
+		</tbody>
+	</table>
+
+</div>

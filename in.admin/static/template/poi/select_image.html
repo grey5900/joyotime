@@ -1,0 +1,44 @@
+<form id="pagerForm" action="{$current_url}">
+	<input type="hidden" name="pageNum" value="{$pageNum}"/>
+	<input type="hidden" name="numPerPage" value="{$numPerPage}"/>
+	<input type="hidden" name="id" value="{$id}"/>
+</form>
+<div class="pageContent" >
+<form action="{$current_url}" method="post" onsubmit="return validateCallback(this, {if $id}dialogAjaxDone{else}getImageUri{/if});">
+<div style="width:560px;height:100%;float:left">
+<input type="hidden" name="id" value="{$id}"/>
+<!--{eval $size_type = 'place'}-->
+<!--{template block/imgareaselect}-->
+</div>
+<div style="float:left; width:520px;" >
+{loop $image_list $k $l}
+<img src="{echo image_url($l[photo],'user','thudp');}" width=100 height=100 onclick="init_image_select('{echo image_url($l[photo],'user','odp');}');" />
+{/loop}
+
+</div>
+<div style="clear:both">
+<!--{eval $is_dialog=1;}-->
+<!--{template main/page_bar}-->
+</div>
+<div class="formBar">
+        <ul>
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">确定</button></div></div></li>
+            <li><div class="buttonActive"><div class="buttonContent"><button onclick="$.pdialog.closeCurrent();" type="button">取消</button></div></div></li>
+        </ul>
+</div>
+</form>
+</div>
+
+<script>
+function getImageUri(json){
+	//alert(json);
+	//alert(json);
+	//poi_edit_image_block
+	//var obj = eval("("+json+")");
+	//alert(obj.image);
+	//alert(json.image);
+	$("#poi_background").val(json.image);
+	$("#poi_tmp_image_block").html('<div style="width:150px; height:140px;float:left"><img src="'+json.uri+'" width=140 height=140 /></div>');
+	$.pdialog.closeCurrent();
+}
+</script>

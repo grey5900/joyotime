@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>江湖悬赏令 PART 1</title>
+    <meta name="description" content="" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <link rel="shortcut icon" href="http://in.chengdu.cn/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://in.chengdu.cn/img/m2/apple-touch-icon.png" />
+    <link type="text/css" href="http://in.chengdu.cn/css/m2_style.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container part1">
+      <div class="hd">
+        <h2>初入江湖,加入门派</h2>
+        <span>11月5日-12月2日</span>
+      </div>
+      <div class="bd">
+        <div class="grid">
+          <div class="title">
+            <h3><strong>【第一关】</strong><br />初入江湖，抱好大腿才有前途，请选择你中意的门派（可多选）</h3>
+          </div>
+          <div class="content">
+            <div class="btn-list">
+              <ul>
+                <!--{loop $tags $k $v}-->
+                <li>
+                    <a href="javascript:;" onclick="apply('{$v[tagId]}');">
+                      <div class="button aqua">
+                        <div class="glare"></div>
+                        {$v[tagName]}<br />
+                        <em>{$v[memberCount]}人</em>                 
+                     </div> 
+                    </a>
+                  </li>
+                <!--{/loop}-->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="title">
+            <h3><strong>【第二关】</strong> <br />  有门派滴孩纸师门爱~师门装备   随机发放，抽到就是你的！</h3>
+          </div>
+          <div class="content">
+            <div class="spanleft">
+              <div class="compass">
+                <a id="lottery"><img src="http://in.chengdu.cn/img/m2/compass.gif" width="125px" height="125px"/></a>
+                <span>按动按钮</span>
+                <span>立即抽奖</span>
+              </div>
+            </div>
+            <div class="spanright">
+              <div class="scrolls">
+                <ul class="win-list">
+                  <!--{loop $logs $k $v}-->
+                  <li>
+                    <span>{$v}</span>
+                  </li>
+                  <!--{/loop}-->
+                </ul>
+              </div>
+            </div>
+            <div class="info">
+              <p>活动期间，每个ID每天有3次抽奖机会， 直到中奖为止。</p>
+              <ul class="scrolls-list">
+                <li>
+                  <div id="showPic" class="touchslider">
+                    <div class="touchslider-viewport" >
+                      <div>
+                        <div class="touchslider-item">
+                          <img src="http://in.chengdu.cn/img/m2/prize_p1.gif" />
+                        </div>
+                        <div class="touchslider-item">
+                          <img src="http://in.chengdu.cn/img/m2/prize_p2.gif" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+               <p>
+                                            领取时间：2012.11.20—2012.12.31<br />
+                                            领取地址：锦东路668号国嘉新视界14层<br />
+                                            客服电话：4006028377<br />
+                                            （凭IN成都中奖账号领取即可）
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="grid w-padding">
+          <div class="title-p3">
+            <h3><strong>【第三关】</strong></h3>
+          </div>
+          <div class="content">
+            <div class="info">
+              <p>武林盟主未定，江湖纷争四起。小的们赶紧献出各自敢耍爱泡的家传绝学、修炼秘籍，共同壮大师门实力，一起称霸这玩乐江湖吧～</p><br />
+              <div class="srt"><h3>【参与方式】</h3>
+              <p>在11月5日-12月2日活动期间在任意地点<strong>发布点评</strong>,累计3条以上即可成功参与本次活动。</p><br />
+              <h3>【活动规则】</h3>
+              <p>1.点评形式：纯文字点评or带图点评均可（100字以上）；<br />
+              2.点评or图片必须含有关键字<strong>“我要赏金”</strong>；<br />
+              3.内容不能重复，不能恶意刷屏，一旦发现取消参与资格；<br />
+              4.评判标准：在有效点评中选取，综合系数=点评数+点评质量，评选出前100名；<br />
+              5.名单公布时间：2012.12.4，并电话通知，请完善个人资料信息。</p><br />
+              <h3>【奖励说明】</h3>
+              <p>1.评选出的100名用户将成为IN成都达人用户，享受达人特权（达人特权详见小IN发布的消息）；<br />
+2.其中前50名达人将进入第二轮PK，赢取万元赏金；<br />
+3.其中后50名达人进入加多宝火锅达人试吃团选拔赛（将评选出40名，成为火锅达人试吃团，将有4次火锅试吃机会）；<br />
+4.另外10名将分别获得幸福蓝海电影通票一张（有效期12月底，适用于任何场次、任何影片）。</p>
+              </div>
+            </div>
+          </div>
+          <div class="count">
+            <span id="joins">{$event[joins]}</span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="ft">
+        <p>    本活动最终解释权归IN成都所有</p>
+      </div>
+    </div>
+  </body>
+   <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+   <script type="text/javascript">
+    $(function () {
+        $(".touchslider").touchSlider({
+            mouseTouch : true,
+          });
+           var settime;
+             $(".scrolls").hover(function () {
+                clearInterval(settime);
+             }, function () {
+                 settime = setInterval(function () {
+                     var fst = $(".scrolls ul:first");     
+                     var height = fst.find("li:first").outerHeight();     
+                     fst.animate({ "marginTop": -height + "px" }, 600, function () {
+                         fst.css({ marginTop: 0 }).find("li:first").appendTo(fst);
+                     });
+                 }, 3000);
+             }).trigger("mouseleave");  
+
+             //更新奖品清单
+             $.get('/event/put_prize/{$event_id}', function(html){});
+             $("#lottery").on("click", function(){
+               $.ajax({
+                 type:'POST',
+                 url:'/event/lottery/{$event_id}/?'+new Date().getTime(),
+                 data:{uid:'{$uid}'},
+                 dataType:'json',
+                 cache: false,
+                 success:function(json){
+		              if(json.code == -1){//获奖了
+		              	window.mobile && window.mobile.login ? window.mobile.login() : alert('请先登录IN成都！');
+		              }else if(json.code == 0){//获奖了
+		              	alert('恭喜你获得师门馈赠：【' + json.msg.prizeName + '】好运齐分享~进入“下一关”任务，写点评，争取雄霸一方。');
+		              }else if(json.code == 1){//未获奖，还能抽奖
+		              	if(json.msg == 1){
+			              	alert('运气也是一种实力，师弟/师妹，今日还有2次机会哦~');
+		              	}else if(json.msg == 2) {
+			              	alert('师弟/师妹，看来你的实力还需历练哦，今日还剩1次机会哦~');
+		              	}else {
+			              	alert('没关系，明日继续来挑战吧~师兄悄悄告诉你：提升实力也有捷径，挑战“下一关”主线任务，奖励更多更丰富哦~称霸武林才是你的使命！');
+		              	}
+		              }else if(json.code == 2){//奖品已发完
+		              	alert('看来你的实力还需历练哦，请明天再来试试吧');
+		              }else if(json.code == 3){//未加入会员
+		              }else if(json.code == 4){//未加入帮派
+		              	alert('还未加入帮派，无师门奖励，请选择你中意的门派（可多选），抱好大腿才有前途。');
+		              }else if(json.code == 5){//已得过奖了
+		                alert('对不起，您已经抽中过奖品了。请把机会留给其他还没中奖的朋友吧。进入“下一关”任务，写点评，争取雄霸一方。');
+		              }else if(json.code == 6){//抽奖已结束
+		                alert('抽奖已结束');
+		              }else if(json.code == 7){//未获奖，不能抽奖了
+		                alert('没关系，明天继续来挑战吧~师兄悄悄告诉你：提升实力也有捷径，挑战“下一关”主线任务，奖励更多更丰富哦~称霸武林才是你的使命！');
+		              }
+                 }
+               });
+             });
+         });
+  </script>
+  <script type="text/javascript">
+    
+    function apply(tid){
+      $.ajax({
+        type:'POST',
+        url: '/event/tag_join?'+new Date().getTime(),
+        data:{event_id:'{$event_id}',uid:'{$uid}',tagId:tid,lat:'{$lat}',lng:'{$lng}'},
+        dataType:'json',
+        cache: false,
+        success:function(json){
+          if(json.code == -1) {
+            window.mobile && window.mobile.login ? window.mobile.login() : alert('请先登录IN成都！');
+          } else {
+			alert(json.msg);
+          }
+          //不刷新
+          //if(json.code == 0)
+          //    window.location.reload();
+        }
+      });
+    }
+    function alert( message ){
+        var el = $("#alerter");
+        //add dom
+        if (!el[0]) {
+            var el = $("<div id=\"alerter\"></div>");
+            $("body").append(el);
+        }
+        el.html(message);
+            var sTop = $(document).scrollTop(),
+              sHeight = $(window).height(),
+              sWidth = $(window).width(),
+              elHeight = el.outerHeight(),
+              elWidth = el.outerWidth(),
+              elTop = (sHeight - elHeight) / 2 + sTop,
+              elLeft = (sWidth - elWidth) / 2;
+            el.css({
+                top: elTop + 10,
+                left: elLeft,
+                opacity: '0'
+            })
+            .animate({
+                opacity: '1',
+                top: elTop,
+                queue: true
+            }, 50)
+            .delay('3000')
+            .animate({
+                opacity: '0',
+                top: elTop + 10,
+                queue: true
+            }, 50,
+            function() {
+              el.remove();
+            });
+    }
+  </script>
+</html>

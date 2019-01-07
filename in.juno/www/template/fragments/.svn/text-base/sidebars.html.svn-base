@@ -1,0 +1,368 @@
+{if $row['frag']['style']=="photo_list"}
+<!-- photo_list -->
+<div class="module old_module">
+	<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" >更多</a>{/if}</div>
+	<div class="con">
+		<ul class="list-photo">
+		{loop $row['data'] $value}
+			<li><a href="{$value['link']}" target="_blank" class="thumb"  title="{$value['title']}"><img src="{$value['image']}" alt="{$value['title']}"  /></a><a href="{$value['link']}" target="_blank" class="title" title="{$value['title']}">{$value['title']}</a>{if $value['summary']}<p class="summary">{eval echo cut_string($value['summary'],48)}</p>{/if}</li>
+		{/loop}
+		</ul>
+	</div>
+</div>
+<!-- photo_list -->
+{/if}
+
+{if $row['frag']['style']=="image_list"}
+<!-- image_list -->
+<div class="module old_module">
+	<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" >更多</a>{/if}</div>
+	<div class="con">
+		<ul class="list-image">
+		{loop $row['data'] $value}
+			<li><a href="{$value['link']}" target="_blank" class="thumb"  title="{$value['title']}"><img src="{$value['image']}" alt="{$value['title']}"  /></a><a href="{$value['link']}" target="_blank" class="title" title="{$value['title']}">{$value['title']}</a>{if $value['summary']}<p class="summary">{eval echo cut_string($value['summary'],48)}</p>{/if}</li>
+		{/loop}
+		</ul>
+	</div>
+</div>
+<!-- image_list -->
+{/if}
+					
+{if $row['frag']['style']=="brand_list"}					
+<!-- brand_list -->					
+<div class="module old_module">
+	<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" >更多</a>{/if}</div>
+	<div class="con">
+		<ul class="list-brand">
+		{loop $row['data'] $value}
+			<li><a href="{$value['link']}" target="_blank" class="thumb"  title="{$value['title']}"><img src="{$value['image']}" alt="{$value['title']}"  /></a><a href="{$value['link']}" target="_blank" class="title" title="{$value['title']}">{$value['title']}</a></li>
+		{/loop}
+			
+		</ul>
+	</div>
+</div>
+<!-- brand_list -->					
+{/if}
+
+{if $row['frag']['style']=="event_list"}					
+<!-- event_list -->					
+<div class="module old_module">
+	<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" >更多</a>{/if}</div>
+	<div class="con">
+		<ul class="list-event">
+			{loop $row['data'] $value}
+			<li>
+                <a href="{$value[link]}" target="_blank" title="{$value['title']}">
+                    <img src="{$value[image]}" alt="{$value['title']}" /><b></b>
+                    <span class="t">
+                        
+                        <em class="c">{eval echo strip_tags($value[title]);}</em>
+                    </span>
+                </a>
+
+            </li>
+			{/loop}
+			
+		</ul>
+	</div>
+</div>										
+<!-- event_list -->
+{/if}	
+{if $row['frag']['style']=="babyclock"}	
+<!-- babyclock -->
+<div class="module old_module" id="babyclock">
+	<div class="tit"><h3>{$row['frag']['name']}</h3><span class="more">00:00:00</span></div>
+	<div class="con">
+		<div class="photo">
+			<a href="#" target="_blank">
+				<img src="about:blank" />
+				<em class="t"><span> </span> <i class="sex boy"> </i></em>
+			</a>
+		</div>
+		<div class="list-news">
+		{loop $row['data'] $k $value}
+			{eval $maxkey=count($row['data'])-1;}
+			{if $k==1}
+			<div class="list-news-more">
+			{/if}
+			{if $k==0}
+			
+			<div class="headline">
+				<h4><a href="{$value['link']}" target="_blank"  title="{$value['title']}">{eval echo cut_string(strip_tags($value['title']),'54');}</a></h4>
+				<p>{eval echo cut_string(strip_tags($value['summary']),'60');}</p>
+			</div>
+			{else}
+			<li>{if $value[extraData]}<a href="{$value[extraData][catlink][data]}"  target="_blank" class="cate">[{$value[extraData][catname][data]}]</a> {/if}<a href="{$value['link']}" target="_blank" class="title"  title="{$value['title']}">{eval echo cut_string(strip_tags($value['title']),'30');}</a></li>
+			{/if}
+
+			{if $k==$maxkey and $k>=1}
+			</div>
+			{/if}
+		{/loop}	
+		</div>
+	</div>
+</div>
+<!-- babyclock -->				
+{/if}	
+
+{if $row['frag']['style']=="groupon_list"}	
+<!-- groupon_list -->
+<div class="module old_module">
+	<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" >更多</a>{/if}</div>
+	<div class="con">
+		<ul class="list-groupon">
+		{loop $row['data'] $value}
+			<li>
+				<div class="thumb"><a href="{$value['link']}" target="_blank"><img src="{$value['image']}" alt="{$value['title']}"/><em class="t">{eval echo cut_string(strip_tags($value['title']),'28');}</em></a></div>
+				<div class="summary"><a href="{$value['link']}" target="_blank">{eval echo cut_string(strip_tags($value['summary']),'90');}</a></div>			
+				{if $value[extraData]}
+				<div class="price">
+					<del class="o">原价 ￥{$value[extraData][price][data]}</del>
+					<span class="p">￥{$value[extraData][sale_price][data]}</span>
+					<a href="{$value['link']}" class="btn btn-success" target="_blank"  title="立即购买{$value['title']}">立即购买</a>
+				</div>
+				{/if}
+			</li>
+		{/loop}
+		
+		</ul>
+	</div>
+</div>
+<!-- groupon_list -->
+{/if}
+
+{if $row['frag']['style']=="f_weibo"}	
+<!-- f_weibo -->
+<div id="weibo" class="module old_module">
+						<div class="tit">
+							<ul>
+								<li class="active"><a href="#weibo-f" data-toggle="tab">@评房网</a></li>
+								<li class="pipe">|</li>
+								<li><a href="#weibo-tf" data-toggle="tab">@成都团房</a></li>
+							</ul>
+						</div>
+						<div class="con">
+							<div class="tab-pane active" id="weibo-f">
+								<iframe width="100%" height="340" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=340&fansRow=2&ptype=1&speed=100&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2034441770&verifier=b8c5e1f7&colors=ffffff,fbfbfb,666666,666666,fbfbfb&dpc=1"></iframe>
+							</div>
+							<div class="tab-pane" id="weibo-tf">
+								<iframe width="100%" height="340" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?width=0&height=340&fansRow=2&ptype=1&speed=300&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2363261922&verifier=c46ba8aa&colors=ffffff,fbfbfb,666666,666666,fbfbfb&dpc=1"></iframe>
+							</div>
+						</div>
+					</div>
+<!-- f_weibo -->	
+{/if}	
+
+
+{if $row['frag']['style']=="weibo"}
+<!-- 指定某个微博 -->
+<div id="weibo" class="module old_module">
+						<div class="tit">
+							<h3>{$row['frag']['name']}</h3>
+						</div>
+						<div class="con">
+							<div class="tab-pane active" id="weibo-f">
+								<iframe width="100%" height="340" class="share_self"  frameborder="0" scrolling="no" src="{$row['frag']['dataSource']}"></iframe>						
+							</div>
+					</div>
+					</div>
+{/if}
+
+{if $row['frag']['style']=="mvp_post_list"}	
+<!-- mvp_post_list -->
+<div class="module old_module">
+						<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" >更多</a>{/if}</div>
+						<div class="con">
+							{if $row['data']['user']}
+							<dl class="list-mvp-post">
+								<dt class="user-detail">
+									<div class="avatar"><a href="/user/{$row['data']['user']['id']}" target="_blank"><img src="{$row['data']['user']['avatar_m']}" alt="{$row['data']['user']['nickname']}"/></a></div>
+									<h4 class="name"><a href="/user/{$row['data']['user']['id']}" target="_blank">{$row['data']['user']['nickname']}</a></h4>
+									<div class="count">{$row['data']['user']['feedCount']} 封点评</div>
+									<div class="type">{$row['data']['user']['beFollowCount']} 个粉丝</div>
+								</dt>
+								<dd class="user-posts">
+									<ul class="list-post">
+									{loop $row['data']['post'] $post}
+										<li>
+											<div class="content">
+										      在<a class="place-link" href="/place/{$post['placeId']}/" target="_blank">{$post['placename']}</a>发布：
+										      <p>{eval echo cut_string(strip_tags($post['content']),'120');}</p>
+											</div>
+											<div class="info">
+												<div class="time"><a href="/review/{$post['id']}" target="_blank">{$post['createDate']}</a></div>
+												<div class="count">{$post['praiseCount']}个赞</div>
+											</div>
+										</li>
+									{/loop}
+										
+									</ul>
+								</dd>
+							</dl>
+							{/if}
+						</div>
+					</div>
+<!-- mvp_post_list -->					
+{/if}
+
+{if $row['frag']['style']=="mvp_list"}	
+<!-- mvp_list -->	
+<div class="module old_module">
+						<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" >更多</a>{/if}</div>
+						<div class="con">
+							<dl class="list-mvp">
+							
+								{loop $row[data] $d}
+								{if $d['user']}
+								<dt class="user-detail">
+									<div class="avatar"><a href="/user/{$d['user']['id']}" target="_blank"><img src="{$d['user']['avatar_m']}" alt="{$d['user']['nickname']}"/></a></div>
+									<h4 class="name"><a href="/user/{$d['user']['id']}" target="_blank">{$d['user']['nickname']}</a></h4>
+									<div class="count">{$d['user']['feedCount']} 封点评</div>
+									<div class="type">{$d['user']['beFollowCount']} 个粉丝</div>
+								</dt>
+								{/if}
+								{if $d['user']['description']}
+								<dd class="user-post">			
+									<div class="content">    
+								      <p>{eval echo cut_string(strip_tags($d['user']['description']),'90');}</p>
+									</div>						
+								</dd>
+								{/if}
+								{/loop}
+							</dl>
+						</div>
+					</div>
+<!-- mvp_list -->	
+{/if}		
+
+
+{if $row['frag']['style']=="f_focus_list"}	
+<!-- f_focus_list -->	
+<div class="module old_module">
+						<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}"  target="_blank">更多</a>{/if}</div>
+						<div class="con">
+							<table border="0" cellspacing="0" cellpadding="0" class="table table-condensed table-focus-house">
+								<thead>
+									<tr>
+										<th class="name">楼盘名称</th>
+										<th class="area">区域</th>
+										<th class="price">单价</th>
+									</tr>
+								</thead>
+								<tbody>
+								{loop $row['data'] $value}
+									<tr>
+										<td class="name"><a href="{$value['link']}" target="_blank"  title="{$value['title']}">{$value['title']}</a></td>
+										<td class="area">{$value['summary']}</td>
+										<td class="price">{if $value[extraData]}{$value[extraData][price][data]}{/if}</td>
+									</tr>
+								{/loop}	
+								
+								</tbody>
+							</table>
+						</div>
+					</div>
+<!-- f_focus_list -->
+{/if}
+{if $row['frag']['style']=="news_list"}	
+<!-- news_list -->
+<div class="module old_module">
+						<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" target="_blank" >更多</a>{/if}</div>
+						<div class="con">
+							<div class="list-news">
+							{loop $row['data'] $k $value}
+								{eval $maxkey=count($row['data'])-1;}
+								{if $k==1}
+								<div class="list-news-more">
+								{/if}
+								{if $k==0}
+								<div class="photo">
+									<a href="{$value['link']}" target="_blank"  title="{$value['title']}">
+										<img src="{$value['image']}" alt="{$value['title']}" />
+									</a>
+								</div>
+								<div class="headline">
+									<h4><a href="{$value['link']}"  title="{$value['title']}" target="_blank">{eval echo cut_string(strip_tags($value['title']),'54');}</a></h4>
+									<p>{eval echo cut_string(strip_tags($value['summary']),'60');}</p>
+								</div>
+								{else}
+								<li>{if $value[extraData]}<a href="{$value[extraData][catlink][data]}" target="_blank" class="cate">[{$value[extraData][catname][data]}]</a> {/if}<a href="{$value['link']}" target="_blank" class="title">{eval echo cut_string(strip_tags($value['title']),'30');}</a></li>
+								{/if}
+
+								{if $k==$maxkey and $k>=1}
+								</div>
+								{/if}
+							{/loop}	
+								
+							</div>
+						</div>
+					</div>
+<!-- news_list -->	
+{/if}
+
+
+{if $row['frag']['style']=="feed-list"}	
+<!-- feed-list -->
+<div class="module old_module">
+						<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" target="_blank" >更多</a>{/if}</div>
+						<div class="con">
+							<div class="feedroll" id="feedroll{$row['frag']['fid']}">
+							    <ul class="list-feed">
+							    {loop $row['data']['data'] $feed}
+								    <li>
+								      {if $feed['isCrowned']}
+								      
+								      <a href="/user/{$feed['uid']}/" target="_blank" class="avatar"><img src="{$feed['head']}" alt="{$feed['nickname']}" /></a>
+								      <a class="user-link" href="/user/{$feed['uid']}/" target="_blank">{$feed['nickname']}</a>成为<a class="place-link" href="/place/{$feed['placeId']}/" target="_blank">{$row['data']['places'][$feed['placeId']]['placename']}</a>地主
+								      
+								      {else}
+								      <a href="/user/{$feed['uid']}/" target="_blank" class="avatar"><img src="{$feed['head']}" alt="{$feed['nickname']}" /></a>
+								      <a class="user-link" href="/user/{$feed['uid']}/" target="_blank">{$feed['nickname']}</a>在<a class="place-link" href="/place/{$feed['placeId']}/" target="_blank">{$row['data']['places'][$feed['placeId']]['placename']}
+								      </a>签到
+								      {/if}
+								    </li>
+								{/loop}
+								 
+					            </ul>
+					            <div class="mask"></div>
+					        </div>
+						</div>
+					</div>
+<!-- feed-list -->
+{/if}
+
+{if $row['frag']['style']=="link_list"}	
+<!-- link_list -->
+<div class="module old_module">
+						<div class="tit"><h3>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" target="_blank" >更多</a>{/if}</div>
+						<div class="con">
+							<ul class="list-link">
+							{loop $row['data'] $value}
+								<li><a href="{$value['link']}" class="title" target="_blank"  title="{$value['title']}">{eval echo cut_string(strip_tags($value['title']),'36');}</a></li>
+							{/loop}
+							
+							</ul>
+						</div>
+					</div>
+<!-- link_list -->					
+{/if}				
+
+
+
+{if $row['frag']['style']=="weibo_attention"}
+<!-- weibo_attention -->
+<div class="module weibo">
+	<div class="tit"><h3><i></i>{$row['frag']['name']}</h3>{if $row['frag']['rule']['jump_link']}<a class="more" href="{$row['frag']['rule']['jump_link']}" >更多</a>{/if}</div>
+	<div class="con">
+		<ul class="">
+		{loop $row['data'] $value}
+			<li><a href="{$value['link']}" target="_blank" class="thumb"  title="{$value['title']}"><img src="{$value['image']}"  alt="{$value['title']}" /></a>
+				<p>
+					<a href="{$value['link']}" target="_blank" class="title" title="{$value['title']}">{$value['title']}</a> {if $value['summary']}{eval echo str_replace(array('[',']'),array('<','>'),$value['summary'])}{/if}</p>
+			</li>
+		{/loop}
+		</ul>
+	</div>
+</div>
+<!-- weibo_attention -->
+{/if}

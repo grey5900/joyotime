@@ -1,0 +1,103 @@
+<!--{eval $page_id = 'add_enewspaper';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>标题：</dt>
+                <dd>
+                    <input type="text" name="subject" class="required" size="80" value="{$paper['subject']}" />
+                </dd>
+            </dl>
+            <span name="frame_content">
+            	
+           	</span>
+			<dl>
+				<dt>&nbsp;</dt>
+				<dd><button type="button" name="add_frame">添加帧</button></dd>
+			</dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                	保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+var my_frames = new Array();
+var count_frame = 0;
+
+$(function(){
+	$("button[name=add_frame]", $("#{$page_id}")).click(function(){
+		add_frame();
+	});
+	
+	<!--{if $id}-->
+	// 根据数据初始化
+	<!--{loop $content $row}-->
+		add_frame("{$row['image']}", "{echo naddslashes($row['content'])}");
+	<!--{/loop}-->
+	<!--{else}-->
+	// 初始化3个帧
+	for(var i=0; i<3; i++) {
+		add_frame();
+	}
+	<!--{/if}-->
+});
+
+function add_frame(image, content) {
+	var id = "id_" + count_frame;
+	var my_frame = $("<dl id=\"" + id + "\">" + 
+		"<dt>&nbsp;</dt>" + 
+		"<dd>" +
+			"<span>上传图片</span>" + 
+			"<textarea cols=\"80\" rows=\"20\" name=\"content[" + count_frame + "]\">" + (content?content:'') + "</textarea>" + 
+			"<a href=\"javascript:;\">[删除]</a>" + 
+		"</dd>" +
+	"</dl>");
+	
+	$("span[name=frame_content]", $("#{$page_id}")).append(my_frame);
+	
+	var new_frame = $("#" + id, $("#{$page_id}"));
+	$("dt", $(new_frame)).text("第" + (count_frame + 1) + "帧");
+	$("a", $(new_frame)).click(function(){
+		var dl_obj = $(this).parent().parent();
+		var dl_id = $(dl_obj).attr("id");
+		var new_array = new Array();
+		for(var f in my_frames) {
+			if(dl_id != f) {
+				new_array.push(f);
+			}
+		}
+		my_frames = new_array;
+		$(dl_obj).remove();
+	});
+	
+	var options = "name:\"image[" + count_frame + "]\", id:\"image_" + id + "\", file_type:\"common\", required:false, resolution:\"odp\"";
+	if(image) {
+		options += ", image_name: \"" + image + "\"";
+	}
+	$("span", $(new_frame)).my_upload(eval("({" + options + "})"));
+	
+	count_frame += 1;
+	my_frames.push(id);
+}
+</script>

@@ -1,0 +1,1 @@
+@font-face{font-family:OpenSans-Light;font-style:normal;font-weight:300;src:url("/font/OpenSans-Light.ttf")}body#eng{font-family:OpenSans-Light,sans-serif,Arial}body#chn{font-family:'Microsoft Yahei',"\5B8B\4F53",verdana,sans-serif}p{font-weight:100;font-size:1em}

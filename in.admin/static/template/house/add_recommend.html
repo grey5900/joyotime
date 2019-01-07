@@ -1,0 +1,53 @@
+<div id="{$page_id}"class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="57">
+			<dl>
+				<dt>是否开启：</dt>
+				<dd>
+				<label><input type="radio" name="status" value="1" class="required"<!--{if $data['has_recommend'] == 1}--> checked="checked"<!--{/if}--> />是</label>
+				<label><input type="radio" name="status" value="0" class="required"<!--{if $data['has_recommend'] == 0}--> checked="checked"<!--{/if}--> />否</label>
+				</dd>
+			</dl>
+			<dl>
+				<dt>返利标题：</dt>
+				<dd>
+				<input type="text" size="50" name="title" value="{$data['k_title']}" class="required" />
+				</dd>
+			</dl>
+			<dl>
+				<dt>返利详情：</dt>
+				<dd>
+				<textarea rows="5" cols="50" name="detail" class="required">{$data['k_detail']}</textarea>
+				</dd>
+			</dl>
+			<dl>
+				<dt>到期时间：</dt>
+				<dd>
+				<input type="text" size="12" name="expire_date" class="required date" format="yyyy-MM-dd" value="{$data['k_expire_date']}" readonly="true" />
+				</dd>
+			</dl>
+		</div>		                                                                     
+		<div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+	</form>
+</div>

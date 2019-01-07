@@ -1,0 +1,98 @@
+<script type="text/javascript">
+		
+	function jsAddRight(id,parentid,depth,path){
+		var panel = $("<div></div>");
+		var subp = $("<ul></ul>");
+		//js生成新增权限属性面板
+		panel.attr("class","panelBar");
+		//name
+		var item = $("<li>权限名称 </li>");
+		item.append($("<input/>").attr({name:'name[]',type:'text','class':'required',size:16}));	
+		//parentid
+		item.append($("<input/>").attr({name:'parentid[]',type:'hidden',value:parentid}));
+		item.append($("<input/>").attr({name:'depth[]',type:'hidden',value:depth}));
+		item.append($("<input/>").attr({name:'path[]',type:'hidden',value:path}));
+		subp.append(item);
+		//ismenu
+		item = $("<li>菜单项 </li>");
+		var sel = $("<select></select>");
+		sel.attr({name:'ismenu[]'});
+		sel.append($('<option></option>').attr({value:'0',selected:'selected'}).html('否'));
+		sel.append($('<option></option>').attr('value','1').html('是'));
+		item.append(sel);
+		subp.append(item);
+		//uri
+		item = $("<li>链接地址 </li>");
+		item.append($("<input/>").attr({name:'uri[]',type:'text',size:16}));
+		subp.append(item);
+		//serialno
+		item = $("<li>排序 </li>");
+		item.append($("<input/>").attr({name:'serialno[]',type:'text',size:2}));
+		subp.append(item);
+		//logcontent
+		item = $("<li>纪录日志? </li>");
+		item.append($("<select></select>").attr({name:'islog[]'}).append($('<option>是</option>').attr({value:'1',selected:'selected'})).append($('<option>否</option>').attr('value',0)));
+		subp.append(item);
+		
+		panel.append(subp);
+		$("#"+id).append(panel);
+		
+		$("#subBtn").show();
+	}
+</script>
+<!-- 页面主要显示区 -->
+<div class="pageContent">
+	
+	<div class="panelBar">
+		<ul class="toolBar">
+		<li><a href="javascript:;" class="add" onclick="jsAddRight('w_list_print',0,0,'0');"><span>添加</span></a></li>
+		</ul>
+	</div>
+	
+	<form id="postForm" method="post" action="{eval echo site_url(array('rights','add_new'));}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+	<div id="w_list_print" class="r_list" layoutH="100">
+		<ul>
+		{loop $list $key $val}
+		{if $val[parentid] == 0}
+		<li><div id="item_{$key}" class="item">
+		<!-- 权限名称＋动作按钮 -->
+			<table id="v_item_{$key}" border="0" cellspacing="1" cellpadding="4">
+				<tr><td width="140">{$val[name]} (ID:{$key})</td>
+				<td>
+					<a class="btnAdd" href="javascript:;" onclick="jsAddRight('item_{$key}',{$val[id]},{$val[depth]},'{$val[path]}');" title="添加">添加</a> 
+					<a class="btnDel" href="{eval echo site_url(array('rights','delete'));}/id/{$key}" title="删除操作无法恢复，确定删除吗？" target="ajaxTodo">删除</a>
+					<a class="btnEdit" href="{eval echo site_url(array('rights','edit'));}/id/{$key}" rel="{eval echo build_rel(array('rights','edit', $key));}" target="dialog" title="编辑">编辑</a>
+				</td></tr>
+			</table>
+			<div id="subitem_{$key}"></div>
+		</div></li>
+		{else}
+		<script type="text/javascript">
+			var parent = $("#subitem_{$val[parentid]}");
+			var item = $("<div></div>").attr({id:'item_{$key}','class':'item'});
+			//table
+			var table = $("<table id='v_item_{$key}' border='0' cellspacing='1' cellpadding='4'></table>");
+			var tr = $("<tr></tr>");
+			tr.append($("<td width='140'></td>").html('{$val[name]} (ID:{$key})'));
+			var tdAct = $("<td></td>");
+			tdAct.append($("<a/>").attr({'class':'btnAdd',title:'添加',href:'javascript:;'}).html('添加').bind('click',function(){jsAddRight('item_{$key}',{$val[id]},{$val[depth]},'{$val[path]}');}));
+			tdAct.append($("<a/>").attr({'class':'btnDel',title:'删除',href:'{eval echo site_url(array("rights","delete"));}/id/{$key}',title:'删除操作无法恢复，确定删除吗？',target:'ajaxTodo'}).html('删除'));
+			tdAct.append($("<a/>").attr({'class':'btnEdit',title:'编辑',href:'{eval echo site_url(array("rights","edit"));}/id/{$key}', target:'dialog'}).html('编辑'));
+			tr.append(tdAct);
+			item.append(table.append(tr));
+			//subitem
+			item.append($("<div></div>").attr('id','subitem_{$key}'));
+			//显示到页面
+			parent.append($("<ul></ul>").append($("<li></li>").append(item)));
+		</script>
+		{/if}
+		{/loop}
+		</ul>
+	</div>
+	<div id="subBtn" class="subBar" style="display:none;">
+		<ul><li><div class="buttonActive"><div class="buttonContent"><button type="submit"> 提交 </button></div></div></li></ul>
+	</div>
+	</form>
+
+</div>
+        

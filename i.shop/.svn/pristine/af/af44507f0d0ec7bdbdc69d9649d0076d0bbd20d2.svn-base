@@ -1,0 +1,126 @@
+<!--{template web/header}-->
+<div class="wrapper">
+  <div class="container">
+    <div class="mainbox">
+      <div class="main">
+        <div class="inner main-conter">
+          <div class="title">
+            <!--{template what}-->
+          </div>
+          <div class="from-detail">
+            <div class="hd">
+              <div class="span7">
+                <div class="cutoff">
+                  <span>扩展模型</span>
+                </div>
+              </div>
+              <div class="span2">
+                <span>提交时间</span>
+              </div>
+            </div>
+            <div class="bd clearfix">
+              <dl>
+                <!--{loop $list $k $v}-->
+                <dd>
+                  <div class="span7">
+                    <div class="event">
+                      <div class="img-show">
+                        <div class="store-box">
+                          <div class="style-border01 unit">
+                            <div class="box">
+                              <div class="inside arrow">
+                                <div class="unit-title">
+                                  <h3><a href="/profile/preview/{$v[id]}/0" class="preview jqView">{$v[title]}</a></h3>
+                                </div>
+                                <!--{if $v[style] == 2}-->
+                                <!--{if $v[has_img]}-->
+                                <ul class="img-col">
+                                  <!--{loop $v[imgs] $i $img}-->
+                                  <li><a class="jqView" href="/profile/preview/{$v[id]}/0"><img src="{$img}" width="52px" height="52px" /></a></li>
+                                  <!--{/loop}-->
+                                </ul>
+                                <!--{else}-->
+                                <p>
+                                  {$v[content]}
+                                </p>
+                                <!--{/if}-->
+                                <!--{elseif $v[style] == 1}-->
+                                <a class="img-bar jqView" href="/profile/preview/{$v[id]}/0"><img src="{$v[imgs]}" width="250px" height="60px" /></a>
+                                <p>
+                                  {$v[content]}
+                                </p>
+                                <!--{else}-->
+                                <a class="img-lt jqView" href="/profile/preview/{$v[id]}/0"><img src="{$v[imgs]}" width="52px" height="52px" /></a>
+                                <p>
+                                  {$v[content]}
+                                </p>
+                                <!--{/if}-->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="stores">
+                          <span>应用店铺：</span><a href="/profile/link_places/{$v[id]}/0" class="view-place jqView">{$v[places]}家</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="span2">
+                    <div class="preview">
+                      <span>{$v[createDate]}</span>
+                      <div class="review">
+                        <!--{if $v[status] == 10}-->
+                        <a href="javascript:void(0)" class="modal-tips jqModal" onclick="showReason('驳回原因','{$v[remark]}');return false;"><i></i>审核失败</a>
+                        <!--{else}-->
+                        <span>等待审核...</span>
+                        <!--{/if}-->
+                      </div>
+                      <div class="setting">
+                        <!--{if $v[status] == 10}--><a href="/profile/edit/{$v[id]}">编辑</a>|<a href="javascript:void(0)" onclick="return delete_check('{$v[id]}');">删除</a><!--{/if}-->
+                      </div>
+                    </div>
+                  </div>
+                </dd>
+                <!--{/loop}-->
+              </dl>
+              <!--{$paginate}-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--{template sider}-->
+    </div>
+  </div>
+</div>
+
+<div id="view_M" class="modal-preview hide"></div>
+
+<script type="text/javascript">
+	$(function(){
+		$("#view_M").jqm({ajax:'@href', modal:true, overlay:5, trigger:'a.jqView'});
+	});
+	function delete_check(id) {
+		if (confirm("确定要删除这个扩展信息吗?")) {
+			$.ajax({
+				type : "POST",
+				url : "/profile/delete",
+				data : {
+					"id" : id
+				},
+				dataType : "json",
+				success : function(json) {
+					alert(json.msg);
+					if (json.code == 1) {
+						window.location.reload();
+					} else {
+						$("#messager").messager({
+							message : json.msg
+						});
+					}
+				}
+			});
+		}
+		return false;
+	}
+</script>
+<!--{template web/footer}-->

@@ -1,0 +1,40 @@
+<!--{template i/page_template/wmfile/header}-->
+                <article>
+                    <br />
+                    <h3>二十六、未成年人心理健康辅导站</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="20%">序号</th>
+                                <th width="70%">指标内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>有专门的工作场地和必要的心理健康教育辅助器材。</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>有心理健康辅导专业工作人员（具备从业资格的证书）和志愿者队伍，并提供名单和简历。</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>有开设心理热线，并保持通畅。</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>建立热线接听、面询、危机干预、工作考评等工作制度，并有相关工作记录。</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>有对未成年人提供心理帮助、心理咨询、心理治疗及危机干预的档案资料。</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>悬挂标牌醒目，整洁完好无破损。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+<!--{template i/page_template/wmfile/footer}-->

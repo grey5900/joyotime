@@ -1,0 +1,72 @@
+.bs-docs-sidebar {
+	width: 18%;
+	float: left;
+  height: 100%;
+  background: #333;
+  top:33px;
+  z-index: 9999;
+	.accordion {
+		.accordion-group {
+			display: block;
+			background: #4a4a4a;
+			line-height: 40px;
+			.accordion-heading {
+				display: block;
+				height: 45px;
+				line-height: 45px;
+				margin: 0 0 0 15%;
+				cursor: pointer;
+				.accordion-toggle {
+					color: #e5e5e5;
+					//border-right: 6px solid #3498db;
+					span {
+						display: block;
+						background: url('../img/menu-up.png') no-repeat center right #4a4a4a;
+						margin-right: 10px;
+					}
+				}
+				.collapsed {
+					border-right: none;
+					span {
+						display: block;
+						background: url('../img/menu-down.png') no-repeat center right #4a4a4a;
+						margin-right: 16px;
+					}
+				}
+				i {
+					margin-right: 5px;
+				}
+				.icon-chevron-down,.icon-chevron-up {
+					float: right;
+				}
+			}
+			.accordion-body {
+				background: #333;
+				.accordion-inner {
+					padding-left: 25%;
+					.active {
+						border-right: 6px solid #3498db;
+						a {
+							height: 45px;
+							line-height: 45px;
+							display: block;
+							color: #3498db;
+						}
+					}
+					.accordion-li {
+						a {
+							height: 45px;
+							line-height: 45px;
+							display: block;
+							color: #fff;
+							&:hover {
+								color: #3498db;
+								//border-right: 6px solid #3498db;
+							}
+						}
+					}
+				}	
+			}
+		}
+	}
+}

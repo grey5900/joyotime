@@ -1,0 +1,121 @@
+.fs-intor-voice {
+  .text-link {
+    display: block;
+    line-height: 74px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+    a {
+      color: @green;
+      text-decoration: none;
+    }
+  }
+}
+/* download */
+
+.fs-apps-download {
+  display: inline-block;
+  padding: 20px 0 0 100px;
+}
+.fs-logo-voice {
+  a.fs-logo {
+    background: transparent url('/img/logo.voice.png') no-repeat 0px 0px;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    width: 248px;
+    height: 100px;
+    display: block;
+    outline: none;
+    text-indent: -9000px;
+    _background: url('/img/logo.home.gif') no-repeat;
+  }
+  p {
+    line-height: 74px;
+    font-size: 32px;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    display: inline-block;
+    max-width: 380px;
+    em {
+      font-size: 40px;
+      font-style: normal;
+      margin: 0 5px;
+    }
+  }
+}
+.fs-voice-btn {
+  margin: 160px 0 0 0;
+  width: 240px;
+  a {
+    margin-top: 20px;
+    display: block;
+  }
+}
+
+.fs-voice-btn360 {
+  display: none;
+}
+/*
+ *
+ * Ipad view
+ * 
+ */
+@media screen and (max-width: 992px) {
+  .fs-voice {
+    text-align: center;
+    .fs-apps-download {
+      padding: 0;
+      .fs-logo-voice {
+        p {
+          display: none;
+        }
+      }
+      .fs-voice-btn {
+        margin: 70px 0 0;
+      }
+    }
+    .fs-intor-voice {
+      display: inline-block;
+      float: none;
+    }
+    .fs-intor-voice .text-link {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fs-index-footer {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .fs-index-container .fs-index-intor {
+    padding-top: 20px;
+    border-bottom: none;
+  }
+  .fs-voice .fs-apps-download .fs-voice-btn {
+    display: none;
+  }
+  .fs-index-footer {
+    display: none;
+  }
+  
+  .fs-voice-btn360 {
+    display: block;
+    .fs-btn {
+      width: 100%;
+      text-align: center;
+    }
+  } 
+  .fs-logo-voice {
+    text-align: left;
+    width: 300px;
+    margin-bottom: 20px;
+    a.fs-logo {
+      width: 142px;
+      height: 50px;
+    }
+  }
+}

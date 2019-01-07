@@ -1,0 +1,101 @@
+<div class="pageContent">
+    <form method="post" action="{eval echo site_url(array('poi', 'poi', 'index'))}" onsubmit="return navTabSearch(this, '{eval echo build_rel(array('poi', 'poi', 'index'))}');">
+        <div class="pageFormContent" layoutH="60">
+            <div class="unit">
+                <label>
+                    <select name="type" class="combox">
+                        <option value="placename">POI名称</option>
+                        <option value="id">POI ID</option>
+                        <option value="address">POI地址</option>
+                    </select> </label>
+                <input type="text" name="keywords" size="30" />
+            </div>
+            <div class="unit">
+                <label>状态：</label>
+                <select name="status" class="combox">
+                    <option value="0">请选择</option>
+                    <option value="1">正常</option>
+                    <option value="2">隐藏</option>
+                    <option value="3">删除</option>
+                </select>
+                <label>
+                <input type="checkbox" name="hasphone" value="1" />
+                有电话?
+                </label>
+                <label>
+                <input type="checkbox" name="mark" value="1" />
+                是地标?
+                </label>
+            </div>
+            <div class="unit">
+                <label>分类：</label>
+                <input type="text" style="float:left;" size="20" name="placeCategory.name" id="placeCategory.id" value="{$cname}" readonly="true" />
+                    <input type="hidden" name="placeCategory.id" value="{$cid}" />
+                    <a class="btnLook" href="{eval echo site_url(array('poi', 'category', 'view_tree', 'is_brand', '-1'))}" lookupGroup="placeCategory">查询分类</a>
+            </div>
+            <div class="unit">
+                <label>星级：</label>
+                <select name="level1" class="combox">
+                    <option value="0" selected>全部</option>
+                    <option value="1">一星</option>
+                    <option value="2">二星</option>
+                    <option value="3">三星</option>
+                    <option value="4">四星</option>
+                    <option value="5">五星</option>
+                </select>
+                <label style="text-align: center; width:10px;">~</label>
+                <select name="level2" class="combox">
+                    <option value="0" selected>全部</option>
+                    <option value="1">一星</option>
+                    <option value="2">二星</option>
+                    <option value="3">三星</option>
+                    <option value="4">四星</option>
+                    <option value="5">五星</option>
+                </select>
+            </div>
+            <div class="unit">
+                <label>人均消费：</label>
+                <input type="text" name="pcc1" size="16"/>
+                <label style="text-align: center; width:10px;">~</label>
+                <input type="text" name="pcc2" size="16" />
+            </div>
+            <div class="unit">
+                <label>点评数：</label>
+                <input type="text" name="tip1" size="10" />
+                <label style="text-align: center; width:10px;">~</label>
+                <input type="text" name="tip2" size="10" />
+            </div>
+            <div class="unit">
+                <label>签到数：</label>
+                <input type="text" name="checkin1" size="10" />
+                <label style="text-align: center; width:10px;">~</label>
+                <input type="text" name="checkin2" size="10" />
+            </div>
+            <div class="unit">
+                <label>图片数：</label>
+                <input type="text" name="photo1" size="10" />
+                <label style="text-align: center; width:10px;">~</label>
+                <input type="text" name="photo2" size="10" />
+            </div>
+            <div class="unit">
+                <label>基础权重：</label>
+                <input type="text" name="rating1" size="16"/>
+                <label style="text-align: center; width:10px;">~</label>
+                <input type="text" name="rating2" size="16" />
+            </div>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                检索
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

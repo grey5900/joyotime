@@ -1,0 +1,78 @@
+<!--{template common/header3.0}-->
+	<div class="main channel layout detail">
+		<!--{template channel/channel_header}-->
+		<div class="column">
+			<div class="article">
+				<div class="tit">
+					<h3><i></i>{$category['catName']}</h3>
+				</div>
+				<div class="bd">
+					<div class="channel_list">
+						<ul>
+						 {loop $list $k $l}
+							<li>
+								<div class="date">
+									<div class="year">
+										<p><!--{echo date("Y-m",$l['dateline']);}--></p>
+									</div>
+									<div class="day">
+										<p><!--{echo date("d",$l['dateline']);}--></p>
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
+								</div>
+								{if $l['thumb']}
+								<div class="img">
+									<img src="{$l['thumb']}" alt="{$l[subject]}" />
+								</div>
+								{/if}
+								<div class="info">
+									<h4>
+										<a href="{if $l['linkuri']}{$l['linkuri']}{else}/article/$l['id']{/if}">{$l[subject]}</a>
+									</h4>
+									<p>{echo cut_string(strip_tags($l['summary']),'240');} <a href="{if $l['linkuri']}{$l['linkuri']}{else}/article/$l['id']{/if}">[详细]</a></p>
+									<div class="ft">
+										<div class="share">
+											<!-- Baidu Button BEGIN -->
+											<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{
+												'url':'http://in.chengdu.cn{if $l['linkuri']}{$l['linkuri']}{else}/article/$l['id']{/if}',
+												'title':'{$l[subject]}',
+												'text':'{$l[subject]}',
+												'pic':'{$l['thumb']}'
+											}">
+											<a class="bds_tsina"></a>
+											<a class="bds_qzone"></a>
+											<a class="bds_tqq"></a>
+											<a class="bds_renren"></a>
+											<span class="bds_more">更多</span>
+											<a class="shareCount"></a>
+											</div>
+											<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=899470" ></script>
+											<script type="text/javascript" id="bdshell_js"></script>
+											<script type="text/javascript">
+											document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+											</script>
+											<!-- Baidu Button END -->
+										</div>
+										<span><!--{echo date("H:i:s",$l['dateline']);}--></span>
+									</div>
+								</div>
+							</li>
+							{/loop}
+						</ul>
+					</div>
+					{$paginate}
+				</div>
+			</div>
+			<div class="side">	
+				<!--{template fragments/auto_contact_us}-->
+				<!--{template fragments/auto_zhangyu_shuoche}-->
+				
+				<!--{loop $sidebar_data $row}-->
+					<!--{template fragments/sidebars}-->
+				<!--{/loop}-->
+			</div>
+		</div>
+	</div>	
+<!--{template common/footer}-->

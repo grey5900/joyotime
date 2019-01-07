@@ -1,0 +1,16 @@
+<div class="sidebar">
+	<div class="title">
+		
+	</div>
+	<ul class="nav nav-list">
+		<li<!--{if $menu === 'card'}--> class="active"<!--{/if}-->><a href="/prefer/card">会员卡优惠</a></li>
+	</ul>
+	<div class="title">
+		<h3>优惠券</h3>
+	</div>
+	<ul class="nav nav-list">
+		<li<!--{if empty($menu)}--> class="active"<!--{/if}-->><a href="/prefer">新建优惠</a></li>
+		<li<!--{if $menu === 'check'}--> class="active"<!--{/if}-->><a href="/prefer/check">等待审核</a></li>
+		<li<!--{if $menu === 'publish'}--> class="active"<!--{/if}-->><a href="/prefer/publish">已通过</a></li>
+	</ul>
+</div>

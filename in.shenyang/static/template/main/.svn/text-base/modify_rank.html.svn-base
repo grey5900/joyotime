@@ -1,0 +1,39 @@
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialog_ajax_done);">
+        <div class="pageFormContent" layoutH="60">
+            <h1>{$title}</h1>
+            <div>
+                <dl>
+                    <dt style="width:60px;">
+                        排序值：
+                    </dt>
+                    <dd>
+                        <input type="text" name="rank_order" class="required number" value="{$rank_order}" min="0" max="99999999"/>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close" onclick="$.pdialog.closeCurrent();">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

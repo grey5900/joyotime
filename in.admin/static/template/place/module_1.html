@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{$title}</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=yes;"/>
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <style type="text/css">
+                        body,html, div, p, dl, dd, dt {
+                margin: 0;
+                padding: 0;
+                margin: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+                outline: none;
+                word-break: break-all;
+                -webkit-text-size-adjust: none;
+            }
+            html {
+                display: block;
+            }
+            body {
+                display: block;
+                font-size: 13px;
+                font-family: "Arial Black", Arial,Helvetica,, sans-serif;
+                text-align:center;
+                width: 100%;
+                
+            }
+            dl {
+                clear: both;
+                margin-bottom: 5px;
+                float: left;
+            }
+            dt {
+                text-align: right;
+                color: #aaaaaa;
+                width: 87px;
+                float: left;
+            }
+            dd {
+                text-align: left;
+                font-size: 15px;
+                color: #666666;
+                padding-left: 90px;
+            }
+            a, a:visited, a:hover {
+                text-decoration: none;
+                color: #5ba81c;
+                display: inline;
+            }
+            em {
+                font-style: normal;;
+                padding: 0 5px 0 0;
+            }
+            #container {
+                margin:0 auto;
+                width: 94%;
+                display: block;
+                padding:15px 10px 15px 0;
+            }
+                    </style>
+    </head>
+    <body>
+        <div id="container">
+                        <!--{if $value['v-address']}-->
+            <dl>
+                <dt>地址：</dt>
+                <dd>
+                                        $value['v-address']
+                                    </dd>
+            </dl>
+            <!--{/if}-->
+                        <!--{if $value['v-http']}-->
+            <dl>
+                <dt>网址：</dt>
+                <dd>
+                                        {eval list($name, $url) = explode('=', $value['v-http'])}
+                    <a href="{$url}" target="_blank">{$name}</a>
+                                    </dd>
+            </dl>
+            <!--{/if}-->
+                        <!--{if $value['v-tel']}-->
+            <dl>
+                <dt>电话：</dt>
+                <dd>
+                                        {eval $tels = explode(',', $value['v-tel']);}
+                    <!--{loop $tels $tel}-->
+                    <a href="tel://{$tel}">{$tel}</a>
+                    <!--{/loop}-->
+                                    </dd>
+            </dl>
+            <!--{/if}-->
+                    </div>
+    </body>
+</html>

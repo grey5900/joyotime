@@ -1,0 +1,144 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "global.less";
+@import "background-img.less";
+@import "timeline.less";
+
+#container {
+}
+.personal-bgimg {
+	width: 900px;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+	.personal-wrap-img {
+		width: 900px;
+		height: 900px;
+		position: absolute;
+		top: -300px;
+	}
+}
+.content .header-info-box {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	-moz-border-top-left-radius: 0;
+	-moz-border-top-right-radius: 0;
+	border-top: 0 ~"\9";
+}
+.personal-profile{
+	padding: 0;
+	.avatar{
+		position:absolute;
+		top:370px;
+	}
+	h1 {
+		display: inline;
+		color: @green;
+		font-size: 22px;
+		font-family: "Microsoft YaHei","Helvetica Neue","SimSun",Helvetica,Tahoma,Arial,sans-serif;
+	}
+	.username {
+		font-size: 12px;
+		color: @gray;
+	}
+  	.personal-info{
+  		.clearfix ();
+  		padding: 10px 0 10px 150px;
+    	li{
+      		a{
+        		&:hover{text-decoration:none}
+      		}
+      		p{
+      			color: @grayLight;
+      		}
+      		.btn {
+      			.clearfix ();
+      			float: right;
+      			width:80px;
+      		}
+    	}
+  	}
+ }
+ 	.profile-info-total{
+ 		padding: 20px 0;
+ 		.clearfix ();
+ 		.ie7-inline-block();
+  		.more-info{
+  			float: left;
+  			width: 460px;
+    		li{
+    			color: @grayLight;
+    			a{
+    				float: right;
+    			}
+    		}
+    		em{
+    			color: @orange;
+    			font-weight: bold;
+    			padding:0 15px 0 0;
+    		}
+  		}
+  		.profile-nav-list{
+  			float: right;
+  			width: 390px;
+  			margin-top: -40px;
+  			position:relative;
+			li{
+				float:left;
+				display: inline;
+				height:117px;
+				a{
+					height:117px;
+					width: 130px;
+					display: block;	
+					text-decoration: none;
+				}
+				em{
+					font-size:28px;
+					position:absolute;
+					padding:32px 0 0 12px;
+					width:90px;
+					line-height: 30px;
+					height:30px;
+					text-align:center;
+					color:@white;
+					.font-yab()
+				}
+			}
+		}
+ 	}
+.timeline-news{
+  h3,em{
+  	font-weight:bold;
+  }
+  a,span{
+  	padding:0 5px;
+  	}
+  dt{
+  	border-bottom:1px solid @grayLighter;
+  	padding:0 0 5px 0;
+  	}
+  span,p{
+  	padding-top:5px;
+  	color:@grayLight;
+  	}
+  dd{
+  	background: url(/img/dotted_line.gif) repeat-x scroll 0 bottom transparent;
+  	padding:10px 0;
+  	margin:0;
+  	color:@grayDark;
+  	a{
+  		.blueLink();
+  	}
+  }
+}
+
+.born-landing{
+	height:38px;
+	text-align: center;
+	background: url(/img/bg_main.png) repeat scroll 0 0 white;
+	padding-top:10px;
+	color: @green;
+}

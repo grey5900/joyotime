@@ -1,0 +1,74 @@
+<!--{template common/header3.0}-->
+	<div class="main channel layout">
+		<!--{template channel/channel_header}-->
+		<div class="column banner_search">
+			<!--{template f_search}-->
+		</div>
+		<div class="column">
+			<div class="article">
+				<div class="tit">
+					<h3><i></i>{$category['catName']}</h3>
+				</div>
+				<div class="bd">
+					<div class="channel_list">
+						<ul>
+							{loop $list $l}
+							<li>
+								<div class="date">
+									<div class="year">
+										<p><!--{echo date("Y-m",$l['dateline']);}--></p>
+									</div>
+									<div class="day">
+										<p><!--{echo date("d",$l['dateline']);}--></p>
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
+								</div>
+								{if $l['thumb']}
+								<div class="img">
+									<img src="{$l['thumb']}" alt="{$l['subject']}" />
+								</div>
+								{/if}
+								<div class="info">
+									<h4>
+										<a href="{if $l['linkuri']}{$l['linkuri']}{else}/article/$l['id']{/if}" target="_blank">{$l[subject]}</a>
+									</h4>
+									<p>{echo cut_string(strip_tags($l['summary']),'200');} <a href="{if $l['linkuri']}{$l['linkuri']}{else}/article/$l['id']{/if}" target="_blank">[详细]</a></p>
+									<div class="ft">
+										<div class="share">
+											<!-- JiaThis Button BEGIN -->
+											<div class="jiathis_style">
+												<a class="jiathis_button_qzone"></a>
+												<a class="jiathis_button_tsina"></a>
+												<a class="jiathis_button_tqq"></a>
+												<a class="jiathis_button_weixin"></a>
+												<a class="jiathis_button_renren"></a>
+												<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+											</div>
+											<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1355675477052732" charset="utf-8"></script>
+											<!-- JiaThis Button END -->
+										</div>
+										<span><!--{echo date("H:i:s",$l['dateline']);}--></span>
+									</div>
+								</div>
+							</li>
+							{/loop}
+						</ul>
+					</div>
+					{$paginate}
+				</div>
+			</div>
+			<div class="side">
+				
+				<!--{template fragments/f_contact_us}-->
+				<!--{loop $sidebar_data $row}-->
+					<!--{template fragments/sidebars}-->
+				<!--{/loop}-->
+				
+				
+				
+			</div>
+		</div>
+	</div>	
+<!--{template common/footer}-->

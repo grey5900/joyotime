@@ -1,0 +1,89 @@
+{eval $page_rel='goods_waiting';}
+<script type="text/javascript">
+function groupon_edit(url) {
+    navTab.openTab("{eval echo build_rel(array('goods', 'groupon_edit'))}", url, {title:"修改团购信息"});
+}
+
+function ajaxTodo_groupon_waiting(json) {
+    DWZ.ajaxDone(json);
+    // if(json.value) {
+        // $("#group_waiting_" + json.value.id).css("background-color", "red");
+        // $("a[rel=modify]", $("#group_waiting_" + json.value.id)).hide();
+    // }
+    if(json.statusCode == 200) {
+        // 成功
+        // 刷新。提交一次
+        $("form", $("#groupon_{$page_rel}")).submit();
+        // 并且刷新正在买的列表
+        // $("form", $("#groupon_goods_selling")).submit();
+    }
+}
+</script>
+<div class="pageHeader" id="groupon_{$page_rel}">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="status">
+                        <option value="-1"<!--{if $status=='-1'}--> selected<!--{/if}-->>可上架</option>
+                        <option value="-2"<!--{if $status=='-2'}--> selected<!--{/if}-->>不可上架</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <!--{if $status=='-1'}-->
+            <li>
+                <a class="add" target="ajaxTodo" title="您确定要上架该团购么？" callback="ajaxTodo_groupon_waiting" href="{eval echo site_url(array('goods', 'groupon_sale', 'id'))}/<!--{{id}}-->" warn="请选择您要上架的商品"><span>上架</span></a>
+            </li>
+            <!--{/if}-->
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">商品ID</th>
+                <th width="35%">标题</th>
+                <th width="13%">开始时间</th>
+                <th width="12%">结束时间</th>
+                <th width="5%">价格</th>
+                <th width="20%">提货方式</th>
+                <th width="7%">来源</th>
+                <th width="3%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}" id="group_waiting_{$row['id']}">
+                <td>{$row['id']}</td>
+                <td><a href="{$row['teamUrl']}" target="_blank">{$row['title']}</a></td>
+                <td>{$row['startDate']}</td>
+                <td>{$row['endDate']}</td>
+                <td>{$row['grouponPrice']}</td>
+                <td>{$ship_type[$row['shipType']]}
+                    <!--{if $row['shipType'] == 0}-->
+                    ({$row['expireDate']})
+                    <!--{/if}-->
+                </td>
+                <td>{$row['sourceName']}</td>
+                <td><!--{if $status=='-1'}--><a href="javascript:;" rel="modify" onclick="groupon_edit('{eval echo site_url(array('goods', 'groupon_edit', 'id', $row['id']))}');">编辑</a><!--{/if}--></td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+

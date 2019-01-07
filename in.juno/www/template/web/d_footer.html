@@ -1,0 +1,39 @@
+
+	</div>
+	<div class="concern-us">
+    <h3>合作平台</h3>
+    <ul>
+    	<li><a href="http://www.borpor.com/" target="_blank">宝瓶网</a></li>
+        <li><a href="http://www.camera360.com/" target="_blank">Camera360</a></li>
+	    <li><a href="http://www.tompda.com/soft/" target="_blank">手机软件</a></li>
+		<li><a href="http://sj.zol.com.cn" target="_blank">ZOL手机软件下载</a></li>
+		<li><a href="http://www.ishuaji.cn" target="_blank">爱刷机   </a></li>	
+		<li><a href="http://www.androidonline.net" target="_blank">安卓在线</a></li>
+		<li><a href="http://www.ruan8.com" target="_blank">软吧手机软件</a></li>
+		<li><a href="http://www.liqucn.com" target="_blank">历趣网</a></li>
+		<li><a href="http://soft.shouji.com.cn" target="_blank">手机乐园软件</a></li>
+		<li><a href="http://www.25pp.com" target="_blank">PP助手</a></li>
+		<li><a href="http://www.33lc.com/" target="_blank">绿茶软件下载</a></li>
+		<li><a href="http://www.52z.com" target="_blank">飞翔下载</a></li>
+		<li><a href="http://www.3987.com/shouji" target="_blank">统一手机站</a></li>
+		<li><a href="http://www.gezila.com/iphone" target="_blank">ios游戏</a></li>
+		<li><a href="http://www.haote.com" target="_blank">好特下载</a></li>
+		<li><a href="http://www.meizuhui.com/" target="_blank">魅族MX3</a></li>
+	</ul>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/web/get_update/1',
+		type: 'post',
+		dataType: 'json',
+		success: function(data, textStatus, xhr) {
+			$('#versionNumber').text(data.version);
+			$('#versionDate').text(data.createDate);
+		},
+	});
+})
+</script>
+<script src="/static/js/download.js" type="text/javascript" charset="utf-8"></script>
+<!--{template common/footer}-->

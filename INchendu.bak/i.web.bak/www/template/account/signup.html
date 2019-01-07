@@ -1,0 +1,159 @@
+<!--{template web/header}-->
+
+<div class="container" id="container">
+	<div class="block">
+		<div class="block-header">
+			<h2>注册IN成都帐号</h2>
+		</div>
+		<div class="block-content">
+			<div class="main">
+				<form class="form-horizontal" id="signup-form" method="post" action="/signup">
+					<div class="control-group">
+						<label class="control-label" for="username">
+							<span class="warn">*</span> 用户名：
+						</label>
+						<div class="controls">
+							<input type="text" name="username" value="" id="username" placeholder="用户名" />
+							<p class="help-block">1-15个字符组成，只能输入英文、数字和下划线</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="password"><span
+							class="warn">*</span> 密码：</label>
+						<div class="controls">
+							<input type="password" name="password" value="" id="password" placeholder="密码" />
+							<p class="help-block">2-15个字符组成，区分大小写</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="password_again">
+							<span class="warn">*</span> 确认密码：
+						</label>
+						<div class="controls">
+							<input type="password" name="password_again" value="" id="password_again" placeholder="重复以上密码" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="email">Email：</label>
+						<div class="controls">
+							<input type="text" name="email" value="" id="email" />
+							<p class="help-block">用于找回您的帐号，建议填写</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="nickname">昵称：</label>
+						<div class="controls">
+							<input type="text" name="nickname" value="" id="nickname" class="input-small" maxlength="15" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="gender_male">生日：</label>
+						<div class="controls">
+							<select name="year" id="year" class="span2"></select> 
+							<select name="month" id="month" class="span2"></select> 
+							<select name="day" id="day" class="span2"></select>
+							<p class="help-block">请填写真实生日，当天有惊喜礼物哦</p>
+							<script type="text/javascript">
+							$(function () {  
+							    var year = $("#year");  
+							    var month = $("#month");  
+							    var day = $("#day");  
+							    var date = new Date();  
+							    var y = date.getFullYear().toString();  
+							    MonDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  
+							    //初始化年份  
+							    year.get(0).options.add(new Option("年", "年"));  
+							    for (var i = 1960; i <= y - 8; i++) {  
+							        year.get(0).options.add(new Option(i, i));  
+							    }  
+							    year.attr("value", "1989"); //初始化默认值，1989应该是从数据库取出来的字段  
+							    //初始化月份  
+							    month.get(0).options.add(new Option("月", "月"));  
+							    for (var i = 1; i < 13; i++) {  
+							        month.get(0).options.add(new Option(i, i));  
+							    }  
+							    month.attr("value", "2"); //初始化默认值，同上  
+							    //初始化天数  
+							    var mn = month.val();  
+							    var ye = year.val();  
+							    var n = MonDays[mn - 1];  
+							    if ((ye % 4 == 0 && ye % 100 != 0) || ye % 400 == 0) {  
+							        if (mn == 2) {  
+							            n++;  
+							        }  
+							    }  
+							    day.get(0).options.add(new Option("日", "日"));  
+							    for (var i = 1; i < n + 1; i++) {  
+							        day.get(0).options.add(new Option(i, i));  
+							    }  
+							    day.attr("value", "28"); //初始化默认值，同上
+							    //月份改变时加载天数  
+							    $("#month").change(function () {  
+							        var mn = month.val();  
+							        var ye = year.val();  
+							        var n = MonDays[mn - 1];  
+							        day.empty();  
+							        if ((ye % 4 == 0 && ye % 100 != 0) || ye % 400 == 0) {  
+							            if (mn == 2) {  
+							                n++;  
+							            }  
+							        }  
+							        day.get(0).options.add(new Option("日", "日"));  
+							        for (var i = 1; i < n + 1; i++) {  
+							            day.get(0).options.add(new Option(i, i));  
+							        }  
+							    });  
+							});  
+							</script>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="gender_male">性别：</label>
+						<div class="controls">
+							<label class="radio inline">
+								<input type="radio" name="gender" value="2" id="gender_male" /> 男
+							</label> 
+							<label class="radio inline"><input type="radio" name="gender" value="1" id="gender_female" /> 女</label>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="verifycode">
+							<span class="warn">*</span> 验证码：
+						</label>
+						<div class="controls">
+							<input type="text" name="verifycode" id="verifycode" placeholder="验证码" class="input-small" maxlength="4" />
+							<p class="valicode">
+								<img id="i_valicode" src="/captcha" style="cursor: pointer;" alt="验证码" title="看不清？点击图片更换一下" onclick="$(this).attr('src','/captcha');" />
+							</p>
+						</div>
+					</div>
+					<div class="form-actions">
+						<input type="submit" name="submit" class="btn btn-primary btn-large" value="注册IN成都帐号" />
+					</div>
+				</form>
+			</div>
+			<div class="sidebar">
+				<div class="guide">
+					<h4>已有IN成都帐号？</h4>
+					<p>
+						<a href="/signin" class="btn btn-success btn-large"><span>登录IN成都</span></a>
+					</p>
+					<!-- 
+					<h4>用其他平台帐号登录</h4>
+					<p>
+						<a href="account_complete.php"><img border="0"
+							src="img/btn_weibo.png" width="124" height="24" alt="用微博帐号登录" />
+						</a><br />
+						<br /> <a href="account_complete.php"><img border="0"
+							src="img/btn_qq.png" width="124" height="24" alt="用QQ帐号登录" />
+						</a>
+					</p>
+					 -->
+				</div>
+			</div>
+		</div>
+		<div class="block-footer"></div>
+	</div>
+</div>
+
+<!--{template web/footer}-->

@@ -1,0 +1,896 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0\n"
+"POT-Creation-Date: 2014-04-11 09:48+0800\n"
+"PO-Revision-Date: 2014-04-11 09:51+0800\n"
+"Last-Translator: \n"
+"Language-Team: FishSaying <baohan@fishsaying.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: Controller/CommentsController.php:73
+msgid "The operation is to fail"
+msgstr ""
+
+#: Controller/FeedbacksController.php:70
+msgid "操作成功"
+msgstr "Done"
+
+#: Controller/PagesController.php:162 View/Pages/reset.ctp:6
+msgid "密码重置完成！你现在可以使用新密码登录鱼说了！"
+msgstr "Password has been reset! Login to FishSaying with new password now!"
+
+#: Controller/PagesController.php:166
+msgid "两次密码输入不一致"
+msgstr "Inconsistent Password"
+
+#: Controller/PagesController.php:171 View/Elements/header.ctp:4
+msgid "logo_cn"
+msgstr "logo_en"
+
+#: View/Elements/address.ctp:2 View/Elements/contact_us.ctp:6
+#: View/Elements/footer2_0.ctp:9 View/Pages/contact.ctp:34;45
+#: View/Pages/index.ctp:27
+msgid "联系我们"
+msgstr "Contact Us"
+
+#: View/Elements/address.ctp:3
+msgid "成都鱼说科技有限公司"
+msgstr "Fishsaying Technology Co., Ltd."
+
+#: View/Elements/address.ctp:7
+msgid "联系地址:"
+msgstr "Address:"
+
+#: View/Elements/address.ctp:8
+msgid "四川省,成都市,高新区,天府软件园B7-503"
+msgstr "B7-503, Tianfu Software Park, Chengdu, China"
+
+#: View/Elements/address.ctp:12
+msgid "联系电话:"
+msgstr "Telephone:"
+
+#: View/Elements/address.ctp:13
+msgid "+862883272116"
+msgstr ""
+
+#: View/Elements/address.ctp:17
+msgid "商务合作:"
+msgstr "Cooperation:"
+
+#: View/Elements/banner.ctp:11 View/Elements/start2_0.ctp:9
+msgid "我们重新定义了导游"
+msgstr "We redefine the meaning of guide"
+
+#: View/Elements/banner.ctp:17 View/Elements/start2_0.ctp:14
+#: View/Pages/index.ctp:14
+msgid "iPhone版下载"
+msgstr "iPhone version"
+
+#: View/Elements/banner.ctp:20 View/Elements/start2_0.ctp:17
+#: View/Pages/index.ctp:18
+msgid "Android版下载"
+msgstr "Android version"
+
+#: View/Elements/contact_us.ctp:11
+msgid "您的联系方式"
+msgstr "Your contact info"
+
+#: View/Elements/contact_us.ctp:15
+msgid "您的留言"
+msgstr "Your message"
+
+#: View/Elements/contact_us.ctp:21
+msgid "你也可以发送邮件至contact@fishsaying.com"
+msgstr "Or email us:  contact@fishsaying.com"
+
+#: View/Elements/contact_us.ctp:22 View/Pages/reset.ctp:26
+msgid "提交"
+msgstr "Submit"
+
+#: View/Elements/contact_us.ctp:36
+msgid "内容不能为空"
+msgstr ""
+
+#: View/Elements/contact_us.ctp:41
+msgid "正在提交"
+msgstr ""
+
+#: View/Elements/contact_us.ctp:53
+msgid "提交成功"
+msgstr ""
+
+#: View/Elements/contact_us.ctp:60
+msgid "提交失败"
+msgstr ""
+
+#: View/Elements/modelwindow.ctp:28
+msgid "Hi,您的浏览器该升级了"
+msgstr "Update your browser"
+
+#: View/Elements/modelwindow.ctp:29
+msgid ""
+"为了更好的浏览体验,建议您升级到最新版本的Internet Explorer或使用其它浏览器访"
+"问"
+msgstr ""
+"We suggest updating your Internet Explorer to the latest version, or using "
+"other browsers."
+
+#: View/Elements/modelwindow.ctp:52
+msgid "继续访问"
+msgstr "Continue"
+
+#: View/Elements/start2_0.ctp:8
+msgid "鱼说<em>，</em>"
+msgstr "FishSaying,"
+
+#: View/Elements/start2_0.ctp:21
+msgid "下载鱼说客户端"
+msgstr "Download Now"
+
+#: View/Elements/start2_0.ctp:25
+msgid "/img/2.0/iphone_cn.png"
+msgstr "/img/2.0/iphone_en.png"
+
+#: View/Errors/error404.ctp:14 View/Layouts/fishsaying.ctp:24
+#: View/Layouts/fishsaying2_0.ctp:28 View/Layouts/fishsaying_contact.ctp:24
+#: View/Layouts/fishsaying_themes.ctp:5 View/Layouts/fishsaying_v3.0.ctp:28
+#: View/Layouts/fishsaying_voice.ctp:24 View/Pages/voice.ctp:6;8;10
+msgid "鱼说"
+msgstr "FishSaying"
+
+#: View/Errors/error404.ctp:36
+msgid "鱼说，相濡以沫，不如相忘于江湖"
+msgstr "Oooops,the fish  has gone!"
+
+#: View/Errors/error404.ctp:37
+msgid "回到首页"
+msgstr "Go Home"
+
+#: View/Pages/agree.ctp:10;31
+msgid "用户许可协议和版权声明"
+msgstr "User License Agreement and Copyright Notice"
+
+#: View/Pages/agree.ctp:33
+msgid ""
+"请您仔细阅读以下条款，如果您对本协议的任何条款表示异议，您可以选择停止使用鱼"
+"说。当您注册成功，无论是进入鱼说，还是在鱼说上发布任何内容，均意味着您（即"
+"「用户」）完全接受本协议项下的全部条款。"
+msgstr ""
+"You are reminded to peruse the following terms and conditions carefully. If "
+"you have any objection to any condition hereunder, you may elect to stop "
+"enjoying the service of FishSaying. Once you have successfully logged in, "
+"you will be deemed to have fully accepted all the terms and conditions as a "
+"user, whether you log on to FishSaying or publish any content on it. "
+
+#: View/Pages/agree.ctp:36
+msgid "使用规则"
+msgstr "Rules of Use"
+
+#: View/Pages/agree.ctp:40
+msgid ""
+"用户注册成功后，鱼说将给予每个用户一个用户帐号及相应的密码，该用户帐号和密码"
+"由用户负责保管；用户应当对以其用户帐号进行的所有活动和事件负法律责任。"
+msgstr ""
+"FishSaying will assign an account number and corresponding password to each "
+"user, who will be solely responsible for keeping the account number and the "
+"password. The user shall be legally liable for all the activities and events "
+"conducted using his/her account."
+
+#: View/Pages/agree.ctp:44
+msgid ""
+"用户须对在鱼说的注册信息的真实性、合法性、有效性承担全部责任，用户不得冒充他"
+"人；不得利用他人的名义发布任何信息；不得恶意使用注册帐户导致其他用户误认；否"
+"则鱼说有权立即停止提供服务，收回其帐号并由用户独自承担由此而产生的一切法律责"
+"任。"
+msgstr ""
+" The user shall be solely responsible for the veracity, legality and "
+"effectiveness of his/her personal information entered in FishSaying. The "
+"user shall not impersonate others, publish any information under the guise "
+"of others or make malicious use of his/her registered account such that he/"
+"she is mistaken by other users for a different person. In the above cases, "
+"FishSaying may discontinue or terminate any service, recall the account and "
+"password and require the user to solely assume all the legal liabilities "
+"arising therefrom.  "
+
+#: View/Pages/agree.ctp:48
+msgid ""
+"用户直接或通过各类方式（如API 引用等）间接使用鱼说服务和数据的行为，都将被视"
+"作已无条件接受本协议全部内容；若用户对本协议的任何条款存在异议，请停止使用鱼"
+"说所提供的全部服务。"
+msgstr ""
+"The use of the service and data of FishSaying by the user in various ways, "
+"directly or indirectly (e.g. by API citation), will be deemed to have agreed "
+"to the whole content of this Agreement unconditionally. If the user has any "
+"objection to any term and condition hereunder, he/she may elect to stop "
+"using all the services provided by FishSaying.  "
+
+#: View/Pages/agree.ctp:52
+msgid ""
+"鱼说是一个信息分享、传播及获取的平台，用户通过鱼说发表的信息为公开的信息，其"
+"他第三方均可以通过鱼说获取用户发表的信息，用户对任何信息的发表即认可该信息为"
+"公开的信息，并单独对此行为承担法律责任；任何用户不愿被其他第三人获知的信息都"
+"不应该在鱼说上进行发表。"
+msgstr ""
+"FishSaying is a platform for information sharing, dissemination & "
+"acquisition. The user may publish open information through the platform and "
+"any third party may acquire said information through FishSaying. Any "
+"information publication by the user will be deemed as open information and "
+"the user shall be solely legally responsible for the publication. It’s "
+"recommended that no user publish any information he/she intends to be "
+"concealed from any third party. "
+
+#: View/Pages/agree.ctp:56
+msgid ""
+"用户承诺不得以任何方式利用鱼说直接或间接从事违反法律、以及社会公德的行为，鱼"
+"说有权对违反上述承诺的内容予以删除。"
+msgstr ""
+"The user hereby guarantees that he/she will not use FishSaying to get "
+"involved in illegal, anti-establishment or immoral activities, whether "
+"directly or indirectly. In the above cases, FishSaying may delete any such "
+"content as breaches the guarantee."
+
+#: View/Pages/agree.ctp:60
+msgid "用户同意遵守鱼说内容与使用规范。"
+msgstr ""
+" The user agrees to comply with the rules of content and use of FishSaying. "
+
+#: View/Pages/agree.ctp:64
+msgid ""
+"鱼说有权对用户使用鱼说的情况进行审查和监督，如用户在使用鱼说时违反任何上述规"
+"定，鱼说或其授权的人有权要求用户改正或直接采取一切必要的措施（包括但不限于更"
+"改或删除用户发布的内容、暂停或终止用户使用鱼说的权利）以减轻用户不当行为造成"
+"的影响。"
+msgstr ""
+"FishSaying may censor and supervise the user’s use of FishSaying. If the "
+"user breaches any of the above conditions during the use of FishSaying, "
+"FishSaying or its authorized representative may require the user to correct, "
+"or directly take every reasonable step to control the adverse impact of the "
+"user’s improper behavior, including but not limited to changes to or "
+"deletion of any published content and suspension or termination of the "
+"user’s right to use FishSaying. "
+
+#: View/Pages/agree.ctp:67
+msgid "知识产权"
+msgstr "Intellectual Property Rights"
+
+#: View/Pages/agree.ctp:71
+msgid ""
+"鱼说是一个信息获取、分享及传播的平台，我们尊重和鼓励鱼说用户创作的内容，承诺"
+"将保护知识产权作为鱼说运营的基本原则之一。"
+msgstr ""
+"FishSaying is a platform for information acquisition, sharing and "
+"dissemination. We respect and encourage the users to create content and "
+"guarantee to operate according to one of FishSaying’s fundamental "
+"principles: protection of intellectual property rights (IPR). "
+
+#: View/Pages/agree.ctp:75
+msgid ""
+"在鱼说上传或发布的任何内容版权均归发布者所有，受到著作权和知识产权相关法律的"
+"保护；"
+msgstr ""
+"The publisher of any content on FishSaying has all and any copyrights with "
+"respect to said content, which are protected by the laws relevant to "
+"intellectual property rights "
+
+#: View/Pages/agree.ctp:79
+msgid ""
+"在鱼说上传或发表的内容，用户应保证其为著作权人或已取得合法授权，并且该内容不"
+"会侵犯任何第三方的合法权益。如果第三方提出关于著作权的异议，鱼说有权根据实际"
+"情况删除相关的内容，甚至追究用户的法律责任，给鱼说或任何第三方造成损失的，用"
+"户应负责全额赔偿。"
+msgstr ""
+"Any user with the intention of uploading any content onto FishSaying or "
+"publish the same on it shall ensure he/she has the copyright of said content "
+"or has obtained legal authorization from the copyright owner, and said "
+"content will not constitute an infringement on the lawful rights of any "
+"third party. In case that any third party queries the copyright thereof, "
+"FishSaying may delete said content or institute legal proceedings against "
+"the user, as appropriate. The user shall be held liable for all the "
+"compensations in case that FishSaying or any third party incurs any loss. "
+
+#: View/Pages/agree.ctp:83
+msgid ""
+"如果任何第三方侵犯了鱼说用户相关的权利，用户同意授权鱼说或其指定的代理人代表"
+"鱼说自身或用户对该第三方提出警告、投诉、发起行政执法、诉讼、进行上诉，或谈判"
+"和解，并且用户同意在鱼说认为必要的情况下参与共同维权。"
+msgstr ""
+"The user hereby agrees to authorize FishSaying or its authorized "
+"representative to caution, file complaints against, institute legal action "
+"or proceedings against, appeal the case against or come to out-of-court "
+"settlements with any third party who infringes on the user’s relevant "
+"intellectual property rights. The user hereby agrees to cooperate with "
+"FishSaying in protecting the rights if deemed necessary by FishSaying. "
+
+#: View/Pages/agree.ctp:87
+msgid ""
+"鱼说有权但无义务对用户发布的内容进行审核，有权根据相关证据结合著作权和知识产"
+"权相关法律法规及鱼说审核规范对侵权信息进行处理。"
+msgstr ""
+"FishSaying is entitled but not obligated to censor the content published by "
+"the user. FishSaying may dispose of any IPR-infringing information in "
+"accordance with the relevant evidence, copyright and IPR-relevant laws & "
+"regulations and FishSaying’s censorship codes."
+
+#: View/Pages/agree.ctp:91
+msgid ""
+"若您发布的内容对他人的著作权或知识产权造成了侵害，鱼说将按照有关法律规定，删"
+"除侵权内容甚至终止您对账户的使用。"
+msgstr ""
+"If your published content constitutes an infringement on others’ copyright "
+"or IPR, FishSaying may delete said content and/or terminate your account "
+"according to the relevant laws & regulations."
+
+#: View/Pages/agree.ctp:95
+msgid ""
+"若您的著作权或知识产权遭到侵害，您可以联系鱼说要求删除侵权内容（邮箱："
+"contact@fishsaying.com），并提供具有法律效力的证明材料，以便鱼说作出处理。"
+msgstr ""
+"If your copyright or IPR is infringed on, you may contact FishSaying for the "
+"deletion of the copyright/IPR-infringing content (e-mail: contact@fishsaying."
+"com). Legally effective evidence or materials shall be submitted to "
+"facilitate FishSaying’s assistance with the case."
+
+#: View/Pages/agree.ctp:98
+msgid "个人隐私"
+msgstr "Privacy Policy"
+
+#: View/Pages/agree.ctp:102
+msgid ""
+"尊重用户个人隐私信息的私有性是鱼说的一贯原则，鱼说将通过技术手段、强化内部管"
+"理等办法充分保护用户的个人隐私信息，除法律或有法律赋予权限的政府部门要求或事"
+"先得到用户明确授权等原因外，鱼说保证不对外公开或向第三方透露用户个人隐私信"
+"息，或用户在使用服务时存储的非公开内容。同时，为了运营和改善鱼说的技术与服"
+"务，鱼说将可能会自行收集使用或向第三方提供用户的非个人隐私信息，这将有助于鱼"
+"说向用户提供更好的用户体验和服务质量。"
+msgstr ""
+"It is the long-established principle of FishSaying that the user’s privacy "
+"should be respected. FishSaying employs technological means and upgraded "
+"internal management to sufficiently protect the user’s information privacy. "
+"Unless otherwise provided by law, otherwise required by legally-authorized "
+"government agencies, or with the definite prior consent of the user, "
+"FishSaying hereby guarantees not to release or leak to the public or any "
+"third party any personal private information of the user, or non-public "
+"content stored by the user when he/she enjoys the service. Meanwhile, for "
+"the purpose of business operation and scalability of FishSaying’s technology "
+"and service, FishSaying may collect, as it deems necessary from time to "
+"time, gather and/or provide to any third party any non-personal private "
+"information of the user, provided that it is deemed by FishSaying as being "
+"conductive to better user experience and service quality."
+
+#: View/Pages/agree.ctp:105
+msgid "免责申明"
+msgstr "Disclaimer"
+
+#: View/Pages/agree.ctp:109
+msgid "鱼说不能对用户发表的内容或评论的正确性进行保证。"
+msgstr ""
+"FishSaying will not be responsible for the accuracy and correctness of the "
+"content published by the user."
+
+#: View/Pages/agree.ctp:113
+msgid ""
+"用户在鱼说发表的内容仅表明其个人的立场和观点，并不代表鱼说的立场或观点。作为"
+"内容的发表者，需自行对所发表内容负责，因所发表内容引发的一切纠纷，由该内容的"
+"发表者承担全部法律及连带责任。鱼说不承担任何法律及连带责任。"
+msgstr ""
+"The content the user published on FishSaying only represents the personal "
+"standpoints and viewpoints of the user, rather than those of FishSaying. As "
+"the publisher, the user shall be responsible for any and all content he/she "
+"published. The user shall hold FishSaying harmless from and be solely "
+"responsible for any legal liability or joint liability in connection with "
+"any dispute arising from the content the user published. "
+
+#: View/Pages/agree.ctp:117
+msgid ""
+"鱼说不保证网络服务一定能满足用户的要求，也不保证网络服务不会中断，对网络服务"
+"的及时性、安全性、准确性也都不作保证。"
+msgstr ""
+"FishSaying does not guarantee its online service will meet each and every "
+"requirement of the user, nor does it guarantee no interruption of online "
+"service or the timeliness, security and accuracy of the same.  "
+
+#: View/Pages/agree.ctp:121
+msgid ""
+"对于因不可抗力或鱼说不能控制的原因造成的网络服务中断或其它缺陷，鱼说不承担任"
+"何责任，但将尽力减少因此而给用户造成的损失和影响。"
+msgstr ""
+"FishSaying will not be liable for any interruption of online service or "
+"other defect arising from Force Majeure events or other uncontrollable "
+"events; still, FishSaying will make every reasonable effort to minimize the "
+"resulting loss to and adverse impact on the user."
+
+#: View/Pages/agree.ctp:125
+msgid ""
+"如果您发现鱼说上有内容侵犯了您的知识产权或其他权益，请联系我们"
+"contact@fishsaying.com。"
+msgstr ""
+"If you find that any content on FishSaying constitutes an infringement of "
+"your copyright or other rights, please feel free to contact us at "
+"contact@fishsaying.com as soon as applicable."
+
+#: View/Pages/agree.ctp:128
+msgid "协议修改"
+msgstr "Modification"
+
+#: View/Pages/agree.ctp:132
+msgid ""
+"根据互联网的发展和有关法律、法规及规范性文件的变化，或者因业务发展需要，鱼说"
+"有权对本协议的条款作出修改或变更，一旦本协议的内容发生变动，鱼说将会直接在鱼"
+"说客户端公布修改之后的协议内容，该公布行为视为鱼说已经通知用户修改内容。"
+msgstr ""
+"FishSaying may, as it deems necessary from time to time, revise or moderate "
+"the terms and conditions of this Agreement based on the developments in "
+"Internet technology and the changes in laws, regulations & guidelines, or as "
+"necessitated by business expansion. In case of any moderation to this "
+"Agreement, FishSaying may, as it deems necessary, publish the duly moderated "
+"content on its client side. In such cases, FishSaying will be deemed to have "
+"duly informed the users of the moderated content. "
+
+#: View/Pages/agree.ctp:136
+msgid ""
+"如果不同意鱼说对本协议相关条款所做的修改，用户有权并应当停止使用鱼说。如果用"
+"户继续使用鱼说，则视为用户接受鱼说对本协议相关条款所做的修改。"
+msgstr ""
+" If the user disagrees with FishSaying on any moderation to the terms and "
+"conditions, the user is entitled to and may stop using the service of "
+"FishSaying. If the user continues to use the service of FishSaying, the user "
+"will be deemed to have received the moderations to the terms and conditions "
+"hereunder made by FishSaying. "
+
+#: View/Pages/agree.ctp:139
+msgid "法律管辖"
+msgstr "Governing Law"
+
+#: View/Pages/agree.ctp:143
+msgid "本协议的订立、执行和解释及争议的解决均应适用中国法律并受中国法院管辖。"
+msgstr ""
+"The conclusion, enforcement and interpretation of this Agreement and the "
+"dissolution of disputes arising hereof shall be governed by Chinese law and "
+"the Chinese courts."
+
+#: View/Pages/agree.ctp:147
+msgid ""
+"如双方就本协议内容或其执行发生任何争议，双方应尽量友好协商解决；协商不成时，"
+"任何一方均可向鱼说所在地的人民法院提起诉讼。"
+msgstr ""
+"Any dispute with respect to the content of this Agreement or its enforcement "
+"shall be negotiated in an amicable way, if applicable. Failing the "
+"negotiation, either Party may institute legal proceedings within the "
+"jurisdiction of the court where FishSaying is located."
+
+#: View/Pages/index.ctp:6;30;31 View/Pages/voice.ctp:5;6
+msgid "English"
+msgstr "简体中文"
+
+#: View/Pages/index.ctp:10
+msgid "鱼说，且听且行"
+msgstr "Travel, listen and learn."
+
+#: View/Pages/index.ctp:24
+msgid "版权所有 ©成都鱼说科技有限公司  蜀ICP备13026841号"
+msgstr "Copyright ©2013 Fishsaying Technology Co., Ltd. All rights reserved."
+
+#: View/Pages/reset.ctp:11
+msgid "重置失败!"
+msgstr "Fail to reset password"
+
+#: View/Pages/reset.ctp:13
+msgid "重置密码"
+msgstr "Reset password"
+
+#: View/Pages/reset.ctp:16
+msgid "新密码，6-12位"
+msgstr "New password, 6-12 characters"
+
+#: View/Pages/reset.ctp:19
+msgid "确认密码"
+msgstr "Confirm password"
+
+#: View/Pages/terms.ctp:10
+#, fuzzy
+msgid "鱼说录制指南"
+msgstr "Recording guidelines"
+
+#: View/Pages/terms.ctp:31
+msgid "讲述你对这个景观的了解"
+msgstr "Record your knowledge about here"
+
+#: View/Pages/terms.ctp:34
+msgid "这里有哪些特别的故事？分享给来自世界各地的游客吧！"
+msgstr ""
+"Do you know any stories and/or legends about this place? Share them to other "
+"tourists!"
+
+#: View/Pages/terms.ctp:39
+msgid "人们更愿意为优秀的内容买单"
+msgstr "People are more apt to purchase recordings of significance and use"
+
+#: View/Pages/terms.ctp:42
+#, fuzzy
+msgid "受欢迎的鱼说往往富有自己的特色，让听过的游客都有所收获"
+msgstr ""
+"Popular recordings are usually distinctive and helpful to their purchasers"
+
+#: View/Pages/terms.ctp:47
+msgid "前30秒很重要"
+msgstr "The first 30 seconds is crucial"
+
+#: View/Pages/terms.ctp:50
+#, fuzzy
+msgid "前30秒为免费试听，游客会根据这段时间的内容质量来判断鱼说是否值得购买"
+msgstr ""
+"The first 3o seconds is for free trial and for the judgment in any potential "
+"purchasing decisions"
+
+#: View/Pages/terms.ctp:55
+#, fuzzy
+msgid "图片是鱼说的门面"
+msgstr "Scheme the recordings with attractive pictures"
+
+#: View/Pages/terms.ctp:58
+msgid "高质量的图片更容易吸引游客的点击，建议您上传的图片至少大于640px"
+msgstr ""
+"Pictures of higher resolution are more attractive. We recommend you to "
+"upload pictures not less than 640 pixel"
+
+#: View/Pages/terms.ctp:63
+msgid "位置越精确，越容易被需要的人发现"
+msgstr "Location accuracy increases the exposure to people in need"
+
+#: View/Pages/terms.ctp:66
+#, fuzzy
+msgid "游客主要通过定位来寻找当地的鱼说，距离更近的鱼说会排在更前面"
+msgstr ""
+"Recordings located with shorter distance rank higher in tourists search "
+"results"
+
+#: View/Pages/terms.ctp:71
+msgid "在目标语言环境中录制"
+msgstr "Record in the target language background"
+
+#: View/Pages/terms.ctp:74
+msgid "如果你的录音面向中文听众，请务必使用中文版的鱼说来录音"
+msgstr ""
+"If you targeted English-speakers as purchasers, please record your voice in "
+"English version FishSaying"
+
+#: View/Pages/terms.ctp:79
+msgid "审核机制"
+msgstr "Content Review"
+
+#: View/Pages/terms.ctp:82
+#, fuzzy
+msgid "为保障鱼说质量，通过鱼说管理员审核的鱼说才能上架销售"
+msgstr ""
+"To ensure quality, only recordings granted approval by FishSaying can be put "
+"on-shelf"
+
+#: View/Pages/terms.ctp:87
+msgid "上架须知"
+msgstr "Guidelines"
+
+#: View/Pages/terms.ctp:92
+#, fuzzy
+msgid "鱼说上架规范"
+msgstr "On-shelf guidelines"
+
+#: View/Pages/terms.ctp:94
+msgid "录音不少于60秒;"
+msgstr "Submitted recordings shall be no less than 60 seconds."
+
+#: View/Pages/terms.ctp:95
+msgid "语音清晰，避免嘈杂的录音环境;"
+msgstr "Voices in recordings shall be loud and clear. Avoid noisy background."
+
+#: View/Pages/terms.ctp:96
+msgid "图片需与主题相关，且不能出现其他平台的水印信息;"
+msgstr ""
+"Illustrations shall be in conformity with the theme and bear no watermarks "
+"or signs of other organizations or institutions."
+
+#: View/Pages/terms.ctp:97
+msgid "地理位置精确，偏差不能过大;"
+msgstr "Indicate the right location with no or less deviation."
+
+#: View/Pages/terms.ctp:98
+msgid "内容不得涉黄及含有政治敏感内容;"
+msgstr "Avoid any obscenity or political sensitive content."
+
+#: View/Pages/terms.ctp:99
+msgid "尊重民族习惯和当地风俗;"
+msgstr "Respect local customs."
+
+#: View/Pages/terms.ctp:100
+msgid "不得宣扬邪教和封建迷信;"
+msgstr "Publicize no heresy or superstition."
+
+#: View/Pages/terms.ctp:101
+msgid "未经管理员许可不得发布商业广告性质内容;"
+msgstr ""
+"It is prohibited to publish commercial content without permission from "
+"administrators."
+
+#: View/Pages/terms.ctp:102
+#, fuzzy
+msgid "不得重复发布同一条鱼说或雷同鱼说;"
+msgstr ""
+"It is prohibited to publish the content repeatedly or to publish similar "
+"content."
+
+#: View/Pages/terms.ctp:103
+msgid "禁止抄袭、剽窃别人的作品;"
+msgstr "It is prohibited to plagiarize other's content."
+
+#: View/Pages/terms.ctp:107
+msgid "上下架规则"
+msgstr "On-shelf rules"
+
+#: View/Pages/terms.ctp:109
+#, fuzzy
+msgid "提交的鱼说经审核通过后立即上架;"
+msgstr "Submitted voice would be put on shelves following approval granted."
+
+#: View/Pages/terms.ctp:110
+#, fuzzy
+msgid "若提交的鱼说被驳回，可修改后再次提交审核;"
+msgstr ""
+"If the submitted voice was rejected, revise and submit for approval n again."
+
+#: View/Pages/terms.ctp:111
+#, fuzzy
+msgid ""
+"已上架的鱼说原则上不能修改和删除，也不能自主下架，如遇特殊情况需要下架，请通"
+"过举报功能请求下架并说明下架原因;"
+msgstr ""
+"Voices on shelves can not be revised, deleted, or pulled off shelves by "
+"users. If you want to pull the voice off shelves for a special reason, "
+"please report the voice and specify your reasons."
+
+#: View/Pages/terms.ctp:112
+#, fuzzy
+msgid ""
+"若已上架的鱼说被用户举报，经调查核实后，违规的鱼说将会被下架，被下架的鱼说不"
+"能再次上架;"
+msgstr ""
+"Voices on shelves would be put under investigation if reported by other "
+"users. Voices violated the guidelines would be pulled off shelves and could "
+"never put on shelves again."
+
+#: View/Pages/terms.ctp:116
+msgid "定价方式"
+msgstr "Pricing"
+
+#: View/Pages/terms.ctp:118
+#, fuzzy
+msgid "以时间为虚拟货币单位，按照鱼说实际时长定价;"
+msgstr "Voices are priced over the length of time based on a virtual currency."
+
+#: View/Pages/terms.ctp:119
+msgid "买家可免费试听前30秒，但购买时需为整段付费;"
+msgstr ""
+"Payments are accepted for full episode of voices with 30 seconds free trial "
+"available."
+
+#: View/Pages/terms.ctp:120
+msgid "目前买家充值的价格为￥0.3/分钟;"
+msgstr "The price of recharge is USD 0.0495 per minute at present."
+
+#: View/Pages/terms.ctp:124
+msgid "补贴政策"
+msgstr "Subsidy Policy"
+
+#: View/Pages/terms.ctp:126
+#, fuzzy
+msgid ""
+"为鼓励创作，鱼说实行销售补贴政策，鱼说每被购买一次，系统自动发放补贴至鱼说作"
+"者账户；"
+msgstr ""
+"To encourage creation, FishSaying subsidy policy wherein the system will "
+"automatically credit a subsidy to the voice recorder's account each time the "
+"voice is purchased."
+
+#: View/Pages/terms.ctp:127
+msgid "目前补贴比例为1.2，即补贴时长相当于鱼说时长的120%；"
+msgstr ""
+"Currently, the subsidy ratio is 1.2, i.e. the time length subsidy equals "
+"120% of the voice time length."
+
+#: View/Pages/terms.ctp:128
+#, fuzzy
+msgid "同一台手机切换多个账号购买同一条鱼说，只会补贴一次。"
+msgstr ""
+"Only one subsidy is provided for the purchase of the same voice using the "
+"same cell phone, notwithstanding the switch among more than one account."
+
+#: View/Pages/terms.ctp:132
+msgid "收入分配"
+msgstr "Earnings"
+
+#: View/Pages/terms.ctp:134
+msgid "收入提现时的价格需先除去支付平台抽成（30%）和鱼说抽成（30%）;"
+msgstr ""
+"The price to be calculated into cash and withdrew into your account will be "
+"deducted the fee for payment platform (30%) and FishSaying (30%) first."
+
+#: View/Pages/terms.ctp:135
+#, fuzzy
+msgid "所得收入可用于购买鱼说，也可以折算成现金提现至个人账户中;"
+msgstr ""
+"Earnings may be used to purchase voices or to be calculated into cash and "
+"withdrew into your account."
+
+#: View/Pages/terms.ctp:136
+#, fuzzy
+msgid "鱼说收入高于20分钟才能申请提现;"
+msgstr ""
+"Requests for withdrawal would be accepted with earnings of more than 20 "
+"minutes."
+
+#: View/Pages/terms.ctp:137
+msgid "提现过程中支付平台可能会向您收取一部分手续费;"
+msgstr ""
+"There may be processing charges subject to the payment platform regulations."
+
+#: View/Pages/terms.ctp:141
+msgid "版权声明"
+msgstr "Copyright"
+
+#: View/Pages/terms.ctp:143
+msgid "鱼说仅为内容存储和交易平台，无须对用户发布的任何内容承担任何责任;"
+msgstr ""
+"FishSaying works as a platform for content storage and transaction only. We "
+"are not liable to any content published by the users."
+
+#: View/Pages/terms.ctp:144
+msgid ""
+"在鱼说上传或发布的任何内容版权均归发布者所有，受到著作权和知识产权相关法律的"
+"保护;"
+msgstr ""
+"FishSaying users are entitled to the copyright of any submitted or published "
+"content. This is protected by copyright laws and treaties, as well as "
+"intellectual property laws and treaties."
+
+#: View/Pages/terms.ctp:145
+msgid "若您的著作权或知识产权遭到侵害，可以联系鱼说要求删除侵权内容;"
+msgstr ""
+"Please contact FishSaying for help if any of your copyright or intellectual "
+"property right was infringed."
+
+#: View/Pages/terms.ctp:146
+msgid ""
+"若您发布的内容对他人的著作权或知识产权造成了侵害，鱼说将按照有关法律规定，删"
+"除侵权内容甚至终止您对账户的使用;"
+msgstr ""
+"FishSaying will delete the content if any you published that infringed "
+"other's copyrights or intellectual property rights, or end your use of the "
+"YS ID in accordance with laws."
+
+#: View/Pages/terms.ctp:149
+#, fuzzy
+msgid "所有解释权归鱼说，如有疑义，可通过【设置-意见反馈】提交申诉或建议。"
+msgstr ""
+"All rights of interpretation reserved by FishSaying. If you have any "
+"questions or suggestions, please send a message through Settings-Feedback in "
+"the app."
+
+#: View/Pages/voice.ctp:11;17
+#, fuzzy
+msgid "景在眼里 故事在耳边"
+msgstr "Voices As You Travel"
+
+#: View/Pages/voice.ctp:23
+#, fuzzy
+msgid "iPhone下载"
+msgstr "iPhone version"
+
+#: View/Pages/voice.ctp:27
+#, fuzzy
+msgid "Android下载"
+msgstr "Android version"
+
+#: View/Pages/voice.ctp:34
+msgid "下载鱼说"
+msgstr "Download"
+
+#: View/Pages/voice.ctp:72
+msgid "次播放"
+msgstr " plays"
+
+#: View/Pages/voice.ctp:91
+msgid "扫描到手机"
+msgstr "Scan to mobile phone"
+
+#: View/Pages/voice.ctp:101
+msgid "分享到"
+msgstr "Share"
+
+#: View/Pages/voice.ctp:108
+msgid "加载更多评论"
+msgstr "Load more comments"
+
+#: View/Pages/voice.ctp:112
+msgid "打开鱼说客户端播放完整版本"
+msgstr "Open FishSaying"
+
+#: View/Pages/voice.ctp:144
+msgid "打开鱼说发现更多精彩"
+msgstr ""
+
+#: View/Pages/voice.ctp:335
+msgid "暂无评论"
+msgstr "No comment"
+
+#~ msgid "人生即是旅行，下一步你会听到鱼说什么？"
+#~ msgstr "Life is a travel. What will you hear on FishSaying? "
+
+#~ msgid "去听<em>，</em>"
+#~ msgstr "Listen,"
+
+#~ msgid "迷失在眼前的每一寸光阴"
+#~ msgstr "every dashing moment shared by others"
+
+#~ msgid "去说<em>，</em>"
+#~ msgstr "Record,"
+
+#~ msgid "暗藏心底的每一道风景"
+#~ msgstr "scenes worth sharing with your own voice"
+
+#~ msgid "带着鱼说"
+#~ msgstr "Travel with"
+
+#~ msgid "去旅游"
+#~ msgstr "FishSaying"
+
+#, fuzzy
+#~ msgid "“我们重新定义了导游”"
+#~ msgstr "We redefine the meaning of guide"
+
+#~ msgid "新密码，6-12位字母，数字，特殊符号"
+#~ msgstr "New password, 6-12 characters"
+
+#~ msgid "“我们重新定义了<em>导游</em>”"
+#~ msgstr "We redefine the meaning of guide"
+
+#~ msgid "立即下载鱼说播放完整版本"
+#~ msgstr "Download app to play full version"
+
+#~ msgid "登录超时，请重新登录"
+#~ msgstr "Login timeout, please login again"
+
+#~ msgid "未知错误"
+#~ msgstr "Unkown error"
+
+#~ msgid "首页"
+#~ msgstr "Home"
+
+#~ msgid "出错啦"
+#~ msgstr "Something wrong"
+
+#~ msgid "鱼，我所欲也，熊掌，亦我所欲也，二者不可得兼，一定是哪里不对也~"
+#~ msgstr "Oooops,looks like something went wrong!"
+
+#~ msgid "去听，"
+#~ msgstr "Listen,"
+
+#~ msgid "去说，"
+#~ msgstr "Record,"
+
+#~ msgid ""
+#~ "除去用户充值时的支付平台抽成（30%）和鱼说抽成（30%），提现的实际价格为"
+#~ "￥0.15/分钟；"
+#~ msgstr ""
+#~ "Deducting the fee for payment platform (30%) and FishSaying (30%),the "
+#~ "price to be calculated into cash and withdrew into your account is USD "
+#~ "0.02475 per minute."
+
+#~ msgid "鱼说，"
+#~ msgstr "FishSaying, "

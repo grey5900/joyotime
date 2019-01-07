@@ -1,0 +1,41 @@
+
+{if $v3_fragments['v3_auto_youhui_hangq']}
+
+				<div class="hd">
+					<h2>{$v3_fragments['v3_auto_youhui_hangq']['frag']['name']}</h2>
+					
+					{if $v3_fragments['v3_auto_youhui_hangq']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_auto_youhui_hangq']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+				</div>
+				<div class="bd">
+					<div class="module car_market">
+						<div class="banner_car">
+							<ul>
+								{loop $v3_fragments['v3_auto_youhui_hangq']['data'] $auto_youhui_key $youhui}
+								{if $auto_youhui_key>=0 && $auto_youhui_key<=3}
+								<li>
+									<a href="{$youhui['link']}" target="_blank">
+										<img src="{$youhui['image']}" alt="{$youhui['title']}" />
+									</a>
+									<p>
+										<a href="{$youhui['link']}" target="_blank">{$youhui['title']}</a><span>{$youhui['summary']}</span>
+									</p>
+								</li>
+								{else}
+								{eval break;}
+								{/if}
+								{/loop}
+								
+							</ul>
+						</div>
+						<div class="list">
+							<ul>
+							{loop $v3_fragments['v3_auto_youhui_hangq']['data'] $auto_youhui_key $youhui}
+								{if $auto_youhui_key>3 && $auto_youhui_key<=15}							
+								<li><i>•</i><a href="{$youhui['link']}" title="{$youhui['title']}" target="_blank">{echo cut_string($youhui['title'],'44','');}</a><span>[{if $youhui['extraData']['time']['data']}{$youhui['extraData']['time']['data']}{else}{echo date("m-d",$youhui['dateline']);}{/if}]</span></li>
+								{/if}
+							{/loop}
+							</ul>
+						</div>
+					</div>
+				</div>
+		{/if}

@@ -1,0 +1,5 @@
+<script type="text/javascript" charset="utf-8" src="/static/js/ueditor1.3/ueditor.config.js?v={$ver}"></script>
+<script type="text/javascript" charset="utf-8" src="/static/js/ueditor1.3/ueditor.all.js?v={$ver}"></script>
+<div>
+    <script id="rich_ueditor{$timestamp}" type="text/plain" style="width:100%;">{$editor_content}</script>
+</div>

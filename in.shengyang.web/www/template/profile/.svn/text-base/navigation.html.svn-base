@@ -1,0 +1,12 @@
+<div class="tit">
+  <div class="tab">
+    <a{if $method==='setting'} class="current incd-style"{/if} href="/profile/setting/">基本信息</a>
+    <a{if $method==='avatar'} class="current incd-style"{/if} href="/profile/avatar/"> 修改头像</a>
+    {if !empty($info[username])}
+    <a{if $method==='revisepassword'} class="current incd-style"{/if} href="/profile/revisepassword/">修改密码</a>
+    <a{if $method==='email'} class="current incd-style"{/if} href="/profile/email/"> 修改邮箱</a>
+    <a{if $method==='sync'} class="current incd-style"{/if} href="/profile/sync/">同步设置</a>
+    {/if}
+    <a{if $method==='score'} class="current incd-style"{/if} href="/profile/score/"> 积分规则</a>
+  </div>
+</div>

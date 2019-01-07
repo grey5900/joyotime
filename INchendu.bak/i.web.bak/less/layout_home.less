@@ -1,0 +1,50 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+#container {
+	margin-bottom: 15px;
+}
+.section-layout{
+	clear: both;
+ 	margin: 15px 0 0 0;
+ 	padding: 10px;
+ 	.boxer();
+	.clearfix();
+}
+
+.article {
+	.clearfix();
+}
+.main-home {
+  	float: left;
+  	width: 710px;
+ 	padding: 10px;
+	border: 1px solid #e6e8e8~"\9";
+	background: @whiteText;
+	.border-radius(3px);
+	.box-shadow(0 1px 1px rgba(62,68,68,.25));
+	.clearfix();
+	margin:0 0 10px;
+}
+.sidebar-home {
+	float: right;
+  	width: 240px;
+  	margin: 0px;
+}
+
+.panel {
+	border: 1px solid @graySide~"\9";
+	background: @whiteText;
+	.border-radius(3px);
+	.box-shadow(0 1px 1px rgba(62,68,68,.25));
+  	.title {
+    	line-height: 40px;
+    	height: 40px;
+    	h4 {
+      		float: left;
+      		font-size: 16px;
+      		padding: 10px 0 0 10px;
+      		margin: 0px;
+    	}
+  	}
+  	.content {}
+}

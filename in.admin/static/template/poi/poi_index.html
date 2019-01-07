@@ -1,0 +1,196 @@
+<!-- 分页属性 -->
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="type" value="{$type}" />
+    <input type="hidden" name="status" value="<!--{if $status}-->{$status}<!--{else}-->1<!--{/if}-->" />
+    <input type="hidden" name="hasphone" value="{$hasphone}" />
+    <input type="hidden" name="mark" value="{$mark}" />
+    <input type="hidden" name="placeCategory.id" value="{$cid}" />
+    <input type="hidden" name="placeCategory.name" value="{$cname}" />
+    <input type="hidden" name="level1" value="{$level1}" />
+    <input type="hidden" name="level2" value="{$level2}" />
+    <input type="hidden" name="pcc1" value="{$pcc1}" />
+    <input type="hidden" name="pcc2" value="{$pcc2}" />
+    <input type="hidden" name="tip1" value="{$tip1}" />
+    <input type="hidden" name="tip2" value="{$tip2}" />
+    <input type="hidden" name="checkin1" value="{$checkin1}" />
+    <input type="hidden" name="checkin2" value="{$checkin2}" />
+    <input type="hidden" name="photo1" value="{$photo1}" />
+    <input type="hidden" name="photo2" value="{$photo2}" />
+    <input type="hidden" name="rating1" value="{$rating1}" />
+    <input type="hidden" name="rating2" value="{$rating2}" />
+    <input type="hidden" name="pids" value="{$pids}" />
+</form>
+<!-- 页头搜索栏 -->
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" name="main_form" id="main_form" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select class="combox" name="type">
+                        <option value="placename">POI名称</option>
+                        <option value="id">POI ID</option>
+                        <option value="address">POI地址</option>
+                    </select></td>
+                    <td>
+                    <input type="text" name="keywords" value="{$keywords}" size="30"/>
+                    </td>
+                    
+                    <!--{if $dis_place}-->
+                    <td>
+                    查询地点【{$dis_place['placename']}】附近
+                    </td>
+                    <!--{/if}-->
+                    <td>
+                        <div class="subBar">
+                            <ul>
+                                <li>
+                                    <div class="buttonActive">
+                                        <div class="buttonContent">
+                                            <button type="submit">
+                                                检索
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="button" href="{eval echo site_url(array('poi','poi','advsearch'));}" target="dialog" maxable="false" resizable="false" rel="{eval echo build_rel(array('poi', 'poi', 'advsearch'))}" width="600" height="350" title="高级检索"><span>高级检索</span></a>
+                                </li>
+                                <li>
+                                    <a class="button" href="{eval echo site_url(array('poi', 'poi', 'index'))}" rel="{eval echo build_rel(array('poi', 'poi', 'index'))}" target="navTab" title="POI列表"><span>重置列表</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                  	
+                    <select name="status" class="combox" url="{eval echo site_url(array('poi', 'poi', 'index', 'status'))}/">
+                       
+                        <option value="4" {if $status===4 }selected{/if}>推荐</option>
+	                    <option value="1" {if $status==1 || (empty($status) && $status!==0)}selected{/if}>正常</option>
+	                    <option value="2" {if $status===2}selected{/if}>隐藏</option>
+	                    <option value="3" {if $status===3}selected{/if}>删除</option>
+                	</select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<!-- 页面显示区 -->
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" href="{eval echo site_url(array('poi', 'poi', 'add' ,'cid' ,$cid))}" target="navTab" title="创建POI" rel="{eval echo build_rel(array('poi', 'poi', 'add'))}"><span>创建</span></a>
+            </li>
+            <li>
+                <a class="edit" href="{eval echo site_url(array('poi', 'poi', 'edit', 'id'))}/<!--{{id}}-->" warn="请选择要编辑的POI" target="navTab" title="编辑POI" rel="{eval echo build_rel(array('poi', 'poi', 'add'))}"><span>编辑</span></a>
+            </li>
+            <li class="line">
+                line
+            </li>
+            <li>
+                <select name="change_status" warn="请选择您要改变状态的地点" url="{eval echo site_url(array('poi', 'poi', 'change_status', 'id'))}/<!--{{id}}-->/type/{echo intval($cid);}">
+                    <option value="-1" selected>改变状态</option>
+                    <!--{loop $poi_status $k $v}-->
+                    <option value="{$k}">{$v}</option>
+                    <!--{/loop}-->
+                </select>
+                <select name="place_mark" warn="请选择您要设定地标的地点" url="{eval echo site_url(array('poi', 'poi', 'place_mark', 'id'))}/<!--{{id}}-->">
+                    <option value="-1" selected>地标设置</option>
+                    <option value="1">设为地标</option>
+                    <option value="0">取消地标</option>
+                </select>
+            </li>
+            <li class="line">
+                line
+            </li>
+            <li>
+                <a class="icon" href="{eval echo site_url(array('poi', 'poi', 'nearby_list', 'id'))}/<!--{{id}}-->" title="POI列表" rel="{eval echo build_rel(array('poi', 'poi', 'nearby_list'))}" target="navTab" warn="请选择一个地点"><span>附近地点</span></a>
+            </li>
+           
+            <!-- <li>
+                <a class="add" width="400" height="200" warn="请选择您要签到的地点" href="{eval echo site_url(array('poi', 'poi', 'checkin', 'id'))}/{{id}}" target="dialog" title="签到" rel="{eval echo build_rel(array('poi', 'poi', 'checkin'))}"><span>签到</span></a>
+            </li>-->
+            <!-- <li><a class="edit" href="{eval echo site_url(array('ugcv3','post','recommend',  'id' ));}/<!--{{id}}-->/type/1" target="dialog" rel="{echo build_rel(array('ugcv3', 'post', 'recommend'));}" width="650" height="530" close="imgareaselect_close" ><span>精华推荐设置</span></a></li> -->
+        	<li><a class="edit" href="{eval echo site_url(array('poi', 'poi', 'detail', 'type', 'id', 'keywords'));}/<!--{{id}}-->" rel="{eval echo build_rel(array('poi', 'poi', 'detail'));}" title="POI详情" target="navTab"><span>详情</span></a></li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="138">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="15%">地点名</th>
+                <th width="20%">地址</th>
+       
+                <th width="5%" orderField="isRepayPoint" class="<!--{if $order_field=='isRepayPoint'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">返回积分</th>
+                <th width="5%" orderField="tipCount" class="<!--{if $order_field=='tipCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">点评数</th>
+                <!--th width="5%" orderField="checkinCount" class="{if $order_field=='checkinCount'}{$order_direction}{else}asc{/if}">吐槽</th-->
+                <!-- 吐槽不管啊不管啊啊啊啊啊 -->
+                <th width="5%" orderField="atCollectionCount" class="<!--{if $order_field=='atCollectionCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">地点册</th>
+                
+                <th width="10%">电话</th>
+               
+                <th width="5%">状态</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr id="row_{$row['id']}" mark="{eval echo $row['landmark']>0?'1':'0';}" status="{$row['status']}" target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{if $row['isrecommend']}
+                <span style="height:25px;width:20px;background-color:{eval if($row['isrecommend']>$current_date) {}red{eval }else{ }gray{eval } };color:white; text-align:center;line-height:25px;">荐</span>
+                {/if}
+                <a href="{$website}/place/{$row['id']}" target="_blank">{$row['placename']}</a><span id="row_mark_{$row['id']}"<!--{if $row['landmark']}--> class="landmark"<!--{/if}-->>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+                <td>{$row['address']}</td>
+                <!--td><span id="rating_{$row['id']}">{if $row['extra_status'] == 1}{eval echo ($row['rating'] - $row['extraRating'])}{else}{$row['rating']}{/if}</span><span id="extra_rating_{$row['id']}">{eval echo $row['extraRating']>=0?('+'.$row['extraRating']):$row['extraRating']}</span></td-->
+                
+                <td>{eval echo $row['isRepayPoint'] ? "YES" : "NO"}</td>
+                
+                <td>{$row['tipCount']}</td>
+                <!-- >td>{$row['tipCount']} 吐槽不管啊不管</td -->
+                <td>{$row['atCollectionCount']}</td>
+                
+                <td>{$row['tel']}</td>
+                <td id="row_status_{$row['id']}">{$poi_status[$row['status']]}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+    $(function() {
+        $("select[name=type]").val("{$type}");
+        // 改变状态
+        $("select[name=change_status]").my_table_status(function(json){
+            $("#row_status_" + json.id).text(json.value);
+            $("#row_" + json.id).attr("status", json.key);
+        });
+
+        $("select[name=status]").change(function(){
+			//var url = $(this).attr("url") + $(this).val() ;
+			$("input[type=hidden][name=status]").val($(this).val());
+			navTabSearch($("#main_form"));
+        });
+        
+        
+        // 设定地标
+        $("select[name=place_mark]").my_table_status(function(json){
+            if(json.key > 0) {
+                $("#row_mark_" + json.id).addClass("landmark");
+            } else {
+                $("#row_mark_" + json.id).removeClass("landmark");
+            }
+            $("#row_" + json.id).attr("mark", json.key);
+        }, "mark");
+        
+    });
+</script>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>新年贺岁观影档 欢声笑语过新年</title>
+    <link rel="stylesheet" href="http://icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="http://icd.sc/demo/c/basic_mobile.4.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+			/*	background color	*/
+			.page {
+				background: #f6f6f6;
+			}
+			#content .unit .box {
+				background: #fff;
+			}
+			.touchslider-viewport {
+				background: #fff;
+			}
+			.box-db-left, .box-db-right {
+				background: #000;
+			}
+			.box-db .img img {
+				background: #fff;
+			}
+			#content .unit a {
+			  color: #666;
+			}
+			/* font color  */
+			.unit-title {
+				color: #d00300;
+			}
+			#content .unit p {
+				color: #666;
+			}
+			#content .statement p {
+				color: #666;
+			}
+			.box-db-left, .box-db-right {
+				color: #5a146a;
+			}
+			.texts .info-group {
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+				color: #000;
+			}
+			.texts .inside p {
+
+			}
+			.bottons .botton span.title {
+				color: #fff;
+			}
+			.bottons .botton span.intro {
+				color: #fff;
+			}
+			.touchslider-item .touchslider-info {
+				color: #fff;
+			}
+			.multi-line dd span {
+				color: #666;
+			}
+			.multi-line dd a:hover {
+				border-radius: 0;
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+			}
+			.multi-line .viewall a {
+				color: #ef631e;
+			}
+			.multi-line .viewall a:hover {
+
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #666;
+				padding-top: 5px;
+			}
+			.touchslider-item img {
+				height: 290px;
+			}
+			.touchslider-nav-item {
+
+			}
+			.feed, .user {
+				border-bottom: 0;
+			}
+			.feed a:hover, .user a:hover {
+				border-bottom: 0;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+			}
+			.bb {
+			  border-bottom: 1px solid #eee;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/43"><img border="0" src="http://icd.sc/img/m/xc/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动说明</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+庆幸那一切都是谣言，同心卡还能继续为卡友们打造新年特辑。贺岁档总离不开“家和万事兴”的主题......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+庆幸那一切都是谣言，同心卡还能继续为卡友们打造新年特辑。贺岁档总离不开“家和万事兴”的主题，因此同心卡今年也不例外，准备诸家餐饮名店的年夜饭；还有万象城特别企划，万象城精品美食一卡打尽！这一切尽在中国工商银行与成都传媒集团联手打造，成都全搜索网站(www.chengdu.cn)独家运营的同心卡。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="unit-title">
+              <h3>新年贺岁观影档 欢声笑语过新年</h3>
+            </div>
+            <div class="box">
+              <dl class="shrink" id="txl1">
+                <dd>
+                  <a href="inplace://4346">
+                    <div class="arrow">
+                      <span>幸福蓝海国际影城(成都仁和春天光华店)</span>
+                      <div class="address">
+                        持同心卡80元享受全成都最“巴适”豪华VIP厅、商务厅。不分时段2D大片40元，3D影片80元。
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://307821">
+                    <div class="arrow">
+                      <span>橙天嘉禾国际影城</span>
+                      <div class="address">
+                        同心卡可享受35元看2D、40元看3D优惠。
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://42283">
+                    <div class="arrow">
+                      <span>17.5成都今典沙湾影城</span>
+                      <div class="address">
+                        刷同心卡2D大片25元、3D影片35元（如遇特殊影片以影城公示价格为准）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://14788">
+                    <div class="arrow">
+                      <span>保利万和国际影城</span>
+                      <div class="address">
+                        刷同心卡看2D大片30元，3D影片60元
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa1">
+                <a class="showMore" id="txs1">查看全部（<em>4</em>）</a>
+              </div>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="unit-title">
+              <h3> 万象城精品美食特享季</h3>
+            </div>
+            <div class="box">
+              <dl class="shrink" id="txl2">
+                <dd>
+                  <a href="inplace://311081">
+                    <div class="arrow">
+                      <span>西树工房</span>
+                      <div class="address">
+                      同心卡29元享受价值44元泡芙或45元摩提一盒
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://310125">
+                    <div class="arrow">
+                      <span>糖百府甜品</span>
+                      <div class="address">
+                        新年蜜蜜套餐<br />
+原价：79元 &nbsp;&nbsp; 同心卡：40元<br />
+新春意意套餐<br />
+原价：85元 &nbsp;&nbsp; 同心卡：43元
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://310134">
+                    <div class="arrow">
+                      <span>優 良品（成都市成华区双庆路6号万象城B120）</span>
+                      <div class="address">
+                     多款商品第一件原价，第二件5折。全场消费满138元，送精美礼品一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://311330">
+                    <div class="arrow">
+                      <span>茗菜故事</span>
+                      <div class="address">
+原价298元   &nbsp;&nbsp;同心卡价148元<br />
+套餐内容：三花烤鸡、极品观音凉粉、仔姜辣米蛙、米凉粉烧鲶鱼、鸡汁萝卜丝、碧潭飘雪4份、米饭4位
+
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa2">
+                <a class="showMore" id="txs2">查看全部（<em>4</em>）</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit multi-line">
+            <div class="unit-title">
+              <h3> 餐饮名店团年饭尊享企划</h3>
+            </div>
+            <div class="box">
+              <dl class="shrink" id="txl3">
+                <dd>
+                  <a href="inplace://316650">
+                    <div class="arrow">
+                      <span>香侬海岸美食汇</span>
+                      <div class="address">
+                     每周二全天持同心卡刷卡可享受6.8折，午市：86元；晚市：107元。原价：午餐126元，晚餐156元。
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://20763">
+                    <div class="arrow">
+                      <span>南兮主题餐饮</span>
+                      <div class="address">
+套餐名称：南兮养生2~4人套<br />
+原价：486元 &nbsp;&nbsp; 同心卡：243元
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://322076">
+                    <div class="arrow">
+                      <span>松露•珍品宴饮</span>
+                      <div class="address">
+松露•珍品宴饮至尊奢华10人套<br />
+原价：2982元 &nbsp;&nbsp;同心卡：1588元<br />
+松露•珍品宴饮经典臻品6人套<br />
+原价：1688元&nbsp;&nbsp;同心卡：818元
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://322077">
+                    <div class="arrow">
+                      <span>成都东方广场假日酒店蜀咖啡</span>
+                      <div class="address">
+周一至周五午市自助午餐<br />
+    原价：112.7元（含15%服务费）&nbsp;&nbsp;同心卡：86元
+<br />
+周五、周六晚市海鲜自助晚餐<br />
+原价：135.7元（含15%服务费）&nbsp;&nbsp;同心卡：106元
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://307271">
+                    <div class="arrow">
+                      <span>万里号大饭店</span>
+                      <div class="address">
+合家团圆宴10-12人套<br />
+原价：1168元 &nbsp;&nbsp;同心卡：898元<br />
+合家团圆宴10-12人套<br />
+原价：1876元  &nbsp;&nbsp;同心卡：1500元
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://312472">
+                    <div class="arrow">
+                      <span>波尔菲特（富锦轩酒楼）</span>
+                      <div class="address">
+套餐名称：波尔菲特精品团年宴<br />
+原价：1588元 &nbsp;&nbsp;同心卡：1288元
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://14725">
+                    <div class="arrow">
+                      <span>国公家宴</span>
+                      <div class="address">
+持同心卡菜品享受9折优惠（酒水、烟草、海河鲜除外，婚庆订餐除外，家宴两桌以内）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://4963">
+                    <div class="arrow">
+                      <span>口口脆酒楼</span>
+                      <div class="address">
+持同心卡菜品9折优惠（不与其他优惠同享）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://230317">
+                    <div class="arrow">
+                      <span>德兴酒楼</span>
+                      <div class="address">
+持同心卡菜品享受8.8折优惠（5、7、8、9楼餐厅）；持同心卡菜品享受9折优惠（4楼餐厅）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://6786">
+                    <div class="arrow">
+                      <span>亚米天阁</span>
+比翼双飞双人套餐 <br />
+原价：471元&nbsp;&nbsp;同心卡：288元<br />
+情投意合双人套餐    <br />
+原价：401元 &nbsp;&nbsp; 同心卡：228元     
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://11115">
+                    <div class="arrow">
+                      <span>零O柒美鱼馆</span>
+1.零O柒美鱼馆8-10人中餐年夜饭套宴(获赠原价398元红酒一瓶)<br />
+原价3000元 &nbsp;&nbsp;同心卡2800元<br />
+2.零O柒美鱼馆8-10人火锅年夜饭套宴（获赠原价118元鲜榨一扎）<br />
+原价1980元 &nbsp;&nbsp;同心卡1800元
+                      </div>
+                  </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa3">
+                <a class="showMore" id="txs3">查看全部（<em>11</em>）</a>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <div class="unit scrolls">
+            <div class="unit-title"><h3>年货节 让新年更喜庆</h3></div>
+            <div id="showPic" class="touchslider">
+              <div class="touchslider-viewport" >
+                <div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/xc/1.jpg" />
+                  </div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/xc/2.jpg" />
+                  </div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/xc/3.jpg" />
+                  </div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/xc/4.jpg" />
+                  </div>
+                  <div class="touchslider-item">
+                    <img src="http://icd.sc/img/m/xc/5.jpg" />
+                  </div>
+                </div>
+              </div>
+              <div class="touchslider-nav">
+                <span class="touchslider-nav-item touchslider-nav-item-current"></span>
+                <span class="touchslider-nav-item"></span>
+                <span class="touchslider-nav-item"></span>
+                <span class="touchslider-nav-item"></span>
+                <span class="touchslider-nav-item"></span>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>新年旅游 从“新”开始</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+有时候骤然发觉年复一年新年都过的一模一样。那么，今年让年过的不一样吧。有时一个人出游也别有一番滋味，抑或相约亲友、挚爱一同前往一个心之所往之......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    有时候骤然发觉年复一年新年都过的一模一样。那么，今年让年过的不一样吧。有时一个人出游也别有一番滋味，抑或相约亲友、挚爱一同前往一个心之所往之地，在他乡过个特别的新年！本期推出峨眉山特惠旅游线路，详情请登录同心卡官方网站（card.chengdu.cn）或同心卡官方微博（weibo.com/tongxinka）查询
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong>
+                <br />
+详情请登录同心卡官方网站（card.chengdu.cn）或同心卡官方微博（weibo.com/tongxinka）查询
+              </p>
+            </div>
+          </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$(".touchslider").touchSlider({
+					mouseTouch : true,
+				});
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				})
+				$("#txl1").each(function() {
+					$("#txl1 > dd:gt(3)").hide();
+					$("#txa1").click(function() {
+						$("#txs1").toggle();
+						$("#txl1 > dd:gt(3)").toggle();
+					});
+				});
+				$("#txl2").each(function() {
+          $("#txl2 > dd:gt(3)").hide();
+          $("#txa2").click(function() {
+            $("#txs2").toggle();
+            $("#txl2 > dd:gt(3)").toggle();
+          });
+        });
+        $("#txl3").each(function() {
+          $("#txl3 > dd:gt(3)").hide();
+          $("#txa3").click(function() {
+            $("#txs3").toggle();
+            $("#txl3 > dd:gt(3)").toggle();
+          });
+        });
+			})
+    </script>
+  </body>
+</html>

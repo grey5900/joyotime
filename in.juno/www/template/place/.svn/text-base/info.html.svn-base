@@ -1,0 +1,128 @@
+<!--{template common/header}-->
+<div id="container">
+  <!--{template sub_header}-->
+    <!-- 图片墙 -->
+  <div class="container">
+    <div class="place-section">
+      <div class="tit">
+        <div class="tab">
+        <!--{loop $info['profiles'] $k $pro}-->
+          <!--{if $pro['hyperLink']}-->
+          <a href="/place_info/{$info[id]}/{$pro['id']}"<!--{if $property['id'] == $pro['id']}--> class="current nav-bg"<!--{/if}-->>{$pro[show_name]}</a>
+          <!--{/if}-->
+        <!--{/loop}-->
+        </div>
+      </div>
+      <div class="con">
+        <div class="active info">
+        <!--{loop $module_fields $row}-->
+        {eval $value = $list[$row['fieldId']];}
+        <!--{if isset($list[$row['fieldId']])}-->
+          <dl>
+          	<dt>{$row['fieldName']}：</dt>
+          	<dd>
+          	<!--{if $row['fieldType'] == 'http'}-->
+          	{eval list($name, $url) = explode('=', $value);}
+            <a href="{$url}" target="_blank">{$name}</a>
+          	<!--{elseif $row['fieldType'] == 'image'}-->
+          	<img src="{echo image_url($value, 'common')}" alt="{$name}" />
+          	<!--{elseif $row['fieldType'] == 'rich_image'}-->
+          	<!--{eval $ri = true;}-->
+           	
+			<!-- 测试数据 -->
+			<div class="n_slider touchslider-item">
+				<div class="n_container">
+					<!--{eval $bull = '';}-->
+               			<!--{eval $value = decode_json($value);}-->
+	                    <!--{loop $value $x $row}-->
+	                    <div class="n_zoomImage">
+	                    <!--{loop $row $k $v}-->
+	                    	<!--{if $k != 'image'}-->
+	                    		
+	                    	<div class="item-{$k}">{$v}</div>
+	                    	<!--{else}-->
+	                    	<div class="item-image n_showcase"><a title="{$row['title']}" href="{echo image_url($v, 'common')}"><img  src="{echo image_url($v, 'common')}" alt="{$row['title']}"></a></div>
+	                    	<!--{/if}-->
+	                    <!--{/loop}-->
+	                    </div>
+	                    <!--{/loop}-->
+					
+				</div>
+				<div class="n_nav">
+					<ul>
+					<!--{loop $value $x $row}-->
+	                    <!--{loop $row $k $v}-->
+	                    <!--{if $k=="image"}-->
+	                    <li {if $x==0}class="current"{/if}><img src="{echo image_url($v, 'common')}" alt="{$row['title']}"></li>
+	                    <!--{/if}-->
+	                    <!--{/loop}-->
+	                <!--{/loop}-->
+					
+						
+					</ul>
+				</div>
+			</div>
+			<!-- 测试数据 -->
+          	<!--{else}-->
+          	{eval echo format_html($value);}
+          	<!--{/if}-->
+			</dd>
+          </dl>
+        <!--{/if}-->
+        <!--{/loop}-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--{if $ri}-->
+
+<link rel="stylesheet" href="/static/skin/jquery.lightbox-0.5.css" />
+<script type="text/javascript" src="/static/js/jquery.lightbox-0.5.js"></script>
+<script type="text/javascript">
+	$(function(){		
+		$.fn.slider = function(){
+			this.each(function(){
+				var trigger = $(this).find('li'),
+				box = $(this).find('ul'),
+				showCase = $(this).find('.n_showcase'),
+				len = trigger.length,
+				dis = trigger.outerWidth(true),
+				boxDis = parseInt(box.css('margin-left').split('p')[0]),
+				lTrigger = showCase.find('a'),
+				//多张
+				zoomImage = $(this).find('.n_zoomImage');
+				zoomImage.eq(0).show().siblings().hide();
+				box.width(dis * len);
+				zoomImage.find('a').lightBox({imageLoading:'/static/skin/images/lightbox-ico-loading.gif',imageBtnPrev:'/static/skin/images/lightbox-btn-prev.gif',imageBtnNext:'/static/skin/images/lightbox-btn-next.gif',imageBtnClose:'/static/skin/images/lightbox-btn-close.gif',imageBlank:'/static/skin/images/lightbox-blank.gif',txtImage:'放大图片',txtOf:'共'})
+				trigger.on('click',function(){
+					var iUrl = $(this).find('img').attr('src'),
+						nIndex = $(this).index()+1,
+						maxLen = len - 5;
+					$(this)
+						.addClass('current')
+						.siblings()
+						.removeClass('current');
+					//多张
+					zoomImage.eq(nIndex-1).show().siblings().hide();
+					//单张
+										
+					if(len > 5){
+						if(nIndex > 3 && (nIndex - 3)<= maxLen){
+							move(-(nIndex-3)*dis);
+						}
+						if(nIndex <= 3 && (3 - nIndex) <= maxLen){
+							move(0);
+						}
+					};
+				})
+				function move(distance){
+					box.animate({marginLeft:distance+boxDis},300);
+				}
+			})
+		};
+		$('.n_slider').slider();
+	})
+</script>
+<!--{/if}-->
+<!--{template common/footer}-->

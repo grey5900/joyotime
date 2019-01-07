@@ -1,0 +1,68 @@
+//
+// Mobile Bottons CSS
+// --------------------------------------------------
+
+
+.orange-button {
+  border: 1px solid #e5810b;
+  background: #ffde76;
+  font: bold 16px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+  -moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5),0px 1px 0.5px rgba(51,51,51,0.1);
+  -webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5),0px 1px 0.5px rgba(51,51,51,0.1);
+  box-shadow:inset 0px 1px 0px rgba(255,255,255,0.5),0px 1px 0.5px rgba(51,51,51,0.1);
+  .buttonBackground(#ffde76, #f99b1d, @text-color: #a1400b, @textShadow: 0 1px 0 rgba(255,255,255,.8));
+  // &:hover {
+  //   background: #f99b1d;
+  //   #gradient > .vertical(#e5810b, #f99b1d);
+  // }
+}
+.green-button {
+  border: 1px solid #449008;
+  background: #87cb49;
+  font: bold 16px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51,51,51,0.1), inset 0px 1px 0px rgba(255,255,255,0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51,51,51,0.1), inset 0px 1px 0px rgba(255,255,255,0.5);
+  box-shadow:0px 1px 0.5px rgba(51,51,51,0.1), inset 0px 1px 0px rgba(255,255,255,0.5);
+  .buttonBackground(#ace76f, #5eab1f, @text-color: #fff, @textShadow: 0px -1px 0px rgba(56,140,13,0.8));
+  &:hover {
+    background: #66b127;
+    #gradient > .vertical(#87cb49, #5eab1f);
+  }
+}
+.gray-button {
+  border: 1px solid #b7c1cb;
+  background: #ced8e1;
+  font: bold 16px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+  -moz-box-shadow: 0px 1px 0.5px rgba(51,51,51,0.1), inset 0px 1px 0px rgba(255,255,255,0.4);
+  -webkit-box-shadow: 0px 1px 0.5px rgba(51,51,51,0.1), inset 0px 1px 0px rgba(255,255,255,0.5);
+  box-shadow:0px 1px 0.5px rgba(51,51,51,0.1), inset 0px 1px 0px rgba(255,255,255,0.5);
+  .buttonBackground(#f5f8fa, #ced8e1, @text-color: #738695, @textShadow: 0 1px 0 rgba(255,255,255,.8));
+  &:hover {
+    background: darken(#ced8e1, 5%);
+    #gradient > .vertical(#f5f8fa, #aebfce);
+  }
+}
+
+// Button backgrounds
+// ------------------
+.buttonBackground(@startColor, @endColor, @text-color: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+  color: @text-color;
+  text-shadow: @textShadow;
+  -webkit-font-smoothing: antialiased; 
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  #gradient > .vertical(@startColor, @endColor);
+  .reset-filter();
+  .user-select(none);
+  .box-sizing(broder-box);
+  &:active, &.active, &.disabled, &[disabled] {
+    color: @text-color;
+    background-color: @endColor;
+  }
+  &:active,
+  &.active {
+    background-color: darken(@endColor, 10%) e("\9");
+  }
+}

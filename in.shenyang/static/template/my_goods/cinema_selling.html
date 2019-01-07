@@ -1,0 +1,119 @@
+{eval $page_rel='cinema_selling';}
+<script type="text/javascript">
+function cinema_edit_selling(url) {
+    navTab.openTab("{eval echo build_rel(array('goods', 'cinema_add'))}", url, {title:"修改已上架电影票"});
+}
+
+function ajaxTodo_cinema_selling(json) {
+    DWZ.ajaxDone(json);
+    // if(json.value) {
+        // $("#cinema_selling_" + json.value.id).css("background-color", "red");
+        // $("a[rel=modify]", $("#cinema_selling_" + json.value.id)).hide();
+    // }
+    if(json.statusCode == 200) {
+        // 成功
+        // 刷新。提交一次
+        $("form", $("#cinema_{$page_rel}")).submit();
+    }
+}
+
+/**
+ * 删除回调函数
+ */
+// function ajaxTodo_cinema_selling_del(json) {
+    // DWZ.ajaxDone(json);
+    // if(json.statusCode == 200) {
+        // 成功
+        // 刷新。提交一次
+        // $("form", $("#cinema_{$page_rel}")).submit();
+    // }
+// }
+</script>
+<div class="pageHeader" id="cinema_{$page_rel}">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select class="combox" name="status">
+                        <option value="0">全部商品</option>
+                        <option value="1">售卖中</option>
+                        <option value="2">未开始</option>
+                        <option value="3">已结束</option>
+                        <option value="4">已售罄</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="ajaxTodo" title="您确定要下架电影票么？" callback="ajaxTodo_cinema_selling" href="{eval echo site_url(array('goods', 'cinema_sale_off', 'id'))}/<!--{{id}}-->" warn="请选择您要下架的电影票"><span>下架</span></a>
+            </li>
+            <li>
+                <a class="icon" target="myDwzExport" title="您确定要导出电影票订单么？" href="{eval echo site_url(array('goods', 'export_order', 'type', '13', 'id'))}/<!--{{id}}-->" warn="请选择要导出订单信息的电影票"><span>导出订单明细</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="4%">商品ID</th>
+                <th width="27%">标题</th>
+                <th width="10%">开始时间</th>
+                <th width="10%">结束时间</th>
+                <th width="5%">关联地点</th>
+                <th width="15%">观影券到期时间</th>
+                <th width="4%">价格</th>
+                <th width="4%">销售库存</th>
+                <th width="4%">实际库存</th>
+                <th width="4%">订单数</th>
+                <th width="4%">售出数</th>
+                <th width="4%">状态</th>
+                <th width="3%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}" id="cinema_selling_{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['name']}</td>
+                <td>{$row['startDate']}</td>
+                <td>{$row['endDate']}</td>
+                <td><a href="javascript:;" onclick="view_cinema_related_place({$row['id']})">{eval echo $row['placeNum']?$row['placeNum']:'0'}</a></td>
+                <td>{$row['expireDate']}</td>
+                <td>{$row['price']}</td>
+                <td>{$row['quantity']}</td>
+                <td>{$row['stock']}</td>
+                <td>{$row['buyerCount']} - {$row['orderNum']}</td>
+                <td>{$row['saleNum']}</td>
+                <td>{$row['status_name']}</td>
+                <td><!--{if $row['status']=='0'}--><a href="javascript:;" rel="modify" onclick="cinema_edit_selling('{eval echo site_url(array('goods', 'cinema_edit_selling', 'id', $row['id']))}');">编辑</a><!--{/if}--></td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+    $(function(){
+        <!--{if $status}-->
+        $("select[name=status]", $("#cinema_{$page_rel}")).val("{$status}");
+        <!--{/if}-->
+        
+        if ($.fn.myDwzExport) {
+            $("a[target=myDwzExport]", $(document)).myDwzExport();
+        }
+    });
+</script>

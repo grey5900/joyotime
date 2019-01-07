@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>{$brandname}会员特权游戏</title>
+	<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}" type="text/css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+	<script type="text/javascript" src="/static/js/jquery.flip.min.js?{$version}"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="container">
+			<div class="lumps">
+				<!--{if $show_nav}-->
+				<div class="navigation">
+					<a onclick="goBack();" class="navigation-back"><cite>上一页</cite></a>
+					<span class="navigation-title">{$brandname}会员特权游戏</span>
+				</div>
+				<!--{/if}-->
+				<div class="gift-page {if $show_nav}nav-black{/if}">
+					<ul class="flipwall">
+					<!--{loop $ad_cards $k $v}-->
+						<li class="wall">
+							<div class="flip" index="{echo $k+1}">
+								<img src="/images/logo/{$v}.png" alt="" />
+							</div>
+							<div class="fliped">
+								<img src="/static/m_img/district/cry.jpg" alt="" />
+							</div>
+						</li>
+					<!--{/loop}-->
+					</ul>
+
+					<div class="info">
+						<img src="/static/m_img/district/gift_rules.png" alt="" width="300px" />
+					</div>
+				</div>
+				<div class="footer">
+					<p>IN.CHENGDU.CN</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="game_over" class="modal">
+		<div class="modal-header">
+		  <h2>获得积分</h2>
+		</div>
+		<div class="modal-body">
+			<div class="modal-center">
+				<img src="/static/m_img/district/gif-03.png" alt="" width="72px" />
+				<!--{if $member}-->
+				<p>本次游戏您总共获得<em></em>积分</p>
+				<!--{else}-->
+				<p>本次游戏您总共发现<em></em>积分</p>
+				<p>成为会员以后，玩游戏才能获取</p>
+				<!--{/if}-->
+			</div>
+			<div class="modal-button">
+			  	<a href="javascript:;" onclick="toHome();" class="button">确定</a>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" charset="utf-8">
+function toHome() {
+	//var Backlen = history.length;
+    //if (Backlen > 0) {
+    //	history.go(-Backlen);
+    //}
+	window.location.href = "/district?uid={$uid}&showNav={echo $show_nav?0:1}";
+}
+
+$(function(){
+	$('.flip').bind("click",function() {
+        var elem = $(this);
+		if(elem.data('flipped')){
+			//elem.revertFlip();
+			elem.data('flipped',true)
+		} else {
+			elem.flip({
+				direction:'lr',
+				speed: 300,
+				onBefore: function(){
+					var index = elem.attr("index");
+					$.getJSON("/district/click_card?uid={$uid}&index=" + index, function(json){
+						if (json.point > 0) {
+							// 显示笑脸
+							elem.html('<img src="/static/m_img/district/smile.jpg" alt="" />');
+							//elem.siblings('.fliped').siblings('img').attr("src", "/static/m_img/district/smile.jpg");
+						} else {
+							elem.html(elem.siblings('.fliped').html());
+						}
+						if (json.message != "") {
+							$.messager(json.message);
+						}
+						
+						if (json.over == "YES") {
+							$("em", "#game_over").html(json.total_point);
+							if (json.total_point == 0) {
+								$(".modal-center", "#game_over").html('<img src="/static/m_img/district/gif-02.png" alt="" width="72px" /><p>运气太差了，什么都没获得</p>');
+								if (json.member == 0) {
+									// 不是会员
+									$(".modal-button", "#game_over").html('<a href="/district/game" class="button">再玩一次</a>');
+								}
+							}
+							
+							setTimeout(function(){
+								$.messagerModal("#game_over");
+							}, 1500);
+						} 
+					});
+				}
+			});
+			elem.data('flipped',true);
+		}
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!--{template common/header3.0}-->
+	<div class="main layout detail">
+		<div class="column intro_banner loc_intro">
+			<div class="img">
+				<img src="{echo image_url($detail['image'],'placeColl','odp');}" alt="" />
+				<i></i>
+			</div>
+			<div class="info">
+				<h1>{$detail['name']}</h1>
+				<p><em>By</em><a href="/user/{$detail['user']['id']}/" target="_blank" >{$detail['user']['name']}</a> 创建</p>
+			</div>
+			<div class="btns">
+				<a {if $is_collectable}href="#" id="cltLoc"{/if} data-id="{$detail['id']}"><i class="collect"></i>{if !$is_collectable}已{/if}收藏</a>
+				<a ><i class="location"></i>{$detail['pcount']}个地点</a>
+				<a href="/placecoll/"><i class="loc_album"></i>返回地点册列表</a>
+			</div>
+		</div>
+		<div class="column location">
+			<div class="article">
+				<div class="author">
+					<div class="img">
+						<a href="/user/{$detail['user']['id']}/" target="_blank" class="avatar"><img src="{$detail['user']['avatar_m']}" alt="" /></a>
+					</div>
+					<div class="info">
+						<p><a href="/user/{$detail['user']['id']}/" target="_blank" >{$detail['user']['name']}</a>：{$detail['summary']}</p>
+					</div>
+				</div>
+				<div class="list">
+					<ul>
+					{loop $detail['places'] $p}
+						{if !$p['id']}{eval continue;}{/if}
+						<li>
+							<div class="img">
+								<a href="/place/{$p['id']}/" target="_blank"><img src="{echo image_url($p['icon'],'place');}" alt="" /></a>
+								<a class="show_map" href="javascript:;" data-lng="{$p['longitude']}" data-lat="{$p['latitude']}" data-id="{$p['id']}">查看地图</a>
+							</div>
+							<div class="info">
+								<a href="/place/{$p['id']}/" target="_blank">{$p['placename']}</a>
+								<p>推荐理由：{if $p['content']}{$p['content']}{else}这个家伙飘忽的没有写下任何原因~无因果……{/if}</p>
+								
+							</div>
+						</li>
+						
+						<div class="modal hide" id="place-map-modal_{$p['id']}">
+							  	<div class="modal-header">
+							  		<a class="close" data-dismiss="modal">&times;</a>
+							  		<h3>地图</h3>
+							     </div>
+							     <div class="modal-body">
+                                     <div style="width: 530px; height: 320px;">
+                                         <div id="place-map-container_{$p['id']}" class="map" data-lat="{$p[latitude]}" data-lng="{$p[longitude]}"></div>
+                                     </div>
+							  </div>
+						</div>
+					{/loop}
+						
+					</ul>
+				</div>
+				
+				{$paginate}
+			</div>
+			<div class="side">
+				<div class="reaction">
+					<div class="sub_tit">
+						<a href="#" class="action-like {if $isapraised}on{/if}" data-id="{$detail['id']}" data-type=20  data-sort=1>赞{if $detail['praiseCount']}({$detail['praiseCount']}){/if}</a>
+						<a href="#" class="action-step {if $isstamped}on{/if}" data-id="{$detail['id']}" data-type=20 data-sort=-1>踩{if $detail['stampCount']>0}({$detail['stampCount']}){/if}</a>
+						<!--  分享{if $detail['shareCount']}({$detail['shareCount']}){/if}-->
+					</div>
+					<div class="sub_con">
+						<ul>
+						{loop $detail['ps_list'] $psl}
+							<li><a href="/user/{$psl['uid']}" target="_blank" class="avatar"><img src="{$psl['avatar']}" alt="{$psl['nickname']}{if $psl['type']==1}赞{else}踩{/if}了一下" title="{if $psl['type']==1}赞{else}踩{/if}" /></a></li>
+						{/loop}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7dc3e4b24f182c84b3843400d2b83bbe"></script>
+<script type="text/javascript" src="/static/js/mapper.min.js"></script>
+<script type="text/javascript">
+
+    $(function(){
+        $('.location').on('click','.show_map',function(e){
+
+            var box = $("#place-map-modal_"+$(this).data("id"));
+            var container = $("#place-map-container_"+$(this).data("id"));
+
+
+            container.html('');
+            box.show();
+            container.mapper();
+
+        });
+
+        $(".close").click(function(){
+            $(this).parent().parent().hide();
+        });
+    });
+
+
+</script>
+
+<!--{template common/footer}-->

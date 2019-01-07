@@ -1,0 +1,15 @@
+<div class="train">
+						<div class="tit">
+							<h2>{$edu['frag']['name']}</h2>
+							
+						</div>
+						<div class="con">
+						{if $edu['data'][0]['image']}
+						<a href="{$edu['data'][0]['link']}" title="{$edu['frag']['title']}" target="_blank"><img src="{$edu['data'][0]['image']}" width=529 height=210 /></a>
+						{else}
+						{eval echo str_replace(array("[","]"),array("<",">"),$edu['data'][0]['summary']);}
+						{/if}
+						
+						</div>
+					</div>
+					

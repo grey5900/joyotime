@@ -1,0 +1,33 @@
+<div class="pageContent">
+	<form action="{$current_url}" method="post" class="pageForm" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent" layoutH="60">
+		<input type="hidden" name="isUnlink" value="{$isUnlink}" />
+		<table class="table" cellpadding="4" cellspacing="4">
+			<thead>
+				<tr>
+					<th width="3%"><input type="checkbox" group="cids[]" class="checkboxCtrl" /></th>
+					<th width="10%">分类ID</th>
+					<th width="80%">分类名</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<!--{loop $cat_list $k $v}-->
+				<tr>
+					<td><input type="checkbox" name="cids[]" value="{$v[id]}"<!--{if $v[checked] == 1}--> checked="checked"<!--{/if}-->/></td>
+					<td>{$v['id']}</td>
+					<td>{$v[catName]}</td>
+					<!--td>{$v[frag]}</td-->
+				</tr>
+				<!--{/loop}-->
+			</tbody>
+		</table>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>

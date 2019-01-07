@@ -1,0 +1,36 @@
+<!--{template d_header}-->
+<div class="android-bd">
+    <div class="layout">
+		<h3>IN沈阳移动客户端</h3>
+		<p class="summary">
+			IN沈阳是专门为沈阳定制的本地移动应用，让你生活在这里，快乐在这里。
+			<br/>
+			<br/>
+			<!-- {$version[changeLog]} -->
+			<br/>
+			<br/>
+			版本：V1.0<!-- <span id="versionNumber">{$version[version]}</span> -->
+			<br/>
+			更新日期：2013年12月1日 <!-- <span id="versionDate">{echo substr($version[createDate], 0, -3);}</span> -->
+		</p>
+		<a target="_blank" id="downloadUrl" href="{$version[downloadUri]}?{echo TIMESTAMP}" class="btn-apk"><span>Android </span>></a>
+		<img class="two-dimensional-code" alt="IN沈阳android客户端" src="http://chart.googleapis.com/chart?chs=114x114&cht=qr&chl=http://in.jin95.com/web/d/1" title="IN沈阳android客户端" width="114" height="114">
+		<div class="imitation-android">
+			<ul id="switch-android">
+				<li><img alt="" width="187px" height="332px" src="/static/skin/iphone1.png" /></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42422312-1', 'chengdu.cn');
+  ga('send', 'pageview');
+
+</script>
+
+<!--{template d_footer}-->

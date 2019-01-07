@@ -1,0 +1,179 @@
+<!--{template common/header3.0}-->
+<!--{template fragments/ad_back_top}-->
+	<div class="main channel layout">
+			<!--{template fragments/ad_back}-->
+            <!--通栏广告-->
+            <!--{template fragments/ad_banner}-->
+            <!--{template fragments/ad_halfing_left}-->
+            <!--{template fragments/ad_halfing_right}-->
+		<div class="column channel_topic">
+			<div class="channel_nav">
+				<div class="con">
+					<div class="logo"><img src="/static/in_themes/{$theme}/images/topic_logo.jpg" alt="评房网" /></div>
+					<ul>
+					<!--{loop $sub_cate $key=>$value}-->
+					{if $value['link']=='-1'}{eval continue;}{/if}
+					<li><a class="" {if $value['link']!=''}target="_blank" href="{$value['link']}"{elseif $value['tag_count']}href="/category/{$key}"{else}href="/nlist/{$key}"{/if}><i class="nav-bg cat{$key} <!--{echo $key==$id?' on':''}-->"></i>{$value['catName']}</a></li>
+					<!--{/loop}-->			
+						
+						
+					</ul>
+					<div class="ft">
+						<img src="/static/in_themes/{$theme}/images/tel.jpg" alt="热线电话" />
+					</div>
+				</div>
+			</div>
+			<div class="channel_hot">
+				<div class="con">
+				<!--{if $hot}-->
+					<div class="hot">
+						<!--{template fragments/focus4.0}-->
+						<!--{template fragments/headline4.0}-->
+					</div>
+					<!--{/if}-->
+					<div class="bd-pic"></div>
+					
+					<!--{template search}-->
+					
+				</div>
+			</div>
+		</div>
+		<!--{template fragments/ad_banner_middle}-->
+		{if $v3_fragments['v3_f_zhangyu_ping']}
+		<div class="column">
+			<div class="hd">
+				<h2>{$v3_fragments['v3_f_zhangyu_ping']['frag']['name']}</h2>
+				{if $v3_fragments['v3_f_zhangyu_ping']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_zhangyu_ping']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+			</div>
+			<div class="bd">
+				<div class="article">
+					<!--{template fragments/f_zhangyu_ping}-->
+				</div>
+				<div class="side">
+					<!--{template fragments/f_zhangyu_right}-->
+				</div>
+			</div>
+		</div>
+		{/if}
+		<!--{template fragments/ad_banner_middle2}-->
+		<div class="column">
+			<div class="article">
+				<!--{template fragments/f_tf4.0}-->
+			</div>
+			<div class="side">
+				<!--{template fragments/f_loupan_search}-->
+			</div>
+		</div>
+		<!--{template fragments/ad_banner_middle3}-->
+		{if $v3_fragments['v3_auto_lichang']}
+		<div class="column">
+			<div class="hd">
+				<h2>{$v3_fragments['v3_auto_lichang']['frag']['name']}</h2>
+				{if $v3_fragments['v3_auto_lichang']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_auto_lichang']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+			</div>
+			<div class="bd">
+				<div class="article">
+					<!--{template fragments/auto_lichang}-->
+				</div>
+				<div class="side">
+					<!--{template fragments/auto_lichang_news}-->
+				</div>
+			</div>
+		</div>
+		{/if}
+		<!--{template fragments/ad_banner_middle4}-->
+		<div class="column">
+			<div class="article">
+				<!--{template fragments/auto_youhui_hangqing}-->
+			</div>
+			<div class="side">
+				<!--{template fragments/f_m_ad1}-->
+			</div>
+		</div>
+		{if $v3_fragments['v3_f_daka_rating']}
+		<div class="column">
+			<div class="hd">
+				<h2>{$v3_fragments['v3_f_daka_rating']['frag']['name']}</h2>
+				{if $v3_fragments['v3_f_daka_rating']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_daka_rating']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+			</div>
+			<div class="bd">
+				<div class="article">
+					<!--{template fragments/f_daka_rating}-->
+				</div>
+				<div class="side">
+					<!--{template fragments/f_book}-->
+				</div>
+			</div>
+		</div>
+		{/if}
+		<!--{template fragments/ad_banner_middle5}-->
+		<div class="column">
+			<div class="article">
+				<!--{template fragments/f_makeup}-->
+			</div>
+			<div class="side">
+				<!--{template fragments/f_m_ad2}-->
+			</div>
+		</div>
+		<!--{template fragments/ad_banner_middle6}-->
+		{if $v3_fragments['v3_auto_lichang2']}
+		<div class="column">
+			<div class="hd">
+				<h2>{$v3_fragments['v3_auto_lichang2']['frag']['name']}</h2>
+			</div>
+			<div class="bd">
+				<div class="article">
+					<!--{template fragments/auto_lichang2}-->
+				</div>
+				<div class="side">
+					<!--{template fragments/f_zhangyu_right2}-->
+				</div>
+			</div>
+		</div>
+		{/if}
+		<!--{template fragments/ad_banner_middle7}-->
+		<div class="column">
+			<div class="article">
+				<!--{template fragments/f_loupan_rec}-->
+			</div>
+			<div class="side">
+				<!--{template fragments/f_speed_news}-->
+			</div>
+		</div>
+		<!--{template fragments/ad_banner_middle8}-->
+		<!--{template fragments/f_fresh_estate}-->
+		<!--{template fragments/ad_banner_middle9}-->
+		<a name="waterfall"></a>
+		<div class="column">
+			<div class="article">
+			{if $v3_fragments['v3_posts']}
+				<div class="hd">
+					<h2>{$v3_fragments['v3_posts']['frag']['name']}</h2>
+					{if $v3_fragments['v3_posts']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_posts']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+				</div>
+				<div class="module timeline">
+					<!--{template channel/waterfall}-->
+				
+				</div>
+			{/if}
+			</div>
+				<div class="side">
+					
+					
+					<!-- 侧边栏循环 -->
+						<!--{loop $sidebar_data $row}-->
+							<!--{template fragments/sidebars}-->
+						<!--{/loop}-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('.house_preview').slide({initDis:-40});
+		})
+	</script>
+	<!--{template fragments/ad_pop}-->
+	<!--{template fragments/ad_couplet_left}-->
+    <!--{template fragments/ad_couplet_right}-->
+<!--{template common/footer}-->

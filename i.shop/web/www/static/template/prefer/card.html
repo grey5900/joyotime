@@ -1,0 +1,127 @@
+<!--{template web/header}-->
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox">
+			<div class="main">
+				<div class="inner main-conter">
+					<div class="title">
+						<h3>会员卡优惠</h3>
+					</div>
+					<div class="from-detail">
+					  <div class="alert alert-error hide"></div>
+						<form id="membercard-form" class="form-frame" action="{$current_url}" method="post" novalidate="novalidate" <!--{if !empty($card) && $card[status] == 0}-->onsubmit="return false;"<!--{/if}-->>
+							<input type="hidden" name="cardId" value="{$card[cardId]}" />
+							<input type="hidden" name="image" value="" id="image_src" />
+							<input type="hidden" name="old_img" value="{$card[image]}" />
+							<input type="hidden" name="x1" value="0" id="x1" />
+							<input type="hidden" name="y1" value="0" id="y1" />
+							<input type="hidden" name="x2" value="640" id="x2" />
+							<input type="hidden" name="y2" value="640" id="y2" />
+							<input type="hidden" name="w" value="{$t_w}" id="w" />
+							<input type="hidden" name="h" value="{$t_h}" id="h" />
+							<div class="control-group">
+								<label class="control-label">上传会员卡封面：</label>
+								<div class="controls">
+								   <!--{if !empty($card)}-->
+								   <!--{if $card[status] == 10}-->
+			                       <a class="tip-fail jqModal" href="javascript:void(0)" onclick="showReason('驳回原因','{$card[remark]}');return false;"><i>审核失败...</i></a>
+								   <!--{elseif $card[status] == 20}-->
+			                       <span class="tip-view">展示中...</span>
+								   <!--{else}-->
+			                       <span class="tip-wait">等待审核...</span>
+								   <!--{/if}-->
+								   <!--{/if}-->
+                       
+									<!--{if $card[status] == 0}-->
+									<span style="width:170;height:60;"></span>
+									<!--{else}-->
+                  <a href="javascript:void(0);" class="slect-uploadify">
+                      <span></span>
+                      <input type="file" name="Filedata" id="uploader-pic" class="filePrew" onchange="upFile($(this));">
+                    </a>
+									<!-- <button type="button" id="upload-image">上传图片</button> --><!--{/if}-->
+									<span class="help-block">提示：照片大小可以到2M。仅支持JPG，JPEG， GIF，PNG或BMP格式</span>
+									<div class="up-pic">
+										<div class="frame" id="div_upload_big">
+											<!--{if !empty($card[image_src])}--><img src="{$card[image_src]}" width="360" /><!--{/if}-->
+										</div>
+									</div>
+									<!-- <div class="show-pic">
+										<div id="preview" class="frame">
+										<!--{if !empty($card[icon])}--><img src="{$card[icon]}" width="190" /><!--{/if}-->
+										</div>
+									</div> -->
+								</div>
+							</div>
+						<!-- 	<div class="control-group">
+								<label class="control-label">特权名称：</label>
+								<div class="controls">
+									<input type="text" name="title" id="title" class="input-xlarge text-input" value="" size="20" />
+								</div>
+							</div> -->
+							<div class="control-group">
+								<label class="control-label">特权描述：</label>
+                <div class="controls">
+                  <textarea id="content" name="content" class="input-xlarge" rows="5" cols="8" type="text"<!--{if $card[status] == 0}--> readonly<!--{/if}-->>{$card[content]}</textarea>
+                </div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">特权摘要：</label>
+                <div class="controls">
+                  <textarea id="summary" name="summary" class="input-xlarge" maxlength="30" rows="2" cols="8" type="text"<!--{if $card[status] == 0}--> readonly<!--{/if}-->>{$card[summary]}</textarea>
+                </div>
+							</div>
+							<div class="from-actions">
+								<label class="control-label"></label>
+								<div class="controls">
+									<!--{if !empty($card) && $card[status] == 0}-->
+									请等待审核
+									<!--{else}-->
+									<input class="btn btn-primary" data-loading-text="　……　" type="submit" value="　提交审核　" >
+									<!--{/if}-->
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!--{template sider}-->
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function upFile(dom){
+		if($(dom).val() != ""){
+			$.ajaxFileUpload({
+				url:'/upload/1/?'+(new Date().getTime()),
+		    	secureuri:false,
+		    	fileElementId:'uploader-pic',
+		    	dataType:'json',
+		    	success:function(data, status){
+					$("#div_upload_big").html("");
+					$("#preview").html("");
+		    	if (data.code ==1) {
+            $("#messager").messager({message:data.msg});
+            $(".up-pic").hide();
+            $(".show-pic").hide();
+          } else if (data.code ==2) {
+            $("#messager").messager({message:data.msg});
+            $(".up-pic").hide();
+            $(".show-pic").hide();
+          }else{
+						$('#div_upload_big').append('<img width="360px" id="photo" src="'+data.src+'" />');
+						$('#preview').append('<img id="thumb" width="190px" src="'+data.src+'"/>');
+						$("#photo").attr({src:data.src});
+						$("#thumb").attr({src:data.src});
+						$("#image_src").val(data.file);
+						$(".up-pic").show();
+						$(".show-pic").show();
+		    		}
+		    	}
+			});
+		}
+		$(dom).val("");
+	}
+
+</script>
+<!--{template web/footer}-->

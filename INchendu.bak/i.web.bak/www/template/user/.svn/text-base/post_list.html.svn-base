@@ -1,0 +1,70 @@
+<!--{loop $list $post_id $post}-->
+<div class="timeline-column">
+	<div class="feed">
+		<div class="timeline-post">
+			<div class="post-head">
+				<a href="/review/{$post_id}/" target="_blank">{$post[createDate]}</a> {$post[str_type]} <a class="poi" href="/place/{$post[placeId]}/" target="_blank">{$post[placename]}</a>
+			</div>
+			<div class="post-body">
+				<!--{if $post[type] == $tip}-->
+				<div class="stared">
+					<span class="ico-star-{$post[star]}"></span>
+					<!--{if $post[isBusiness]}--><!--{if !empty($post[pcc])}-->人均：<em><!--{if $post[pcc]>=0}-->{$post[pcc]}<!--{else}-->-<!--{/if}--></em>元<!--{/if}--><!--{/if}-->
+				</div>
+				<!--{elseif $post[type] == $photo}-->
+				<div class="photo<!--{if $post[h] > 1600}--> cut<!--{/if}-->">
+						<a href="/review/{$post_id}/" target="_blank"><img width="400" height="{$post[h]}" alt="{$post[content]}" src="{$post[photo]}" /></a>
+						<!--{if $post[h] > 1600}--><span class="shadow"></span><!--{/if}-->
+				</div>
+				<!--{/if}-->
+				<!--{if !empty($post[content])}-->
+				<p>
+					{$post[content]}
+				</p>
+				<!--{/if}-->
+				<div class="action">
+					<!--{if $post[has_praise]>0}--><span class="praise">已赞</span><!--{else}--><a href="javascript:void(0)" class="praise" date-id="{$post[id]}" date-target="{$post[praise_t]}">赞</a><!--{/if}--><em class="praise-num" id="praise_count_{$post[id]}"><!--{if $post[praiseCount]}-->({$post[praiseCount]})<!--{/if}--></em>
+					<a href="javascript:void(0)" class="reply" date-id="{$post[id]}" date-uid="{$post[uid]}" date-type="{eval echo $post[type]==$photo?'image':'tip';}">回复</a><em class="reply-num" id="reply_count_{$post[id]}"><!--{if $post[replyCount]}-->({$post[replyCount]})<!--{/if}--></em>
+					<!--{if $post[has_fav]>0}--><span class="favorite">已收藏</span><!--{else}--><a href="javascript:void(0)" class="favorite" date-id="{$post[id]}" date-target="{$post[praise_t]}">收藏</a><!--{/if}-->
+				</div>
+			</div>
+			<!--{if $post[praiseCount] && !empty($post[praises])}-->
+			{eval $split='';}
+			<div class="praise-list">
+				<!--{loop $post[praises] $k $v}-->
+				{$split}<a href="/user/{$k}/" target="_blank">{$v[uname]}</a>
+				{eval $split='、';}
+				<!--{/loop}-->
+				<!--{if $post[praiseCount] > 3}-->等 <em class="praise-num">{$post[praiseCount]}</em> 人<!--{/if}-->觉得很赞
+			</div>
+			<!--{/if}-->
+			<!--{if !empty($post[replies])}-->
+			<div class="reply-list">
+				<!--{if $post[replyCount] > 2}-->
+				<a href="/review/{$post_id}/" target="_blank">还有 {eval echo($post[replyCount] - 2)} 条回复</a>
+				<!--{/if}-->
+				<div class="reply-box">
+					<div class="reply_arrow"><i class="arrow-border">◆</i><i class="arrow-inside">◆</i></div>
+					<ul id="replies-{$post_id}">
+						<!--{loop $post[replies] $ke $rep}-->
+						<li>
+							<a class="avatar small" href="/user/{$rep[uid]}/" target="_blank"><i></i><img alt="{$rep[uname]}" src="{$rep[avatar]}" /></a>
+							<div class="detail">
+								<a href="/user/{$rep[uid]}/" target="_blank">{$rep[uname]}</a><i>：</i><span class="rep-content">{eval echo htmlspecialchars($rep[content])}</span>
+								<div class="action">
+									<span class="time">{$rep[createDate]}</span>&nbsp;&nbsp;<a class="reply_to" href="javascript:void(0)" date-rid="{$rep[id]}" date-id="{$post[id]}" date-uid="{$rep[uid]}" date-uname="{$rep[uname]}">回复</a>
+								</div>
+							</div>
+						</li>
+						<!--{/loop}-->
+					</ul>
+				</div>
+			</div>
+			<!--{/if}-->
+			<div class="reply-placeholder" date-id="{$post[id]}" date-uid="{$post[uid]}" date-type="{eval echo $post[type]==$photo?'image':'tip';}">
+				回复内容...
+			</div>
+		</div>
+	</div>
+</div>
+<!--{/loop}-->

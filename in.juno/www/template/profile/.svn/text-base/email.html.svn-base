@@ -1,0 +1,44 @@
+<!--{template common/header}-->
+<div id="container">
+  <div  class="container-fluid">
+    <div class="row">
+    <!--{template side_bar}-->
+      <div class="main">
+        <!--{template navigation}-->
+        <div class="con">
+          <div class="fill">
+          <form action="/profile/email/?uid=83" method="post" class="form-horizontal" id="email-form">
+              <div class="control-group">
+                <label class="control-label">当前邮箱：</label>
+                <div class="controls">
+                <!--{if !empty($info[email])}-->
+                  {$info[email]}
+                <!--{/if}-->
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="email">
+                  <span class="warn">*</span> 新邮箱：</label>
+                <div class="controls">
+                  <input type="text" class="span10" name="email" value="" id="email" />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for=""><span class="warn">*</span> 登录密码：</label>
+                <div class="controls">
+                  <input class="span10" type="password" name="password" id="password" />
+                </div>
+              </div>
+              <div class="from-actions">
+                <label class="control-label"></label>
+                <input class="btn btn-danger"　data-loading-text="　……　" type="submit" value="　确定　">
+                <input class="btn" type="reset" value="重置" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--{template common/footer}-->

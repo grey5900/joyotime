@@ -1,0 +1,88 @@
+#header {
+	height: 59px;
+	line-height: 59px;
+	border-bottom: 2px #96292b solid;
+	background: #ffffff;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	.box-shadow(8px 0px 8px rgba(0,0,0,.5));
+	.cleartype();
+	.opacity(98);
+	.logo {
+		display: block;
+		float: left;
+		margin: 12px 20px 0 0;
+		padding: 0px;
+		width: 123px;
+		height: 36px;
+		text-indent: -9999px;
+		overflow: hidden;
+		background: url('logo.png') 0px 0px no-repeat;
+	}
+	.site-nav {
+		font-size: 18px;
+		padding: 2px 0;
+		margin: 0px;
+		list-style: none;
+		li {
+			float: left;
+			a {
+				display: block;
+				line-height: 20px;
+				padding: 18px 5px 17px 5px;
+				&.on {
+					border-bottom: 4px solid #96292b;
+				}
+			}
+			&.dropdown {
+				li {
+					float: none;
+					a {
+						padding: 0px 5px;
+						font-size: 12px;
+						line-height: 24px;
+					}
+				}
+			}
+			&.open {
+			}
+		}
+	}
+	.user-nav {
+		padding-top: 14px;
+		height: 30px;
+		line-height: 30px;
+		float: right;
+		a {
+		}
+		.avatar {
+			img {
+				width: 30px;
+				height: 30px;
+				border-radius: 3px;
+			}
+		}
+		.name {
+			margin: 0 10px;
+		}
+		.setting,
+		.exit {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 10px;
+			background: url('ico.png') no-repeat;
+			text-indent: -9999px;
+		}
+		.setting {
+			background-position: right -128px;
+		}
+		.exit {
+			background-image: url('ico.png') no-repeat;
+			background-position: right -151px;
+		}
+	}
+}

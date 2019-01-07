@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>{$title}</title>
+	<meta name="keywords" content="{$keywords}" />
+	<meta name="description" content="{$description}" />
+	<script type="text/javascript">
+		var online_id = '<!--{$auth[uid]}-->',online_name = '<!--{if $auth[nickname]}--><!--{$auth[nickname]}--><!--{else}--><!--{$auth[username]}--><!--{/if}-->',online_avatar = '<!--{if $auth[avatar_m]}--><!--{$auth[avatar_m]}--><!--{else}-->/static/head_default.png<!--{/if}-->';
+	</script>
+	<link href="/static/skin/style.css?{$version}" rel="stylesheet" type="text/css" />
+	<link href="/static/skin/{$c_name}_style.css?{$version}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/p/?static/js/jquery.min.js&static/js/jquery.infinitescroll.min.js&static/js/bootstrap.min.js&static/js/extend.js&static/js/jquery.validate.min.js&static/js/jquery.placeholder.min.js&{$version}"></script>
+    
+    <!--  <script type="text/javascript" src="/static/js/{$c_name}.min.js?{$version}"></script>-->
+    <script type="text/javascript" src="/static/js/{$c_name}.js?{$version}"></script>
+	
+	<!--[if lte IE 6]>
+	<script type="text/javascript" src="http://tg.chengdu.cn/static/js/new/warningIE6.js"></script>
+	<![endif]-->
+	
+	
+	
+	  
+    <!--{if $theme}-->
+    <link href="/static/in_themes/{$theme}/skin/style.css?{$version}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/static/in_themes/{$theme}/js/extend.min.js?{$version}"></script>
+    <!--{/if}-->
+    <script type='text/javascript' src='http://js.adm.cnzz.net/js/abase.js'></script>
+</head>
+<body>
+	<div id="header">
+		<div class="top-nav">
+			<div class="container">
+				<div class="site-nav">
+					<a href="http://www.chengdu.cn" target="_blank">全搜索首页</a> -
+					<a href="http://news.chengdu.cn" target="_blank">新闻</a> -
+					<a href="http://tg.chengdu.cn" target="_blank">章鱼团</a> -
+					<a href="http://photo.chengdu.cn" target="_blank">成都图片网</a>
+				</div>
+				<div class="user-nav">
+					<!--{if $auth}-->
+					<a class="avatar" href="/user/{$auth[uid]}"><img src="{$auth[avatar_m]}"/></a>
+					<div class="person">
+					  <a class="name" href="/user/{$auth[uid]}"><!--{if $auth[nickname]}--><!--{eval echo cut_string($auth[nickname],12);}--><!--{else}--><!--{eval echo cut_string($auth[username],12);}--><!--{/if}--></a>
+					</div>
+					<div class="person">
+					  <a class="setting" href="/profile/setting">设置</a>
+					</div>
+					<div class="person">
+					  <a class="exit" href="javascript:;" onclick="$.signout();">退出</a>
+					</div>
+					<!--{else}-->
+					<div class="person">
+					  
+					  <a class="sin reg" href="">注册</a>
+					</div>
+					<div class="person">
+					  
+					  <a class="sin login" href="" onclick="">登录</a>
+					</div>
+					<!--{/if}-->
+					<script type="text/javascript">
+					var signout_url = "{$signout_url}";
+					var sso_logout_url = "{$sso_logout_url}";
+					var current_url = location.href.split("?")[0];
+					</script>
+				</div>
+				<div class="more-nav">
+					<a id="clt" href="">加入收藏夹</a>
+					<a href="http://in.chengdu.cn/download" target="_blank">下载IN成都客户端</a>
+				</div>
+			</div>
+		</div>
+		<div class="sub-nav">
+			<div class="container">
+				<div class="site-nav">
+				<a href="http://in.chengdu.cn" {if !$channel_id}class="current"{/if} target="_blank">IN成都<span><i></i></span></a>
+				{loop $display_channels $ch}
+				{if $ch['orderValue']==0}{eval continue;}{/if}
+				<a {if $channel_id==$ch['id']}class="current"{/if} href="{if $ch['link']}{$ch['link']}{else}http://{$ch['domain']}{/if}" target="_blank">{$ch['catName']}<span><i></i></span></a>
+				{/loop}
+					
+				</div>
+				<div class="search-nav">
+				<form name="search" action="/search" method="get" class="search-form form-inline">
+					<input class="smt" type="submit" value="搜索" />
+					<input type="text" placeholder="地点、点评、用户、新闻、楼盘.." name="kw" class="txt" />
+				</form>	
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	$(function(){
+		if(current_url.indexOf("/search")>=0){
+			$(".search-nav form").find(".smt,input[name=kw]").remove();
+		}
+	});
+	</script>

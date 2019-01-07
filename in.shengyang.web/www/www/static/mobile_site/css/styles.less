@@ -1,0 +1,49 @@
+@import "_less/reset.less";
+@import "_less/mixins.less";
+@import "_less/variables.less";
+@import "_less/utilitys.less";
+@import "_less/alerts.less";
+@import "_less/buttons.less";
+@import "_less/forms.less";
+@import "_less/media.less";
+@import "_less/img.less";
+@import "_less/responsive-utilities.less";
+// @import "_less/layout.less";
+// @import "_less/model.less";
+
+.header {
+  background: url("/static/mobile_site/img/bg_header.png") repeat-x scroll 0 0 transparent;
+  width: 100%;
+  height: 44px;
+  display: block;
+  top: 0;
+  z-index: 99999;
+  text-align: center;
+  h1 {
+  	color: #fff;
+  	text-shadow: 0 -1px 0 rgba(255,255,255,0.2);
+  	font-size: 1.125em;
+  	line-height: 44px;
+  	font-weight: normal;
+  }
+}
+
+.container {
+	.box-sizing(border-box);
+	background: #ededed;
+	min-height: 100%; 
+  height:auto !important;
+  height:100%;
+  overflow: hidden !important;
+	margin: 0 auto;
+	position: relative;
+	.content {
+	  padding-top: 20px;
+	}
+}
+.control-link {
+	margin: 10px;
+	.btn {
+	  margin-bottom: 20px;
+	}
+}

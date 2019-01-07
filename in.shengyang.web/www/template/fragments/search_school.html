@@ -1,0 +1,26 @@
+<hr/>
+<div class="search sch_search">
+						<div class="tit">
+							<ul>
+								<li class="active"><a href="javascript:;">搜名校</a></li>
+								
+							</ul>
+						</div>
+						<div class="con">
+							<div class="tab-pane active">
+								<form name="building" id="search_buildings_form" target="_blank" action="/search" method="get" class="form-inline">
+									<div class="input-box">
+										<input type="text" name="kw" value="" placeholder="请输入关键字(学校名等)" id="keywords"/>
+										<input type="submit" value="  搜索  " class="btn" id="search_building_btn" /> 
+										<input type="hidden" name="t" value="20" />
+									</div>
+									<div class="more">
+									{loop $search_school['data'] $row}
+										<a href="{$row['link']}" target="_blank">{$row['title']}</a>
+									{/loop}
+									</div>
+								</form>
+								
+							</div>
+						</div>
+					</div>

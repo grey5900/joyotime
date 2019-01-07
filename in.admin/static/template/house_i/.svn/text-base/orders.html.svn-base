@@ -1,0 +1,78 @@
+{eval $page_id='orders_'.$type;}
+<div class="pageHeader" id="house_i_{$page_id}">
+    <form id="pagerForm" name="house_i_{$page_id}_form" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <input type="hidden" name="startDate" value="{$startDate}"/>
+        <input type="hidden" name="endDate" value="{$endDate}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                        <option value="house_name"<!--{if $s_type == 'house_name'}--> selected<!--{/if}-->>楼盘名称</option>
+                        <option value="house_id"<!--{if $s_type == 'house_id'}--> selected<!--{/if}-->>楼盘ID</option>
+                       
+                    </select>
+                    </td>
+                    <td>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    </td>
+                    <td>
+                   	 日期：
+                   	 </td>
+                   	 <td><input type="text" name="startDate" value="{$startDate}" format="yyyy-MM-dd HH:mm:ss" class="date"/></td>
+                   	 <td>~</td> 
+                   	 <td><input type="text" name="endDate" value="{$endDate}" format="yyyy-MM-dd HH:mm:ss" class="date"/>
+                   	 </td>
+                   	 <td>
+                   	 手机号：
+                   	 </td>
+                   	 <td>
+                   	 <input type="text" name="cellphone" value="{$cell}" />
+                   	 </td>
+                   	 <td>
+                    <button type="submit">
+                        检索
+                    </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="{$page_id}">
+   
+    <table class="table" width="100%" layoutH="90" rel="{$page_id}">
+        <thead>
+            <tr>
+                <th width="5%">订单号</th>
+                <th width="5%">创建时间</th>
+                <th width="5%">楼盘名（id）</th>
+                <th width="5%">手机号（姓名）</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $orders $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>
+                	{$row['id']}
+                </td>
+                <td>
+                	{$row['dateline']}
+                </td>
+                 <td>
+                	{$row['house_name']} ({$row['house_id']})
+                </td>
+                 <td>
+                	{$row['cellphone_no']} ({$row['name']})
+                </td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

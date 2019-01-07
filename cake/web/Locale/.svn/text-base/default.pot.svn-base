@@ -1,0 +1,546 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-04-03 13:10+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/CommentsController.php:73
+msgid "The operation is to fail"
+msgstr ""
+
+#: Controller/FeedbacksController.php:70
+msgid "操作成功"
+msgstr ""
+
+#: Controller/PagesController.php:159
+#: View/Pages/reset.ctp:6
+msgid "密码重置完成！你现在可以使用新密码登录鱼说了！"
+msgstr ""
+
+#: Controller/PagesController.php:163
+msgid "两次密码输入不一致"
+msgstr ""
+
+#: Controller/PagesController.php:168
+#: View/Elements/header.ctp:4
+msgid "logo_cn"
+msgstr ""
+
+#: View/Elements/address.ctp:2
+#: View/Elements/footer2_0.ctp:9
+#: View/Pages/contact.ctp:34;45
+#: View/Pages/index.ctp:27
+msgid "联系我们"
+msgstr ""
+
+#: View/Elements/address.ctp:3
+msgid "成都鱼说科技有限公司"
+msgstr ""
+
+#: View/Elements/address.ctp:7
+msgid "联系地址:"
+msgstr ""
+
+#: View/Elements/address.ctp:8
+msgid "四川省,成都市,高新区,天府软件园B7-503"
+msgstr ""
+
+#: View/Elements/address.ctp:12
+msgid "联系电话:"
+msgstr ""
+
+#: View/Elements/address.ctp:13
+msgid "+862883272116"
+msgstr ""
+
+#: View/Elements/address.ctp:17
+msgid "商务合作:"
+msgstr ""
+
+#: View/Elements/banner.ctp:11
+#: View/Elements/start2_0.ctp:9
+msgid "我们重新定义了导游"
+msgstr ""
+
+#: View/Elements/banner.ctp:17
+#: View/Elements/start2_0.ctp:14
+#: View/Pages/index.ctp:14
+msgid "iPhone版下载"
+msgstr ""
+
+#: View/Elements/banner.ctp:20
+#: View/Elements/start2_0.ctp:17
+#: View/Pages/index.ctp:18
+msgid "Android版下载"
+msgstr ""
+
+#: View/Elements/contact_us.ctp:11
+msgid "您的联系方式"
+msgstr ""
+
+#: View/Elements/contact_us.ctp:15
+msgid "您的留言"
+msgstr ""
+
+#: View/Elements/contact_us.ctp:21
+msgid "你也可以发送邮件至contact@fishsaying.com"
+msgstr ""
+
+#: View/Elements/contact_us.ctp:22
+#: View/Pages/reset.ctp:26
+msgid "提交"
+msgstr ""
+
+#: View/Elements/modelwindow.ctp:28
+msgid "Hi,您的浏览器该升级了"
+msgstr ""
+
+#: View/Elements/modelwindow.ctp:29
+msgid "为了更好的浏览体验,建议您升级到最新版本的Internet Explorer或使用其它浏览器访问"
+msgstr ""
+
+#: View/Elements/modelwindow.ctp:52
+msgid "继续访问"
+msgstr ""
+
+#: View/Elements/start2_0.ctp:8
+msgid "鱼说<em>，</em>"
+msgstr ""
+
+#: View/Elements/start2_0.ctp:21
+msgid "下载鱼说客户端"
+msgstr ""
+
+#: View/Elements/start2_0.ctp:25
+msgid "/img/2.0/iphone_cn.png"
+msgstr ""
+
+#: View/Errors/error404.ctp:14
+#: View/Layouts/fishsaying.ctp:24
+#: View/Layouts/fishsaying2_0.ctp:28
+#: View/Layouts/fishsaying_contact.ctp:24
+#: View/Layouts/fishsaying_themes.ctp:5
+#: View/Layouts/fishsaying_v3.0.ctp:28
+#: View/Layouts/fishsaying_voice.ctp:24
+#: View/Pages/voice.ctp:6;8;10
+msgid "鱼说"
+msgstr ""
+
+#: View/Errors/error404.ctp:36
+msgid "鱼说，相濡以沫，不如相忘于江湖"
+msgstr ""
+
+#: View/Errors/error404.ctp:37
+msgid "回到首页"
+msgstr ""
+
+#: View/Pages/agree.ctp:10;31
+msgid "用户许可协议和版权声明"
+msgstr ""
+
+#: View/Pages/agree.ctp:33
+msgid "请您仔细阅读以下条款，如果您对本协议的任何条款表示异议，您可以选择停止使用鱼说。当您注册成功，无论是进入鱼说，还是在鱼说上发布任何内容，均意味着您（即「用户」）完全接受本协议项下的全部条款。"
+msgstr ""
+
+#: View/Pages/agree.ctp:36
+msgid "使用规则"
+msgstr ""
+
+#: View/Pages/agree.ctp:40
+msgid "用户注册成功后，鱼说将给予每个用户一个用户帐号及相应的密码，该用户帐号和密码由用户负责保管；用户应当对以其用户帐号进行的所有活动和事件负法律责任。"
+msgstr ""
+
+#: View/Pages/agree.ctp:44
+msgid "用户须对在鱼说的注册信息的真实性、合法性、有效性承担全部责任，用户不得冒充他人；不得利用他人的名义发布任何信息；不得恶意使用注册帐户导致其他用户误认；否则鱼说有权立即停止提供服务，收回其帐号并由用户独自承担由此而产生的一切法律责任。"
+msgstr ""
+
+#: View/Pages/agree.ctp:48
+msgid "用户直接或通过各类方式（如API 引用等）间接使用鱼说服务和数据的行为，都将被视作已无条件接受本协议全部内容；若用户对本协议的任何条款存在异议，请停止使用鱼说所提供的全部服务。"
+msgstr ""
+
+#: View/Pages/agree.ctp:52
+msgid "鱼说是一个信息分享、传播及获取的平台，用户通过鱼说发表的信息为公开的信息，其他第三方均可以通过鱼说获取用户发表的信息，用户对任何信息的发表即认可该信息为公开的信息，并单独对此行为承担法律责任；任何用户不愿被其他第三人获知的信息都不应该在鱼说上进行发表。"
+msgstr ""
+
+#: View/Pages/agree.ctp:56
+msgid "用户承诺不得以任何方式利用鱼说直接或间接从事违反法律、以及社会公德的行为，鱼说有权对违反上述承诺的内容予以删除。"
+msgstr ""
+
+#: View/Pages/agree.ctp:60
+msgid "用户同意遵守鱼说内容与使用规范。"
+msgstr ""
+
+#: View/Pages/agree.ctp:64
+msgid "鱼说有权对用户使用鱼说的情况进行审查和监督，如用户在使用鱼说时违反任何上述规定，鱼说或其授权的人有权要求用户改正或直接采取一切必要的措施（包括但不限于更改或删除用户发布的内容、暂停或终止用户使用鱼说的权利）以减轻用户不当行为造成的影响。"
+msgstr ""
+
+#: View/Pages/agree.ctp:67
+msgid "知识产权"
+msgstr ""
+
+#: View/Pages/agree.ctp:71
+msgid "鱼说是一个信息获取、分享及传播的平台，我们尊重和鼓励鱼说用户创作的内容，承诺将保护知识产权作为鱼说运营的基本原则之一。"
+msgstr ""
+
+#: View/Pages/agree.ctp:75
+msgid "在鱼说上传或发布的任何内容版权均归发布者所有，受到著作权和知识产权相关法律的保护；"
+msgstr ""
+
+#: View/Pages/agree.ctp:79
+msgid "在鱼说上传或发表的内容，用户应保证其为著作权人或已取得合法授权，并且该内容不会侵犯任何第三方的合法权益。如果第三方提出关于著作权的异议，鱼说有权根据实际情况删除相关的内容，甚至追究用户的法律责任，给鱼说或任何第三方造成损失的，用户应负责全额赔偿。"
+msgstr ""
+
+#: View/Pages/agree.ctp:83
+msgid "如果任何第三方侵犯了鱼说用户相关的权利，用户同意授权鱼说或其指定的代理人代表鱼说自身或用户对该第三方提出警告、投诉、发起行政执法、诉讼、进行上诉，或谈判和解，并且用户同意在鱼说认为必要的情况下参与共同维权。"
+msgstr ""
+
+#: View/Pages/agree.ctp:87
+msgid "鱼说有权但无义务对用户发布的内容进行审核，有权根据相关证据结合著作权和知识产权相关法律法规及鱼说审核规范对侵权信息进行处理。"
+msgstr ""
+
+#: View/Pages/agree.ctp:91
+msgid "若您发布的内容对他人的著作权或知识产权造成了侵害，鱼说将按照有关法律规定，删除侵权内容甚至终止您对账户的使用。"
+msgstr ""
+
+#: View/Pages/agree.ctp:95
+msgid "若您的著作权或知识产权遭到侵害，您可以联系鱼说要求删除侵权内容（邮箱：contact@fishsaying.com），并提供具有法律效力的证明材料，以便鱼说作出处理。"
+msgstr ""
+
+#: View/Pages/agree.ctp:98
+msgid "个人隐私"
+msgstr ""
+
+#: View/Pages/agree.ctp:102
+msgid "尊重用户个人隐私信息的私有性是鱼说的一贯原则，鱼说将通过技术手段、强化内部管理等办法充分保护用户的个人隐私信息，除法律或有法律赋予权限的政府部门要求或事先得到用户明确授权等原因外，鱼说保证不对外公开或向第三方透露用户个人隐私信息，或用户在使用服务时存储的非公开内容。同时，为了运营和改善鱼说的技术与服务，鱼说将可能会自行收集使用或向第三方提供用户的非个人隐私信息，这将有助于鱼说向用户提供更好的用户体验和服务质量。"
+msgstr ""
+
+#: View/Pages/agree.ctp:105
+msgid "免责申明"
+msgstr ""
+
+#: View/Pages/agree.ctp:109
+msgid "鱼说不能对用户发表的内容或评论的正确性进行保证。"
+msgstr ""
+
+#: View/Pages/agree.ctp:113
+msgid "用户在鱼说发表的内容仅表明其个人的立场和观点，并不代表鱼说的立场或观点。作为内容的发表者，需自行对所发表内容负责，因所发表内容引发的一切纠纷，由该内容的发表者承担全部法律及连带责任。鱼说不承担任何法律及连带责任。"
+msgstr ""
+
+#: View/Pages/agree.ctp:117
+msgid "鱼说不保证网络服务一定能满足用户的要求，也不保证网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作保证。"
+msgstr ""
+
+#: View/Pages/agree.ctp:121
+msgid "对于因不可抗力或鱼说不能控制的原因造成的网络服务中断或其它缺陷，鱼说不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。"
+msgstr ""
+
+#: View/Pages/agree.ctp:125
+msgid "如果您发现鱼说上有内容侵犯了您的知识产权或其他权益，请联系我们contact@fishsaying.com。"
+msgstr ""
+
+#: View/Pages/agree.ctp:128
+msgid "协议修改"
+msgstr ""
+
+#: View/Pages/agree.ctp:132
+msgid "根据互联网的发展和有关法律、法规及规范性文件的变化，或者因业务发展需要，鱼说有权对本协议的条款作出修改或变更，一旦本协议的内容发生变动，鱼说将会直接在鱼说客户端公布修改之后的协议内容，该公布行为视为鱼说已经通知用户修改内容。"
+msgstr ""
+
+#: View/Pages/agree.ctp:136
+msgid "如果不同意鱼说对本协议相关条款所做的修改，用户有权并应当停止使用鱼说。如果用户继续使用鱼说，则视为用户接受鱼说对本协议相关条款所做的修改。"
+msgstr ""
+
+#: View/Pages/agree.ctp:139
+msgid "法律管辖"
+msgstr ""
+
+#: View/Pages/agree.ctp:143
+msgid "本协议的订立、执行和解释及争议的解决均应适用中国法律并受中国法院管辖。"
+msgstr ""
+
+#: View/Pages/agree.ctp:147
+msgid "如双方就本协议内容或其执行发生任何争议，双方应尽量友好协商解决；协商不成时，任何一方均可向鱼说所在地的人民法院提起诉讼。"
+msgstr ""
+
+#: View/Pages/index.ctp:10
+msgid "人生即是旅行，下一步你会听到鱼说什么？"
+msgstr ""
+
+#: View/Pages/index.ctp:24
+msgid "版权所有 ©成都鱼说科技有限公司  蜀ICP备13026841号"
+msgstr ""
+
+#: View/Pages/index.ctp:30;31
+msgid "English"
+msgstr ""
+
+#: View/Pages/reset.ctp:11
+msgid "重置失败!"
+msgstr ""
+
+#: View/Pages/reset.ctp:13
+msgid "重置密码"
+msgstr ""
+
+#: View/Pages/reset.ctp:16
+msgid "新密码，6-12位"
+msgstr ""
+
+#: View/Pages/reset.ctp:19
+msgid "确认密码"
+msgstr ""
+
+#: View/Pages/terms.ctp:10
+msgid "鱼说录制指南"
+msgstr ""
+
+#: View/Pages/terms.ctp:31
+msgid "讲述你对这个景观的了解"
+msgstr ""
+
+#: View/Pages/terms.ctp:34
+msgid "这里有哪些特别的故事？分享给来自世界各地的游客吧！"
+msgstr ""
+
+#: View/Pages/terms.ctp:39
+msgid "人们更愿意为优秀的内容买单"
+msgstr ""
+
+#: View/Pages/terms.ctp:42
+msgid "受欢迎的鱼说往往富有自己的特色，让听过的游客都有所收获"
+msgstr ""
+
+#: View/Pages/terms.ctp:47
+msgid "前30秒很重要"
+msgstr ""
+
+#: View/Pages/terms.ctp:50
+msgid "前30秒为免费试听，游客会根据这段时间的内容质量来判断鱼说是否值得购买"
+msgstr ""
+
+#: View/Pages/terms.ctp:55
+msgid "图片是鱼说的门面"
+msgstr ""
+
+#: View/Pages/terms.ctp:58
+msgid "高质量的图片更容易吸引游客的点击，建议您上传的图片至少大于640px"
+msgstr ""
+
+#: View/Pages/terms.ctp:63
+msgid "位置越精确，越容易被需要的人发现"
+msgstr ""
+
+#: View/Pages/terms.ctp:66
+msgid "游客主要通过定位来寻找当地的鱼说，距离更近的鱼说会排在更前面"
+msgstr ""
+
+#: View/Pages/terms.ctp:71
+msgid "在目标语言环境中录制"
+msgstr ""
+
+#: View/Pages/terms.ctp:74
+msgid "如果你的录音面向中文听众，请务必使用中文版的鱼说来录音"
+msgstr ""
+
+#: View/Pages/terms.ctp:79
+msgid "审核机制"
+msgstr ""
+
+#: View/Pages/terms.ctp:82
+msgid "为保障鱼说质量，通过鱼说管理员审核的鱼说才能上架销售"
+msgstr ""
+
+#: View/Pages/terms.ctp:87
+msgid "上架须知"
+msgstr ""
+
+#: View/Pages/terms.ctp:92
+msgid "鱼说上架规范"
+msgstr ""
+
+#: View/Pages/terms.ctp:94
+msgid "录音不少于60秒;"
+msgstr ""
+
+#: View/Pages/terms.ctp:95
+msgid "语音清晰，避免嘈杂的录音环境;"
+msgstr ""
+
+#: View/Pages/terms.ctp:96
+msgid "图片需与主题相关，且不能出现其他平台的水印信息;"
+msgstr ""
+
+#: View/Pages/terms.ctp:97
+msgid "地理位置精确，偏差不能过大;"
+msgstr ""
+
+#: View/Pages/terms.ctp:98
+msgid "内容不得涉黄及含有政治敏感内容;"
+msgstr ""
+
+#: View/Pages/terms.ctp:99
+msgid "尊重民族习惯和当地风俗;"
+msgstr ""
+
+#: View/Pages/terms.ctp:100
+msgid "不得宣扬邪教和封建迷信;"
+msgstr ""
+
+#: View/Pages/terms.ctp:101
+msgid "未经管理员许可不得发布商业广告性质内容;"
+msgstr ""
+
+#: View/Pages/terms.ctp:102
+msgid "不得重复发布同一条鱼说或雷同鱼说;"
+msgstr ""
+
+#: View/Pages/terms.ctp:103
+msgid "禁止抄袭、剽窃别人的作品;"
+msgstr ""
+
+#: View/Pages/terms.ctp:107
+msgid "上下架规则"
+msgstr ""
+
+#: View/Pages/terms.ctp:109
+msgid "提交的鱼说经审核通过后立即上架;"
+msgstr ""
+
+#: View/Pages/terms.ctp:110
+msgid "若提交的鱼说被驳回，可修改后再次提交审核;"
+msgstr ""
+
+#: View/Pages/terms.ctp:111
+msgid "已上架的鱼说原则上不能修改和删除，也不能自主下架，如遇特殊情况需要下架，请通过举报功能请求下架并说明下架原因;"
+msgstr ""
+
+#: View/Pages/terms.ctp:112
+msgid "若已上架的鱼说被用户举报，经调查核实后，违规的鱼说将会被下架，被下架的鱼说不能再次上架;"
+msgstr ""
+
+#: View/Pages/terms.ctp:116
+msgid "定价方式"
+msgstr ""
+
+#: View/Pages/terms.ctp:118
+msgid "以时间为虚拟货币单位，按照鱼说实际时长定价;"
+msgstr ""
+
+#: View/Pages/terms.ctp:119
+msgid "买家可免费试听前30秒，但购买时需为整段付费;"
+msgstr ""
+
+#: View/Pages/terms.ctp:120
+msgid "目前买家充值的价格为￥0.3/分钟;"
+msgstr ""
+
+#: View/Pages/terms.ctp:124
+msgid "补贴政策"
+msgstr ""
+
+#: View/Pages/terms.ctp:126
+msgid "为鼓励创作，鱼说实行销售补贴政策，解说每被购买一次，系统自动发放补贴至解说作者账户；"
+msgstr ""
+
+#: View/Pages/terms.ctp:127
+msgid "目前补贴比例为1.2，即补贴时长相当于鱼说时长的120%；"
+msgstr ""
+
+#: View/Pages/terms.ctp:128
+msgid "同一台手机切换多个账号购买同一条解说，只会补贴一次。"
+msgstr ""
+
+#: View/Pages/terms.ctp:132
+msgid "收入分配"
+msgstr ""
+
+#: View/Pages/terms.ctp:134
+msgid "收入提现时的价格需先除去支付平台抽成（30%）和鱼说抽成（30%）;"
+msgstr ""
+
+#: View/Pages/terms.ctp:135
+msgid "所得收入可用于购买鱼说，也可以折算成现金提现至个人账户中;"
+msgstr ""
+
+#: View/Pages/terms.ctp:136
+msgid "鱼说收入高于20分钟才能申请提现;"
+msgstr ""
+
+#: View/Pages/terms.ctp:137
+msgid "提现过程中支付平台可能会向您收取一部分手续费;"
+msgstr ""
+
+#: View/Pages/terms.ctp:141
+msgid "版权声明"
+msgstr ""
+
+#: View/Pages/terms.ctp:143
+msgid "鱼说仅为内容存储和交易平台，无须对用户发布的任何内容承担任何责任;"
+msgstr ""
+
+#: View/Pages/terms.ctp:144
+msgid "在鱼说上传或发布的任何内容版权均归发布者所有，受到著作权和知识产权相关法律的保护;"
+msgstr ""
+
+#: View/Pages/terms.ctp:145
+msgid "若您的著作权或知识产权遭到侵害，可以联系鱼说要求删除侵权内容;"
+msgstr ""
+
+#: View/Pages/terms.ctp:146
+msgid "若您发布的内容对他人的著作权或知识产权造成了侵害，鱼说将按照有关法律规定，删除侵权内容甚至终止您对账户的使用;"
+msgstr ""
+
+#: View/Pages/terms.ctp:149
+msgid "所有解释权归鱼说，如有疑义，可通过【设置-意见反馈】提交申诉或建议。"
+msgstr ""
+
+#: View/Pages/voice.ctp:11;17
+msgid "景在眼里 鱼说在耳边"
+msgstr ""
+
+#: View/Pages/voice.ctp:23
+msgid "iPhone下载"
+msgstr ""
+
+#: View/Pages/voice.ctp:27
+msgid "Android下载"
+msgstr ""
+
+#: View/Pages/voice.ctp:34
+msgid "下载鱼说"
+msgstr ""
+
+#: View/Pages/voice.ctp:72
+msgid "次播放"
+msgstr ""
+
+#: View/Pages/voice.ctp:91
+msgid "扫描到手机"
+msgstr ""
+
+#: View/Pages/voice.ctp:101
+msgid "分享到"
+msgstr ""
+
+#: View/Pages/voice.ctp:108
+msgid "加载更多评论"
+msgstr ""
+
+#: View/Pages/voice.ctp:112
+msgid "打开鱼说客户端播放完整版本"
+msgstr ""
+
+#: View/Pages/voice.ctp:325
+msgid "暂无评论"
+msgstr ""
+

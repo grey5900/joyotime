@@ -1,0 +1,175 @@
+@charset "utf-8";
+//美容
+.make_up{
+	ul{
+		margin-left:-10px;
+		*zoom:1;
+	}
+	li{
+		float:left;
+		margin-left:10px;
+		_display:inline;
+		width:220px;
+		overflow:hidden;
+	}
+	.img{
+		margin-bottom:10px;
+		img{
+			width:220px;
+			height:145px;
+		}
+	}
+	.info{
+		line-height:24px;
+		padding-bottom:10px;
+		hr{
+			border-top:1px dashed #d9d9d9;
+			margin:5px 0;
+		}
+			
+		h4{			
+			a{
+				font-weight:bold;
+				font-size:14px;
+				//color:@bd;
+			}
+			span{
+				margin-left:5px;
+				color:#a9a9a9;
+			}
+		}
+		b{
+			display:block;
+		}
+		p{
+			color:#aaa;
+		}
+	}
+	
+}
+//汽车
+
+.car_discount{
+	.bd{
+		padding-bottom:5px;
+	}
+	
+	.side{
+		
+		overflow:hidden;
+		.module{
+			margin-bottom:0;
+		}
+		/*.con{
+			padding:15px 10px 12px;
+			height:299px;
+			*height:294px;
+			_height:304px;
+			.img{
+				img{
+					width:260px;
+					height:144px;
+				}
+			}
+			.info{
+				h3{
+					text-align:center;
+					font:bold 14px/2 @yh;
+					a{
+						color:#bb0000;
+					}
+				}
+				p{
+					text-indent:2em;
+					color:#999;
+					line-height:22px;
+					a{
+						color:#666;
+					}
+				}
+			}
+		}*/
+	}
+}
+.car_market{
+	.list{
+		li{
+			width:50%;
+			overflow:hidden;
+			float:left;
+			margin-bottom:5px;
+			a{
+				font-weight:bold;
+			}
+			i{
+				color:#ebe2d7;
+				margin-right:10px;
+			}
+			span{
+				color:#ccc;
+				float:right;
+				margin-right:10px;
+				*margin-top:-1.8em;
+			}
+		}
+	}
+	.banner_car{
+		margin-bottom:10px;
+		overflow:hidden;
+		zoom:1;
+		ul{
+			margin-left:-10px;
+			*zoom:1;
+		}
+		li{
+			float:left;
+			_display:inline;
+			margin-left:10px;
+			width:160px;
+			overflow:hidden;
+			img{
+				width:160px;
+				height:110px;
+			}
+			p{
+				white-space:nowrap;
+				text-align:center;
+				font-weight:bold;
+				a{
+					color:#696053;
+					font:bold 14px/24px @yh;
+					display:block;
+				}
+				span{
+					color:#bb0000;
+				}
+			}
+		}
+	}
+}
+.movie_info{
+	.con{
+		padding:10px;
+		
+		li{
+			border-bottom:@dot;
+			margin-bottom:10px;
+			white-space:nowrap;
+			overflow:hidden;
+			a{
+				font:bold 14px/18px @yh;
+				display:block;
+				i{
+					color:#ebe2d7;
+				}
+			}
+			p{
+				margin:5px 0;
+				color:#aaa;
+			}
+			&:last-child{
+				border-bottom:none;
+			}
+		}
+	}
+}

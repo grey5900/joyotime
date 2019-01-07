@@ -1,0 +1,60 @@
+<!--{template web/header}-->
+
+<div class="container" id="container">
+	<!--{template f_header}-->
+	<div class="section">
+		<ul class="nav nav-pills">
+			<li{if !isset($type) || !$type} class="active"{/if}><a href="/user_friend/{$info[id]}/0/1/">关注<span>({$info[followCount]})</span></a></li>
+			<li{if isset($type) && $type} class="active"{/if}><a href="/user_friend/{$info[id]}/1/1/">粉丝<span>({$info[beFollowCount]})</span></a></li>
+		</ul>
+		<ul class="user_list">
+			{loop $list $key $val}
+			<li class="user dropdown" data-id="{$key}" id="u_{$key}">
+					<div class="toggle dropdown-toggle">
+						<div class="avatar xlarge"><a href="/user/{$key}/"><i></i><img border="0" width="76" height="76" src="{$val[avatar]}" /></a></div>
+						<div class="username"><a href="/user/{$key}/">{$val[uname]}</a></div>
+					</div>
+					<div class="panel dropdown-panel">
+						<div class="head">
+							<div class="avatar xlarge"><a href="/user/{$key}/"><i></i><img border="0" width="76" height="76" src="{$val[avatar]}" /></a></div>
+							<div class="username"><a href="/user/{$key}/">{$val[uname]}</a></div>
+							{if (!isset($type) || !$type)&&$can_mnemonic==1}<div class="do">(<a href="javascript:void(0);" class="setmnemonic" data-mnemonic="{$val[uname]}" data-id="{$key}">设置备注</a>)</div>{/if}
+						</div>
+						<div class="data">签到:<span class="num">{$val[checkinCount]}</span> 点评:<span class="num">{$val[tipCount]}</span> 照片:<span class="num">{$val[photoCount]}</span></div>
+						<div class="state">{$val[description]}</div>
+						{if $auth[id] != $key}
+						<div class="actions">
+							{if $val[has_follow]>0}
+								<a href="javascript:void(0)" data-id="{$key}" data-action="uf" data-loading-text="……" class="btn followed">取消关注</a>
+							{else}
+								<a href="javascript:void(0)" data-id="{$key}" data-action="f" data-loading-text="……" class="btn btn-primary follow">加关注</a>
+							{/if}
+						</div>
+						{/if}
+					</div>
+			</li>
+			{/loop}
+		</ul>
+		<hr class="divider" />
+		{$paginate}
+	</div>
+</div>
+<form action="/user_mnemonic" class="modal hide form-horizontal" id="user-setmnemonic-form" method="post">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" >&times;</a>
+		<h3>设置备注名</h3>
+    </div>
+    <div class="modal-body">
+	    <div class="control-group">
+		        <input type="text" class="input-large" name="mnemonic" value="" maxlength="6" placeholder="备注名" id="user_mnemonic">
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a href="javascript:void(0);" class="btn" data-dismiss="modal">关闭</a>
+		<input type="submit" class="btn btn-primary" data-loading-text="　……　" value="　提交　" />
+	</div>
+</form>
+
+<!--{template web/cur_event}-->
+
+<!--{template web/footer}-->

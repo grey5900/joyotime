@@ -1,0 +1,23 @@
+<div class="pageContent">
+    <div class="pageFormContent" layoutH="58">
+        <ul class="tree expand">
+            <!--{loop $tree $row}-->
+            <li><a href="javascript:">{$row['name']}</a>
+                <!--{if $row['children']}-->
+                <ul>
+                    <!--{loop $row['children'] $r}-->
+                    <li><a href="javascript:" onclick="$('#fragment_field') && $('#fragment_field').hide();$.bringBack({id:'{$r['id']}', name:'{$r['name']}'})">{$r['name']}</a></li>
+                    <!--{/loop}-->
+                </ul>
+                <!--{/if}-->
+            </li>
+            <!--{/loop}-->
+        </ul>
+    </div>
+    
+    <div class="formBar">
+        <ul>
+            <li><div class="button"><div class="buttonContent"><button class="close" type="button">关闭</button></div></div></li>
+        </ul>
+    </div>
+</div>

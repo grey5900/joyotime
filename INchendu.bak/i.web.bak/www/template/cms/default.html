@@ -1,0 +1,30 @@
+<!--{template web/header}-->
+
+	<div class="container" id="container">
+		<!--div class="block gap">
+			<a href="#"><img src="/img/banner1.jpg" /></a>
+		</div-->
+		<div class="block gap">
+			<div class="block-header"><h2>{$cate[category]}</h2></div>
+			<div class="block-content">
+				<div class="ap-list">
+					<div class="ap" id="ap">
+						<ul>
+							<!--{loop $list $k $v}-->
+							<li>
+								<span class="message">
+									<i class="ico-point"></i><a href="/cms_detail/{$v[id]}/">{$v[title]}</a>
+								</span>
+								<span class="data">{$v[create]}</span>
+							</li>
+							<!--{/loop}-->
+						</ul>
+					</div>
+					{$paginate}
+				</div>
+			</div>
+			<div class="block-footer"></div>
+		</div>
+	</div>
+
+<!--{template web/footer}-->

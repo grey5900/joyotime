@@ -1,0 +1,29 @@
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent" layoutH="60">
+		<dl class="unit">
+			<dt style="width:100px;">分类名称：</dt>
+			<dd><input type="text" name="category" class="required" size="30" value="<!--{if !empty($info)&&!empty($info[category])}-->{$info[category]}<!--{/if}-->" /></dd>
+		</dl>
+		<dl class="unit">
+			<dt style="width:100px;">列表模板：</dt>
+			<dd><select name="template">
+				<option value="default"<!--{if empty($info)||$info[template]==='default'}--> selected<!--{/if}-->>默认模板</option>
+				<!--{loop $tmps $k $tmp}-->
+				<option value="{$tmp}"<!--{if !empty($info)&&$info[template]===$tmp}--> selected<!--{/if}-->>{$tmp}</option>
+				<!--{/loop}-->
+			</select></dd>
+		</dl>
+		<dl class="unit">
+			<dt style="width:100px;">分类描述：</dt>
+			<dd><textarea name="intro" cols="35" rows="5"><!--{if !empty($info)&&!empty($info[intro])}-->{$info[intro]}<!--{/if}--></textarea></dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit"> 提 交 </button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();"> 取 消 </button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>

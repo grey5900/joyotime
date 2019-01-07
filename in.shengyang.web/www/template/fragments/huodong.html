@@ -1,0 +1,27 @@
+{if $v3_fragments['v3_huodong']}
+<div class="module hot">
+					<div class="hd">
+						<h2>{$v3_fragments['v3_huodong']['frag']['name']}</h2>
+						{if $v3_fragments['v3_huodong']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_huodong']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+					</div>
+					<div class="bd">
+							{loop $v3_fragments['v3_huodong']['data'] $huodong_key $huodong}
+							<div class="box">
+								<div class="img">
+								<a href="{$huodong['link']}" target="_blank"><img src="{$huodong['image']}"  height="198" alt=""></a>
+								</div>
+								<div class="info">
+									<h4><a href="{$huodong['link']}" target="_blank">{$huodong['title']}</a></h4>
+									<span>时间：{$huodong['startDate']} ~ {$huodong['endDate']}</span>
+									<p><em>{$huodong['hits']}</em>人关注了</p>
+									<div class="btns">
+									<a href="{$huodong['link']}" target="_blank" class="btn btn-vertical">写点评</a>
+									{if $huodong['form']}<a href="{$huodong['link']}#form" target="_blank" class="btn btn-inverse">我要报名</a>{/if}
+									</div>
+								</div>
+							</div>
+							{/loop}
+							
+						</div>
+					</div>
+					{/if}

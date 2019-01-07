@@ -1,0 +1,35 @@
+<form action="{if $ids}/ugcv3/post/batch_ban/ids/{$ids}{else}/ugcv3/post/banned{/if}" method="post" onsubmit="return validateCallback(this, dialogAjaxDone);" >
+<div class="pageContent">
+{loop $score_setting $key $row}
+<label><input type="radio"  value="{$row['value']}" name="score" radio_key = "{$key}" {if $key==0}checked="checked"{/if} />{$row['title']}</label>
+{/loop}
+<br/>
+<input type ="hidden" value = "{$info.id}" name="id" />
+<input type ="hidden" value = "{$type}" name="type" />
+
+<textarea name="reason" rows=5 cols=70>
+	{$score_setting[0]['tip']}
+</textarea>
+
+
+</div>
+
+<div class="formBar">
+        <ul>
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">确定</button></div></div></li>
+            <li><div class="buttonActive"><div class="buttonContent"><button onclick="$.pdialog.closeCurrent();" type="button">取消</button></div></div></li>
+        </ul>
+    </div>
+    
+    </form>
+
+<script>
+var data = <!--{eval echo encode_json($score_setting);}-->;
+
+$("input[type=radio][name=score]").change(function(){
+	var kkk = $(this).attr("radio_key");
+	//alert(data[kkk]);
+
+	$("textarea[name=reason]").val(data[kkk].tip);
+});
+</script>

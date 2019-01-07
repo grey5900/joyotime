@@ -1,0 +1,39 @@
+<div class="pageContent">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>等待上架</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>上架中</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>已下架</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="product_waiting" class="unitBox">
+                    {eval echo include_file(site_url(array('inmall', 'product_waiting')));}
+                </div>
+            </div>
+            <div>
+                <div id="product_onsale" class="unitBox">
+                    {eval echo include_file(site_url(array('inmall', 'product_onsale')));}
+                </div>
+            </div>
+            <div>
+                <div id="product_offtheshelf" class="unitBox">
+                    {eval echo include_file(site_url(array('inmall', 'product_offtheshelf')));}
+                </div>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

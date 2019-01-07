@@ -1,0 +1,1 @@
+@charset "utf-8";.intro_banner{position:relative;padding:15px 20px;background:#eee;margin-top:-30px}.intro_banner .img{float:left;margin-right:5px}.intro_banner .img img{width:110px;height:110px}.intro_banner .info{height:110px;display:table-cell;vertical-align:middle}.intro_banner .info h1,.intro_banner .info p b{font-size:18px;color:#333}.intro_banner .info p{margin-top:10px}

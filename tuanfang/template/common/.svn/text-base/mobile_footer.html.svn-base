@@ -1,0 +1,32 @@
+        <script type="text/javascript" charset="utf-8">
+            $(function(){
+                var ua = navigator.userAgent;
+                    
+                var downBtnL = $('.btn-bar');
+                var downBtnLA = $('.btn-bar.a');
+                var downBtnLI = $('.btn-bar.i');
+                var downBtnLIC = $('.btn-bar.ic');
+                
+                if(ua.indexOf('iPhone') != -1) {
+                    console.log('iphone');
+                    downBtnL.hide();
+                    downBtnLI.show();
+                    downBtnLIC.show();
+                } else if(ua.indexOf('Android') != -1) {
+                    downBtnL.hide();
+                    downBtnLA.show();
+                }
+            })
+        </script>
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-146052-10']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+            var ga = document.createElement('script'); ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

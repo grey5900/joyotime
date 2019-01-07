@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>IN沈阳_ - 成都全搜索_成都市新闻门户网站_成都新闻_成都生活_成都团购</title>
+<meta name="keywords" content="IN沈阳," />
+<meta name="description" content="" />
+<link rel="stylesheet" href="{$site}/static/skin/style.css?1357453338" type="text/css" />
+<script type="text/javascript" src="{$site}/static/js/jquery.min.js?1357453338"></script>
+</head>
+<body onload="getValues({$page})">
+<div id="header">
+<div class="container">
+
+<ul class="site-nav">
+<li class="logo"><a href="http://www.chengdu.cn">成都全搜索</a></li>
+<li><a href="http://www.chengdu.cn">首页</a></li>
+<li><a href="http://news.chengdu.cn/">新闻</a></li>
+
+<li ><a href="http://fb.joyotime.com">美食</a></li>
+<li ><a href="http://baby.joyotime.com">亲子</a></li>
+<li ><a href="http://f.joyotime.com">评房网</a></li>
+<li class="on"><a href="http://auto.joyotime.com">汽车</a></li>
+<li ><a href="http://home.joyotime.com">家居</a></li>
+<li ><a href="http://movie.joyotime.com">观影</a></li>
+<li ><a href="http://mes.joyotime.com">购物</a></li>
+<li><a href="http://tg.chengdu.cn/">章鱼团</a></li>
+</ul>
+<div class="site-nav-more">
+<a id="site-nav-more" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">更多</a>
+<ul class="dropdown-menu" role="menu" aria-labelledby="site-nav-more">
+<li><a href="http://google.com">旅游</a></li>
+<li><a href="#anotherAction">健康</a></li>
+<li><a href="#">买购</a></li>
+<li><a href="#">同心卡</a></li>
+</ul>
+            </div>
+<div class="user-nav">
+<a href="javascript:$.modalSignup();">注册</a>
+<a href="javascript:$.modalSignin();">登录</a>
+<script type="text/javascript">
+var signout_url = "";
+var sso_logout_url = "";
+</script>
+</div>
+</div>
+</div>
+
+	<div id="container-page">
+	  <!-- <div class="crumbs">
+      <ul>
+        <li><a href="/">{$channel['catName']}</a>&gt;</li>
+        <li><a href="/nlist/{$category['id']}" id="category">{$category['catName']}</a>&gt;</li>
+        <li><a href="javascript:;">{$detail['subject']}</a></li>
+      </ul>
+    </div> -->
+		<div class="container-fluid">
+		   <div class="main">
+		     <div class="article">
+		       <div class="art-title">
+		         <h1 id="subject"></h1>
+		         <div class="cfrom"><span>{eval echo date("Y-m-d G:i:s");}</span>
+		        
+              <span id="source"></span>
+            
+             
+              <span id="author"></span>
+            
+		         </div>
+		       </div>
+		       <div class="art-content">
+		         <div class="contxt" id="content">
+		           {if $attach}
+		           	{loop $attach $at}
+		           		<div style="text-align:center;"><img src="{$at['attachment']}" /></div>
+		           		<div style="text-align:center;">{$at['description']}</div>
+		           	{/loop}
+		           {/if}
+		           {$detail['content']}
+		         </div>
+		         <div class="conend">
+		           <div class="pagination">
+                {$page_string}
+              	</div>
+              <div class="ckepop">
+                <!-- JiaThis Button BEGIN -->
+                <div id="ckepop">
+                  <span class="jiathis_txt">分享到：</span>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_xiaoyou"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+                </div>
+                <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+              </div>
+		         </div>
+		        
+		       </div>
+		     </div>
+		    
+		   </div>
+		   <div class="sidebar">
+		   
+		  {if $location}
+		    <div class="module">
+		      <div class="tit-first"></div>
+          <div class="con">
+            <div class="list-first">
+              <div class="place-card">
+                <img src="{eval echo image_url($location['icon'],'common')}" alt="" />
+                <div class="info">
+                  <h3><a href="/place/{$location['id']}">{$location['placename']}</a></h3>
+                  <div class="star-info">
+                    <span class="ico-star-{$location['level']}"></span>
+                  </div>
+                  <p>地址：{$location['address']} </p>
+                  {if $location['tel']}<p>电话：{$location['tel']}</p>{/if}
+                </div>
+                <div class="details">
+                  <ul>
+                    <li><a href="/place_photo/{$location['id']}">{$location['photoCount']}</a><p>图片</p></li>
+                    <li class="bor"><a href="/place_visitor/{$location['id']}">{$location['checkinCount']}</a><p>访客</p></li>
+                    <li><a href="/place_favorite/{$location['id']}">-</a><p>收藏</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="link-sj"><a class="btn btn-success btn-large" href="/place/{$location['id']}">{if $location['isBusiness']}商家主页{else}地点主页{/if}</a></div>
+            </div>
+          </div>
+        </div>
+        {/if}
+        
+       
+          <div class="module">
+            <div class="tit">
+              <h3>本周热门推荐</h3>
+            </div>
+            <div class="con">
+             <div class="list-news">
+               <ul class="list-news-more">
+              {loop $hotnews $n}
+                <li><a href="/article/{$n['id']}">{$n['subject']}</a></li>
+              {/loop}  
+              
+              </ul>
+            </div>
+          </div>
+		   </div>
+		</div>
+	</div>
+
+<div id="footer">
+<div class="friendlink">
+<div class="container">
+<div id="hzbtn" class="btn ico">
+<b class="prev"></b>
+<b class="next"></b>
+</div>
+<span class="f14 fleft">合作伙伴：</span>
+<div id="hz" class="con"><a href="#">QQ网址导航</a><a href="#">音悦台MV</a><a href="#">5w导航</a><a href="#">91手机娱乐门户</a><a href="#">安卓软件园</a><a href="#">豆豆网</a> <a href="#">途牛旅游网</a><a href="#">1616网址导航</a><a href="#">265上网导航</a><a href="#">iPad导航</a><a href="#">图乐网</a><a href="#">金山网址导航</a><a href="#">乐华娱乐</a></div> 
+</div>
+</div>
+<div class="footer-nav">
+<a href="http://www.chengdu.cn/web/about/about.html">关于我们</a>-<a href="http://www.chengdu.cn/web/about/contact.html">联系方式</a>-<a href="http://www.chengdu.cn/web/about/ser.html">广告服务</a>-<a href="http://www.chengdu.cn/web/about/job.html">招聘信息</a>-<a href="http://www.chengdu.cn/web/sitemap/index.html">站点地图</a>-<a href="http://www.chengdu.cn/web/about/about.html">版权说明</a>
+</div>
+<div class="copyright">版权所有(C)2005&mdash;2011 <a href="http://www.chengdu.cn">成都全搜索网站</a>版权所有 All Rights Reserved<br>Copyright2010 www.chengdu.cn All Rights Reserved 成都市人民政府新闻办主管 成都传媒集团主办 版权所有 未经书面允许不得转载信息内容、建立镜像<br>国新网许可证编号：5112010001 蜀ICP备：07003170号 ICP许可证编号：川B2-20060070热线电话：028-82002022</div>
+<div class="network-monitor">
+<ul>
+<li><div class="monitor s1"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.cdnet110.com/Alertindex.aspx">成都市公安局网监处</a></li>
+<li><div class="monitor s2"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.miibeian.gov.cn/">网站备案信息登录</a></li>
+<li><div class="monitor s3"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://net.china.com.cn/index.htm">不良信息举报中心</a></li>
+<li><div class="monitor s4"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.cdnet.org.cn/">成都网络行业协会</a></li>
+<li><div class="monitor s5"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.cdnet110.com/Alertindex.aspx">网络 110 报警服务</a></li>
+<li><div class="monitor s6"><img alt="" src="http://skin.news.cdqss.com/qss_common/monitor.png"></div><a target="_blank" href="http://www.ctws.com.cn/">无线互联网业自律同盟</a></li>
+</ul>
+</div>
+<script>
+function getValues(page){
+	$("#subject").html( window.opener.$("#subject").val() );
+	window.opener.$("#source").val() && $("#source").html( "来自："+window.opener.$("#source").val() );
+	window.opener.$("input[name=editor]").val() && $("#author").html( "作者："+window.opener.$("input[name=editor]").val() );
+	//$("#content").html( window.opener.$("textarea[name='content']").val() );
+	//alert(window.opener.$("select[name='newsCatId']").find("option:selected").html());
+	//$("#category").html(window.opener.$("select[name='newsCatId']").html());
+	var all_content = window.opener.$("input[name='content']").val().split("[next]");
+	//alert(page);
+	//alert(all_content[page-1]);
+	var summary = window.opener.$("#summary").val()
+	$("#content").html( summary + '<hr/>' +all_content[page-1] );
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+.ads{
+	margin-bottom: 15px;
+	.ads-slide {
+		margin: 0 auto;
+		width: 1000px;
+		ul {
+			margin-bottom: 15px;
+			list-style: none;
+			margin: 0;
+		}
+	}
+}
+.list-content {
+	background: #fff;
+	border: 1px #e6e6e6 solid;
+	overflow: hidden;
+}
+.level{ overflow: hidden;width: 100%;}
+.level .main-right {float: right;width: 280px;}
+.level .main-left {float: left;width: 80px;}
+.level .main-middle {margin: 0 300px 0 100px;width:auto;}
+.mold {background: #fff;border: 1px solid #e6e6e6;border-top-width: 0;}
+
+.blankfix20{height:20px; font-size:1px; border-top:1px #f0f0f0 solid;}
+
+.event-list {
+	width: 1000px;
+	display: inline-block;
+	div{
+		width: 333px;
+		float: left;
+		font-size: 50px;
+		font-weight: bold;
+		color: orange;
+		text-align: center;
+		display:block;
+	}
+	.list-l {
+		margin-left: 0;
+	}
+	.list-r {
+		margin-right: 0;
+	}
+	.event-card {
+		margin: 15px 16px 15px 17px;
+		width: 300px;
+		span{
+			display: block;
+		}
+		.img {width: 300px; height: 120px;}
+		.name {line-height: 20px; font-size: 14px; color: #333;background: url("dotted_line.gif") repeat-x scroll 0 bottom transparent;padding: 10px 0;}
+		.info {
+			line-height: 20px; 
+			font-size: 12px; 
+			color: #aaa;
+			text-align: left;
+		}
+		.time {line-height: 20px; font-size: 12px; color: #666;padding-top: 5px; text-align: left;}
+	}
+}
+
+/* 日历 */
+.calendar {
+	background: url("calendar.png") 0 0 no-repeat;
+	width: 80px;
+	height: 89px;
+	display: block;
+	text-align: center;
+	.month-show {
+		color: #fff;
+		font-size: 12px;
+		line-height: 18px;
+		padding-top: 5px;
+		font-weight: bold;
+	}
+	.day-show {
+		color: #444;
+		font-size: 36px;
+		line-height: 18px;
+		padding-top: 20px;
+		font-family: Georgia;
+	}
+}
+
+.event-desc {
+	border-top: 2px solid #96292B;
+	.ads {
+		padding: 10px 9px;
+		width: 580px;
+		img {
+			width: 580px;
+			height: 230px;
+		}
+	}
+	.event-intro {
+		margin: 10px 9px;
+		width: 580px;
+		padding: 0 0 20px 0;
+		font-size: 14px;
+		line-height: 22px;
+		color: #666;
+		border-bottom: 1px dotted #d9d9d9;
+		.name {
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.enter {
+			float: right;
+		}
+		.time {
+			color: #aaa;
+			font-size: 12px;
+		}
+		.title {
+			color: #d63333;
+			font-weight: bold;
+		}
+		p {
+			text-indent: 2em;
+		}
+	}
+}
+
+.dynamic {
+	border-top: 2px solid #96292B;
+	.tit {
+		padding: 5px 10px;
+	}
+}
+

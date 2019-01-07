@@ -1,0 +1,276 @@
+<div class="pageContent" style="overflow: hidden">
+    <!--{if $fragment['parentId'] == '0'}-->
+    <!--碎片分类-->
+    <!--{if $fragment['updateObject']}-->
+    <button type="button" id="recommend_update_data">
+        更新{$fragment['name']}
+    </button>
+    <script type="text/javascript">
+        $(function(){
+            $("#recommend_update_data").click(function(){
+                $.get("{eval echo site_url(array('recommend', 'update_data', 'fid', $fragment['id']))}", function(data){
+                    alert(data);
+                });
+            });
+        });
+    </script>
+    <!--{/if}-->
+    <!--{else}-->
+    <!--碎片-->
+    <script type="text/javascript" src="/static/js/recommend_editor.js?{$t}"></script>
+    <dl class="card">
+        <dt>
+            <ul>
+                <li>
+                    <a class="active" href="#"><strong>正在编辑：<font color=red>{$fragments[$fragment['parentId']]['name']} - {$fragment['name']}</font></strong></a>
+                </li>
+            </ul>
+        </dt>
+        <dd>
+            <table width="100%" border="0" cellspacing="5" cellpadding="0" style="border-spacing:5px;table-layout:fixed;">
+                <tr>
+                    <!--{if $fragment['dataSource']}-->
+                    <td valign="top">
+                    <div id="ds_search_{$fragment['dataSource']}">
+                    {$ds_html}
+                    <button type="button">获取数据</button>
+                    </div>
+                    </td>
+                    <td width="40" valign="top"></td>
+                    <!--{/if}-->
+                    <td valign="top">
+                    <!--{if empty($fragment['linkId'])}-->
+                    <input type="button" class="btn_silver" onClick="addData();" value="添加数据" />
+                    <!--{/if}-->
+                    </td>
+                </tr>
+                <tr>
+                    <!--{if $fragment['dataSource']}-->
+                    <td valign="top"><strong>备选列表</strong></td>
+                    <td valign="top"></td>
+                    <!--{/if}-->
+                    <td valign="top"><strong>保存列表</strong> (<span id="news_savedcount">0</span>/<span id="news_maxcount"><!--{if $fragment['description']}-->$fragment['description']<!--{else}-->*<!--{/if}--></span>)</td>
+                </tr>
+                <tr>
+                    <!--{if $fragment['dataSource']}-->
+                    <td width="45%" valign="top">
+                    <div style="background:#fff; border:2px inset; height:350px; overflow:auto;">
+                        <ol id="list_source"></ol>
+                    </div></td>
+                    <td width="10%" align="center" valign="top">
+                    <input type="button" class="btn_silver" onClick="list_save.push(list_source.selected);" value="&gt;&gt;" />
+                    </td>
+                    <!--{/if}-->
+                    <td width="45%" valign="top">
+                    <div style="background:#fff; border:2px inset; height:350px; overflow:auto;">
+                        <ol id="list_save"></ol>
+                    </div>
+                    <!--{if empty($fragment['linkId'])}-->
+                    <input type="button" value="保存" class="btn_silver" onClick="list_save.submit('{eval echo site_url(array('recommend', 'save_data', 'fid', $fragment['id']))}');" />
+                    <input id="editor_edit" type="button" value="编辑" class="btn_silver" disabled="disabled" onClick="list_save.ondblclick(list_save);" />
+                    <input id="editor_delete" type="button" value="Del" class="btn_silver" disabled="disabled" onClick="list_save.del();" />
+                    <input id="editor_top" type="button" value="置顶" class="btn_silver" disabled="disabled" onClick="list_save.top();" />
+                    <input id="editor_up" type="button" value="&uarr;" class="btn_silver" disabled="disabled" onClick="list_save.up();" onDblClick="list_save.up();" />
+                    <input id="editor_down" type="button" value="&darr;" class="btn_silver" disabled="disabled" onClick="list_save.down();" onDblClick="list_save.down();" />
+                    <input type="button" value="清空" class="btn_silver" onClick="list_save.clear();" />
+                    <!--{/if}-->
+                    <input type="button" value="获取已保存数据" class="btn_silver" onClick="get_saved_data('{eval echo site_url(array('recommend', 'get_saved_data', 'fid', $fragment['id']))}');" />
+                    </td>
+                </tr>
+            </table>
+            <div id="editor_wnd" style="display:none;">
+                <div id="editor_overlay"></div>
+                <div id="editor_form">
+                    <table>
+                        <!--{if $fragment['dataSource']}-->
+                                <!--单条获取数据接口-->
+                        <tr>
+                            <td>
+                                数据标识
+                            </td>
+                            <td>
+                                <input type="text" size="10" name="f_id" id="f_id" />
+                                <button type="button" id="ds_id_{$fragment['dataSource']}">获取数据</button>
+                            </td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_title']}-->
+                        <tr>
+                            <td>
+                                <!--{if $fragment['fields']['f_title']}-->{$fragment['fields']['f_title']}<!--{else}-->标题<!--{/if}-->
+                            </td>
+                            <td>
+                                <input name="f_title" type="text" id="f_title" size="40" />
+                                <img src="/static/skin/recommend_editor/bb_bold.gif" width="23" height="22" alt="加粗" onClick="bb_bold('f_title');" />
+                                <select name="color" tabindex="-1" onFocus="this.selectedIndex=0" onChange="bb_color('f_title', this.options[this.selectedIndex].value)">
+                                    <option value="" selected>选择颜色</option>
+                                    <option value="Black" style="background-color:black;color:black;">Black</option>
+                                    <option value="#da251d" style="background-color:#da251d;color:#da251d;">Crimson</option>
+                                    <option value="Red" style="background-color:red;color:red;">Red</option>
+                                    <option value="Green" style="background-color:green;color:green;">Green</option>
+                                    <option value="Purple" style="background-color:purple;color:purple;">Purple</option>
+                                    <option value="Blue" style="background-color:blue;color:blue;">Blue</option>
+                                    <option value="Brown" style="background-color:brown;color:brown;">Brown</option>
+                                    <option value="Teal" style="background-color:teal;color:teal;">Teal</option>
+                                    <option value="Navy" style="background-color:navy;color:navy;">Navy</option>
+                                    <option value="Maroon" style="background-color:maroon;color:maroon;">Maroon</option>
+                                    <option value="" selected="selected">默认颜色</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_title_link']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_title_link']}
+                            </td>
+                            <td><input name="f_title_link" type="text" id="f_title_link" size="50" />
+                                <a href="javascript:;" onclick="window.open($('#f_title_link').val());">访问连接</a>
+                            </td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_category']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_category']}
+                            </td>
+                            <td><input name="f_category" type="text" id="f_category" size="20" /></td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_category_link']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_category_link']}
+                            </td>
+                            <td><input name="f_category_link" type="text" id="f_category_link" size="50" />
+                                <a href="javascript:;" onclick="window.open($('#f_category_link').val());">访问连接</a>
+                            </td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_image']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_image']}
+                            </td>
+                            <td><button name="f_image" type="button" id="f_image">上传{$fragment['fields']['f_image']}</button></td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_image_link']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_image_link']}
+                            </td>
+                            <td><input name="f_image_link" type="text" id="f_image_link" size="50" />
+                                <a href="javascript:;" onclick="window.open($('#f_image_link').val());">访问连接</a>
+                            </td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_author']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_author']}
+                            </td>
+                            <td><input name="f_author" type="text" id="f_author" size="20" /></td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_author_link']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_author_link']}
+                            </td>
+                            <td><input name="f_author_link" type="text" id="f_author_link" size="50" />
+                                <a href="javascript:;" onclick="window.open($('#f_author_link').val());">访问连接</a>
+                            </td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_author_avatar']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_author_avatar']}
+                            </td>
+                            <td><button name="f_author_avatar" type="button" id="f_author_avatar">上传{$fragment['fields']['f_author_avatar']}</button></td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['fields']['f_intro']}-->
+                        <tr>
+                            <td>
+                                {$fragment['fields']['f_intro']}
+                            </td>
+                            <td><textarea name="f_intro" id="f_intro" rows="4" cols="50"></textarea></td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $fragment['autoUpdate']}-->
+                        <!--自动更新-->
+                        <tr>
+                            <td>
+                                时间设定
+                            </td>
+                            <td>
+                                <input type="text" name="f_start_time" id="f_start_time" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+                                <label style="text-align: center; width:10px;">~</label>
+                                <input type="text" name="f_end_time" id="f_end_time" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+                            </td>
+                        </tr>
+                        <!--{/if}-->
+                    </table>
+                    <div align="center" style="padding:5px auto 0px;">
+                        <input id="ext_add" name="submit" type="submit" class="btn_silver" onClick="add_onclick();" value="添加" />
+                        <input id="ext_edit" name="submit" type="submit" class="btn_silver" onClick="edit_onclick();" value="修改" />
+                        <input type="reset" class="btn_silver" onClick="closeEditor();" value="取消" />
+                    </div>
+                </div>
+            </div>
+        </dd>
+    </dl>
+<script type="text/javascript">
+    // 创建ListSource实例, 并在页面加载完后绑定HTML标签
+    var list_source = new ListSource();
+    // 创建ListSave实例, 并在页面加载完成后绑定HTML标签
+    var list_save   = new ListSave();
+    page_load();
+    $(function(){        
+        <!--{if $fragment['fields']['f_image']}-->
+        $("#f_image").my_upload({name:"f_image", id:"f_image", file_type:"common", required:false, thumb_height:45});
+        <!--{/if}-->
+        <!--{if $fragment['fields']['f_author_avatar']}-->
+        $("#f_author_avatar").my_upload({name:"f_author_avatar", id:"f_author_avatar", file_type:"head", required:false, thumb_height:45});
+        <!--{/if}-->
+        <!--{if $fragment['dataSource']}-->
+        $("button", $("#ds_search_{$fragment['dataSource']}")).click(function(){
+            var data = get_ds_form_data();
+            $.post("{eval echo site_url(array('recommend', 'ds', $fragment['dataSource'], 'list'))}", data, function(json){
+              try {
+                list_source.clear();
+                json = eval("(" + json + ")");
+                if(json.length) {
+                    for(var i=0; i<json.length; i++) {
+                        var row = json[i];
+                        list_source.push({id:row['id'], title:row['title'], title_link:row['title_link'], category:row['category'], category_link:row['category_link'], author:row['author'], author_link:row['author_link'], author_avatar:row['author_avatar'], author_avatar_url:row['author_avatar_url'], intro:row['intro'], image:row['image'], image_link:row['image_link'], image_url:row['image_url']});         
+                    }
+                } else {
+                    alert("没有记录");
+                }
+              } catch(e) {alert(e);}
+            });
+        });
+        $("#ds_id_{$fragment['dataSource']}").click(function(){
+            // 根据数据标识获取数据
+            var id = $("#f_id").val();
+            var data = {id:id};
+            $.post("{eval echo site_url(array('recommend', 'ds', $fragment['dataSource'], 'one'))}", data, function(json){
+                try {
+                    clear_editor();
+                    var row = eval("(" + json + ")");
+                    if(row.id) {
+                        put_editor(row);
+                    } else {
+                        alert("没有数据记录");
+                    }
+                } catch(e) {alert(e);}
+            });
+        });
+        <!--{/if}-->
+    });
+</script>
+    <!--{/if}-->
+</div>

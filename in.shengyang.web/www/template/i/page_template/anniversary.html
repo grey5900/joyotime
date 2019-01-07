@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>IN沈阳两周年</title>
+	<link rel="stylesheet" href="/static/skin/mobile_pages_style.css?{$version}" type="text/css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+	<script type="text/javascript">
+	<!--{if $uid}-->
+	var online_id = {$uid};
+	<!--{else}-->
+	var online_id = 0;
+	<!--{/if}-->
+	</script>
+	<style type="text/css" media="screen">
+		body {background: #de7300;}
+		.page-template .top {-webkit-box-shadow: none;-moz-box-shadow: none;-ms-box-shadow: none;box-shadow: none;}
+		.page-template .lump{background:url('/static/m_img/2zn/half@2bg.png') repeat-x scroll #de7300}
+		.page-template .lump p{color:#fff;font-size:.875em;display:block;margin:0 10px 10px;padding:5px 0 0;text-align:left;text-shadow:1px 1px 0 #643014}
+		.page-template .lump ul{width:300px;margin:0 auto}
+		.page-template .lump li{width:23%;display:inline-block;margin:0;padding:0}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="page-template">
+			<div class="lumps">
+				<div class="top">
+					<img src="/static/m_img/2zn/top2zn.jpg" alt="" />
+				</div>
+				<div class="lump">
+					<p>亲，集齐八个碎片就可以获得大奖哦！您需要以下道具各 一个，方可获得活动奖励</p>
+					<ul class="clearfix">
+						<li><img width="100%" src="/static/m_img/props/icon410@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon411@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon412@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon414@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon415@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon416@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon417@2x.png" alt="" /></li>
+						<li><img width="100%" src="/static/m_img/props/icon418@2x.png" alt="" /></li>
+					</ul>
+					<button class="button">立即兑换</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="item_modal_done" class="modal">
+		<div class="modal-header">
+		  <h2>兑换成功</h2>
+		  <a class="modal-close" href="javascript:;"></a>
+		</div>
+		<div class="modal-body">
+			<div class="modal-media">
+				<div class="pull-left">
+					<img src="/static/m_img/modal-correct.png" alt="" width="44px" />
+				</div>
+				<div class="media-body">
+				 	<span>兑换成功，请检查您的通知消息</span>
+				</div>
+			</div>
+			<div class="modal-button">
+			  <a href="javascript:;" class="button-gray modal-shut">关闭</a>
+			</div>
+		</div>
+	</div>
+	<div id="item_modal" class="modal">
+		<div class="modal-header">
+		  <h2>兑换失败</h2>
+		  <a class="modal-close" href="javascript:;"></a>
+		</div>
+		<div class="modal-body">
+			<div class="modal-media">
+				<div class="pull-left">
+					<img src="/static/m_img/modal-wrong.png" alt="" width="44px" />
+				</div>
+				<div class="media-body">
+				 	<p></p>
+				</div>
+			</div>
+			<div class="modal-button">
+			  <a href="javascript:;" class="button-gray modal-shut">关闭</a>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" charset="utf-8">
+$(function(){
+	$('.button').bind("click",function() {
+		if(!$.checkAuth()) { return false; }
+		$.getJSON("/api/anniversary?uid={$uid}", function(json){
+			if (json.result_code == 0) {
+				//$('#item_modal_done span').text(json.result_msg);
+				$.messagerModal("#item_modal_done");
+			} else {
+				$('#item_modal p').text(json.result_msg);
+				$.messagerModal("#item_modal");
+			}
+		});
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="orderField" value="{$orderField}" />
+	<input type="hidden" name="orderDirection" value="{$orderDirection}" />
+	<input type="hidden" name="begin" value="{$begin}" />
+	<input type="hidden" name="end" value="{$end}" />
+	<input type="hidden" name="poi_id" value="{$placeId}" />
+	<input type="hidden" name="user_id" value="{$uid}" />
+	<input type="hidden" name="status" value="{$status}" />
+	<input type="hidden" name="keyword" value="{$keyword}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				标题：
+				<input type="text" name="keywords" value="{$keywords}"/>
+			</li>
+			<li>
+			<select name="itemtype">
+				<!-- <option value="0">全部推荐</option> -->
+				<!--{loop $digest_type $k $v}-->
+				<!-- <option value="{$k}" {if $itemtype==$k}selected="selected"{/if}>{$v}</option> -->
+				<!--{/loop}-->
+				<option value="1" <!--{if $itemtype==1}--> selected="true"<!--{/if}-->>展示中</option>
+				<option value="2" <!--{if $itemtype==2}--> selected="true"<!--{/if}-->>已过期</option>
+			</select>
+			</li>
+			
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="edit" href="/ugcv3/post/recommend/homepage/1/combo/<!--{{sid_pic}}-->" target="dialog" width="650" height="600" close="imgareaselect_close" warn="请选择一条推荐"  rel="{eval echo build_rel(array('client', 'home' ,'edit'))}"><span>编辑</span></a>
+			
+			<li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="ids[]" href="/client/home/delete" class="delete"><span>删除推荐</span></a></li>
+						
+		</ul>
+	</div>
+
+	<div layoutH="116">
+	<table class="list" width="100%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="5%">ID</th>
+				<th width="5%">类型</th>
+				<th width="25%" orderField="createDate" class="{$orderDirection}">首页显示</th>
+				<th width="10%">连接到</th>
+				<th width="12%">过期时间</th>
+				<th width="12%">最后更新</th>
+				<th width="12%">添加时间</th>
+				<th width="5%">基础权重</th>
+				<th>UGC内容统计</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="sid_pic" rel="{$val['itemId']}-{$val['itemType']}">
+				<td><input name="ids[]" value="{$val['itemId']}-{$val['itemType']}" type="checkbox"></td>
+				<td>{$val['itemId']}</td>
+				<td class="style-1">
+					{$val['typename']}
+				</td>
+				<td>
+				<!--{if $val['image']}-->
+				<a href="{eval echo image_url($val['image'],'home','odp');}" class="image_show">
+				<img src="{eval echo image_url($val['image'],'home','odp');}"  height=100 />
+				</a>
+				<!--{/if}-->
+				{$val['content']}</td>
+				<td >
+					{$val['hyperLink']}<br/>
+					<a href="{$val['weblink']}" target="_blank">网站链接</a>
+				</td>
+				<td >
+					{$val['expireDate']}
+				</td>	
+				
+				<td >
+					{$val['lastUpdate']}
+				</td>	
+				<td >
+					{$val['createDate']}
+				</td>		
+				<td >
+					<input type="text" size="4" onfocus="modify_by_where(this, 'HomePageData', 'itemType={$val['itemType']} and itemId={$val['itemId']}', 'rankOrder')" value="{$val['rankOrder']}" name="rank_order" />
+				</td>	
+				<td>
+				{if $val['item']['count'] >0}
+				<a target="navTab" href="<!--{if $val['itemType']==26}-->/ugcv3/post/index/topic_id/{$val['itemId']}/from/topic<!--{else}-->/ugcv3/reply/index/itemid/{$val['itemId']}<!--{/if}-->">
+				{/if}
+				<!--{if $val['itemType']==26}-->POST<!--{else}-->回复<!--{/if}-->{if $val['item']['count']}({$val['item']['count']}){/if}
+				{if $val['item']['count'] >0}
+				</a>
+				{/if} 
+				{if $val['item']['praiseCount']}赞({$val['item']['praiseCount']}){/if}  
+				{if $val['item']['stampCount']}踩({$val['item']['stampCount']}){/if} 
+				{if $val['item']['shareCount']}分享({$val['item']['shareCount']}){/if}   
+				点击{if $val['item']['viewCount']+$val['item']['hitCount']+$val['item']['hits']}({echo $val['item']['viewCount']?$val['item']['viewCount']:($val['item']['hitCount']?$val['item']['hitCount']:$val['item']['hits'])}){/if}
+				</td>
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+<script type="text/javascript">
+	$(function(){
+		$("a.image_show").fancybox();
+	});
+</script>
+</div>

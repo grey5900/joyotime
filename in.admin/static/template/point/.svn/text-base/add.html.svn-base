@@ -1,0 +1,101 @@
+<div class="pageContent" id="point_add">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <div class="pageFormContent nowrap" layoutH="57"> >
+            <dl>
+                <dt>
+                    接受用户：
+                </dt>
+                <dd>
+                    <input type="hidden" name="user.id" id="c_id"/>
+                    <input type="text" name="user.name" id="c_name" size="30" readonly class="required" />
+                    <a id="lookup_link" class="btnLook" href="{eval echo site_url(array('lookup','list_lookup','type', 'user'));}" lookupGroup="user" height="560">查找带回</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <select name="oper">
+                        <option value="1">增加积分</option>
+                        <option value="-1">减少积分</option>
+                    </select>
+                    ：
+                </dt>
+                <dd>
+                    <input type="text" id="point" name="point" class="required number" size="20" maxlength="20" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    备注：
+                </dt>
+                <dd>
+                    <textarea id="remark" name="remark" cols="80" rows="5" class="required"></textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <label>
+                        <input type="checkbox" name="send_message" value="1" />
+                        同时发送消息：</label>
+                </dt>
+                <dd>
+                    <textarea id="message" name="message" cols="80" rows="5"></textarea>
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick="onsubmitPointAdd();">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function onsubmitPointAdd() {
+        var form = $("form", $("#point_add"));
+        if(!form.valid()) {
+            return false;
+        }
+
+        alertMsg.confirm("请仔细检查您的积分操作，提交了不能修改的，您确定么？", {
+            okCall : function() {
+                $.ajax({
+                    type : 'POST',
+                    url : form.attr("action"),
+                    data : form.serializeArray(),
+                    dataType : "json",
+                    cache : false,
+                    success : navTabAjaxDone,
+                    error : DWZ.ajaxError
+                });
+            }
+        });
+    }
+
+    $(function() {
+        $("input[name=send_message]", $("#point_add")).click(function() {
+            if($(this).attr("checked")) {
+                $("textarea[name=message]", $("#point_add")).addClass("required");
+            } else {
+                $("textarea[name=message]", $("#point_add")).removeClass("required");
+            }
+        });
+    });
+
+</script>

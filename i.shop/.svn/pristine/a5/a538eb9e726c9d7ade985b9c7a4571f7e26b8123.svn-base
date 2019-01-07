@@ -1,0 +1,175 @@
+<!--{template web/header}-->
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox">
+			<div class="main">
+				<div class="inner main-conter">
+					<div class="title">
+						<!--{template what}-->
+						<div class="pull-right">
+							<form class="form-search" id="seach_act" onsubmit="search();return false;">
+								<label>
+									选择店铺：
+									<select id="s_p">
+										<option value=""<!--{if empty($place_id)}--> selected<!--{/if}-->>请选择店铺</option>
+										<!--{loop $places $k $v}-->
+										<option value="{$v[id]}"<!--{if $v[selected]}--> selected<!--{/if}-->>{$v[placename]}</option>
+										<!--{/loop}-->
+									</select>
+								</label>
+							    <button type="submit" class="btn btn-primary btn-small">确定</button>
+						    </form>
+						</div>
+					</div>
+					<div class="from-detail">
+						<div class="hd">
+							<div class="span7"><div class="cutoff"><span>扩展模型</span></div></div>
+							<div class="span2"><span>最后审核</span></div>
+						</div>
+						<div class="bd">
+							<dl>
+								<!--{loop $list $k $v}-->
+								<dd>
+									<input type="hidden" name="ids[]" value="{$k}" class="seq-id"/>
+									<div class="span7">
+										<div class="event">
+											<div class="img-show">
+												<div class="store-box">
+													<div class="style-border01 unit">
+                            <div class="box">
+                              <div class="inside arrow">
+                                <div class="unit-title">
+                                   <h3><a href="/profile/preview/{$v[id]}/1" class="preview jqView">{$v[title]}</a></h3>
+                                </div>
+                                  <!--{if $v[style] == 2}-->
+                                  <!--{if $v[has_img]}-->
+                                  <ul class="img-col">                                
+                                    <!--{loop $v[imgs] $i $img}-->
+                                     <li><a href="/profile/preview/{$v[id]}/1" class="preview jqView"><img src="{$img}" width="52px" height="52px" /></a></li>
+                                    <!--{/loop}-->
+                                  </ul>
+                                  <!--{else}-->
+                                  <p>{$v[content]}</p>
+                                  <!--{/if}-->
+                                  <!--{elseif $v[style] == 1}-->
+                                  <a class="img-bar jqView" href="/profile/preview/{$v[id]}/1"><img src="{$v[imgs]}" width="250px" height="60px" /></a>
+                        		  <p>{$v[content]}</p>
+                                  <!--{else}-->
+                                  <span class="img-lt jqView" href="/profile/preview/{$v[id]}/1"><img src="{$v[imgs]}" width="52px" /></span>
+                               	  <span>{$v[content]}</span>
+                                  <!--{/if}-->
+                              </div>
+                            </div>
+                          </div>
+												</div>
+												<div class="stores">
+												<!-- 	<span>应用店铺：</span><a href="#">{$v[places]}家</a> -->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="span2">
+										<div class="preview">
+											<span>{$v[checkDate]}</span>
+											<div class="review"><a href="#" class="up-move"></a><a href="#" class="down-move"></a></div>
+											<div class="setting">
+												<a href="/profile/edit_publish/{$v[id]}">编辑</a>|<a class="del" href="javascript:void(0)" data-id="{$v[id]}" onclick="return delete_check('{$v[id]}');">删除</a><br />
+											</div>
+										</div>
+									</div>
+								</dd>
+								<!--{/loop}-->
+							</dl>
+							<!--{$paginate}-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--{template sider}-->
+		</div>
+	</div>
+</div>
+ <div id="view_M" class="modal-preview hide">
+ </div>
+<script type="text/javascript">
+	function sequence(ids){
+		var url = "/profile/sequence";
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{ids:ids},
+			dataType:"json",
+			success:function(json){}
+		});
+	}
+	$(document).ready(function() {
+		$("#view_M").jqm({ajax:'@href', modal:true, overlay:5, trigger:'a.jqView'});
+		$(".up-move").click(function() {
+			var onthis = $(this).parent().parent().parent(".span2").parent("dd");
+			var getup = $(this).parent().parent().parent(".span2").parent("dd").prev();
+			$(getup).before(onthis);
+			var ids = "";
+			var split = "";
+			$(".seq-id").each(function(){
+				ids += split+$(this).val();
+				split = "|";
+			});
+			//排序
+			sequence(ids);
+		});
+		$(".down-move").click(function() {
+			var onthis = $(this).parent().parent().parent(".span2").parent("dd");
+			var getdown = $(this).parent().parent().parent(".span2").parent("dd").next();
+			$(getdown).after(onthis);
+			var ids = "";
+			var split = "";
+			$(".seq-id").each(function(){
+				ids += split+$(this).val();
+				split = "|";
+			});
+			//排序
+			sequence(ids);
+		});
+		$(".del").live("click",function() {
+			// var onthis = $(this).parent().parent().parent(".span2").parent("dd");
+			// onthis.remove()
+		});
+	}); 
+</script>
+
+<script type="text/javascript">
+function delete_check(id) {
+  if (confirm("确定要删除这个扩展信息吗?")) {
+    $.ajax({
+      type : "POST",
+      url : "/profile/del_publish",
+      data : {
+        "id" : id
+      },
+      dataType : "json",
+      success : function(json) {
+        alert(json.msg);
+        if (json.code == 0) {
+          window.location.reload();
+        } else {
+
+          $("#messager").messager({
+            message : json.msg
+          });
+        }
+      }
+    });
+  }
+  return false;
+}
+
+function search(){
+	var pid = $("#s_p").val();
+	if(pid != ""){
+		var url = "/profile/publish/"+pid;
+		window.location = url;
+	}
+}
+
+</script>
+<!--{template web/footer}-->

@@ -1,0 +1,394 @@
+<!--{template web/header}-->
+<div class="container" id="container">
+	<div class="section-layout">
+		<div class="content">
+			<div class="header-info-box">
+				<div class="place-info box-spacing">
+					<div class="place-icon">
+						<a class="icon xlarge"><img alt="{$info[placename]}" width="80" height="80" src="{$info[icon]}" /><i></i></a>
+					</div>
+					<div class="info">
+						<ul>
+							<li>
+								<h1><a href="/place/{$info[id]}/" class="c-green font-yab">{$info[placename]}</a></h1>
+								<a href="#" class="item-qrcode" rel="popover" data-placement="right" data-content="<div class='qr-popover'><div class='thumb'><img width='200' height='200' src='http://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http://in.chengdu.cn/qr/inplace/{$info[id]}' /></div><div class='notic'>用手机扫描二维码，直接在IN成都手机客户端中查看{$info[placename]}的主页</div></div>" data-original-title="<a class='close'>&times;</a>{$info[placename]}">{$info[placename]}的二维码</a>
+							</li>
+							<li>
+								<div class="rating-scale">
+									<ul>
+										<li><span class="ico-star-{$info[star]}"></span></li>
+										<!--{if $info[isBusiness] > 0}--><li><span>人均：</span><!--{if !empty($info[pcc])&&$info[pcc]>0}--><i class="red">￥<em>{$info[pcc]}</em></i><!--{else}-->-<!--{/if}--></li><!--{/if}-->
+									</ul>
+								</div>
+							</li>
+							<!--{if !empty($info[address])}--><li><p>地址：{$info[address]}</p></li><!--{/if}-->
+							<!--{if !empty($info[tel])}--><li><p>电话：{$info[tel]}</p></li><!--{/if}-->
+							<!--{if !empty($info[description])}-->
+							<li>
+								<p>
+									{eval echo cut_string($info[description],110);}
+								</p>
+							</li>
+							<!--{/if}-->
+							<!--{if $info[has_module]}--><li class="link-more"><a href="/place_info/{$info[id]}/">更多基本资料</a></li><!--{/if}-->
+						</ul>
+					</div>
+					<div class="info-operates">
+						<div class="operates-control">
+							<div class="control-btn">
+							<!--{if $has_favorite}-->
+								<a href="javascript:void(0)" class="btn favorited disabled" date-id="{$info[id]}" date-type="place">
+								已收藏
+								</a>
+							<!--{else}-->
+								<a href="javascript:void(0)" class="btn btn-primary favorite" date-id="{$info[id]}" date-type="place">
+								加收藏
+								</a>
+							<!--{/if}-->
+							</div>
+							<div class="control-btn">
+								<div class="btn-group">
+									<a class="btn place-report dropdown-toggle" data-toggle="dropdown" href="#">
+										报错
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu" id="place-report-list">
+										<li class="arrow"><i class="arrow-border">◆</i><i class="arrow-inside">◆</i></li>
+										<li><a href="javascript:void(0);" data-type="closed" date-id="{$info[id]}" data-err="1">这里已经关门了</a></li>
+										<li><a href="javascript:void(0);" data-type="repeat" date-id="{$info[id]}" data-err="2">地点重复</a></li>
+										<li><a href="javascript:void(0);" data-type="map" date-id="{$info[id]}" data-err="4">地图位置有错</a></li>
+										<li><a href="javascript:void(0);" data-type="info" date-id="{$info[id]}" data-err="3">店名、地址信息有错</a></li>
+										<li><a href="javascript:void(0);" data-type="other" date-id="{$info[id]}" data-err="0">其他</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="verb">
+							<ul>
+								<li><a <!--{if $info[photoCount]}-->href="/place_photo/{$info[id]}/"<!--{/if}--> class="ico-prefile-pics"><em class="font-yab">{$info[photoCount]}</em></a></li>
+								<li><a <!--{if $info[id]}-->href="/place_visitor/{$info[id]}/"<!--{/if}--> class="ico-prefile-visitors"><em class="font-yab">{$info[visitorCount]}</em></a></li>
+								<li><a <!--{if $info[favoriteCount]}-->href="/place_favorite/{$info[id]}/"<!--{/if}--> class="ico-prefile-keeps"><em class="font-yab">{$info[favoriteCount]}</em></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="timeline-box">
+				<div class="timeline-section" id="m-{$now}">
+					<div class="timeline-adventitia" id="timeline-now-adventitia">
+						<div class="timeline-column">
+							<div class="feed">
+								<div class="timeline-review">
+									<div class="review-hd">
+										<ul>
+											<li class="active"><a href="#review-form" data-toggle="pill">点评</a></li>
+											<li><a href="#review-photo-form" data-toggle="pill">照片</a></li>
+											<li class="link-down"><a href="/download/">下载手机客户端</a></li>
+										</ul>
+									</div>
+									<div class="review-bd tab-content">
+										<div class="tab-pane active" id="review-form">
+											<form id="tip-post" method="post" action="/place_do_post/{$info[id]}/">
+											<input type="hidden" name="type" value="{$tip}" />
+											<div class="review-fill">
+												<div id="star-ranker">
+													<span class="ranker"></span><span class="hint"></span>
+												</div>
+												<!--{if $info[isBusiness] > 0}-->
+												<div class="percapita">
+													人均：<input type="text" maxlength="5" name="pcc" id="pcc" /> 元
+												</div>
+												<!--{/if}-->
+											</div>
+											<div class="section-release">
+												<div class="textarea-edit">
+													<textarea rows="3" id="textarea" name="content" class="reply-write" maxlength="500" placeholder="写出你的想法"></textarea>
+												</div>
+												<div class="action clearfix">
+													<label class="checkbox inline"> 
+														<input class="labelbox" type="checkbox" name="synchronous" id="synchronous" <!--{if $auth[is_sync_sina] || $auth[is_sync_tencent]}-->checked="checked"<!--{/if}--> /> 同步到第三方平台
+													</label>
+													<!-- 
+													<div class="sync-settings">
+														<span class="tips">同步到：</span>
+														<!--{if $auth[is_sync_sina]}-->
+															<span class="sync-icon sync-sina on" title="新浪微博">新浪微博<input type="checkbox" value="1" name="sync-sina" checked="checked"/></span>
+														<!--{else}-->
+															<a href="/user_sync/" class="sync-icon sync-sina" title="绑定新浪微博">新浪微博</a>
+														<!--{/if}-->
+														<!--{if $auth[is_sync_tencent]}-->
+															<span class="sync-icon sync-tencent on" title="腾讯微博">腾讯微博<input type="checkbox" value="1" name="sync-tencent" checked="checked"/></span>
+														<!--{else}-->
+															<a href="/user_sync/" class="sync-icon sync-tencent" title="绑定腾讯微博">腾讯微博</a>
+														<!--{/if}-->
+													</div>
+													 -->
+													<input class="btn btn-primary pull-right " type="submit" value="发布点评" />
+												</div>
+											</div>
+											</form>
+										</div>
+										<div class="tab-pane" id="review-photo-form">
+											<form id="photo-post" method="post" action="/place_do_post/{$info[id]}/" enctype="multipart/form-data">
+											<input type="hidden" name="type" value="{$photo}" />
+											<div class="review-fill">
+												<div class="photo-selector">
+													<label for="upload" class="photo-preview"></label>
+													<label for="upload" class="btn btn-large">选择您要上传的照片</label>
+													<input type="file" name="photo" value="上传" id="upload"/>
+												</div>
+											</div>
+											<div class="section-release">
+												<div class="textarea-edit">
+													<textarea rows="3" id="textarea" class="reply-write" name="content"
+														maxlength="140" placeholder="顺带说两句"></textarea>
+												</div>
+												<div class="action">
+													<label class="checkbox inline"> <input
+														class="labelbox" type="checkbox" name="synchronous"
+														<!--{if $auth[is_sync_sina] || $auth[is_sync_tencent]}-->checked="checked"<!--{/if}--> /> 同步到第三方平台
+													</label>
+													<!-- 
+													<div class="sync-settings">
+														<span class="tips">同步到：</span>
+														<!--{if $auth[is_sync_sina]}-->
+															<span class="sync-icon sync-sina on" title="新浪微博">新浪微博<input type="checkbox" value="1" name="sync-sina" checked="checked"/></span>
+														<!--{else}-->
+															<a href="/user_sync/" class="sync-icon sync-sina" title="绑定新浪微博">新浪微博</a>
+														<!--{/if}-->
+														<!--{if $auth[is_sync_tencent]}-->
+															<span class="sync-icon sync-tencent on" title="腾讯微博">腾讯微博<input type="checkbox" value="1" name="sync-tencent" checked="checked"/></span>
+														<!--{else}-->
+															<a href="/user_sync/" class="sync-icon sync-tencent" title="绑定腾讯微博">腾讯微博</a>
+														<!--{/if}-->
+													</div>
+													 -->
+													<input class="btn btn-primary pull-right " type="submit" value="上传照片" />
+												</div>
+											</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="timeline-column">
+							<div class="feed">
+								<div class="timeline-map">
+									<div class="tit">
+										<h3>{$info[placename]}</h3>
+									</div>
+									<div class="con">										
+										<!--{if isset($info[mayor]) && !empty($info[mayor])}-->
+										<div class="section-landlord">
+											<a href="/user/{$info[mayor][id]}/" class="avatar small pull-left"><img src="{$info[mayor][avatar]}" alt="{$info[mayor][uname]}"><i></i></a>
+											<div class="landlord">
+												<h3>地主：<a href="/user/{$info[mayor][id]}/">{$info[mayor][uname]}</a></h3>
+												<ul>
+													<li>
+														<span>积分：</span><em>{$info[mayor][point]}</em>
+													</li>
+													<li>
+														<span>LV：</span><em>{$info[mayor][level]}</em>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<!--{/if}-->
+										<div class="map-wrap" id="mapCon">
+											<!-- 地图 -->
+											<img src="http://st.map.soso.com/api?size=400*190&center={$info[longitude]},{$info[latitude]}&zoom=15&
+markers={$info[longitude]},{$info[latitude]},green" width="400" height="190" border="0" />
+										</div>
+										<div class="ckepop">
+											<!-- JiaThis Button BEGIN -->
+											<div id="ckepop">
+												<span class="jiathis_txt">分享该地方到：</span> <a
+													class="jiathis_button_tqq"></a> <a
+													class="jiathis_button_tsina"></a> <a
+													class="jiathis_button_qzone"></a> <a
+													class="jiathis_button_xiaoyou"></a> <a
+													class="jiathis_button_kaixin001"></a> <a
+													class="jiathis_button_renren"></a> <a
+													class="jiathis_button_douban"></a> <a
+													href="http://www.jiathis.com/share"
+													class="jiathis jiathis_txt jtico jtico_jiathis"
+													target="_blank">更多</a>
+											</div>
+											<!-- JiaThis Button END -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--{if 0}-->
+						<div class="timeline-column">
+							<div class="feed">
+								<div class="coupon">
+									<div class="thumb"><a href="#"><img width="160" height="100" src="img/pic_1.jpg" alt=""/></a></div>
+									<h4><a href="#">仅48元，享炫蜂时尚西餐价值78元单人套餐一份！黑椒牛仔骨、超级至尊披萨、酥皮海鲜汤、芒果...</a></h4>
+									<div class="actions">
+										<a href="#" class="btn btn-success">放进包包</a>
+									</div>
+									<div class="detail">
+										<div class="intro">周一至周五堂吃消费每满50送香蕉船一只，点单前出示；外卖消费满百及以上享9折、满二百及以上享8折；优惠均不同享。</div>
+										<ul class="more">
+											<li class="buy-timeout">
+												<i class="icon-time"></i> 使用有效期至 2012.12.29
+											</li>
+											<li class="buy-volume">
+												<i class="icon-place"></i> <a href="/place/18784/">万达国际影城(锦华店)</a>、<a href="/">万达国际影城(财富店)</a> 等 <a href="/place_lists/"><strong>5</strong> 家店</a> 通用
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="notify" class="timeline-column"></div>
+						<div id="event" class="timeline-column"></div>
+						<div id="group" class="timeline-column"></div>
+						<div id="prefer" class="timeline-column"></div>
+						<!--{/if}-->
+						<!-- 2.2新增，直接显示最近有内容的一个月的POST列表 -->
+						<!--{loop $firstes $post_id $post}-->
+						<div class="timeline-column">
+							<div class="feed">
+								<div class="timeline-post">
+									<div class="post-head">
+										<a href="/user/{$post[uid]}/" class="avatar small" target="_blank"><img alt="{$post[uname]}" src="{$post[avatar]}"/><i></i></a>
+										<div class="bodys">
+											<h3><a href="/user/{$post[uid]}/" target="_blank">{$post[uname]}</a></h3>
+											<div>{$post[description]}</div>
+										</div>
+									</div>
+									<div class="post-body">
+											<!--{if $post[type] == $tip}-->
+											<div class="stared">
+												<span class="ico-star-{$post[star]}"></span>
+												<!--{if $post[isBusiness]}--><!--{if !empty($post[pcc])}-->人均：<em><!--{if $post[pcc]>=0}-->{$post[pcc]}<!--{else}-->-<!--{/if}--></em>元<!--{/if}--><!--{/if}-->
+											</div>
+											<!--{elseif $post[type] == $photo}-->
+											<div class="photo<!--{if $post[h] > 1600}--> cut<!--{/if}-->">
+													<a href="/review/{$post_id}/" target="_blank"><img width="400" height="{$post[h]}" alt="{$post[content]}" src="{$post[photo]}" /></a>
+													<!--{if $post[h] > 1600}--><span class="shadow"></span><!--{/if}-->
+											</div>
+											<!--{/if}-->
+											<!--{if !empty($post[content])}-->
+											<p>
+												{$post[content]}
+											</p>
+											<!--{/if}-->
+											<div class="action">
+												<a href="/review/{$post_id}/" target="_blank" class="time">{$post[createDate]}</a>
+												<!--{if $post[has_praise]>0}--><span class="praise">已赞</span><!--{else}--><a href="javascript:void(0)" class="praise" date-id="{$post[id]}" date-target="{$post[praise_t]}">赞</a><!--{/if}--><em class="praise-num" id="praise_count_{$post[id]}"><!--{if $post[praiseCount]}-->({$post[praiseCount]})<!--{/if}--></em>
+												<a href="javascript:void(0)" class="reply" date-id="{$post[id]}" date-uid="{$post[uid]}" date-type="{eval echo $post[type]==$photo?'image':'tip';}">回复</a><em class="reply-num" id="reply_count_{$post[id]}"><!--{if $post[replyCount]}-->({$post[replyCount]})<!--{/if}--></em>
+												<!--{if $post[has_fav]>0}--><span class="favorite">已收藏</span><!--{else}--><a href="javascript:void(0)" class="favorite" date-id="{$post[id]}" date-target="{$post[praise_t]}">收藏</a><!--{/if}-->
+											</div>
+									</div>
+									<!--{if $post[praiseCount] && !empty($post[praiser])}-->
+									{eval $split='';}
+									<div class="praise-list">
+										<!--{loop $post[praiser] $k $v}-->
+										{$split}<a href="/user/{$k}/" target="_blank">{$v[uname]}</a>
+										{eval $split='、';}
+										<!--{/loop}-->
+										<!--{if $post[praiseCount] > 3}--> 等 <em class="praise-num">{$post[praiseCount]}</em> 人<!--{/if}-->觉得很赞
+									</div>
+									<!--{/if}-->
+									<!--{if !empty($post[replies])}-->
+									<div class="reply-list">
+										<!--{if $post[replyCount] > 3}-->
+										<a href="/review/{$post_id}/" target="_blank">查看全部 {$post[replyCount]} 条回复</a>
+										<!--{/if}-->
+										<div class="reply-box">
+											<div class="reply_arrow"><i class="arrow-border">◆</i><i class="arrow-inside">◆</i></div>
+											<ul id="replies-{$post_id}">
+												<!--{loop $post[replies] $post_ide $rep}-->
+												<li>
+													<a class="avatar small" href="/user/{$rep[uid]}/" target="_blank"><i></i><img alt="{$rep[uname]}" src="{$rep[avatar]}" height="40" width="40" /></a>
+													<div class="detail">
+														<a href="/user/{$rep[uid]}/" target="_blank">{$rep[uname]}</a><i>：</i><span class="rep-content">
+														{eval echo htmlspecialchars($rep[content])}</span>
+														<div class="action">
+															<span class="time">{$rep[createDate]}</span>&nbsp;&nbsp;<a class="reply_to" href="javascript:void(0)" date-rid="{$rep[id]}" date-id="{$post[id]}" date-uid="{$rep[uid]}" date-uname="{$rep[uname]}">回复</a>
+														</div>
+													</div>
+												</li>
+												<!--{/loop}-->
+											</ul>
+										</div>
+									</div>
+									<!--{/if}-->
+									<div class="reply-placeholder" date-id="{$post[id]}" date-uid="{$post[uid]}" date-type="{eval echo $post[type]==$photo?'image':'tip';}">
+										回复内容...
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--{/loop}-->				
+						<!-- END -->
+					</div>
+				</div>
+				
+				<!--{loop $anchors $k $an}-->
+				<div class="timeline-section">
+					<a href="/place_get_posts/{$info[id]}/{$k}/" class="timeline-hd-title" id="m-{$k}"><span>{$an}</span></a>
+					<div class="timeline-adventitia"></div>
+				</div>
+				<!--{/loop}-->
+			</div>
+		</div>
+		<!-- 时间线 -->
+		<div class="aside" id="aside">
+			<ul class="timeline-timebar" id="timebar">
+				<!--{loop $list $k $v}-->	
+				<li class="<!--{if !empty($v[active])}-->timebar-side<!--{else}-->timebar-oldside<!--{/if}-->">
+					<span class="<!--{if !empty($v[active])}-->year<!--{else}-->oldyear<!--{/if}-->">{$k}</span>
+					<ul class="nav">
+						<!--{loop $v[months] $ke $item}-->
+						<li><a class="month" href="#m-{$k}-{eval echo $ke < 10 ? '0'.$ke:$ke;}">{$item}</a></li>
+						<!--{/loop}-->
+					</ul>
+				</li>
+				<!--{/loop}-->
+			</ul>
+		</div>
+	</div>
+</div>
+<form action="/signin/" method="post" class="modal hide form-horizontal" id="signin-modal"></form>
+<!--{template form_report}-->
+<div class="modal hide" id="place-map">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">&times;</a>
+		<h3>地图</h3>
+    </div>
+    <div class="modal-body">
+		<div id="place-map-container" style="width: 560px; height: 320px;" data-lat="{$info[latitude]}" data-lng="{$info[longitude]}"></div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+var place_lat = $info[latitude],
+	place_lng = $info[longitude];
+$(function(){
+	//加载商家公告
+	//$.get("/place_get_notify/{$info[id]}", function(html) {
+	//	$("#notify").html(html);
+	//});
+	////加载团购
+	//$.get("/place_get_group/{$info[id]}", function(html) {
+	//	$("#group").html(html);
+	//});
+	////加载优惠
+	//$.get("/place_get_prefer/{$info[id]}", function(html) {
+	//	$("#prefer").html(html);
+	//});
+	////加载活动
+	//$.get("/place_get_event/{$info[id]}", function(html) {
+	//	$("#event").html(html);
+	//});
+});
+</script>
+<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!--{template web/footer}-->

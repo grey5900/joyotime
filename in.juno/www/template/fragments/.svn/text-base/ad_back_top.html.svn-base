@@ -1,0 +1,4 @@
+<!--{if $back_ad_top}-->
+    <!-- ad_back_top -->
+	{$back_ad_top['description']}
+<!--{/if}-->

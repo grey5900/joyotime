@@ -1,0 +1,44 @@
+<div class="pageContent">
+
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent" layoutH="54">
+			<div class="panel" defH="408">
+				<h1>背景图片：</h1>
+				<div>
+					{loop $cfg $key $val}{if !empty($val[sizes]) && is_array($val[sizes])}
+					<h1>{eval echo strtoupper($val[name])}</h1>
+					<dl style="width:100%;height:110px;">
+						{loop $val[sizes] $k $size}
+						<dt>{$size}：</dt>
+						<dd>{if !isset($info)||empty($info)}<span class="f-red">*</span>{/if}<button type="button" id="{if isset($info) && !empty($info) && !empty($info[image])}edit_{/if}btn_{$val[name]}_{$k}">上传图片</button></dd>
+						{/loop}
+					</dl>
+					{/if}{/loop}
+				</div>
+			</div>
+			<div class="panel">
+				<h1>图片名称：</h1>
+				<div><dl><dd><input type="text" name="name" value="{$info[name]}" size="40" class="required"/></dd></dl></div>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	<script type="text/javascript">
+		$(function(){
+			{loop $cfg $key $val}{if !empty($val[sizes]) && is_array($val[sizes])}
+			{loop $val[sizes] $k $v}
+			var option = "name:\"{$val[name]}[]\",id:\"{$val[name]}_{$k}\",file_type:\"common\",resolution:\"{$k}\"";
+			<!--{if isset($info) && !empty($info) && !empty($info[image])}-->
+			option += ", image_name:\"{$images[$key]}\"";
+			<!--{/if}-->
+			$("#{if isset($info) && !empty($info) && !empty($info[image])}edit_{/if}btn_{$val[name]}_{$k}").my_upload(eval("({"+option+"})"));
+			{/loop}
+			{/if}{/loop}
+		});
+	</script>
+</div>

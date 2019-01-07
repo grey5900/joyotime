@@ -1,0 +1,591 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-03-31 07:15+0000\n"
+"PO-Revision-Date: 2014-04-03 13:42+0800\n"
+"Last-Translator: baohan <baohanddd@gmail.com>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+
+#: Controller/AuthenticatesController.php:151
+msgid "Username or password is wrong"
+msgstr "账户名与密码不匹配"
+
+#: Controller/ChargesController.php:117
+msgid "Invalid currency"
+msgstr "货币单位非法"
+
+#: Controller/ChargesController.php:120
+#: Controller/WithdrawalsController.php:134
+msgid "Invalid gateway"
+msgstr "支付网关非法"
+
+#: Controller/ChargesController.php:123
+#: Controller/WithdrawalsController.php:130
+msgid "Invalid second"
+msgstr "无效时间"
+
+#: Controller/CheckoutsController.php:423;500
+#: Controller/FavoritesController.php:411;484
+#: Controller/FeedbacksController.php:145;350
+#: Controller/NotificationsController.php:275
+#: Controller/PurchasesController.php:123;272
+#: Controller/ReportsController.php:165;401
+#: Controller/TransfersController.php:112
+#: Controller/WithdrawalsController.php:162 Model/Feedback.php:89
+#: Model/Follow.php:57 Model/Receipt.php:94
+msgid "Invalid user id"
+msgstr "无效的用户"
+
+#: Controller/CheckoutsController.php:428;432;436;440;504;506;508
+#: Controller/TransfersController.php:117;121;125;129
+msgid "Transfer fails"
+msgstr "转移失败"
+
+#: Controller/CommentsController.php:148;153
+#: Controller/FavoritesController.php:219;224;241;422;426
+#: Controller/PurchasesController.php:142
+#: Controller/ReportsController.php:169;405
+msgid "Invalid voice id"
+msgstr "无效的鱼说"
+
+#: Controller/CommentsController.php:158
+msgid "No grant for comment"
+msgstr "你还没有权限对这条鱼说发表评论"
+
+#: Controller/FavoritesController.php:228
+#: Controller/PurchasesController.php:155
+msgid "The voice has been pulled off shelf"
+msgstr "鱼说已下架"
+
+#: Controller/FavoritesController.php:234;327;414;487;686
+msgid "Invalid favorite id"
+msgstr "无效的收藏夹"
+
+#: Controller/FavoritesController.php:255
+msgid "The voice already exists in favorite"
+msgstr "鱼说已收藏过了"
+
+#: Controller/FavoritesController.php:323 Model/Package.php:101
+msgid "Invalid title"
+msgstr "无效的标题"
+
+#: Controller/FavoritesController.php:342
+msgid "Favorites updating fails"
+msgstr "收藏夹修改失败"
+
+#: Controller/FavoritesController.php:427;502
+#: Controller/FeedbacksController.php:277 Controller/ReportsController.php:330
+msgid "Deletion fails"
+msgstr "删除失败"
+
+#: Controller/FeedbacksController.php:137
+msgid "Saving feedback fails"
+msgstr "反馈发送失败"
+
+#: Controller/FeedbacksController.php:424
+msgid "Invalid feedback id"
+msgstr "无效的反馈信息"
+
+#: Controller/NotificationsController.php:164
+msgid "Invalid lastime"
+msgstr ""
+
+#: Controller/NotificationsController.php:279 Model/Broadcast.php:77
+msgid "Invalid message"
+msgstr ""
+
+#: Controller/PasswordsController.php:168
+msgid "Sorry, the resetting link has expired"
+msgstr "抱歉，重置密码链接失效或已过期"
+
+#: Controller/PurchasesController.php:151
+msgid "Purchase yourself voice"
+msgstr "请勿购买你自己发布的语音"
+
+#: Controller/PurchasesController.php:159
+msgid "Purchased already"
+msgstr "已经购买过了"
+
+#: Controller/PurchasesController.php:168
+msgid "Purchase fails, might no enough money"
+msgstr "购买鱼说失败，可能是余额不足"
+
+#: Controller/PurchasesController.php:171
+msgid "Purchase fails"
+msgstr "购买鱼说失败"
+
+#: Controller/PurchasesController.php:358
+msgid "Auth token is invalid or expired already"
+msgstr "会话失效或已过期"
+
+#: Controller/ReceiptsController.php:171
+msgid "The receipt has existed"
+msgstr "订单已存在"
+
+#: Controller/ReceiptsController.php:256
+msgid "Invalid coupon code"
+msgstr "无效的充值码"
+
+#: Controller/ReportsController.php:161 Model/Feedback.php:111
+#: Model/Queue/Mail.php:53
+msgid "Invalid content"
+msgstr "内容未填写"
+
+#: Controller/ReportsController.php:242;319;483
+msgid "Invalid report id"
+msgstr ""
+
+#: Controller/ReportsController.php:261
+msgid "Fail to update the report"
+msgstr ""
+
+#: Controller/ReverseWithdrawalsController.php:103
+#: Controller/WithdrawalsController.php:470
+msgid "Invalid checkout id"
+msgstr ""
+
+#: Controller/ReverseWithdrawalsController.php:108
+msgid "Invalid reason supplied"
+msgstr ""
+
+#: Controller/ReverseWithdrawalsController.php:122
+msgid "Revert withdraw fails"
+msgstr "驳回提现申请失败"
+
+#: Controller/ReverseWithdrawalsController.php:133
+msgid "Create checkout for revert withdrawal fails"
+msgstr "为驳回提现申请创建账单失败"
+
+#: Controller/ReverseWithdrawalsController.php:141
+#: Controller/WithdrawalsController.php:483
+msgid "Invalid request"
+msgstr "无效请求"
+
+#: Controller/RolesController.php:109
+msgid "user_id invalid"
+msgstr ""
+
+#: Controller/RolesController.php:110
+msgid "role invalid"
+msgstr ""
+
+#: Controller/StartupsController.php:259
+msgid "Nearby"
+msgstr "附近鱼说"
+
+#: Controller/StartupsController.php:264
+msgid "Featured"
+msgstr "热门·精选"
+
+#: Controller/StartupsController.php:269
+msgid "Experts"
+msgstr "专家·达人"
+
+#: Controller/StartupsController.php:274
+msgid "Collections"
+msgstr "鱼说包"
+
+#: Controller/VoicesController.php:475
+#, fuzzy
+msgid "Invalid voice"
+msgstr "无效的鱼说"
+
+#: Controller/VoicesController.php:480
+#: Controller/Component/OAuthComponent.php:111;114
+msgid "Permission denied"
+msgstr "没有权限"
+
+#: Controller/WithdrawalsController.php:144
+msgid "Invalid account"
+msgstr ""
+
+#: Controller/WithdrawalsController.php:150
+msgid "Invalid realname"
+msgstr ""
+
+#: Controller/WithdrawalsController.php:167
+msgid "Withdrawal fails. Earnings are not enough to withdraw."
+msgstr "账户余额不足，提现失败"
+
+#: Model/Broadcast.php:69 Model/Checkout.php:163 Model/Receipt.php:108
+msgid "Invalid amount"
+msgstr ""
+
+#: Model/Broadcast.php:85 Model/Receipt.php:101
+msgid "Invalid type"
+msgstr ""
+
+#: Model/Certification.php:62
+msgid "User id must supply"
+msgstr ""
+
+#: Model/Certification.php:70
+msgid "Name invalid"
+msgstr ""
+
+#: Model/Certification.php:78
+msgid "Token must supply"
+msgstr ""
+
+#: Model/Comment.php:54
+msgid "Invalid score supplied"
+msgstr ""
+
+#: Model/Comment.php:62 Model/Report.php:30
+msgid "Invalid user_id supplied"
+msgstr ""
+
+#: Model/Comment.php:69 Model/Report.php:46
+msgid "Invalid content supplied"
+msgstr "Invalid content supplied"
+
+#: Model/Comment.php:77 Model/Report.php:38
+msgid "Invalid voice_id supplied"
+msgstr ""
+
+#: Model/Comment.php:85
+msgid "Invalid voice title supplied"
+msgstr ""
+
+#: Model/Comment.php:93
+msgid "Invalid user id of voice supplied"
+msgstr ""
+
+#: Model/Coupon.php:63
+msgid "Invalid length"
+msgstr "时长无效"
+
+#: Model/Coupon.php:70
+msgid "Invalid expire"
+msgstr "过期时间无效"
+
+#: Model/Coupon.php:77
+msgid "Invalid number"
+msgstr "数量无效"
+
+#: Model/Feedback.php:96;103 Model/Queue/Mail.php:40;45
+#: Model/Queue/Password/Reset.php:43
+msgid "Invalid email"
+msgstr "邮箱格式不正确"
+
+#: Model/Follow.php:65
+msgid "Invalid follower id"
+msgstr ""
+
+#: Model/Follow.php:69
+msgid "Don't try to follow yourself"
+msgstr "不能收听自己"
+
+#: Model/Notification.php:71
+msgid "Invalid userid supplied"
+msgstr ""
+
+#: Model/Notification.php:79 Model/NotificationQueue.php:52
+msgid "Invalid message supplied"
+msgstr ""
+
+#: Model/Notification.php:86
+msgid "Invalid link supplied"
+msgstr ""
+
+#: Model/Notification.php:94
+msgid "Invalid type supplied"
+msgstr ""
+
+#: Model/Notification.php:124
+msgid "Invalid merged number supplied"
+msgstr ""
+
+#: Model/Notification.php:132
+msgid "Invalid template supplied"
+msgstr ""
+
+#: Model/Notification.php:147
+msgid ""
+"Something is wrong with your recharge (#%d# minutes, ¥#%s#), please contact "
+"us via feedback"
+msgstr "您的充值（#%d#分钟,￥#%s#）有异常，请通过意见反馈联系管理员进行处理"
+
+#: Model/Notification.php:168
+msgid "Your voice #%s# has been verified."
+msgstr "你提交的鱼说#%s#已通过审核。"
+
+#: Model/Notification.php:190
+msgid "Your voice #%s# has been put on shelf anew."
+msgstr "你的鱼说#%s#已重新上架。"
+
+#: Model/Notification.php:212
+msgid "Your voice #%s# has been rejected for \"%s\"."
+msgstr "你提交的鱼说#%s#审核未通过，原因\"%s\"。"
+
+#: Model/Notification.php:238
+msgid "Your voice #%s# has been pulled off shelf for \"%s\"."
+msgstr "你的鱼说#%s#已被下架，原因\"%s\"。"
+
+#: Model/Notification.php:267
+msgid "Your voice #%s# receives %s new comments."
+msgstr "你的鱼说#%s#收到%s条新评论。"
+
+#: Model/Notification.php:339
+msgid ""
+"Welcome to join FishSaying! We are honored to give you #%d# minutes as a "
+"gift. Start your journey now!"
+msgstr "欢迎加入鱼说！赠送您#%d#分钟免费体验时长，马上开始旅程吧！"
+
+#: Model/Notification.php:385
+msgid ""
+"Your friend #%s# just transferred #%d# minutes to you, please check your "
+"account."
+msgstr "你的好友#%s#转移给你#%d#分钟，请注意查收。"
+
+#: Model/Notification.php:405
+msgid "#%s#, tipped you #%d# minutes, please check your account."
+msgstr "#%s#，付给你#%d#分钟小费，请注意查收"
+
+#: Model/Notification.php:428
+msgid "Sorry, your comment on #%s# has been hidden for inappropriate content."
+msgstr "抱歉，你对#%s#发布的评论含有不适宜内容，已经被管理员屏蔽了。"
+
+#: Model/Notification.php:445
+msgid ""
+"Your request for withdrawal #%s# has been processed, please check your "
+"account."
+msgstr "你提交的提现申请（总计#%s#）已处理成功，请注意查收。"
+
+#: Model/Notification.php:473
+msgid ""
+"Sorry, your request for withdrawal on %s has been rejected for \"%s\". Your "
+"frozen #%d# minutes has been returned to your account."
+msgstr ""
+"抱歉，你于%s提交的提现申请已被驳回，原因\"%s\"，冻结的#%d#分钟已返回你的账户"
+"中。"
+
+#: Model/NotificationQueue.php:44
+msgid "Invalid user id supplied"
+msgstr ""
+
+#: Model/NotificationQueue.php:60
+msgid "Invalid badge supplied"
+msgstr ""
+
+#: Model/Package.php:74 Model/Voice.php:262
+msgid "Invalid latitude"
+msgstr ""
+
+#: Model/Package.php:81 Model/Voice.php:269
+msgid "Invalid longitude"
+msgstr ""
+
+#: Model/Package.php:88
+msgid "Invalid cover"
+msgstr ""
+
+#: Model/Package.php:94
+msgid "Invalid voices"
+msgstr ""
+
+#: Model/Receipt.php:117
+msgid "Invalid receipt"
+msgstr ""
+
+#: Model/Receipt.php:124
+msgid "Invalid status"
+msgstr ""
+
+#: Model/Report.php:53
+msgid "Invalid status supplied"
+msgstr ""
+
+#: Model/Tag.php:52
+#, fuzzy
+msgid "Name has existed already"
+msgstr "已存在相同的用户名"
+
+#: Model/Tag.php:65
+msgid "langauge require"
+msgstr ""
+
+#: Model/User.php:156
+msgid "Invalid username supplied"
+msgstr ""
+
+#: Model/User.php:161
+msgid "Username has existed already"
+msgstr "已存在相同的用户名"
+
+#: Model/User.php:169
+msgid "Invalid email supplied"
+msgstr ""
+
+#: Model/User.php:173
+msgid "Email has existed already"
+msgstr "邮箱已经注册过了"
+
+#: Model/User.php:177;191
+msgid "The original password is invalid"
+msgstr "原密码输入错误"
+
+#: Model/User.php:185
+msgid "Invalid password"
+msgstr "密码格式无效"
+
+#: Model/User.php:198
+msgid "Invalid avatar supplied"
+msgstr ""
+
+#: Model/User.php:206
+msgid "Invalid money supplied"
+msgstr ""
+
+#: Model/User.php:214
+msgid "Invalid earn supplied"
+msgstr ""
+
+#: Model/User.php:222
+msgid "Invalid cost supplied"
+msgstr ""
+
+#: Model/User.php:232
+msgid "Invalid role supplied"
+msgstr ""
+
+#: Model/User.php:240
+msgid "Invalid device code supplied"
+msgstr ""
+
+#: Model/User.php:248
+msgid "Invalid locale"
+msgstr ""
+
+#: Model/User.php:256
+msgid "Invalid reg source"
+msgstr ""
+
+#: Model/User.php:262
+msgid "Invalid certified"
+msgstr ""
+
+#: Model/User.php:266
+msgid "Your account has been bound to another fishsaying account"
+msgstr "该账号已绑定其他鱼说账户"
+
+#: Model/User.php:278
+msgid "Just user role as `contributor` can be recommended"
+msgstr "只能推荐导游用户"
+
+#: Model/Version.php:50
+msgid "Invalid version"
+msgstr ""
+
+#: Model/Version.php:58
+msgid "Invalid platform"
+msgstr ""
+
+#: Model/Voice.php:187
+msgid "The user id must supply"
+msgstr ""
+
+#: Model/Voice.php:196
+msgid "The title must supply"
+msgstr ""
+
+#: Model/Voice.php:203
+msgid "The description must supply"
+msgstr ""
+
+#: Model/Voice.php:210
+msgid "Invalid tags"
+msgstr "Tag名称非法"
+
+#: Model/Voice.php:217
+msgid "The cover of voice has to upload"
+msgstr ""
+
+#: Model/Voice.php:225
+msgid "This length must supply"
+msgstr ""
+
+#: Model/Voice.php:233
+msgid "The file of voice must be upload"
+msgstr ""
+
+#: Model/Voice.php:241
+msgid "The status must supply"
+msgstr ""
+
+#: Model/Voice.php:252
+msgid "The isfree must supply"
+msgstr ""
+
+#: Model/Voice.php:276
+msgid "Invalid location"
+msgstr ""
+
+#: Model/Voice.php:284
+msgid "Invalid address"
+msgstr ""
+
+#: Model/Voice.php:292
+msgid "Invalid address components"
+msgstr ""
+
+#: Model/Voice.php:300
+msgid "Invalid language"
+msgstr ""
+
+#: Model/Voice.php:308
+msgid "The checkout_total must supply"
+msgstr ""
+
+#: Model/Voice.php:316
+msgid "The comment_total must supply"
+msgstr ""
+
+#: Model/Voice.php:324
+msgid "The earn_total must supply"
+msgstr ""
+
+#: Model/Voice.php:332
+msgid "The score must supply"
+msgstr ""
+
+#: Model/Voice.php:340
+msgid "Invalid comment for voice"
+msgstr ""
+
+#: Model/Voice.php:348
+msgid "Invalid cover_offset_y"
+msgstr ""
+
+#: Model/Query/Criteria/History/Detail.php:28
+#: Model/Query/Criteria/History/Table.php:24
+msgid "`criteria` is empty while saving keyword in DB"
+msgstr ""
+
+#: Model/Query/Criteria/History/Detail.php:34
+msgid "Invalid `location` while saving keyword in DB"
+msgstr ""
+
+#: Model/Query/Criteria/History/Table.php:32
+msgid "Invalid `count` while saving keyword in DB"
+msgstr ""
+
+#: Model/Queue/Password/Reset.php:48
+msgid "No account exists for this email"
+msgstr "邮箱尚未注册"
+
+#, fuzzy
+#~ msgid "Invalid is_verified"
+#~ msgstr "无效的用户"
+
+#, fuzzy
+#~ msgid "Email hasn't exist yet"
+#~ msgstr "邮箱已经注册过了"

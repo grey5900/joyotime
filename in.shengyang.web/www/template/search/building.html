@@ -1,0 +1,178 @@
+<!--{template common/header}-->
+	<div id="container-page">
+		<div class="container">
+			
+			<div class="main">
+					<div class="search">
+						<!-- <div class="tit">
+							<ul>
+								<li class="active"><a href="javascript:;">新盘</a></li>
+								<li class="pipe">|</li>
+								<li><a href="#">二手房</a></li>
+							</ul>
+						</div> -->
+						<div class="con">
+							<div class="tab-pane active">
+								<form name="search_building" action="" method="get" class="form-inline">
+									<div class="input-box">
+										<input type="text" name="keywords" value="{$filter['keywords']}" placeholder="请输入关键字(楼盘名/地名/开发商等)" id="keywords"/>
+										<input type="button" value="  搜索  " id="search_btn" class="btn btn-primary" /> <a href="/plist/134/100" class="btn">地图找房</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="search-filter">
+						<div class="filters">
+							<dl class="default">
+								<dt>区域：</dt>
+								<dd>
+									<ul>
+										<!--{loop $search_config['building']['area'] $key $value}-->
+										<li<!--{if $key == $filter['area']}--> class="on"<!--{/if}-->><a href="{echo sprintf($filter_url['area'], $key)}">{$value}</a></li>
+										<!--{/loop}-->
+									</ul>
+								</dd>
+								<dt>价格(元/㎡)：</dt>
+								<dd>
+									<ul>
+										<!--{loop $search_config['building']['price'] $key $value}-->
+										<li<!--{if $key == $filter['price']}--> class="on"<!--{/if}-->><a href="{echo sprintf($filter_url['price'], $key)}">{$value}</a></li>
+										<!--{/loop}-->
+									</ul>
+								</dd>
+								<dt>类型：</dt>
+								<dd>
+									<ul>
+										<!--{loop $search_config['building']['house_type'] $key $value}-->
+										<li<!--{if $key == $filter['house_type']}--> class="on"<!--{/if}-->><a href="{echo sprintf($filter_url['house_type'], $key)}">{$value}</a></li>
+										<!--{/loop}-->
+									</ul>
+								</dd>
+								<dt>按照环线：</dt>
+								<dd>
+									<ul>
+										<!--{loop $search_config['building']['loop'] $key $value}-->
+										<li<!--{if $key == $filter['loop']}--> class="on"<!--{/if}-->><a href="{echo sprintf($filter_url['loop'], $key)}">{$value}</a></li>
+										<!--{/loop}-->
+									</ul>
+								</dd>
+							</dl>
+							<dl class="more">
+								<dt>开盘时间：</dt>
+								<dd>
+									<ul>
+										<!--{loop $search_config['building']['selling'] $key $value}-->
+										<li<!--{if $key == $filter['selling']}--> class="on"<!--{/if}-->><a href="{echo sprintf($filter_url['selling'], $key)}">{$value}</a></li>
+										<!--{/loop}-->
+									</ul>
+								</dd>
+								<dt>按照方位：</dt>
+								<dd>
+									<ul>
+										<!--{loop $search_config['building']['direction'] $key $value}-->
+										<li<!--{if $key == $filter['direction']}--> class="on"<!--{/if}-->><a href="{echo sprintf($filter_url['direction'], $key)}">{$value}</a></li>
+										<!--{/loop}-->
+									</ul>
+								</dd>
+								<dt>按照地铁查找：</dt>
+								<dd>
+									<ul>
+										<!--{loop $search_config['building']['subway'] $key $value}-->
+										<li<!--{if $key == $filter['subway']}--> class="on"<!--{/if}-->><a href="{echo sprintf($filter_url['subway'], $key)}">{$value}</a></li>
+										<!--{/loop}-->
+									</ul>
+								</dd>
+								<dt>装修类型：</dt>
+								<dd>
+									<ul>
+										<!--{loop $search_config['building']['fitment'] $key $value}-->
+										<li<!--{if $key == $filter['fitment']}--> class="on"<!--{/if}-->><a href="{echo sprintf($filter_url['fitment'], $key)}">{$value}</a></li>
+										<!--{/loop}-->
+									</ul>
+								</dd>
+							</dl>
+						</div>
+						<div class="console">
+							<a href="#" onclick="$('.filters .more').toggle();"></a>
+						</div>
+					</div>
+					<div class="push">
+						<div class="tit">
+							<h2>搜索结果</h2>
+						</div>
+						<div class="con">
+						  <ul class="place-result-list">
+						  <!--{loop $data['response']['docs'] $row}-->
+						  	<li class="result-item-building">
+							  	<div class="icon" style="margin: 0 10px 85px 0;"><img border="0" src="{$row['photo']}" width="40" height="40" /></div>
+							  	<div class="title" style="word-wrap: break-word;"><a href="/place/{$row['id']}" target="_blank">{$row['title']}</a></div>
+                                <div class="detail">
+                                    <div class="summary"><!--{if $row['address']}-->地址：{$row['address']}<!--{/if}--><!--{if $row['tel']}--><br />电话：{$row['tel']}<!--{/if}--></div>
+                                    <div class="count">点评(<strong>{$row['tipCount']}</strong>) 照片(<strong>{$row['photoCount']}</strong>)</div>
+                                    <div class="price"><!--{if $row['price']}--><strong>{$row['price']}</strong>元/㎡<!--{else}-->暂无价格<!--{/if}--></div>
+                                </div>
+							  	<!--{if $row['last_tip']}-->
+							  	<div class="post">
+										<div class="content">
+									      <a class="user-link" href="/user/{$row['last_tip']['uid']}" target="_blank">{$row['last_tip']['name']}</a>说：
+									      <p><a href="/review/{$row['last_tip']['id']}" target="_blank">{echo format_html($row['last_tip']['content'])}</a></p>
+										</div>
+										<div class="info">
+											<div class="time">{$row['last_tip']['show_date']}</div>
+											<div class="count">{$row['last_tip']['praiseCount']}个赞</div>
+										</div>
+							  	</div>
+							  	<!--{/if}-->
+							  	<!--{if $row['group_title']}-->
+							  	<div class="post" style="margin-top: 10px;">
+										<a class="content" style="font-family: 'Microsoft YaHei','Hiragino Sans GB',Arial,sans-serif;font-size: 18px;color: #333;line-height: 28px;word-wrap: break-word;text-decoration: none;">
+									      {$row['group_title']}
+										</a>
+										<div class="info">
+											<input type="button" value="我要参团" class="btn btn-primary" onclick="window.open('http://tf.chengdu.cn/web/detail/{$row['id']}')" />
+										</div>
+							  	</div>
+							  	<!--{/if}-->
+						  	</li>
+						  <!--{/loop}-->
+						  </ul>
+						  <!--{if $pagination}-->
+						  <div class="pagination pagination-centered">
+			                <ul>
+			                <!--{if $pagination['prev']}-->
+			                  <li><a href="{$pagination['prev']}">上一页</a></li>
+			                <!--{/if}-->
+			                  <!--{loop $pagination['pages'] $key $page}-->
+			                  <li<!--{if $page['is_cur']}--> class="active"<!--{/if}-->><a href="{$page['url']}">{$key}</a></li>
+			                  <!--{/loop}-->
+			                <!--{if $pagination['next']}-->
+			                  <li><a href="{$pagination['next']}">下一页</a></li>
+			                <!--{/if}-->
+			                </ul>
+			              </div>
+			              <!--{/if}-->
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+$(function(){
+	$("#search_btn").on("click", function(){
+		submit_search();
+	});
+	
+	$("form[name=search_building]").on("submit", function(){
+		submit_search();
+		return false;
+	});
+});
+
+function submit_search() {
+	var submit_url = "{$filter_url['keywords']}";
+	var keywords = $("input[name=keywords]").val();
+	window.location.href = sprintf(submit_url, keywords);
+}
+</script>
+<!--{template common/footer}-->

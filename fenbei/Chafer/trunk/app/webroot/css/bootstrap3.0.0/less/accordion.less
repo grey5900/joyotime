@@ -1,0 +1,74 @@
+//
+// Accordion
+// --------------------------------------------------
+
+// Parent container
+.accordion {
+  margin-bottom: @line-height-computed; //~20px
+  margin-top: @line-height-computed + 10;
+}
+
+// Group == heading + body
+.accordion-group {
+  margin: 0 10px;
+}
+.accordion-heading {
+  margin-bottom: 8px;
+  background: #e2e2e2;
+
+}
+.accordion-heading .accordion-toggle {
+  display: block;
+  padding: 2px 10px;
+  color: @gray-dark;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+// General toggle styles
+.accordion-toggle {
+  cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
+  span {
+    background: url('../../images/arrow.down.jpg') no-repeat center right transparent;
+    display: block;
+  }
+  &.collapsed {
+    span {
+      background: url('../../images/arrow.up.jpg') no-repeat center right transparent;
+      display: block;
+    }
+  }
+}
+.arrow-down {
+  background: url('../../images/arrow.down.jpg') no-repeat center right transparent;
+  display: block;
+}
+.arrow-up {
+  background: url('../../images/arrow.up.jpg') no-repeat center right transparent;
+  display: block;
+}
+
+// Inner needs the styles because you can't animate properly with any styles on the element
+.accordion-inner {
+  a {
+    padding-left: 48px;
+    font-family: @font-family-black;
+    color: @gray;
+  }
+  div {
+    height: 35px;
+    line-height: 35px;
+  }
+  .active {
+    background: #327ad4;
+    a {
+      color: #fff;
+    }
+  }
+  .accordion-li {
+
+  }
+}

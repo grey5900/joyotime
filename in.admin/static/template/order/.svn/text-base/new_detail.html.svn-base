@@ -1,0 +1,162 @@
+<div class="pageContent" id="{$page_id}">
+    <div id="leftBox" class="unitBox" style="float:left; display:block; overflow:auto; width:720px;">
+        <div class="pageFormContent nowrap" layoutH="98">
+            <table class="list" width="100%">
+                <tr>
+                    <td width="35%">订单号：{$order['id']} </td>
+                    <td width="35%">订单金额： {$order['money']} </td>
+                    <td width="30%">提货方式： {$order['shipTypeName']} </td>
+                </tr>
+                <tr>
+                    <td>下单时间：{$order['createDate']} </td>
+                    <td><!--{if $is_payed}-->付款时间： {$order['payDate']}<!--{/if}--></td>
+                    <td></td>
+                </tr>
+                <!--{if $is_payed}-->
+                <tr>
+                    <td colspan="3">来源方订单号： {$order['sourceName']} {$order['partnerOrderCode']} </td>
+                </tr>
+                <!--{/if}-->
+            </table>
+            <dl>
+                <dt>订单状态：</dt>
+                <dd>{$order_status[$order['status']]}</dd>
+            </dl>
+            <dl>
+                <dt>
+                    配送状态：
+                </dt>
+                <dd>
+                    <table class="list" width="300" style="text-align:center;color:#FFFFFF;">
+                        <tr bgcolor="#7CC5E5">
+                            <!--{if $is_payed}-->
+                            <!--{loop $ship_status[$order['shipType']] $key $value}-->
+                            <td{echo $value == order_ship_status(1, $order['shipType'], $order['shipStatus'], $order['status'])?' bgcolor="#000000"':''}>{$value}</td>
+                            <!--{/loop}-->
+                            <!--{else}-->
+                            <td bgcolor="#000000">{echo order_ship_status(0, $order['shipType'], $order['shipStatus'], $order['status'])}</td>
+                            <!--{/if}-->
+                        </tr>
+                    </table>
+                </dd>
+            </dl>
+            <div class="panel">
+                <h1>商品详情</h1>
+                <div>
+                    <table class="list" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="15%">商品ID</th>
+                                <th width="40%">商品名</th>
+                                <th width="15%">单价</th>
+                                <th width="15%">数量</th>
+                                <th width="15%">总金额</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>{$order['itemId']}</td>
+                            <td>{$order['itemTitle']}</td>
+                            <td>{$order['price']}</td>
+                            <td>{$order['quantity']}</td>
+                            <td>{$order['goodsMoney']}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="panel">
+                <h1>支付信息</h1>
+                <div>
+                    <table class="list" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="15%">支付方式</th>
+                                <th width="40%">付款时间</th>
+                                <th width="15%">商品总金额</th>
+                                <th width="15%">附加费用</th>
+                                <th width="15%">{echo $is_payed?'实付':'应付'}总金额</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>{$order['payWayName']}</td>
+                            <td>{$order['payDate']}</td>
+                            <td>{$order['goodsMoney']}</td>
+                            <td>{$order['extMoney']}</td>
+                            <td>{$order['money']}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--{if $is_payed && $order['isRefund']}-->
+            <div class="panel">
+                <h1>退款信息</h1>
+                <div>
+                    <table class="list" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="40%">退款方式</th>
+                                <th width="30%">退款时间</th>
+                                <th width="30%">退款金额</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--{/if}-->
+        </div>
+    </div>
+    <div id="rightBox" class="unitBox">
+        <div class="pageFormContent nowrap" layoutH="98">
+            <div class="panel">
+                <h1>购买人信息</h1>
+                <div>
+                    <table class="list" width="100%">
+                        <tr>
+                            <td>UID：{$order['uid']}</td>
+                        </tr>
+                        <tr>
+                            <td>账号：{$order['username']}</td>
+                        </tr>
+                        <tr>
+                            <td>昵称：{$order['nickname']}</td>
+                        </tr>
+                        <tr>
+                            <td>手机：{$order['cellphone']}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--{if $order['shipType']}-->
+            <div class="panel">
+                <h1>{echo $order['shipType']==1?'自提':'收货人'}信息</h1>
+                <div>
+                    <table class="list" width="100%">
+                        <tr>
+                            <td>配送方式：{$order['shipTypeName']}</td>
+                        </tr>
+                        <!--{if $order['shipType'] == 1}-->
+                        <tr>
+                            <td>提货地点：{$order['pickupPlaceName']}</td>
+                        </tr>
+                        <!--{else}-->
+                        <tr>
+                            <td>收货人：{$order['realName']}</td>
+                        </tr>
+                        <tr>
+                            <td>电话：{$order['cellphoneNo']}</td>
+                        </tr>
+                        <tr>
+                            <td>地点：{$order['address']}</td>
+                        </tr>
+                        <!--{/if}-->
+                    </table>
+                </div>
+            </div>
+            <!--{/if}-->
+        </div>
+    </div>
+</div>

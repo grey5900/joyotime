@@ -1,0 +1,165 @@
+<!--{eval $page_id = $view?'membercard_view':'membercard_apply_edit';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <!--{if $card['isBasic'] == 0}-->
+            <dl>
+                <dt>
+                    标题：
+                </dt>
+                <dd>
+                    <input type="text" name="title" size="60" class="required" value="{$card['title']}" />
+                </dd>
+            </dl>
+            <!--{/if}-->
+            <dl>
+                <dt>
+                   简介：
+                </dt>
+                <dd>
+                    <textarea name="content" rows="4" cols="60" class="required">{$card['content']}</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                   特权摘要(30字)：
+                </dt>
+                <dd>
+                    <textarea name="summary" rows="8" cols="60" class="required">{$card['summary']}</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    会员卡详情(640*420)：
+                </dt>
+                <dd>
+                    <!--{if $view}-->
+                    <a rel="image" href="{echo image_url($card['image'], 'common', 'odp')}"><img height="100" border="0" src="{echo image_url($card['image'], 'common', 'odp')}"></a>
+                    <!--{else}-->
+                    <button type="button" id="image_detail">上传图片</button>
+                    <!--{/if}-->
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    会员卡(260*170)：
+                </dt>
+                <dd>
+                    <!--{if $view}-->
+                    <a rel="image" href="{echo image_url($card['image'], 'common', 'thumb')}"><img height="100" border="0" src="{echo image_url($card['image'], 'common', 'thumb')}"></a>
+                    <!--{else}-->
+                    <button type="button" id="image">上传图片</button>
+                    <!--{/if}-->
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    类型：
+                </dt>
+                <dd>
+                    <label><input type="radio" name="is_basic" value="0" disabled="true"<!--{if $card['isBasic'] === '0'}--> checked="checked"<!--{/if}--> />会员卡</label>
+                    <label><input type="radio" name="is_basic" value="1" disabled="true"<!--{if $card['isBasic'] === '1'}--> checked="checked"<!--{/if}--> />基础会员卡</label>
+                </dd>            
+            </dl>
+            <!--{if empty($view)}-->
+            <dl>
+                <dt>审核：</dt>
+                <dd>
+                    <label><input type="radio" name="status" value="20" class="required" />通过</label>
+                    <label>
+                        <input type="radio" name="status" id="status_reject" value="10" class="required" />驳回
+                    </label>
+                </dd>
+            </dl>
+            <!--{/if}-->
+            <dl>
+                <dt><lable id="remark_tip">备注</lable>：</dt>
+                <dd><textarea name="remark" cols="60" rows="5">{$card['remark']}</textarea></dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <!--{if empty($view)}-->
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick="onsubmitMemberCardAdd();">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <!--{/if}-->
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function onsubmitMemberCardAdd() {
+        var form = $("form", $("#{$page_id}"));
+        if (!form.valid()) {
+            return false;
+        }
+        
+        alertMsg.confirm("确定提交么？", {
+            okCall : function() {
+                $.ajax({
+                    type: 'POST',
+                    url:form.attr("action"),
+                    data:form.serializeArray(),
+                    dataType:"json",
+                    cache: false,
+                    success: navTabAjaxDone,
+                    error: DWZ.ajaxError
+                });
+            }
+        });
+    }
+        
+    $(function() {
+        $("input[name=status]", $("#{$page_id}")).click(function(){
+            if($("#status_reject", $("#{$page_id}")).attr("checked")) {
+                $("#remark_tip", $("#{$page_id}")).text('驳回理由');
+                $("textarea[name=remark]", $("#{$page_id}")).addClass("required");
+            } else {
+                $("#remark_tip", $("#{$page_id}")).text('备注');
+                $("textarea[name=remark]", $("#{$page_id}")).removeClass("required");
+            }
+        });
+        
+        var options = "name:\"image[]\", id:\"image\", file_type:\"common\", required:true, resolution:\"thumb\"";
+        var options_detial = "name:\"image[]\", id:\"image_detail\", file_type:\"common\", required:true, resolution:\"odp\"";
+        <!--{if $card['image']}-->
+            options += ", image_name: \"{$card['image']}\"";
+            options_detial += ", image_name: \"{$card['image']}\"";
+        <!--{/if}-->
+        $("#image", $("#{$page_id}")).my_upload(eval("({" + options + "})"));
+        $("#image_detail", $("#{$page_id}")).my_upload(eval("({" + options_detial + "})"));
+
+        <!--{if $view}-->
+        // 所有的disabled
+        $("input", $("#{$page_id}")).each(function(){
+            $(this).attr("disabled", true);
+        });
+        $("textarea", $("#{$page_id}")).each(function(){
+            $(this).attr("disabled", true);
+        });
+        $("button", $("#{$page_id}")).each(function(){
+            $(this).attr("disabled", true);
+        });
+        $(".close", $("#{$page_id}")).attr("disabled", false);
+        
+        $("a[rel=image]", $("#{$page_id}")).fancybox();
+        <!--{/if}-->
+    });
+
+</script>

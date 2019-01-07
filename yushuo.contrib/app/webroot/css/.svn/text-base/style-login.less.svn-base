@@ -1,0 +1,17 @@
+@import "_bootstrap/_bootstrap.less";
+@import "_module/_login.less";
+
+body {
+  // background: url('/img/bg@2x.jpg') no-repeat 100% 100% #11283a;
+	// .background-size (100% 100%);
+  // background: -moz-linear-gradient(315deg, #798ba5,#575b73, #11283a);
+  // background: -webkit-linear-gradient(315deg, #798ba5,#575b73, #11283a);
+  // background: -webkit-gradient(linear, from(#798ba5), color-stop( #575b73), to(#11283a));
+  // background: -o-linear-gradient(315deg, #798ba5,#575b73, #11283a);
+  // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#798ba5', endColorstr='#11283a', GradientType=1);
+  background: #394165;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}

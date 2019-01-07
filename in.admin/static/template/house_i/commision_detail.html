@@ -1,0 +1,82 @@
+{eval $page_id='commision';}
+<div class="pageHeader" id="house_i_{$page_id}">
+    <form id="pagerForm" name="house_i_{$page_id}_form" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <input type="hidden" name="startDate" value="{$startDate}"/>
+        <input type="hidden" name="endDate" value="{$endDate}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    流水号
+                    </td>
+                    <td>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    </td>
+                    <td>
+                   	 日期：
+                   	 </td>
+                   	 <td><input type="text" name="startDate" value="{$startDate}" format="yyyy-MM-dd HH:mm:ss" class="date"/></td>
+                   	 <td>~</td> 
+                   	 <td><input type="text" name="endDate" value="{$endDate}" format="yyyy-MM-dd HH:mm:ss" class="date"/>
+                   	 </td>
+                   	 <td>
+                   	 手机号：
+                   	 </td>
+                   	 <td>
+                   	 <input type="text" name="cellphone" value="{$cell}" />
+                   	 </td>
+                   	 <td>
+                    <button type="submit">
+                        检索
+                    </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="{$page_id}">
+   
+    <table class="table" width="100%" layoutH="90" rel="{$page_id}">
+        <thead>
+            <tr>
+                <th width="5%">流水号</th>
+                <th width="5%">发生时间</th>
+                <th width="5%">经纪人</th>
+                <th width="5%">明细</th>
+                <th width="5%">发生金额</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>
+                	{$row['id']}
+                </td>
+                <td>
+                	{$row['dateline']}
+                </td>
+                 <td>
+                	{$row['cellphone_no']} ({$row['name']})
+                </td>
+                 <td>
+                	{echo $row['money'] > 0 ? "获取佣金(".$row['order_id'].")" : "提现";} 
+                </td>
+                <td>
+                	{$row['money']}
+                </td>
+            </tr>
+            <!--{/loop}-->
+            <tr>
+            <td colspan=5>
+            合计：佣金{echo intval($total_commision['total']);} 提现{echo intval($total_withdraw['total']);}
+            </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

@@ -1,0 +1,81 @@
+{eval $page_rel='pointticket_list';}
+<script type="text/javascript">
+function export_pointticket_code(json) {
+    try {
+        if(json.statusCode == 200) {
+            // 成功那么弹窗去处理导出
+            window.open("/pointticket/export_code/do/export/id/" + json.value.id);
+        } else {
+        	DWZ.ajaxDone(json);
+        }
+    } catch(e){alertMsg.error(e);}
+}
+</script>
+<div class="pageHeader" id="order_{$page_rel}">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    POI名称：
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="{$page_rel}">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="dialog" title="生成积分票" rel="pointticket_make" maxable="false" width="500" height="350" href="/pointticket/make"><span>生成</span></a>
+            </li>
+            <li>
+                <a class="edit" target="dialog" warn="请选择积分票" title="编辑积分票" rel="pointticket_edit" maxable="false" width="500" height="350" href="/pointticket/edit/id/<!--{{id}}-->"><span>编辑</span></a>
+            </li>
+            <li>
+                <a class="icon" callback="export_pointticket_code" target="ajaxTodo" title="您确定要导出积分票么？" href="{eval echo site_url(array('pointticket', 'export_code', 'id'))}/<!--{{id}}-->" warn="请选择要导出的积分票"><span>导出</span></a>
+            </li>
+            <li>
+                <a class="add" target="ajaxTodo" callback="DWZ.ajaxDone" warn="请选择积分票" title="您确定要标记为已打印？" href="{eval echo site_url(array('pointticket', 'printed', 'id'))}/<!--{{id}}-->"><span>标为已打印</span></a>
+            </li>
+            <li>
+                <a class="icon" target="ajaxTodo" callback="DWZ.ajaxDone" warn="请选择积分票" title="您确定要标记为已激活？" href="{eval echo site_url(array('pointticket', 'activated', 'id'))}/<!--{{id}}-->"><span>激活</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="30%">积分票编号</th>
+                <th width="20%">数量(张)</th>
+                <th width="10%">面值</th>
+                <th width="25%">绑定的POI</th>
+                <th width="15%">过期时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>
+                {$row['codeRange']}<!--{if $row['isActivated']}--><span class="tip_green">已激活</span><!--{/if}-->
+                </td>
+                <td>
+				{$row['num']}<!--{if $row['status']}--><span class="tip_grey">已打印</span><!--{/if}-->
+				</td>
+                <td>{$row['point']}</td>
+                <td>{$row['placename']}</td>
+                <td>{$row['expireDate']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

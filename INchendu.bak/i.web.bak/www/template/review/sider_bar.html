@@ -1,0 +1,44 @@
+<div class="sidebar">
+	<div class="panel" id="info-card">
+		<ul class="info-card">
+			<li class="title-info">
+				<a class="icon small"><img width="40" height="40" src="{$info[icon]}" alt="{$info[placename]}"><i></i></a>
+				<h3><a href="/place/{$info[placeId]}/">{$info[placename]}</a></h3>
+				<p class="stars-info">
+					<span class="ico-star-{$info[p_star]}"></span>
+				</p>
+			</li>
+			<li class="content">
+				<!--{if !empty($info[description])}-->
+				<p>
+					{$info[description]}
+				</p>
+				<!--{/if}-->
+				<!--{if !empty($info[address])}-->
+				<p>
+					<em>地址：</em>{$info[address]}
+				</p>
+				<!--{/if}-->
+				<!--{if !empty($info[tel])}-->
+				<p>
+					<em>电话：</em>{$info[tel]}
+				</p>
+				<!--{/if}-->
+			</li>
+			<li class="btn-area">
+				<a href="/place/{$info[placeId]}/" class="btn btn-success btn-large"><span>地点主页</span></a>
+			</li>
+		</ul>
+	</div>
+	<div class="panel" id="mapCon">
+		<div class="title">
+			<h4 class="font-yab">地图</h4>
+		</div>
+		<div class="content">
+			<div style="padding: 0 0 10px; text-align: center;">
+				<img src="http://st.map.soso.com/api?size=270*250&center={$info[longitude]},{$info[latitude]}&zoom=15&
+	markers={$info[longitude]},{$info[latitude]},green" width="270" height="250" border="0" />
+			</div>
+		</div>
+	</div>
+</div>

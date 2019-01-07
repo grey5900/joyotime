@@ -1,0 +1,35 @@
+.ad-banner-middle,.ad-banner-half{margin-bottom:20px;}
+.ad-banner-middle > div,.ad-banner > div{margin:0 auto !important;}
+.ad-banner,.ad-banner-middle{
+	margin-bottom:20px;
+}
+.ad-banner-half{
+	margin-left:-10px;
+	overflow:hidden;
+	zoom:1;
+	&> div{
+		width:495px;
+		float:left;
+		margin-left:10px !important;
+	}
+}
+*html .ad-banner-half{
+	div{
+		width:495px;
+		display:inline;
+		margin-left:10px !important;
+	}
+}
+.fixAd{
+	position:fixed;
+	i{
+		position:absolute;
+		right:0;
+		top:-15px;
+		cursor:pointer;
+	}
+	img{
+		width:100%;
+		height:100%;
+	}
+}

@@ -1,0 +1,220 @@
+<!--{template web/header}-->
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox">
+			<div class="main">
+				<div class="inner main-conter">
+					<div class="title">
+						<h3>创建优惠</h3>
+					</div>
+					<div class="from-detail">
+						<div class="hd">
+							<ul class="nav nav-tabs">
+								<!-- <li<!--{if !$info[type]}--> class="active"<!--{/if}--> id="lab_cur"><a href="javascript:;" id="cur_prefer">普通优惠</a></li>
+								<li<!--{if $info[type]}--> class="active"<!--{/if}--> id="lab_vip"><a href="javascript:;" id="vip_prefer">会员优惠</a></li> -->
+							</ul>
+						</div>
+						<form id="editprefer-form" class="form-frame" action="{$current_url}" method="post" novalidate="novalidate">
+							<input type="hidden" name="type" id="prefer_type" value="1" />
+							<input type="hidden" name="image" value="" id="new_image"/>
+							<input type="hidden" id="image_src" value="{$info[image_url]}" />
+							<input type="hidden" name="x1" value="0" id="x1" />
+							<input type="hidden" name="y1" value="0" id="y1" />
+							<input type="hidden" name="x2" value="360" id="x2" />
+							<input type="hidden" name="y2" value="227" id="y2" />
+							<input type="hidden" name="w" value="{$t_w}" id="w" />
+							<input type="hidden" name="h" value="{$t_h}" id="h" />
+							<div class="control-group">
+								<label class="control-label">图  片：</label>
+								<div class="controls">
+                  <a href="javascript:void(0);" class="slect-uploadify">
+                      <span></span>
+                      <input type="file" name="Filedata" id="uploader-pic" class="filePrew" onchange="upFile($(this));">
+                    </a>
+									<span class="help-block">提示：照片大小可以到2M。仅支持640×420像素的JPG，JPEG， GIF，PNG格式图像</span>
+									<div class="up-pic">
+										<div class="frame" id="div_upload_big">
+											<img src="{$info[image_url]}" width="360" />
+										</div>
+									</div>
+									<div class="show-pic">
+										<div id="preview" class="frame">
+											<img src="{$info[icon_url]}" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">标  题：</label>
+								<div class="controls">
+									<input class="input-xlarge text-input" type="text" name="title" value="{$info[title]}" id="title"/>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">优惠详情：</label>
+								<div class="controls">
+									<textarea id="detail" name="detail" class="input-xlarge" rows="3" cols="8" type="text">{$info[detail]}</textarea>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">有效期至 ：</label>
+								<div class="controls">
+									<input class="input-medium text-input" data-date-format="yyyy-mm-dd" type="text" name="endDate" id="endDate" value="{$info[endDate]}" size="16" readonly style="cursor:pointer;"/>
+								</div>
+							</div>
+							<div class="control-group">
+                <label class="control-label">&nbsp;</label>
+                <div class="controls">
+              <!--    <label class="checkbox"><input type="checkbox" name="isUnique" id="is-unique" value="1"<!--{if $info[isUnique]}--> checked="checked"<!--{/if}-->/> 只能获得一次?</label> -->
+                  <label class="checkbox"><input type="checkbox" name="lifeLimit" id="life-limit" value="1"<!--{if !isset($info[lifeLimit]) || !$info[lifeLimit]}--> checked="checked"<!--{/if}-->/> 可重复获取?</label>
+                </div>
+              </div>
+							<div class="control-group">
+								<label class="control-label">可使用次数：</label>
+								<div class="controls">
+									<input class="input-small text-input" type="text" name="frequencyLimit" value="{$info[frequencyLimit]}" id="frequencyLimit"/>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">适用店铺：</label>
+								<div class="controls">
+									<label class="checkbox"><input class="" type="checkbox" id="ctlAll" value="1"<!--{if $checkall}--> checked="checked"<!--{/if}-->/>全选</label>
+									<ul>
+									  <!--{loop $plist $k $v}-->
+									  <li>
+									    <label class="checkbox"><input class="places" type="checkbox" id="" name="prefer_places[]" value="{$v[id]}" data-name="{$v[placename]}"<!--{if isset($v[selected])}--> checked="checked"<!--{/if}-->/>{$v[placename]}</label>
+									  </li>
+									  <!--{/loop}-->
+									</ul>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">其他描述：</label>
+								<div class="controls">
+									<p><input type="text" class="input-xlarge text-input" id="desctitle" name="desctitle" value="{$info[descTitle]}"/></p>
+									<textarea id="description" name="description" class="input-xlarge" rows="3" cols="8" type="text">{$info[description]}</textarea>
+								</div>
+							</div>
+							<div id="alert" class="alert alert-error hide">
+                <!-- <button type="button" class="close" data-dismiss="alert">×</button> -->
+                <strong></strong>
+              </div>
+							<div class="from-actions">
+								<label class="control-label"></label>
+								<div class="controls">
+									<a class="jqModal btn btn-small">预览</a>
+									<input class="btn btn-primary" data-loading-text="　……　" type="submit" value="提交审核">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		 	<!--{template sider}-->
+		</div>
+	</div>
+</div>
+ <div id="view_M" class="modal-preview hide">
+  </div>
+<script type="text/javascript">
+	var previewShow = function(h){
+		//标题
+		var title = $("#title").val();
+		if(title != "")
+			h.w.find("#preview-title").html(title);
+		//详情页图片
+		var image = $("#image_src").val();
+		var new_img = $("#new_image").val();
+		if(new_img != "")
+			h.w.find("#preview-image").attr({src:"/data/img/"+new_img});
+		else if(image != "")
+			h.w.find("#preview-image").attr({src:image});
+		
+		//详情
+		var detail = $("#detail").val();
+		if(detail != "")
+			h.w.find("#preview-detail").html(detail);
+		//活动时间
+		var endDate = $("#endDate").val();
+		if(endDate != ""){
+			var beginDate = "即日起";
+			h.w.find("#preview-date").html(beginDate+" ~ "+endDate);
+		}
+		//其他详情
+		var desc_t = $("#desctitle").val();
+		var desc = $("#description").val();
+		if(desc_t != "" || desc != "")
+			h.w.find("#preview-desc").html("<p>"+desc_t+"</p>"+desc);
+		//适用地点
+		var dom = h.w.find('#preview-places');
+		dom.html("");
+		$("input[class=places]").each(function() {
+			if ($(this).attr("checked")) {
+				var dd = $("<dd></dd>").append($("<a></a>").attr({
+					style : "cursor:pointer;",
+					"class" : "allow"
+				}).append($("<span></span>").append($(this).attr("data-name"))));
+				//地点的地址信息
+				var addr = $("<div></div>").attr("class", "address");
+				$.get("/prefer/get_place_addr/"+$(this).val(), function(html){addr.append(html);});
+				dd.append(addr);
+				dom.append(dd);
+			}
+		});
+		
+	}
+	$('#view_M').jqm({
+		ajax:'/static/template/prefer/preview.html',
+		trigger:'a.jqModal',
+		onLoad:previewShow
+	});
+	function upFile(dom){
+		if($(dom).val() != ''){
+	    	$.ajaxFileUpload({
+		    	url:'/upload/0/?'+(new Date().getTime()),
+		    	secureuri:false,
+		    	fileElementId:'uploader-pic',
+		    	dataType:'json',
+		    	success:function(data, status){
+					$("#div_upload_big").html("");
+					$("#preview").html("");
+		    		if (data.code ==1) {
+              $("#messager").messager({message:data.msg});
+              $(".up-pic").hide();
+              $(".show-pic").hide();
+            } else if (data.code ==2) {
+              $("#messager").messager({message:data.msg});
+              $(".up-pic").hide();
+              $(".show-pic").hide();
+            }else{
+						$('#div_upload_big').append('<img width="360px" height="227" id="photo" src="'+data.src+'" />');
+						$('#preview').append('<img id="thumb" width="190px" height="139px" src="'+data.src+'"/>');
+						$("#photo").attr({src:data.src});
+						$("#thumb").attr({src:data.src});
+						$("#new_image").val(data.file);
+						$(".up-pic").show();
+						$(".show-pic").show();
+		    		}
+		    	}
+		    });
+    		$(dom).val('');
+		}
+	}
+	$(function(){
+		$("#ctlAll").on("change", function(){
+			$(".places").each(function(i){
+				var c = $("#ctlAll").attr("checked");
+				if(c)
+					$(this).attr("checked", c);
+				else
+					$(this).removeAttr("checked");
+			});
+		});
+		$("#endDate").datepicker({
+		  showMonthAfterYear: true, // 月在年之后显示      
+      numberOfMonths : 1, //显示几个月
+	    minDate: new Date({$year}, {$month}, {$day}, 0, 0)
+		});
+	});
+</script>
+<!--{template web/footer}-->

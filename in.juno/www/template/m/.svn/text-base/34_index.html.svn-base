@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>万圣节鬼混大爬梯！</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.3.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+			/*	background color	*/
+			.page {
+				background: #000;
+			}
+			#content .unit .box {
+				background: #1a2749;
+			}
+			.touchslider-viewport {
+				background: #fcadcd;
+			}
+			.box-db-left, .box-db-right {
+				background: #000;
+			}
+			.box-db .img img {
+				background: #fff;
+			}
+			/* font color  */
+			.unit-title {
+				color: #e98100;
+			}
+			#content .unit p {
+				color: #b2dbf9;
+			}
+			#content .statement p {
+				color: #b2dbf9;
+			}
+			.box-db-left, .box-db-right {
+				color: #5a146a;
+			}
+			.texts .info-group {
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+				color: #f56006;
+			}
+			.texts .inside p {
+
+			}
+			.bottons .botton span.title {
+				color: #fff;
+			}
+			.bottons .botton span.intro {
+				color: #fff;
+			}
+			.touchslider-item .touchslider-info {
+				color: #fff;
+			}
+			.multi-line dd span {
+				color: #b2dbf9;
+			}
+			.multi-line dd {
+				border-bottom: 0;
+			}
+			.multi-line .viewall a {
+				color: #e94083;
+			}
+			.multi-line .viewall a:hover {
+
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #666;
+				padding-top: 5px;
+			}
+			.touchslider-item img {
+				height: 190px;
+			}
+			.touchslider-nav-item {
+
+			}
+			.feed, .user {
+				border-bottom: 0;
+			}
+			.feed a:hover, .user a:hover {
+				border-bottom: 0;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+			}
+			#content .img-unit {
+				box-shadow: none;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/34/"><img border="0" src="http://icd.sc/img/m/34/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动简述</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+                    市面上充斥着趁着万圣节打广告的万圣节活动！有木有？化妆的都是雇的演员！有木有？和假鬼照了相都不知道......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    市面上充斥着趁着万圣节打广告的万圣节活动！有木有？化妆的都是雇的演员！有木有？和假鬼照了相都不知道万圣节是干嘛用的！有木有？从来没过过像样的万圣节！有木有？如果以上全都有，恭喜你，今年你可以过一个特殊有意义的万圣节啦！快来跟着小编的鬼步伐走起吧，推荐你最心水的万圣节鬼混圣地！
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动时间</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  2012.10.26-2012.11.4
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>参与方式</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  在“万圣夜神秘诡域”写下你最潮的“万圣节鬼混爬梯”新玩法，推荐你心中的万圣节鬼混胜地，推荐你最喜欢的商家“万圣节”促销优惠信息，均视为成功参与本次活动！
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动奖励</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+                  一等奖：价值120元太平洋咖啡340克榛子咖啡豆一包+IN成都定制水杯2个+抱枕一个；
+                  <br />
+                  二等奖：IN成都定制水杯2个+抱枕一个；
+                  <br />
+                  三等奖：IN成都定制水杯2个。
+                  <br />
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="unit-title">
+              <h3>活动地点</h3>
+            </div>
+            <div class="box">
+              <dl class="shrink">
+                <dd>
+                  <a href="inplace://317282">
+                  <div class="arrow">
+                    <span>万圣夜神秘诡域</span>
+                    <div class="address">
+                      最潮的“万圣节鬼混爬梯”新玩法
+                      <br />
+                    </div>
+                  </div> </a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="unit-title">
+              <h3>推荐活动</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://1153" class="arrow"> <span>1、  恶灵邀恶 末日狂欢！ </span>
+                    <div class="address">
+                      推荐地点：成都欢乐谷
+                      <br />
+                    </div> </a>
+                  </dd>
+                </dl>
+                <div class="expand">
+                  <div class="contr">
+                    <div class="photo"><img src="http://icd.sc/img/m/34/1.jpg" width="190"/>
+                    </div>
+                  </div>
+                  <div class="expand-simple">
+                    <p>
+                      7大恶灵狂欢表演，8大恶灵噬魂禁地，12大恶灵惊魂鬼屋，31夜恶灵梦工厂，300恶......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      7大恶灵狂欢表演，8大恶灵噬魂禁地，12大恶灵惊魂鬼屋，31夜恶灵梦工厂，300恶灵总动员，还可以现场化妆。每天前100名者免费送万圣恶魔眼镜一副。成都欢乐谷万圣欢乐节，每晚18：30邀您加入，够胆你就来…
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="box">
+              <div class="inside">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://317156" class="arrow"> <span>2、自己动手的文艺万圣节！</span>
+                    <div class="address">
+                      推荐地点：Friend's House
+                      <br />
+                    </div> </a>
+                  </dd>
+                </dl>
+                <div class="expand">
+                  <div class="contr">
+                    <div class="photo"><img src="http://icd.sc/img/m/34/2.jpg" width="190"/>
+                    </div>
+                  </div>
+                  <div class="expand-simple">
+                    <p>
+                      手工刻南瓜+烘焙南瓜派蝙蝠饼干+布置万圣节鬼屋+鬼片，这样的万圣节配置很洋气吧，店......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      手工刻南瓜+烘焙南瓜派蝙蝠饼干+布置万圣节鬼屋+鬼片，这样的万圣节配置很洋气吧，店家还希望每个人争取都刻一个南瓜灯，和捏出自己的幽灵饼干，这个过程很有趣也很消耗时间的，所以大家就边看鬼片，边聊天边捏幽灵饼干~
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="box">
+              <div class="inside">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://309030" class="arrow"> <span>3、红酒发烧狂欢！</span>
+                    <div class="address">
+                      推荐地点：醇度红酒吧
+                      <br />
+                    </div> </a>
+                  </dd>
+                </dl>
+                <div class="expand">
+                  <div class="contr">
+                    <div class="photo"><img src="http://icd.sc/img/m/34/3.jpg" width="190"/>
+                    </div>
+                  </div>
+                  <div class="expand-simple">
+                    <p>
+                      这里有各类地中海美食，加上超过100种覆盖全球所有红酒产区的美酒供Inner们选择！更......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      这里有各类地中海美食，加上超过100种覆盖全球所有红酒产区的美酒供Inner们选择！更疯狂的是万圣节的夜晚，店家的精选TAPAS全部免费，只需要你呼朋唤友，一桌购买1瓶248元以上的美酒即可享受啦！如果你还觉得不够疯狂，即刻穿上符合万圣节节日的盛装出席，店家更有惊喜礼物相送哦！！！
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="box">
+              <div class="inside">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://12534" class="arrow"> <span>4、串串店也是有万圣节爬梯的！</span>
+                    <div class="address">
+                      推荐地点：PollyHouse薄利好食
+                      <br />
+                    </div> </a>
+                  </dd>
+                </dl>
+                <div class="expand">
+                  <div class="contr">
+                    <div class="photo"><img src="http://icd.sc/img/m/34/4.jpg" width="190"/>
+                    </div>
+                  </div>
+                  <div class="expand-simple">
+                    <p>
+                      谁说串串店就没有活动搞？店家不仅搞，而且还要够搞！万圣节，店家准备把店里布置得让......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      谁说串串店就没有活动搞？店家不仅搞，而且还要够搞！万圣节，店家准备把店里布置得让Inner们耳目一新~下午有恐怖游戏玩儿，晚上有惊悚电影看，新品也会届时推出~持同学卡的福利Super升级，续杯，新品，爆米花，福利一样都不会少，前来消费的同学还可以随机抽奖一份哟！哈啰喂，来店即有惊喜！
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="box">
+              <div class="inside">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://317158" class="arrow"> <span>5、万圣节百鬼夜行闪电PARTY！</span>
+                    <div class="address">
+                      推荐地点：六楼后座
+                      <br />
+                    </div> </a>
+                  </dd>
+                </dl>
+                <div class="expand">
+                  <div class="contr">
+                    <div class="photo"><img src="http://icd.sc/img/m/34/5.jpg" width="190"/>
+                    </div>
+                  </div>
+                  <div class="expand-simple">
+                    <p>
+                      鬼节到！本月底去六楼后座度过一个不一样的halloween party吧!你有一群拖地死党你有偶......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      鬼节到！本月底去六楼后座度过一个不一样的halloween party吧!你有一群拖地死党你有偶尔睡眠不当或荷尔蒙问题，你有时像踩到狗屎有时也活得特别带劲儿，你想吃的蔬菜很容易可以吃到，你想喝的酒我们悄悄陪你，这里就是你的夜游园，多好啊是吧~ 最后，只要当天到店的你穿得够丧尸，更有店主特调的免费血浆酒畅饮！
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="box">
+              <div class="inside">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://312439" class="arrow"> <span>6、万圣节的丧失趴！</span>
+                    <div class="address">
+                      推荐地点：Jambo！
+                    </div> </a>
+                  </dd>
+                </dl>
+                <div class="expand">
+                  <div class="contr">
+                    <div class="photo"><img src="http://icd.sc/img/m/34/6.jpg" width="190"/>
+                    </div>
+                  </div>
+                  <div class="expand-simple">
+                    <p>
+                      什么神鬼，吸血鬼，早已不是什么你能看到或摸到的！也许世界末日后，你的他或她，瞬间......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      什么神鬼，吸血鬼，早已不是什么你能看到或摸到的！也许世界末日后，你的他或她，瞬间就转变成一具丧尸；怎么办！ 怎么办！？你敢不敢在万圣节这天，提前来Jambo!体验一盘。现场还有“丧尸”乐队的激情演出，零距离背投的丧尸电影，特调鸡尾酒只要20米哦！1特别注意事项：请参加者穿一件你已打算丢弃的衣服，好配合我们画妆师来把你瞬间变“丧尸”。如果甘愿被我们现场“丧尸”干掉的群众，你们只有交10元钱的被啃费（门票），同时也是为了惩罚你，并尊重我们演职人员的敬业精神。只接受抢座，不接受订座，当天没几个正常人，希望您理解。
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="box">
+              <div class="inside">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://8635" class="arrow"> <span>7、恐怖护士复仇之夜！</span>
+                    <div class="address">
+                      推荐地点：成都兰桂坊
+                      <br />
+                    </div> </a>
+                  </dd>
+                </dl>
+                <div class="expand">
+                  <div class="contr">
+                    <div class="photo"><img src="http://icd.sc/img/m/34/7.jpg" width="190"/>
+                    </div>
+                  </div>
+                  <div class="expand-simple">
+                    <p>
+                      传说中每个人都有其鬼灵精怪的一面，如果化身为魔界一员，你将会是哪一种？是《哈利•......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      传说中每个人都有其鬼灵精怪的一面，如果化身为魔界一员，你将会是哪一种？是《哈利•波特》中闻风丧胆的黑巫师伏地魔？还是《死神来了》中的掌握他人生杀大权的死神？是《画皮》中外表娇弱狠毒品虚伪的小唯，还是《鬼娃新娘》满脸伤痕、面目狰狞的邪恶鬼娃？想知道自己是什么鬼吗，想一起来感受鬼节狂欢吗？ 10月28至31日，万众期待的兰桂坊成都万圣狂欢即将震撼登场！在这为期四天的“恐怖护士复仇之夜”里，蛰伏了一年的妖魔鬼怪又将倾巢出动，兰桂坊又有百鬼横行！！
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="box">
+              <div class="inside">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://48298" class="arrow"> <span>8、城市Party Zone 万圣节红苹果之夜</span>
+                    <div class="address">
+                      推荐地点：成都东区音乐公园
+                      <br />
+                    </div> </a>
+                  </dd>
+                </dl>
+                <div class="expand">
+                  <div class="contr">
+                    <div class="photo"><img src="http://icd.sc/img/m/34/8.jpg" width="190"/>
+                    </div>
+                  </div>
+                  <div class="expand-simple">
+                    <p>
+                      万圣节的夜晚到成都东区音乐公园和电音一起狂欢吧！鬼魅的夜色，妖娆的舞姿，强势的电......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      万圣节的夜晚到成都东区音乐公园和电音一起狂欢吧！鬼魅的夜色，妖娆的舞姿，强势的电音，纵情的男女，温馨提醒，服装有要求哦：女士上装白色，下装不过膝短裙；男士上装白色，下装牛仔裤。万圣节，和着电音一起脱单吧！
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--{if isset($feed) && !empty($feed)}-->
+          <div class="unit card">
+            <div class="unit-title">
+              <h3>活动动态</h3>
+            </div>
+            <div class="box">
+              <div class="feeds">
+                <div class="feed">
+                  <a href="/event/feeds/{$event_id}/{$uid}/0/1">
+                  <div class="arrow">
+                    <div class="icon">
+                      <img src="{$feed[avatar]}"  width="40" height="40"/>
+                    </div>
+                    <div class="detail">
+                      <h4>{$feed[uname]}</h4>
+                      <!--{if $feed[type]==1}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        签到
+                      </div>
+                      <!--{elseif $feed[type]==2}-->
+                      <div class="action">
+                        点评
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="start">
+                        <!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}-->
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <!--{elseif $feed[type]==3}-->
+                      <div class="action">
+                        在
+                      </div>
+                      <div class="place">
+                        {$feed[placename]}
+                      </div>
+                      <div class="action">
+                        上传照片
+                      </div>
+                      <div class="info">
+                        {$feed[content]}
+                      </div>
+                      <div class="photo"><img src="{$feed[photoName]}" width="200" />
+                      </div>
+                      <!--{/if}-->
+                    </div>
+                  </div> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--{/if}-->
+
+          <!--{if isset($joines) && !empty($joines)}-->
+          <div class="unit user-list">
+            <div class="unit-title">
+              <h3>您有{$count_joines}位好友参加了该活动</h3>
+            </div>
+            <div class="box">
+              <a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+              <ul class="user-list">
+                <!--{loop $joines $uid $u}-->
+                <li><img src="{$u[avatar]}" />
+                </li>
+                <!--{/loop}-->
+              </ul> </a>
+            </div>
+          </div>
+          <!--{/if}-->
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong>
+                <br />
+                1.活动奖励提供最优质信息用户前三名。
+                <br />
+                2.互动结束后，次日公布获奖名单，随时关注小in动态。
+                <br />
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				})
+				$(".touchslider").touchSlider({
+					mouseTouch : true,
+				});
+			})
+    </script>
+  </body>
+</html>

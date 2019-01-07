@@ -1,0 +1,16 @@
+		<div class="channel-nav">
+				<h1 class="tit nav-bg">{$title}</h1>
+				<div class="col">
+					<a class="nav-bg<!--{echo $m=='index'?' on':''}-->" href="http://{$channel_domain}"><span class="ico home"></span>首页</a>
+					<!--{loop $sub_cate $key=>$value}-->
+					<a class="nav-bg<!--{echo $key==$id?' on':''}-->" {if $value['link']!=''}target="_blank" href="{$value['link']}"{elseif $value['tag_count']}href="/category/{$key}"{else}href="/nlist/{$key}"{/if}><span class="ico channel-nav-{$key}"></span>{$value['catName']}</a>
+					<!--{/loop}-->
+				</div>
+				<div class="tag">
+				<!--{loop $lil_cate $kk $t}-->
+				<a {if $t['link']}href="{$t['link']}" target="_blank"{elseif $t['tag_count']}href="/category/{$kk}"{else}href="/nlist/{$kk}"{/if}>{$t['catName']}</a>
+				<!--{/loop}-->
+					
+				</div>
+				<div class="service"></div>
+			</div>

@@ -1,0 +1,11 @@
+<!--{if $banner_middle_ad7}-->
+<style type="text/css">
+	.ad-banner-middle{margin-bottom:20px;}
+	.ad-banner-middle > div{margin:0 auto}
+</style>
+{loop $banner_middle_ad7 $k_b_m_a $b_m_a}
+<div id="a_b_m_{$k_b_m_a}" class="ad-banner-middle">
+    {$b_m_a['description']}
+</div>
+{/loop}
+<!--{/if}-->

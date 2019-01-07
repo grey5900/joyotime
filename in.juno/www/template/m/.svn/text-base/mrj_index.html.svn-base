@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>越‘冻’越美丽，成都全搜索第二届美容节</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.5.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+      /*  background color  */
+      .page {
+        background:#f4ecd8;
+      }
+      #content .unit .box {
+        background: #fff;
+      }
+      .touchslider-viewport {
+        background: #fff;
+      }
+      #content .unit .inside .section {
+        border-bottom: 1px solid #c8c8c8;
+      }
+      /* font color  */
+      .unit-title {
+        color: #c76200;
+      }
+      #content .unit p {
+        color: #4d4e4c;
+      }
+      #content .statement p {
+        color: #666;
+      }
+      #content .statement strong {
+        color: #000;
+      }
+      .box-db-left, .box-db-right {
+        color: #5a146a;
+      }
+      .texts .info-group {
+        color: #0c425c;
+        border-bottom: 1px dotted #e1d5c5;
+      }
+      .texts .inside strong {
+        color: #a20000;
+      }
+      .texts .inside em {
+        color: #5ba81c;
+      }
+      .texts .inside p {
+
+      }
+      .bottons .botton span.title {
+      }
+      .bottons .botton span.intro {
+
+      }
+      .touchslider-item .touchslider-info {
+        color: #fff;
+      }
+      .multi-line dd {
+        border: 0;
+      }
+      .multi-line dd span {
+        color: #666;
+      }
+      .multi-line dd .photo {
+        clear: both;
+        text-align: center;
+      }
+      .multi-line .viewall a {
+        color: #5ba81c;
+      }
+      .multi-line .viewall a:hover {
+
+      }
+      .multi-line .address {
+        font-size: 12px;
+        color: #666;
+        padding-top: 5px;
+      }
+      .touchslider-item img {
+        height: 290px;
+      }
+      .touchslider-nav-item {
+
+      }
+      .feed, .user {
+        border-bottom: 0;
+      }
+      .feed a:hover, .user a:hover {
+        border-bottom: 0;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+      }
+      #content .unit .mid {
+        border-top:1px solid #eee;
+        padding:20px 0 10px 0;
+      }
+      .wb-join{
+        display: inline-block;
+        width: 87px;
+        height: 21px;
+        background: url("http://icd.sc/img/m/jdb/jn.png") no-repeat;
+        float: right;
+        background-size: 87px 21px;
+      }
+      .dl-tit {
+        background: url("http://icd.sc/img/m/jdb/jdb.jpg") no-repeat;
+        padding-left: 65px;
+        background-size: 62.5px 25px;
+        line-height: 25px;
+        border-bottom: 2px solid #EEE;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+      .s-name {
+        margin: 5px 0;
+        color: #010101;
+      }
+      .s-name .tl {
+        background: #a20000;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        text-align: center;
+      }
+      .s-content {
+        display: inline-block;
+      }
+      .s-content img {
+        float: left;
+        margin-right:10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/35/"><img border="0" src="http://icd.sc/img/m/mrj/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动说明</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+成都全搜索第二届美容节”已经开幕啦！只要你爱美、想变美，都可以前来报名参加。Inner们在12月8日—9日在万达广场签到并点评带上#美容节#的关键字即可到现场领取精美奖品一份并可以参加现场......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    成都全搜索第二届美容节”已经开幕啦！只要你爱美、想变美，都可以前来报名参加。Inner们在12月8日—9日在万达广场签到并点评带上#美容节#的关键字即可到现场领取精美奖品一份并可以参加现场抽奖活动，价值15万元赴韩整形和价值10万成美大奖等着你哦！
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit multi-line">
+            <div class="unit-title">
+              <h3>活动地点</h3>
+            </div>
+            <div class="box">
+              <dl>
+                <dd>
+                  <a href="inplace://10812">
+                  <div class="arrow">
+                    <span>万达广场（新成仁路口） </span>
+                    <div class="address">
+                      锦江区二环路东五段锦华路8号
+                    </div>
+                  </div> 
+                  </a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>美容节活动亮点</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+                  1.【线上线下实惠享不停】<br />
+     线上超优惠整形项目秒杀抢购，线下整形项目、洁牙、进口面膜免费抽取<br />
+  2.【权威专家免费咨询】......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                                        1.【线上线下实惠享不停】<br />
+   线上超优惠整形项目秒杀抢购，线下整形项目、洁牙、进口面膜免费抽取<br />
+2.【权威专家免费咨询】<br />
+   成美、汉密尔顿美容整形医院权威专家现场坐诊，免费咨询，免费有趣的小讲堂，让你学会如何求美、变美<br />
+3.【整形项目0元起拍】<br />
+   多个热门整形项目，只需0元起拍，拍到即赚到<br />
+4.【迷惑双眼的真人秀】<br />
+   整形美女0距离接触，猜猜她们都做了什么改动<br />
+5.【美女现场走秀】<br />
+   亮眼美女走秀，感受美丽为冬日带来的温暖
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动一：参与美容节，赢取免费整形</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <div class="section">
+                  <p><strong>奖品设置：</strong><br />
+                   一等奖：价值15万赴韩整形美容，包含来往机票、住宿、韩国接送机和韩文翻译、手术及药品费用。<br />
+  二等奖：价值10万成美面部整形美容，包含典娜美鼻一次（价值60000元），美派美眸一次（价值11800元），明星减龄站项目（价值18000元），黑脸娃娃一疗程（价值6000元），瘦脸针一次（价值6000元），总共价值101800元。<br />
+  <em>报名时间：</em>即日起12月8日<br />
+  <em>现场抽奖时间：</em>12月8日和9日<br />
+  <em>现场活动地址：</em>锦江区二环路东五段锦华路8号
+                  </p>
+                </div>
+                <div class="section">
+                  <p>
+                    <strong>参与方式：</strong><br />
+      1.登录美容节专题报名，即可获得一次抽奖机会，报名网址：http://beauty.chengdu.cn。<br />
+    2.加入成都全搜索美容节QQ群：180994281，私信群主，即可获取一次抽奖机会。<br />
+    3.微博转发#成都全搜索第二届美容节# ，并@三位好友，再@健康成都网，即可获取一次抽奖机会，转发次数越多，获取抽奖机会越多。<br />
+    4.IN成都美容节活动页面报名，即可获得一次抽奖机会。<br />
+  <em>备注：</em>，如在成都全搜索美容节专题页面报名一次，并成功转发微博，即可获得两个抽奖码，这样中奖几率将会大大提高。
+                  </p>
+                </div>
+                <p>
+                 <strong> 温馨提示</strong><br />
+    成都全搜索美容节已经开通了QQ咨询群：180994281，中韩权威专家、超级美容达人、资深美容编辑将在线为你答疑，如果你渴望蝶变，渴望变美，快快加入“成都全搜索美容”群，隆鼻、双眼皮、祛眼袋、无创注射、抗衰除皱、美体塑形……无限惊喜等你来！
+  
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动二：报名有礼</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <p>
+                  <strong>活动奖品：</strong>
+                </p>
+                <ul>
+                  <li><img src="http://icd.sc/img/m/mrj/j1.jpg" width="87" /></li>
+                  <li><img src="http://icd.sc/img/m/mrj/j2.jpg" width="87" /></li>
+                  <li><img src="http://icd.sc/img/m/mrj/j3.jpg" width="87" /></li>
+                </ul>
+                <div class="expand-simple">
+                  <p>
+                    报名时间：即日起12月8日<br />
+                  现场领奖时间：12月8日和9日<br />
+                  现场领奖地址：锦江区二环路东五段锦华路8号
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    <p>
+                    报名时间：即日起12月8日<br />
+                  现场领奖时间：12月8日和9日<br />
+                  现场领奖地址：万达广场（新成仁路口）<br /><br />
+                  <strong>参与方式：</strong><br />
+    1.参与美容节活动，登录美容节专题报名，即可领取一件礼品，报名网址：http://beauty.chengdu.cn<br />
+ 2.微博转发#成都全搜索第二届美容节# ，并@三位好友，再@健康成都网，即可现场领取礼品一份，转发次数越多，领取的礼品也就越多。<br />
+  3.登陆IN成都美容节活动页面报名，即可领取礼品一份。
+                  </p>
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          
+         <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动三：线上促销  八大美丽项目“享”不停</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <div class="s-name">
+                    <h3><div class="tl">1</div> 3D黄金眼 预见你的蜕变</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/1.jpg" width="132px" />
+                    <p>仅128元尊享原价1980元汉密尔顿美容医院黄金眼3D整形设计系统项目！全球顶尖3D整形设计系统，引领整形美容进入数字化时代，美丽从此不再盲目！<br />咨询预约电话： 028-85143822 4006-100-333</p>
+                  </div>
+                </div>
+                <div class="expand-more">
+                  <div class="s-name">
+                    <h3><div class="tl">1</div> 3D黄金眼 预见你的蜕变</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/1.jpg" width="132px" />
+                    <p>仅128元尊享原价1980元汉密尔顿美容医院黄金眼3D整形设计系统项目！全球顶尖3D整形设计系统，引领整形美容进入数字化时代，美丽从此不再盲目！<br />咨询预约电话： 028-85143822 4006-100-333</p>
+                  </div>
+                  <div class="s-name">
+                    <h3><div class="tl">2</div> 创美韩式名品鼻 只需3万元</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/2.jpg" width="132px" />
+                    <p>韩国巴诺巴奇整形医院首次开团，仅此美容节通道享受优惠价！以下整形折扣只需登录成都全搜索网站美容节专题报名，并到成都全搜索网站预交30%诚意金即可享受！<br />咨询预约电话：028－86007213</p>
+                  </div>
+                  <div class="s-name">
+                    <h3><div class="tl">3</div> 典娜美鼻灵 仅5500元</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/3.jpg" width="132px" />
+                    <p>仅需5500元即尊享原价9000元成都美容整形医院膨体隆鼻项目，国际顶尖隆鼻技术，一小时塑造您专属的立体美鼻，永久自然！<br />咨询预约电话：028－65556999</p>
+                  </div>
+                  <div class="s-name">
+                    <h3><div class="tl">4</div> 韩式媚眼 首次开团</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/4.jpg" width="132px" />
+                    <p>媚眼新生，宛若天生。韩国巴诺巴奇整形医院首次开团，仅此通道享受优惠价！以下整形折扣只需登录成都全搜索美容节专题报名，并到成都全搜索网站预交30%诚意金即可享受！<br />咨询预约电话：028－86007213</p>
+                  </div>
+                  <div class="s-name">
+                    <h3><div class="tl">5</div> 精细无痕祛眼袋</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/5.jpg" width="132px" />
+                    <p>  让你年轻十岁的秘密，精细无痕祛眼袋 ，仅需2500元即可尊享原价4000元成都美容整形医院自然无痕祛眼袋项目， 平整紧致，眼部青春再现！<br />咨询预约电话：028－65556999</p>
+                  </div>
+                  <div class="s-name">
+                    <h3><div class="tl">6</div> 点阵激光缩毛孔</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/6.jpg" width="132px" />
+                    <p>  仅800元即可尊享原价3000元成都美容整形医院点阵激光缩毛孔（限T区）项目，消灭粗大毛孔，紧致细腻肌肤，让你的肌肤如牛奶般润泽！<br />咨询预约电话：028－65556999</p>
+                  </div>
+                  <div class="s-name">
+                    <h3><div class="tl">7</div> 激光去痣</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/7.jpg" width="132px" />
+                    <p>只要10元/颗<br />
+  安全去痣，让你的皮肤光洁如玉，仅需10元即可尊享原价100元成都美容整形医院激光去痣项目，不分大小，统统10元每颗，成都全搜索第二届美容节特别礼献！<br />咨询预约电话：028－65556999
+</p>
+                  </div>
+                  <div class="s-name">
+                    <h3><div class="tl">8</div> 韩国3D面膜</h3>
+                  </div>
+                  <div class="s-content">
+                    <img src="http://icd.sc/img/m/mrj/8.jpg" width="132px" />
+                    <p>限时特供、仅在韩国乐天免税店有售的纯进口韩国巴诺巴奇医院研发的3D面膜，原价28.8元/片，现仅售15.8元/片，美白、保湿、抗衰老、祛痘四款面膜，满足你的不同改善需求，打造秋冬Q弹肌肤，从现在开始！10片包邮，存货有限，速抢购！</p>
+                  </div>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="unit texts">
+            <div class="statement">
+              <p>
+                <strong>特别说明：</strong><br />
+1.用户需登陆美容节专题进行购买，购买网址：http://beauty.chengdu.cn<br />
+2.本项目属整形设计项目，效果因个体差异而异，建议先咨询医院医师<br />
+3.咨询电话：028－86007167 86007213
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+     <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$(".expand").each(function() {
+          $(this).on("click", function() {
+            $(this).toggleClass("on");
+          });
+      });
+      $("#txl1").each(function() {
+          $("#txl1 > dd:gt(1)").hide();
+          $("#txa1").click(function() {
+            $("#txs1").toggle();
+            $("#txl1 > dd:gt(1)").toggle();
+          });
+        });
+			})
+    </script>
+  </body>
+</html>

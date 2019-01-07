@@ -1,0 +1,60 @@
+<!--{template web/header}-->
+<div class="container" id="container">
+	<div class="article">
+		<div class="main">
+			<div class="main-box">
+				<div class="topic">
+					<h1><a href="/user/{$info[uid]}/">{$info[uname]}</a>在<a href="/place/{$info[placeId]}/">{$info[placename]}</a>的照片</h1>
+				</div>
+				<div class="review-content" id="review-content">
+					<div class="who-review">
+						<div class="personal-icon">
+							<a href="/user/{$info[uid]}/" class="avatar large"><img width="60" height="60" src="{$info[avatar]}" alt="{$info[uname]}" /><i></i></a>
+						</div>
+						<div class="detail">
+							<h3><a href="/user/{$info[uid]}/">{$info[uname]}</a><i class="ico-approve">LV{$user_lv}</i></h3>
+							<div class="review-time">
+								{$info[createDate]}
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						<div class="review-photo">
+							<img src="{$info[original_photo]}" alt="{$info[content]}" />
+							<div class="photonav">
+								<a{if $page_arr['prev']} href="/review/{$page_arr['prev']}/#review-content"{/if} class="prev{if !$page_arr['prev']} disabled{/if}" hidefocus="true">&lt;</a>
+								<a{if $page_arr['next']} href="/review/{$page_arr['next']}/#review-content"{/if} class="next{if !$page_arr['next']} disabled{/if}" hidefocus="true">&gt;</a>
+							</div>
+						</div>
+						<div class="review-photo-original"><a href="{$info[original_photo]}" target="_blank">查看原图</a></div>
+						<!--{if !empty($info[content])}-->
+						<p class="text-detail">
+							{$info[content]}
+						</p>
+						<!--{/if}-->
+					</div>
+					<div id="posts-action">
+						<!--{template action}-->
+					</div>
+					<div class="cover-page">
+						<div id="slider-photo">
+							<a{if $page_arr['prev']} href="/review/{$page_arr['prev']}/"{else} class="disabled"{/if} id="prev">&lt;</a>
+							<ul class="thumb_list">
+								<!--{loop $page_arr['list'] $k $page}-->
+								<li{if !empty($page['class'])} class="{$page['class']}"{/if}><a href="/review/{$page['id']}/"><img width="80" height="80" src="{$page['thumb']}" alt="" /></a></li>
+								<!--{/loop}-->
+							</ul>
+							<a{if $page_arr['next']} href="/review/{$page_arr['next']}/"{else} class="disabled"{/if} id="next">&gt;</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--{template reply}-->
+		</div>
+		<!--{template sider_bar}-->
+	</div>
+</div>
+<!--{template function}-->
+<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+
+<!--{template web/footer}-->

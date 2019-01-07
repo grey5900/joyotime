@@ -1,0 +1,63 @@
+<div class="pageHeader">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                        <option<!--{if $type == 'name'}--> selected<!--{/if}--> value="name">名称</option>
+                        <option<!--{if $type == 'id'}--> selected<!--{/if}--> value="id">ID</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="brand_index">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="navTab" title="添加品牌" rel="{eval echo build_rel(array('brand', 'add'))}" href="{eval echo site_url(array('brand', 'add'))}"><span>添加</span></a>
+            </li>
+            <li>
+                <a class="edit" target="navTab" warn="请选择修改的品牌" title="修改品牌" rel="{eval echo build_rel(array('brand', 'add'))}" href="{eval echo site_url(array('brand', 'edit', 'id'))}/<!--{{id}}-->"><span>编辑</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="128">
+        <thead>
+            <tr>
+                <th width="10%">ID</th>
+                <th width="40%">名称名</th>
+                <th width="10%">POI数</th>
+                <th width="10%">店长</th>
+                <th width="10%">状态</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>
+                    {$row['name']}
+                </td>
+                <td>{$row['placeCount']} <a href="javascript:;" onclick="$.pdialog.open('{eval echo site_url(array('brand', 'related_place', 'id', $row['id']))}', 'view_related_place', '查看品牌关联地点', {width:'500',height:'300',maxable:false});">查看 </a></td>
+                <td width="10%">{$row['uname']}</td>
+                <td>
+                {eval echo $row['status'] ? "停用":"启用";}</td>
+               <!--    {if empty($row['status'])}<span class="tip_red">认证</span>{/if}   -->
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

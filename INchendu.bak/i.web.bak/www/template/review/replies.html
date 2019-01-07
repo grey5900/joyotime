@@ -1,0 +1,13 @@
+<ul class="list-reply">
+	<!--{loop $list $k $v}-->
+	<li>
+		<a href="/user/{$v[uid]}/" class="avatar small"><i></i><img width="40" height="40" src="{$v[avatar]}" alt=""></a>
+		<a href="/user/{$v[uid]}/">{$v[s_name]}</a><!-- {if !empty({$v[replyUid]})} -->回复<a href="/user/{$v[replyUid]}">{$v[r_name]}</a><!-- {/if} -->：{$v[content]}
+		<p class="action">
+			<a href="javascript:void(0)" class="reply_to" data-rid="{$k}" data-pid="{$v[postId]}">回复</a><!-- | <a href="javascript:void(0)" class="reply_delete" data-uid="{$v[uid]}">删除</a>  -->
+			<span>{$v[createDate]}</span>
+		</p>
+	</li>
+	<!--{/loop}-->
+</ul>
+<!--{$paginate}-->

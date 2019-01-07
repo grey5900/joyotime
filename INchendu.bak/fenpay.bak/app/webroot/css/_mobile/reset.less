@@ -1,0 +1,355 @@
+//
+// Reset CSS
+// 
+// --------------------------------------------------
+* {
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  outline: none;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+html {
+  font-size: 100%;
+}
+html,
+button,
+input,
+select,
+textarea {
+    color: #666;
+}
+body {
+  font: normal 100% Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  background: repeat scroll 0 0 #f5f5f5;
+}
+
+a {
+    color: #666;
+    font-size: 1em;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-drag: none;
+}
+
+a:visited {
+    color: #666;
+}
+
+a:hover {
+    color: #666;
+}
+span {
+  font-size: 1em;
+}
+h1 {
+  font-size: 1.5em;
+  color: #666;
+}
+h2 {
+  font-size: 1.75em;
+}
+h3 {
+  font-size: 1em;
+}
+p {
+  font-size: 1em;
+  line-height: 21px;
+  color: #333;
+}
+em {
+  font-style: normal;
+}
+body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+li {
+  list-style: none;
+}
+/* ==========================================================================
+   helper
+   ========================================================================== */
+
+// 黑体
+// --------
+.cleartype() {
+  font-family: 'Microsoft YaHei','Hiragino Sans GB',Arial,sans-serif;
+}
+// 闭合浮动
+//---------
+.clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: block;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+// 隐藏
+//---------
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+// icons
+//---------
+.undone {
+  display:inline-block;
+  padding: 1px;
+  margin: 0;
+  min-height: 12px;
+  font-size: 0.625em;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  .border-radius(50px);
+  width: 40px;
+  .doneColor();
+}
+
+.arrow {
+  background-image: url('/static/m_img/arrow.png');
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  -moz-background-size:7px 12px;
+  -webkit-background-size:7px 12px;
+  -o-background-size:7px 12px;
+  background-size:7px 12px;
+}
+
+.dotted {
+  background: url('/static/m_img/dotted.jpg') repeat-x scroll 0 bottom transparent;
+}
+.doneColor {
+  background-color: #f04747;
+  color: #fff;
+}
+
+/* Overthrow CSS:
+   Enable overflow: auto on elements with overthrow class when html element has overthrow class too */
+.overthrow-enabled .overthrow {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+// 盒子
+//------
+
+.boxer {
+  border: 1px solid #e6e8e8~"\9";
+  background: #ffffff;
+  margin: 10px;
+  .border-radius(4px);
+  .box-shadow(0 1px 1px rgba(62,68,68,.25));
+}
+.space {
+  margin: 0 10px;
+  padding: 10px 0;
+}
+// css3
+//-------
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+    -moz-box-shadow: @shadow;
+      -ms-box-shadow: @shadow;
+        box-shadow: @shadow;
+}
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+      -ms-border-radius: @radius;
+          border-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
+   -webkit-border-bottom-left-radius: @radius;
+   -webkit-border-bottom-right-radius: @radius;
+}
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
+   -webkit-border-top-right-radius: @radius;
+   -webkit-border-top-left-radius: @radius;
+}
+.vertical(@startColor: #f9f9f9, @endColor: #f1f1f1) {
+  background-color: mix(@startColor, @endColor, 60%);
+  background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+  background-image: linear-gradient(top, @startColor, @endColor); // Standard, IE10
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down
+}
+.transform(@radius) {
+  -webkit-transform:@radius;
+  -o-transform:@radius;
+  -moz-transform:@radius;
+  -ms-transform:@radius;
+  transform:@radius;
+}
+.backface-visibility(@radius) {
+  -webkit-backface-visibility:@radius;
+  -moz-backface-visibility:@radius;
+  -ms-backface-visibility:@radius;
+  -o-backface-visibility:@radius;
+  backface-visibility:@radius;
+}
+.transition-duration(@radius){
+  -webkit-transition-duration:@radius;
+  -moz-transition-duration:@radius;
+  -o-transition-duration:@radius;
+  -ms-transition-duration:@radius;
+  transition-duration:@radius;
+}
+.transition-timing-function(@radius){
+  -webkit-transition-timing-function:@radius;
+  -moz-transition-timing-function:@radius;
+  -o-transition-timing-function:@radius;
+  -ms-transition-timing-function:@radius;
+  transition-timing-function:@radius;
+}
+.transform(@radius){
+  -webkit-transform:@radius;
+  -moz-transform:@radius;
+  -ms-transform:@radius;
+  -o-transform:@radius;
+  transform:@radius;
+}
+.reset-filter() {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+// User select
+// 内容的可选择性
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})"; // IE8
+}
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+// 渐变
+//--------
+#gradient {
+  .horizontal(@startColor: #555, @endColor: #333) {
+    background-color: @endColor;
+    background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(to right, @startColor, @endColor); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@startColor),argb(@endColor))); // IE9 and down
+  }
+  .vertical(@startColor: #555, @endColor: #333) {
+    background-color: mix(@startColor, @endColor, 60%);
+    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(top, @startColor, @endColor); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down
+  }
+  .directional(@startColor: #555, @endColor: #333, @deg: 45deg) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(@deg, @startColor, @endColor); // FF 3.6+
+    background-image: -webkit-linear-gradient(@deg, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(@deg, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(@deg, @startColor, @endColor); // Standard, IE10
+  }
+  .vertical-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+    background-color: mix(@midColor, @endColor, 80%);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);
+    background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+  .radial(@innerColor: #555, @outerColor: #333) {
+    background-color: @outerColor;
+    background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@innerColor), to(@outerColor));
+    background-image: -webkit-radial-gradient(circle, @innerColor, @outerColor);
+    background-image: -moz-radial-gradient(circle, @innerColor, @outerColor);
+    background-image: -o-radial-gradient(circle, @innerColor, @outerColor);
+    background-repeat: no-repeat;
+  }
+  .striped(@color: #555, @angle: 45deg) {
+    background-color: @color;
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  }
+}
+// Reset filters for IE
+.reset-filter() {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+// Button backgrounds
+// ------------------
+.buttonBackground(@startColor, @endColor, @text-color: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+  color: @text-color;
+  text-shadow: @textShadow;
+  -webkit-font-smoothing: antialiased; 
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  #gradient > .vertical(@startColor, @endColor);
+  .reset-filter();
+  .user-select(none);
+  .box-sizing(broder-box);
+  &:active, &.active, &.disabled, &[disabled] {
+    color: @text-color;
+    background-color: @endColor;
+  }
+  &:active,
+  &.active {
+    background-color: darken(@endColor, 10%) e("\9");
+  }
+}
+

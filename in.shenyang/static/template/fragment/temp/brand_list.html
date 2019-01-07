@@ -1,0 +1,20 @@
+<div class="rcom">
+	<div class="tit nav-bg">
+		<!--{if $frag[rule][jump_link]}--><div class="more icon"><a href="{$frag[rule][jump_link]}" target="_blank">更多</a></div><!--{/if}-->{$frag[rule][name]}
+	</div>
+	<div class="con ico">
+		<ul class="list-img3">
+		<!--{loop $list $o $v}-->
+			<li>
+				<a href="{$v[link]}" title="{$v[summary]}" target="_blank">
+					<img src="{$v[image]}" {if $frag[rule][pic_size][0]}width="{$frag[rule][pic_size][0]}"{/if} {if $frag[rule][pic_size][1]}height="{$frag[rule][pic_size][1]}"{/if} alt="{$v[title]}" />
+					<b></b>
+					<h3>{$v[title]}</h3>
+				</a>
+			</li>
+		<!--{/loop}-->
+		</ul>
+		<div class="blank5"></div>
+	</div>
+</div>
+<div class="blank20 boxyy"></div>

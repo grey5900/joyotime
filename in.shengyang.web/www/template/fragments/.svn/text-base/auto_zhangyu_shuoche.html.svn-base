@@ -1,0 +1,19 @@
+{if $v3_fragments['v3_auto_zhangyu_shuo']}
+<div class="module zysc">
+					<div class="hd">
+						<h2>{$v3_fragments['v3_auto_zhangyu_shuo']['frag']['name']}</h2>
+						{if $v3_fragments['v3_auto_zhangyu_shuo']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_auto_zhangyu_shuo']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+					</div>
+					{eval $shuoche = $v3_fragments['v3_auto_zhangyu_shuo']['data'][0];}
+					<div class="con">
+						<div class="img">
+							<img src="{$shuoche['image']}" alt="" />
+							<div class="caption">{$shuoche['extraData']['subtitle'][data]}</div>
+						</div>
+						<div class="info">
+							<h3><a href="{$shuoche['link']}" target="_blank">{$shuoche['title']}</a></h3>
+							<p>{$shuoche['summary']} <a href="{$shuoche['link']}" target="_blank">[查看详情]</a></p>
+						</div>
+					</div>
+				</div>
+				{/if}

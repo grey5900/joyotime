@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="zh_cn" name="language">
+		<title>其他说明</title>
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}">
+		<script type="text/javascript" src="/static/js/jquery.min.js?{$version}"></script>
+	</head>
+	<body>
+		<div id="container">
+			<div class="container">
+				<div class="lumps">
+					<div class="lump">
+						<div class="item">
+							<div class="item-content">
+								<ul class="rounded">
+									<li>
+										<div class="tit">
+											被邀请入驻IN沈阳
+										</div>
+										<span>（30）</span>
+									</li>
+									<li>
+										<div class="tit">
+											地点报错被确认
+										</div>
+										<span>（50）</span>
+									</li>
+									<li>
+										<div class="tit">
+											创建地点
+										</div>
+										<span>（50）</span>
+									</li>
+									<li>
+										<div class="tit">
+											意见反馈被采纳
+										</div>
+										<span>（100）</span>
+									</li>
+									<li>
+										<div class="tit">
+											发布的内容被屏蔽
+										</div>
+										<span>（-50）</span>
+									</li>
+									<li>
+										<div class="tit">
+											账号被屏蔽
+										</div>
+										<span>（-500）</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

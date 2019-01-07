@@ -1,0 +1,60 @@
+{eval $page_rel='event_show_tab';}
+<form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this, '{$page_rel}');">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+</form>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="navTab" title="添加新活动" rel="{eval echo build_rel(array('event', 'add'))}" href="{eval echo site_url(array('event', 'add'))}"><span>添加新活动</span></a>
+            </li>
+            <li>
+                <a class="edit" target="navTab" warn="请选择活动" title="编辑活动" rel="{eval echo build_rel(array('event', 'add'))}" href="{eval echo site_url(array('event', 'edit', 'id'))}/<!--{{id}}-->"><span>编辑</span></a>
+            </li>
+            <li>
+                <a class="edit" target="dialog" warn="请选择活动" title="修改排序值" rel="{eval echo build_rel(array('event', 'modify_rank'))}" href="{eval echo site_url(array('event', 'modify_rank', 'id'))}/<!--{{id}}-->"><span>排序值</span></a>
+            </li>
+            <li>
+                <a class="icon" target="ajaxTodo" warn="请选择活动" title="您确定要禁用活动？" rel="{eval echo build_rel(array('event', 'banned'))}" href="{eval echo site_url(array('event', 'banned', 'id'))}/<!--{{id}}-->"><span>禁用</span></a>
+            </li>
+        </ul>
+    </div>
+    <table width="100%" class="list" layoutH="98" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="14%">活动名</th>
+                <th width="20%">图片</th>
+                <th width="24%">连接</th>
+                <th width="5%">排序值</th>
+                <th width="6%">点击次数</th>
+                <th width="6%">参与人数</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['name']}</td>
+                <td><image src="{eval echo image_url($row['image'], 'common', 'mdp');}?{eval echo time();}" width="200" /></td>
+                <td>{$row['url']}</td>
+                <td>{$row['rankOrder']}</td>
+                <td>{$row['hits']}</td>
+                <td>{$row['joins']}</td>
+                <td>
+                	<a title="活动配置" target="dialog" rel="{eval echo build_rel(array('event', 'setting'));}" href="{eval echo site_url(array('event', 'setting', 'id'));}/{$row[id]}" width="640" height="460">配置</a> | 
+                	<a title="设置用户聚合标签" target="navTab" rel="{eval echo build_rel(array('event', 'set_event_tag'));}" href="{eval echo site_url(array('event', 'set_event_tag', 'id'));}/{$row[id]}" width="640" height="460">标签<!--{if $row[tCount]}--> ({$row[tCount]})<!--{/if}--></a> | 
+                	<a title="设置活动奖品" target="navTab" rel="{eval echo build_rel(array('event', 'set_prize'));}" href="{eval echo site_url(array('event', 'set_prize', 'id'));}/{$row[id]}" width="640" height="460">奖品<!--{if $row[pCount]}--> ({$row[pCount]})<!--{/if}--></a> | 
+                	<a title="报名名单" target="dialog" rel="{eval echo build_rel(array('event', 'joins'));}" href="{eval echo site_url(array('event', 'joins', 'id'));}/{$row[id]}">报名<!--{if $row[jCount]}--> ({$row[jCount]})<!--{/if}--></a> | 
+                	<a title="获奖名单" target="dialog" rel="{eval echo build_rel(array('event', 'winning'));}" href="{eval echo site_url(array('event', 'winning', 'id'));}/{$row[id]}">获奖<!--{if $row[wCount]}--> ({$row[wCount]})<!--{/if}--></a>
+                </td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+</script>

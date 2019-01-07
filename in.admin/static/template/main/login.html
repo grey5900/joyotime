@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>{lang login_title} - {lang title}</title>
+        <link rel="stylesheet" type="text/css" href="/static/js/dwz/themes/css/login.css" />
+        <script type="text/javascript" src="/static/js/dwz/js/jquery-1.7.1.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $.ajaxSetup({cache:false});
+                // 表单提交
+                $("form").submit(function() {
+                    $.ajax({
+                        url : "{eval echo site_url(array('main','login'));}",
+                        type : "POST",
+                        data : "username=" + $("#username").val() + "&password=" + $("#password").val() + "&valicode=" + $("#valicode").val(),
+                        dataType : "json",
+                        success : function(json) {
+                            if(json.statusCode == 200) {
+                                // 成功登陆
+                                window.location.href = "/";
+                            } else {
+                                // 有错误
+                                alert(json.message);
+                                changeValiCode();
+                                $("#valicode").val('');
+                            }
+                        }
+                    });
+                    return false;
+                });
+                // 绑定点击验证码事件
+                $("#i_valicode").click(function() {
+                    changeValiCode();
+                });
+            });
+            /**
+             * 改变验证码
+             */
+            function changeValiCode() {
+                $("#i_valicode").attr("src", "{eval echo site_url(array('main','captcha'));}/" + new Date().getTime());
+            }
+        </script>
+        <style type="text/css">
+            input, img {
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="login">
+            <div id="login_header">
+                <h1 class="login_logo" style="margin-top:-10px;"><a href="http://in.chengdu.cn"><img src="/static/js/dwz/themes/default/images/login_logo.png" /></a></h1>
+                <div class="login_headerContent">
+                    <div class="navList">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <h2 class="login_title"><img src="/static/js/dwz/themes/default/images/login_title.png" /></h2>
+                </div>
+            </div>
+            <div id="login_content">
+                <form id="loginForm" action="" method="post">
+                    <div class="loginForm">
+                        <div id="tip" align="center"></div>
+                        <p>
+                            <label>{lang username}：</label>
+                            <input type="text" size="20" class="login_input" id="username" name="username"/>
+                        </p>
+                        <p>
+                            <label>{lang password}：</label>
+                            <input type="password" size="20" class="login_input" id="password" name="password"/>
+                        </p>
+                        <p>
+                            <label>{lang valicode}：</label>
+                            <input type="text" size="4" maxlength="4" id="valicode" name="valicode" />
+                            <img id="i_valicode" src="{eval echo site_url(array('main','captcha'));}" style="cursor:pointer;" alt="{lang valicode_tip}" />
+                        </p>
+                        <div class="login_bar">
+                            <input class="sub" id="btnLogin" type="submit" value=" " />
+                        </div>
+                    </div>
+                    <div class="login_banner"><img src="/static/js/dwz/themes/default/images/login_banner.jpg" />
+                    </div>
+                    <div class="login_main">
+                        <ul class="helpList">
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                        </ul>
+                        <div class="login_inner">
+                            <p></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="login_footer">
+                Copyright &copy; 2011-2012 in.chengdu.cn Inc. All Rights Reserved.
+            </div>
+        </div>
+    </body>
+</html>

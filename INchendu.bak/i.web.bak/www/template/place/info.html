@@ -1,0 +1,23 @@
+<!--{template web/header}-->
+<div class="container" id="container">
+	<!--{template f_header}-->
+	<div class="section">
+		<!-- <!--{if !empty($info[description])}--><div class="info_description">{$info[description]}</div><!--{/if}--> -->
+		<ul class="nav nav-pills">
+			<!--{eval $start = $info[placeModule][0][id];}-->
+			<!--{loop $info[placeModule] $k $v}-->
+			<li<!--{if $v[id] == $start}--> class="active"<!--{/if}-->><a href="#mod-{$v[id]}" data-toggle="tab">{$v[name]}</a></li>
+			<!--{/loop}-->
+		</ul>
+		<div class="tab-content">
+			<!--{loop $list $k $v}-->
+			<div class="tab-pane info_list<!--{if $k == $start}--> active<!--{/if}-->" id="mod-{$k}">{$v[content]}</div>
+			<!--{/loop}-->
+		</div>
+	</div>
+</div>
+
+<form action="/reply/" method="post" class="modal hide" id="reply-form"></form>
+<form action="/share/" method="post" class="modal hide" id="share-form"></form>
+<form action="/signin/" method="post" class="modal hide form-horizontal" id="signin-modal"></form>
+<!--{template web/footer}-->

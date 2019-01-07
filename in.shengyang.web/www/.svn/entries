@@ -1,0 +1,46 @@
+10
+
+dir
+42063
+svn://svn.joyotime.com/Incd20/juno/branches/inshenyang/www
+svn://svn.joyotime.com/Incd20
+
+
+
+2014-02-25T08:27:27.458541Z
+42017
+zhucl
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+86661628-28bb-49c0-9a6f-c8e3782614a9
+
+application
+dir
+
+data
+dir
+
+forbid
+dir
+
+system
+dir
+
+template
+dir
+
+www
+dir
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie10 ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]><html class="lt-ie10 ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="zh-cn" ><!--<![endif]-->
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta content="zh_cn" name="language">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<title><!--{if $step == 1}-->密码重置<!--{else}-->找回密码<!--{/if}--></title>
+		<link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" media="screen" charset="utf-8"/>
+		<script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+		<script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="/static/js/mobile.min.js"></script>
+	</head>
+    <body>
+    	<div id="container">
+		<div class="block">
+
+			<div class="block-content">
+				<form class="form-horizontal" id="resetpassword-form{if $step > 0}-1{/if}" action="/reset_pwd_{$step}/" method="post">
+					<!--{if $step == 0}-->
+					<div class="control-group">
+						<!-- <label class="control-label" for="email">电子邮箱：</label> -->
+						<div class="controls">
+							<input type="text" name="email" value="" id="email" placeholder="请输入您注册时所填的电子邮箱" />
+						</div>
+					</div>
+					<div class="form-actions">
+						<input type="button" class="button" name="submit" id="find_password_sendmail" class="btn btn-primary btn-large" data-loading-text="　找回密码 " value="找回密码" />
+					</div>
+					<!--{else}-->
+					<input type="hidden" id="email" name="email" value="{$email}" />
+					<input type="hidden" id="rp_id" name="rp_id" value="{$rpid}" />
+					<div class="control-group">
+						<!-- <label class="control-label" for="newpwd">重置密码：</label> -->
+						<div class="controls"><input type="password" name="newpwd" id="newpwd" placeholder="请输入您的新密码" /></div>
+					</div>
+					<div class="control-group">
+						<!-- <label class="control-label" for="repwd">再输入一次：</label> -->
+						<div class="controls"><input type="password" name="repwd" id="repwd" placeholder="请重复输入一次您的新密码" /></div>
+					</div>
+					<div class="form-actions">
+						<input type="button" class="button" name="submit" id="find_password_reset" class="btn btn-primary btn-large" data-loading-text="　重设密码 " value="重设密码" />
+					</div>
+					<!--{/if}-->
+				</form>
+			</div>
+			<div class="block-footer"></div>
+		</div>
+	</div>
+	<script>
+	$(function(){
+		var url = '/reset_pwd_<!--{$step}-->/';
+		$("#find_password_sendmail,#find_password_reset").click(function(){
+			var request = {};
+			var email = $("#email").val();
+			var newpwd = $("#newpwd").val();
+			var repwd = $("#repwd").val();
+			var rp_id = $("#rp_id").val();
+			var that = $(this);
+			var thisid = $(this).attr("id");
+			that.button("loading");
+			
+			if(thisid == 'find_password_sendmail'){
+				var reg = /^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,5}$/;
+				if(!email) {
+					$.messager("请填写邮箱地址！");
+					that.button('reset');
+					return false;
+				}
+				if(!reg.test(email)) {
+					$.messager("邮件格式不正确！");
+					that.button('reset');
+					return false;
+				}
+				request = {'email':email};
+			}
+			if(thisid == 'find_password_reset'){
+				request = {'rp_id':rp_id,'email':email,'newpwd':newpwd,'repwd':repwd,'code':'{$code}'};
+			}
+			$.post(url,request,function(data){
+				var data = eval("("+data+")");
+				var thatid = that.attr("id");
+				if(data.code > 0){
+					$.messager(data.msg);
+					that.button('reset');
+					return false;
+				} else {
+					$.messager(data.msg,'/');
+				}
+			});
+		});
+		$('.form-horizontal').keydown(function(e){
+			var e=e || event,
+			keycode=e.which || e.keyCode;
+			if(keycode==13){
+				$("#find_password_sendmail,#find_password_reset").trigger('click');
+				return false;
+			}
+		})
+		
+	})
+	</script>
+    </body>
+</html>
+

@@ -1,0 +1,555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta content="width=device-width; initial-scale=1" name="viewport" />
+		<title>帮助</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			body {
+				font-size: 15px;
+				padding: 8px;
+				line-height: 1.5em;
+				background-color: #f6f6f6;
+				margin: 0px auto;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYyMjJGNjJEODkxQjExRTE4NTM5Qjc5REQ2RDU5RjBCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYyMjJGNjJFODkxQjExRTE4NTM5Qjc5REQ2RDU5RjBCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjIyMkY2MkI4OTFCMTFFMTg1MzlCNzlERDZENTlGMEIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjIyMkY2MkM4OTFCMTFFMTg1MzlCNzlERDZENTlGMEIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5SKxM4AAAAFVBMVEXz8/Py8vL4+Pj0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);
+			}
+			a {
+				color: #5CAA1D;
+				text-decoration: none;
+				font-weight: bold;
+			}
+			.fade {
+				opacity: 0;
+				-webkit-transition: opacity 0.15s linear;
+				-moz-transition: opacity 0.15s linear;
+				-ms-transition: opacity 0.15s linear;
+				-o-transition: opacity 0.15s linear;
+				transition: opacity 0.15s linear;
+			}
+			.fade.in {
+				opacity: 1;
+			}
+			.collapse {
+				position: relative;
+				height: 0;
+				overflow: hidden;
+				-webkit-transition: height 0.35s ease;
+				-moz-transition: height 0.35s ease;
+				-ms-transition: height 0.35s ease;
+				-o-transition: height 0.35s ease;
+				transition: height 0.35s ease;
+			}
+			.collapse.in {
+				height: auto;
+			}
+			.accordion {
+				margin-bottom: 18px;
+			}
+			.accordion-group {
+				margin-bottom: 8px;
+				box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+				border-radius: 4px;
+				background: #ffffff;
+			}
+			.accordion-heading {
+				font-size: 13px;
+				border-bottom: 0;
+			}
+			.accordion-heading .accordion-toggle {
+				display: block;
+				padding: 8px 15px;
+			}
+			.accordion-toggle {
+				cursor: pointer;
+			}
+			.accordion-inner {
+				padding: 9px 15px;
+				border-top: 1px solid #5CAA1D;
+			}
+			.score-table {
+				font-size: 11px;
+			}
+			.score-table tbody th {
+				text-align: left;
+			}
+			.score-table tbody td {
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript">
+		!function ($) {
+
+		  $(function () {
+
+		    "use strict"; // jshint ;_;
+
+
+		    /* CSS TRANSITION SUPPORT (http://www.modernizr.com/)
+		     * ======================================================= */
+
+		    $.support.transition = (function () {
+
+		      var transitionEnd = (function () {
+
+		        var el = document.createElement('bootstrap')
+		          , transEndEventNames = {
+		               'WebkitTransition' : 'webkitTransitionEnd'
+		            ,  'MozTransition'    : 'transitionend'
+		            ,  'OTransition'      : 'oTransitionEnd'
+		            ,  'msTransition'     : 'MSTransitionEnd'
+		            ,  'transition'       : 'transitionend'
+		            }
+		          , name
+
+		        for (name in transEndEventNames){
+		          if (el.style[name] !== undefined) {
+		            return transEndEventNames[name]
+		          }
+		        }
+
+		      }())
+
+		      return transitionEnd && {
+		        end: transitionEnd
+		      }
+
+		    })()
+
+		  })
+
+		}(window.jQuery);
+		!function ($) {
+
+		  "use strict"; // jshint ;_;
+
+
+		 /* COLLAPSE PUBLIC CLASS DEFINITION
+		  * ================================ */
+
+		  var Collapse = function (element, options) {
+		    this.$element = $(element)
+		    this.options = $.extend({}, $.fn.collapse.defaults, options)
+
+		    if (this.options.parent) {
+		      this.$parent = $(this.options.parent)
+		    }
+
+		    this.options.toggle && this.toggle()
+		  }
+
+		  Collapse.prototype = {
+
+		    constructor: Collapse
+
+		  , dimension: function () {
+		      var hasWidth = this.$element.hasClass('width')
+		      return hasWidth ? 'width' : 'height'
+		    }
+
+		  , show: function () {
+		      var dimension
+		        , scroll
+		        , actives
+		        , hasData
+
+		      if (this.transitioning) return
+
+		      dimension = this.dimension()
+		      scroll = $.camelCase(['scroll', dimension].join('-'))
+		      actives = this.$parent && this.$parent.find('> .accordion-group > .in')
+
+		      if (actives && actives.length) {
+		        hasData = actives.data('collapse')
+		        if (hasData && hasData.transitioning) return
+		        actives.collapse('hide')
+		        hasData || actives.data('collapse', null)
+		      }
+
+		      this.$element[dimension](0)
+		      this.transition('addClass', $.Event('show'), 'shown')
+		      this.$element[dimension](this.$element[0][scroll])
+		    }
+
+		  , hide: function () {
+		      var dimension
+		      if (this.transitioning) return
+		      dimension = this.dimension()
+		      this.reset(this.$element[dimension]())
+		      this.transition('removeClass', $.Event('hide'), 'hidden')
+		      this.$element[dimension](0)
+		    }
+
+		  , reset: function (size) {
+		      var dimension = this.dimension()
+
+		      this.$element
+		        .removeClass('collapse')
+		        [dimension](size || 'auto')
+		        [0].offsetWidth
+
+		      this.$element[size !== null ? 'addClass' : 'removeClass']('collapse')
+
+		      return this
+		    }
+
+		  , transition: function (method, startEvent, completeEvent) {
+		      var that = this
+		        , complete = function () {
+		            if (startEvent.type == 'show') that.reset()
+		            that.transitioning = 0
+		            that.$element.trigger(completeEvent)
+		          }
+
+		      this.$element.trigger(startEvent)
+
+		      if (startEvent.isDefaultPrevented()) return
+
+		      this.transitioning = 1
+
+		      this.$element[method]('in')
+
+		      $.support.transition && this.$element.hasClass('collapse') ?
+		        this.$element.one($.support.transition.end, complete) :
+		        complete()
+		    }
+
+		  , toggle: function () {
+		      this[this.$element.hasClass('in') ? 'hide' : 'show']()
+		    }
+
+		  }
+
+
+		 /* COLLAPSIBLE PLUGIN DEFINITION
+		  * ============================== */
+
+		  $.fn.collapse = function (option) {
+		    return this.each(function () {
+		      var $this = $(this)
+		        , data = $this.data('collapse')
+		        , options = typeof option == 'object' && option
+		      if (!data) $this.data('collapse', (data = new Collapse(this, options)))
+		      if (typeof option == 'string') data[option]()
+		    })
+		  }
+
+		  $.fn.collapse.defaults = {
+		    toggle: true
+		  }
+
+		  $.fn.collapse.Constructor = Collapse
+
+
+		 /* COLLAPSIBLE DATA-API
+		  * ==================== */
+
+		  $(function () {
+		    $('body').on('click.collapse.data-api', '[data-toggle=collapse]', function ( e ) {
+		      var $this = $(this), href
+		        , target = $this.attr('data-target')
+		          || e.preventDefault()
+		          || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
+		        , option = $(target).data('collapse') ? 'toggle' : $this.data()
+		      $(target).collapse(option)
+		    })
+		  })
+
+		}(window.jQuery);
+		</script>
+	</head>
+	<body>
+		<div class="accordion" id="app_faq">
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse1">
+IN沈阳是什么？</a>
+				</div>
+
+				<div id="collapse1" class="accordion-body collapse in">
+					<div class="accordion-inner">IN沈阳是一款基于地理位置的应用，在它的1.0时代，IN沈阳可以用来搜索附近地点，签到告诉朋友你的位置，以及抢地主等其他一些活动。而到了2.0的时代，IN沈阳增加了在线购物、移动支付、手机优惠等移动生活服务的功能，不但可以帮助用户发现身边感兴趣的商家、打折优惠的商品，还可以直接用手机购买团购电影票，获取电子优惠券等等。重装上阵的IN沈阳，界面更加精美，用户体验也大大提升。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse2">
+什么是签到？</a>
+				</div>
+
+				<div id="collapse2" class="accordion-body collapse">
+					<div class="accordion-inner">“签到”一词来源于英文的“check in”，最初被应用在LBS类的软件中，如果用户在某个地点签到，就相当于在电子地图上曾经到过的地点做了一个标记，这个标记可以帮助Ta遇到同在此处签到的其他好友。地点页面上的谁来过代表曾经有多少人在这个地点签过到，可以反映出此地点的人气。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse3">
+签到的限制距离是多少？</a>
+				</div>
+
+				<div id="collapse3" class="accordion-body collapse">
+					<div class="accordion-inner">用户可以在距离1公里内的任意地点签到。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse4">
+为什么要“抢地主”？</a>
+				</div>
+
+				<div id="collapse4" class="accordion-body collapse">
+					<div class="accordion-inner">在同一地点过去7天内签到天数最多的用户，就是该地点的地主，但成为地主之后如果不坚持在此地点继续签到，就会被其他签到更加勤劳的用户抢去地主的称号。因为这一称号来之不易，所以拥有它也象征着更高的成就和声望。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse5">
+地点的列表是如何排列的？Magic排序是什么？</a>
+				</div>
+
+				<div id="collapse5" class="accordion-body collapse">
+					<div class="accordion-inner">地点列表的排列顺序，默认是按照周围地点距离登IN沈阳帐号的手机由近至远依次排列，它还可以按照人气高低和Magic的算法排列。Magic排序是综合了人气、好评度、距离等诸多参数，经过加权算法得出的一套地点排列方式。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse6">
+积分和经验值如何计算？</a>
+				</div>
+
+				<div id="collapse6" class="accordion-body collapse">
+					<div class="accordion-inner"><p>在IN沈阳上登录、签到、发布点评、上传照片以及使用其他功能或为IN沈阳贡献优质内容等，都会为用户带来一定的积分，同时获得经验值，用户使用IN沈阳的时间越长经验值越高。发布恶意或非法内容的用户会被扣除积分，但经验值不减少。经验值越高等级就越高。</p>
+
+					<p>具体积分规则如下图：</p>
+					<table border="0" cellspacing="5" cellpadding="5" class="score-table" width="100%" align="center">
+						<thead>
+						<tr><th>动作</th><th>得分</th><th>每天可重复<br />得分次数</th></tr>
+						</thead>
+						<tbody>
+						<tr><th>签到</th><td>5</td><td>10</td></tr>
+						<tr><th>当天第一次签到</th><td>5</td><td>1</td></tr>
+						<tr><th>点评</th><td>10</td><td>10</td></tr>
+						<tr><th>当天第一次点评</th><td>10</td><td>1</td></tr>
+						<tr><th>每日启动客户端</th><td>10</td><td>1</td></tr>
+						<tr><th>成为地主</th><td>10</td><td>10</td></tr>
+						<tr><th>地点报错被确认有效</th><td>50</td><td>无上限</td></tr>
+						<tr><th>用户反馈被确认有效</th><td>50</td><td>无上限</td></tr>
+						<tr><th>发布内容包含图片</th><td>10</td><td>20</td></tr>
+						<tr><th>新地点签到</th><td>5</td><td>10</td></tr>
+						<tr><th>新地点点评</th><td>10</td><td>10</td></tr>
+						<tr><th>被管理删帖</th><td>-100</td><td>无上限</td></tr>
+						<tr><th>连续签到第N天</th><td>N*2</td><td>1</td></tr>
+						<tr><th>同步到微博</th><td>10</td><td>20</td></tr>
+						<tr><th>在自己是地主的地方签到</th><td>5</td><td>10</td></tr>
+						<tr><th>上传头像</th><td>50</td><td>第一次</td></tr>
+						<tr><th>管理员操作</th><td>不限</td><td>不限</td></tr>
+						</tbody>
+					</table>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse7">
+什么是点评？</a>
+				</div>
+
+				<div id="collapse7" class="accordion-body collapse">
+					<div class="accordion-inner">用户亲身经历过的地点，对它的概况以及周边环境予以客观的描述。尤其是自己曾经有过真实消费行为的地点，用户可以对店铺的商品、消费环境及消费水平等进行忠实的评价。点评不受距离限制，但一份优质的点评对其他用户具有很重要的参考价值，因而也会为发点评的用户带来很多关注和互动。地点点评可以按照最赞和最新来排序，用户看到点评内容可以“赞”或者直接回复这条点评。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse8">
+什么是“赞”？</a>
+				</div>
+
+				<div id="collapse8" class="accordion-body collapse">
+					<div class="accordion-inner">查看其他IN沈阳用户的点评，可以点“赞”表示对其支持，被“赞”的多的点评将会作为推荐点评出现在更加显著的位置，而点评被“赞”的多的用户也可能受到IN沈阳的奖励。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse9">
+什么是动态？</a>
+				</div>
+
+				<div id="collapse9" class="accordion-body collapse">
+					<div class="accordion-inner">关注动态里是你关注的好友最近一段时间在IN沈阳上的签到、点评、上传照片等操作的汇总;附近动态中是身处在你周围地点的其他用户所发生的以上操作的汇总。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse10">
+如何添加好友？</a>
+				</div>
+
+				<div id="collapse10" class="accordion-body collapse">
+					<div class="accordion-inner">用户在个人档案页内可以找到“我的好友”，进入这一页面即可点选“找朋友”来添加好友。用户可以选择系统推荐的“IN沈阳”达人，也可以选择系统随机排列的其他用户，或者直接添加来自新浪微博和腾讯微博的好友。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse11">
+什么是私信？</a>
+				</div>
+
+				<div id="collapse11" class="accordion-body collapse">
+					<div class="accordion-inner">IN沈阳上的所有用户可以互相发送消息，即称为私信。私信的内容不在“动态”公开。点击好友的头像进入Ta的个人档案页，即可发送私信，当私信到达之后，收件人会收到消息提示。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse13">
+为什么有时会定不到位？如何能加强定位？</a>
+				</div>
+
+				<div id="collapse13" class="accordion-body collapse">
+					<div class="accordion-inner">目前IN沈阳采用的是手机GPS定位系统、WIFI定位以及运营商的基站定位三种方法相结合的定位方式。在用户同意了IN沈阳获取位置信息的请求之后，程序会自动调用以上三方所提供的位置信息，而由于上述途径会受到建筑物、天气以及其他因素的干扰，且不同手机的性能不同，因而有时定位会出现偏差，我们认为50米以内的偏差是可以接受的。如果想要定位效果好，建议走到室外较为空旷的地方再次定位。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse14">
+什么是同步？</a>
+				</div>
+
+				<div id="collapse14" class="accordion-body collapse">
+					<div class="accordion-inner">将IN沈阳绑定新浪微博和腾讯微博，用户即可以将自己发布的点评、上传的图片同步分享到这些平台上。同步能获得额外了积分和经验值。这样，用户只要操作一次就可以在数个平台发布信息，而不用同时打开N多程序。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse15">
+如何打开、关闭消息推送？</a>
+				</div>
+
+				<div id="collapse15" class="accordion-body collapse">
+					<div class="accordion-inner">进入个人档案页，点击右上方的“设置”，即可关闭推送通知。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse16">
+怎样支付？</a>
+				</div>
+
+				<div id="collapse16" class="accordion-body collapse">
+					<div class="accordion-inner">用户在选定商品之后，系统会自动进入支付流程。只要拥有银联账号或支付宝账号，都可以按照程序的流程进行支付。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse17">
+在其它城市能用吗？</a>
+				</div>
+
+				<div id="collapse17" class="accordion-body collapse">
+					<div class="accordion-inner">IN沈阳是基于成都的移动生活服务平台，所以我们会专注于自己这座城市的信息。我们提供的信息仅包含大成都区域范围内的地方。</div>
+				</div>
+
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse18">
+忘记密码了怎么办？</a>
+				</div>
+
+				<div id="collapse18" class="accordion-body collapse">
+					<div class="accordion-inner">登录时如果忘记密码或发现密码不正确，可以点击登录页面右上角的“找回密码”。在链接的页面内输入你在IN沈阳预留的邮箱即可以重置自己的密码。</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse19">关于团购</a>
+				</div>
+
+				<div id="collapse19" class="accordion-body collapse">
+					<div class="accordion-inner">在IN沈阳首页点击进入团购页面，即可看到所有当期的团购商品。在团购详情页面的右上角有“查看详情”标识，点开后可查看该商品的介绍等内容详情。再次点击标识该页面即可弹回。在团购详情页的最下方有“使用提示”，团购顾客需仔细阅读提示后再购买商品，以免使用团购券时出现不必要的问题。</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse20">购买电影票及在线选座</a>
+				</div>
+
+				<div id="collapse20" class="accordion-body collapse">
+					<div class="accordion-inner">用户在IN沈阳购买了注有“在线选座”字样的电影票并支付完成之后，会收到一个20位的网站兑换码。之后用户需注册登陆万达国际影城的网站选择所需购买电影票，完成在线选座流程之后输入IN沈阳提供的网站兑换码进行购票。</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse21">如何使用IN沈阳得到更优惠的消费？</a>
+				</div>
+
+				<div id="collapse21" class="accordion-body collapse">
+					<div class="accordion-inner">注册成为IN沈阳用户，就有可能得到商家的会员特权。享有会员特权的用户会不定期收到商家送出的各种优惠券，这些优惠券可以放入IN沈阳上的“包包”，待到使用时只要在手机上出示它们即可。</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse22">什么是会员特权？</a>
+				</div>
+
+				<div id="collapse22" class="accordion-body collapse">
+					<div class="accordion-inner">用户在IN沈阳上成为某品牌的会员，可享受诸多会员特权。会员特权既包括特价优惠，也包括优先收到该品牌的活动及优惠信息，以及优先参与赠礼、试吃活动等特权。用户在首页点击进入“会员特权”页面，即可看到全部具有会员特权的品牌列表。<br />用户可以选择某个自己喜欢的品牌成为其会员，每个品牌有自己独立的会员特权。</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse23">什么是店长？</a>
+				</div>
+
+				<div id="collapse23" class="accordion-body collapse">
+					<div class="accordion-inner">店长是一个真实品牌在IN沈阳上设立的虚拟管理者。用户申请成为某品牌的会员后，即默认关注了该品牌的店长，既而就可以向该品牌店长发送私信，同时还会第一时间收到该店长发布的优惠及活动通知等推送信息。</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse24">什么是优惠券？</a>
+				</div>
+
+				<div id="collapse24" class="accordion-body collapse">
+					<div class="accordion-inner">优惠券是IN沈阳用户享受会员特权的凭证。用户在IN沈阳上得到到商家实体店消费时，须出示商家在IN沈阳上送出的优惠券之后方可享受相应优惠。</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse25">什么是包包？</a>
+				</div>
+
+				<div id="collapse25" class="accordion-body collapse">
+					<div class="accordion-inner">包包是一个专门收纳IN沈阳上的电子优惠券的地方。用户每得到一个电子优惠券就可以把它丢入包包，好像现实生活中用卡夹来收纳各种打折卡一样。用的时候也只需要从包包的列表中找出优惠券，非常方便。</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#app_faq" href="#collapse26">如何团购买购网的商品？</a>
+				</div>
+
+				<div id="collapse26" class="accordion-body collapse">
+					<div class="accordion-inner">买购网的团购商品有三种方式提供给IN沈阳的用户。购买了团购券商品的用户只需在到店消费时出示电子团购券即可，券号和消费密码在“我的订单”的详情页面可以查询；购买快递商品的用户，需按照页面要求填好收货人的详细信息，同时可以在“我的订单”页查看所购商品的物流状态；而购买自提商品的用户，需要在下单时选择好所在区域的自提点。需要注意的是，自提点在用户下单之后就不能再更改，因为相应的自提点在接到用户的订单之后即开始备货，所以用户在下单时务必选择临近的自提点，方便提取货品。</div>
+				</div>
+			</div>
+
+
+	</body>
+</html>

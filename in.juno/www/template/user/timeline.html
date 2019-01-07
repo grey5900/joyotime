@@ -1,0 +1,252 @@
+<!--{template common/header}-->
+      <div id="container">
+        <!-- 用户时光轴 -->
+        <div class="container-fluid">
+          <div class="top-profile">
+            <div class="bg-photo">
+              <img src="{$info[background]}" />
+            </div>
+            <b></b>
+            <div class="avatar"><a href="/user/{$info[id]}"><img src="{$info[avatar_h]}" alt="{$info['nickname']}" /></a></div>
+            <div class="boxpro">
+              <ul>
+                <li>
+                  <div class="name">
+                    <dl>
+                      <dd>
+                        <h3>
+                          {echo $info[nickname] ? $info[nickname] : $info[username];}
+                          <a href="#" class="item-qrcode" rel="popover" data-placement="right" data-html="true" data-content="<div class='qr-popover'><div class='thumb'><img width='200' height='200' src='http://chart.googleapis.com/chart?chs=200x200&amp;cht=qr&amp;chl=http://in.chengdu.cn/qr/inuser/{$info[id]}' alt='{$info[username]}的二维码' /></div></div>">{$info[username]}的二维码</a>
+                        </h3>
+                      </dd>
+                    
+                    </dl>
+                  </div>
+                </li>
+                <li>
+                  <div class="details">
+                    <ul>
+                      <li>
+                        <a href="/user_photo/{$info[id]}">{$info[photoCount]}</a>
+                        <a class="det">图片</a>
+                      </li>
+                      <li class="bor">
+                        <a href="/user_friend/{$info[id]}">{echo $info[followCount] + $info[beFollowCount];}</a>
+                        <a class="det">好友</a>
+                      </li>
+                      <li>
+                        <a href="/user_mayor/{$info[id]}">{$info[mayorshipCount]}</a>
+                        <a class="det">地主</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <div class="info">
+                <div class="box">
+                  <dl>
+                    <dd>
+                      <span>点评：<em>{$info[tipCount]}</em> 收藏：<em>{$info[favCount]}</em> </span>
+                    </dd>
+                    <dd>
+                      <p>
+                        {$info[description]}<a href="/user_info/{$info[id]}">[更多资料]</a>
+                      </p>
+                    </dd>
+                  </dl>
+                  <div class="follow">
+                  	<!--{if $info[can_follow] > -1}-->
+                   	<!--{if $info[can_follow]}-->
+                   		<a class="btn btn-danger action-follow" data-loading-text="关注中..." data-uid="{$info[id]}">加关注</a>
+                   	<!--{else}-->
+                   		<a class="btn btn-danger action-unfollow" data-loading-text="取消中..." data-uid="{$info[id]}">取消关注</a>
+                   	<!--{/if}-->
+                  	<!--{/if}-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main">
+            <div class="push">
+            <div class="con">
+              <div class="timeline-nav">
+                <!--{eval $idx = 0;}-->
+                <!--{loop $timelines $k $v}-->
+                <ul class="<!--{if ($idx++ <= 0 && !$year) || $year==$k || !$base_on_time}-->timebar-side<!--{else}-->timebar-oldside<!--{/if}-->">
+                  <li><a href="/user/{$info[id]}/1/1/{$k}" class="year">{$k}</a></li>
+                  <!--{loop $v $ki $m}-->
+                  <li><a href="/user/{$info[id]}/1/1/{$k}-{$m[0]}">{$m[1]}</a></li>
+                  <!--{/loop}-->
+                </ul>
+                <!--{/loop}-->
+              </div>
+
+              <div class="timeline">
+                <ul class="posts">
+                <!--{if !empty($list)}-->
+                  <!--{loop $list $k $v}-->
+                  <li class="post" data-id="{$v[id]}" data-type="{echo $v[type]==2 ? 'tip':'image';}">
+                    <div class="arr"></div>
+                    <div class="arr-post {echo $v['type']==2 ? 'dp' : ($v['type']==4 ? 'yy': ($v['type']==7 ? 'share' : 'dp')  ) ;}"></div>
+					{if $v['isEssence']}<div class="elite"></div>{/if}
+              <div class="link hide"><a href="/review/{$v[id]}" target="_blank">详情</a></div>
+                    <div class="avatar"><a href="/user/{$info[id]}"><img src="{$info[avatar_m]}" alt="{$info[nickname]}" rel="tooltip" data-original-title="{$info['nickname']}"/></a></div>
+                    <div class="item">
+                      <h2>{$v[title]}</h2>
+                      <!--{if $v[star] > 0 || !empty($v[pcc])}-->
+                      <div class="pf">
+                        <!--{if $v[star] > 0}--><span class="ico-star-{$v[star]}"></span><!--{/if}-->
+                        <!--{if !empty($v[pcc])}--><span>人均：{$v[pcc]}</span><!--{/if}-->
+                      </div>
+                      <!--{/if}-->
+                      <!--{if !empty($v[content])}--><p>{echo format_html($v[content]);}</p><!--{/if}-->
+                      <!--{if !empty($v[photoName])}--><div class="photo"><img alt="{$v[content]}" src="{$v[photoName]}" width="{$v[photoSize][w]}" height="{$v[photoSize][h]}"/></div><!--{/if}-->
+                    </div>
+                    <div class="footbar">
+                      <div class="tags">{$v[tag]}</div>
+                      <div class="actions">
+                        <a class="action-like <!--{if !$v['is_praised']}-->on<!--{/if}-->" data-id="{$v[id]}" data-type="19" >赞<span class="num" id="praise_count_$v[id]"><!--{if $v[praiseCount] > 0}-->({$v[praiseCount]})<!--{/if}--></span></a>
+                        <em>|</em>
+                          <div class="action-share dropdown" data-id='{$v[id]}' data-type='19'>
+                              <a class="dropdown-toggle" data-toggle="dropdown">分享<span class="num" id="share_count_$v[id]"><!--{if $v[shareCount] > 0}-->({$v[shareCount]})<!--{/if}--></span></a>
+                              <ul class='dropdown-menu'>
+                                  <li><a class='action-share-icd' data-s='0'>IN成都</a></li>
+                                  <li><a class='action-share-weibo' data-s='1' data-content='http://in.chengdu.cn/review/{$v[id]} 分享自#IN成都#'>新浪微博</a></li>
+                                  <li><a class='action-share-qq' data-s='2' data-content='http://in.chengdu.cn/review/{$v[id]} 分享自#IN成都#'>腾讯微博</a></li>
+                              </ul>
+                          </div>
+                        <em>|</em>
+                        <a class="action-reply">回复<span class="num" id="reply_count_$v[id]"><!--{if $v[replyCount] > 0}-->({$v[replyCount]})<!--{/if}--></span></a>
+                      </div>
+                    </div>
+                    <div class="replys hide">
+                      <form class="reply-form" data-pid="{$v[id]}" data-uid="{$auth[uid]}" data-user="{$auth[nickname]}" data-type="{echo $v[type]==2 ? 'tip':'image';}">
+						<textarea name="" class="txt" maxlength="140" placeholder="回复内容..." id="" cols="" rows=""></textarea>
+                        <span class="btn">发布</span>
+                      </form>
+                      <ul class="reply-list">
+                      <!--{if $v[replyCount]}-->
+                        <!--{loop $v[replies] $key $r}-->
+                        <li>
+                          <a href="/user/{$r[uid]}" class="avatar"><img src="{$r[avatar]}" alt="{$r[name]}" /></a>
+                          <div class="actions"><a href="javascript:;" class="action-replyto" data-pid="{$r['itemId']}" data-id="{$r[id]}" data-uid="{$r[uid]}" data-user="{$r[name]}">回复</a></div>
+                          <p><a href="/user/{$r[uid]}" class="name">{$r[name]}</a>{$r[re_string]}：{$r[content]}<br/><span class="time">{$r[createDate]}</span></p>
+                        </li>
+                        <!--{/loop}-->
+                      <!--{/if}-->
+                      </ul>
+					  {if $v[replyCount]>10}<div class="more_comm" style="">更多评论请<a href="/review/{$v[id]}" target="_blank">点击查看</a></div>{/if}
+                    </div>
+                    <div class="clock">{$v[createDate]}</div>
+                    {if $v['lat']}<div class="source">用IN成都客户端发布，<a href="http://in.chengdu.cn/download/" target="_blank">点击下载></a></div>{/if}
+                  </li>
+                  <!--{/loop}-->
+                <!--{else}-->
+                  <li class="empty">{echo $info[nickname] ? $info[nickname] : $info[username];}还没有动态</li>
+                <!--{/if}-->
+                </ul>
+          {if $paginate}
+          {$paginate}
+          {else}
+          <div class="pagination" ></div>
+          {/if}
+                <a href="/user/{$info[id]}/2/{$page}/{$time}" class="hide">加载更多</a>
+                
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="sidebar">
+            <div class="module">
+              <div class="tit">
+                <h3>{echo $info[nickname] ? $info[nickname] : $info[username];}的好友</h3>
+              </div>
+              <div class="con">
+                <div class="list-user">
+                <dl>
+                  <dd>
+                    <div class="myrela">
+                      <h3>关注</h3>
+                      <span><em>({$info[followCount]})</em></span>
+                      <!--{if $info[followCount] > 7}-->
+                      <a href="/user_friend/{$info[id]}">全部</a>
+                      <!--{/if}-->
+                    </div>
+                    <ul id="follows"></ul>
+                  </dd>
+                  <dd>
+                    <div class="myrela">
+                      <h3>粉丝</h3>
+                      <span><em>({$info[beFollowCount]})</em></span>
+                      <!--{if $info[beFollowCount] > 7}-->
+                      <a href="/user_friend/{$info[id]}/1">全部</a>
+                      <!--{/if}-->
+                    </div>
+                    <ul id="be_follows"></ul>
+                  </dd>
+                </dl>
+                </div>
+              </div>
+            </div>
+            <div class="module">
+              <div class="tit">
+                <h3>{echo $info[nickname] ? $info[nickname] : $info[username];}的图片墙</h3>
+                <!--{if $info[photoCount] > 4}--><div class="more"><a href="/user_photo/{$info[id]}">更多</a></div><!--{/if}-->
+              </div>
+              <div class="con">
+                <!--{if $info[photoCount] > 0}-->
+                <ul class="list-photowall">
+                <!--{loop $user_imgs $k $v}-->
+                  <li>
+                    <a href="/review/{$v[id]}"><img src="{echo image_url($v[photo],'user','hdp')}" alt="{$info[nickname]}" /></a>  
+                  </li>
+                 <!--{/loop}-->     
+                </ul>
+                <!--{else}-->
+                <p class="empty">{echo $info[nickname] ? $info[nickname] : $info[username];}还没有上传照片</p>
+                <!--{/if}-->
+              </div>
+            </div>
+           </div>
+        </div>
+      </div>
+	  <script type="text/javascript">
+	  	$(function(){
+        $('.timeline-nav').affix({
+          offset: {
+            top: $('.timeline-nav').offset().top
+          , bottom: 210
+          }
+        });
+  			//关注的人
+  			$.getJSON('/user_get_friends/{$info[id]}?'+new Date().getTime(), function(json){
+  				var dom = $('#follows');
+  				for(var i=0;i<json.length;i++){
+  					var item = json[i];
+  					var i_img = $('<img />').attr('src', item.avatar);
+  					if(json.nickname != '')
+  						i_img.attr('title', item.nickname);
+  					else
+  						i_img.attr('alt', item.username);
+  					var i_a = $('<a></a>').attr('href', '/user/'+item.id).append(i_img);
+  					$('<li></li>').append(i_a).appendTo(dom);
+  				}
+  			});
+  			//关注我的人
+  			$.getJSON('/user_get_friends/{$info[id]}/1?'+new Date().getTime(), function(json){
+  				var dom = $('#be_follows');
+  				for(var i=0;i<json.length;i++){
+  					var item = json[i];
+  					var i_img = $('<img />').attr('src', item.avatar);
+  					if(json.nickname != '')
+  						i_img.attr('title', item.nickname);
+  					else
+  						i_img.attr('alt', item.username);
+  					var i_a = $('<a></a>').attr('href', '/user/'+item.id).append(i_img);
+  					$('<li></li>').append(i_a).appendTo(dom);
+  				}
+  			});
+	  	})
+	  </script>
+<!--{template common/footer}-->

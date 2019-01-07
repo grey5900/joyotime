@@ -1,0 +1,80 @@
+10
+
+dir
+2
+svn://svn.joyotime.com/fenbei
+svn://svn.joyotime.com/fenbei
+
+
+
+2014-01-23T05:18:19.087719Z
+2
+grey
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b9a88315-224b-4db5-9e0f-8bb5f68c7aea
+
+.project
+file
+
+
+
+
+2013-10-23T07:27:13.000000Z
+cfd5319c2799cfdb38790f8f82e8245c
+2014-01-23T05:18:19.087719Z
+2
+grey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+367
+
+Chafer
+dir
+
+Firefly
+dir
+
+Gadfly
+dir
+
+Snail
+dir
+
+inchengdu
+dir
+
+wuxin
+dir
+

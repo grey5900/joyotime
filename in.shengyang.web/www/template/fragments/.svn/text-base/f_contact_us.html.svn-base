@@ -1,0 +1,17 @@
+{if $v3_fragments['v3_f_contact_us']}
+<div class="module contact">
+					<div class="tit">
+						<h3><i></i>{$v3_fragments['v3_f_contact_us']['frag']['name']}</h3>
+					</div>
+					<div class="con">
+						<ul>
+							<li>
+								<i class="tel"></i>
+								<p>新闻热线</p>
+								<p><span>85918382</span></p>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				{/if}

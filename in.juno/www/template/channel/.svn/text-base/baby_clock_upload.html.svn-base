@@ -1,0 +1,155 @@
+<!--{template common/header}-->
+<link href="/static/js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="/static/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+        <script type="text/javascript" src="/static/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+ <script type="text/javascript">
+// 几个变量的设置
+var conf_save_image_uri = '{$config[sava_image]}';
+var conf_transfer_image_uri = '{$config[transfer_image]}';
+</script>
+  <link rel="stylesheet" href="/static/skin/baby_style.css" type="text/css" />
+  <div id="container-page">
+    <div class="container-fluid">
+       <div class="main">
+          <div class="article">
+            <div class="tit">上传宝宝照片</div>
+            <div class="con">
+              <form class="form-horizontal" id="babyclock-form" method="post" action="">
+                <div class="control-group">
+                  <label class="control-label">姓名</label>
+                  <div class="controls">
+                    <input type="text" name="name" style="width: 200px;" placeholder="姓名" />
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">性别</label>
+                  <div class="controls">
+                    <select name="gender">
+                      <option value=""></option>
+                      <option value="0">女</option>
+                      <option value="1">男</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">上传照片</label>
+                  <div class="controls">
+                    <button type="button" id="babyclock_photo">上传图片</button>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">简介</label>
+                  <div class="controls">
+                    <textarea name="summary" rows="5" cols="40"></textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">出生日期</label>
+                  <div class="controls">
+                    <input type="text" name="birth" style="width: 200px;" placeholder="年-月-日"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">出生地</label>
+                  <div class="controls">
+                    <input type="text" name="hometown" style="width: 200px;" />
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">血型</label>
+                  <div class="controls">
+                    <select name="blood">
+                      <option value=""></option>
+                      <option value="A型血">A型血</option>
+                      <option value="B型血">B型血</option>
+                      <option value="O型血">O型血</option>
+                      <option value="AB型血">AB型血</option>
+                      <option value="其他血型">其他血型</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">星座</label>
+                  <div class="controls">
+                    <select name="constellation">
+                      <option value=""></option>
+                      <option value="白羊座">白羊座</option>
+                      <option value="金牛座">金牛座</option>
+                      <option value="双子座">双子座</option>
+                      <option value="巨蟹座">巨蟹座</option>
+                      <option value="狮子座">狮子座</option>
+                      <option value="处女座">处女座</option>
+                      <option value="天秤座">天秤座</option>
+                      <option value="天蝎座">天蝎座</option>
+                      <option value="射手座">射手座</option>
+                      <option value="魔羯座">魔羯座</option>
+                      <option value="水瓶座">水瓶座</option>
+                      <option value="双鱼座">双鱼座</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">身高</label>
+                  <div class="controls">
+                    <input type="text" name="height" style="width: 200px;" placeholder="单位：cm" />
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="controls">
+                    <a href="javascript:;" id="babyclock-submit-btn" class="btn btn-primary">提交</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+       </div>
+       <div class="sidebar">
+         <div class="module info-card">
+            <div class="tit">
+              <h3>参与方式</h3>
+            </div>
+            <div class="con">
+              <p>
+                  　　1、报名家庭在线上传0—3岁宝宝电子版写真照片一张，要求是正面近照，图片大小要求像素560*560之内。<br/>
+                  　　2、在线报名需认真填写报名内容，按要求填写宝贝名字、出生年月、出生地、血型星座等详细信息。<br/>
+                  　　3、请勿重复上传同样造型的宝宝照片，同样造型的照片只能审核通过一张，不同造型的照片可多次上传并获得审核通过。<br/>
+                  　　4、请参与者准确提供宝宝的信息，上传的照片将在全搜索亲子频道工作时间24小时内审核使用，审核通过后会在页面上显示并有机会推荐到首页。<br/>
+
+              </p>
+            </div>
+          </div>
+       </div>
+    </div>
+  </div>
+<script>
+var options = {file_type:'baby',name:"babyphoto",id:"babyphoto",required:true};
+$("#babyclock_photo").my_upload(options);
+
+$("#babyclock-submit-btn").click(function(){
+	var name = $("input[name=name]").val();
+	var gender = $("select[name=gender]").val();
+	var summary = $("textarea[name=summary]").val();
+	var birth = $("input[name=birth]").val();
+	var hometown = $("input[name=hometown]").val();
+	var blood = $("select[name=blood]").val();
+	var constellation = $("select[name=constellation]").val();
+	var height = $("input[name=height]").val();
+	var image = $("#babyphoto").val();
+	
+	
+	$.post("/babyclock/upload",{name:name,gender:gender,
+								summary:summary,birth:birth,
+								hometown:hometown,blood:blood,
+								constellation:constellation,height:height,babyphoto:image},function(data){
+		var obj = eval("("+data+")");
+		if(obj.code == 1){
+			$.messager(obj.msg,'/babyclock/');
+		}
+		else{
+			$.messager(obj.msg);
+		}
+	})
+});
+</script>
+<!--{template common/footer}-->

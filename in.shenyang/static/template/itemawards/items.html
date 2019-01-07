@@ -1,0 +1,29 @@
+{eval $page_rel='items_'.$id;}
+<div class="pageContent">
+    <table class="table" width="100%" layoutH="100">
+    	<thead>
+    		<th width="20%">道具名称</th>
+    		<th width="20%">权重</th>
+    		<th width="20%">相对比例</th>
+    		<th width="20%">每日总量</th>
+    		<th width="20%">今日剩余</th>
+    		
+    	</thead>
+    	<tbody>
+    		{loop $list $k $row}
+    		<tr>
+    			<td>{$row['name']}</td>
+    			<td align="center"><input type="text" onfocus="modify_rank2(this,'ItemAwards',{$row['id']},'probability',1);" value="{$row['probability']}" style="text-align:right" /></td>
+    			<td>{$row['percent']}</td>
+    			<td align="center"><input type="text" onfocus="modify_rank2(this,'ItemAwards',{$row['id']},'frequency',1);" value="{$row['frequency']}"  style="text-align:right" /></td>
+    			<td>{$row['quantity']}</td>
+    		</tr>
+    		{/loop}
+    		
+    	</tbody>
+    </table>
+</div>
+
+<script>
+
+</script>

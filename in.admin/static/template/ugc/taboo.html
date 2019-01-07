@@ -1,0 +1,153 @@
+{if !isset($do) || empty($do)}
+<form method="post" action="#rel#" id="pagerForm">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="type" value="{$type}" />
+	<input type="hidden" name="keyword" value="{$keyword}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:140px;"><select name="type">
+				<option value=""{if !isset($type)} selected{/if}>选择作用域</option>
+				{loop $types $key $val}
+				{if strpos($key,',') === FALSE}
+				<option value="{$key}"{if isset($type) && $type=== $key} selected{/if}>{$val}</option>
+				{/if}
+				{/loop}
+			</select></li>
+			<li><input type="text" name="keyword" value="{$keyword}" /></li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<script type="text/javascript">
+	function edit(){
+		var url = "{eval echo site_url(array('ugc','taboo','edit'));}";
+		var ids = "";
+		var split = "";
+		$("input[class=ids]").each(function(){
+			if($(this).attr("checked")){
+				ids+=split+$(this).val();
+				split = "|";
+			}
+		});
+		if(ids == ""){
+			alertMsg.error("请至少选择一个敏感词");
+		}else{
+			url += "/ids/"+ids;
+			$.pdialog.open(url, $("#edit").attr("rel"), "变更作用域", {minable:true,mixable:true,resizable:true,close:true});
+		}
+	}
+</script>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a href="{eval echo site_url(array('ugc','taboo','auto_import'));}" rel="{eval echo build_rel(array('ugc','taboo','auto_import'));}" class="add" target="dialog" title="批量导入"><span>批量导入</span></a></li>
+			<li><a href="{eval echo site_url(array('ugc','taboo','add'));}" rel="{eval echo build_rel(array('ugc','taboo','add'));}" class="edit" target="dialog" title="手工录入"><span>手工录入</span></a></li>
+			<li><a href="{eval echo site_url(array('ugc','taboo','delete'));}" class="delete" target="selectedTodo" rel="ids[]" title="删除操作无法恢复，确定要执行此操作吗?"><span>批量删除</span></a></li>
+			<li><a href="javascript:;" id="edit" onclick="edit();" class="edit" rel="{eval echo build_rel(array('ugc','taboo','edit'));}" rel="ids[]"><span>变更作用域</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138" targetType="navTab">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="10%">敏感词</th>
+				<th>作用域</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr>
+				<td><input type="checkbox" class="ids" name="ids[]" value="{$key}"/></td>
+				<td>{$val[word]}</td>
+				<td>{$val[types]}</td>
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+    <!--{template main/page_bar}-->
+</div>
+{elseif $do==='import'}
+<div class="pageContent">
+	<form method="post" enctype="multipart/form-data" action="{$current_url}" class="reqired-validate pageForm" onsubmit="return iframeCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>文件</dt>
+				<dd><input type="file" name="taboo_file" class="required" size="30" /><span class="info">只接受txt格式的文本文件，且文件的编码格式必须为UTF-8格式，否则系统无法解析</span></dd>
+				<dt>作用域</dt>
+				<dd>
+					{loop $types $key $val}
+					{if strpos($key,',') === FALSE}
+					<input type="checkbox" name="types[]" value="{$key}" class="required"/>{$val} 
+					{/if}
+					{/loop}
+				</dd>
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+{elseif $do==='add'}
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="reqired-validate pageForm" onsubmit="return iframeCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>敏感词</dt>
+				<dd><textarea name="taboos" cols="50" rows="8" class="required" onfocus="if($(this).html() == '一行一个敏感词')$(this).html('');" onblur="if($(this).html()=='')$(this).html('一行一个敏感词');">一行一个敏感词</textarea></dd>
+				<dt>作用域</dt>
+				<dd>
+					{loop $types $key $val}
+					{if strpos($key,',') === FALSE}
+					<input type="checkbox" name="types[]" value="{$key}" class="required"/>{$val} 
+					{/if}
+					{/loop}
+				</dd>
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+{elseif $do==='edit'}
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="reqired-validate pageForm" onsubmit="return iframeCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent" layoutH="60">
+			<input type="hidden" name="ids" value="{$ids}" />
+			<dl>
+				<dt>作用域</dt>
+				<dd>
+					{eval $i_types = explode(',',$info[types]);}
+					{loop $types $key $val}
+					{if strpos($key,',') === FALSE}
+					<input type="checkbox" name="types[]" value="{$key}" class="required"{if in_array($key, $i_types)} checked="checked"{/if}/>{$val} 
+					{/if}
+					{/loop}
+				</dd>
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+{/if}

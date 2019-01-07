@@ -1,0 +1,36 @@
+<!--{template sr_head}-->
+	<div class="main">
+		<!--{template sr_sidebar}-->
+		<div class="content">
+			<a name=list></a>
+			<div class="detail">
+			{loop $placeCollections $pc}
+				{if $pc['places']}
+				<div class="box">
+					<div class="hd">{$pc['name']}</div>
+					<div class="bd">
+						<ul>
+						{loop $pc['places'] $p}
+							<li>
+								<div class="img">
+									<a href="/place/{$p['id']}" target="_blank"><img src="{echo image_url($p['icon'],'common');}" alt="" /></a>
+								</div>
+								<div class="info"><a href="/place/{$p['id']}" target="_blank">{$p['placename']}</a></div>
+							</li>
+							{/loop}
+							
+						</ul>
+						
+					</div>
+				</div>
+				{/if}
+			{/loop}
+				
+				
+			</div>
+		</div>
+	</div>
+	<!--{template common/footer}-->
+	
+</body>
+</html>

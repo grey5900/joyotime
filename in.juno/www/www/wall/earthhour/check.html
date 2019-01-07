@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="zh_cn" />
+  <title>IN成都动态</title>
+
+  <link rel="stylesheet" type="text/css" href="c/reset.css" />
+  <style type="text/css">
+.c {clear:both}
+
+#hd {position:fixed; width:100%; background:#fff;
+  padding:8px; border-bottom:1px solid #666; color:#000; text-align:center; z-index:10}
+
+  #hd .oprts {display:none;}  
+  #hd:hover h1 {display:none}
+  #hd:hover .oprts {display:block;}
+
+#bd {width:500px; margin:0 auto; padding-top:50px; min-height:200px;}
+
+  #bd.loading {background:url(i/loading.gif) no-repeat center 80px}
+
+  #bd .noMore {text-align:center}
+
+.feedLi {position:relative; padding-bottom:8px; border-bottom:1px dotted #ddd; margin-bottom:10px}  
+  
+.avatar {float:left; border:1px solid #ddd; padding:1px; width:50px; height:50px}
+.avatar img {width:50px; height:50px}
+
+.feedLi .subject,
+.feedLi .txt {margin-left:66px}
+
+.feedLi .oprts {position:absolute; display:block; top:-5px; right:0px;}
+  .oprts a {padding:5px 15px; background:#eee; color:#999; text-decoration:none; }
+  .oprts a:hover {color:#333 }
+  </style>
+</head>
+
+<body>
+  <div id="hd">
+    <h1>IN成都的最新点评</h1>
+    <div class="oprts">
+      <a class="f5" href="javascript:void(0)">更新本页</a>
+      <a class="empty" href="javascript:void(0)">清空队列</a>
+    </div>
+  </div>
+  <div id="bd">
+    <div class="feedLi li tpl">
+      <div class="avatar"><img src="" alt=""/></div>
+	    <div class="subject">
+	    	<span class="username">
+	    		
+	    	</span>
+	    	在
+	    	<span class="placename">
+	    		
+	    	</span>
+	    </div>
+	    <div class="txt">
+	    	
+	    </div>
+      <div class="oprts"><a class="li put" href="javascript:void(0)">放进队列</a></div>
+	    <div class="c">
+	    	
+	    </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <script type="text/javascript">
+(function($){
+  
+  var $ls = $('#bd'),
+    $liTpl = $ls.find('.tpl').hide().remove().removeClass('tpl'),
+    lastFeedId = 0,
+    domain = 'in.chengdu.cn',
+    wallName = 'earthhour',
+	wallPlaces = '10586';
+
+/**
+ * 获取POST信息
+ * in3.joyotime.com/wall/post_list_place/名称/1001/100/
+ * @param $page 页数 默认1页
+ * @param $page_size 每页大小 默认：100 最大1000
+ * @param $place_id 地点ID号 多个用 %2C(,) 分开 
+ * @param $type 操作类型 1=chekcin,2=tip,3=photo 多个用,分开
+ * @param $content 内容匹配
+ * @param $id 对应信息的ID号 多个用,隔开 范围值用-隔开
+ * @param $post_date 发布时间 范围值用-隔开 格式：20121231235959
+ * @param $order 排序 1：倒序 0：正序 默认1
+ * @param $callback 跨域需要JSONP，回调函数
+ * @param $force 是否强制更新 默认 0  1/0
+ * @param $is_count 是否需要统计 默认1 需要统计 1/0
+ */
+  function updateTimeline(){  	
+    $.ajax('http://'+ domain +'/wall/post_list_place/'+ wallName +'/'+ wallPlaces +'/100/',{
+      // dataType : 'jsonp',
+	  // cache : false,
+      data : {
+        sinceId : lastFeedId
+      },
+      beforeSend : function()
+      {
+        $ls.empty().addClass('loading');
+      },
+      success : function(json, textStatus, jqXHR)
+      {
+      	var json = eval("("+json+")");
+        //if(json && (0 == json.errorCode))
+        if(json)
+        {
+          //console.log(json.data.length);
+          if(json.data.length)
+          {
+            json.data.reverse();         	
+            
+            $.each(json.data, function(idx, el)
+            {
+              var $li = $liTpl.clone().attr('id', 'feedLi-'+el.postId).
+                find('.avatar img').attr({
+                  'src':el.avatar,
+                  'alt':el.username+'的头像'}).end().
+                find('.username').text(el.username).end().
+                find('.placename').text(el.placename).end().
+                prependTo($ls).show('normal');
+                
+                $li.find('.txt').text(el.content?('“'+el.content+'”'):'');
+                
+              lastFeedId = el.postId;
+            });
+            
+            $ls.find('.feedLi:gt(99)').remove();
+          }
+          else if (json.data.length=0)
+          {
+            $ls.append('<div class="noMore">没有更新的动态了</div>');
+          }
+        }
+        else
+        {
+          console && console.log('error feed/list : '+json.message);
+        }
+      	return false;
+      },
+      complete : function()
+      {
+        $ls.removeClass('loading');
+      }
+    });
+  }
+  
+  $('#hd .f5').click(updateTimeline);
+  $('#hd .empty').click(function(){
+    $.ajax('http://'+ domain +'/wall/clean/' + wallName + '/',{
+      // dataType : 'jsonp',
+	  // cache : false,
+      success : function(json, textStatus, jqXHR){
+      	var json = eval("("+json+")");
+      	
+        if(json && (0 == json.status)){
+          lastFeedId = 0;
+          updateTimeline();
+        } else {
+          console && console.log('error queue/empty : '+json.message);
+          alert(json.message);
+        }
+      	return;
+      }
+    });
+  });
+  
+  $ls.delegate('.put', 'click', function(e){
+    var $t = $(this).closest('.feedLi'),
+        id = $t.attr('id').split('-').pop();
+    
+    if(!id){
+      console && console.log('invalid id of feedLi : '+id);
+      return;
+    }
+      
+    $.ajax('http://'+ domain +'/wall/checked/' + wallName + '/'+ id,{
+      // dataType : 'jsonp',
+	  // cache : false,
+      success : function(json, textStatus, jqXHR){
+      	var json = eval("("+json+")");
+        if(json && (0 == json.status)){
+          
+          $t.hide('normal', function(){
+            $t.remove();
+          });
+        } else {
+          console && console.log('error checked : '+json.message);
+        }
+      	return false;
+      }
+    });
+  });
+  
+  // init
+  updateTimeline();
+  
+})(jQuery);	
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<h2 class="contentTitle">彩票可爆出道具</h2>
+<div class="pageContent">
+    <form method="post" action="{$self_uri}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone)">
+        <div class="pageFormContent" layoutH="97">
+            <!--{loop $items $key $value}-->
+            <dl style="width:25%;">
+                <dt style="width:15px;"><input type="checkbox" name="items[]" {if $value['appearByLottery']==1}checked=checked{/if} id="item_{$value['id']}" value="{$value['id']}" class="required"/></dt>
+                <dd><label for="item_{$value['id']}">{$value['name']}</label></dd>
+            </dl>
+            <!--{/loop}-->
+            
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                提交
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

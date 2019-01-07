@@ -1,0 +1,88 @@
+{eval $page_rel='product_onsale';}
+<div class="pageHeader" id="inmall_{$page_rel}">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="search_type">
+                        <option value="0">商品名</option>
+                        <option value="1"<!--{if $search_type}--> selected<!--{/if}-->>商品ID</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="edit" target="navTab" title="编辑商品" rel="{eval echo build_rel(array('inmall', 'product_add'))}" warn="请选择要编辑的商品" href="{eval echo site_url(array('inmall', 'product_add', 'id'))}/<!--{{id}}-->"><span>编辑</span></a>
+            </li>
+            <li>
+                <a class="edit" title="分享商品" rel="{eval echo build_rel(array('inmall', 'product_add'))}" warn="请选择要分享的商品" href="{eval echo site_url(array('ugcv3','post','share'));}/item_id/<!--{{id}}-->/item_type/23/rel/{eval echo build_rel(array('inmall','product_add'));}" target="dialog"><span>分享</span></a>
+            </li>
+            <li>
+                <a class="icon" target="ajaxTodo" title="您确定要下架该商品么？" href="{eval echo site_url(array('inmall', 'offtheshelf', 'id'))}/<!--{{id}}-->" warn="请选择您要下架的商品"><span>下架</span></a>
+            </li>
+            <!-- <li>
+                <a class="icon" target="dialog" href="{eval echo site_url(array('inmall', 'recommend', 'id'))}/<!--{{id}}-->" title="推荐到首页" width="600" height="500" warn="请选择您要推荐的商品" close="imgareaselect_close"><span>推荐到首页</span></a>
+            </li> -->
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="30%">商品名</th>
+                <th width="7%">价格(积分)</th>
+                <th width="10%">库存(实际/销售)</th>
+                <th width="6%">销量</th>
+                <th width="15%">购买人数</th>
+                <th width="11%">开始时间</th>
+                <th width="11%">结束时间</th>
+                <th width="5%">排序值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}" id="{$page_rel}_{$row['id']}">
+                <td>{$row['id']}
+                <!--{if $row['digest']}-->
+                <span class="tip_{echo strtotime($row['digest'])>TIMESTAMP?'red':'grey'}">荐</span>
+                <!--{/if}-->
+                </td>
+                <td>
+                <!--{if strtotime($row['startDate']) > TIMESTAMP}-->
+                <span class="tip_red">未开始</span>
+                <!--{elseif strtotime($row['endDate']) < TIMESTAMP}-->
+                <span class="tip_blue">已结束</span>
+                <!--{elseif $row['isLimit'] && $row['quantity'] == 0}-->
+                <span class="tip_grey">已售罄</span>
+                <!--{else}-->
+                <span class="tip_green">售卖中</span>
+                <!--{/if}-->
+                {$row['name']}
+                </td>
+                <td>{$row['price']}</td>
+                <td>{$row['stock']}/{$row['quantity']}</td>
+                <td>{$row['saleCount']}</td>
+                <td>{$row['buyerCount']}+<input type="text" size="4" onfocus="modify_rank2(this, 'Product', '{$row['id']}', 'inventedBuyerCount')" value="{$row['inventedBuyerCount']}" name="inventedBuyerCount" /></td>
+                <td>{echo dt2($row['startDate'], 'Y-m-d H:i')}</td>
+                <td>{echo dt2($row['endDate'], 'Y-m-d H:i')}</td>
+                <td><input type="text" size="4" onfocus="modify_rank2(this, 'Product', '{$row['id']}', 'rankOrder')" value="{$row['rankOrder']}" name="rank_order" /></td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

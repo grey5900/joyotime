@@ -1,0 +1,6 @@
+<!--{loop $apps $host $auth}-->
+var syn_login = document.createElement("script");
+syn_login.src = "http://{$host}/sso/setcookie?s={$auth}&t=" + Math.random();
+syn_login.setAttribute('type', 'text/javascript');
+document.body.appendChild(syn_login);
+<!--{/loop}-->

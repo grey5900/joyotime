@@ -1,0 +1,53 @@
+<!--{template header}-->
+		<div class="wrapper">
+			<div class="container">
+				<div class="mainbox">
+					<div class="main">
+						<div class="inner main-conter">
+							<div class="title">
+								<h3>密码修改</h3>
+							</div>
+							<div class="detail">
+								<form id="revisepassword-form" class="form-horizontal" action="/modify_pass" method="post" novalidate="novalidate">
+									<div class="control-group">
+										<label class="control-label" for="password_again">原密码：</label>
+										<div class="controls">
+											<input class="controls-ipt text-input" type="password" name="oldpwd" value="" id="oldpwd">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="password_again"> 新密码：</label>
+										<div class="controls">
+											<input class="controls-ipt text-input" type="password" name="newpwd" value="" id="newpwd">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="password_again">重复密码：</label>
+										<div class="controls">
+											<input class="controls-ipt text-input" type="password" name="renew" value="" id="renew" placeholder="重复以上密码">
+										</div>
+									</div>
+									<div class="from-actions">
+										<label class="control-label"></label>
+										<div class="controls">
+											<input class="btn btn-primary" data-loading-text="　……　" type="submit" value="　确定　">
+											<input class="btn" type="reset" value="重置">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				<!-- 	<div class="sidebar">
+						<div class="title">
+							<h3>多美科技</h3>
+						</div>
+						<dl>
+							<dd>开发合作:<span>2012-11-11</span></dd>
+							<dd>渠道编号:<span>11111</span></dd>
+						</dl>
+					</div>
+				</div> -->
+			</div>
+		</div>
+<!--{template footer}-->

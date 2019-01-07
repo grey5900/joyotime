@@ -1,0 +1,11 @@
+{
+	"亲爱的": "Dear ",
+    "名字分行符": ",",
+	"您提交了重置密码申请，点击以下链接，即可重置密码：": "You just applied to reset your password, please click the following link to reset password:",
+	"(如果您无法点击此链接，请将它复制到浏览器地址栏后访问)": "(If clicking the link above doesn't work, please copy and paste the URL in a new browser window instead)",
+	"为了保障您帐号的安全性，请在 24小时内完成重置密码操作，此链接将在密码重置成功后失效！": "Please reset your password in 24 hours for security. The link will expire after password is reset.",
+	"系统邮件，请勿回复": "Please do not reply to this email, as this inbox is not monitored.",
+	"下载鱼说客户端": "Download now",
+	"联系我们：": "Contact us:",
+	"重置鱼说密码": "Reset password"
+}

@@ -1,0 +1,33 @@
+/*重置样式*/
+ul,ol{ list-style:none;}
+body,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,table,td,tr,img,div,input,textarea,iframe,button{ margin:0;padding:0;}
+table{border-collapse:collapse; border-spacing:0}
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}
+select,input,img,button{ vertical-align:middle; border:0;}
+a{ text-decoration:none;color:#000;}
+a:hover{ text-decoration:underline;}
+em,b,strong,i{ font-style:normal;font-weight:normal;}
+button{background:transparent;}
+
+/*全局样式*/
+body 
+{
+	font: 12px/1.5 'Microsoft Yahei',"\5B8B\4F53",verdana,sans-serif;	
+	background-color:#fff;
+	color:#333;	
+	width:100%;
+	height:100%;
+}
+
+.clearfix{zoom:1;
+	&:after{clear:both;content:'.';height:0;line-height:0;display:block;visibility:hidden;}
+}
+
+
+.ib{display:inline-block;_display:inline;_zoom:1;}
+
+.bgp(@x,@y){background-position:@x @y;}
+
+@yh:Microsoft Yahei;
+@bd:1px solid #C8C8C8;
+@icons:url(images/icons.png) no-repeat;

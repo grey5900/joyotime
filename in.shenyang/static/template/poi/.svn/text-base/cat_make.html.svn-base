@@ -1,0 +1,106 @@
+<div class="pageContent" style="width:480px;overflow:none;" id="poi_category">
+	<form method="post" action="{$post_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent">
+			<div class="panel" defH="200">
+				<h1>分类属性</h1>
+				<div>
+					<dl class="unit">
+						<dt>分类名称</dt>
+						<dd><input type="text" name="content"{if isset($info) && !empty($info)} value="{$info[content]}"{/if} size="30" class="required" /></dd>
+					</dl>
+					<dl class="unit">
+						<dt>排序值</dt>
+						<dd><input type="text" name="orderValue"{if isset($info) && !empty($info)} value="{$info[orderValue]}"{/if} size="30" class="required" /></dd>
+					</dl>
+					<dl class="unit">
+						<dt>等级</dt>
+						<dd><select name="level">
+							<option value="0"{if isset($info) && !empty($info) && $info[level] == 0} selected="selected"{/if}>最高</option>
+							<option value="1"{if isset($info) && !empty($info) && $info[level] == 1} selected="selected"{/if}>一级</option>
+						</select></dd>
+					</dl>
+					<!-- <dl class="unit">
+						<dt>品牌分类</dt>
+						<dd><input type="checkbox" id="isbrand" name="isBrand" value="1"{if isset($info) && !empty($info) && $info[isBrand]} checked="checked"{/if} onchange="checkboxToRadio(this.id,'pid');"/> 是</dd>
+					</dl>  -->
+					<dl class="unit">
+						<dt>上级分类</dt>
+						<dd>{loop $cates $key $val}
+						<input type="{if isset($info) && !empty($info) && $info[isBrand]}radio{else}checkbox{/if}" class="pid" name="parentId[]" value="{$val[id]}"{if (isset($ships) && !empty($ships) && in_array($val[id], $ships))||(isset($parent)&&$parent>0&&$parent==$val[id])} checked="checked"{/if}/>{$val[content]} 
+						{/loop}</dd>
+					</dl>
+				</div>
+			</div>
+            <div class="panel" defH="150">
+                <h1>分类图标-地点用的</h1>
+                <div>
+                    <dl class="unit">
+                        <dt></dt>
+                        <dd><button type="button" id="{if isset($info)&&!empty($info)&&!empty($info[icon])}edit_{/if}btn_icon">上传图标</button></dd>
+                    </dl>
+                </div>
+            </div>
+           <div class="panel" defH="150">
+                <h1>分类图标－分类用的</h1>
+                <div>
+                    <dl class="unit">
+                        <dt></dt>
+                        <dd><button type="button" id="{if isset($info)&&!empty($info)&&!empty($info[categoryIcon])}edit_{/if}btn_category_icon">上传图标</button></dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- <div class="panel" defH="150">
+                <h1>WP分类图标-地点用的</h1>
+                <div>
+                    <dl class="unit">
+                        <dt></dt>
+                        <dd><button type="button" name="wp_place_icon">上传图标</button></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="panel" defH="150">
+                <h1>WP分类图标－分类用的</h1>
+                <div>
+                    <dl class="unit">
+                        <dt></dt>
+                        <dd><button type="button" name="wp_category_icon">上传图标</button></dd>
+                    </dl>
+                </div>
+            </div>  -->
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close" onclick="navTab.reload('/poi/category/index');">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var option = "name:'icon[]',id:'{if isset($info)&&!empty($info)&&!empty($info[icon])}edit_{/if}cat_icon',file_type:'common',resolution:'odp'";
+        {if isset($info)&&!empty($info)&&!empty($info[icon])}
+            option += ",image_name:'{$info[icon]}'";
+        {/if}
+        $("#{if isset($info)&&!empty($info)&&!empty($info[icon])}edit_{/if}btn_icon").my_upload(eval("({"+option+"})"));
+        //分类图标2
+        var option = "name:'categoryIcon[]',id:'{if isset($info)&&!empty($info)&&!empty($info[categoryIcon])}edit_{/if}cat_icon2',file_type:'common',resolution:'odp'";
+        {if isset($info)&&!empty($info)&&!empty($info[icon])}
+            option += ",image_name:'{$info[categoryIcon]}'";
+        {/if}
+        $("#{if isset($info)&&!empty($info)&&!empty($info[categoryIcon])}edit_{/if}btn_category_icon").my_upload(eval("({"+option+"})"));
+        
+        
+        var option = "name:'icon[]',id:'wp_place_icon',file_type:'common',resolution:'wdp'";
+        <!--{if $info['icon']}-->
+            option += ",image_name:'{$info['icon']}'";
+        <!--{/if}-->
+        $("button[name=wp_place_icon]", $("#poi_category")).my_upload(eval("({"+option+"})"));
+        
+        var option = "name:'categoryIcon[]',id:'wp_category_icon',file_type:'common',resolution:'wdp'";
+        <!--{if $info['categoryIcon']}-->
+            option += ",image_name:'{$info['categoryIcon']}'";
+        <!--{/if}-->
+        $("button[name=wp_category_icon]", $("#poi_category")).my_upload(eval("({"+option+"})"));
+    });
+</script>

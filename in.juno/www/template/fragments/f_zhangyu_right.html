@@ -1,0 +1,25 @@
+{if $v3_fragments['v3_f_zhangyu_right']}
+<div class="module week">
+						<div class="tit">
+							<h3>{$v3_fragments['v3_f_zhangyu_right']['frag']['name']}<i></i></h3>
+						</div>
+						<div class="con">
+						{loop $v3_fragments['v3_f_zhangyu_right']['data'] $zhangyu_right_key $zhangyu_r}
+							{if $zhangyu_right_key > 0}{eval break;}{/if}
+							<h4><a href="{$zhangyu_r['link']}" target="_blank">{$zhangyu_r['title']}</a></h4>
+							<div class="img"><a href="{$zhangyu_r['link']}" target="_blank"><img src="{$zhangyu_r['image']}" alt="{$zhangyu_r['title']}" /></a></div>
+							<p>{$zhangyu_r['summary']}</p>
+						{/loop}
+							<div class="list">
+								<ul>
+									{loop $v3_fragments['v3_f_zhangyu_right']['data'] $zhangyu_right_key $zhangyu_r}
+										{if $zhangyu_right_key > 0 && $zhangyu_right_key<=7}
+										<li><a href="{$zhangyu_r['link']}" target="_blank">• {$zhangyu_r['title']}</a></li>
+										{/if}
+									{/loop}
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+{/if}

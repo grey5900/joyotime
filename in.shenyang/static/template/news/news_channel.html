@@ -1,0 +1,97 @@
+<form id="pagerForm" method="post" action="{$current_page}">
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="<!--{{param.orderField}}-->" />
+	<input type="hidden" name="orderDirection" value="<!--{{param.orderDirection}}-->" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:50px;">
+				<label>搜索：</label>
+				
+			</li>
+			<li>
+			<input type="text" name="keywords" value="{$keywords}"/>
+			</li>
+			<li style="width:50px;"><label>父分类：</label></li>
+			<li><select name="parentId">
+			<option value='0'>所有分类</option>
+			{$category}
+			</select></li>
+			
+			
+		</ul>
+		
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				<!-- li><a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a></li -->
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+		{if $status != 2}
+			<li><a class="add" href="news/add" target="navTab" rel="{eval echo build_rel(array('news', 'add'))}"><span>添加</span></a></li>
+			<li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="ids" postType="string" href="news/delthem" class="delete"><span>批量删除</span></a></li>
+			<li><a class="edit" href="news/add/id/<!--{{id}}-->" target="navTab" warn="请选择一个频道"  rel="{eval echo build_rel(array('news', 'add'))}"><span>修改</span></a>
+		{/if}	
+			<li><a class="edit" href="news/status" title="删除和不显示的内容将会显示/显示的内容将变成不显示。" postType="string" target="selectedTodo"   rel="ids"><span>批量修改状态</span></a></li>
+			<li class="line">line</li>
+			<li><a class="edit" href="post/index/catId/<!--{{id}}-->" target="navTab" warn="请选择一个频道"  rel="{eval echo build_rel(array('post', 'index'))}"><span>管理频道POST数据</span></a>
+			<!-- Add by Liuw -->
+		{if $status != 2}
+			<li><a class="icon" href="/web/new_fragment/index/categoryId/<!--{{id}}-->" target="navTab" rel="{echo build_rel(array('news', 'fragment'));}" warn="请选择频道"><span>碎片管理</span></a></li>
+		{/if}		
+		</ul>
+	</div>
+	<table class="table" width="1200" layoutH="138">
+		<thead>
+			<tr>
+				<th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+				<th width="20" >频道ID</th>
+				<th width="40" >频道名称</th>
+				<th width="40" >上级频道</th>
+				<th width="10" >状态</th>
+				<th width="30" >模板样式</th>
+				<th width="30" >绑定域名</th>
+				<th width="10" >排序</th>
+				<th width="30">创建日期</th>
+				{if $status != 2}<th width="30">操作</th>{/if}
+			</tr>
+		</thead>
+		<tbody>
+		<!--{loop $list $k $v}-->
+			<tr target="id" rel="{$v['id']}">
+				<td><input name="ids" value="{$v['id']}" type="checkbox"></td>
+				<td>{$v['id']}</td>
+				<td>{$v['catName']}</td>
+				<td>{$v['parentName']}</td>
+				<td>{eval echo $v['status']==0 ? "不显示":( $v['status']==1 ? "显示" : "删除" )}</td>
+				<td>{$v['style']}</td>
+				<td>{$v['domain']}</td>
+				<td  ><input type="text" onfocus="modify_rank2(this,'WebNewsCategory',{$v['id']},'orderValue');" value="{$v['orderValue']}" style="width:30px;" /></td>
+				<td>{eval echo date('Y-m-d H:i', $v[dateline]);}</td>
+
+				{if $status != 2}
+				<td>
+					<a title="删除" target="ajaxTodo" href="news/delete/id/{$v['id']}" class="btnDel">删除</a>
+					<a title="编辑" target="navTab" href="news/add/id/{$v['id']}" class="btnEdit">编辑</a>
+				</td>
+				{/if}
+			</tr>
+		<!--{/loop}-->
+			
+			
+		</tbody>
+	</table>
+	
+	<!--{template main/page_bar}-->
+	
+</div>

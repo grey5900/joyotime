@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>充值中心</title>
+        <meta name="description" content="" />
+        <meta name="author" content="Grey" />
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <!-- <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script> -->
+        <!-- <script src="http://lib.sinaapp.com/js/bootstrap/v3.0.0/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script> -->
+    </head>
+
+    <body class="fs-home">
+        <header class="navbar navbar-inverse fs-home-header">
+            <div class="container">
+                <div class="fs-nav-logo">
+                    <a href="#" class="fs-logo">
+                        鱼说fishsaying
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse fs-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                    	<li><a href="index.html">首页</a></li>
+                    	<li><a href="#">充值中心</a></li>
+                    	<!-- <li><a href="withdraw.html">余额提现</a></li> -->
+                    	<li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="container fs-home-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="fs-sidebar" role="complementary">
+                        <ul class="nav fs-sidenav">
+                            <li><a href="account.html" class="profile"><i class="icon-profile"></i>我的账户</a></li>
+                            <li><a href="#" class="active recharge"><i class="icon-recharge"></i>账户充值</a></li>
+                            <!-- <li><a href="withdraw.html" class="withdraw"><i class="icon-withdraw"></i>余额提现</a></li> -->
+                            <li><a href="#" class="signout"><i class="icon-signout"></i>退出登录</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9" role="main">
+                    <div class="fs-section">
+                        <form action="recharge_submit" method="get" accept-charset="utf-8" class="fs-form-horizontal form-horizontal section-recharge" role="form">
+                            <div class="form-group">
+                                <label class="control-label">充值账户：</label>
+                                <span>二流（774995890@qq.com）</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">充值账户：</label>
+                                <a href="#" class="btn btn-success fs-btn">支付宝</a>
+                                <!-- <button type="submit" class="btn btn-default fs-btn">Paypal</button> -->
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">充值金额：</label>
+                                <div class="radio-inline">
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                        20分钟（<span>￥6</span>）
+                                      </label>
+                                    </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                        60分钟（<span>￥16</span>）
+                                      </label>
+                                    </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                        100分钟（<span>￥30</span>）
+                                      </label>
+                                    </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                        200分钟（<span>￥60</span>）
+                                      </label>
+                                    </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                        400分钟（<span>￥100</span>）
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">应付金额：</label>
+                                <span class="fco">￥6</span>
+                            </div>
+                            <!-- <button type="submit" class="btn fs-btn btn-warning">确认支付</button> -->
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <a href="#" class="btn fs-btn btn-warning">确认支付</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="fs-home-footer">
+            <div class="container">
+            	<p>
+            	    Copyright ©2013 Fishsaying Technology Co., Ltd. All rights reserved.
+            	</p>
+            </div>
+        </footer>
+    </body>
+</html>

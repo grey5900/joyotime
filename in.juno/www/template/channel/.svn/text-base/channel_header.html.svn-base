@@ -1,0 +1,15 @@
+<div class="column nav">
+			<div class="logo">
+				<a href="http://{$channel_domain}"><img src="/static/in_themes/{$theme}/images/logo.jpg" alt="" /></a>
+			</div>
+			<ul>
+			{eval $subcategory = 0 ;}
+			<!--{loop $sub_cate $key $value}-->
+				{if $subcategory > 10}{eval break;}{/if}
+				{if $value['link']==-1}{eval continue;}{/if}
+				<li><a class="{if $key==$category['id']}active{/if}" {if $value['link']!=''}target="_blank" href="{$value['link']}"{elseif $value['tag_count']}href="/category/{$key}"{else}href="/nlist/{$key}"{/if}><i class="nav-bg cat{$key} <!--{echo $key==$id?' on':''}-->"></i>{$value['catName']}</a></li>
+				{eval $subcategory++;}
+			<!--{/loop}-->
+				
+			</ul>
+</div>

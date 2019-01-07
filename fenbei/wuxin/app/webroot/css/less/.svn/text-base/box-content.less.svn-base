@@ -1,0 +1,126 @@
+.box-content {
+  width: 81%;
+  float: right;
+  .content-wrapper {
+    padding: 0;
+    margin: 0;
+  }
+}
+.content-wrapper {
+  .nav-tabs {
+   margin: 0;
+   background: #e5e5e5;
+   border: 1px solid #d9d9d9;
+   li {
+    a{
+      padding: 10px 0;
+      color: #333;
+      width: 112px;
+      height: 25px;
+      text-align: center;
+    }
+    &.active {
+      .clearfix();
+      width: 112px;
+      height: 25px;
+      .nav-tab-active {
+        background: url('../img/nav-tab-active.jpg');
+        background-position: 50% 100%;
+        background-repeat: no-repeat;
+        padding-bottom: 10px;
+        position: absolute;
+      } 
+    }
+   }
+  }
+  .tab-content{
+    padding: 0 0 10px;
+    background: #f5f5f5;
+    .tab-pane  {
+      padding: 0 30px;
+    }
+    .form-horizontal {
+      margin-top: 20px;
+      .control-group{
+        width: 95%;
+        .help-block {
+          display: inline-block;
+          cursor: pointer;
+          padding: 2px 10px;
+          margin: 0;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        .signature-preview {
+          margin-top: 10px;
+        }
+        .fileupload {
+          .img-polaroid {
+            display: inline-block;
+            width: 320px;
+            height: 160px;
+            position: relative;
+            left: 100px;
+          }
+        }
+        .show-graphic {
+          width: 50%;
+          min-height: 64px;
+          margin: 10px 0;
+          padding: .4em;
+          background: #fff;
+        }
+
+        .keyword {
+          display: inline-block;
+          margin-top: 8px;
+        }
+      }
+    }
+    .select-box {
+      .clearfix();
+      width: 100%;
+      .tab-navs {
+        display: inline-block;
+        margin: 0 19px 0 0;
+        float: left;
+        .control-group {
+          margin: 0;
+          .controls {
+            width: 40%;
+            margin-top: 10px;
+            .radio {
+              line-height: 20px;
+              display: block;
+              padding: 10px 10px 10px 30px;
+              .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+            }
+          }
+        }
+      }
+      .tab-content {
+        display: block;
+        //float: left;
+        .tab-pane {
+          margin: 0;
+          .control-group {
+            
+            .controls {
+              //width: 60%;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    .operate-box {
+      margin: 20px 0;
+      .clearfix();
+      .input-medium {
+        cursor: pointer;
+        margin: 5px;
+      }
+    }
+  }
+}

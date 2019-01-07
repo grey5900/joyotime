@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>IN成都 - 敢耍，爱泡！</title>
+    <script type="text/javascript">
+
+var APP_URL = "{$app_jump}";
+var DOWNLOAD_URL = "http://icd.sc";
+var GOOGGLEPLAY_URL = "http://icd.sc";
+var ITUNES_URL = "itms://itunes.apple.com/cn/app/in-cheng-dou/id428311029?mt=8";
+var ZUNE_URL = "http://www.windowsphone.com/s?appid=bd9b07c9-2075-4f3e-a480-520b828bc564";
+var QR_URL = "{$current_url}";
+
+/*Request = { QueryString : function(item){ var svalue = location.search.match(new RegExp("[\?\&]" + item + "=([^\&]*)(\&?)","i")); return svalue ? svalue[1] : svalue; } }     
+//MYGO
+if (location.href.indexOf('mygo=')){
+  var MYGO = Request.QueryString("mygo");
+  DOWNLOAD_URL =
+  GOOGGLEPLAY_URL = 
+  ITUNES_URL = 
+  ZUNE_URL = "http://mygo.chengdu.cn/index.php?controller=mobile&action=detail&team_id=" + MYGO;
+}*/
+
+/*
+ * 检查是否需要跳转到买购网
+ */
+/*function is_jump_mygo(exp){
+	var isMygo = '{$is_mygo}';
+	var originalId = '{$originalId}';
+	if(isMygo == '1'){//跳转到买购
+		window.location = "http://mygo.chengdu.cn/index.php?controller=mobile&action=detail&team_id="+originalId;
+	}else if(exp == 'Chrome'){
+		window.location = GOOGGLEPLAY_URL;
+	}else if(exp == 'IOS'){
+		window.location = ITUNES_URL;
+	}else if(exp == 'MSIE'){
+		window.location = ZUNE_URL;
+	}else{
+		window.lcoation = DOWNLOAD_URL;
+	}
+		
+}*/
+
+function check_groupon_redirect(){
+	var isMygo = '{$is_mygo}';
+	var type = '{$type}';
+	if(type == "ingroupon" && isMygo == "1"){
+		redirect('{$mygo_jump}');
+	}else{
+		redirect('');
+	}
+}
+
+function redirect(timeout_jump) {
+    if (navigator.userAgent.match(/Android/)) {
+        if (navigator.userAgent.match(/Chrome/)) {
+            setTimeout(function() {
+                if (!document.webkitHidden){
+                  	  window.location = timeout_jump != '' ? timeout_jump : GOOGGLEPLAY_URL;
+                }
+            }, 500);
+            window.location = APP_URL;
+        } else {
+            // Older Android browser
+            var iframe = document.createElement("iframe");
+            iframe.style.border = "none";
+            iframe.style.width = "1px";
+            iframe.style.height = "1px";
+            var t = setTimeout(function() {
+             	 window.location = timeout_jump != '' ? timeout_jump : GOOGGLEPLAY_URL;
+            }, 1000);
+            //iframe.onload = function () { clearTimeout(t) };
+            iframe.src = APP_URL;
+            document.body.appendChild(iframe);
+        }
+     } 
+     else if (navigator.userAgent.match(/iPhone|iPad|iPod/)) {
+         // iOS
+         setTimeout(function() {
+             if (!document.webkitHidden){
+               	  window.location = timeout_jump != '' ? timeout_jump : ITUNES_URL;
+             }
+         }, 500);
+         window.location = APP_URL;
+     }
+     else if (navigator.userAgent.match(/MSIE/)) {
+         // Windows Phone
+         setTimeout(function() {
+             if (!document.webkitHidden){
+             	    window.location = timeout_jump != '' ? timeout_jump : ZUNE_URL;
+             }
+         }, 500);
+         window.location = APP_URL;
+     }
+     else {
+         // Not mobile
+         //var img = document.createElement("img");
+         //img.src = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl="+encodeURIComponent(QR_URL);
+         //document.body.appendChild(img);
+  	     window.location = timeout_jump != '' ? timeout_jump : DOWNLOAD_URL;
+     }
+}
+    </script>
+  </head>
+<body onload="check_groupon_redirect()">
+    <p>正在跳转到IN成都...</p>    
+</body>
+</html>

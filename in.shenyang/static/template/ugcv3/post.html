@@ -1,0 +1,344 @@
+{if !isset($do) || empty($do)}
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="{$orderField}" />
+	<input type="hidden" name="orderDirection" value="{$orderDirection}" />
+	<input type="hidden" name="keywords" value="{$keywords}" />
+	<input type="hidden" name="status" value="{$status}" />
+	<input type="hidden" name="begin" value="{$begin}" />
+	<input type="hidden" name="end" value="{$end}" />
+	<input type="hidden" name="poi_id" value="{$poi}" />
+	<input type="hidden" name="user_id" value="{$user}" />
+	<input type="hidden" name="isdesc" value="{$isdesc}" />
+	<input type="hidden" name="iswall" value="{$iswall}" />
+	<input type="hidden" name="orderby" value="{$orderby}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:auto">
+				<select name="field">
+					<option value="p.content" {if $field=="p.content"}selected{/if}>内容</option>
+					<option value="p.id" {if $field=="p.id"}selected{/if}>ID</option>
+					<option value="p.uid" {if $field=="p.uid"}selected{/if}>用户ID</option>
+				</select>
+				<input type="text" name="keywords" value="{$keywords}"/>
+			</li>
+			<li style="width:auto">
+				<label><input type="checkbox" name="isread" {if $isread==1}checked=checked{/if} value=1>只看未读</label> 
+				<label><input type="checkbox" name="isEssence" {if $isEssence}checked=checked{/if}  value=1>只看精华 </label> 
+				<label><input type="checkbox" name="isrecommend" {if $isrecommend}checked=checked{/if} value=1>只看推荐</label> 
+				<label><input type="checkbox" name="photo" {if $photo==1}checked=checked{/if} value=1>只看含有图片 </label> 
+				<label><input type="checkbox" name="isTaboo" {if $isTaboo}checked=checked{/if} value=1>含有敏感词</label> 
+			</li>
+			<li>
+			<select class="combox" name="type" style="width:100px;">
+				<option value="">全部类型</option>
+				<option value="2"{if isset($type) && $type==2} selected{/if}>点评</option>
+				<option value="4"{if isset($type) && $type==4} selected{/if}>YY</option>
+				<option value="7"{if isset($type) && $type==7} selected{/if}>分享</option>
+				
+			</select>
+			</li>
+			<li>
+			不包含:
+			
+			<input type="text" name="not_include_keyword" id="not_include_keyword_{echo TIMESTAMP;}" value="{$not_include_keyword}" />
+			
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				<li><a class="button" href="{eval echo site_url(array('ugcv3','post','advsearch'));}/op/pic" rel="{eval echo build_rel(array('ugc','post','advsearch','op','pic'));}" target="dialog" mask="true" title="高级检索"><span>高级检索</span></a></li> 
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('ugcv3','post','edit'));}/do/read/itemtype/19" target="selectedTodo" rel="ids[]" warn="请至少选择一条纪录"><span>批量标为已读</span></a></li>
+			<li><a class="edit" href="{eval echo site_url(array('ugcv3','reply','redirect', 'do', 'post'));}/item_id/<!--{{sid_pic}}-->/item_type/19/rel/{eval echo build_rel(array('ugcv3','post','redirect'));}" target="dialog" rel="{eval echo build_rel(array('ugcv3','post','redirect'));}" warn="请选择一条纪录"><span>回复</span></a></li>
+			<li><a class="edit" href="{eval echo site_url(array('ugcv3','post','share'));}/item_id/<!--{{sid_pic}}-->/item_type/19/rel/{eval echo build_rel(array('ugcv3','post','redirect'));}" target="dialog" height="350" rel="{eval echo build_rel(array('ugcv3','post','redirect'));}" warn="请选择一条纪录"><span>分享</span></a></li>
+			<li><a class="delete" href="{eval echo site_url(array('block','ban_things','post',  'Post' ));}/<!--{{sid_pic}}-->" target="dialog" title="确定要屏蔽吗？" warn="请选择要屏蔽的记录"><span>屏蔽</span></a></li>
+			<li><a class="delete" id="batch_ban_post_{echo TIMESTAMP;}"><span>批量屏蔽</span></a></li>
+			
+			<li>
+			<a class="icon" 
+			href="{echo site_url(array('ugcv3', 'post', 'set_tag',  'ids'));}/<!--{{sid_pic}}-->" 
+			target="dialog" rel="{echo build_rel(array('ugcv3', 'post', 'set_tag'));}" title="设置标签" warn="请选择一条点评">
+			<span>设置标签</span></a></li>
+			
+			<li><a class="icon" 
+			id="set_tag_button_{echo TIMESTAMP;}" title="设置标签" warn="请选择一条点评">
+			<span>批量设置标签</span></a></li>
+			
+			<li><a class="edit" href="{eval echo site_url(array('ugcv3','post','recommend',  'id' ));}/<!--{{sid_pic}}-->/type/19/has_digest/1" target="dialog" rel="{echo build_rel(array('ugcv3', 'post', 'recommend'));}" width="650" height="530" close="imgareaselect_close" ><span>精华推荐设置</span></a></li>
+			<li><a class="icon" 
+			
+			id="batch_essence_{echo TIMESTAMP;}" warn="请至少选择一条纪录"><span>批量设置精华</span></a></li>
+				
+		</ul>
+	</div> 
+
+	<div layoutH="116" id="">
+	<table class="list" width="100%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="5%">ID</th>	
+				<th width="10%" >时间</th>
+				<th width="5%">发布人/类型/地点</th>
+				<th width="20%">内容</th>
+				<th width="20%">TAG</th>
+				<th width="5%">赞/踩/分享</th>
+				<th width="10%">回复</th>
+				<!-- <th width="5%">操作</th> -->
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="sid_pic" rel="{$val[id]}" id="ugcv3_post_settag_{echo TIMESTAMP;}">
+				<td><input name="ids[]" value="{$val[id]}" type="checkbox"></td>
+				<td>{$val['id']} - {$val['status']}</td>
+				<td><span>{$val[createDate]}</span></td>
+				<td class="style-1">
+					<div><img alt="avatar" height="40" width="40" src="{eval echo image_url($val[avatar], 'head');}" /></div>
+					<div class="nameid" style="word-break:break-all;">
+						<span>{$val[username]} <div style="float:right; width:30px;height:20px; line-height:20px; border:1px solid black; text-align:center">{$val[typename]}{if $val['relatedItemType']==23}-商品{/if}</div></span>
+						<p>ID{$val[uid]}</p>
+						<p>@{if $val[placename]}{$val[placename]}{else}无地点信息{/if}</p>
+					<div>
+				</td>		
+				<td class="style-2">
+					{if $val[isEssence]}
+					<div style=" text-align:left;font-size:12px; margin-right:10px; background-color:red;color:white; width:20px; height:20px; line-height:20px; margin-left:0 auto; border:solid black 1px; text-align:center">
+					精
+					</div>
+					{/if}
+					{if $val[isrecommend]}
+					<div style=" text-align:left;font-size:12px; margin-right:10px; background-color:{eval if($val['isrecommend']>$current_date) {}orange{eval }else{ }gray{eval } };color:white; width:20px; height:20px; line-height:20px; margin-left:0 auto; border:solid black 1px; text-align:center">
+					荐
+					</div>
+					{/if}
+					<div class="content" style="word-break:break-all;word-wrap: break-word; <!--{if $val['status']==3 || $val['status']==4}--> text-decoration:line-through;<!--{/if}-->">
+						{if $val['status']==3}<font style="color:red;font-weight:bold">屏蔽</font>{/if}
+						{if $val['status']==4}<font style="color:red;font-weight:bold">用户删除</font>{/if}
+						<!-- {if $val['relateItem']}
+							<i>{if $val['relateItem']['id']} {$val['relateItem']['typename']} : {$val['relateItem']['content']} <br/> @源ID:{$val['relateItem']['id']} - @{$val['relateItem']['username']} {else} <font color=red>分享源内容已经不存在了</font> {/if}<br/>
+							</i><hr/><br/>
+						{/if} -->
+						{$val[content]}
+					</div>
+					{if $val[photo]}
+					<div>
+					<a href="{eval echo image_url($val[photo], 'user', 'odp');}" class="image_show">
+					<img alt="pic" width="80" src="{eval echo image_url($val[photo], 'user', 'odp');}" />
+					</a>
+					</div>
+					{/if}
+					{if $val[isread]}
+					<div style=" text-align:right;font-size:16px; margin-right:10px;">
+					√
+					</div>
+					{/if}
+				</td>
+				<td>{$val[tags]}</td>
+				<td><span>{$val[praiseCount]} / {$val[stampCount]} / {$val[shareCount]}</span></td>
+				<td><span>{$val[replyCount]} <a href="/ugcv3/reply/index/itemid/{$val['id']}" target="navTab">查看</a> | <a href="{eval echo site_url(array('ugcv3','reply','redirect', 'do', 'post'));}/item_id/{$val[id]}/item_type/19/rel/{eval echo build_rel(array('ugcv3','post','redirect'));}" target="dialog" rel="{eval echo build_rel(array('ugcv3','post','redirect'));}" >添加</a> | <a class="edit" href="{eval echo site_url(array('ugcv3','post','share'));}/item_id/{$val[id]}/item_type/19/rel/{eval echo build_rel(array('ugcv3','post','redirect'));}" target="dialog" height="350" rel="{eval echo build_rel(array('ugcv3','post','redirect'));}" >分享</a></span></td>	
+			</tr>
+			{/loop}
+			<tr>
+				<td colspan=6 align="right">总计：</td>
+				
+				<td><span>{$total_praiseCount} / {$total_stampCount} / {$total_shareCount}</span></td>
+				<td><span>{$total_replyCount}</td>	
+			
+			</tr>
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+<script type="text/javascript">
+	$(function(){
+		$("a.image_show").fancybox();
+	});
+</script>
+</div>
+{/if}
+{if $do==='reply'}
+<div class="pageContent">
+	<form method="post" action="{$post_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent">
+		<table border="0" cellspacing="8" cellpadding="8" width="100%" layoutH="60">
+			<tbody>
+				<tr>
+					<td width="120" valign="top" align="right"><label>回复内容</label></td>
+					<td align="left" valign="top" colspan="2"><textarea name="content" cols="50" rows="6" class="required"></textarea></td>
+				</tr>
+				<tr>
+					<td align="right"><label>回复时间</label></td>
+					<td align="left" colspan="2">
+						<input type="text" name="created_txt" value="{$now}" readonly />
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label>选择马甲</label></td>
+					<td align="left" class="nowrap">
+					<input type="radio" name="uid" value="random" checked="checked"/>随机 
+					<input type="radio" name="uid" value="select" />指定:</td>
+					<td><input type="hidden" name="user.id" value="" />
+					<input type="text" name="user.name" size="20" value="" readonly class="required"/>
+					<a class="btnLook" href="{eval echo site_url(array('ugc','post','listvest'));}/aid/{$aid}/tmp/vest1" lookupGroup="user">查找带回</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">回复</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+{elseif $do==='advsearch'}
+<div class="pageContent">
+	<form method="post" action="{eval echo site_url(array('ugcv3','post','index'));}" onsubmit="return navTabSearch(this);">
+		<div class="pageFormContent" layoutH="40">
+		<div class="unit">
+				<label>内容：</label>
+				<input type="text" name="keywords" size="30" />
+				<input type="hidden" name="field" value="p.content" size="30" />
+			</div>
+			<div class="unit">
+				<label>指定时间段：</label>
+				<input type="text" name="begin" class="date textInput readonly" readonly="true" format="yyyy-MM-dd 00:00:00"/><a class="inputDateButton" href="javascript:;">选择</a>
+				<label style="text-align: center; width:10px;">~</label>
+				<input type="text" name="end" class="date textInput readonly" readonly="true" format="yyyy-MM-dd 23:59:59"/><a class="inputDateButton" href="javascript:;">选择</a>
+			</div>
+			<div class="unit">
+				<label>指定POI：</label>
+				<input type="hidden" name="poi.id" />
+				<input type="text" name="poi.name" value="" readonly />
+				<a id="lookup_link" class="btnLook" href="{eval echo site_url(array('ugc','post','list_lookup'));}/type/place" lookupGroup="poi" height="560">查找带回</a>
+			</div>
+			<div class="unit">
+				<label>指定用户：</label>
+				<input type="hidden" name="user.id" value=""/>
+				<input type="text" name="user.name" value="" readonly />
+				<a id="lookup_link" class="btnLook" href="{eval echo site_url(array('ugc','post','list_lookup'));}/type/user" lookupGroup="user" height="560">查找带回</a>
+			</div>
+			<div class="unit">
+				<label>审核状态：</label>
+				<select name="status">
+					<option value="-1">请选择</option>
+					<option value="0">正常</option>
+					<option value="3">屏蔽</option>
+					<option value="4">被用户删除</option>
+				</select>
+			</div>
+			<div class="unit">
+				<label>检索类型：</label>
+				<select class="combox" name="type">
+				<option value="">全部类型</option>
+				<option value="2"{if isset($type) && $type==2} selected{/if}>点评</option>
+				<option value="4"{if isset($type) && $type==4} selected{/if}>YY</option>
+				<option value="7"{if isset($type) && $type==7} selected{/if}>分享</option>
+				
+				</select>
+			</div>
+			<div class="unit">
+			
+				<label><input type="checkbox" name="isread" {if $isread==1}checked=checked{/if} value=1>只看未读</label> 
+				<label><input type="checkbox" name="isEssence" {if $isEssence}checked=checked{/if}  value=1>只看精华 </label> 
+				<label><input type="checkbox" name="isrecommend" {if $isrecommend}checked=checked{/if} value=1>只看推荐</label> 
+				<label><input type="checkbox" name="photo" {if $photo==1}checked=checked{/if} value=1>只看含有图片 </label> 
+				<label><input type="checkbox" name="isTaboo" {if $isTaboo}checked=checked{/if} value=1>含有敏感词</label> 
+			
+			</div>
+			
+			<div class="unit">
+				<label>排序（倒序）：</label>
+				<label><input type="radio" name="orderby" {if $orderby=="praiseCount desc"}checked=checked{/if} value="praiseCount desc">赞</label> 
+				<label><input type="radio" name="orderby" {if $orderby=="stampCount desc"}checked=checked{/if}  value="stampCount desc">踩 </label> 
+				<label><input type="radio" name="orderby" {if $orderby=="shareCount desc"}checked=checked{/if} value="shareCount desc">分享</label> 
+				<label><input type="radio" name="orderby" {if $orderby=="replyCount desc"}checked=checked{/if} value="replyCount desc">回复 </label> 
+				
+			</div>
+			<div class="unit">
+				<label>不包含：</label>
+				<input type="text" name="not_include_keyword" size="30" />
+				
+				
+			</div>
+			
+			
+		</div>		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检 索</button></div></div></li>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取 消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+{/if}
+<script>
+$(function(){
+	$("select[type=hidden][name=status]").change(function(){
+		//var url = $(this).attr("url") + $(this).val() ;
+		$("input[type=hidden][name=status]").val($(this).val());
+		navTabSearch($("#main_form"));
+	});
+
+	$("#set_tag_button_{echo TIMESTAMP;}").click(function(){
+		var ids = new Array();
+		$("#ugcv3_post_settag_{echo TIMESTAMP;} input[name='ids\[\]'][type='checkbox']:checked").each(function(i,k){
+			ids[i] = $(this).val();
+		});
+		if(ids.length<=0){ 
+			alertMsg.error("请选择要设置标签的记录");
+			return ;
+		}
+		var idstrng = ids.join("-");
+		$.pdialog.open("{echo site_url(array('ugcv3', 'post', 'set_tag','ids'));}/"+idstrng, "{echo build_rel(array('ugcv3', 'post', 'set_tag'));}", "设置标签", {width: 500, height: 300 ,'ids' :ids});
+	});
+
+	$("#batch_essence_{echo TIMESTAMP;}").click(function(){
+		var ids = new Array();
+		$("#ugcv3_post_settag_{echo TIMESTAMP;} input[name='ids\[\]'][type='checkbox']:checked").each(function(i,k){
+			ids[i] = $(this).val();
+		});
+		if(ids.length<=0){ 
+			alertMsg.error("请至少选择一条要设置精华的记录");
+			return ;
+		}
+		var idstrng = ids.join("-");
+		$.pdialog.open("{echo site_url(array('ugcv3', 'post', 'batch_essence','item_type',19,'ids'));}/"+idstrng, "{echo build_rel(array('ugcv3', 'post', 'batch_essence'));}", "批量设置精华", {width: 500, height: 200 ,'ids' :ids});
+		return false;
+	});
+
+	$("#batch_ban_post_{echo TIMESTAMP;}").click(function(){
+		var ids = new Array();
+		$("#ugcv3_post_settag_{echo TIMESTAMP;} input[name='ids\[\]'][type='checkbox']:checked").each(function(i,k){
+			ids[i] = $(this).val();
+		});
+		if(ids.length<=0){ 
+			alertMsg.error("请至少选择一条要屏蔽的记录");
+			return ;
+		}
+		var idstrng = ids.join("-");
+		//'block','ban_things','post',  'Post' 
+		$.pdialog.open("{echo site_url(array('block', 'ban_things', 'post','Post',0,0,'ids'));}/"+idstrng, "{echo build_rel(array('ugcv3', 'post', 'batch_essence'));}", "批量屏蔽", {width: 500, height: 300 ,'ids' :ids});
+		
+	});
+
+})
+
+</script>

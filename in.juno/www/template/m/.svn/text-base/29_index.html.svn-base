@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="language" content="zh_cn">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>首探地铁2号线 美食趴趴走</title>
+		<link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+		<link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.css"/>
+		<style type="text/css" media="screen">
+			.unit-title {
+				color: #5ba81c;
+			}
+
+			.page {
+				background: #f5f5f5;
+			}
+			.grid {
+
+			}
+
+			#content .unit .box {
+				background: #fff;
+			}
+			.texts .info-group {
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+
+			}
+			.texts .inside p {
+
+			}
+			.texts .inside p i {
+				color: #a31400;
+				font-style: normal;
+			}
+			.bottons .botton span.title {
+				color: #a1400b;
+			}
+			.bottons .botton span.intro {
+				color: #a1400b;
+			}
+			.touchslider-item .touchslider-info span {
+
+			}
+			.multi-line dd span {
+				color: #000;
+				font-size: 16px;
+				line-height: 44px;
+			}
+			.multi-line .viewall a {
+
+			}
+			.multi-line .viewall a:hover {
+
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #aaa;
+				padding-top: 5px;
+			}
+			.touchslider-item img {
+				height: 290px;
+			}
+			.card .feed .arrow h3 {
+			}
+			.card .feed .arrow em {
+				color: #aaa;
+			}
+			.card .feed .info strong {
+				color: #ff5a00;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page">
+			<div id="content">
+				<div class="unit-img">
+					<a href="/event/index/29/"><img border="0" src="http://icd.sc/img/m/29/header.jpg" width="100%" border="0" /></a>
+				</div>
+				<div class="unit texts">
+					<div class="unit-title">
+						<h3>活动简述</h3>
+					</div>
+					<div class="box">
+						<div class="inside expand">
+							<div class="expand-simple">
+								<p>
+									9月16日地铁2号线终于在成都市民万众瞩目的期待下开始运营了，无论是上下班还是逛街购物……
+								</p>
+							</div>
+							<div class="expand-more">
+								<p>
+									9月16日地铁2号线终于在成都市民万众瞩目的期待下开始运营了，无论是上下班还是逛街购物，在成都，地铁出行可是成为大家的新选择啦！当然身为吃货的小编也忍不住对地铁周边美食的各种垂涎，今天就为大家来盘点一下地铁周边的美食吧！各位可爱的Inner也可以写下你推荐的地铁二号线周边美食，即日起在推荐地点写下带有“我爱坐地铁，更爱追美食”的字样并点评即视为成功参与在所有参与者中挑选点评数量多、点评质量优的原创点评者3位获得奖品。10月22日公布中奖名单。
+								</p>
+							</div>
+							<div class="expand-arrow">
+								点击查看全部内容
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="unit texts">
+					<div class="unit-title">
+						<h3>活动时间</h3>
+					</div>
+					<div class="box">
+						<div class="inside">
+							<p>
+								10月11日-10月21日
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="unit texts">
+					<div class="unit-title">
+						<h3>参与方式</h3>
+					</div>
+					<div class="box">
+						<div class="inside">
+							<p>
+								在地铁二号线周边任意美食地点写下带有<i>“我爱坐地铁，更爱追美食”</i>字样的点评即视为成功参与。
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="unit texts">
+					<div class="unit-title">
+						<h3>活动奖励</h3>
+					</div>
+					<div class="box">
+						<div class="inside">
+							<p>
+								活动选出3位优秀点评者，获得价值50元的红旗连锁代金券一张。
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="unit multi-line" id="intros">
+					<div class="unit-title"><h3>美食站点</h3></div>
+					<div class="box">
+						<dl>
+							<dd>
+								<a href="http://icd.sc/img/m/29/29_station1.html" class="arrow">
+									<span>第一站：“交通枢纽”茶店子</span>
+								</a>
+							</dd>
+							<dd>
+								<a href="http://icd.sc/img/m/29/29_station2.html" class="arrow">
+									<span>第二站：“美食扎堆”一品天下</span>
+								</a>
+							</dd>
+							<dd>
+								<a href="http://icd.sc/img/m/29/29_station3.html" class="arrow">
+									<span>第三站：“老旧小区”白果林</span>
+								</a>
+							</dd>
+							<dd>
+								<a href="http://icd.sc/img/m/29/29_station4.html" class="arrow">
+									<span>第四站：“美味小食”通惠门</span>
+								</a>
+							</dd>
+							<dd>
+								<a href="http://icd.sc/img/m/29/29_station5.html" class="arrow">
+									<span>第五站：“美食公园”人民公园</span>
+								</a>
+							</dd>
+							<dd>
+								<a href="http://icd.sc/img/m/29/29_station6.html" class="arrow">
+									<span>第六站：“贵贱都有”春熙路</span>
+								</a>
+							</dd>
+							<dd>
+								<a href="http://icd.sc/img/m/29/29_station7.html" class="arrow">
+									<span>第七站：“烧烤多多”牛王庙</span>
+								</a>
+							</dd>
+							<dd>
+								<a href="http://icd.sc/img/m/29/29_station8.html" class="arrow">
+									<span>第八站：“热闹市集”牛市口</span>
+								</a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="unit scrolls">
+					<div class="unit-title">
+						<h3>地铁路线</h3>
+					</div>
+					<div id="showPic" class="touchslider">
+						<div class="touchslider-viewport" >
+							<div>
+								<div class="touchslider-item">
+									<img src="http://icd.sc/img/m/29/map.jpg" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--{if isset($feed) && !empty($feed)}-->
+				<div class="unit card">
+					<div class="unit-title"><h3>活动动态</h3></div>
+					<div class="box">
+						<div class="feeds">
+							<div class="feed">
+								<a href="/event/feeds/{$event_id}/{$uid}/0/1">
+									<div class="arrow">
+										<div class="icon">
+											<img src="{$feed[avatar]}"  width="40" height="40"/>
+										</div>
+										<div class="detail">
+											<h4>{$feed[uname]}</h4>
+											<!--{if $feed[type]==1}-->
+											<div class="action">在</div>
+											<div class="place">{$feed[placename]}</div>
+											<div class="action">签到</div>
+											<!--{elseif $feed[type]==2}-->
+											<div class="action">点评</div>
+											<div class="place">{$feed[placename]}</div>
+											<div class="start"><!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}--></div>
+											<div class="info">{$feed[content]}</div>
+											<!--{elseif $feed[type]==3}-->
+											<div class="action">在</div>
+											<div class="place">{$feed[placename]}</div>
+											<div class="action">上传照片</div>
+											<div class="info">{$feed[content]}</div>
+											<div class="photo"><img src="{$feed[photoName]}" width="200" /></div>
+											<!--{/if}-->
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--{/if}-->
+				
+				<!--{if isset($joines) && !empty($joines)}-->
+				<div class="unit user-list">
+					<div class="unit-title"><h3>您有{$count_joines}位好友参加了该活动</h3></div>
+					<div class="box">
+						<a href="/event/joines/{$event_id}/{$uid}/0/1" class="arrow">
+							<ul class="user-list">
+								<!--{loop $joines $uid $u}-->
+								<li><img src="{$u[avatar]}" /></li>
+								<!--{/loop}-->
+							</ul>
+						</a>
+					</div>
+				</div>
+				<!--{/if}-->
+				<div class="unit texts">
+					<div class="statement">
+						<p>
+							<strong>特别说明：</strong>
+							<br />
+							在所有参与者中挑选点评数量多、点评质量优的原创点评者3位获得奖品。10月22日公布中奖名单。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<p>IN.CHENGDU.CN</p>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+		<script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>

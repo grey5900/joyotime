@@ -1,0 +1,58 @@
+<form id="pagerForm" action="#rel#" method="post">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="cid" value="{$cid}" />
+	<input type="hidden" name="keyword" value="{$keyword}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" action="{$current_url}" onsubmit="return navTabSearch(this);" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:100px;"><select name="cid">
+				<option value=""<!--{if empty($cid)}--> selected<!--{/if}-->>全部分类</option>
+				<!--{loop $cates $k $v}-->
+				<option value="{$k}"<!--{if !empty($cid)&&$cid == $k}--> selected<!--{/if}-->>{$v}</option>
+				<!--{/loop}-->
+			</select></li>
+			<li><input type="text" name="keyword" value="{$keyword}" size="30" /></li>
+		</ul>
+		<div class="subBar">
+			<ul><li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li></ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="/cms/content/add" target="navTab" rel="cms_content_add"><span>添加文章</span></a></li>
+			<li><a class="edit" href="/cms/content/edit/<!--{{sid_content}}-->" target="navTab" rel="cms_content_edit" warn="请选择一篇文章"><span>编辑文章</span></a></li>
+			<li><a class="delete" href="/cms/content/delete" target="selectedTodo" rel="ids[]" title="删除后数据无法恢复，确定要删除吗?" warn="请至少选择一篇文章"><span>批量删除文章</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon" href="/cms/content/examine" target="selectedTodo" rel="ids[]" title="执行该操作后前台将立即显示所选文章，确定要执行吗？" warn="请至少选择一篇文章"><span>发布文章</span></a></li>
+		</ul>
+	</div>
+	<table class="table" border="0" cellpadding="4" cellspacing="4" width="100%" layoutH="135">
+		<thead><tr>
+			<th width="3%"><input type="checkbox" group="ids[]" class="checkboxCtrl"/></th>
+			<th width="50%">标题</th>
+			<th width="10%">来源</th>
+			<th width="10%">分类</th>
+			<th width="10%">发布时间</th>
+			<th>状态</th>
+		</tr></thead>
+		<tbody>
+			<!--{loop $list $k $v}-->
+			<tr target="sid_content" rel="{$k}">
+				<td><input type="checkbox" name="ids[]" value="{$k}" /></td>
+				<td><a href="{$v[link]}" target="_blank">{$v[subject]}</a>
+				<td><a href="{$v[jumpLink]}" target="_blank">{$v[source]}</a>
+				<td>{$v[cate]}</td>
+				<td>{$v[createDate]}</td>
+				<td><span style="color:<!--{if $v[status]==1}-->#000;<!--{else}-->#f00;<!--{/if}-->">{$v[s_status]}</span></td>
+			</tr>
+			<!--{/loop}-->
+		</tbody>
+	</table>
+    <!--{template main/page_bar}-->
+</div>

@@ -1,0 +1,25 @@
+<div class="headline">
+	<div class="hd">热头条<i></i></div>
+	<ul class="list">
+	{loop $hot[headline_edu][data] $key_h $d_h}
+		
+		{eval $max=count($hot[headline_edu][data]) ;}
+		
+		{if $key_h==3}
+		<li class="more">
+		{/if}
+		{if $key_h<3}
+		<li>
+			<h1><a href="{$d_h['link']}" target="_blank">{$d_h['title']}</a></h1>
+			<p><a href="{$d_h['link']}" target="_blank">{$d_h['summary']}</a></p>
+		</li>
+		{else}
+		<a href="{$d_h['link']}" target="_blank">{$d_h['title']}</a>
+		{/if}
+			    
+		{if $key_h==($max-1)}
+		</li>
+		{/if}
+	{/loop}	
+	</ul>
+</div>

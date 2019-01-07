@@ -1,0 +1,100 @@
+<div class="pageHeader" id="stat_settle_header">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    时段：
+                    <input type="text" readonly="readonly" name="start_date" class="date" format="yyyy-MM-dd" value="{$start_date}" />
+                    ~
+                    <input type="text" readonly="readonly" name="end_date" class="date" format="yyyy-MM-dd" value="{$end_date}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <select name="type">
+                        <option value="channel_name">渠道名</option>
+                        <option value="merchant_name">渠道商名</option>
+                        <option value="channel_id">渠道号</option>
+                        <option value="merchant_id">渠道商号</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <table width="100%" class="table">
+        <thead>
+            <tr>
+                <th width="25%">激活设备数</th>
+                <th width="25%">四川激活设备数</th>
+                <th width="25%">成都激活设备数</th>
+                <th width="25%">结算数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{$total}</td>
+                <td>{$sc_num}</td>
+                <td>{$cd_num}</td>
+                <td>{$settle_num}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="pageContent" id="stat_settle_content">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="navTab" warn="请选择你要查看明细的渠道统计" title="渠道统计明细" rel="{eval echo build_rel(array('stat', 'channel_detail'))}" href="{eval echo site_url(array('stat', 'channel_detail', 'id'))}/<!--{{id}}-->"><span>查看明细</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="198">
+        <thead>
+            <tr>
+                <th width="5%">渠道号</th>
+                <th width="15%">渠道名</th>
+                <th width="15%">所属渠道商</th>
+                <th width="15%">合作开始时间</th>
+                <th width="10%">激活设备数</th>
+                <th width="10%">四川激活设备数</th>
+                <th width="10%">成都激活设备数</th>
+                <th width="5%">扣量比例</th>
+                <th width="15%">结算数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $data $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['name']}</td>
+                <td>{$row['merchantName']}</td>
+                <td>{$row['coopStartTime']}</td>
+                <td>{$row['totalCount']}</td>
+                <td>{$row['scCount']}</td>
+                <td>{$row['cdCount']}</td>
+                <td>{$row['custRatio']}</td>
+                <td>{eval echo floor($row['scCount']*$row['custRatio'])}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+    $(function(){
+        <!--{if $type}-->
+        $("select[name=type]", $("#stat_settle_header")).val("{$type}");
+        <!--{/if}-->
+    });
+</script>

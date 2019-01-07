@@ -1,0 +1,52 @@
+html {
+  height: 100%;
+}
+
+.fs-error {
+  height: 100%;
+  .container {
+    height: 100%;
+  }
+  .fs-error-text,.fs-error-img {
+    margin-top: 100px;
+  }
+  .fs-error-text {
+    h1 {
+      font-size: 4.8em;
+      color: @green;
+    }
+    p {
+      font-size: 1.625em;
+      margin-bottom: 50px;
+      color: #666;
+    }
+    .fs-btn {
+      text-align: center;
+    }
+  } 
+}
+
+.fs-error-footer {
+  margin-top: -30px;
+  p {
+    text-align: center;
+    color: @gray-light;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  a {
+    color: @green;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .fs-error-text {
+    text-align: center;
+  }
+  .fs-error-img {
+    display: none;
+  }
+  .fs-error-footer {
+    display: none;
+  }
+}

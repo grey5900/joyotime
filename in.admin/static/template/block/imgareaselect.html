@@ -1,0 +1,216 @@
+<!--{eval extract(imageselect_size($size_type?$size_type:'home', $image));}-->
+<script type="text/javascript" src="/static/js/ajaxfileupload/ajaxfileupload.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/js/imgareaselect/css/imgareaselect-default.css" />
+<script type="text/javascript" src="/static/js/imgareaselect/scripts/jquery.imgareaselect.pack.js"></script>
+<div id="image_select_div_{echo TIMESTAMP}">
+	<div>
+		<input type="file" name="imgareaselect_file" id="imgareaselect_file" style="width:100px;" />
+		<button type="button" onclick="javascript:ajaxFileUpload();"> 上 传 </button>
+		<button type="button" name="btn_del_{echo TIMESTAMP}">删除</button>
+		<button type="button" name="btn_preview_{echo TIMESTAMP}">预览</button>
+		
+		<input type="hidden" name="x1" id="x1" />
+		<input type="hidden" name="y1" id="y1" />
+		<input type="hidden" name="x2" id="x2" />
+		<input type="hidden" name="y2" id="y2" />
+		<input type="hidden" name="width" id="width" />
+		<input type="hidden" name="height" id="height" />
+		<input type="hidden" name="w0" id="w0" value="{$w0}" />
+		<input type="hidden" name="h0" id="h0" value="{$h0}" />
+		<input type="hidden" name="w" id="w" value="{$w}" />
+		<input type="hidden" name="h" id="h" value="{$h}" />
+		<input type="hidden" name="nw" id="nw" value="{$nw}" />
+		<input type="hidden" name="nh" id="nh" value="{$nh}" />
+		<input type="hidden" name="mw" id="mw" value="{$mw}" />
+		<input type="hidden" name="mh" id="mh" value="{$mh}" />
+		<input type="hidden" name="image_w" id="image_w" value="{$imagesize['w']}" />
+		<input type="hidden" name="image_h" id="image_h" value="{$imagesize['h']}" />
+		<input type="hidden" name="image" id="image" value="{$image}" />
+		<input type="hidden" name="size_type" id="size_type" value="{echo $size_type?$size_type:'home'}" />
+	</div>
+	<div>
+		<div id="img_select_{echo TIMESTAMP}" style="margin:20px;text-align:center;float:left;width:{$nw}px;height:{$nh}px;">
+			
+		</div>
+		<div id="preview_{echo TIMESTAMP}" style="margin:20px;overflow:hidden;width:{echo intval($nw/2)}px;height:{echo intval($nh/2)}px;float:left;text-align:center;">
+			
+		</div>
+	</div>
+</div> 
+<script type="text/javascript">
+$(function(){
+	<!--{if $image}-->
+	init_image_select("{$image}");
+	<!--{/if}-->
+	
+	$("button[name=btn_del_{echo TIMESTAMP}]").on("click", function(){
+		// 删除图片
+		$("#img_select_{echo TIMESTAMP}").html("");
+		$("#preview_{echo TIMESTAMP}").html("");
+		$('#image', $("#image_select_div_{echo TIMESTAMP}")).val("")
+		// 清空截取插件的内容
+		if($("#imgareaselect_in")[0]) {
+			$("#imgareaselect_in").html("");
+		}
+	});
+	
+	$("button[name=btn_preview_{echo TIMESTAMP}]").on("click", function(){
+		// 预览图片
+		if($("#img_select_{echo TIMESTAMP} img")[0] == undefined) {
+			alertMsg.error("没有输入图片，无法预览，亲");
+			return;
+		}
+		
+	    var x1 = $('#x1', $("#image_select_div_{echo TIMESTAMP}")).val();
+	    var y1 = $('#y1', $("#image_select_div_{echo TIMESTAMP}")).val();
+	    var x2 = $('#x2', $("#image_select_div_{echo TIMESTAMP}")).val();
+	    var y2 = $('#y2', $("#image_select_div_{echo TIMESTAMP}")).val();
+	    var width = $('#width', $("#image_select_div_{echo TIMESTAMP}")).val();
+	    var height = $('#height', $("#image_select_div_{echo TIMESTAMP}")).val();
+	    var image = $('#image', $("#image_select_div_{echo TIMESTAMP}")).val();
+		window.open("/home/preview_imgarea/" + encodeURIComponent(image) + "/{$imagesize['w']}/{$imagesize['h']}/{$w}/{$h}/" + x1 + "/" + y1 + "/" + width + "/" + height + "/");
+	});
+});
+
+function init_image_select(image) {
+	$.getJSON("/home/imageselect_size/{echo $size_type?$size_type:'home'}/" + encodeURIComponent(image), function(json){
+		if(json.image) {
+			image = json.image;
+			var w0 = json.w0;
+			var h0 = json.h0;
+			var w = json.w;
+			var h = json.h;
+			var nw = json.nw;
+			var nh = json.nh
+			var mw = json.mw;
+			var mh = json.mh;
+			var image_w = json.imagesize.w;
+			var image_h = json.imagesize.h;
+
+		    $('#x1', $("#image_select_div_{echo TIMESTAMP}")).val(0);
+		    $('#y1', $("#image_select_div_{echo TIMESTAMP}")).val(0);
+		    $('#x2', $("#image_select_div_{echo TIMESTAMP}")).val(0);
+		    $('#y2', $("#image_select_div_{echo TIMESTAMP}")).val(0);
+		    $('#width', $("#image_select_div_{echo TIMESTAMP}")).val(mw);
+		    $('#height', $("#image_select_div_{echo TIMESTAMP}")).val(mh);
+		    
+		    $('#w0', $("#image_select_div_{echo TIMESTAMP}")).val(w0);
+		    $('#h0', $("#image_select_div_{echo TIMESTAMP}")).val(h0);
+		    $('#w', $("#image_select_div_{echo TIMESTAMP}")).val(w);
+		    $('#h', $("#image_select_div_{echo TIMESTAMP}")).val(h);
+		    $('#nw', $("#image_select_div_{echo TIMESTAMP}")).val(nw);
+		    $('#nh', $("#image_select_div_{echo TIMESTAMP}")).val(nh);
+		    $('#mw', $("#image_select_div_{echo TIMESTAMP}")).val(mw);
+		    $('#mh', $("#image_select_div_{echo TIMESTAMP}")).val(mh);
+		    $('#image_w', $("#image_select_div_{echo TIMESTAMP}")).val(image_w);
+		    $('#image_h', $("#image_select_div_{echo TIMESTAMP}")).val(image_h);
+		    $('#image', $("#image_select_div_{echo TIMESTAMP}")).val(image);
+			
+			// 添加图片
+			var image_obj = $("<img src=\"" + image + "\" width=\"" + w + "\" height=\"" + h + "\" />");
+			$("#img_select_{echo TIMESTAMP}").html(image_obj);
+			
+			// 添加预览图片
+			var preview_obj = $("<img src=\"" + image + "\" />");
+			// 计算下使用高度还是宽度
+			var scale1 = nw/nh;
+			var scale2 = w0/h0;
+			if(scale1 >= scale2) {
+				// 使用宽度
+				preview_obj.attr("width", Math.floor(nw/2));
+			} else {
+				// 使用高度
+				preview_obj.attr("height", Math.floor(nh/2));
+			}
+			$("#preview_{echo TIMESTAMP}").html(preview_obj);
+			
+			if($("#imgareaselect_in")[0] == undefined) {
+				// 没有的话
+				var imgareaselect_in = $("<div id=\"imgareaselect_in\"></div>");
+				$("body").append(imgareaselect_in);
+			} else {
+				$("#imgareaselect_in").html("");
+			}
+			$("#img_select_{echo TIMESTAMP} img").imgAreaSelect({
+		        handles: true,
+		        onSelectChange: preview,
+		        aspectRatio: "{$imagesize['w']}:{$imagesize['h']}",
+		        minWidth: mw,
+		        minHeight: mh,
+		        zIndex: 9999,
+		        parent: $("#imgareaselect_in"),
+		        x1:0,
+		        y1:0,
+		        x2:mw,
+		        y2:mh
+		    });
+	    } else {
+	    	alertMsg.error("无法打开图片，可能图片尺寸或图片本身有错，请检查！当前图片大小[" + json.w0 + "x" + json.h0 + "]，要求图片大小[" + json.imagesize.w + "x" + json.imagesize.h + "]以上");
+	    }
+	});
+}
+
+function preview(img, selection) {
+    if (!selection.width || !selection.height)
+        return;
+	
+	// 图片的原始寬高
+    var width = $('#w', $("#image_select_div_{echo TIMESTAMP}")).val();
+    var height = $('#h', $("#image_select_div_{echo TIMESTAMP}")).val();
+    
+    // 预览区域的寬高
+    var w = $('#nw', $("#image_select_div_{echo TIMESTAMP}")).val();
+    var h = $('#nh', $("#image_select_div_{echo TIMESTAMP}")).val();
+    // 预览区域和选择区域的寬高比例
+    var scaleX = w / (selection.width*2);
+    var scaleY = h / (selection.height*2);
+
+    $("#preview_{echo TIMESTAMP} img").css({
+        width: Math.floor(scaleX * width),
+        height: Math.floor(scaleY * height),
+        marginLeft: -Math.floor(scaleX * selection.x1),
+        marginTop: -Math.floor(scaleY * selection.y1)
+    });
+    
+    $('#x1', $("#image_select_div_{echo TIMESTAMP}")).val(selection.x1);
+    $('#y1', $("#image_select_div_{echo TIMESTAMP}")).val(selection.y1);
+    $('#x2', $("#image_select_div_{echo TIMESTAMP}")).val(selection.x2);
+    $('#y2', $("#image_select_div_{echo TIMESTAMP}")).val(selection.y2);
+    $('#width', $("#image_select_div_{echo TIMESTAMP}")).val(selection.width);
+    $('#height', $("#image_select_div_{echo TIMESTAMP}")).val(selection.height);    
+}
+
+function ajaxFileUpload() {
+    /*
+        prepareing ajax file upload
+        url: the url of script file handling the uploaded files
+        fileElementId: the file type of input element id and it will be the index of  $_FILES Array()
+        dataType: it support json, xml
+        secureuri:use secure protocol
+        success: call back function when the ajax complete
+        error: callback function when the ajax failed
+    */
+    $.ajaxFileUpload({
+        url: "/home/upload?size_type={echo $size_type?$size_type:'home'}", 
+        secureuri: false,
+        fileElementId: "imgareaselect_file",
+        dataType: "json",
+        success: function(data, status) {
+            if(data.code) {
+            	alertMsg.error(data.message);
+            } else {
+            	// 成功了
+            	var image_url = data.image;
+            	if(image_url) {
+            		image_url = "http://{$_SERVER['HTTP_HOST']}" + image_url;
+	            	init_image_select(image_url);
+            	}
+            }
+        },
+        error: function(data, status, e) {
+            alertMsg.error(e);
+        }
+    });
+    return false;
+}
+</script>

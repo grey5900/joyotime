@@ -1,0 +1,108 @@
+{eval $page_rel='goods_selling';}
+<script type="text/javascript">
+function groupon_edit_selling(url) {
+    navTab.openTab("{eval echo build_rel(array('goods', 'groupon_edit_selling'))}", url, {title:"修改在售团购"});
+}
+
+function ajaxTodo_groupon_selling(json) {
+    // DWZ.ajaxDone(json);
+    // if(json.value) {
+        // $("#group_selling_" + json.value.id).css("background-color", "red");
+        // $("a[rel=modify]", $("#group_selling_" + json.value.id)).hide();
+    // }
+    DWZ.ajaxDone(json);
+    if(json.statusCode == 200) {
+        // 成功
+        // 刷新。提交一次
+        $("form", $("#groupon_{$page_rel}")).submit();
+        // 并且刷新下架
+        // $("form", $("#groupon_goods_over")).submit();
+    }
+}
+</script>
+<div class="pageHeader" id="groupon_{$page_rel}">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select class="combox" name="status">
+                        <option value="0">全部商品</option>
+                        <option value="1">售卖中</option>
+                        <option value="2">未开始</option>
+                        <option value="3">已结束</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="ajaxTodo" title="您确定要下架该团购么？" callback="ajaxTodo_groupon_selling" href="{eval echo site_url(array('goods', 'groupon_sale_off', 'id'))}/<!--{{id}}-->" warn="请选择您要下架的商品"><span>下架</span></a>
+            </li>
+            <li>
+                <a class="icon" target="myDwzExport" title="您确定要导出团购订单么？" href="{eval echo site_url(array('goods', 'export_order', 'type', '12', 'id'))}/<!--{{id}}-->" warn="请选择要导出订单信息的商品"><span>导出订单明细</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">商品ID</th>
+                <th width="40%">标题</th>
+                <th width="12%" orderField="gi.startDate" class="<!--{if $order_field=='gi.startDate'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">开始时间</th>
+                <th width="12%">结束时间</th>
+                <th width="5%">价格</th>
+                <th width="5%">参与人数</th>
+                <th width="6%">我方(订单/份数)</th>
+                <th width="4%">剩余库存</th>
+                <th width="4%" orderField="gi.rankOrder" class="<!--{if $order_field=='gi.rankOrder'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">排序值</th>
+                <th width="4%">来源</th>
+                <th width="3%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}" id="group_selling_{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>
+                    <span class="{$row['status_class']}">{$row['status_name']}</span>
+                    <a href="{$row['teamUrl']}" target="_blank">{$row['title']}</a>
+                </td>
+                <td>{$row['startDate']}</td>
+                <td>{$row['endDate']}</td>
+                <td>{$row['grouponPrice']}</td>
+                <td>{$row['joinedCount']}</td>
+                <td>{$row['orderNum']}/{$row['saleNum']}</td>
+                <td>{$row['stock']}</td>
+                <td><input type="text" size="4" onfocus="modify_rank2(this, 'GrouponItem', '{$row['id']}', 'rankOrder')" value="{$row['rankOrder']}" name="rank_order" /></td>
+                <td>{$row['sourceName']}</td>
+                <td><!--{if $row['status']=='0'}--><a href="javascript:;" rel="modify" onclick="groupon_edit_selling('{eval echo site_url(array('goods', 'groupon_edit_selling', 'id', $row['id']))}');">编辑</a><!--{/if}--></td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+    $(function(){
+        <!--{if $status}-->
+        $("select[name=status]", $("#groupon_{$page_rel}")).val("{$status}");
+        <!--{/if}-->
+        
+        if ($.fn.myDwzExport) {
+            $("a[target=myDwzExport]", $(document)).myDwzExport();
+        }
+    });
+</script>

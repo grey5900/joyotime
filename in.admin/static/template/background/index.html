@@ -1,0 +1,70 @@
+<form id="pagerForm" action="#rel#" method="post" onsubmit="return navTabSearch(this);">
+	<input type="hidden" name="keyword" value="{$keyword}" />
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+</form>
+
+<div class="pageHeader">
+	<form method="post" action="{$current_url}" rel="pagerForm" onsubmit="return navTabSearch(this);">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:60px;"><label>图片名称：</label></li>
+			<li><input type="text" name="keyword" value="{$keyword}" size="30"/></li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('client','background','add'));}" target="navTab" title="添加新的背景图"><span>添加背景图</span></a></li>
+			<li class="line">line</li>
+			<li><a class="delete" href="{eval echo site_url(array('client','background','set_def','stat',0));}" target="ajaxTodo" title="取消默认显示"><span>取消默认</span></a></li>
+			<li><a class="edit" href="{eval echo site_url(array('client','background','set_def','stat',1));}/id/<!--{{sid_background}}-->" target="ajaxTodo" title="设为默认显示" warn="请选择一张背景图"><span>强制默认</span></a></li>
+		</ul>
+	</div>
+	
+	<div layoutH="116">
+		
+		<table class="list" width="100%">
+			<thead>
+				<tr>
+					<th width="5%">ID</th>
+					<th width="15%">图片名称</th>
+					<th width="40%" valign="top" style="top:2px;">图片</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{loop $list $key $val}
+				<tr target="sid_background" rel="{$key}">
+					<td>{$key}</td>
+					<td>{$val[name]}</td>
+					<td valign="top" style="top:2px;padding:2px 16px;">
+						{if $val[isForce] > 0}<p><span style="color:#00f;">强制默认</span></p>{/if}
+						<a href="{eval echo image_url($val[image], 'common','udp');}?{eval echo time();}" class="image_show"><img src="{eval echo image_url($val[image], 'common','mdp');}?{eval echo time();}" alt="background_image" width="200" /></a>
+					</td>
+					<td>
+						<a href="{eval echo site_url(array('client','background','delete'));}/id/{$key}" class="btnDel" target="ajaxTodo" title="删除操作无法恢复，确定要执行吗?">删除</a>
+						<a href="{eval echo site_url(array('client','background','edit'));}/id/{$key}" class="btnEdit" target="navTab" title="编辑背景图片">编辑</a>
+					</td>
+				</tr>
+				{/loop}
+			</tbody>
+		</table>
+		
+	</div>
+    <!--{template main/page_bar}-->
+<script type="text/javascript">
+	$(function(){
+		$("a.image_show").fancybox();
+	});
+</script>
+</div>

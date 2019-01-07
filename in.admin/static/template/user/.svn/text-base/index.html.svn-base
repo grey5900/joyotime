@@ -1,0 +1,163 @@
+<!-- 分页属性 -->
+<div id="user_index">
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+    
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="type" value="{$type}" />
+    
+    <input type="hidden" name="status" value="{$status}" />
+    <input type="hidden" name="cellphone" value="{$cellphone}" />
+    <input type="hidden" name="email" value="{$email}" />
+    <input type="hidden" name="gender" value="{$gender}" />
+    
+    <input type="hidden" name="last_time1" value="{$last_time1}" />
+    <input type="hidden" name="last_time2" value="{$last_time2}" />
+    <input type="hidden" name="reg_time1" value="{$reg_time1}" />
+    <input type="hidden" name="reg_time2" value="{$reg_time2}" />
+</form>
+<!-- 页头搜索栏 -->
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select class="combox" name="type">
+                        <option value="nickname">昵称</option>
+                        <option value="username">账号</option>
+                        <option value="id">ID</option>
+                        <option value="deviceCode">设备号</option>
+                    </select></td>
+                    <td>
+                    <input type="text" name="keywords" value="{$keywords}" size="30"/>
+                    </td>
+                </tr>
+            </table>
+            <div class="subBar">
+                <ul>
+                    <li>
+                        <div class="buttonActive">
+                            <div class="buttonContent">
+                                <button type="submit">
+                                    检索
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="button" href="{eval echo site_url(array('user','advsearch'));}" target="dialog" maxable="false" resizable="false" rel="{eval echo build_rel(array('user', 'advsearch'))}" width="500" height="300" title="高级检索"><span>高级检索</span></a>
+                    </li>
+                    <li>
+                        <a class="button" href="{eval echo site_url(array('user', 'index'))}" rel="{eval echo build_rel(array('user', 'index'))}" target="navTab" title="用户管理"><span>重置列表</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- 页面显示区 -->
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="edit" href="/user/reset_pwd/uid/<!--{{id}}-->" target="dialog" rel="user_reset_pwd"><span>重置密码</span></a>
+            </li>
+            <li>
+                <a class="icon" href="{eval echo site_url(array('user', 'private_info', 'id'))}/<!--{{id}}-->" title="隐私信息" rel="{eval echo build_rel(array('user', 'private'))}" target="dialog" maxable="false" warn="请选择一个用户"><span>隐私信息</span></a>
+            </li>
+            <li>
+                <a class="icon" href="javascript:;" id="send_private_a" title="私信"><span>私信</span></a>
+            </li>
+           
+           
+            <li>
+                <a class="icon" warn="请选择要查看的用户" callback="to_user_home" href="{eval echo site_url(array('user', 'user_home', 'id'))}/<!--{{id}}-->" rel="{eval echo build_rel(array('user', 'user_home'))}" target="ajaxTodo"><span>网站个人主页</span></a>
+            </li>
+            <!-- <li>
+                <a class="icon" target="dialog" href="{eval echo site_url(array('user', 'recommend', 'id'))}/<!--{{id}}-->" title="推荐到首页" width="600" height="500" warn="请选择您要推荐的用户" close="imgareaselect_close"><span>推荐到首页</span></a>
+            </li> -->
+        </ul>
+    </div>
+    <table class="list" width="100%" layoutH="138">
+        <thead>
+            <tr>
+                <th width="3%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+                <th width="6%">ID</th>
+                <th width="10%">最后连接时间</th>
+                
+                <th width="6%" orderField="exp" class="<!--{if $order_field=='exp'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">经验值/等级</th>
+                <th width="6%" orderField="point" class="<!--{if $order_field=='point'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">积分</th>
+                
+                <th width="6%" orderField="yyCount" class="<!--{if $order_field=='yyCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">YY</th>
+                <th width="6%" orderField="tipCount" class="<!--{if $order_field=='tipCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">点评</th>
+                <th width="6%" orderField="placeCollectionCount" class="<!--{if $order_field=='placeCollectionCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">地点册</th>
+                <th width="6%" orderField="essenceCount" class="<!--{if $order_field=='essenceCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">精华</th>
+                <th width="6%" orderField="replyCount" class="<!--{if $order_field=='replyCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">回复</th>
+           
+                <th width="6%" orderField="mayorshipCount" class="<!--{if $order_field=='mayorshipCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">地主</th>
+                <th width="6%" orderField="beFollowCount" class="<!--{if $order_field=='beFollowCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">粉丝</th>
+                <th width="6%" orderField="followCount" class="<!--{if $order_field=='followCount'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">关注</th>
+                <th width="6%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr id="row_{$row['id']}" status="{$row['status']}" target="id" rel="{$row['id']}">
+                <td><input name="ids[]" value="{$row['id']}" type="checkbox"></td>
+                <td>ID:{$row['id']}<br/>
+                	账号:{$row['username']}<br/>
+                	昵称:{$row['nickname']}
+                <!--{if $row['digest']}-->
+                <span class="tip_red">荐</span>
+                <!--{/if}-->
+                </td>
+                <td>{$row['lastUpdate']}</td>
+                <!--{eval $leval = array();$level = get_user_level($row['exp']);}-->
+                
+                <td><a href="/user/exp_log/id/{$row['id']}" title="用户经验明细" width="800" height="500" target="dialog">{$row['exp']}</a> / lv.{$level['level']}</td>
+                <td><a href="/user/point_log/id/{$row['id']}" title="用户积分明细" width="800" height="500" target="dialog">{$row['point']}</a></td>
+                <td>{$row['yyCount']}</td>
+                <td>{$row['tipCount']}</td>
+                <td>{$row['placeCollectionCount']}</td>
+                <td>{$row['essenceCount']}</td>
+                <td>{$row['replyCount']}</td>
+                <td>{$row['mayorshipCount']}</td>
+                
+                <td>{$row['beFollowCount']}</td>
+                <td>{$row['followCount']}</td>
+                <td><a href="{eval echo site_url(array('user', 'detail', 'type', 'id', 'keywords', $row['id']));}" rel="{eval echo build_rel(array('user', 'detail'));}" title="用户详情" target="navTab">详情&gt;&gt;</a></td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $("select[name=type]", "#user_index").val("{$type}");
+        $("#send_private_a", "#user_index").click(function(){
+            var ids = $("input:checked[name='ids[]']", "#user_index");
+            var len = ids.length;
+            if(len <= 0) {
+                 alertMsg.error('请选择您要发送私信的用户');
+                 return false;
+            }
+            var id_arr = new Array(len);
+            for(var i=0; i<len; i++) {
+                id_arr[i] = $(ids[i]).val();
+            }
+            
+            var id_str = id_arr.join(":");
+            $.pdialog.open("{eval echo site_url(array('ugc', 'reply', 'send', 'reply_type', '2', 'receiver'))}/" + id_str, "{eval echo build_rel(array('user', 'send_private'))}", "发送私信", {maxable:false, height:"300", width:"500"});
+        });
+    });
+    
+    function to_user_home(json) {
+        window.open(json.value.url);
+    }
+</script>

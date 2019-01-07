@@ -1,0 +1,30 @@
+<!--{template common/header3.0}-->
+	<div class="main channel layout">
+		<!--{template channel_header}-->
+		<div class="column wsss">
+			<div class="tit">
+				<h3><i></i>{$category['catName']}</h3>
+			</div>
+			<div class="bd">
+				<ul class="list clearfix">
+				{loop $list $l}
+					<li>
+						<a href="{if $l['linkuri']}{$l['linkuri']}{else}/article/$l['id']{/if}" target="_blank">
+							<div class="img"><img src="{$l['thumb']}" alt="{$l['subject']}" /></div>
+							<div class="info">
+								<h4>{$l['subject']}</h4>
+								
+								{echo str_replace('p','h5',substr(nl2p($l['summary']),0,strpos(nl2p($l['summary']),'</p>')+4));}
+								{echo substr(nl2p($l['summary']),strpos(nl2p($l['summary']),'</p>')+4);}
+								
+							</div>
+						</a>
+					</li>
+				{/loop}
+					
+				</ul>
+				{$paginate}
+			</div>
+		</div>
+	</div>	
+<!--{template common/footer}-->

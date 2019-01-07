@@ -1,0 +1,7 @@
+<!--{if $banner_ad}-->
+{loop $banner_ad $k_b_a $b_a}
+<div id="a_b_{$k_b_a}" class="ad-banner">
+	{$b_a['description']}
+</div>
+{/loop}
+<!--{/if}-->

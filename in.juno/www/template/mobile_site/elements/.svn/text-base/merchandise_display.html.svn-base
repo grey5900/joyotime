@@ -1,0 +1,40 @@
+<div class="media-stand">
+    <h2 id="">IN成都积分商城精选商品</h2>
+</div>
+<ul class="media-list">
+    <li class="media-ad">
+        <img src="/static/mobile_site/img/01.jpg" alt="" />
+        <p>卡通动物绕线器</p>
+        <div class="score">
+            <span><em>299</em>积分</span>
+        </div>
+    </li>
+    <li class="media-ad">   
+        <img src="/static/mobile_site/img/02.jpg" alt="" />
+        <p>加多宝凉茶一提（6罐）</p>
+        <div class="score">
+            <span><em>1699</em>积分</span>
+        </div>
+    </li>
+    <li class="media-ad">
+        <img src="/static/mobile_site/img/03.jpg" alt="" />
+        <p>万达影城2D影票</p>
+        <div class="score">
+            <span><em>1999</em>积分</span>
+        </div>
+    </li>
+    <li class="media-ad">
+        <img src="/static/mobile_site/img/04.jpg" alt="" />
+        <p>欢乐谷夜场通票</p>
+        <div class="score">
+            <span><em>6999</em>积分</span>
+        </div>
+    </li>
+</ul>
+<div class="control-link">
+    <a href="http://icd.sc" class="btn btn-success">下载IN成都手机客户端立即兑换</a>
+</div>
+<div class="media-center">
+    <span class="text-block">扫描二维码下载</span>
+    <img src="/static/mobile_site/img/chart.png" alt="" />
+</div>      

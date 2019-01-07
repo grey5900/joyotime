@@ -1,0 +1,72 @@
+<!--{template web/header}-->
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox">
+			<div class="main">
+				<div class="inner main-conter">
+					<div class="title">
+						<div class="pull-left"><h3>会员列表</h3></div>
+						<div class="pull-right">
+						    <input type="text" class="input-medium search-query" value="{$keyword}" id="keyword">
+						    <button id="submit" class="btn btn-primary  btn-small">搜索</button>
+						</div>
+					</div>
+					<div class="from-detail">
+						<div class="hd">
+							<div class="span7"><div class="cutoff"><span>会员</span></div></div>
+							<div class="span2"><span>加入时间</span></div>
+						</div>
+						<div class="bd">
+							<dl>
+								<!--{loop $list $k $v}-->
+								<dd>
+									<div class="span7">
+										<div class="event">
+											<div>{$v[number]}</div>
+											<div class="user-icon">
+												<a href="http://in.chengdu.cn/{eval echo !empty($v[id]) ? 'user/'.$v[id]:'';}"><img src="{$v[avatar]}"/></a>
+											</div>
+											<div class="user-details">
+												<h3><a href="http://in.chengdu.cn/{eval echo !empty($v[id]) ? 'user/'.$v[id]:'';}">{$v[nickname]} ({$v[username]})</a></h3>
+												<div class="info">{$v[description]}</div>
+											</div>
+										</div>
+									</div>
+									<div class="span2">
+										<div class="preview">
+											<span>{$v[createDate]}</span>
+										</div>
+									</div>
+								</dd>
+								<!--{/loop}-->
+							</dl>
+							{$paginate}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar">
+				<div class="title">
+					
+				</div>
+				<ul class="nav nav-list">
+					<li class="active"><a href="/member">会员列表</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#submit").on("click", function(){
+			var url = "/member/index/";
+			var key = $("#keyword").val();
+			key == '' && key = 'all';
+			if(key != "")
+				url += key+"/";
+			url += "{$page}";
+			window.location = url;
+		});
+	});
+</script>
+<!--{template web/footer}-->

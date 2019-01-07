@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>IN成都商家平台</title>
+		<!-- Date: 2012-08-27 -->
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+		<link rel="stylesheet" href="css/wrapper.css" >
+		<link rel="shortcut icon" href="img/favicon.ico">
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/main.js"></script>
+
+	</head>
+	<body>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="navbar-link">
+						<h3><a class="logo" href="#">
+							<img width="354" height="55" title="IN成都商家平台" src="img/logo_header.png">
+						</a></h3>
+					</div>
+					<div class="navbar-link pull-right">
+						欢迎您！<span>多梦科技</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu">
+			<div class="container">
+				<div id="fixed-header">
+					<div class="navbar">
+						<ul class="nav">
+					    	<li><a href="#">首页</a></li>
+						    <li><a href="pre.html">优惠管理</a></li>
+						    <li class="active"><a href="#">扩展信息</a></li>
+						    <li><a href="vip_special.html">会员管理</a></li>
+					   </ul>
+					</div>
+				</div>
+				<div class="navbar-link pull-right">
+					<a href="#">修改密码</a><span>|</span>
+					<a href="#">退出登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="container">
+				<div class="mainbox">
+					<div class="main">
+						<div class="inner main-conter">
+							<div class="title">
+								<div class="pull-left">
+									<h3>新建扩展</h3><a href="#" class="modal-what">什么是扩展信息</a>
+								</div>
+							</div>
+							<div class="from-detail">
+								<form action="" method="post" name="">
+									<div class="select-steps">
+										<div class="step-first">
+											<div class="number-tit">
+												<h3>1</h3>
+												<span>选择一个要新建的扩展信息</span>
+											</div>
+											<div class="radio-tab">
+												<ul>
+													<li>
+														<a class="action">
+															<label class="radio">
+																<input data-target="tabRadio1" id="optionsRadios_1" type="radio" name="type" value="tabRadio_1">
+																类型1
+															</label>
+														</a>
+													</li>
+													<li>
+														<a>
+															<label class="radio">
+																<input data-target="tabRadio2" id="optionsRadios_2" type="radio" name="type" value="tabRadio_2">
+																类型2
+															</label>
+														</a>
+													</li>
+													<li>
+														<a>
+															<label class="radio">
+																<input data-target="tabRadio3" id="optionsRadios_3" type="radio" name="type" value="tabRadio_3" >
+																类型3
+															</label>
+														</a>
+													</li>
+													<li>
+														<a>
+															<label class="radio">
+																<input data-target="tabRadio4" id="optionsRadios_4" type="radio" name="type" value="tabRadio_4">
+																类型4
+															</label>
+														</a>
+													</li>
+													<li>
+														<a>
+															<label class="radio">
+																<input data-target="tabRadio5" id="optionsRadios_5" type="radio" name="type" value="tabRadio_5">
+																类型5
+															</label>
+														</a>
+													</li>
+													<li>
+														<a>
+															<label class="radio">
+																<input data-target="tabRadio6" id="optionsRadios_6" type="radio" name="type" value="tabRadio_6">
+																类型6
+															</label>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="step-next">
+											<div id="tabRadio_1"  class="tabRadio">
+												<div class="number-tit">
+													<h3>2</h3>
+													<span>添加内容</span>
+												</div>
+												<div class="hd">
+													<ul class="nav nav-tabs">
+														<li class="active-large">
+															<a>编辑封面内容</a>
+														</li>
+													</ul>
+												</div>
+												<div class="fill">
+													<div class="span5">
+														<div class="controls">
+															<input id="" class="controls-ipt w-fill text-input" type="text" name=""  placeholder="更多地点信息">
+														</div>
+														<div class="controls">
+															<textarea id="" name="" class="w-fill" maxlength="30" rows="3" cols="80" type="text" placeholder="默认填写为该模型的名称及描述并且可以留空"></textarea>
+														</div>
+														<div class="controls">
+															<button type="button" id=""  class="btn btn-primary btn-small">上传图片</button>
+														</div>
+													</div>
+													<div class="span4">
+														<iframe id="Client" src="phone.html" name="" scrolling="no" frameborder="0" width="300px" height="450px">
+															
+														</iframe>
+													</div>
+												</div><!--/end fill-->
+												<div class="hd">
+													<ul class="nav nav-tabs">
+														<li class="active-large">
+															<a>编辑链接页内容</a>
+														</li>
+													</ul>
+												</div>
+												<div class="fill">
+													<div class="span5">
+														<div class="hide-column">
+															<div class="controls">
+																<label class="checkbox">
+																	<input type="checkbox" id="chk1">
+																	简介
+																</label>
+															</div>
+															<div class="cheackbox-bd" id="intro1">
+																<div class="controls">
+																	<textarea id="intro_w" name="intro_w" class="input-xlarge" maxlength="30" rows="3" cols="80" type="text" placeholder=""></textarea>
+																</div>
+															</div>
+														</div>
+														<div class="hide-column">
+															<div class="controls">
+																<label class="checkbox">
+																	<input type="checkbox" id="chk2">
+																	热卖
+																</label>
+															</div>
+															<div class="cheackbox-bd" id="add_col">
+																<div class="upload-img">
+																	<button type="button" id="" class="btn btn-primary btn-small">上传图片</button>
+																</div>
+																<div class="content-fill">
+																	<div class="control-group">
+																		<label class="control-label">标题：</label>
+																		<div class="controls">
+																			<input id="" class="input-medium text-input" type="text" name="" value="" placeholder="">
+																		</div>
+																	</div>
+																	<div class="control-group">
+																		<label class="control-label" for=""> 描述： </label>
+																		<div class="controls">
+																			<textarea id="" name="" rows="3" cols="40" type="text" class="input-medium"></textarea>
+																		</div>
+																	</div>
+																	<div class="control-group">
+																			<label class="radio" for="">
+																					<input id="" type="radio" name="" value="" >
+																					在封面显示
+																			</label>
+																			<div class="setting">
+																				<a class="add_click">添加</a>|
+																				<a clsss="dele_click">删除</a>
+																			</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="hide-column">
+															<div class="controls">
+																<label class="checkbox">
+																	<input type="checkbox">
+																	停车
+																</label>
+															</div>
+														</div>
+														<div class="hide-column">
+															<div class="controls">
+																<label class="checkbox">
+																	<input type="checkbox" id="chk3">
+																	刷卡
+																</label>
+															</div>
+															<div class="cheackbox-bd li-list" id="intro2">
+																 <ul>
+																   <li>
+																     <label class="checkbox"><input type="checkbox">建设银行 </label>
+																   </li>
+																   <li>
+                                     <label class="checkbox"><input type="checkbox">招商 银行 </label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">中国银行</label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">工商银行 </label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">渣打银行 </label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">农业银行 </label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">交通隐患 </label>
+                                   </li>
+																 </ul>
+															</div>
+														</div>
+													</div>
+													<div class="span4">
+														<iframe id="Clientinner" src="phone.html" name=""  scrolling="no" frameborder="0" width="300px" height="450px">
+															
+														</iframe>
+													</div>
+												</div><!--/end fill -->
+												
+												<div class="number-tit">
+													<h3>3</h3>
+													<span>将此扩展信息应用到店铺</span>
+												</div>
+												<div class="fill">
+												   <div class="li-list">
+												     <ul>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">良木缘</label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">良木缘 </label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">良木缘</label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">良木缘 </label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">良木缘 </label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">良木缘 </label>
+                                   </li>
+                                   <li>
+                                     <label class="checkbox"><input type="checkbox">良木缘 </label>
+                                   </li>
+                                </ul>
+												   </div>
+												</div>
+											</div>
+											
+											<div id="tabRadio_2"  class="tabRadio" >2
+												<div class="number-tit">
+													<h3>2</h3>
+													<span>添加内容</span>
+												</div>
+												<div class="number-tit">
+													<h3>3</h3>
+													<span>将此扩展信息应用到店铺</span>
+												</div>
+											</div>
+											
+											<div id="tabRadio_3" class="tabRadio" >3
+												<div class="number-tit">
+													<h3>2</h3>
+													<span>添加内容</span>
+												</div>
+												<div class="number-tit">
+													<h3>3</h3>
+													<span>将此扩展信息应用到店铺</span>
+												</div>
+											</div>
+											
+											<div id="tabRadio_4" class="tabRadio">4
+												<div class="number-tit">
+													<h3>2</h3>
+													<span>添加内容</span>
+												</div>
+												<div class="number-tit">
+													<h3>3</h3>
+													<span>将此扩展信息应用到店铺</span>
+												</div>
+											</div>
+											
+											<div id="tabRadio_5" class="tabRadio">5
+												<div class="number-tit">
+													<h3>2</h3>
+													<span>添加内容</span>
+												</div>
+												<div class="number-tit">
+													<h3>3</h3>
+													<span>将此扩展信息应用到店铺</span>
+												</div>
+											</div>
+											
+											<div id="tabRadio_6" class="tabRadio">6
+												<div class="number-tit">
+													<h3>2</h3>
+													<span>添加内容</span>
+												</div>
+												<div class="number-tit">
+													<h3>3</h3>
+													<span>将此扩展信息应用到店铺</span>
+												</div>
+											</div>
+										</div>
+										<div class="from-actions">
+											<div class="controls">
+												<input class="btn btn-primary btn-large" type="submit" value="　提交审查　" data-loading-text="　……　">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar">
+						<div class="title">
+							
+						</div>
+						<ul class="nav nav-list">
+							<li class="active"><a href="#">新建扩展</a></li>
+							<li><a href="extend_check.html">等待审核</a></li>
+							<li><a href="extending.html">使用中</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="copyright">
+				<p><a href="#">关于我们</a>|<a href="#">联系我们</a>|<a href="#">帮助  </a></p>
+				<p ><span>©2011 in.chengdu.cn  All Rights Reserved</span><span>蜀ICP备：07003170号 ICP许可证编号：川B2-20060070	</span></p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function () {
+				$("input[name$='type']").click(function() {
+					var value = $(this).val();
+					if (value == 'tabRadio_1') {
+						$("#tabRadio_1").show();
+						$("#tabRadio_2").hide();
+						$("#tabRadio_3").hide();
+						$("#tabRadio_4").hide();
+						$("#tabRadio_5").hide();
+						$("#tabRadio_6").hide();
+					} else if (value == 'tabRadio_2') {
+						$("#tabRadio_1").hide();
+						$("#tabRadio_2").show();
+						$("#tabRadio_3").hide();
+						$("#tabRadio_4").hide();
+						$("#tabRadio_5").hide();
+						$("#tabRadio_6").hide();
+					} else if (value == 'tabRadio_3') {
+						$("#tabRadio_1").hide();
+						$("#tabRadio_2").hide();
+						$("#tabRadio_3").show();
+						$("#tabRadio_4").hide();
+						$("#tabRadio_5").hide();
+						$("#tabRadio_6").hide();
+					} else if (value == 'tabRadio_4') {
+						$("#tabRadio_1").hide();
+						$("#tabRadio_2").hide();
+						$("#tabRadio_3").hide();
+						$("#tabRadio_4").show();
+						$("#tabRadio_5").hide();
+						$("#tabRadio_6").hide();
+					} else if (value == 'tabRadio_5') {
+						$("#tabRadio_1").hide();
+						$("#tabRadio_2").hide();
+						$("#tabRadio_3").hide();
+						$("#tabRadio_4").hide();
+						$("#tabRadio_5").show();
+						$("#tabRadio_6").hide();
+					} else if (value == 'tabRadio_5') {
+						$("#tabRadio_1").hide();
+						$("#tabRadio_2").hide();
+						$("#tabRadio_3").hide();
+						$("#tabRadio_4").hide();
+						$("#tabRadio_5").hide();
+						$("#tabRadio_6").show();
+					}
+				});
+				$(".tabRadio").hide();
+				
+				$(".cheackbox-bd").css("display","none");
+				$('#chk1').click(function () {
+          if ($(this).prop(':checked')) {
+            $("#intro1").show('fast');
+          } else {
+             $("#intro1").hide('fast');
+          }
+        });
+        $('#chk2').click(function () {
+          if ($(this).prop(':checked')) {
+            $("#add_col").show('fast');
+          } else {
+             $("#add_col").hide('fast');
+          }
+        });
+        $('#chk3').click(function () {
+          if ($(this).prop(':checked')) {
+            $("#intro2").show('fast');
+          } else {
+             $("#intro2").hide('fast');
+          }
+        });
+		  });
+	</script>
+	<script type="text/javascript">
+			$(document).ready(function(){
+				$("a[class=add_click]").click(function(){
+						$("#add_col").after('<div class="cheackbox-bd" id="add_col">\
+																<div class="upload-img">\
+																	<button type="button" id="" class="btn btn-primary btn-small">上传图片</button>\
+																</div>\
+																<div class="content-fill">\
+																	<div class="control-group">\
+																		<label class="control-label">标题：</label>\
+																		<div class="controls">\
+																			<input id="" class="input-medium text-input" type="text" name="" value="" placeholder="">\
+																		</div>\
+																	</div>\
+																	<div class="control-group">\
+																		<label class="control-label" for=""> 描述： </label>\
+																		<div class="controls">\
+																			<textarea id="" name="" rows="3" cols="40" type="text" class="input-medium"></textarea>\
+																		</div>\
+																	</div>\
+																	<div class="control-group">\
+																			<label class="radio" for="">\
+																					<input id="" type="radio" name="" value="" >\
+																					在封面显示\
+																			</label>\
+																			<div class="setting">\
+																				<a class="add_click">添加</a>|\
+																				<a class="dele_click">删除</a>\
+																			</div>\
+																	</div>\
+																</div>\
+															</div>');
+				});		
+			})
+	</script>
+	<script type="text/javascript"> 
+  
+  </script> 
+	</body>
+</html>
+

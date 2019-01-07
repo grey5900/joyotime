@@ -1,0 +1,111 @@
+<h2 class="contentTitle">缓存更新</h2>
+<div class="pageContent">
+    <form method="post" action="{$self_uri}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone)">
+        <div class="pageFormContent" layoutH="97">
+            <!--{loop $cache_list $key $value}-->
+            <dl style="width:25%;">
+                <dt style="width:15px;"><input type="checkbox" name="cache[]" id="cache_{$key}" value="{$key}" class="required"/></dt>
+                <dd><label for="cache_{$key}">{$value['name']}</label></dd>
+            </dl>
+            <!--{/loop}-->
+            <dl style="width:100%;">
+                <dt style="width:15px;"><input type="checkbox" name="select_all" id="select_all" value="all" /></dt>
+                <dl><label for="select_all">全选</label></dl>
+            </dl>
+            <dl>
+                <dt></dt>
+                <dl><button id="clear_web_cache" type="button">清空网站缓存</button></dl>
+            </dl>
+            <dl>
+                <dt></dt>
+                <dl><button id="clear_channel_cache" type="button">清空渠道商缓存</button></dl>
+            </dl>
+            <dl>
+                <dt></dt>
+                <dl><button id="clear_merchant_cache" type="button">清空商家平台缓存</button></dl>
+            </dl>
+            <dl>
+                <dt></dt>
+                <dl><button id="clear_module_template" type="button">清空模型模板缓存</button></dl>
+            </dl>
+            <dl>
+                <dt></dt>
+                <dl><button id="clear_goods_template" type="button">清空团购电影票详情缓存</button></dl>
+            </dl>
+            <dl>
+                <dt></dt>
+                <dl><button id="clear_house_cache" type="button">清空团房缓存</button></dl>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                提交
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#select_all").click(function(){
+            // 选中
+            var b = $(this).attr("checked")==undefined?false:true;
+            $("input[name='cache[]']").each(function(){
+                $(this).attr("checked", b);
+            });
+        });
+        
+        $("#clear_web_cache").click(function(){
+            $.getJSON("{eval echo site_url(array('cache', 'flush_cache', 'type', 'web'))}", function(json){
+                DWZ.ajaxDone(json);
+            });
+        });        
+        
+        $("#clear_house_cache").click(function(){
+            $.getJSON("{eval echo site_url(array('cache', 'flush_cache_new', 'type', 'house'))}", function(json){
+                DWZ.ajaxDone(json);
+            });
+        });
+        
+        $("#clear_channel_cache").click(function(){
+            $.getJSON("{eval echo site_url(array('cache', 'flush_cache', 'type', 'channel'))}", function(json){
+                DWZ.ajaxDone(json);
+            });
+        });
+        
+        $("#clear_merchant_cache").click(function(){
+            $.getJSON("{eval echo site_url(array('cache', 'flush_cache', 'type', 'merchant'))}", function(json){
+                DWZ.ajaxDone(json);
+            });
+        });
+        
+        $("#clear_module_template").click(function(){
+            $.getJSON("{eval echo site_url(array('cache', 'flush_module_template'))}", function(json){
+                alertMsg.correct('清空成功');
+            });
+        });
+        
+        $("#clear_goods_template").click(function(){
+            $.getJSON("{eval echo site_url(array('cache', 'flush_goods_template'))}", function(json){
+                alertMsg.correct('清空成功');
+            });
+        });
+
+    });
+</script>

@@ -1,0 +1,44 @@
+<!--{template sr_head2}-->
+	<div class="main">
+		<!--{template sr_sidebar2}-->
+		<div class="content"> 
+			<div class="primary">
+				<div class="img">
+					<img id="img" src="/images/map.jpg" alt="" />
+				</div>
+				<div class="title">
+					<span>当前地址：<em id="address"></em></span>
+					<a href="" class="prev">前一个</a>
+					<a href="" class="next">后一个</a>
+					<i class="mask"></i>
+				</div>
+				<div class="toggle">
+					<div class="left"></div>
+					<div class="right"></div>
+				</div>
+				<div class="brige overlay"></div>
+				<div class="overlay stack"></div>
+				<div class="overlay down"></div>
+				<div class="bus overlay"></div>
+				<div class="brige_link">
+					<a class="ymk" href="">营门口立交</a>
+					<a class="bx" href="">北新</a>
+					<a class="rj" href="">刃具</a>
+					<a class="sbq" href="">衫板桥</a>
+					<a class="sqz" href="">双桥子</a>
+					<a class="hxl" href="">红星路</a>
+					<a class="rn" href="">人南</a>
+					<a class="yf" href="">永丰</a>
+					<a class="sn" href="">双楠</a>
+					<a class="cw" href="">成温</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		
+	})
+	</script>
+</body>
+</html>

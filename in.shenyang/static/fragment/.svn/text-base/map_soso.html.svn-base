@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>SOSOMap</title>
+        <style type="text/css">
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            body, button, input, select, textarea {
+                font: 12px                 /16px Verdana, Helvetica, Arial, sans-serif;
+            }
+        </style>
+        <script src="/static/js/dwz/js/jquery-1.7.1.js" type="text/javascript"></script>
+        <script charset="utf-8" src="http://api.map.soso.com/v1.0/main.js"></script>
+        <script>
+            var div_id = window.location.search.substring(1);
+
+            var map, geocoder, marker = null;
+            function init() {
+                // 去获取父窗口的纬度、经度值，如果没有则定位到成都
+                // 纬度
+                var latitude = parseFloat($(window.parent.document).find("#" + div_id).find("#latitude").val());
+                // 经度
+                var longitude = parseFloat($(window.parent.document).find("#" + div_id).find("#longitude").val());
+
+                var myLatLng = new soso.maps.LatLng(latitude, longitude);
+
+                // 初始定位标记
+                map = new soso.maps.Map(document.getElementById('container'), {
+                    center : myLatLng,
+                    zoomLevel : 14
+                });
+
+                // 地址解析对象
+                geocoder = new soso.maps.Geocoder();
+
+                //添加地图导航平移控件
+                var navControl = new soso.maps.NavigationControl({
+                    align : soso.maps.ALIGN.TOP_LEFT,
+                    margin : new soso.maps.Size(5, 15),
+                    map : map
+                });
+
+                if(marker != null) {
+                    marker.setMap(null);
+                }
+                marker = new soso.maps.Marker({
+                    position : myLatLng,
+                    draggable : true,
+                    map : map
+                });
+                // 添加拖动事件
+                soso.maps.Event.addListener(marker, "dragend", function() {
+                    var latLng = marker.getPosition();
+                    lat = latLng.getLat().toFixed(7);
+                    lng = latLng.getLng().toFixed(7);
+
+                    $(window.parent.document).find("#" + div_id).find("#latitude").val(lat);
+                    $(window.parent.document).find("#" + div_id).find("#longitude").val(lng);
+
+                    toggleMarker();
+                });
+                // 绑定事件
+                $(window.parent.document).find("#" + div_id).find("#latitude").change(function() {
+                    toggleMarker();
+                });
+                $(window.parent.document).find("#" + div_id).find("#longitude").change(function() {
+                    toggleMarker();
+                });
+            }
+
+            /**
+             * 触发标记地图
+             */
+            function toggleMarker() {
+                // 纬度
+                var latitude = parseFloat($(window.parent.document).find("#" + div_id).find("#latitude").val());
+                // 经度
+                var longitude = parseFloat($(window.parent.document).find("#" + div_id).find("#longitude").val());
+
+                var myLatLng = new soso.maps.LatLng(latitude, longitude);
+
+                // 获取地点的地址
+                if($("#autoAddress").attr("checked")) {
+                    geocoder.geocode({
+                        'location' : myLatLng
+                    }, function(results, status) {
+                        if(status == soso.maps.GeocoderStatus.OK) {
+                            // 查询到地址
+                            $(window.parent.document).find("#" + div_id).find("#address").val(results.address);
+                        }
+                    });
+                }
+
+                // 移动到屏幕中间
+                map.moveTo(myLatLng);
+                // 标注
+                marker.setPosition(myLatLng);
+            }
+
+            $(function() {
+                // 定位地址
+                $("#markAddress").click(function() {
+                    var address = $.trim($("#myAddress").val());
+                    if(address != "") {
+                        // 填写地址不为空，那么去查询坐标并标记
+                        address = "中国,辽宁,沈阳," + address;
+                        geocoder.geocode({
+                            'address' : address
+                        }, function(results, status) {
+                            if(status == soso.maps.GeocoderStatus.OK) {
+                                // 查询到地址
+                                $(window.parent.document).find("#" + div_id).find("#latitude").val(results.location.getLat());
+                                $(window.parent.document).find("#" + div_id).find("#longitude").val(results.location.getLng());
+                                toggleMarker();
+                            } else {
+                                alert("没有该地址，请确认地点在沈阳！");
+                            }
+                        });
+                    }
+                });
+            });
+
+        </script>
+    </head>
+    <body onload="init();">
+        <div style="width:400px;height:400px" id="container"></div>
+        <div style="margin:5px;">
+            <label>
+                <input type="checkbox" value="1" name="autoAddress" id="autoAddress"/>
+                自动填写地址</label>
+        </div>
+        <div style="margin:5px;">
+            <input type="text" size="20" name="myAddress" id="myAddress" />
+            <button type="button" name="markAddress" id="markAddress" value="">
+                定位
+            </button>
+        </div>
+    </body>
+</html>

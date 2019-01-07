@@ -1,0 +1,208 @@
+<div class="pageContent" id="poi_edit_checked">
+    <form method="post" action="/poi/poi/edit_checked/id/{$poi['id']}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <table width="100%">
+                <tr>
+                    <td valign="top">
+                    <dl>
+                        <dt>
+                            地点名称：
+                        </dt>
+                        <dd>
+                            <input type="text" size="30" name="placename" id="placename" class="required" value="{$poi['placename']}" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            地址：
+                        </dt>
+                        <dd>
+                            <input type="text" size="60" name="address" id="address" class="required" value="{$poi['address']}" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            纬度：
+                        </dt>
+                        <dd>
+                            <input type="text" size="15" name="latitude" id="latitude" class="required" value="<!--{if $poi['latitude']}-->{$poi['latitude']}<!--{else}-->30.659462<!--{/if}-->" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            经度：
+                        </dt>
+                        <dd>
+                            <input type="text" size="15" name="longitude" id="longitude" class="required" value="<!--{if $poi['longitude']}-->{$poi['longitude']}<!--{else}-->104.065735<!--{/if}-->" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            分类：
+                        </dt>
+                        <dd>
+                            <input type="text" size="80" name="placeCategory.name" id="placeCategory_name" class="required" value="{$category['common']['content']}" readonly="true" />
+                            <input type="hidden" name="placeCategory.id" id="placeCategory_id" value="{$category['common']['id']}" />
+                            <a class="btnLook"  href="{eval echo site_url(array('poi', 'category', 'view_tree', 'is_brand', '0'))}" lookupGroup="placeCategory">查询分类</a>
+                        </dd>
+                    </dl>
+          <!--           <dl>
+                        <dt>
+                            品牌企业：
+                        </dt>
+                        <dd>
+                            <input type="text" size="40" name="placeBrand.name" id="placeBrand.name" value="{$category['brand']['content']}" readonly="true" />
+                            <input type="hidden" name="placeBrand.id" value="{$category['brand']['id']}" />
+                            <a class="btnLook" href="{eval echo site_url(array('poi', 'category', 'view_tree', 'is_brand', '1'))}" lookupGroup="placeBrand">查询品牌</a>
+                        </dd>
+                    </dl>-->
+                    <dl> 
+                        <dt>
+                            图标：
+                        </dt>
+                        <dd>
+                            <button type="button" id="poi_icon">上传图标</button>
+                        </dd>
+                    </dl>
+               <!--      <dl>
+                        <dt>
+                            WP图标：
+                        </dt>
+                        <dd>
+                            <button type="button" id="poi_wp_icon">上传图标</button>
+                        </dd>
+                    </dl>
+                    <dl> -->
+                        <dt>
+                            电话：
+                        </dt>
+                        <dd>
+                            <input type="text" size="40" name="tel" id="tel" value="{$poi['tel']}" alt="多个电话用空格分隔" />(多个电话用空格分隔)
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>经营性场所：</dt>
+                        <dd>
+                            <input type="checkbox" name="is_business" <!--{if $poi['isBusiness']}--> checked="checked"<!--{/if}--> value="1" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>返还积分：</dt>
+                        <dd>
+                            <input type="checkbox" name="isRepayPoint" <!--{if $poi['isRepayPoint']}--> checked="checked"<!--{/if}--> value="1" />
+                        </dd>
+                    </dl>
+                     <dl>
+                        <dt>封面图片：</dt>
+                        <dd>
+                            <div id="poi_tmp_image_block">
+                            {if $poi['background']}
+                            <div style="width:150px; height:140px;float:left">
+					           <img src="{echo image_url($poi['background'],'common');}" width=140 height=140 />
+					        </div>
+					        {/if}
+					        </div>
+					        <div style="width:100px; height:140px;float:left" id="poi_edit_image_block">
+           						<input type="button" onclick="$.pdialog.open('/poi/poi/poi_select_image/id/{eval echo intval($poi['id']);}/rel/poi_poi_edit_checked' , 'poi_poi_select_image'  , '编辑封面图片' , {width:1110,height:500,close:imgareaselect_close})" value="编辑" />
+           
+            				</div>
+            				<input type="hidden" id="poi_background" name="background"  />
+                        </dd>
+                    </dl>
+                    <dl id="pcc_dl"<!--{if empty($poi['isBusiness'])}--> style="display:none"<!--{/if}-->>
+                        <dt>
+                            人均消费：
+                        </dt>
+                        <dd>
+                            <input type="text" size="5" name="pcc" id="pcc" value="{$poi['pcc']}" />
+                            元
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>创建用户：</dt>
+                        <dd>
+                            用户名：{$creator['username']}
+                            昵称：{$creator['nickname']}
+                            手机号：{$creator['cellphoneNo']}
+                            ({$creator_types[$poi['creatorType']]})
+                            <button type="button" id="send_private">发送私信</button>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>POI处理：</dt>
+                        <dd>
+                            <label><input type="radio" name="checked" value="1" />通过审核</label>
+                            <label><input type="radio" name="checked" value="2" />通过审核不加积分</label>
+                            <label><input type="radio" name="checked" value="0" />删除POI</label>
+                        </dd>
+                    </dl>
+                    <dl id="dl_sys_msg" style="display:none">
+                    	<dt>系统消息：</dt>
+                    	<dd>
+                    		<textarea rows="4" cols="60" name="sys_msg" class="required">{$sys_msg}</textarea>
+                    	</dd>
+                    </dl>
+                    </td>
+                    <td width="400" valign="top"><iframe src="/static/fragment/map_soso.html?poi_edit_checked" scrolling="no" width="400" height="450" frameborder="0"></iframe></td>
+                </tr>
+            </table>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function() {
+        var options = "name:\"poi_icon[]\", id:\"poi_icon\", file_type:\"common\", resolution:\"odp\", required:false";
+        <!--{if $poi['icon']}-->
+            options += ", image_name: \"{$poi['icon']}\"";
+        <!--{/if}-->
+        $("#poi_icon", $("#poi_edit_checked")).my_upload(eval("({" + options + "})"));
+        
+        options = "name:\"poi_icon[]\", id:\"poi_wp_icon\", file_type:\"common\", resolution:\"wdp\", required:false";
+        <!--{if $poi['icon']}-->
+            options += ", image_name: \"{$poi['icon']}\"";
+        <!--{/if}-->
+        $("#poi_wp_icon", $("#poi_edit_checked")).my_upload(eval("({" + options + "})"));
+        
+        $("#is_business", $("#poi_edit_checked")).click(function(){
+            if($(this).attr("checked")) {
+                $("#pcc_dl", $("#poi_edit_checked")).show();
+            } else {
+                $("#pcc_dl", $("#poi_edit_checked")).hide();
+            }
+        });
+        
+        $("#send_private", $("#poi_edit_checked")).click(function(){
+            $.pdialog.open("{eval echo site_url(array('ugc', 'reply', 'send', 'reply_type', '2', 'receiver', {$creator['id']}))}", "{eval echo build_rel(array('user', 'send_private'))}", "发送私信", {maxable:false});
+        });
+        
+        $("input[name=checked]", "#poi_edit_checked").on("click", function(){
+        	if($(this).val() == 2) {
+        		$("#dl_sys_msg", "#poi_edit_checked").show();
+        	} else {
+        		$("#dl_sys_msg", "#poi_edit_checked").hide();
+        	}
+        });
+    });
+</script>

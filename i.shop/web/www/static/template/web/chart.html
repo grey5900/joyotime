@@ -1,0 +1,67 @@
+<script type="text/javascript">
+	$(function(){
+		var chart = new Highcharts.Chart({
+			chart: {
+				renderTo:"chart_container",
+				type:"{$arr[type]}",
+				marginRight:130,
+				marginBottom:25
+			},
+			title: {
+				text: "{$arr[title]}",
+				x: -20
+			},
+			<!--{if !empty($arr[subtitle])}-->
+			subtitle:{
+				text: "{$arr[subtitle]}",
+				x: -20
+			},
+			<!--{/if}-->
+			xAxis: {
+	        	type: "datetime",
+	            labels: {
+	                formatter: function() {
+	                    return  Highcharts.dateFormat('%Y-%m-%d', this.value);
+	                }
+	            }
+			},
+			yAxis: {
+	            title: {
+	                text: '{$arr[y_title]}'
+	            },
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+			},
+	        tooltip: {
+	            formatter: function() {
+	                    return '<b>'+ this.series.name +'</b><br/>'+
+	                    Highcharts.dateFormat('%Y-%m-%d',this.x) +': '+ this.y +'人';
+	            }
+	        },
+	        legend: {
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'top',
+	            x: -10,
+	            y: 100,
+	            borderWidth: 0
+	        },
+	        series:[                
+	
+	             <!--{eval $split='';}-->
+	             <!--{loop $arr[series] $key $item}-->
+	             {$split}{
+	            	 name:'{$key}',
+	            	 data:[{$item}]
+	             }
+	         	 <!--{eval $split=',';}-->
+	             <!--{/loop}-->
+	        
+	        ]
+		});
+	});
+
+</script>

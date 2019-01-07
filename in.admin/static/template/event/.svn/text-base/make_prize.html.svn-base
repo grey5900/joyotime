@@ -1,0 +1,30 @@
+<div class="pageContent">
+
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="56">
+			<input type="hidden" name="eventId" value="{$eventId}" />
+			<!--{if !empty($prize)}--><input type="hidden" name="prizeId" value="{$prize[prizeId]}" /><!--{/if}-->
+			<dl>
+				<dt><label>奖    品</label></dt>
+				<dd><input type="text" class="required" name="prizeName" value="{$prize[prizeName]}" /></dd>
+			</dl>
+			<dl>
+				<dt><label>数    量</label></dt>
+				<dd><input type="text" class="required number" name="prizeCount" value="{$prize[prizeCount]}" /></dd>
+			</dl>
+			<dl>
+				<dt><label>日发送量</label></dt>
+				<dd><input type="text" class="number" name="max" value="{eval echo isset($max) && !empty($max) ? $max : '';}" /></dd>
+			</dl>
+		</div>	
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+	
+</div>

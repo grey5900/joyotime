@@ -1,0 +1,19 @@
+<div class="pageContent">
+	<div class="tabs" currentIndex="0" eventType="click">
+		<div class="tabsHeader">
+			<div class="tabsHeaderContent">
+				<ul>
+					<li><a href="javascript:;"><span>每日明细</span></a></li>
+					<li><a href="javascript:;"><span>趋势分析</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="tabsContent">
+			<div><div id="stat-list" class="unixBox"><!--{template stat_content_list}--></div></div>
+			<div><div id="stat-chart" class="unixBox"><!--{eval echo include_file(site_url(array('stat_content', 'chart')));}--></div></div>
+		</div>
+		<div class="tabsFooter">
+			<div class="tabsFooterContent"></div>
+		</div>
+	</div>
+</div>

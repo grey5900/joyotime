@@ -1,0 +1,70 @@
+<div id="{$page_id}">
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="orderField" value="{$orderField}" />
+	<input type="hidden" name="orderDirection" value="{$orderDirection}" />
+	<input type="hidden" name="keywords" value="{$keywords}" />
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				地点：
+				<input type="text" name="keywords" value="{$keywords}"/>
+			</li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>		
+		</ul>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="/home2014/add/place" title="添加地点" target="dialog" width="650" height="400" rel="{$page_id}_add"><span>添加</span></a>
+			<li><a class="edit" href="/home2014/edit/place/<!--{{id}}-->" warn="请选择需要修改的记录" title="修改地点" target="dialog" width="650" height="400" rel="{$page_id}_edit"><span>修改</span></a>
+			<li><a class="delete" href="/home2014/del/place/<!--{{id}}-->" warn="请选择需要删除的记录" title="你确定要删除？" target="ajaxTodo"><span>删除</span></a></li>
+		</ul>
+	</div>
+
+	<div layoutH="98">
+	<table class="list" width="100%" targetType="navTab" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="5%">ID</th>
+				<th width="30%">地点名</th>
+				<th width="15%">图片</th>
+				<th width="15%">连接到</th>
+				<th width="12%">过期时间</th>
+				<th width="13%">添加时间</th>
+				<th width="10%">权重</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="id" rel="{$val['id']}">
+				<td>{$val['id']}</td>
+				<td>{$val['name']}</td>
+				<td>
+				<a href="{echo image_url($val['image'],'default','odp');}" class="image_show">
+				<img src="{echo image_url($val['image'],'default','odp');}"  width="80" />
+				</a></td>
+				<td>{$val['hyperLink']}</td>
+				<td>{$val['expireDate']}</td>
+				<td>{$val['createDate']}</td>
+				<td><input type="text" size="10" onfocus="modify_rank2(this, 'HomePageDataBase', '{$val['id']}', 'rankOrder')" value="{$val['rankOrder']}" name="rank_order" /></td>
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+<script type="text/javascript">
+	$(function(){
+		$("a.image_show", "#{$page_id}").fancybox();
+	});
+</script>
+</div>
+</div>

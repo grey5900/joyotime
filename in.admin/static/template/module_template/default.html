@@ -1,0 +1,153 @@
+<!--{if $has_rewrite}-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="refresh" content="0;url=##value['{$has_rewrite}']"> 
+    </head>
+</html>
+{eval return;}
+<!--{/if}-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{##title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=yes;"/>
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <style type="text/css">
+			body,html, div, p, dl, dd, dt {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				outline: 0;
+				font-size: 100%;
+				vertical-align: baseline;
+				background: transparent;
+				outline: none;
+				word-break: break-all;
+				-webkit-text-size-adjust: none;
+			}
+			html {
+				display: block;
+			}
+			body {
+				display: block;
+				font-family: "Arial Black", Arial,Helvetica,, sans-serif;
+				text-align: center;
+			}
+			dl {
+				text-align: left;
+				vertical-align: middle;
+				line-height: 25px;
+				font-size: 16px;
+				padding:0.5em 10px 0.5em 10px;
+				background-color:#f6f6f6;
+				border-bottom:1px solid #eeeeee;
+			}
+			dl:nth-child(even) {background-color:#ffffff;}  
+			dt {
+				color: #666666;
+				display: inline;
+				font-weight: bold;
+			}
+			dd {
+				color: #666666;
+				display: inline;
+			}
+			dl.v-photo img,
+			dl.v-photo1 img,
+			dl.v-photo2 img,
+			dl.v-photo3 img {
+				width: 300px;
+			}
+			dl.v-photo dt,
+			dl.v-photo1 dt,
+			dl.v-photo2 dt,
+			dl.v-photo3 dt {
+			}
+			dl.v-photo dd,
+			dl.v-photo1 dd,
+			dl.v-photo2 dd,
+			dl.v-photo3 dd {
+				display: block;
+				text-align: center;
+				
+			}
+		  .touchslider { width: 300px; margin: 0px auto;}
+		  .touchslider-viewport { width: 300px; height: 380px; overflow:hidden;}
+		  .touchslider-item { width:300px; height: 380px; float: left; padding-right: 10px;}
+		  .touchslider-item img { width: 300px; height: 300px; }
+		  .touchslider-nav { height: 10px; line-height: 10px; text-align: center;}
+		  .touchslider-nav-item { font-size: 20px; width: 10px; height: 10px; display: inline-block; zoom: 1;color: #333;}
+		  .touchslider-nav-item-current { color: #ccc;}
+			a, a:visited, a:hover {
+				text-decoration: none;
+				color: #5ba81c;
+				display: inline;
+			}
+			em {
+				font-style: normal;
+				padding: 0 5px 0 0;
+			}
+            {$css}
+        </style>
+    </head>
+    <body>
+        <!--{loop $fields $value}-->
+        <!--<!--{__if ##value['{$value['fieldId']}']}-->-->
+        <dl class="{$value['fieldId']}">
+            <dt>{$value['fieldName']}：</dt>
+            <dd>
+                <!--{if $value['fieldType'] == 'tel'}-->
+                {__eval ##tels = explode(',', ##value['{$value['fieldId']}']);}
+                <!--<!--{__loop ##tels ##tel}-->-->
+                <a href="tel://{##tel}">{##tel}</a>
+                <!--<!--{/__loop}-->-->
+                <!--{elseif $value['fieldType'] == 'http'}-->
+                {__eval list(##name, ##url) = explode('=', ##value['{$value['fieldId']}'])}
+                <a href="{##url}" target="_blank">{##name}</a>
+                <!--{elseif $value['fieldType'] == 'image'}-->
+                <img src="{__eval echo image_url(##value['{$value['fieldId']}'], 'common')}" />
+                <!--{elseif $value['fieldType'] == 'rich_image'}-->
+                    <!--<!--{__eval ##ri = true;}-->-->
+                	<div class="touchslider">
+                		<div class="touchslider-viewport">
+	                		<div>
+	                			<!--<!--{__eval ##bull = '';}-->-->
+			                    <!--<!--{__loop ##value['{$value['fieldId']}'] ##x ##row}-->-->
+			                    <div class="touchslider-item">
+			                        <!--<!--{__eval ##bull .= '<span class="touchslider-nav-item' . (##x == 0?' touchslider-nav-item-current':'') . '">&bull;</span>';}-->-->
+			                        <!--<!--{__loop ##row ##k ##v}-->-->
+			                            <!--<!--{__if ##k == 'image'}-->-->
+			                            <div class="item-image"><img src="{__echo image_url(##v, 'common')}" width="300" /></div>
+			                            <!--<!--{{__else}}-->-->
+			                            <div class="item-{##k}">{##v}</div>
+			                            <!--<!--{/__if}-->-->
+			                        <!--<!--{/__loop}-->-->
+			                    </div>                 
+			                    <!--<!--{/__loop}-->-->
+	                		</div>
+                		</div>
+						<div class="touchslider-nav">
+							{##bull}
+						</div>
+                	</div>
+                <!--{else}-->
+                {__echo format_html(##value['{$value['fieldId']}'])}
+                <!--{/if}-->
+            </dd>
+        </dl>
+        <!--<!--{/if}-->-->
+        <!--{/loop}-->
+        
+        <!--<!--{__if ##ri}-->-->
+        <script type="text/javascript" src="http://in.chengdu.cn/static/js/jquery.min.js"></script>
+		<script type="text/javascript">
+		(function(n,t){window.touchSlider=function(i){function ot(n){nt.removeClass(i.currentClass).eq(n).addClass(i.currentClass)}function rt(n,i){var r=v.current;r!==n&&(n=n!==t?n:r+1,f.to(n,{complete:i}))}function k(n){f.to(v.current+1,{dirX:1,complete:n})}function ut(n){f.to(v.current-1,{dirX:-1,complete:n})}function it(){p&&d()}function d(){return p=!0,a||(clearTimeout(l),l=setTimeout(function(){f.moving||a||k()},i.delay)),i.container}function et(){return clearTimeout(l),p=!1,i.container}function ft(){var s=n(document),it,tt,rt=!1,i,a,k,t,p,e,ft,ut,l,v,r,et=function(n){if(!(n.which>1)){if(rt&&s.triggerHandler(b+"."+h),rt=!0,tt=!1,it=n.timeStamp,p=v=0,i=[0,0,0,it],n.originalEvent.touches){s.one(g,ot);return}n.preventDefault(),k=t=n.pageX,ut=l=n.pageY,ft=u[0].offsetLeft,a=[0,0,0,k],s.bind(w,d);s.one(b+"."+h,nt);f.moveStart(n)}},ot=function(n){if(n.originalEvent.touches.length===1){k=t=n.pageX=n.originalEvent.touches[0].pageX,ut=l=n.pageY=n.originalEvent.touches[0].pageY,e=r=0,ft=new WebKitCSSMatrix(window.getComputedStyle(u[0]).webkitTransform).e,a=[0,0,0,k],s.bind(w,d);s.one(b,nt);f.moveStart(n)}},d=function(u){var o,s,h;if(u.originalEvent.touches&&c){if(u.originalEvent.touches.length!==1)return;if(o=u.pageX=u.originalEvent.touches[0].pageX,s=u.pageY=u.originalEvent.touches[0].pageY,e+=Math.abs(o-t),r+=Math.abs(s-l),Math.abs(e-r)>50&&(h=e,e=Math.min(100,Math.max(0,e-r)),r=Math.min(100,Math.max(0,r-h))),o===t)return;tt||(e>r?(u.preventDefault(),tt=!0):nt(u))}else{if(o=u.pageX,s=u.pageY,o===t)return;n.browser.msie&&u.preventDefault()}p+=Math.abs(o-t),v+=Math.abs(s-l),i.shift(),i.push(u.timeStamp),a.shift(),a.push(o),f.move(u,t),t=o,l=s},nt=function(n){var u;rt=!1,(!n.originalEvent||n.originalEvent.touches)&&(n.pageX=t,n.pageY=l),s.unbind(w,d);for(var r=i.length,e=0,h=0;--r>0;)i[r-1]&&(u=a[r]-a[r-1],e+=Math.abs(u)/(i[r]-i[r-1]),u!==0&&(h=u>0?-1:1));if(e=e/i.length,f.moveEnd(n,e,h,it,p,v),y=!1,p+v>4)o.one("click",function(n){n.preventDefault()})};o.bind(g,et)}var h,s,tt,e,f,y,a,p,l;if(i=i||{},h=i.namespace||"touchslider",s=n(i.container),s.length!==1){s.each(function(){touchSlider({container:this})});return}i=n.extend({autoplay:!1,delay:3e3,margin:5,viewport:"."+h+"-viewport",prev:"."+h+"-prev",next:"."+h+"-next",pagination:"."+h+"-nav-item",currentClass:h+"-nav-item-current",duration:350,mouseTouch:!0},i);var v={current:0,step:rt,next:k,prev:ut,start:d,stop:et},c="ontouchstart"in window&&"WebKitCSSMatrix"in window,g="touchstart",w="touchmove",b="touchend",o=n(i.viewport,s),u=i.scroller?n(i.scroller,s):o.children(),r=u.children(),nt=n(i.pagination,s);u.css("position")!=="absolute"&&(tt=o.height(),o.css({height:tt,position:"relative"}),u.css({position:"absolute",left:0,height:tt,width:1e5})),c||(g="mousedown",w="mousemove",b="mouseup"),r.css("position","absolute"),e=c?function(n,i,r){if(i===t)return new WebKitCSSMatrix(getComputedStyle(n.jquery?n[0]:n).webkitTransform).e;n.css({webkitTransitionDuration:r?r+"ms":"0",webkitTransform:function(n){return"translate3d("+(typeof i=="number"?i:i.call(this,n))+"px,0,0)"}})}:function(n,i){if(i===t)return parseInt((n.jquery?n[0]:n).style.left,10);n.css("left",i)},c&&r.css({webkitTransitionProperty:"-webkit-transform",webkitTransitionTimingFunction:"cubic-bezier(0,0,0.25,1)"}),e(r.not(r[0]),1e4),e(r.eq(0),0),f=function(){var h=[0],s=[0],a=n.noop;return{moving:!1,init:function(){u.bind("webkitTransitionEnd",function(){a()})},to:function(o,y){var p,d,ut,tt,nt,rt;y=y||{},o>=r.length?o=0:o<0&&(o=r.length-1);var g=i.duration,k=r.eq(o),w=n.inArray(o,h),b=0;if(u.stop(),f.moving=!0,clearTimeout(l),w!==-1)b=s[w];else{if(d=r.index(k),w=t,y.dirX===-1)s.unshift(0),h.unshift(d);else if(y.dirX===1)s.push(0),h.push(d);else{for(p=h.length-1;p>=0;p--)if(h[p]<d){s.splice(p+1,0,0),h.splice(p+1,0,d),w=0;break}w===t&&(s.unshift(s),h.unshift(d))}if(w=n.inArray(d,h),w===0)b=s[1]-(k.outerWidth()+i.margin),e(k,b),s[w]=b;else if(w===h.length-1)b=s[w-1]+r.eq(h[w-1]).outerWidth()+i.margin,e(k,b),s[w]=b;else{for(ut=k.outerWidth(),k.css("opacity",0),b=s[w+1]-Math.round((ut+i.margin)/2),s[w]=b,e(k,b),tt=b,nt=h.length,p=w-1;p>=0;p--)tt-=r.eq(h[p]).outerWidth()+i.margin,s[p]=tt;for(rt=b,p=w+1;p<nt;p++)rt+=r.eq(h[p]).outerWidth()+i.margin,s[p]=rt;for(p=0;p<nt;p++)r.eq(h[p]).animate({left:s[p]},{duration:g,queue:!1,complete:function(){k.is(this)&&k.animate({opacity:1},g)}})}}y.pxInMs&&(g=Math.min(Math.max(Math.round(Math.abs(e(u))/y.pxInMs),100),g)),a=function(){e(r.not(k),-1e4),h=[r.index(k)],s=[b],y.complete&&y.complete(),f.moving=!1,it()},c?e(u,-b,g):u.animate({left:-b},{duration:g,queue:!1,complete:a}),v.current=o,ot(o)},stop:function(){c?e(u,e(u)):u.stop()},moveStart:function(n){f.moving=!0,clearTimeout(l),u.stop(),f.startPageX=n.pageX;var t=e(u),i;f.leftCount=t,h[0]===0?s[0]+t>0&&(f.leftCount=t+(s[0]+t)*3):h[h.length-1]===r.length-1&&(i=s[h.length-1]+t,i<0&&(f.leftCount=t+i*3))},move:function(n,t){var c=n.pageX-t,a=e(u),b=r.eq(h[0]),l=h.length-1,p=r.eq(h[l]),v,y,w;if(f.leftCount+=c,c>0)while(h[0]!==0&&a+s[0]+c>i.margin)v=r.eq(h[0]-1),y=s[0]-v.outerWidth()-i.margin,e(v,y),s.unshift(y),h.unshift(h[0]-1),l++,b=v;if((c>0&&a+s[0]+c>0||c<0&&a+s[0]>0)&&h[0]===0&&(w=Math.min(Math.round((f.leftCount+s[0])/4),o.innerWidth()/2),c=w-(a+s[0])),c<0)while(!p.is(r.last())&&a+s[l]+c+p.outerWidth()+i.margin<o.innerWidth())v=r.eq(h[l]+1),y=s[l]+p.outerWidth()+i.margin,e(v,y),s.push(y),h.push(h[l++]+1),p=v;(c>0&&a+s[l]<0||c<0&&a+s[l]+c<0)&&p.is(r.last())&&(w=Math.max(Math.round((f.leftCount+s[l])/4),-o.innerWidth()/2),c=w-(a+s[l])),e(u,a+c)},moveEnd:function(n,t,i,c,l,a){var w=h.length,k=e(u),p=w-1,it,v,nt,b,d,g,tt;if(s[0]+k>0)p=0;else if(!(s[h.length-1]+k<0)){for(it={pxInMs:t},b=w-1,d=o.innerWidth(),v=0;v<w-1;v++)if(nt=s[v]+r.eq(h[v]).outerWidth()+k,nt>0&&nt>d-(s[v+1]+k)){b=v;break}if(y)p=b;else{for(g=w-1,tt=Math.round(u.offset().left),v=0;v<w;v++)if(s[v]+tt>n.pageX){g=v-1;break}p=b,b===g&&n.timeStamp-c<1e3&&l+a>Math.sqrt(Math.pow(o.height(),2)+Math.pow(d,2))*.05&&(p=Math.max(0,Math.min(w-1,p+i)))}}p=h[p],f.to(p,it)}}}(),f.init(),c&&(y=!1,u.bind("webkitTransitionStart",function(){y=!0}),u.bind("webkitTransitionEnd",function(){y=!1})),a=!1,p=!1,o.hover(function(){clearTimeout(l),a=!0},function(){a=!1,it()}),nt.click(function(){rt(nt.index(this))}),n(i.prev,s).click(function(){ut()}),n(i.next,s).click(function(){k()}),i.mouseTouch&&ft(),i.autoplay&&d(),s.data(h,v)},n.fn.touchSlider=function(n){return n=n||{},n.container=this,touchSlider(n),this}})(jQuery)
+		$(function($) { $(".touchslider").touchSlider({ delay: 5000, autoplay: true, mouseTouch: true, margin: 0 }); }); 
+		</script>
+        <!--<!--{/if}-->-->
+    </body>
+</html>

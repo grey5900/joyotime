@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta content="zh_cn" name="language">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+		<title>让明信片飞</title>
+		<link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+		<link rel="stylesheet" href="//icd.sc/demo/c/basic.css"/>
+		<style type="text/css" media="screen">
+			* {
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				-webkit-focus-ring-color:  rgba(0, 0, 0, 0);
+			}
+			.page {
+				background: #e7d5c1 url(/img/e/26/page_bg.jpg) 0px 0px;
+				background-size: 100% 43px;
+			}
+			.unit-img img {
+				display: block;
+			}
+			.unit-img {
+				-webkit-box-shadow: 0 1px 2px rgba(165, 165, 165, .55);
+				-moz-box-shadow: 0 1px 2px rgba(165,165,165,.55);
+				box-shadow: 0 1px 2px rgba(165, 165, 165, .55);
+			}
+			#content .greeyColor h3 {
+				font-size: 1.4em;
+				font-weight: bold;
+				color: #e20121;
+			}
+			#content .unit .box {
+				background-color: #f6eada;
+			}
+			#content dl dd h3 {
+				color: #000;
+				font-weight: bold;
+			}
+			#content a.arrow {
+				display: block;
+				font-size: 1.2em;
+				color: #000;
+			}
+			#content .botton span.title {
+				display: block;
+				font-weight: bold;
+				color: #0c425c;
+			}
+			#content .botton span.intro {
+				display: block;
+				font-size: 0.65em;
+				color: #0c425c;
+				font-weight: normal;
+			}
+			#joins_num {
+				color: #0c425c !important;
+			}
+			.bottonColor-orange {
+				border: 1px solid #bea084;
+				background-color: #bfa489;
+				background-image: -moz-linear-gradient(top, #ecddca, #bfa489);
+				background-image: -ms-linear-gradient(top, #ecddca, #bfa489);
+				background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#ecddca), to(#bfa489)); 
+				background-image: -webkit-linear-gradient(top, #ecddca, #bfa489); 
+				background-image: -o-linear-gradient(top, #ecddca, #bfa489);
+				background-image: linear-gradient(top, #ecddca, #bfa489);
+				background-repeat: repeat-x;
+				filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",#ecddca, #bfa489));
+				-webkit-box-shadow:  0 1px 2px rgba(0,0,0,.2);
+				-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+				box-shadow: inset 0 1px 0px rgba(255,255,255,.5), 0 1px 0px rgba(255,255,255,.5);
+				color: #0c425c;
+			}
+			.feed,
+			.user {
+				margin: 0;
+				padding: 8px;
+				font-size: 14px;
+				line-height: 20px;
+				border-bottom: 1px solid rgba(0,0,0,0.08);
+			}
+			.feed:after,
+			.user:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.feed:nth-child(even),
+			.user:nth-child(even) {
+				background-color: rgba(0,0,0,0.04);
+			}
+			.feed:last-child,
+			.user:last-child {
+				border: none;
+			}
+			.feed a {
+				display: block;
+				color: #000;
+			}
+			.feed a.arrow,
+			.user a.arrow {
+				font-size: 1em !important;
+			}
+			.feed .icon img,
+			.user .icon img {
+				display: block;
+			}
+			.feed img {
+				vertical-align: middle;
+			}
+			.feed h4,
+			.feed .place,
+			.user h4 {
+				font-weight: bold;
+				color: #5CAA1D;
+				display: inline;
+			}
+			.feed .active {
+				color: #999999;
+				display: inline;
+			}
+			.feed .content {
+				color: #333333;
+				display: block;
+			}
+			.feed .photo {
+				clear: both;
+				text-align: center;
+			}
+			.feed .photo img {
+				background: #ffffff;
+				padding: 3px;
+				border: 1px solid rgba(0,0,0,0.3);
+			}
+			.feed .time {
+				color: #666666;
+				font-size: 12px;
+			}
+			.expand:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.expand .expand-simple {
+				display: block;
+			}
+			.expand .expand-more {
+				display: none;
+			}
+			.expand.on .expand-simple {
+				display: none;
+			}
+			.expand.on .expand-more {
+				display: block;
+			}
+			.expand .expand-arrow {
+				height: 10px;
+				line-height: 10px;
+				font-size: 10px;
+				color: #666666;
+				text-align: left;
+				margin: 0px 10px;
+				padding: 0 0 10px;
+				background-image: url(/img/e/26/expand-arrow.png);
+				background-position: right 3px;
+				background-repeat: no-repeat;
+				overflow: hidden;
+			}
+			.expand.on .expand-arrow {
+				text-indent: -9999px;
+				background-position: right 23px;
+			}
+			#content .user-list {
+				margin: 0px;
+				padding: 0px;
+			}
+			#content .user-list li {
+				float: left;
+				margin-right: 5px;
+			}
+			#content .info-group {
+				clear: both;
+				font-size: 1.2em;
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+				margin-bottom: 5px;
+				padding-bottom: 5px;
+			}
+			#content .info-group:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			#content .info-group:last-child {
+				border-bottom: none;
+			}
+			#content .info-group .info-label{
+				width: 28%;
+				margin-right: 2%;
+				float: left;
+				text-align: right;
+				font-weight: bold;
+			}
+			#content .info-group .infos{
+				width: 70%;
+				float: right;
+				text-align: left;
+			}
+			#content .inside p {
+				color: #0c425c;
+				font-size: 1.4em;
+			}
+			#infscr-loading {
+				line-height: 24px;
+				text-align: center;
+				font-size: 12px;
+			}
+			#infscr-loading img {
+				display: none;
+			}
+			.pagination {
+				display: none;
+			}
+			.goback {
+				display: block;
+				-webkit-box-shadow: 0 1px 2px rgba(165, 165, 165, .55);
+				-moz-box-shadow: 0 1px 2px rgba(165,165,165,.55);
+				box-shadow: 0 1px 2px rgba(165, 165, 165, .55);
+				-webkit-border-radius: .6em;
+				-moz-border-radius: .6em;
+				border-radius: .6em;
+				background: url(/demo/i/view_bg.jpg) 0 0 repeat-x;
+				width: 100%;
+				height: 34px;
+				line-height: 34px;
+				font-size: 14px;
+				font-weight: bold;
+				color: #999999;
+				text-shadow: 1px 1px 0px #ffffff;
+				text-align: center;
+			}
+			#footer {
+				background: url(/img/e/26/bg_footer.png) 0px bottom no-repeat;
+				background-size: 100% 5px;
+			}
+			#footer img {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<div id="content">
+				<div class="unit-img">
+					<a href="/event/index/26/"><img border="0" src="/img/e/26/header_26.jpg" width="100%" border="0" /></a>
+				</div>
+				<div class="unit">
+					<a class="botton bottonColor-orange" href="inplace://12390">
+						<span class="title">报名参加</span>
+						<!--span class="intro">报名人数：<span id="join_num">{$event[joins]}</span> 人</span-->
+						<span class="intro">报名人数：{$feed_count} 人</span>
+					</a>
+				</div>
+				<div class="unit">
+					<div class="greeyColor"><h3>活动说明：</h3></div>
+					<div class="box expand">
+						<div class="inside expand-simple">
+							<p>
+先引用IN成都用户U'r beautiful的动态做个开场白：“趁年轻，趁梦想还在，想去的地方现在就去；想做的事情，现在就做。哪怕搭车睡沙发住青旅，享受在路上，看风景是我不变的信念。
+							</p>
+						</div>
+						<div class="inside expand-more">
+							<p>
+先引用IN成都用户U'r beautiful的动态做个开场白：“趁年轻，趁梦想还在，想去的地方现在就去；想做的事情，现在就做。哪怕搭车睡沙发住青旅，享受在路上，看风景是我不变的信念。一个背包，一台单反，一张车票，一颗说走就走勇敢的心。朋友说，我还缺了……，那就相当完美了。”兔子姐的一番话勾起了大家对旅行的向往，面对金灿灿的十一黄金周，Inner们的小心脏还在保持正常节奏的跳动么？有没有身未动，心已远的赶脚？可兔子姐说她缺了……IN成都上有这么多的他、她和身份不明的TA，怎么会缺？十一，我们不如用一种古老的方式来共同完成一次旅行——让明信片飞！茫茫inner海，谁会是收到你明星片的那个人？
+							</p>
+						</div>
+						<div class="expand-arrow">点击查看全部内容</div>
+					</div>
+				</div>
+				<div class="unit">
+					<div class="greeyColor"><h3>奖项设置：</h3></div>
+					<div class="box">
+						<div class="inside">
+							<p>1.	所有成功参与本次活动的inner均可获得500积分奖励。</p>
+							<p>2.	本次活动设置特殊奖项，获得此奖的用户可得50元红旗超市代金券一张。</p>
+							<p><strong>针对出去旅行的inner：</strong></p>
+							<p>　　飞的最远明信片；</p>
+							<p>　　飞的最密明信片（即寄到的用户数量最多）；</p>
+							<p><strong>针对未成行的inner：</strong></p>
+							<p>　　最感同身受理由奖（即对理想旅行地的陈述理由得到最多inner的回复）</p>
+						</div>
+					</div>
+				</div>
+				<div class="unit">
+					<div class="greeyColor">
+						<h3>参与方式：</h3>
+					</div>
+					<div class="box">
+						<div class="inside">
+							<div class="info-group">
+								<div class="info-label">出去旅行的inner：</div>
+								<div class="infos">你要去哪旅行，在“in小分队”写下带有关键字“我要寄明信片”的点评或图片，并写明你十一要去旅行的地方，或许，这是某个人心里向往已久的。小in为你找来想去此地旅行的inner。将明信片寄到“IN成都”，我们会帮你转给TA。</div>
+							</div>
+							<div class="info-group">
+								<div class="info-label">未成行的inner：</div>
+								<div class="infos">这个十一因各种理由不能成行的inner，你想去哪旅行？在“in小分队”写下带有关键字“我想要明信片”的点评，写出想去又不能去的地方，并陈述想去理由，理由可以文艺可以普通也可以很2，关键是能打动我们，小in将从所有活动参与者中挑选那些有着足够动人或者好玩理由的inner。收到明信片的幸运用户需要在in成都把它晒出来哦！</div>
+							</div>
+							<div class="info-group">
+								<div class="info-label">小in要做的：</div>
+								<div class="infos">小in将会筛选所有参与活动的inner，然后按照异性相吸的原则把“要去旅行“和“想去旅行”的inner做相对应的分配。</div>
+							</div>
+							<div class="info-group">
+								<div class="info-label">活动地点：</div>
+								<div class="infos">IN小分队</div>
+							</div>
+							<div class="info-group">
+								<div class="info-label">活动时间：</div>
+								<div class="infos">2012年9月27日-2012年10月20日。</div>
+							</div>
+							<div class="info-group">
+								<div class="info-label">名单公布时间：</div>
+								<div class="infos">9月29日由小in公布分配好的名单，并私信成功参与本次活动的用户。</div>
+							</div>
+							<div class="info-group">
+								<div class="info-label">获奖名单公布时间：</div>
+								<div class="infos">2012.10.20</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--{if isset($feed) && !empty($feed)}-->
+				<div class="unit">
+					<div class="greeyColor"><h3>活动动态：</h3></div>
+					<div class="box">
+						<div class="feed">
+							<a href="/event/feeds/{$event_id}/{$uid}/0/1" class="inside arrow">
+								<div class="icon">
+									<img src="{$feed[avatar]}"/>
+								</div>
+								<div class="detail">
+									<h4>{$feed[uname]}</h4>
+									<!--{if $feed[type]==1}-->
+									<div class="active">在</div>
+									<div class="place">{$feed[placename]}</div>
+									<div class="active">签到</div>
+									<!--{elseif $feed[type]==2}-->
+									<div class="active">点评</div>
+									<div class="place">{$feed[placename]}</div>
+									<div class="start"><!--{if !empty($feed[star])}--><i class="ico-star-{$feed[star]}"></i><!--{/if}--><!--{if !empty($feed[pcc])}--><em>人均 ￥{$feed[pcc]}</em><!--{/if}--></div>
+									<div class="info">{$feed[content]}</div>
+									<!--{elseif $feed[type]==3}-->
+									<div class="active">在</div>
+									<div class="place">{$feed[placename]}</div>
+									<div class="active">上传照片</div>
+									<div class="info">{$feed[content]}</div>
+									<div class="photo"><img src="{$feed[photoName]}" width="200" /></div>
+									<!--{/if}-->
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!--{/if}-->
+				<!--{if isset($joines) && !empty($joines)}-->
+				<div class="unit">
+					<div class="greeyColor"><h3>您有{$count_joines}位好友参加了该活动</h3></div>
+					<div class="box">
+						<a href="/event/joines/{$event_id}/{$uid}/0/1" class="inside arrow">
+							<ul class="user-list">
+								<!--{loop $joines $uid $u}-->
+								<li><img src="{$u[avatar]}" /></li>
+								<!--{/loop}-->
+							</ul>
+						</a>
+					</div>
+				</div>
+				<!--{/if}-->
+				<div class="unit">
+					<p><strong>特别说明：</strong><br />
+					1．<strong>明信片邮寄地址：</strong>成都锦江区锦东路668号国嘉新世界14层全搜索in成都 ，邮编：610000<br />
+					2．<strong>领取奖品时间：</strong>10.21—10.27，超过有效领取时间，将视为自动放弃领取奖品<br />
+					3．奖品领取地址同上<br />
+					4．小in将会在活动期间将可选用户名单私信“出去旅行的Inner”，由用户自己选择一对一或一对多。</p>
+				</div>
+			</div>
+			<div id="footer">
+				<p>IN.CHENGDU.CN</p>
+			</div>
+		</div>
+<script type="text/javascript" src="//in.chengdu.cn/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+//	$("#join_btn").on("click", function(){
+//		if( {$uid} != 0 ) {
+//			$.ajax({
+//				url: "/event_join",
+//				type: "post",
+//				data: {uid: '{$uid}', event_id:'{$event[id]}', lat:{$lat}, lng:{$lng}},
+//				dataType: "json",
+//				success: function(data) {
+//					alert(data.msg);
+//					if(data.code == 0) {
+//						$(this).find(".title").text("已报名");
+//						$(this).off();
+//						$("#join_num").text(
+//							Number($("#join_num").text()) + 1
+//						);
+//					}
+//				}
+//			});
+//		} else {
+//			window.mobile && window.mobile.login ? window.mobile.login() : alert('请先登录IN成都！');
+//		}
+//	});
+    $(".expand").each(function(){
+    	$(this).on("click",function(){
+		    $(this).toggleClass("on");
+    	});
+    })
+})
+
+</script>
+
+	</body>
+</html>

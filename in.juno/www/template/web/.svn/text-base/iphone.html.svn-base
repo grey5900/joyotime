@@ -1,0 +1,38 @@
+<!--{template d_header}-->
+<div class="iphone-bd">
+  <h3>IN成都iPhone 版4.0</h3>
+  <p class="summary">
+    从2011年到现在，IN成都走到了4.0的版本，我们为大家带来了最好玩的IN成都！
+    <br/>
+    {$version[changeLog]}
+    <br/>
+    <br />
+    版本：V<span id="versionNumber">{$version[version]}</span>
+    <br/>
+    更新日期：<span id="versionDate">{echo substr($version[createDate], 0, -3);}</span>
+  </p>
+  <a target="_blank" id="downloadUrl" href="{$version[downloadUri]}" class="btn-appstore">下载客户端</a>
+  <a target="_blank" href="http://in.chengdu.cn/dl/InChengdu-4.0.5.ipa" class="btn-ipa" style="margin:0 0 0 200px;">下载客户端</a>
+  <img class="two-dimensional-code" alt="IN成都iPhone客户端" src="/static/skin/iphone_dimensional_code.gif" title="IN成都iPhone客户端">
+  <div class="imitation-iphone">
+    <ul id="switch-iphone">
+      <li><img alt="" width="211" height="317" src="/static/skin/iphone1.png" /></li>
+      <li><img alt="" width="211" height="317" src="/static/skin/iphone2.png" /></li>
+      <li><img alt="" width="211" height="317" src="/static/skin/iphone3.png" /></li>
+      <li><img alt="" width="211" height="317" src="/static/skin/iphone4.png" /></li>
+      <li><img alt="" width="211" height="317" src="/static/skin/iphone5.png" /></li>
+    </ul>
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42422312-1', 'chengdu.cn');
+  ga('send', 'pageview');
+
+</script>
+
+<!--{template d_footer}-->

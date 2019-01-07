@@ -1,0 +1,66 @@
+{if $v3_fragments['v3_f_makeup']}
+				<div class="module make_up">
+					<div class="hd">
+						<h2>{$v3_fragments['v3_f_makeup']['frag']['name']}</h2>
+						{if $v3_fragments['v3_f_makeup']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_makeup']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+					</div>
+					<div class="bd">
+					{eval $mk_photo = array($v3_fragments['v3_f_makeup']['data'][0],$v3_fragments['v3_f_makeup']['data'][1],$v3_fragments['v3_f_makeup']['data'][2]);}
+					{eval $mk_other = array($v3_fragments['v3_f_makeup']['data'][3],$v3_fragments['v3_f_makeup']['data'][4],$v3_fragments['v3_f_makeup']['data'][5],$v3_fragments['v3_f_makeup']['data'][6],$v3_fragments['v3_f_makeup']['data'][7],$v3_fragments['v3_f_makeup']['data'][8]);}
+										<ul>
+							
+							<li>
+								<div class="img">
+									<a href="{$mk_photo[0]['link']}" target="_blank"><img src="{$mk_photo[0]['image']}" alt="{$mk_photo[0]['title']}" /></a>
+								</div>
+								<div class="info">
+									<h4><a href="{$mk_photo[0]['link']}" target="_blank">{$mk_photo[0]['title']}</a><span>>></span></h4>
+									<p title="{$mk_photo[0]['summary']}">{echo cut_string($mk_photo[0]['summary'],64,'')}<a href="{$mk_photo[0]['link']}" target="_blank">[详情]</a></p>
+									<hr />
+									{loop $mk_other $kmk $mk}
+										{if $kmk >= 0 and $kmk <2}
+											<b><a href="{$mk['link']}" target="_blank" title="{$mk['title']}">{echo cut_string($mk['title'],'36','')}</a></b>
+											
+										{/if}
+									{/loop}
+								</div>
+								
+							</li>
+							
+							<li>
+								<div class="img">
+									<a href="{$mk_photo[1]['link']}" target="_blank"><img src="{$mk_photo[1]['image']}" alt="{$mk_photo[1]['title']}" /></a>
+								</div>
+								<div class="info">
+									<h4><a href="{$mk_photo[1]['link']}" target="_blank">{$mk_photo[1]['title']}</a><span>>></span></h4>
+									<p title="{$mk_photo[1]['summary']}">{echo cut_string($mk_photo[1]['summary'],64,'')}<a href="{$mk_photo[1]['link']}" target="_blank">[详情]</a></p>
+									<hr />
+									{loop $mk_other $kmk $mk}
+										{if $kmk >= 2 and $kmk <4}
+											<b><a href="{$mk['link']}" target="_blank" title="{$mk['title']}">{echo cut_string($mk['title'],'36','')}</a></b>
+											
+										{/if}
+									{/loop}
+								</div>
+								
+							</li>
+							<li>
+								<div class="img">
+									<a href="{$mk_photo[2]['link']}" target="_blank"><img src="{$mk_photo[2]['image']}" alt="{$mk_photo[2]['title']}" /></a>
+								</div>
+								<div class="info">
+									<h4><a href="{$mk_photo[2]['link']}" target="_blank">{$mk_photo[2]['title']}</a><span>>></span></h4>
+									<p title="{$mk_photo[2]['summary']}">{echo cut_string($mk_photo[2]['summary'],64,'')}<a href="{$mk_photo[2]['link']}" target="_blank">[详情]</a></p>
+									<hr />
+									{loop $mk_other $kmk $mk}
+										{if $kmk >= 4 and $kmk <6}
+											<b><a href="{$mk['link']}" target="_blank" title="{$mk['title']}">{echo cut_string($mk['title'],'36','')}</a></b>
+											
+										{/if}
+									{/loop}
+								</div>								
+							</li>
+						</ul>
+					</div>
+				</div>
+{/if}

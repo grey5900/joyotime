@@ -1,0 +1,297 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright 2013 FishSaying <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2013-08-23 03:38+0000\n"
+"PO-Revision-Date: 2013-08-28 17:00+0800\n"
+"Last-Translator: Bob Bao <baohanddd@gmail.com>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: Controller/AppController.php:57
+msgid "Fish Saying"
+msgstr "鱼说"
+
+#: Controller/UsersController.php:81
+msgid "Username is inexist or password wrong"
+msgstr "用户名不存在或密码错误"
+
+#: View/Elements/sidebar.ctp:11
+msgid "Voice List"
+msgstr "解说列表"
+
+#: Controller/UsersController.php:92
+msgid "Username/password wrong or session expired"
+msgstr "用户名/密码错误或登录超时"
+
+#: Controller/VoicesController.php:85;100
+msgid "The upload process is to fail"
+msgstr "上传失败"
+
+#: Controller/VoicesController.php:87;102
+msgid "The upload process has finished in successfully"
+msgstr "上传成功完成"
+
+#: Controller/VoicesController.php:119
+msgid "The voice has been deleted"
+msgstr "解说已被删除"
+
+#: Controller/VoicesController.php:121
+msgid "Try to delete the voice but to fail"
+msgstr "尝试删除解说失败"
+
+#: Controller/VoicesController.php:124
+msgid "No valid voice ID supplied"
+msgstr "解说ID非法"
+
+#: Controller/VoicesController.php:140;159;177
+msgid "The operation is to fail"
+msgstr "操作失败"
+
+#: Controller/VoicesController.php:144;163;181
+msgid "The operation has finished in successfully"
+msgstr "操作成功完成"
+
+#: View/Elements/header.ctp:4
+msgid "Welcome to contributor platform of fish saying"
+msgstr "欢迎来到鱼说分享平台"
+
+#: View/Elements/header.ctp:6
+msgid "Hi dude"
+msgstr "欢迎你"
+
+#: View/Elements/header.ctp:9
+msgid "Logout"
+msgstr "登出"
+
+#: View/Elements/paginator.ctp:8
+msgid "Prev"
+msgstr "上一页"
+
+#: View/Elements/paginator.ctp:18
+msgid "Next"
+msgstr "下一页"
+
+#: View/Elements/sidebar.ctp:11
+msgid "Approved voice"
+msgstr "通过审核"
+
+#: View/Elements/sidebar.ctp:15
+msgid "Approve voice"
+msgstr "解说审核"
+
+#: View/Helper/VoiceHelper.php:18;30 View/Voices/invalid.ctp:6
+#: View/Voices/pending.ctp:6
+msgid "Pending"
+msgstr "待审核"
+
+#: View/Helper/VoiceHelper.php:21;124 View/Voices/index.ctp:6
+#: View/Voices/unavailable.ctp:6
+msgid "Approved"
+msgstr "在售"
+
+#: View/Helper/VoiceHelper.php:24;112 View/Voices/invalid.ctp:7
+#: View/Voices/pending.ctp:7
+msgid "Invalid"
+msgstr "已驳回"
+
+#: View/Helper/VoiceHelper.php:27;135 View/Voices/index.ctp:7
+#: View/Voices/unavailable.ctp:7
+msgid "Unavailable"
+msgstr "已下架"
+
+#: View/Helper/VoiceHelper.php:37
+msgid "Edit"
+msgstr "编辑"
+
+#: View/Helper/VoiceHelper.php:45
+msgid "Delete"
+msgstr "删除"
+
+#: View/Helper/VoiceHelper.php:61
+msgid "PlayIt"
+msgstr "试听"
+
+#: View/Helper/VoiceHelper.php:72
+msgid "See location"
+msgstr "查看地图"
+
+#: View/Helper/VoiceHelper.php:83
+msgid "Free"
+msgstr "免费"
+
+#: View/Helper/VoiceHelper.php:104
+msgid "anonymous"
+msgstr "匿名"
+
+#: View/Helper/VoiceHelper.php:129
+msgid "Reject"
+msgstr "驳回"
+
+#: View/Helper/VoiceHelper.php:141
+msgid "Approve"
+msgstr "通过"
+
+#: View/Helper/VoiceHelper.php:152
+msgid "Off shelf"
+msgstr "下架"
+
+#: View/Voices/add.ctp:3
+msgid "Post new voice"
+msgstr "新增解说"
+
+#: View/Voices/add.ctp:10
+msgid "Subject: "
+msgstr "标题"
+
+#: View/Voices/add.ctp:18
+msgid "Cover: "
+msgstr "封面图"
+
+#: View/Voices/add.ctp:24
+msgid "Geo location: "
+msgstr "定位"
+
+#: View/Voices/add.ctp:26
+msgid "The coordinate will be filled in automatically until drag the bubble"
+msgstr "拖动气泡，坐标会自动填入下方的输入框"
+
+#: View/Voices/add.ctp:31
+msgid "Longitude(E): "
+msgstr "经度(E)："
+
+#: View/Voices/add.ctp:39
+msgid "Latitude(N): "
+msgstr "纬度(N)："
+
+#: View/Voices/add.ctp:51
+msgid "Audio file: "
+msgstr "音频文件："
+
+#: View/Voices/add.ctp:56
+msgid "Language: "
+msgstr "解说语言： "
+
+#: View/Voices/add.ctp:60
+msgid "Chinese"
+msgstr "中文"
+
+#: View/Voices/add.ctp:61
+msgid "English"
+msgstr "英文"
+
+#: View/Voices/add.ctp:65
+msgid "Is Free: "
+msgstr "是否免费："
+
+#: View/Voices/add.ctp:69
+msgid "It's not free, needs to buy first"
+msgstr "不免费，需要购买"
+
+#: View/Voices/add.ctp:70
+msgid "Yeah, It's free"
+msgstr "是的，是免费的"
+
+#: View/Voices/add.ctp:74
+msgid "Voice length: "
+msgstr "解说时长："
+
+#: View/Voices/add.ctp:82
+msgid "Post now"
+msgstr "添加"
+
+#: View/Voices/index.ctp:14 View/Voices/invalid.ctp:14
+#: View/Voices/pending.ctp:14 View/Voices/unavailable.ctp:14
+msgid "Voice"
+msgstr "解说"
+
+#: View/Voices/index.ctp:15 View/Voices/invalid.ctp:15
+#: View/Voices/pending.ctp:15 View/Voices/unavailable.ctp:15
+msgid "Language"
+msgstr "语言"
+
+#: View/Voices/index.ctp:16 View/Voices/invalid.ctp:16
+#: View/Voices/pending.ctp:16 View/Voices/unavailable.ctp:16
+msgid "Length"
+msgstr "时长"
+
+#: View/Voices/index.ctp:17 View/Voices/unavailable.ctp:17
+msgid "Score"
+msgstr "评分"
+
+#: View/Voices/index.ctp:18 View/Voices/invalid.ctp:17
+#: View/Voices/pending.ctp:17 View/Voices/unavailable.ctp:18
+msgid "Author"
+msgstr "作者"
+
+#: View/Voices/index.ctp:19 View/Voices/unavailable.ctp:19
+msgid "Checkouts"
+msgstr "购买数量"
+
+#: View/Voices/index.ctp:20 View/Voices/unavailable.ctp:20
+msgid "Earn"
+msgstr "总收入"
+
+#: View/Voices/index.ctp:21 View/Voices/unavailable.ctp:21
+msgid "Comments"
+msgstr "评论数"
+
+#: View/Voices/index.ctp:22
+msgid "Approved Date"
+msgstr "上架时间"
+
+#: View/Voices/index.ctp:23 View/Voices/pending.ctp:19
+#: View/Voices/unavailable.ctp:24
+msgid "Action"
+msgstr "操作"
+
+#: View/Voices/index.ctp:37 View/Voices/invalid.ctp:34
+#: View/Voices/pending.ctp:34 View/Voices/unavailable.ctp:38
+msgid "sec"
+msgstr "秒"
+
+#: View/Voices/index.ctp:59 View/Voices/unavailable.ctp:23
+msgid "Unavailable Reason"
+msgstr "下架原因"
+
+#: View/Voices/index.ctp:62
+msgid "Please write comments..."
+msgstr "请写点评论在这里..."
+
+#: View/Voices/index.ctp:65 View/Voices/invalid.ctp:57
+#: View/Voices/pending.ctp:57
+msgid "Close"
+msgstr "关闭"
+
+#: View/Voices/index.ctp:66
+msgid "Unavailable it now !"
+msgstr "下架"
+
+#: View/Voices/invalid.ctp:18
+msgid "Invalid Date"
+msgstr "驳回时间"
+
+#: View/Voices/invalid.ctp:19;51 View/Voices/pending.ctp:51
+msgid "Invalid Reason"
+msgstr "驳回原因"
+
+#: View/Voices/invalid.ctp:58 View/Voices/pending.ctp:58
+msgid "Invalid it now !"
+msgstr "驳回"
+
+#: View/Voices/pending.ctp:18
+msgid "Created"
+msgstr "提交时间"
+
+#: View/Voices/unavailable.ctp:22
+msgid "Unavailable Date"
+msgstr "下架时间"
+
+#: View/Voices/unavailable.ctp:69
+msgid "Reshelf"
+msgstr "重新上架"

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>成都团房</title>
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+            <script src="/js/html5shiv.js" type="text/javascript" charset="utf-8"></script>
+            <![endif]-->
+            <link rel="shortcut icon" href="/images/favicon.png">
+            <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" charset="utf-8"/>
+            <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+            <script>
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-146052-10']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                var ga = document.createElement('script'); ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+        </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="site-nav">
+                    <a href="http://f.chengdu.cn" target="_blank">评房网</a>-
+                    <a href="http://f.chengdu.cn/nlist/128" target="_blank">新闻报告</a>-
+                    <a href="http://f.chengdu.cn/nlist/24" target="_blank">数据报告</a>-
+                    <a href="http://f.chengdu.cn/nlist/21" target="_blank">评论专栏</a>-
+                    <a href="http://f.chengdu.cn/nlist/22" target="_blank">楼市快讯</a>
+                </div>
+                <a href="http://f.chengdu.cn/search/building/" target="_blank" class="search-link"><i class="icon-search"></i>找楼盘</a>
+            </div>
+            <div class="container">
+                <div class="logo">
+                    <a href="http://tf.chengdu.cn" target="_blank" class="cdtf-logo">成都团房</a>
+                    <a href="http://e.chengdu.cn/" target="_blank" class="cdsb-logo">成都商报</a>
+                </div>
+                <a class="download-link" href="/web/download">
+                    <i class="icon-iphone pull-left"></i>
+                    <p>成都团房手机APP</p>
+                    <h4>免费下载</h4>
+                </a>
+            </div>
+        </div>
+        {if $banners}
+        <div class="container block-top">
+            <section class="ad">
+                <ul>
+                	{loop $banners $bn}
+                    <li><a href="{$bn['url']}" target="_blank"><img src="{$bn['image']}" alt="{$bn['title']}" /></a></li>
+                    {/loop}
+                </ul>
+           </section>
+        </div>
+        {/if}

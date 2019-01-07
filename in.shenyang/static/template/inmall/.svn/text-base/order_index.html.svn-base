@@ -1,0 +1,31 @@
+<div class="pageContent">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><span>已付款订单</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><span>未付款订单</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+            <div>
+                <div id="order_paid" class="unitBox">
+                    {eval echo include_file(site_url(array('inmall', 'order_paid')));}
+                </div>
+            </div>
+            <div>
+                <div id="order_non_payment" class="unitBox">
+                    {eval echo include_file(site_url(array('inmall', 'order_non_payment')));}
+                </div>
+            </div>
+        </div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

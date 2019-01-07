@@ -1,0 +1,144 @@
+<!--{template common/header}-->
+	<div id="container-search-result">
+		<div class="search-mainbox">
+			<form name="search" action="/search" method="get" class="search-form form-inline">
+                <div class="tabs">
+                    <ul>
+                        <li {if !$t}class="on"{/if}><a href="/search/?kw={$kw}">全部</a></li>
+                        <li {if $t == 20}class="on"{/if}><a href="/search/?t=20&kw={$kw}">地点</a></li>
+                        <li {if $t == 30}class="on"{/if}><a href="/search/?t=30&kw={$kw}">用户</a></li>
+                        <li {if $t == 40}class="on"{/if}><a href="/search/?t=40&kw={$kw}">点评</a></li>
+                        <li {if $t == 50}class="on"{/if}><a href="/search/?t=50&kw={$kw}">新闻</a></li>
+                        <li><a href="http://f.chengdu.cn/search/building/">楼盘</a></li>
+                    </ul>
+                </div>
+				<div class="input-box">
+					<input type="text" name="kw" value="{$kw}" placeholder="请输入关键字" class="keywords" /><input type="submit" value="  搜索  " class="btn btn-primary" />
+					<input type="hidden" name="page" value="{$page}" />
+					<input type="hidden" name="t" value="{$t}" />
+				</div>
+			</form>
+		</div>
+		<!--{if $kw}-->
+		<div class="container-fluid">
+				<div class="main">
+					<div class="push">
+						<div class="tit">
+							<h2>搜索“{$kw}”</h2>
+						</div>
+						<div class="con">
+							<ul class="result-list">
+							<!--{loop $data['response']['docs'] $row}-->
+								<!--{if 10 == $row['type'] || 20 == $row['type']}-->
+							  	<li class="result-item-place">
+							  		<!--{if $row['latitude'] && $row['longitude']}-->
+                                    <div class="map-img"><a href="javascript:void(0);" data-lat="{$row['latitude']}" data-lng="{$row['longitude']}">
+                                        <img src="http://api.map.baidu.com/staticimage?center={$row[longitude]},{$row[latitude]}&width=120&height=120&zoom=14&markers={$row[longitude]},{$row[latitude]}" width="120" height="120" border="0">
+                                    </div>
+								  	<!--{/if}-->
+								  	<div class="title"><a href="/place/{$row['item_id']}" target="_blank">{$row['hl_title']}</a></div>
+								  	<!--{if $row['address']}--><div class="address">地址：{$row['address']}</div><!--{/if}-->
+								  	<!--{if $row['developers'] && $row['type'] == 10}--><div class="developers">开发商：{$row['developers']}</div><!--{/if}-->
+								  	<!--{if $row['tel']}--><div class="tel">电话：{$row['tel']}</div><!--{/if}-->
+								  	<!--{if $row['hl_desc']}--><div class="summary">{$row['hl_desc']}</div><!--{/if}-->
+							  	</li>
+							  	<!--{elseif 40 == $row['type']}-->
+							  	<li class="result-item-post">
+								  	<div class="avatar"><a href="/user/{$row['uid']}" target="_blank"><img src="{$row['avatar']}" width="50" height="50" /></a></div>
+                                      <!--div class="title"><a href="/user/{$row['uid']}" target="_blank">{$row['show_name']}</a>在<a href="/place/{$row['place_id']}" target="_blank">{$row['placename']}</a>发布了{echo 2==$row['post_type']?'点评':'图片'}<span class="time">{$row['date']}</span></div-->
+                                      <div class="title"><a href="/review/{$row['item_id']}" target="_blank">{$row['show_name']} 在 {$row['placename']} 发布的{echo 2==$row['post_type']?'点评':'图片'}</a><span class="time">{$row['date']}</span></div>
+								  	<!--{if $row['hl_desc']}--><div class="summary">{$row['hl_desc']}</div><!--{/if}-->
+									<!--{if $row['photo']}--><div class="photo"><a href="/review/{$row['item_id']}" target="_blank"><img src="{$row['photo']}" /></a></div><!--{/if}-->
+							  	</li>
+							  	<!--{elseif 30 == $row['type']}-->
+							  	<li class="result-item-user">
+								  	<div class="avatar"><a href="/user/{$row['item_id']}" target="_blank"><img src="{$row['photo']}" width="80" height="80" /></a></div>
+								  	<div class="title"><a href="/user/{$row['item_id']}" target="_blank">{$row['hl_title']}</a></div>
+								  	<!--{if $row['hl_desc']}--><div class="summary">签名：{$row['hl_desc']}</div><!--{/if}-->
+							  	</li>
+							  	<!--{elseif 50 == $row['type']}-->
+							  	<li class="result-item-news">
+								  	<div class="title"><a href="/article/{$row['item_id']}" target="_blank">{$row['hl_title']}</a><span class="time">{$row['date']}</span></div>
+								  	<!--{if $row['photo']}--><div class="thumb"><a href="/article/{$row['item_id']}" target="_blank"><img src="{$row['photo']}" width="80" height="60" /></a></div><!--{/if}-->
+								  	<!--{if $row['hl_desc']}--><div class="summary">摘要：{$row['hl_desc']}</div><!--{/if}-->
+							  	</li>
+							  	<!--{/if}-->
+							<!--{/loop}-->
+							</ul>
+							  <!--{if $pagination}-->
+							  <div class="pagination pagination-centered">
+				                <ul>
+				                <!--{if $pagination['prev']}-->
+				                  <li><a href="{$pagination['prev']}">上一页</a></li>
+				                <!--{/if}-->
+				                  <!--{loop $pagination['pages'] $key $page}-->
+				                  <li<!--{if $page['is_cur']}--> class="active"<!--{/if}-->><a href="{$page['url']}">{$key}</a></li>
+				                  <!--{/loop}-->
+				                <!--{if $pagination['next']}-->
+				                  <li><a href="{$pagination['next']}">下一页</a></li>
+				                <!--{/if}-->
+				                </ul>
+				              </div>
+				              <!--{/if}-->
+						</div>
+					</div>
+				</div>
+				<div class="sidebar">
+					<div class="module">
+						<div class="tit"><h3>热门搜索</h3></div>
+						<div class="con">
+							<ul class="list-rank">
+							<!--{loop $hot_list $k $keywords}-->
+								<li><span class="num">{echo $k+1}</span> <a href="/search?kw={$keywords}&page=1" class="title" target="_blank">{$keywords}</a></li>
+							<!--{/loop}-->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--{/if}-->
+		</div>
+		<!--map-->
+		<div id="mapModal" class="modal hide in" aria-hidden="false">  
+			<div id="signin-modal">
+			  <div class="modal-header">
+				详细地图<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				
+			  </div>
+                <div class="modal-body" style="height: 400px">
+                    <div class="map"></div>
+                </div>
+			</div>
+		</div>
+		<!--map-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7dc3e4b24f182c84b3843400d2b83bbe"></script>
+<script type="text/javascript" src="/static/js/mapper.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("form[name=search]").on("submit", function(){
+            var kw = $("input[name=kw]").val();
+            var t = $("input[name=t]").val();
+            window.location.href = "/search?kw=" + kw + "&t=" + t;
+            return false;
+        });
+        var lat = '',
+                lng = '';
+        //地图新窗口
+        $('.map-img a').on('click',function(e){
+            e.preventDefault();
+            lat = $(this).data('lat');
+            lng = $(this).data('lng');
+            $('#mapModal').modal('show');
+        });
+
+        $('#mapModal').on('shown', function() {
+            $("#mapModal .modal-body .map").mapper({
+                lat : lat,
+                lng : lng
+            });
+        });
+
+    });
+</script>
+
+<!--{template common/footer}-->

@@ -1,0 +1,16 @@
+<ul class="list">
+	<!--{loop $list $o $v}-->
+	<!--{if $o > 2}-->{eval break;}<!--{/if}-->
+	<li>
+		<h1><a href="{$v[link]}" target="_blank">{$v[title]}</a></h1>
+		<h2>{$v[summary]}</h2>
+	</li>
+	<!--{/loop}-->
+	<li style="border:0;">
+	<!--{loop $list $o $v}-->
+		<!--{if $o > 2}-->
+			<a href="{$v[link]}" title="{$v[summary]}" target="_blank">{$v[title]}</a> 
+		<!--{/if}-->
+	<!--{/loop}-->
+	</li>
+</ul>

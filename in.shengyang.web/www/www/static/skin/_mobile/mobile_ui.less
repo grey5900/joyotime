@@ -1,0 +1,260 @@
+.ui-icon {
+  background: url("/static/m_img/m_icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: inline-block;
+  box-shadow :0 1px 0 rgba(255, 255, 255, 0.4);
+  position: absolute;
+  width: 12px;
+  height: 12px
+}
+.ui-text {
+  -moz-user-select: none;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+.ui-icon-minus {
+  background-position: -36px 0;
+  margin-top: 5px;
+}
+.ui-icon-plus {
+  background-position: 0 0;
+  margin-top: 4px;
+}
+.ui-btn-up-c {
+  background: #eee;
+  //font-weight: bold;
+  color: @font-default;
+  background: #fff;
+}
+.ui-btn-hover-c {
+  background: #f1f1f1;
+  //font-weight: bold;
+  color: @font-default;
+  background: #fff;
+}
+
+.ui-btn-down-c {
+  background: #fff;
+  //font-weight: bold;
+  color: @font-default;
+  background: #fff;
+}
+.ui-btn-up-c, .ui-btn-hover-c, .ui-btn-down-c {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none
+}
+      
+a.ui-link-inherit {
+  text-decoration: none !important
+}
+
+.ui-btn-active:visited, .ui-btn-active:hover, .ui-btn-active a.ui-link-inherit {
+  color: @font-default
+}
+
+.ui-corner-all {
+  -webkit-border-radius: .4em;
+  border-radius: .4em
+}
+
+
+.ui-mobile, .ui-mobile body {
+  height: 99.9%
+}
+.ui-mobile fieldset, .ui-page {
+  padding: 0;
+  margin: 0
+}
+.ui-mobile a img, .ui-mobile fieldset {
+  border-width: 0
+}
+.ui-mobile-viewport {
+  margin: 0;
+  overflow-x: visible;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+body.ui-mobile-viewport, div.ui-mobile-viewport {
+  overflow-x: hidden
+}
+.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page {
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  display: none;
+  border: 0
+}
+.ui-mobile .ui-page-active {
+  display: block;
+  overflow: visible
+}
+
+.ui-loading .ui-loader {
+  display: block
+}
+.ui-loader {
+  display: none;
+  z-index: 9999999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 0
+}
+.ui-loader .ui-icon {
+  background-color: #000;
+  display: block;
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  padding: 1px;
+  -webkit-border-radius: 36px;
+  border-radius: 36px
+}
+
+.ui-corner-all > .ui-header:first-child, .ui-corner-all > .ui-content:first-child, .ui-corner-all > .ui-footer:first-child {
+  -webkit-border-top-left-radius: inherit;
+  border-top-left-radius: inherit;
+  -webkit-border-top-right-radius: inherit;
+  border-top-right-radius: inherit
+}
+.ui-corner-all > .ui-header:last-child, .ui-corner-all > .ui-content:last-child, .ui-corner-all > .ui-footer:last-child {
+  -webkit-border-bottom-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  -webkit-border-bottom-right-radius: inherit;
+  border-bottom-right-radius: inherit
+}
+.ui-btn {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  margin: .5em 0;
+  padding: 0
+}
+
+.ui-btn-inner {
+  font-size: 16px;
+  padding: .5em 20px;
+  min-width: .75em;
+  display: block;
+  position: relative;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  zoom: 1
+}
+
+.ui-btn-inner, .ui-btn-text {
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  font-weight: normal;
+  font-size: 0.9em;
+  &:hover{
+    color: @font-default;
+  }
+}
+.ui-btn-icon-notext .ui-icon {
+  display: block;
+  z-index: 0
+}
+.ui-btn-icon-left .ui-icon {
+  left: 10px
+}
+.ui-btn-icon-right .ui-icon {
+  right: 10px
+}
+.ui-btn-icon-top .ui-icon {
+  top: 10px
+}
+.ui-btn-icon-bottom .ui-icon {
+  top: auto;
+  bottom: 10px
+}
+
+.ui-collapsible-inset {
+  margin: .5em;
+}
+.ui-collapsible-inset .ui-collapsible-heading {
+  margin: 0;
+}
+.ui-collapsible-heading .ui-btn {
+  text-align: left;
+  margin: 0;
+  border-left-width: 0;
+  border-right-width: 0
+}
+.ui-collapsible-inset .ui-collapsible-heading .ui-btn {
+  border-right-width: 1px;
+  border-left-width: 1px
+}
+.ui-collapsible-heading .ui-btn-icon-left .ui-btn-inner {
+  padding-left: 25px
+}
+.ui-collapsible-heading .ui-btn-icon-right .ui-btn-inner {
+  padding-right: 30px
+}
+
+.ui-collapsible-heading .ui-btn span.ui-btn {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  margin: -12px 0 0 0;
+  width: 20px;
+  height: 20px;
+  padding: 1px 0 1px 2px;
+  text-indent: -9999px
+}
+.ui-collapsible-heading .ui-btn span.ui-btn .ui-btn-inner {
+  padding: 10px 0
+}
+.ui-collapsible-heading .ui-btn span.ui-btn .ui-icon {
+  left: 0;
+  margin-top: -10px
+}
+.ui-collapsible-heading-status {
+  position: absolute;
+  top: -9999px;
+  left: 0
+}
+
+.ui-collapsible-heading-collapsed {
+  box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+}
+.ui-collapsible-content {
+  display: block;
+  margin: 0 -15px;
+  padding: 10px 15px;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top: none;
+  background: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+}
+.ui-collapsible-inset .ui-collapsible-content {
+  margin: 0;
+  border-right-width: 1px;
+  border-left-width: 1px
+}
+.ui-collapsible-content-collapsed {
+  display: none
+}
+.ui-collapsible-set > .ui-collapsible.ui-corner-all {
+  -webkit-border-radius: 0;
+  border-radius: 0
+}
+.ui-collapsible-heading, .ui-collapsible-heading > .ui-btn {
+  -webkit-border-radius: inherit;
+  border-radius: inherit
+}
+.ui-collapsible-themed-content:not(.ui-collapsible-collapsed) .ui-collapsible-heading {
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid @font-default;
+}

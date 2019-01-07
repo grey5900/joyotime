@@ -1,0 +1,28 @@
+<div class="pageContent">
+    <table class="table" width="100%">
+        <thead>
+            <tr>
+                <th width="30%">名称</th>
+                <th width="70%">内容</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>用户：</td>
+                <td>{$user['username']}</td>
+            </tr>
+            <tr>
+                <td>生日：</td>
+                <td>{$user['birthdate']}</td>
+            </tr>
+            <tr>
+                <td>邮箱：</td>
+                <td>{$user['email']}</td>
+            </tr>
+            <tr>
+                <td>手机：</td>
+                <td>{$user['cellphoneNo']}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

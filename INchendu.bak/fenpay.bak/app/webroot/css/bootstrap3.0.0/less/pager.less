@@ -1,0 +1,67 @@
+//
+// Pager pagination
+// --------------------------------------------------
+
+
+.pager {
+  margin: @line-height-computed 0;
+  list-style: none;
+  text-align: right;
+  .clearfix();
+  li {
+    display: inline;
+    a,
+    span {
+      display: inline-block;
+      padding: 5px 14px;
+      background-color: @pagination-bg;
+      border: 1px solid @pagination-border;
+      border-right: none;
+      color: #666;
+    }
+    
+    a:hover,
+    a:focus {
+      color: #327ad4;
+      text-decoration: none;
+      background-color: @pagination-active-bg;
+    }
+    &.activing {
+      a {
+        color: #327ad4;
+        background-color: @pagination-active-bg;
+      }
+    }
+  }
+  ul {
+    border-right: 1px solid @pagination-border;
+    display: inline-block;
+    .box-shadow(0 1px 1px rgb(239,239,239,0.94));
+  }
+
+  .next {
+    a,
+    span {
+      float: right;
+    }
+  }
+
+  .previous {
+    a,
+    span {
+      float: left;
+    }
+  }
+
+  .disabled {
+    a,
+    a:hover,
+    a:focus,
+    span {
+      color: @gray-light;
+      background-color: @pagination-bg;
+      cursor: default;
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+<form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, 'detail_reply');">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+</form>
+{eval $page_rel='detail_reply';}
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="icon" warn="请选择您要回复的信息" href="{eval echo site_url(array('ugc', 'reply', 'send', 'reply_type', '1', 'id'))}/<!--{{id}}-->" target="dialog" title="回复" rel="{eval echo build_rel(array('poi', 'poi', 'reply'))}"><span>回复</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="280" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="40%">主题</th>
+                <th width="20%" orderField="pcreateDate" class="<!--{if $order_field=='pcreateDate'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">时间</th>
+                <th width="40%">回复</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['puid']}_{$row['pid']}">
+                <td>{$row['content']}</td>
+                <td>{$row['pcreateDate']} </td>
+                <td>{$row['pcontent']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

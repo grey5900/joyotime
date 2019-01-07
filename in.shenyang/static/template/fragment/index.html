@@ -1,0 +1,73 @@
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="categoryId" value="{$categoryId}"/>
+	<input type="hidden" name="keyword" value="{$keyword}" />
+</form>   
+<div class="pageHeader">
+	<!-- 搜索 -->
+	<form rel="pagerForm" action="{$current_url}" method="post" onsubmit="return navTabSearch(this);">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>碎片名称：<input type="text" name="keyword" value="{$keyword}" size="20" /></li>
+			<li><select name="categoryId" class="combox">
+				<option value=""<!--{if empty($categoryId) || !$categoryId}-->selected<!--{/if}-->>全部碎片</option>
+				<!--{loop $cats $k $v}-->
+				<option value="{$v[id]}"<!--{if $categoryId == $v[id]}-->selected<!--{/if}-->>{$v[catName]}</option>
+				<!--{/loop}-->
+			</select></li>
+		</ul>
+		<div class="subBar">
+			<ul><li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li></ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="/web/new_fragment/add_frag/" rel="{eval build_rel(array('web', 'new_fragment', 'add_frag'));}" target="navTab" title="添加碎片"><span>添加</span></a></li>
+			<li><a class="edit" href="/web/new_fragment/edit_frag/fid/<!--{{sid_frag}}-->" rel="{eval build_rel(array('web', 'new_fragment', 'edit_frag'));}" target="navTab" title="编辑碎片" warn="请选择碎片"><span>编辑</span></a></li>
+			<li><a class="delete" href="/web/new_fragment/delete_frag/" rel="fids[]" target="selectedTodo" title="碎片删除后会清空已推荐的数据并从频道碎片列表中清除。这些操作无法恢复！确定要删除吗？" warn="请选择碎片"><span>删除</span></a></li>
+			<li class="line">line</li>			
+		<!-- 	<li><a class="icon" href="" rel="" target="dialog" title="确定要把选中的碎片分配到" warn="请选择碎片"><span>分配到频道</span></a></li>
+			<li><a class="icon" href="" rel="" target="selectedTodo" title="" warn="请选择碎片"><span>取消分配</span></a></li> -->
+		</ul>
+	</div>
+	<table class="table" width="100%" cellpadding="4" cellspacing="4" layoutH="136">
+		<thead><tr>
+			<th width="2%"><input type="checkbox" group="fids[]" class="checkboxCtrl" /></th>
+			<th width="10%">碎片名称</th>
+			<th width="10%">更新时间</th>
+			<th width="10%">碎片类型</th>
+			<th width="10%">碎片模板</th>
+			<th width="5%">排序</th>
+			<th width="25%">已分配到频道</th>
+			<th></th>
+		</tr></thead>
+		<tbody>
+			<!--{loop $list $k $v}-->
+			<tr rel="{$v[fid]}" target="sid_frag">
+				<td><input type="checkbox" name="fids[]" value="{$v[fid]}" /></td>
+				<td>{$v[name]}</td>
+				<td>{echo gmdate('Y/m-d H:i', $v[dateline]);}</td>
+				<td>{eval echo $v[fregType] == 1 ? '自动推荐碎片' : '编辑手动推荐碎片 ';}</td>
+				<td>{$v[style]}</td>
+				<td>{$v[orderValue]}</td>
+				<td>{$v[cates]}</td>
+				<td>
+					<a href="/web/new_fragment/copy_frag/fid/{$v[fid]}" target="ajaxTodo" rel="{echo build_rel(array('web','new_fragment', 'copy_frag', $fid));}">复制碎片</a> | 
+					<a href="/web/new_fragment/link_frag_to_category/fid/{$v[fid]}/is_unlink/0" target="dialog" rel="{eval echo build_rel(array('web','new_fragment','link_frag_to_category',$v[fid], 'is_unlink', 0));}" title="将碎片分配到频道">分配频道</a> | 
+					<a href="/web/new_fragment/link_frag_to_category/fid/{$v[fid]}/is_unlink/1" target="dialog" rel="{eval echo build_rel(array('web','new_fragment','link_frag_to_category',$v[fid], 'is_unlink', 1));}" title="这个操作执行后该碎片的推荐数据将不会在网站上显示，确定要执行吗？">取消分配</a> | 
+					<!-- <a href="/web/new_fragment/update_frag/fid/{$v[fid]}" target="ajaxTodo" rel="" title="刷新后前台的显示内容将被更新，确定要刷新这个碎片的数据吗？">刷新数据</a> |  -->
+					<!-- <a href="/web/new_fragment/show/fid/{$v[fid]}" target="_block">预览</a> -->
+					<!--{if $v[fregType] == 0}-->
+					<a href="/web/new_recommend/index/fid/{$v[fid]}" target="navTab" rel="{eval echo build_rel(array('web','new_recommend','index'));}" title="推荐-{$v[name]}" fresh="true">推荐内容</a>
+					<!--{/if}-->
+				</td>
+			</tr>
+			<!--{/loop}-->
+		</tbody>
+	</table>
+    <!--{template main/page_bar}-->
+</div>

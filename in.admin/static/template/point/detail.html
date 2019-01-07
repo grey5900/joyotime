@@ -1,0 +1,86 @@
+<!--{eval $page_id = 'point_detail';}-->
+<div class="pageHeader">
+  <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+    <div class="searchBar">
+      <table class="searchContent">
+        <tr>
+          <td>
+          查询时间
+          </td>
+          
+            
+            <td>
+             <input type="text" readonly="readonly" name="start_date" format="yyyy-MM-dd HH:mm:ss" class="date" value="{$start_date}" />
+             <input type="text" readonly="readonly" name="end_date" format="yyyy-MM-dd HH:mm:ss" class="date" value="{$end_date}" />
+            </td>
+            <td>
+            <button type="submit">
+              检索
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+</div>
+<div class="pageContent" id="{$page_id}">
+  <!--div class="panelBar">
+    <ul class="toolBar">
+      <li>
+      总计：{$total_minus} +{$total_plus}
+    </li>
+  </ul>
+</div-->
+<table class="table" width="100%" layoutH="128">
+  <thead>
+    <tr>
+      <th width="15%">
+        派发时间
+      </th>
+      {loop $admins $ad}
+      <th>
+      {$ad['name']} ({$ad['truename']})
+      </th>
+      {/loop}
+    </tr>
+  </thead>
+  <tbody>
+  {eval $total_by_operator = array();}
+   {loop $results $key $res}
+	   <tr>
+	      	<td>
+	      		{$key}
+	      	</td>
+	      	{loop $admins $ad}	
+	      	<td> 
+	      		
+				 {if $ad['operatorId'] == $res[$ad['operatorId']]['operatorId']}
+				     {$res[$ad['operatorId']]['total']}
+				     {eval $total_by_operator[$ad['operatorId']] += $res[$ad['operatorId']]['total'];}
+				 {/if}
+	      	</td>
+	      	{/loop}
+	   </tr>
+      {/loop}
+      <tr>
+      <td>
+      总计
+      </td>
+      
+      {loop $admins $ad}	
+	      	<td> 
+	      		
+				
+				     {echo  $total_by_operator[$ad['operatorId']]}
+				
+	      	</td>
+	      	{/loop}
+     
+      </tr>
+  </tbody>
+</table>
+</div>

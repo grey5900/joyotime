@@ -1,0 +1,74 @@
+<!--{template web/header}-->
+<div class="wrapper">
+  <div class="container">
+    <div class="mainbox">
+      <div class="main">
+        <div class="inner main-conter">
+          <div class="title">
+            <div class="pull-left">
+              <h3>已推送列表</h3>
+            </div>
+          </div>
+          <div class="from-detail">
+            <div class="hd">
+              <div class="span3">
+                <div class="cutoff">
+                  <span>消息</span>
+                </div>
+              </div>
+              <div class="span3">
+                <div class="cutoff">
+                  <span>链接到</span>
+                </div>
+              </div>
+              <div class="span2">
+                <span>发送时间</span>
+              </div>
+            </div>
+            <div class="bd">
+              <dl>
+              	<!--{loop $list $k $v}-->
+                <dd>
+                  <div class="span3">
+                    <div class="event">
+                      <div class="msg-details">
+                        <div class="info">
+                          {$v[content]}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="span3">
+                    <div class="event">
+                      <div class="msg-details">
+                        <div class="info">
+                          <!--{if $v[preferId]}-->
+                          优惠券-{$v[prefer][title]} {$v[prefer][str_status]}
+                          <!--{else}-->
+                          &nbsp;
+                          <!--{/if}-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="span2">
+                    <div class="preview">
+                      <span>{$v[pushDate]}</span>
+                      <p>
+                        <em>{$v[readCount]}</em>人已读
+                      </p>
+                    </div>
+                  </div>
+                </dd>
+              	<!--{/loop}-->
+              </dl>
+				{$paginate}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--{template sider}-->
+    </div>
+  </div>
+</div>
+<!--{template web/footer}-->

@@ -1,0 +1,65 @@
+<!--{template mobile_site/elements/header}-->
+<script type="text/javascript">
+  $(function(){
+    $('#pull-form').on('submit',function(){
+        if($(this).find('input[name=code]').is_empty()) {
+            return false;
+        }
+        var code = $(this).find("input[name=code]").val();
+        var btn = $(this).find("input[type=submit]");
+        btn.button('loading');
+        
+      $.ajax({
+        url: "/pull_point",
+        data: { code : code },
+        dataType: "jsonp",
+        success: function(data){
+          if(data.result_code) {
+                $('#pull-form')
+                .find('.alert')
+                .removeClass('hide')
+                .text(data.result_msg);
+                $(this).find('input[name=code]').focus();
+          } else if (data.result_code == 0) {
+              var ticket = data.ticket;
+              var point = ticket.point;
+              window.location.href = '/conversion_success?point='+ point;
+          }
+          btn.button('reset');
+        }
+      });
+      return false;
+    });
+  });
+</script>
+<div class="container">
+    <div class="header">
+        <h1><!--{if $gift}-->领取礼包<!--{else}-->领取积分<!--{/if}--></h1>
+    </div>
+	<!--{if $gift}-->
+	<div class="content">
+        <div class="text-info">{$auth['nickname']}你好！</div>
+        <!--{template mobile_site/elements/gift}-->
+        
+        <!--{template mobile_site/elements/merchandise_display}-->
+    </div>
+    <!--{else}-->
+    <div class="content">
+        <form method="get" action="" class="form-horizontal" id="pull-form">
+            <!-- 错误提示 -->
+            <div class="alert alert-danger hide">
+            </div>
+            
+            <div class="form-group">
+            	<div class="group">
+        	        <input type="text" class="form-control" name="code" value="" placeholder="请输入积分兑换码"/>
+            	</div>
+            </div>
+            <div class="form-actions">
+            	<input type="submit" class="btn btn-success" data-loading-text="领取" value="领取" />
+            </div>
+        </form>
+    </div>
+    <!--{/if}-->
+</div>
+<!--{template mobile_site/elements/footer}-->

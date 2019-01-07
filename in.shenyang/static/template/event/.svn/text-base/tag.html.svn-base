@@ -1,0 +1,35 @@
+<div class="pageContent">
+
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="{eval echo site_url(array('event', 'add_tag', 'id', $id));}" target="dialog" rel="{eval echo build_rel(array('event', 'set_event_tag'));}" title="添加新标签" height="160" width="400"><span>添加</span></a></li>
+			<li><a class="edit" href="{eval echo site_url(array('event', 'edit_tag', 'id', $id, 'tid'));}/<!--{{tid}}-->" target="dialog" rel="{eval echo build_rel(array('event', 'set_event_tag'));}" title="编辑标签" warn="请选择标签" height="160" width="400"><span>编辑</span></a></li>
+			<li><a class="delete" href="{eval echo site_url(array('event', 'del_tag', 'id', $id));}" target="selectedTodo" rel="tids[]" title="删除标签后无法恢复！确定要删除吗？"><span>删除</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon" href="{eval echo site_url(array('event', 'stat_tag', 'id', $id));}" target="selectedTodo" rel="tids[]" title="这个操作将变更标签的状态，确定要执行吗？" ><span>修改状态</span></a></li>
+		</ul>
+	</div>
+	
+	<table class="table" width="100%" layoutH="80">
+		<thead>
+			<tr>
+				<th width="5%"><input type="checkbox" class="checkboxCtrl" group="tids[]" /></th>
+				<th width="40%">标签</th>
+				<th width="25%">创建时间</th>
+				<th width="20%">关联人数</th>
+				<th>标签状态</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--{loop $list $k $tag}-->
+			<tr target="tid" rel="{$tag[tagId]}">
+				<td><input type="checkbox" class="ids" name="tids[]" value="{$tag[tagId]}" /></td>
+				<td>{$tag[tagName]}</td>
+				<td>{eval echo substr($tag[createDate], 0, -9);}</td>
+				<td>{$tag[memberCount]}</td>
+				<td>{eval echo $tag[status] ? '<font color="red">已停用</font>' : '<font color="blue">使用中</font>';}</td>
+			</tr>
+			<!--{/loop}-->
+		</tbody>
+	</table>
+</div>

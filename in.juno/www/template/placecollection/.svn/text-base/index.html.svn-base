@@ -1,0 +1,67 @@
+<!--{template common/header3.0}-->
+	<div class="main layout detail">
+		<div class="column intro_banner">
+			<div class="img">
+				<img src="/index3.0/images/album.png" alt="地点册" />
+				
+			</div>
+			<div class="info">
+				<h1>地点册</h1>
+				<p>
+在你的生活中，梦里、歌声里，脑海里，总有一些地点让你无法忘记……<br/>
+其实，你可以不必选择忘记，把它丢到IN成都，让时间慢慢沉淀，让岁月磨平记忆，或许有一天，你再拾起时，会有不一样的心情……
+</p>
+				<a href="http://in.chengdu.cn/download" target="_blank" class="down">下载IN成都客户端，建立你的地点册</a>
+			</div>			
+		</div>
+		<div class="column loc_album">
+			<div class="hd">
+				<div class="tabs">
+					<a class="{if $sort == 'hot'}active{/if}" href="/placecoll/hot/1/">最热</a>
+					<a class="{if $sort == 'essence'}active{/if}" href="/placecoll/essence/1/">精华</a>
+					<a class="{if $sort == 'new'}active{/if}" href="/placecoll/new/1/">最新</a>
+				</div>
+			</div>
+			<div class="bd">
+				<ul class="list-fluid">
+				{loop $list $l}
+					<li>
+						<div class="box">
+							<div class="img">
+								<a href="/placecoll/{$l['id']}/" target="_blank"><img src="{echo image_url($l['image'],'placeColl','pcdp')}" alt="{$l['name']}" /></a>
+								<a href="/placecoll/{$l['id']}/" target="_blank"><i></i></a>
+							</div>
+							<div class="info">
+								<h4><a href="/placecoll/{$l['id']}/" target="_blank" title="{$l['name']}">{echo cut_string($l['name'],18);}</a></h4>
+								<p title="{$l['summary']}">{echo cut_string($l['summary'],60);}</p>
+								<div class="user">
+									<a href="/user/{$l['uid']}/" class="avatar" target="_blank"><img src="{$l['avatar_m']}" alt="{$l['nickname']}" /></a><a href="/user/{$l['uid']}/" target="_blank">{$l['nickname']}</a> 创建
+								</div>
+							</div>
+							<hr />
+							<div class="list">
+								<ul>
+								{loop $l['places'] $ps}
+									{if $ps['id']}
+									<li><i class="in_icon loc_album"></i><a href="/place/{$ps['id']}/" target="_blank">{$ps['placename']}</a></li>
+									{/if}
+								{/loop}
+								
+								</ul>
+								{if $l['isEssence']}<i class="elite"></i>{/if}
+							</div>
+						</div>
+					</li>
+				{/loop}		
+					
+				</ul>
+				
+				{$paginate}
+			</div>
+		</div>
+	</div>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" src="js/ie6.js"></script>
+<![endif]-->
+<!--{template common/footer}-->

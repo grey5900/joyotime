@@ -1,0 +1,18 @@
+<form action="/ugcv3/placeCollection/change_status/id/{$id}/status/{$status}/target/{$target}" method="post" onsubmit="return validateCallback(this, dialogAjaxDone);" >
+<div class="pageContent">
+
+<p>发送系统消息至用户</p><br/>
+
+<textarea rows=5 cols=50  name="message" class="required"></textarea>
+
+
+</div>
+
+<div class="formBar">
+        <ul>
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">确定</button></div></div></li>
+            <li><div class="buttonActive"><div class="buttonContent"><button onclick="$.pdialog.closeCurrent();" type="button">取消</button></div></div></li>
+        </ul>
+    </div>
+    
+    </form>

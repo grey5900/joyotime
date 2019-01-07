@@ -1,0 +1,94 @@
+<!--{template header}-->
+<div class="wrapper">
+	<div class="container">
+		<div class="mainbox-index">
+			<div class="main">
+				<div class="message">
+					<div class="title"><i class="icon-sound"></i><h3>信息通知&lt;&lt;</h3></div>
+					<div class="index-news">
+            <ul>
+              <!--{if !isset($msgs) || empty($msgs)}-->
+              <li>没有新消息</li>
+              <!--{else}-->
+              <!--{loop $msgs $k $v}-->
+              <li>
+                <a>{$v[title]}</a>
+              </li>
+              <!--{/loop}-->
+              <!--{/if}-->
+            </ul>
+            <ul  class="shrink" id="old-list" style="display:none;">
+              <!--{loop $reads $k $v}-->
+              <li>
+                <a>{$v[title]}</a>
+              </li>
+              <!--{/loop}-->
+            </ul>
+            <div class="readerall">
+              <a class="showMore" id="showMore">&lt;&lt;查看已读消息</a>
+            </div>
+          </div>
+				</div>
+				<div class="statistical">
+					<div class="title"><i class="icon-count"></i><h3>数据统计&lt;&lt;</h3></div>
+          <div class="tabshell">
+            <ul class="nav nav-tabs" id="myTab">
+            	<!--{loop $charts $k $v}-->
+            		<!--{if $v[open]}--><li<!--{if isset($v[active])}--> class="active"<!--{/if}-->><a href="#{$k}">{$v[title]}</a></li><!--{/if}-->
+            	<!--{/loop}-->
+            </ul>
+          </div>
+					<div class="select-serch">
+						<div class="select">
+							<div class="tab-content">
+								<!--{loop $charts $k $v}-->
+								<!--{if $v[open]}--><div class="tab-pane<!--{if isset($v[active])}--> active<!--{/if}-->" id="{$k}">
+								<!--{loop $v[items] $i $item}-->	
+									<label class="checkbox inline"><input class="stat_ckb" name="stat_item" type="checkbox" value="" data-stat-id="{$k}" data-stat-item="{$i}" />{$item[item]}</label>
+								<!--{/loop}-->	
+								</div><!--{/if}-->
+								<!--{/loop}-->	
+                			</div>
+						</div>
+					</div>
+					<div id="chart_container" style="min-width: 400px; height: 400px; margin:auto;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+  $(function() {
+  	$("#showMore").click(function(){
+  		if($("#old-list").is(":hidden"))
+  			$("#old-list").show();
+  		else
+  			$("#old-list").hide();
+  	});
+  	$('#myTab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+    $(".stat_ckb").change(function(e){
+    	//先取消所有CK到选中状态
+    	$(".stat_ckb").each(function(){$(this).removeAttr("checked");});
+    	$(this).attr("checked", "checked");
+    	var url = "/report/index/";
+    	$.ajax({
+    		type:"POST",
+    		url:url,
+    		data:{stat_id:$(this).attr("data-stat-id"),item_id:$(this).attr("data-stat-item")},
+    		dataType:"json",
+    		success:function(json){
+    			$("#chart_container").html("");
+    			if(json.code == 0){
+    				$("#chart_container").html(json.html);
+    			}else{
+    				$("#chart_container").html(json.msg);
+    			}    				
+    		}
+    	});
+    });
+  })
+</script>
+<!--{template footer}-->

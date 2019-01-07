@@ -1,0 +1,54 @@
+<div class="pageContent">
+    <table width="100%" class="table">
+        <thead>
+            <tr>
+                <th width="5%">&nbsp;</th>
+                <th width="19%">新增终端</th>
+                <th width="19%">活跃终端</th>
+                <th width="19%">启动次数</th>
+                <th width="19%">累计终端</th>
+                <th width="19%">累计注册用户</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>昨日</td>
+                <td>{$stat['newCount']}</td>
+                <td>{$stat['activeCount']}</td>
+                <td>{$stat['connectCount']}</td>
+                <td>{$stat['clientCount']}</td>
+                <td>{$stat['userCount']}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{eval $page_rel='user_stat_general';}
+<div class="pageContent">
+    <div>
+        平台分布
+    </div>
+    <table width="100%" class="table" layoutH="178" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="10%">平台</th>
+                <th width="18%">累计终端数</th>
+                <th width="18%">累计注册用户数</th>
+                <th width="18%">新增终端数（昨日）</th>
+                <th width="18%">活跃终端数（昨日）</th>
+                <th width="18%">启动次数（昨日）</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $key $row}-->
+            <tr>
+                <td>{$client_type[$key]}</td>
+                <td>{$row['clientCount']}</td>
+                <td>{$row['userCount']}</td>
+                <td>{$row['newCount']}</td>
+                <td>{$row['activeCount']}</td>
+                <td>{$row['connectCount']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+</div>

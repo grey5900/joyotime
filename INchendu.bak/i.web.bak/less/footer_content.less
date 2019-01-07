@@ -1,0 +1,34 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "global.less";
+@import "background-img.less";
+@import "layout_gala.less";
+
+
+.side-nav{float:left;width:180px; _overflow:hidden; -moz-border-radius:8px 0 0 8px; -webkit-border-radius:8px 0 0 8px;padding-top:30px;
+	li{position:relative; height:30px; margin-top:-3px; line-height:30px; font-size:14px;.dotted-line-green();
+ 		a{display:block; width:160px; text-align:center; .greenText();.font-yab();}
+ 		&.current{background:@greenDark;
+ 			a{color:@whiteText;}
+ 		}
+ 	}
+}
+.main-midden{
+	.bd{
+		padding:20px;line-height:24px;
+		.company{clear:both;
+			img{float:left; margin:0 10px 0 0;}
+			b{display:block; line-height:30px; font-size:14px;}
+			a{
+				.blueLink();
+			}
+		}
+		h4{
+			line-height:30px; 
+			font-size:14px; 
+			font-weight:bold;
+			.greenText();
+		}
+		.no-pd{padding:0px;}
+	}
+}

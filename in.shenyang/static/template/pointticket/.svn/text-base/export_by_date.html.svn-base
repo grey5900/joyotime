@@ -1,0 +1,21 @@
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm" target="_blank" >
+	<!--{if !empty($info[id])}--><input type="hidden" name="fid" value="{$info[id]}" /><!--{/if}-->
+	<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+			<label>使用时间:</label>
+		</div>
+		<div class="unit">
+			<label><input type="text" name="start" value="" size="20" class="date" format="yyyy-MM-dd HH:mm:ss" />
+			~ <input type="text" name="end" value="" size="20" class="date" format="yyyy-MM-dd HH:mm:ss" /></label> 
+		</div>	
+		
+	</div>  
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" href="{$current_url}" id="btnSubmit">确定导出</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul> 
+	</div>
+	</form>
+</div>

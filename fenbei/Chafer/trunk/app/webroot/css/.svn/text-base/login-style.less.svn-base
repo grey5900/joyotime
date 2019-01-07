@@ -1,0 +1,12 @@
+@import "_module/_login.less";
+
+body {
+  background: -moz-linear-gradient(left top, #92a1b5, #102737);
+  background: -webkit-linear-gradient(left top, #92a1b5, #102737);
+  background: -o-linear-gradient(left top, #92a1b5, #102737);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#92a1b5', endColorstr='#102737', GradientType=1);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}

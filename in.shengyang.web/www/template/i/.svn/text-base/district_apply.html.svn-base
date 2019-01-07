@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="zh_cn" name="language">
+<title>申请{$brandname}会员</title>
+<link rel="stylesheet"
+	href="/static/skin/mobile_main_style.css?{$version}">
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+	<script type="text/javascript">
+	$(function(){
+		$.ajaxSetup({cache:false});
+		$("#district_apply_form").on("click", function(){
+			if ('' == '{$uid}') {
+				$.messager("请先登陆IN沈阳");
+				return;
+			}
+			$.post("/district/apply?district_id={$district_id}&uid={$uid}", {name: $("input[name=name]").val(), cellphone: $("input[name=cellphone]").val(), idnumber: $("input[name=idnumber]").val()}, function(data){
+				var data = eval("(" + data + ")");
+				$.messager(data.message);
+				if (data.code == 0) {
+					// 成功
+					setTimeout(function(){
+						window.location.href = "/district?district_id={$district_id}&uid={$uid}&showNav={echo $show_nav?0:1}&t=" + (new Date()).getTime();
+					}, 3000);
+				}
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div class="container">
+			<div class="lumps">
+				<!--{if $show_nav}-->
+				<div class="navigation">
+					<a onclick="goBack();" class="navigation-back"><cite>上一页</cite></a>
+					<span class="navigation-title">申请{$brandname}会员</span>
+				</div>
+				<!--{/if}-->
+				<div class="lump {if $show_nav}nav-black{/if} forms">
+					<form action="district_apply" method="get" name=""
+						id="district_apply_submit">
+						<div class="box">
+							<div class="inside">
+								<div class="control-group">
+									<label for="">姓名</label> <input type="text" class="" name="name"
+										value="" placeholder="填写姓名">
+								</div>
+								<div class="control-group">
+									<label for="">电话</label> <input type="text" class=""
+										name="cellphone" value="" placeholder="填写电话">
+								</div>
+								<div class="control-group">
+									<label for="">身份证</label> <input type="text" class=""
+										name="idnumber" value="" placeholder="身份证号码">
+								</div>
+
+							</div>
+						</div>
+						<div class="from-actions">
+							<input class="btn" type="button" value="  确定  "
+								data-loading-text="　确定　" id="district_apply_form" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

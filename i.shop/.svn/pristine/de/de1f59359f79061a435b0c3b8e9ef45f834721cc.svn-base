@@ -1,0 +1,64 @@
+<div class="modal-header">
+  <button type="button" class="close jqmClose">
+    &times;
+  </button>
+  <h3 id="myModalLabel">预览展现</h3>
+</div>
+<form class="form-preview">
+  <div class="phone-view">
+    <div class="img-unit">
+      <img id="preview-image" src="/static/img/temp01.jpg" />
+      <span class="pretit" id="preview-title"> 标题名称 </span>
+    </div>
+    <div class="view-content">
+      <div class="texts">
+        <div class="statement">
+          <span id="preview-detail"> 优惠详情内容 </span>
+        </div>
+      </div>
+      <div class="texts">
+        <div class="statement">
+          <span id="preview-date"> 使用有效期至待定 </span>
+        </div>
+      </div>
+      <div class="unit multi-line" id="intros">
+        <div class="unit-title">
+          <h3><i class=""></i>适用商家：</h3>
+        </div>
+        <div class="box">
+          <dl id="preview-places">
+            <dd>
+              <a class="arrow"> <span>地点名称</span>
+              <div class="address">
+                金牛区一环路府青立交桥1号财富又一城负一楼
+              </div> </a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="unit texts">
+        <p id="preview-desc">
+          <strong>特别说明:</strong>
+          <br />
+          说明内容
+        </p>
+      </div>
+      <div class="unit multi-line" id="intros">
+        <div class="unit-title">
+          <div class="mzsm">
+            <a>免责声明</a>
+          </div>
+        </div>
+        <div class="box">
+          <dl id="preview-places">
+            <dd>
+              <a class="arrow"> <span>有疑问？请拨打IN成都服务电话4006028377</span> </a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="view-footer"><img src="/static/img/preview_bottom.jpg" width="293px" />
+    </div>
+  </div>
+</form>

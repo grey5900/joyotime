@@ -1,0 +1,216 @@
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.btn-file {
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+.btn-file > input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transform: translate(-300px, 0) scale(4);
+  font-size: 23px;
+  direction: ltr;
+  cursor: pointer;
+}
+.fileupload {
+  margin-bottom: 9px;
+  .help-block {
+    display: block;
+    margin: 5px 0;
+    line-height: 36px;
+    height: 36px;
+    p {
+      color: #d9534f;
+    }
+  }
+}
+.fileupload .uneditable-input {
+  display: inline-block;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  cursor: text;
+  width: 130px;
+  position: relative;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+  padding: 0 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.fileupload .thumbnail {
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 5px;
+  // vertical-align: middle;
+  //text-align: center;
+  max-height: 370px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  //width: 170px;
+}
+.fileupload-preview  {
+  max-height: 370px;
+  //width: 170px;
+  img {
+    max-height: 360px;
+    //width: 160px;
+  }
+}
+.fileupload .thumbnail > img {
+  display: inline-block;
+  // vertical-align: middle;
+  max-height: 360px;
+  //width: 360px;
+}
+.fileupload .btn {
+  vertical-align: middle;
+}
+.fileupload.fileupload-new > div {
+  margin-bottom: 20px;
+}
+.fileupload-exists .fileupload-new,
+.fileupload-new .fileupload-exists {
+  display: none;
+}
+.fileupload-inline .fileupload-controls {
+  display: inline;
+}
+.fileupload-new .input-append .btn-file {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+.thumbnail-borderless .thumbnail {
+  border: none;
+  padding: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.fileupload-new.thumbnail-borderless .thumbnail {
+  border: 1px solid #ddd;
+}
+.control-group.warning .fileupload .uneditable-input {
+  color: #a47e3c;
+  border-color: #a47e3c;
+}
+.control-group.warning .fileupload .fileupload-preview {
+  color: #a47e3c;
+}
+.control-group.warning .fileupload .thumbnail {
+  border-color: #a47e3c;
+}
+.control-group.error .fileupload .uneditable-input {
+  color: #b94a48;
+  border-color: #b94a48;
+}
+.control-group.error .fileupload .fileupload-preview {
+  color: #b94a48;
+}
+.control-group.error .fileupload .thumbnail {
+  border-color: #b94a48;
+}
+.control-group.success .fileupload .uneditable-input {
+  color: #468847;
+  border-color: #468847;
+}
+.control-group.success .fileupload .fileupload-preview {
+  color: #468847;
+}
+.control-group.success .fileupload .thumbnail {
+  border-color: #468847;
+}
+
+.uneditable-input {
+  height: 36px;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  line-height: 36px;
+  color: #555555;
+}
+
+.cropPreview {
+  border: 1px solid #ddd;
+  display: inline-block;
+}
+.cropHelp {
+  color : #d9534f;
+}
+.cropText {
+  input {
+    color : #d9534f;
+    border: 0;
+    background: #fff;
+    display: inline-block;
+    cursor: default;
+    padding: 0;
+    .box-shadow(none);
+    width: 50px;
+    text-align: center;
+    margin: 0;
+    &:focus {
+      .box-shadow(none);
+    }
+    &.rt {
+      color: #4db5a4;
+    }
+  }
+}
+/*
+ * imgAreaSelect default style
+ */
+
+.imgareaselect-border1 {
+  background: url("/img/imgareaselect/border-v.gif") repeat-y left top;
+}
+
+.imgareaselect-border2 {
+    background: url("/img/imgareaselect/border-h.gif") repeat-x left top;
+}
+
+.imgareaselect-border3 {
+    background: url("/img/imgareaselect/border-v.gif") repeat-y right top;
+}
+
+.imgareaselect-border4 {
+    background: url("/img/imgareaselect/border-h.gif") repeat-x left bottom;
+}
+
+.imgareaselect-border1, .imgareaselect-border2,
+.imgareaselect-border3, .imgareaselect-border4 {
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
+.imgareaselect-handle {
+    background-color: #fff;
+    border: solid 1px #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.imgareaselect-outer {
+    background-color: #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.imgareaselect-selection {  
+}

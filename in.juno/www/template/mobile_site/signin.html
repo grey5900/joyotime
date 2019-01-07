@@ -1,0 +1,100 @@
+<!--{template mobile_site/elements/header}-->
+  <script type="text/javascript">
+  var timer;
+  function checkOnlineId() {
+	    if (!online_id) {
+	      timer = setTimeout("checkOnlineId()", 1000);
+	    }else{
+		  if(!timer) {
+			  clearTimeout(timer);
+		  }
+		  <!--{if $referer}-->
+		  window.location.href = '{$referer}';
+		  <!--{else}-->
+		  window.location.href = '/signup_success';
+		  <!--{/if}-->
+	    }
+}
+  /*
+   * 检测online_id是否被赋值，赋值后关闭登录、注册窗口
+   */
+  $(function(){
+    $('#login-form').on('submit',function(){
+        if($(this).find('input[name=username]').is_empty() || $(this).find('input[name=password]').is_empty()) {
+            return false;
+        }
+    
+        // 提交的时候对password加密
+        var username = encodeURIComponent($(this).find("input[name=username]").val());
+        var password = $(this).find("input[name=password]").val();
+        var salt = $.cookies.get("salt");
+        password = encodeURIComponent(CryptoJS.AES.encrypt(password, salt));
+        var sign = encodeURIComponent(CryptoJS.AES.encrypt(password, salt));
+        var btn = $(this).find("input[type=submit]");
+        btn.button('loading');
+    
+      $.ajax({
+        url: "{$passport_signin_url}",
+        data: {username: username, password: password, sign: sign, salt: salt ,rememberme: 1 },
+        dataType: "jsonp",
+        jsonpCallback: "callback",
+        success: function(data){
+          if(data.code) {
+            $('#login-form')
+              .find('.alert')
+              .removeClass('hide')
+              .text(data.message);
+          } else if (data.code == 0) {
+        	  $.getScript("{$passport_sso_url}",function(){
+        	  	checkOnlineId();
+        	  });
+          }
+          btn.button('reset');
+        }
+      });
+      return false;
+    });
+  });
+</script>
+
+<div class="container">
+    <div class="header">
+        <h1>登录IN成都</h1>
+    </div>
+    <div class="content">
+        <form method="post" action="" class="form-horizontal" id="login-form">
+        	<input type="hidden" name="referer" value="{$referer}" />
+            <!-- 错误提示 -->
+            <div class="alert alert-danger hide">
+            </div>
+            
+            <div class="form-group">
+            	<div class="group">
+            	    <label for="username" class="control-label">账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</label>
+            	    <div class="controls">
+            	       <input type="text" name="username" placeholder="用户名或电子邮箱" class="required form-control" value="" />
+            	    </div>
+            	</div>
+            	 <div class="headingline"></div>
+            	<div class="group">
+            	    <label for="password" class="control-label">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+            	    <div class="controls">
+            	       <input type="password" name="password" placeholder="请输入密码" class="form-control required" value="" />
+            	    </div>
+            	</div>
+            </div>
+            <a href="http://in.chengdu.cn/reset_pwd" class="help-block">忘记密码？</a>
+            <div class="form-actions">
+            	<input type="submit" class="btn btn-success" data-loading-text="登录" value="登录" />
+            </div>
+        </form>
+        <div class="headingline">
+            <span>新朋友？</span>
+        </div>
+        
+        <div class="control-link">
+            <a href="/signup?referer={echo urlencode($referer);}" class="btn btn-default">注册IN成都</a>
+        </div>      
+    </div>
+</div>
+<!--{template mobile_site/elements/footer}-->

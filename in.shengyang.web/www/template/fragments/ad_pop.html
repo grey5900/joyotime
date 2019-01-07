@@ -1,0 +1,13 @@
+<!--{if $ad_pop}-->
+    <!-- ad_pop -->
+    {eval $ad_pop_item = $ad_pop['data'][0]}
+    {if $ad_pop_item}
+		<script>
+		$('body').fixAd({
+			link:'{$ad_pop_item[link]}',
+			src:'{if $ad_pop_item[extraData][type][data] == img}{$ad_pop_item[image]}{else}{$ad_pop_item[summary]}{/if}',
+			type:'{$ad_pop_item[extraData][type][data]}'
+		});
+		</script>
+	{/if}
+<!--{/if}-->

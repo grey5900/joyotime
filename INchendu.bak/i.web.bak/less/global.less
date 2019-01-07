@@ -1,0 +1,109 @@
+/*
+ * IE6 Fixed */
+
+* html,* html body {
+	//_background-image: url(about:blank);
+	_background-attachment: fixed;
+}
+// How to use
+//
+//top:expression(eval(document.documentElement.scrollTop));
+//left:expression(eval(document.documentElement.scrollLeft));
+//top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+//left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));
+
+#returntop {
+	display: none;
+	position: fixed;
+	_position: absolute;
+	_top:~"expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0) - 20))";
+	right: 50%;
+	margin-right: -560px;
+	bottom: 20px;
+	width: 43px;
+	height: 55px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background: url(/img/returntop.png) 0px 0px no-repeat;
+	_background: url(/img/returntop.gif) 0px 0px no-repeat;
+	&:hover {
+		background-position: 0px -55px;
+	}
+}
+
+
+
+/*
+ * color*/
+
+.whiteText{
+	color:@whiteText;
+	font-weight:bold;
+	text-decoration:none;
+}
+.redText{color:@redText;
+	&:hover{color:@redText;}
+  	&:visited{color:@redText;}
+}
+.greenText{color:@greenText;
+	&:hover{color:@greenText;}
+}
+.grayDark{color: @grayDark;
+	&:hover{color: @grayDark;}
+	&:visited{color: @grayDark;}
+}
+.grayLight{color:@grayLight; 
+  	&:hover{color:@grayLight;}
+ 	&:visited{color:@grayLight;}
+}
+.grayLightest{color: @grayLightest;
+	&:hover{color: @grayLightest;}
+	&:visited{color: @grayLightest;}
+}
+.blueLink{color:@blueLink;
+	&:hover{color:@blueLinkHover;}
+}
+
+.greenLink{color:@greenLink;
+	&:hover{color:@greenLinkHover;}
+}
+
+.counter{
+	color:@grayDark;
+	display: block;
+	position: relative;
+	padding: 0 5px 0 0;
+	z-index: 1;
+	float: right;
+	margin-top: -30px;
+}
+/*
+ * font*/
+ 
+.font-yab{font-family: "Microsoft YaHei",@baseFontFamily;}
+
+/*
+ * box*/
+
+.labelbox{margin:0 2px 0 6px; vertical-align:middle; border:none;}
+
+.avatar_box{
+	padding-right:10px;
+	height:147px;
+	width:148px;
+	display: block;
+	background:url(/img/avatar_box.png) 0px 0px no-repeat;
+	_background:url(/img/avatar_box.gif) 0px 0px no-repeat;
+	img{
+		padding:6px 1px 0 0;
+		width:129px;
+		height:129px;	
+	}
+}
+
+/*
+ * line*/
+ 
+.dotted-solid-line{
+	border-bottom:1px solid #e8ecde;
+}

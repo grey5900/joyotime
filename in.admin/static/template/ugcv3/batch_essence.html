@@ -1,0 +1,31 @@
+<style type="text/css">
+.tag-list{display:block;clear: both;width:100%;padding:10px 0;}
+.tag-list .tag-list-tab {border-bottom: 1px solid #dddddd; background-color: #f6f6f6;padding: 4px 0 0;}
+.tag-list .tag-list-tab li {display: inline-block; *display: inline; *zoom: 1; background-color: #e1e1e1;padding: 5px 10px;margin: 0 0 0 5px;}
+.tag-list .tag-list-tab li.on {background-color: #dddddd;}
+.tag-list .tag-list-tab li a {text-decoration: none;}
+.tag-list-pane {display:none;}
+.tag-list-pane.on {display:block;}
+.tag-list-pane {margin:0;padding:4px;}
+.tag-list-pane span{margin:0 0 5px 5px;display: inline-block; *display: inline; *zoom: 1; padding:4px 5px; cursor:pointer;}
+span.tag-info{color: #000;background:#8fd6ed;border: 1px solid #6ab9d2; border-width: 0 1px 1px 0;}
+span.tag-active{color: #666;background:#dddddd;border: 1px solid #aaaaaa; border-width: 0 1px 1px 0;}
+</style>
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent" layouth="60">
+		
+		<div class="unit">
+			<label>精华积分：</label>
+			<input name="score" type="text" id="score" class="textInput" value="0" size="30"/>
+		</div>
+		
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>

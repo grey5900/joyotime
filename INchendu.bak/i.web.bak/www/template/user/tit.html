@@ -1,0 +1,12 @@
+<div class="tit">
+	<ul class="nav nav-pills">
+		<li{if $method==='settings'} class="active"{/if}><a href="/user_settings/">基本信息</a></li>
+		<li{if $method==='avatar'} class="active"{/if}><a href="/user_avatar/">修改头像</a></li>
+		{if !empty($profile[username])}
+		<li{if $method==='revisepassword'} class="active"{/if}><a href="/user_revisepassword/">修改密码</a></li>
+		<li{if $method==='sync'} class="active"{/if}><a href="/user_sync/">同步设置</a></li>
+		<li{if $method==='email'} class="active"{/if}><a href="/user_email/">修改邮箱</a></li>
+		{/if}
+		<li{if $method==='score'} class="active"{/if}><a href="/user_score/">积分规则</a></li>
+	</ul>
+</div>

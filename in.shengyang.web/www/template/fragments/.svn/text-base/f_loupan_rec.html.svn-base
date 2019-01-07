@@ -1,0 +1,27 @@
+{if $v3_fragments['v3_f_loupan_rec']}
+<div class="module recommend">
+					<div class="hd">
+						<h2>{$v3_fragments['v3_f_loupan_rec']['frag']['name']}</h2>
+						{if $v3_fragments['v3_f_loupan_rec']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_loupan_rec']['frag']['rule']['jump_link']}" target="_blank">更多></a>{/if}
+					</div>	
+					{eval $loupan_rec = $v3_fragments['v3_f_loupan_rec']['data'][0];}
+					<div class="bd">
+						<h3><a href="{$loupan_rec['link']}" target="_blank">{$loupan_rec['title']}</a></h3>
+						<div class="h_detail">
+							<ul class="preview">
+								{loop $v3_fragments['v3_f_loupan_rec']['data'] $rec_loupan}
+								<li>
+									<a href="{$loupan_rec['link']}" target="_blank"><img src="{$rec_loupan['image']}" alt="{$loupan_rec['title']}" /></a>
+								</li>
+								{/loop}
+							</ul>
+							<p><b>价格详情：</b> {$loupan_rec['extraData']['price']['data']}</p>
+							<p><b>优惠信息：</b> {$loupan_rec['extraData']['youhui']['data']}</p>
+							<p><b>开盘时间：</b> {$loupan_rec['extraData']['kaipan']['data']}</p>
+							<p><b>入住时间：</b> {$loupan_rec['extraData']['ruzhu']['data']}</p>
+							<p><b>开发商：</b> {$loupan_rec['extraData']['comp']['data']}</p>
+							<p><b>物业地址：</b> {$loupan_rec['extraData']['address']['data']}</p>
+						</div>
+					</div>
+				</div>
+{/if}

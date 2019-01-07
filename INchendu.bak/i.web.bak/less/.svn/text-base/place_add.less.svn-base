@@ -1,0 +1,58 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+#container {
+	margin-bottom: 20px;
+}
+
+.block {
+	width: 980px;
+	.clearfix();
+	.block-header {
+		font-size: 14px;
+		height: 44px;
+		line-height: 44px;
+		background: url(/img/bg_account_header.png) top left no-repeat;
+		h2 {
+			font-size: 16px;
+			float: left;
+			padding: 0px 10px;
+		}
+	}
+	.block-content {
+		border: 1px solid @graySide;
+		border-width: 0 1px;
+		padding: 20px;
+		min-height: 200px;
+		background: @whiteText;
+		.clearfix();
+		.sidebar {
+			float: right;
+			padding: 20px;
+			width: 260px;
+			border: 4px solid @grayLighter;
+			.guide {
+				h4 {
+					margin: 0 0 10px 0;
+					color: @grayDark;
+					font-size: 14px;
+					font-weight: normal;
+				}
+			}
+		}
+		.main {
+			float: left;
+			padding: 20px 0;
+			width: 600px;
+		}
+		.form-actions {
+			border: none;
+			background: @whiteText;
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+	}
+	.block-footer {
+		height: 10px;
+		background: url(/img/bg_account_footer.png) top left no-repeat;
+	}
+}

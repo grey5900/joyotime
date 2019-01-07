@@ -1,0 +1,113 @@
+.phone-body { 
+	background-image:url(../img/phone-bg.jpg); 
+	background-repeat:no-repeat; 
+	background-color:#282c2f; 
+	padding:0; 
+	margin:0; 
+	width: 300px; 
+	height: 450px;
+}
+
+#phone-container { 
+	width:300px; 
+	height: 450px;
+	position:absolute; 
+	overflow:hidden; 
+	margin:0 auto; 
+}
+#phone-container .items {
+	margin: 60px 0 40px 0;
+	background: #f5f5f5; 
+	overflow: hidden;
+	overflow-y: scroll; 
+	display: block;
+	height: 350px;
+	position: relative;
+}
+#phone-container .items dl {
+	clear: both;
+	margin-bottom: 5px;
+	float: left;
+}
+#phone-container .items	dt {
+	text-align: right;
+	color: #aaaaaa;
+	width: 70px;
+	float: left;
+}
+#phone-container .items	dd {
+	text-align: left;
+	font-style: 28px;
+	color: #666666;
+	padding-left: 70px;
+}
+#phone-container .unit {
+  margin: 0 10px;
+  padding: 10px 0;
+}
+#phone-container .unit .box {
+  background: #fff;
+  height: auto;
+  width: 100%;
+  -webkit-box-shadow:  0 1px 2px rgba(165,165,165,.55);
+  -moz-box-shadow: 0 1px 2px rgba(165,165,165,.55);
+  box-shadow:  0 1px 2px rgba(165,165,165,.55);
+  -webkit-border-radius: 6px; 
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+#phone-container .unit .box ul {
+  height: 45px;
+  overflow: hidden;
+  margin: 0 10px;
+  padding: 10px 0;
+}
+#phone-container .unit .box ul li {
+  float: left;
+  margin-right: 5px;
+}
+#phone-container .unit .box .inside {
+	display: block;
+	overflow: hidden;
+	margin: 0 10px;
+	color: #aaa;
+}
+
+#phone-container .unit .unit-title {
+	color: #5caa1d;
+}
+
+.arrow {
+  background-image: url(../img/arrow.png);
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+.multi-line {}
+.multi-line dd {
+  border-bottom: 1px solid #eee;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+.multi-line dd a {
+  width: 100%;
+  display: inline-block;
+}
+.multi-line dd em {
+  float: right;
+  margin-right: 30px;
+}
+.multi-line dd span {
+  font-weight: bold;
+}
+.multi-line .viewall {
+  background: url(../i/view_bg.jpg) 0 0 repeat-x;
+  width: 100%;
+  height: 32px;
+  text-align: center;
+}
+.multi-line .viewall a {
+  width: 100%;
+  display: inline-block;
+  line-height: 30px;
+  font-size: 14px;
+} 

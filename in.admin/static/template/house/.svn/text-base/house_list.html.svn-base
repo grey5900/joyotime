@@ -1,0 +1,177 @@
+<!-- 分页属性 -->
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="type" value="{$type}" />
+    <input type="hidden" name="status" value="{$status}" />
+    <input type="hidden" name="has_group" value="{$has_group}" />
+    <input type="hidden" name="has_recommend" value="{$has_recommend}" />
+</form>
+<div id="{$page_id}">
+<!-- 页头搜索栏 -->
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" name="main_form" id="main_form" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select class="combox" name="type">
+                        <option value="placename">楼盘名称</option>
+                        <option value="id">楼盘ID</option>
+                        <option value="address">楼盘地址</option>
+                    </select></td>
+                    <td>
+                    <input type="text" name="keywords" value="{$keywords}" size="30"/>
+                    </td>
+                    <td>
+                        <div class="subBar">
+                            <ul>
+                                <li>
+                                    <div class="buttonActive">
+                                        <div class="buttonContent">
+                                            <button type="submit">
+                                                检索
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                    <select name="status" class="combox">
+	                    <option value="0">正常</option>
+	                    <option value="1">隐藏</option>
+	                    <option value="2">删除</option>
+                	</select>
+                    </td>
+                    <td>
+                    	<label><input type="checkbox" name="has_group" value="1"/>有团购的</label>
+                    </td>
+                    <td>
+                    	<label><input type="checkbox" name="has_recommend" value="1"/>有返利的</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<!-- 页面显示区 -->
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" href="/house/add" target="navTab" title="创建新楼盘" rel="house_add"><span>创建新楼盘</span></a>
+            </li>
+            <li>
+                <a class="edit" href="/house/edit/id/<!--{{id}}-->" warn="请选择要编辑的楼盘" target="navTab" title="编辑楼盘" rel="house_add"><span>编辑楼盘</span></a>
+            </li>
+            <li class="line">
+                line
+            </li>
+            <li>
+                <select name="change_status" warn="请选择您要改变状态的楼盘" url="/house/change_status/id/<!--{{id}}-->/type/{echo intval($cid);}">
+                    <option value="-1" selected>改变状态</option>
+                    <!--{loop $poi_status $k $v}-->
+                    <option value="{$k}">{$v}</option>
+                    <!--{/loop}-->
+                </select>
+            </li>
+            <li class="line">
+                line
+            </li>
+            <li>
+                <a class="add" href="/house/add_group/id/<!--{{id}}-->" warn="请选择楼盘" target="dialog" title="编辑团购" rel="house_add_group"><span>编辑团购</span></a>
+            </li>
+            <li>
+                <a class="edit" href="/house/add_recommend/id/<!--{{id}}-->" warn="请选择楼盘" target="dialog" title="编辑返利" rel="house_add_recommend"><span>编辑返利</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="128">
+        <thead>
+            <tr>
+                <th width="10%">楼盘ID</th>
+                <th width="30%">楼盘名称</th>
+                <th width="50%">地址</th>
+                <th width="10%">状态</th>
+                <!--{if $has_group}-->
+                <th>排序</th>
+                <!--{/if}-->
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['house_id']}" id="row_{$row['house_id']}" status="{$row['status']}">
+                <td>{$row['house_id']}</td>
+                <td>
+                <a href="{$website}/place/{$row['house_id']}" target="_blank">{$row['name']}</a>
+                <!--{if $row['has_group']}--><span class="<!--{if $row['group_status'] == 1}-->tip_grey<!--{else}-->tip_red<!--{/if}-->">团</span><!--{/if}-->
+                <!--{if $row['has_recommend']}--><span class="<!--{if $row['recommend_status'] == 1}-->tip_grey<!--{else}-->tip_blue<!--{/if}-->">返</span><!--{/if}-->
+                <!--{if $row['sale_status']}-->
+	                <!--{if $row['sale_status'] == 1}-->
+	                <span class="tip_red">在售</span>
+	                <!--{else}-->
+	                <span class="tip_grey">售罄</span>
+	                <!--{/if}-->
+                <!--{else}-->
+                <span class="tip_green">待售</span>
+                <!--{/if}-->
+                <td>{$row['address']}</td>                
+                <td id="row_status_{$row['house_id']}">{$poi_status[$row['status']]}</td>
+                <!--{if $has_group}-->
+                <td><input type="text" size="4" onfocus="modify_rank2(this, 'tuanfang.house', '{$row['id']}', 'rank_order')" value="{$row['rank_order']}" name="rank_order" /></td>
+                <!--{/if}-->
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $("select[name=type]", "#{$page_id}").val("{$type}");
+        $("select[name=status]", "#{$page_id}").val("{$status}");
+        // 改变状态
+        $("select[name=change_status]", "#{$page_id}").my_table_status(function(json){
+            $("#row_status_" + json.id, "#{$page_id}").text(json.value);
+            $("#row_" + json.id, "#{$page_id}").attr("status", json.key);
+        });
+        
+        // 选择有团购
+        $("input[name=has_group]", "#{$page_id}").on("click", function(){
+        	if($(this).attr("checked")) {
+        		$("input[type=hidden][name=has_group]").val("1");
+        	} else {
+        		$("input[type=hidden][name=has_group]").val("0");
+        	}
+        	navTabSearch($("#main_form"));
+        });
+        <!--{if $has_group}-->
+        $("input[name=has_group]", "#{$page_id}").attr("checked", "checked")
+        <!--{/if}-->
+        
+     	// 选择有返利
+        $("input[name=has_recommend]", "#{$page_id}").on("click", function(){
+        	if($(this).attr("checked")) {
+        		$("input[type=hidden][name=has_recommend]").val("1");
+        	} else {
+        		$("input[type=hidden][name=has_recommend]").val("0");
+        	}
+        	navTabSearch($("#main_form"));
+        });
+        <!--{if $has_recommend}-->
+        $("input[name=has_recommend]", "#{$page_id}").attr("checked", "checked")
+        <!--{/if}-->
+        
+		// 选择了状态
+        $("select[name=status]", "#{$page_id}").change(function(){
+			$("input[type=hidden][name=status]").val($(this).val());
+			navTabSearch($("#main_form"));
+        });
+    });
+</script>

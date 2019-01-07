@@ -1,0 +1,98 @@
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>
+                    类型：
+                </dt>
+                <dd>
+                    <!--{loop $app_type $key $value}-->
+                    <label>
+                        <input type="radio" name="type" value="{$key}"<!--{if $version}--> disabled="disabled"<!--{/if}--><!--{if $version['type'] == $key}--> checked="checked"<!--{/if}--> />
+                        $value </label>
+                    <!--{/loop}-->
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    版本号：
+                </dt>
+                <dd>
+                    <input type="text" id="version" name="version" class="required" size="20" maxlength="20"<!--{if $version}--> readonly<!--{/if}--> value="{$version['version']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    下载地址：
+                </dt>
+                <dd>
+                    <input type="text" id="download_url" name="download_url" class="required" size="80" maxlength="80" value="{$version['download_url']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    强制更新：
+                </dt>
+                <dd>
+                    <label>
+                        <input type="radio" name="force_update" value="0"<!--{if $version['force_update'] == 0}--> checked="checked"<!--{/if}--> />
+                        否</label>
+                    <label>
+                        <input type="radio" name="force_update" value="1"<!--{if $version['force_update'] == 1}--> checked="checked"<!--{/if}--> />
+                        是</label>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    使用提示：
+                </dt>
+                <dd>
+                    <textarea id="change_log" name="change_log" cols="80" rows="12" class="required">{$version['change_log']}</textarea>
+</dd>            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick="onsubmitVersionAdd();">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function onsubmitVersionAdd() {
+        var form = $("form", "#{$page_id}");
+        if (!form.valid()) {
+            return false;
+        }
+        
+        alertMsg.confirm("请仔细检查发布的版本信息是否正确哦，提交了不能修改的，您确定么？", {
+            okCall : function() {
+                $.ajax({
+                    type: 'POST',
+                    url:form.attr("action"),
+                    data:form.serializeArray(),
+                    dataType:"json",
+                    cache: false,
+                    success: navTabAjaxDone,
+                    error: DWZ.ajaxError
+                });
+            }
+        });
+    }
+</script>

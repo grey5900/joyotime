@@ -1,0 +1,43 @@
+<script type="text/javascript">
+function handle_reject(json) {
+	DWZ.ajaxDone(json);
+	if(json.statusCode == 200) {
+		$("#house_recommend_checked_" + json.value.id).html("");
+		$.pdialog.closeCurrent();
+	}
+}
+</script>
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, handle_reject);">
+        <div class="pageFormContent" layoutH="58">
+            <div class="unit">
+            	<label>经纪人：</label>{$order['recommend_cellphone_no']}({$order['recommend_name']})
+            </div>
+            <div class="unit">
+            	<label>奖励佣金：</label><input type="text" name="commision" size="6" class="required number" />元
+            </div>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

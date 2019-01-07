@@ -1,0 +1,113 @@
+﻿//
+// Popovers
+// --------------------------------------------------
+
+
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: @zindexPopover;
+  display: none;
+  width: 236px;
+  padding: 1px;
+  background-color: @popoverBackground;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  .border-radius(6px);
+  .box-shadow(0 5px 10px rgba(0,0,0,.2));
+
+  // Offset the popover to account for the popover arrow
+  &.top     { margin-top: -10px; }
+  &.right   { margin-left: 10px; }
+  &.bottom  { margin-top: 10px; }
+  &.left    { margin-left: -10px; }
+}
+
+.popover-title {
+  margin: 0; // reset heading margin
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  //background-color: @popoverTitleBackground;
+  border-bottom: 1px dotted darken(@popoverTitleBackground, 5%);
+  .border-radius(5px 5px 0 0);
+}
+
+.popover-content {
+  padding: 9px 14px;
+  p, ul, ol {
+    margin-bottom: 0;
+  }
+}
+
+.popover .arrow {
+  position: absolute;
+  display: block;
+  font-size: @popoverArrowWidth * 2;
+  line-height: @popoverArrowWidth * 2;
+  font-family: 'SimSun';
+  overflow: hidden;
+  .arrow-border {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    color: #ccc;
+    color: @popoverArrowOuterColor;
+  }
+  .arrow-inside {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    color: @popoverArrowColor;
+  }
+}
+
+.popover {
+  &.top .arrow {
+    bottom: -@popoverArrowWidth;
+    left: 50%;
+    margin-left: -@popoverArrowWidth;
+    width: @popoverArrowWidth * 2;
+    height: @popoverArrowWidth;
+    .arrow-border {
+	    margin-bottom: -1px;
+    }
+  }
+  &.right .arrow {
+    top: 50%;
+    left: -@popoverArrowWidth;
+    margin-top: -@popoverArrowWidth;
+    width: @popoverArrowWidth;
+    height: @popoverArrowWidth * 2;
+    .arrow-border {
+	    margin-left: -1px;
+    }
+  }
+  &.bottom .arrow {
+    top: -@popoverArrowWidth;
+    left: 50%;
+    margin-left: -@popoverArrowWidth;
+    width: @popoverArrowWidth * 2;
+    height: @popoverArrowWidth;
+    .arrow-border {
+	    margin-top: -1px;
+    }
+  }
+  &.left .arrow {
+    top: 50%;
+    right: -@popoverArrowWidth;
+    margin-top: -@popoverArrowWidth;
+    width: @popoverArrowWidth;
+    height: @popoverArrowWidth * 2;
+    .arrow-border {
+	    margin-right: -1px;
+    }
+  }
+}

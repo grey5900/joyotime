@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>卡友惠享季</title>
+    <link rel="stylesheet" href="http://icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="http://icd.sc/demo/c/basic_mobile.4.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+			/*	background color	*/
+			.page {
+				background: #f6f6f6;
+			}
+			#content .unit .box {
+				background: #fff;
+			}
+			.touchslider-viewport {
+				background: #fff;
+			}
+			.box-db-left, .box-db-right {
+				background: #000;
+			}
+			.box-db .img img {
+				background: #fff;
+			}
+			#content .unit a {
+			  color: #666;
+			}
+			/* font color  */
+			.unit-title {
+				color: #b58236;
+			}
+			#content .unit p {
+				color: #666;
+			}
+			#content .statement p {
+				color: #666;
+			}
+			.box-db-left, .box-db-right {
+				color: #5a146a;
+			}
+			.texts .info-group {
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+				color: #000;
+			}
+			.texts .inside p {
+
+			}
+			.bottons .botton span.title {
+				color: #fff;
+			}
+			.bottons .botton span.intro {
+				color: #fff;
+			}
+			.touchslider-item .touchslider-info {
+				color: #fff;
+			}
+			.multi-line dd span {
+				color: #666;
+			}
+			.multi-line dd a:hover {
+				border-radius: 0;
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+			}
+			.multi-line .viewall a {
+				color: #ef631e;
+			}
+			.multi-line .viewall a:hover {
+
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #666;
+				padding-top: 5px;
+			}
+			.touchslider-item img {
+				height: 290px;
+			}
+			.touchslider-nav-item {
+
+			}
+			.feed, .user {
+				border-bottom: 0;
+			}
+			.feed a:hover, .user a:hover {
+				border-bottom: 0;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+			}
+			.bb {
+			  border-bottom: 1px solid #eee;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/30"><img border="0" src="http://icd.sc/img/m/yl/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动说明</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p>
+11月8日，2012年“卡友惠享季”盛大开启银联、银行、商户三方联动，持银联卡专享好礼！<br />
+<strong>一重好礼:刷银联卡，享美食优惠</strong><br />
+即日起，在成都多家美食餐饮店刷银联卡尊享超低优惠！(详情登陆官网查看)<br />
+<strong>二重好礼:刷银联卡、特色菜品一元享</strong><br />
+12月1日起，在指定商家处持银联卡,1元即可享该店特色菜品一份。活动详情敬情关注。<br />
+<strong>三重好礼:刷卡晒单大抽奖</strong><br />
+即日起银联卡持卡人任意消费满62元，将银行刷卡凭证拍照上传至活动专题页面，即可参与抽奖， 所拍照片需有清晰的商户编号、刷卡卡号、消费时间(11月1号到12月31号)及消费金额。晒单次数不限制，参与越多，中奖机会越高。每周100名幸运奖万达电影票两张 ，每月一名1000元现金红包大奖等你来赢！<br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="box">
+              <dl class="shrink" id="txl2">
+                <dd>
+                  <a href="http://top.chengdu.cn/acts/2012_up/index.php" >
+                    <div class="arrow">
+                      <span>银联卡•卡友惠享季活动专题</span>
+                    </div> 
+                  </a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="unit-title">
+              <h3>从12月1日—31日，刷银联卡、特色菜品一元享</h3>
+            </div>
+            <div class="box">
+              <div class="inside bb"><p>一元刷活动对象仅限银联卡(卡号以62开头，卡面有银联标识的银行卡，包括信用卡、借记卡等；)持卡人，一元刷菜品每桌限刷一份，不可与其他优惠同享，请在点餐前出示银联卡，最终解释权归商家所有。<br />咨询投诉电话：400-6028-377</p></div>
+              <dl class="shrink" id="txl1">
+                <dd>
+                  <a href="inplace://312430">
+                    <div class="arrow">
+                      <span>悦味港式靓汤火锅</span>
+                      <div class="address">
+                      消费满300元一元刷原价58元手打蟹籽墨鱼滑消费满800元一元刷原价58元手打蟹籽墨鱼滑或原价68元招牌手切鲜牛腱备注：享受特色菜品一元刷后不可享其他优惠。每日限量10份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://304836">
+                    <div class="arrow">
+                      <span>雨花西餐厅(力保店)</span>
+                      <div class="address">
+                        消费满100元一元刷原价26元雨花甜蜜蜜朱古力一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://307271">
+                    <div class="arrow">
+                      <span>万里号大饭店</span>
+                      <div class="address">
+                        消费满200元一元刷原价28元渝香鸭一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306599">
+                    <div class="arrow">
+                      <span>卡里奥鸡尾酒餐吧</span>
+                      <div class="address">
+                        消费满200元一元刷原价38元圣女椰林一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://317138">
+                    <div class="arrow">
+                      <span>江泉道韩式料理</span>
+                      <div class="address">
+                        消费满200元一元刷原价56元原味五花一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316464">
+                    <div class="arrow">
+                      <span>签签生活</span>
+                      <div class="address">
+                        消费满200元一元刷原价22元卤郡把一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://6361">
+                    <div class="arrow">
+                      <span>领地庄园酒楼</span>
+                      <div class="address">
+                        消费满200元一元刷原价68元巧手千叶豆腐
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://10168">
+                    <div class="arrow">
+                      <span>老庄麻辣养生火锅</span>
+                      <div class="address">
+                        一元刷原价18元特色肥牛(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306630">
+                    <div class="arrow">
+                      <span>映象东郊食堂</span>
+                      <div class="address">
+                        消费满80元一元刷原价18元精品麻婆豆腐一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://304767">
+                    <div class="arrow">
+                      <span>首席1956【不限消费一元刷(每桌限1份)】</span>
+                      <div class="address">
+                        周一 老盐菜回锅肉原价38元<br />
+周二 南瓜粉丝肉原价32元<br />
+周三 藤椒鸡原价48元<br />
+周四 石锅米凉粉原价28元<br />
+周五 麻婆豆腐原价28元<br />
+周六周日不参加
+
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://2633">
+                    <div class="arrow">
+                      <span>碎蝶音乐咖啡(SM广场店)</span>
+                      <div class="address">
+                        消费满200元一元刷原价39元单品咖啡或柚子茶
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://6796">
+                    <div class="arrow">
+                      <span>歌行灯日本料理</span>
+                      <div class="address">
+                        消费满300元一元刷原价38元鳗鱼小卷一份(12月23日~25日不享此优惠)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305860">
+                    <div class="arrow">
+                      <span>歌武伎铁板烧</span>
+                      <div class="address">
+                        消费满228元一元刷原价30元蒜香基围虾或原价28元铁板五花肉一份(12月23~25日不享此优惠)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306710">
+                    <div class="arrow">
+                      <span>金丰翔精品湘菜酒楼</span>
+                      <div class="address">
+                        消费满200元一元刷原价39元特色湖南小炒肉一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://315580">
+                    <div class="arrow">
+                      <span>西啤士餐吧</span>
+                      <div class="address">
+                        消费满200元一元刷原价39元仙度云尼330ml黄啤
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://14651">
+                    <div class="arrow">
+                      <span>零零柒鲍鱼火锅</span>
+                      <div class="address">
+                        一元刷原价68元香炒小河虾1份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://14739">
+                    <div class="arrow">
+                      <span>樽宴</span>
+                      <div class="address">
+                        无限制，果林鸡1元刷（每桌限一份）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://10932">
+                    <div class="arrow">
+                      <span>和杏</span>
+                      <div class="address">
+                        一元刷原价32元酱烧老豆腐一份，每桌限一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320386">
+                    <div class="arrow">
+                      <span>成都世纪城假日酒店华府中餐厅</span>
+                      <div class="address">
+                        消费满300元，享一元刷肉汁老豆腐一份（每桌限一份）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320387">
+                    <div class="arrow">
+                      <span>成都东方广场假日酒店天府中餐厅</span>
+                      <div class="address">
+                        一元刷木瓜炒鳕鱼或者花生芽炒青柳（两者任选其一）（每桌限一份）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320388">
+                    <div class="arrow">
+                      <span>成都保利公园皇冠假日酒店御公馆中餐厅</span>
+                      <div class="address">
+                        消费满500元，可享一元刷黄桥烧饼28元/打：葱辣小黄鱼48元/例：海味石锅豆花68元/例（三选一）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://9682">
+                    <div class="arrow">
+                      <span>卞氏菜根香（高升桥店）</span>
+                      <div class="address">
+                        一元刷特色农家小炒肉
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://2192">
+                    <div class="arrow">
+                      <span>金鼎轩</span>
+                      <div class="address">
+                        一元刷原价148碳烧牛仔骨一份（消费满500以上。每桌限点一份）
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320123">
+                    <div class="arrow">
+                      <span>新晴茶餐厅(凯丹店)</span>
+                      <div class="address">
+                        消费满100元一元刷原价28元瑶柱蒸水蛋或原价16元招牌叉烧包(每桌限1份，不与其他优惠同时使用)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://318616">
+                    <div class="arrow">
+                      <span>新晴茶餐厅(九方店)</span>
+                      <div class="address">
+                        消费满100元一元刷原价28元瑶柱蒸水蛋或原价16元招牌叉烧包(每桌限1份，不与其他优惠同时使用) 
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://315103">
+                    <div class="arrow">
+                      <span>新晴茶餐厅(世豪店)</span>
+                      <div class="address">
+                        消费满100元一元刷原价28元瑶柱蒸水蛋或原价16元招牌叉烧包(每桌限1份，不与其他优惠同时使用) 
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://1660">
+                    <div class="arrow">
+                      <span>四方阁*圣灯店</span>
+                      <div class="address">
+                        一元刷原价48元海参粉丝一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320390">
+                    <div class="arrow">
+                      <span>四方阁*玉琢金沙</span>
+                      <div class="address">
+                        一元刷原价48元海参粉丝一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://320391">
+                    <div class="arrow">
+                      <span>四方阁*水脉青龙  </span>
+                      <div class="address">
+                        一元刷原价48元海参粉丝一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://5988">
+                    <div class="arrow">
+                      <span>四方阁*万年店</span>
+                      <div class="address">
+                       一元刷原价48元海参粉丝一份 
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://307431">
+                    <div class="arrow">
+                      <span>迷尚豆捞(王府井店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://4117">
+                    <div class="arrow">
+                      <span>迷尚豆捞(建设店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://20929">
+                    <div class="arrow">
+                      <span>迷尚豆捞(红星路店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306636">
+                    <div class="arrow">
+                      <span>迷尚豆捞(温江店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://315105">
+                    <div class="arrow">
+                      <span>迷尚豆捞(伊藤高新店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306944">
+                    <div class="arrow">
+                      <span>迷尚豆捞(锦都店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306633">
+                    <div class="arrow">
+                      <span>迷尚豆捞(红牌楼店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306945">
+                    <div class="arrow">
+                      <span>迷尚豆捞(金沙店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://314324">
+                    <div class="arrow">
+                      <span>迷尚豆捞(桐梓林店)</span>
+                      <div class="address">
+                        满300元一元刷原价22元出水嫩鸡滑(每桌限1份)
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://4616">
+                    <div class="arrow">
+                      <span>吴铭火锅长顺店</span>
+                      <div class="address">
+                        消费2听加多宝凉茶一元刷原价15元特色鲜鸭肠
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://5211">
+                    <div class="arrow">
+                      <span>吴铭火锅琴台店</span>
+                      <div class="address">
+                        消费2听加多宝凉茶一元刷原价16元特色鹅肠
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://2264">
+                    <div class="arrow">
+                      <span>吴铭火锅蓝天小区店</span>
+                      <div class="address">
+                        消费2听加多宝凉茶一元刷原价18元特色千层肚
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://7424">
+                    <div class="arrow">
+                      <span>吴铭火锅武侯祠店</span>
+                      <div class="address">
+                        消费2听加多宝凉茶一元刷原价16元鲜鹅肠
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://231416">
+                    <div class="arrow">
+                      <span>御苑精品川菜酒楼</span>
+                      <div class="address">
+                        一元刷原价28元精品石锅凉粉一份，每桌限一份
+                      </div>
+                    </div> 
+                  </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa1">
+                <a class="showMore" id="txs1">查看全部（<em>43</em>）</a>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>刷卡晒单大抽奖</h3>
+            </div>
+            <div class="box">
+              <div class="inside">
+                <p><strong>照片要求：</strong><br />
+1.所拍摄的POS单文字清晰<br />
+2.若上传局部POS单照片必须展示“商户编号”“消费时间”<br />
+建议上传清晰全照(如图所示)<br /></p>
+                <div class="contr">
+                  <div class="photo">
+                  <img width="190" src="http://icd.sc/img/m/yl/1.jpg">
+                  </div>
+                </div>
+                <p>注：消费时间仅限11月1日至12月31日
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>参与方式</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+                    一：登陆成都全搜索（http://www.chengdu.cn/）“卡友惠享季”专题网站上传。<br />
+二：使用"IN成都"在任意地点上传带#刷卡晒单#关键字的晒单图片，网站编辑将人工转移至此专题页面参与抽奖，中奖后由编辑人员通知相关领奖事项。......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    一：登陆成都全搜索（<a href="http://www.chengdu.cn/">http://www.chengdu.cn/</a>“卡友惠享季”专题网站上传。<br />
+二：使用"IN成都"在任意地点上传带#刷卡晒单#关键字的晒单图片，网站编辑将人工转移至此专题页面参与抽奖，中奖后由编辑人员通知相关领奖事项。<br />
+三：使用新浪微博发布带#刷卡晒单#关键字的晒单微博并@IN成都，网站编辑将人工转移至此专题页面参与抽奖，中奖后由编辑人员通知相关领奖事项。 <br /><br />
+什么是银联卡？<br />
+银联卡是指卡号以62开头，卡面有银联标识的银行卡，包括信用卡、借记卡等。<br />
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$(".touchslider").touchSlider({
+					mouseTouch : true,
+				});
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				})
+				$("#txl1").each(function() {
+					$("#txl1 > dd:gt(3)").hide();
+					$("#txa1").click(function() {
+						$("#txs1").toggle();
+						$("#txl1 > dd:gt(3)").toggle();
+					});
+				});
+			})
+    </script>
+  </body>
+</html>

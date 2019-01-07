@@ -1,0 +1,30 @@
+<div class="pageContent">
+    <div class="tabs">
+        <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                <ul>
+                {loop $actions $a}
+                    <li>
+                        <a href="javascript:;"><span>{$a['actionName']}</span></a>
+                    </li>
+                {/loop}
+                 
+                   
+                </ul>
+            </div>
+        </div>
+        <div class="tabsContent">
+        	{loop $actions $a}
+            <div>
+                <div id="items_{$a['id']}" class="unitBox">
+                    {eval echo include_file(site_url(array('itemawards', 'items' , 'id' , $a['id'])));}
+                </div>
+            </div>
+            {/loop}
+        </div>
+	</div>
+        <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+        </div>
+    </div>
+</div>

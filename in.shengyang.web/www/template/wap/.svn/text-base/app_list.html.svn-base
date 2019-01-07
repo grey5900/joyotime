@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="zh_cn" name="language">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <title>应用推荐</title>
+        <link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" />
+        <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/mobile.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="container">
+                <div class="post">
+                    <div class="users" id="users">
+                        <div class="user-list">
+                            <a href="">
+                                <div class="arrow">
+                                	<div class="icon">
+                                	    <img src="{$v[avatar_uri]}" width="40" height="40" />
+                                	</div>
+                                	<div class="detail">
+                                	    <h4>手机应用</h4>
+                                	    <div class="info">
+                                	        总是等待的太多而忘记。
+                                	        <span>下载既得10分</span>
+                                	    </div>
+                                	</div>
+                                </div> 
+                            </a>
+                            <a href="">
+                                <div class="arrow">
+                                	<div class="icon">
+                                	    <img src="{$v[avatar_uri]}" width="40" height="40" />
+                                	</div>
+                                	<div class="detail">
+                                	    <h4>手机应用</h4>
+                                	    <div class="info">
+                                	        总是等待的太多而忘记。
+                                	    </div>
+                                	</div>
+                                </div> 
+                            </a>
+                            <a href="">
+                                <div class="arrow">
+                                	<div class="icon">
+                                	    <img src="{$v[avatar_uri]}" width="40" height="40" />
+                                	</div>
+                                	<div class="detail">
+                                	    <h4>手机应用</h4>
+                                	    <div class="info">
+                                	        总是等待的太多而忘记。
+                                	    </div>
+                                	</div>
+                                </div> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination pagination-centered" ></div>
+                <a href="/event_new/app_list/{$event['id']}/2" style="display:none" id="rolling_next_page"></a>
+
+            </div>
+        </div>
+    </body>
+</html>

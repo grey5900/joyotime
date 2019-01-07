@@ -1,0 +1,125 @@
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+	<!--{if !empty($info[fid])}--><input type="hidden" name="fid" value="{$info[fid]}" /><!--{/if}-->
+	<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+			<label>碎片名称:</label><input type="text" class="required" name="name" value="{$info[name]}" size="50" />
+		</div>
+		<div class="unit">
+			<label>数据源:</label>
+			<select name="dataSource" id="ds" onchange="if($(this).val() == 'other'){$('#ds2').show();}else{$('#ds2').hide();}">
+				<option value=""<!--{if empty($info[dataSource])}--> selected<!--{/if}-->></option>
+				<option value="post"<!--{if !empty($info[dataSource]) && $info[dataSource] === 'post'}--> selected<!--{/if}-->>签到/点评/图片</option>
+				<option value="user"<!--{if !empty($info[dataSource]) && $info[dataSource] === 'user'}--> selected<!--{/if}-->>用户</option>
+				<option value="place"<!--{if !empty($info[dataSource]) && $info[dataSource] === 'place'}--> selected<!--{/if}-->>地点</option>
+				<option value="event"<!--{if !empty($info[dataSource]) && $info[dataSource] === 'event'}--> selected<!--{/if}-->>活动</option>
+				<option value="news"<!--{if !empty($info[dataSource]) && $info[dataSource] === 'news'}--> selected<!--{/if}-->>新闻</option>
+				<option value="groupon"<!--{if !empty($info[dataSource]) && $info[dataSource] === 'groupon'}--> selected<!--{/if}-->>团购</option>
+				<option value="placecoll"<!--{if !empty($info[dataSource]) && $info[dataSource] === 'placecoll'}--> selected<!--{/if}-->>地点册</option>
+				<option value="other"<!--{if !empty($info[dataSource]) && strpos($info[dataSource], 'http://') !== false}--> selected<!--{/if}-->>自定义</option>				
+			</select>
+		</div>
+		<div class="unit" id="ds2" <!--{if empty($info[dataSource]) || strpos($info[dataSource], 'http://') === false}-->style="display:none;"<!--{/if}-->>
+			<span class="info" style="padding-left:110px;">
+				<input type="text" name="dataSource_v" value="{$info[dataSource]}" size="80" /><br />
+				达人列表：<br />
+				http://in.joyotime.com/active_source/index/mvp_post/用户ID-用户ID/0/[关键字]<br/>
+				达人点评列表：<br />
+				http://in.joyotime.com/active_source/index/mvp_post_list/用户ID/点评数/[关键字]<br/>
+				签到列表：<br />
+				http://in.joyotime.com/active_source/index/feed-list/0/签到数/[关键字]<br/>
+				签到列表(按地点)：<br />
+				http://in.joyotime.com/active_source/index/feed-list-by-place/地点ID-地点ID/签到数/[关键字]<br/>
+				签到列表(按用户)：<br />
+				http://in.joyotime.com/active_source/index/feed-list-by-uid/用户ID-用户ID/签到数/[关键字]<br/>
+				签到列表(按地点分类)：<br />
+				http://in.joyotime.com/active_source/index/feed-list-by-placecategory/地点分类ID-地点分类ID/签到数/[关键字]<br/>
+				成都团房：<br/>
+				http://tf.chengdu.cn/api/data.php?[keyword=关键字]&[sort=按begin_time/end_time排序]&pagesize=1<br/>
+				团购：<br/>
+				http://tg.chengdu.cn/api/zhangyutuan.php?action=items&keyword=[团购ID1,团购ID2,团购ID3...]&type=id&sort=id&pagesize=20&page=1<br/>
+				* 签到可能本身就没有内容，所以慎重使用关键字  . "[]":可选参数
+			</span>
+		</div>
+		<div class="unit">
+			<label>碎片描述:</label><textarea name="description" cols="48" rows="4" >{$info[description]}</textarea>
+		</div>
+		<div class="unit">
+			<label>推荐类型:</label>
+			<input type="radio" class="checkbox" name="fregType" value="0"<!--{if empty($info) || $info[fregType] == 0}--> checked="checked"<!--{/if}-->/>手动更新 
+			<input type="radio" class="checkbox" name="fregType" value="1"<!--{if !empty($info) && $info[fregType] == 1}--> checked="checked"<!--{/if}-->/>自动更新
+		</div>
+		<div class="unit">
+			<label>显示模板:</label>
+			<select name="style" id="fragment-template">
+				<!--{loop $tmps $k $v}-->
+				<option value="{$v[tmp]}"<!--{if $v[is_def] || (!empty($info) && $info[style] === $v[tmp])}--> selected<!--{/if}--> title="{$v[exp]}">{$k}</option>
+				<!--{/loop}-->
+			</select>(* 其中: 达人列表、达人点评列表、签到列表、成都团房 是动态碎片，请选择"自动更新"，并设置自定义数据源)
+		</div>
+		<div class="unit">
+			<label>排序值:</label><input type="text" class="number" name="orderValue" value="{eval echo !empty($info) ? $info[orderValue] : '0';}" size="8" />
+		</div>
+		<div class="unit">
+			<label>最大推荐数:</label><input type="text" class="number" name="rule_max_length" value="{eval echo !empty($info[rule]) && !empty($info[rule][max_length]) ? $info[rule][max_length] : '';}" size="8" />
+			<span class="info" style="padding-left:110px;">为空表示不限制</span>
+		</div>
+		<div class="unit">
+			<label>碎片跳转地址:</label><input type="text" class="url" name="rule_jump_link" value="{eval echo !empty($info[rule]) && !empty($info[rule][jump_link]) ? $info[rule][jump_link] : '';}" size="30" />
+		</div>
+		<div class="unit">
+			<label>图片尺寸:</label>
+			<input type="text" name="rule_pic_size" size="40" value="{eval echo !empty($info[rule][pic_size]) ? $info[rule][pic_size]:'';}" />
+		</div>
+		<div class="unit">
+			<span class="info" style="padding-left:110px;">
+				在这里定义推荐数据中图片的尺寸。<br/>
+				录入格式：宽度＊高度。示例：320*640、320*0(表示只限制宽度)、0*640(表示只限制高度)
+			</span>
+		</div>
+		<div class='unit'>
+			<label>推荐数据的扩展属性:</label>
+			<textarea name="extraProperty" cols="50" rows="6" id="extraProperty">{$info[extra]}</textarea>
+		</div>
+		<div class="unit">
+			<span class="info" style="padding-left:110px;">
+				.一行表示一项扩展属性，多项扩展属性请用回车分隔<br/>
+				.数据格式：“key=属性的英文名称|view=属性的中文名称|type=属性的数据类型|def_value=备选值，多个备选值用英文逗号分隔|required=必填(1)”<br/>
+				.数据类型：
+				<table class="table" width="400" cellpadding="4" cellspacing="4" border="1">
+					<thead><tr>
+						<th width="80">数据类型</th>
+						<th width='120'>类型含义</th>
+						<th width="80">数据类型</th>
+						<th width='120'>类型含义</th>
+					</tr></thead>
+					<tbody>
+						<tr><td width="80">string</td><td width="120">文本框</td><td width="80">text</td><td width="120">文本域</td></tr>
+						<tr><td>img</td><td>图片</td><td>check</td><td>多选框</td></tr>
+						<tr><td>radio</td><td>单选框</td><td>date</td><td>年月日</td></tr>
+						<tr><td>datetime</td><td>年月日 时:分</td><td>time</td><td>时间</td></tr>
+					</tbody>
+				</table>
+			</span>
+		</div>
+		<div class="unit">
+			<label>分配到频道:</label>
+			<input type="hidden" name="cat.cids" value="{eval echo !empty($info)&&!empty($info[cids])?$info[cids]:'';}" />
+			<input type="text" name="cat.catName" value="{eval echo !empty($info) && !empty($info[cnames])?$info[cnames]:'';}" size="30" />
+			<a class="btnLook" href="/web/new_fragment/look_categories/{eval echo !empty($info) ? '/fid/'.$info[fid] : '';}" lookupgroup="cat">查找带回</a>
+		</div>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+<script type="text/javascript">
+	$('#fragment-template').on('change load',function(){
+		el = document.getElementById('fragment-template');
+		$('#extraProperty').text(el.options[el.selectedIndex].title);
+	})
+</script>

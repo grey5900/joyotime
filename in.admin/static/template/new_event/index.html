@@ -1,0 +1,116 @@
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="status" value="{$status}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="status">
+                    	<option value="-1">全部</option>
+                    	<option value="0"<!--{if $status === 0}--> selected<!--{/if}-->>正常</option>
+                    	<option value="1"<!--{if $status === 1}--> selected<!--{/if}-->>停用</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        搜索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+        	<li>
+                <a class="add" target="navTab" title="新建活动" rel="{eval echo build_rel(array('new_event', 'add'))}" href="{eval echo site_url(array('new_event', 'add'))}"><span>新建活动</span></a>
+            </li>
+            <li>
+                <a class="edit" target="navTab" warn="请选择需要编辑的活动" title="编辑活动" rel="{eval echo build_rel(array('new_event', 'add'))}" href="{eval echo site_url(array('new_event', 'edit', 'id'))}/<!--{{id}}-->"><span>编辑活动</span></a>
+            </li>
+            <!-- <li>
+                <a class="icon" target="dialog" href="{eval echo site_url(array('new_event', 'recommend', 'id'))}/<!--{{id}}-->" title="推荐到首页" width="600" height="500" warn="请选择您要推荐的活动" close="imgareaselect_close"><span>推荐到首页</span></a>
+            </li> -->
+        </ul>
+    </div>
+    <table width="100%" class="table" layoutH="128" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="30%">活动名称</th>
+                <th width="5%">频道</th>
+                <th width="15%">开始时间</th>
+                <th width="15%">结束时间</th>
+                <th width="12%">参加/点击</th>
+                <th width="5%">排序值</th>
+                <th width="5%">状态</th>
+                <th width="8%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>
+                <!--{if $row['digest']}-->
+                <span class="tip_{echo strtotime($row['digest'])>TIMESTAMP?'red':'grey'}">荐</span>
+                <!--{/if}-->
+                <a href="{$row['link']}" target="_blank">{$row['subject']} {if $row['type']==1 || $row['type']==0}<font color=red>(in)</font>{/if}</a></td>
+                <td>{$cates[$row['newsCatId']]['catName']}</td>
+                <td>{$row['startDate']}</td>
+                <td>{$row['endDate']}</td> 
+                <td>{$row['applyCount']}/{$row['hits']}</td>
+                <td><input type="text" size="4" onfocus="modify_rank3(this, 'WebEvent', '{$row['id']}', 'rankOrder')" value="{$row['rankOrder']}" name="rank_order" /></td>
+                <td>{echo $row['status']?'停用':'正常'} {echo $row['endDate'] < date("Y-m-d h:i:s") ? '<font color=red>过期</font>' : "" }</td>
+                <td>
+                	<a target="navTab" title="活动报名名单" rel="{eval echo build_rel(array('new_event', 'apply_list'))}" href="{eval echo site_url(array('new_event', 'apply_list', 'id', $row['id']))}"><span>名单</span></a>
+                	<a target="ajaxTodo" title="您确定要{echo $row['status']?'启用':'停用'}该活动么？" href="{echo site_url(array('new_event', 'change_status', 'id', $row['id'], 'status', ($row['status']?0:1)))}"><span>{echo $row['status']?'启用':'停用'}</span></a>
+                	{if $row['have_vote']}
+                	<a target="navTab" title="投票结果" rel="{eval echo build_rel(array('vote', 'result'))}" href="{eval echo site_url(array('vote', 'result', 5, $row['id']))}"><span>结果</span></a>
+                	
+                	{/if}
+                </td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script>
+
+	function modify_rank3(obj, table, id, field) {
+	    var old_order = parseInt($(obj).val());
+	    //刷新缓存
+	    var cache = 0;
+		cache = arguments[4] ? arguments[4] : cache;
+		cache = parseInt(cache);
+	    $(obj).blur(function(){
+	    	
+	        var order = parseInt($(this).val());
+	        if(isNaN(order)) {
+	            alertMsg.error("请输入正确的数字");
+	            return;
+	        }
+	        
+	        if (order == old_order) {
+	            // 没有修改。直接返回
+	            return;
+	        }
+	        
+	        // 提交数据
+	        $.getJSON("/new_event/rank/id/" + id + "/table/" + table + "/field/" + field + "/order/" + order+ "/cache/"+cache, function(json){
+	        //$.getJSON("/block/rank/id/" + id + "/table/" + table + "/field/" + field + "/order/" + order+ "/cache/"+cache, function(json){
+	            if(json.status != 0) {
+	                alertMsg.error("修改失败");
+	                return;
+	            }
+	        });
+	    });
+	}
+
+</script>

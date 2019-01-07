@@ -1,0 +1,20 @@
+<div class="side">
+			<h3>交通</h3>
+			<ul>
+				<li class="{$class}" data-tar="brige"><a href="">立交桥</a></li>
+				<li data-tar="bus"><a href="">快速公交站</a></li>
+				<li data-tar="stack"><a href="">进出闸道</a></li>
+			</ul>
+			<h3 class="story"><a href="/topic/second_ring_story">二环路故事</a></h3>
+			<h3>吃喝玩乐</h3>
+			<ul>
+				<li {if $placeCategory==1}class="active"{/if}><a {if $placeCategory==1}class="active"{/if} href="/topic/second_ring_places/1#list">美食</a></li>
+				<li {if $placeCategory==32}class="active"{/if}><a {if $placeCategory==32}class="active"{/if} href="/topic/second_ring_places/32#list">购物</a></li>
+				<li {if $placeCategory==17}class="active"{/if}><a {if $placeCategory==17}class="active"{/if} href="/topic/second_ring_places/17#list">电影</a></li>
+				<li {if $placeCategory==18}class="active"{/if}><a {if $placeCategory==18}class="active"{/if} href="/topic/second_ring_places/18#list">KTV</a></li>
+				<li {if $placeCategory==16}class="active"{/if}><a {if $placeCategory==16}class="active"{/if} href="/topic/second_ring_places/16#list">酒吧</a></li>
+				<li {if $placeCategory==50}class="active"{/if}><a {if $placeCategory==50}class="active"{/if} href="/topic/second_ring_places/50#list">宾馆酒店</a></li>
+				<li {if $placeCategory==0}class="active"{/if}><a {if $placeCategory==0}class="active"{/if} href="/topic/second_ring_places/0#list">其他</a></li>
+			</ul>
+			<div class="glass"></div>
+		</div>

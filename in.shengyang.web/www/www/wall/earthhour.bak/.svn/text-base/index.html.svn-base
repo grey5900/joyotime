@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="zh_cn" />
+  <title>超越一小时  我做绿V客</title>
+
+  <link rel="stylesheet" type="text/css" href="c/reset.css" />
+  <style type="text/css">
+.c {clear:both}
+.mask {opacity:0.5; background:#000}
+
+body {background:url(i/earth/bg.png) no-repeat top center #000; font-family: 'Microsoft YaHei','Hiragino Sans GB',Arial,sans-serif; color:#fff}
+#pg {position:relative; padding-top: 124px;width:1024px; height:595px; margin:0 auto; color:#000000}
+
+#joins {height: 68px;margin-left:198px;margin:85px 0 0 230px;color:#88bef8; text-shadow: #1e4567 1px 0 0,#1e4567 0 1px 0,#1e4567 -1px 0 0,#1e4567 0 -1px 0;font-size: 36px;letter-spacing:28px;line-height: 68px;}
+#bd {padding:0 14px;height:270px; overflow:hidden}
+.li {height:337px; width:498px;overflow:hidden;margin:55px 0 0 22px;}
+  .li .avatar {margin: 20px 0 0 25px;width:88px;height:88px;display: inline-block;float: left;}
+  .li .avatar img {width:88px; height:88px}
+  .li .subject {margin-top:10px;width:350px;min-height:122px;max-height: 122px;padding: 0 10px;float: left;overflow: hidden;font-family: 'Microsoft YaHei','Hiragino Sans GB',Arial,sans-serif;}
+  	.username,
+  	.placename,
+	.at,
+	.subject .gotBadge ,
+	.subject .colon{color:#88bef8;line-height: 28px;font-size: 28px;font-weight: bold;}
+  .li .avatar,
+  .li .at,
+  .li .placename {display:none;}
+  .li .subject .txt {font-size: 20px;line-height: 20px;color:#88bef8;margin-top:12px;}
+  .li .subject-cache {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;display: inline-block;color:#88bef8;font-size: 26px;line-height: 56px;height: 56px;width: 465px;margin: 15px 0 0 20px;clear:both;font-family: Arial,sans-serif;}
+  .cur { height:210px; width:498px;float: left; margin:55px 0 0 22px;}
+  .cur .avatar {margin: 19px 0 0 25px;display:inline-block;float:left; width:88px; height:88px;}
+  .cur .at,
+  .cur .placename {display:inline;}
+  .cur .subject,
+  .cur .txt {font-size: 20px;line-height: 24px;color:#88bef8;}
+
+.colon {margin:0 10px}
+.at {margin:0 5px}
+  </style>
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="pg">
+	<div id="joins">
+137862
+	</div>
+    <div id="bd">
+		  <div class="li tpl">
+			<div class="avatar"><img src="" alt=""/></div>
+		    <div class="subject">
+		    	<span class="username"></span>
+		    	<span class="at">在</span>
+		    	<span class="placename"></span>
+		    	<span class="colon">:</span>
+		    	<div class="txt">
+		    	</div>
+		    </div>
+		    <div class="subject-cache">
+		    	<span class="username_p"></span>
+		    	<span class="at_p">在</span>
+		    	<span class="placename_p"></span>
+		    	<span class="colon_p">说:</span>
+		    	<span class="txt_p">
+		    	</span>
+		    </div>
+		</div>
+    </div>
+    <div id="ft"></div>
+  </div>
+  <script type="text/javascript">
+  
+	$(function(){
+
+		var $ls = $('#bd'),
+			$liTpl = $ls.find('.tpl').hide().remove().removeClass('tpl'),
+			lastKey = 0,
+			feedLs = [],
+			querying = false,
+			domain = 'in.chengdu.cn',
+		    wallName = 'earthhour',
+			wallPlaces = '10586';
+				    
+		function updateQueue(){
+			if(querying) {return;}
+		    $.ajax('http://'+ domain +'/wall/list/'+ wallName +'/'+ lastKey +'/',{
+				beforeSend : function(){
+					querying = true;
+				},
+			  	complete : function(){
+			    	querying = false;
+			  	},
+			  	success : function(json, textStatus, jqXHR){
+			  		var json = eval("("+json+")");
+					//console.log(json.data);
+					if(json && (0 == json.status)){
+				  		if(json.data.length){
+				    		lastKey = json.data[0].score;
+				    		$.merge(feedLs, json.data.reverse());
+				    		
+				  			//console && console.log(feedLs);
+				  		}
+					} else {
+				  		console && console.log('error feed/list');
+				    }
+			    }
+    		});
+		}
+	  function loadNextFeed(){
+	    if(!feedLs.length) {return;}
+	    var data = feedLs.shift();
+	    var $cur = $liTpl.clone().attr('id', 'feedLi-'+data.postId).addClass('cur').
+	      find('.avatar img').attr({
+	        'src':data.avatar,
+	        'alt':data.username+'的头像'}).end().
+	      find('.username').text(data.username).end();
+	      
+	      $cur.find('.placename').text(data.placename).end().
+	        find('.txt').text(data.content?'“'+data.content+'”':'');
+	      $cur.prependTo($ls).slideDown();
+	      
+	   var $earlierOne = $cur.next('.li');
+	      $('.username_p').text($earlierOne.find('.username').text());
+		  $('.placename_p').text($earlierOne.find('.placename').text());
+		  $('.txt_p').text($earlierOne.find('.txt').text());
+		  
+	      $earlierOne.slideUp('normal', function(){
+	        $earlierOne.removeClass('cur').slideDown();
+	      });
+	    ('' === data.content) && $cur.find('.colon').hide();
+	  }
+	    var t = parseInt(Math.random() * 4000 + 1000);
+	  	// init
+	  	updateQueue();
+	  	setInterval(updateQueue, 5000);
+	  	setInterval(loadNextFeed, 5000);
+	  	setInterval("document.getElementById(\"joins\").innerHTML = parseInt(document.getElementById(\"joins\").innerHTML)+1",t);
+	})(jQuery);	
+  </script>
+</body>
+</html>

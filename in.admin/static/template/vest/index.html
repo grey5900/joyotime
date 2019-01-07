@@ -1,0 +1,178 @@
+{if !isset($do) || empty($do)}
+<style>
+#vest_list_head .searchBar ul.searchContent li{width:220px;}
+#vest_list td{border:1px solid #D0D0D0;}
+#vest_list .style-1 div{float:left;padding:10px 0 5px 10px;}
+#vest_list .style-1 .nameid{width: 120px;line-height:21px;}
+#vest_list .first_v{color:#00f;}
+#vest_list p.gray{color:#747575;font-size:11px;}
+</style>
+
+<form id="pagerForm" method="post" action="#rel#">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="type" value="{$type}"/>
+	<input type="hidden" name="keyword" value="{$keyword}" />
+	<input type="hidden" name="is_first" value="{$is_first}" />
+</form>
+<div class="pageHeader" id="vest_list_head">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:80px;">
+				<select class="combox" name="type">
+					<option value="1"{if !isset($type)||$type == 1} selected{/if}>马甲帐号</option>
+					<option value="2"{if isset($type)&&$type == 2} selected{/if}>马甲所有者</option>				
+				</select></li>
+			<li style="width:140px;"><input type="text" name="keyword" value="{$keyword}"/></li>
+			
+			<li><input type="checkbox" value="1" name="is_first"{if isset($is_first)&&$is_first} checked="checked"{/if}>首选马甲</li>
+			
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<script type="text/javascript">
+	function distr(){
+		var url = "{$dis_url}/sids/";
+		var split = "";
+		var ids = "";
+		$("input[class=ids]").each(function(){
+			if($(this).attr("checked")){
+				var m = $(this).val().split("+");
+				ids += split+m[0];
+				split = "|";
+			}
+		});
+		if(ids == ""){
+			alertMsg.warn("请选择一个马甲");
+		}else{
+			url += ids;
+			$.pdialog.open(url, $("#edit").attr("rel"), $("#edit").attr("title"),{width:560,height:496,minable:true,mixable:true,resizable:true,close:true});
+		}
+	}
+</script>
+<div class="pageContent" id="vest_list">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" height="340" width="500" href="{$add_url}" rel="{eval echo build_rel(array('vest','vest','add'));}" target="dialog" title="添加马甲"><span>添加</span></a></li>
+			<li><a class="edit" id="edit" href="javascript:;" onclick="distr();" rel="{eval echo build_rel(array('vest','vest','dis'));}" title="派发马甲"><span>派发</span></a></li>
+			<li><a class="delete" href="{$del_url}" rel="ids[]" target="selectedTodo" title="确定要删除吗？" warn="请至少选择一个马甲"><span>删除</span></a></li>
+		</ul>
+	</div>
+
+	<div layoutH="116" id="">
+	<table class="list" width="100%" targetType="navTab">
+		<thead>
+			<tr>
+				<th width="2%"><input type="checkbox" group="ids[]" class="checkboxCtrl"></th>
+				<th width="30%">马甲</th>
+				<th width="50%">所有者</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop $list $key $val}
+			<tr target="sid_vest" rel="{$val[uid]}">
+				<td><input name="ids[]" class="ids" value="{$val[uid]}+{$val[aid]}" type="checkbox"></td>
+				<td class="style-1">
+					<div><img alt="{eval echo image_url($val[avatar], 'head', 'hmdp');}" height="40" width="40" src="{eval echo image_url($val[avatar], 'head', 'hmdp');}" /></div>
+					<div class="nameid">
+					<span>{$val[nickname]}</span>
+					{if $val[isFirst]}(<span class="first_v">首选马甲</span>){/if}
+					<p class="gray">{echo $val[username]?$val[username]:$val['email'];}(ID:{$val[uid]})</p>
+					<div>
+				</td>
+				<td><span>{$val[truename]}</span><p class="gray">{$val[name]}</p></td>
+			</tr>
+			{/loop}
+		</tbody>
+	</table>
+	</div>
+    <!--{template main/page_bar}-->
+
+</div>
+{elseif $do==='add'}
+<style>
+.pageFormContent div.unit{margin:50px;}
+	.unit label{width: auto;}
+</style>
+
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="58">
+			<div class="unit">
+				<label>帐号 ：</label>
+				<input type="text" name="username" size="30" class="required"/>
+			</div>
+			<div class="unit">
+				<label>密码：</label>
+				<input type="text" name="password" size="30" class="required alphanumeric"/>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button class="close" type="button" onclick="$.pdialog.closeCurrent()">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+{elseif $do==='distribute'}
+<style>
+.pageFormContent div.unit{margin:5px 0;display:block;overflow:auto;}
+	.unit label{width: auto;}
+.pageFormContent div ul{margin:0;}
+.pageFormContent div ul li{dislpay:block;overflow:none;width:140px;margin:2px;float:left;}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$("#searchBtn").bind("click", function(){
+			var keyword = $("#aname").val();
+			var url = "{$current_url}";
+			if(keyword != ""){
+				url += "/str/"+encodeURI(keyword);
+				var dlg_rel = "{$dlg_rel}";
+				$.pdialog.reload(url, dlg_rel);
+			}
+		});
+	});
+</script>
+<div id="jbsxBox" class="pageContent">
+	<div class="panel" defH="80">
+		<h1>检索后台用户</h1>
+		<div><dl>
+			<dt style="width:80px;">真实姓名：</dt>
+			<dd>
+				<input type="text" name="aname" value="{$truename}" size="20" id="aname" />
+				<div class="button" style="margin-left:4px;"><div class="buttonContent"><button type="button" id="searchBtn">检索</button></div></div>
+			</dd>
+		</dl></div>
+	</div>
+	<form method="post" action="{$post_url}" class="pageForm required-validate" onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="190">
+			<input type="hidden" name="uids" value="{$uids}"/>
+			<div class="panel">
+				<h1>选择后台用户</h1>
+				<div>
+					<ul id="alist">
+					{loop $admins $key $val}
+					<li><input type="radio" name="aid" value="{$key}"/> {$val[truename]}</li>
+					{/loop}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button class="close" type="button" onclick="$.pdialog.closeCurrent()">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+{/if}

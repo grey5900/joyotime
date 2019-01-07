@@ -1,0 +1,25 @@
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<div class="pageFormContent" layoutH="60">
+		<div class="panel" defH="120">
+			<h1>修改［{$info[name]}］的排序值</h1>
+			<input type="hidden" name="oldOrder" value="{$info[orderValue]}" />
+			<input type="hidden" name="disable" value="{$info[disable]}" />
+			<div><dl>
+				<dt style="width:60px;">排序值：</dt>
+				<dd><input type="text" name="orderValue" value="{$info[orderValue]}" min="10" max="99999999999"/>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span for="orderValue" generated="true" class="error" style="display:none;">请输入介于10到99999999999之间的数字</span></dt>
+			</dl></div>
+		</div>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>

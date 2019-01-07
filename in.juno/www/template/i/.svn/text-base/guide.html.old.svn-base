@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie10 ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]><html class="lt-ie10 ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="zh-cn" ><!--<![endif]-->
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+    	<meta content="zh_cn" name="language">
+        <title>积分指南</title>
+		<link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}">
+    </head>
+    <body>
+        <div id="container">
+			<div class="guide scrolls">
+				<div class="touchslider">
+	              <div class="touchslider-viewport" >
+	                <div class="touchslider-wrapper">
+	                  <div class="touchslider-item">
+	                  	<div class="item">
+	                  		<div class="item-title">
+		                  		<h3>新手任务</h3>
+		                  	</div>
+		                  	<div class="item-content overthrow">
+		                  		<ul class="rounded">
+		                  		<!--{loop $task_list $row}-->
+		                  			<li><div class="tit">{$row['caseName']}<em class="s">（{$row['point']}）</em></div>
+		                  			<!--{if $row['isCompleted']}-->
+		                  			<i class="done"></i>
+		                  			<!--{else}-->
+		                  			<i class="undone">未完成</i>
+		                  			<!--{/if}-->
+		                  			</li>
+		                  		<!--{/loop}-->
+		                  		</ul>
+		                  	</div>
+	                  	</div>
+	                  </div>
+	                  <div class="touchslider-item">
+	                    <div class="item">
+	                    	<div class="item-title">
+		                  		<h3>发布优质内容</h3>
+		                  	</div>
+		                  	<div class="item-content">
+		                    	<dl class="cartooncont ">
+		                    		<dd class="dotted">
+		                    			<span>在IN成都写YY、发布点评、创建地点册...</span>
+		                    			<img src="/static/m_img/cartoon01.png" alt="" width="85px" />
+		                    		</dd>
+		                    		<dd class="dotted">
+		                    			<img src="/static/m_img/cartoon02.png" alt="" width="90px"/>
+		                    			<span>被IN成都管理猿推荐为精华！</span>
+		                    		</dd>
+		                    		<dd>
+		                    			<span>可获得大量的积分奖励！</span>
+		                    			<img src="/static/m_img/cartoon03.png" alt="" width="90px"/>
+		                    		</dd>
+		                    	</dl>
+		                    </div>
+	                    </div>
+	                  </div>
+	                  <div class="touchslider-item">
+	                  	<div class="item">
+		                    <div class="item-title">
+		                  		<h3>IN成都积分票</h3>
+		                  	</div>
+		                  	<div class="item-content">
+		                    	<dl class="integ">
+		                    		<dd class="dotted">
+		                    			<img src="/static/m_img/cartoon04.png" alt="" width="140px" />
+		                    		</dd>
+		                    		<dd>
+		                    			<span>在IN成都认证商家处消费，可获取相应积分票奖励...扫描积分票即可获取相应积分</span>
+		                    			<a href="inptplaces://0" class="btnlink">
+		                    				查看消费返积分票的商家
+		                    			</a>
+		                    		</dd>
+		                    	</dl>
+		                    </div>
+	                  	</div>
+	                  </div>
+	                  <div class="touchslider-item">
+	                  	<div class="item">
+		                    <div class="item-title">
+		                  		<h3>成为地主</h3>
+		                  	</div>
+		                  	<div class="item-content">
+		                    	<dl class="cartooncont ">
+		                    		<dd class="dotted">
+		                    			<span>传说...在IN成都中的每一个地点都可以有一个地主...</span>
+		                    			<img src="/static/m_img/cartoon05.png" alt="" width="85px" />
+		                    		</dd>
+		                    		<dd class="dotted">
+		                    			<img src="/static/m_img/cartoon06.png" alt="" width="100px"/>
+		                    			<span class="v">要想成为一个地点的地主必须要进行一翻抢夺...</span>
+		                    		</dd>
+		                    		<dd>
+		                    			<span class="v">一旦抢夺成功，你将可以在该地征收大量积分..</span>
+		                    			<img src="/static/m_img/cartoon07.png" alt="" width="100px"/>
+		                    		</dd>
+		                    	</dl>
+		                    </div>
+	                  	</div>
+	                  </div>
+	                  <div class="touchslider-item">
+	                  	<div class="item">
+		                    <div class="item-title">
+		                  		<h3>邀请好友</h3>
+		                  	</div>
+		                  	<div class="item-content">
+		                    	<dl class="cartooncont">
+		                    		<dd class="invite">
+		                    			<img src="/static/m_img/cartoon08.png" alt="" width="85px" />
+		                    			<span>独乐乐不如众乐乐，邀请你的好友一起来玩IN成都吧！每成功邀请1人，你将得到<b>100</b>积分奖励。</span>
+		                    		</dd>
+		                    		<dd class="sharelist">
+		                    			<ul>
+		                    				<li>
+		                    					<a href="ininvitebysina://0">
+		                    						<div class="icon-arrow"><img src="/static/m_img/m_sine.png" alt="" width="30px" />邀请新浪微博好友</div>
+		                    					</a>
+		                    				</li>
+		                    				<li>
+		                    					<a href="ininvitebytencent://0">
+		                    						<div class="icon-arrow"><img src="/static/m_img/m_qq.png" alt="" width="30px" />邀请腾讯微博好友</div>
+		                    					</a>
+		                    				</li>
+		                    				<li>
+		                    					<a href="ininvitebysms://0">
+		                    						<div class="icon-arrow"><img src="/static/m_img/m_msg.png" alt="" width="30px" />通过短信邀请</div>
+		                    					</a>
+		                    				</li>
+		                    			</ul>
+		                    		</dd>
+		                    	</dl>
+		                    </div>
+	                  	</div>
+	                  </div>
+	                  <div class="touchslider-item">
+	                  	<div class="item">
+		                    <div class="item-title">
+		                  		<h3>其他规则</h3>
+		                  	</div>
+		                  	<div class="item-content">
+		                  		<ul class="rounded">
+		                  			<li>
+		                  				<div class="tit">
+		                  					每日首次启动客户端
+		                  				</div>
+		                  				<span>（50）</span>
+		                  			</li>
+		                  			<li>
+		                  				<div class="tit">
+		                  					邀请好友成功注册
+		                  				</div>
+		                  				<span>（100）</span>
+		                  			</li>
+		                  			<li>
+		                  				<div class="tit">
+		                  					被邀请入驻IN成都
+		                  				</div>
+		                  				<span>（30）</span>
+		                  			</li>
+		                  			<li>
+		                  				<div class="tit">
+		                  					地点报错被确认
+		                  				</div>
+		                  				<span>（50）</span>
+		                  			</li>
+		                  			<li>
+		                  				<div class="tit">
+		                  					创建地点
+		                  				</div>
+		                  				<span>（50）</span>
+		                  			</li>
+		                  			<li>
+		                  				<div class="tit">
+		                  					意见反馈被采纳
+		                  				</div>
+		                  				<span>（100）</span>
+		                  			</li>
+		                  			<li>
+		                  				<div class="tit">
+		                  					发布的内容被屏蔽
+		                  				</div>
+		                  				<span>（-50）</span>
+		                  			</li>
+		                  			<li>
+		                  				<div class="tit">
+		                  					账号被屏蔽
+		                  				</div>
+		                  				<span>（-500）</span>
+		                  			</li>
+		                  		</ul>
+		                  	</div>
+	                  	</div>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+				<div class="touchslider-nav"></div>
+			</div>      	
+        </div>
+        
+        <script type="text/javascript" src="/static/js/jquery.min.js?{$version}"></script>
+		<script  src="/static/js/swiper.min.js?{$version}"></script>
+		<script  src="/static/js/swiper.scrollbar.min.js?{$version}"></script>
+		<script  src="/static/js/overthrow.min.js?{$version}"></script>
+		<script type="text/javascript" charset="utf-8">
+		$(function(){
+			swiper = new Swiper('.touchslider-viewport', {
+				pagination : '.touchslider-nav',
+				slideClass : 'touchslider-item',
+				wrapperClass : 'touchslider-wrapper'
+			});
+		})
+		</script>
+    </body>
+</html>

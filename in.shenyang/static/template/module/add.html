@@ -1,0 +1,47 @@
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>模型名称：</dt>
+                <dd><input type="text" id="name" name="name" class="required" size="20" maxlength="20" value="{$module['name']}" /></dd>
+            </dl>
+            <dl>
+                <dt>模型描述：</dt>
+                <dd><textarea id="description" name="description" cols="80" rows="5">{$module['description']}</textarea></dd>
+            </dl>
+            <dl>
+                <dt>样式：</dt>
+                <dd><textarea id="css" name="css" cols="80" rows="15">{$module['css']}</textarea></dd>
+            </dl>
+            <dl>
+                <dt>模板：</dt>
+                <dd>
+                    <select class="combox" id="template" name="template">
+                        <!--{loop $temps $key $value}-->
+                        <option value="{$value}"<!--{if $value==$module['template']}--> selected="selected"<!--{/if}-->>{$value}</option>
+                        <!--{/loop}-->
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>默认排序值：</dt>
+                <dd><input type="text" id="rank_order" name="rank_order" value="{$module['rankOrder']}" size="6" class="required" /></dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var options = "name:\"icon\", id:\"<!--{if $module}-->edit_<!--{/if}-->icon\", file_type:\"common\", resolution:\"odp\"";
+        <!--{if $module['icon']}-->
+            options += ", image_name: \"{$module['icon']}\"";
+        <!--{/if}-->
+        $("#<!--{if $module}-->edit_<!--{/if}-->module_icon").my_upload(eval("({" + options + "})"));
+    });
+</script>

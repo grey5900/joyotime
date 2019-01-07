@@ -1,0 +1,98 @@
+<script type="text/javascript">
+$(function(){
+	$("#recommend_batchpass", "#{$page_id}").click(function(){
+        var ids = $("input:checked[name='ids']", "#{$page_id}");
+        var len = ids.length;
+        if(len <= 0) {
+             alertMsg.error('请选择批量审核通过的推荐');
+             return false;
+        }
+        
+        alertMsg.confirm("你确定要批量审核通过？", {
+            okCall: function(){
+            	var id_arr = new Array(len);
+                for(var i=0; i<len; i++) {
+                    id_arr[i] = $(ids[i]).val();
+                }
+                
+                var id_str = id_arr.join(":");
+                $.post("/house/recommend_batchpass", {id: id_str}, function(data){
+                	var json = eval("(" + data + ")");
+                	DWZ.ajaxDone(json);
+                	if(json.statusCode == 200) {
+                		for(id in json.value.id) {
+                			$("#house_recommend_precheck_" + id).html("");
+                		}
+                	}
+                });
+            }
+		});
+    })
+});
+
+function handle_pass(json) {
+	DWZ.ajaxDone(json);
+	if(json.statusCode == 200) {
+		$("#house_recommend_precheck_" + json.value.id).html("");
+	}
+}
+</script>
+<div class="pageHeader">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_id}');">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    订单号：
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" id="recommend_batchpass" href="javascript:;"><span>批量通过审核</span></a>
+            </li>
+            <li>
+                <a class="icon" target="dialog" href="/house/recommend_export" title="导出未审核订单"><span>导出订单</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="158" rel="{$page_id}">
+        <thead>
+            <tr>
+                <th width="3%"><input type="checkbox" name="check_all" group="ids" class="checkboxCtrl" /></th>
+                <th width="10%">订单号</th>
+                <th width="12%">创建时间</th>
+                <th width="20%">经纪人</th>
+                <th width="25%">推荐楼盘</th>
+                <th width="20%">推荐用户</th>
+                <th width="10%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td><input type="checkbox" name="ids" value="{$row['id']}" /></td>
+                <td>{$row['id']}</td>
+                <td>{$row['dateline']}</td>
+                <td>{$row['recommend_name']}({$row['recommend_cellphone_no']})</td>
+                <td>{$row['house_name']}({$row['house_id']})</td>
+                <td>{$row['name']}({$row['cellphone_no']})</td>
+                <td id="{$page_id}_{$row['id']}"><a href="/house/recommend_pass/{$row['id']}" title="你确定要审核通过？" callback="handle_pass" target="ajaxTodo">通过审核</a> <a href="/house/recommend_reject/{$row['id']}" target="dialog">驳回推荐</a></td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

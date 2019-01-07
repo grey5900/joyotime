@@ -1,0 +1,14 @@
+/*导航条*/
+#cdqss_nav{height:32px; width:100%; background:#fff; color:#333;}
+	.site-nav{height:32px; width:1000px; margin:0px auto; line-height:30px; font-family:Verdana;}
+		.site-nav a,.site-nav span{margin:0 5px;color:#333; }
+		.site-nav .nav-link{float:left;}
+		.site-nav .nav-tuan{float:right;}
+	.nav-channel-end{height:33px; line-height:33px; font-family:Verdana; border:1px #dbdbdb solid; background-position:0 -130px; background-repeat:repeat-x;}
+		.nav-channel-end a,.nav-channel-end span{margin:0 5px; color:#bc0000; }
+		.nav-channel-end .nav-link{float:left;}
+		.nav-channel-end .nav-tuan{float:right;}
+	.more-sub{display:none; width:100%; line-height:24px; border:1px #abd1e5 solid; padding:2px 5px; position:absolute; left:34px; top:-4px; *top:2px; zoom:1; background:#f4f4f4; z-index:3}
+		.more-sub li{height:24px; line-height:24px; overflow:hidden; background:none; padding:0px;}
+	.more-sub a{white-space:nowrap;}
+	.more-parent{cursor:pointer; padding:0 2px 0 0;}

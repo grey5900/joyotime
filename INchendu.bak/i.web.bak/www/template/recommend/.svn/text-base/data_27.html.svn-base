@@ -1,0 +1,11 @@
+<!--{if $data[27]}-->
+document.writeln('<div class="seaction-ad">');
+document.writeln('    <ul>');
+<!--{loop $data[27] $row}-->
+document.writeln('        <li>');
+document.writeln('            <a href="{$row['titleLink']}" target="_blank"><img alt="{$row['title']}" src="{$row['image']}" /></a>');
+document.writeln('        </li>');
+<!--{/loop}-->
+document.writeln('    </ul>');
+document.writeln('</div>');
+<!--{/if}-->

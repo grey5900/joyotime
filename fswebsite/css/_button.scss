@@ -1,0 +1,201 @@
+/* FishSaying Button */
+
+@mixin Custom {
+  @include button(em-calc(18), #000, 10px);
+  vertical-align: middle;
+  width: em-calc(235);
+  line-height: 48px;
+  padding: 8px 30px;
+  border: 0;
+  color: #fff;
+  box-shadow: none;
+  -webkit-transition:background-color 0.7s ease-out;
+  -moz-transition:background-color 0.7s ease-out;
+  -ms-transition:background-color 0.7s ease-out;
+  -o-transition:background-color 0.7s ease-out;
+  transition:background-color 0.7s ease-out;
+}
+@mixin Custom-hover {
+  @include button(em-calc(18),#fff,10px);
+  border: 3px solid #000;
+  width: em-calc(233);
+  vertical-align: middle;
+  line-height: 48px;
+  padding: 5px 27px;
+  box-shadow: none;
+  color: #000;
+  -webkit-transition:background-color 0.7s ease-out;
+  -moz-transition:background-color 0.7s ease-out;
+  -ms-transition:background-color 0.7s ease-out;
+  -o-transition:background-color 0.7s ease-out;
+  transition:background-color 0.7s ease-out;
+}
+
+@mixin Custom-base {
+  @include button(em-calc(18), $fsColor-56, 10px);
+  vertical-align: middle;
+  width: em-calc(235);
+  line-height: 48px;
+  padding: 8px 30px;
+  border: 0;
+  color: #fff !important;
+  box-shadow: none;
+  -webkit-transition:background-color 0.7s ease-out;
+  -moz-transition:background-color 0.7s ease-out;
+  -ms-transition:background-color 0.7s ease-out;
+  -o-transition:background-color 0.7s ease-out;
+  transition:background-color 0.7s ease-out;
+}
+
+
+@mixin Custom-base-hover {
+  @include button(em-calc(18),#fff,10px);
+  border: 3px solid $fsColor-56;
+  width: em-calc(233);
+  vertical-align: middle;
+  line-height: 48px;
+  padding: 5px 27px;
+  color: $fsColor-56 !important;
+  box-shadow: none;
+  -webkit-transition:background-color 0.7s ease-out;
+  -moz-transition:background-color 0.7s ease-out;
+  -ms-transition:background-color 0.7s ease-out;
+  -o-transition:background-color 0.7s ease-out;
+  transition:background-color 0.7s ease-out;
+}
+
+.btns {
+  margin: em-calc(60) 0 0;
+  &.fs-btn-down {
+
+  }
+  &.fs-btn-down-none {
+    display: none;
+    .custom-blank-base {
+      color: $fsColor-56;
+      &:hover {
+        color: $fsColor-56 !important;
+      }
+    }
+  }
+}
+
+.button h3 {
+  font-size: em-calc(20);
+  display: inline-block;
+  float: left;
+  line-height: 52px;
+  color: #fff;
+}
+
+
+.button.custom-base {
+  @include Custom-base;
+  &:hover,
+  &:active,
+  &:focus {
+    @include Custom-base-hover;
+    .fs-icons.android {
+      background-position: -53px -57px;
+    }
+  }
+}
+
+
+.button.custom {
+  @include Custom;
+  &:hover,
+  &:active,
+  &:focus {
+    @include Custom-hover;
+    .fs-icons.iphone {
+      background-position: -56px 0;
+    }
+  }
+}
+
+.button.custom-blank {
+  @include Custom-hover;
+  &:hover,
+  &:active,
+  &:focus {
+    @include Custom;
+    .fs-icons.iphone-b {
+      background-position: 0 0;
+    }
+  }
+}
+
+
+.button.custom-blank-base {
+  @include Custom-base-hover;
+  &:hover,
+  &:active,
+  &:focus {
+    @include Custom-base;
+    .fs-icons.android-b {
+      background-position: 0 -57px;
+    }
+  }
+}
+
+@media only screen and (max-width: em-calc(960)) {
+  .btns.fs-btn-down-none {
+    display: block;
+  }
+}
+@media only screen and (max-width: em-calc(800)) {
+  .btns.fs-btn-down-none {
+    display: block;
+  }
+  .button.custom-base {
+    @include Custom-base;
+    &:hover,
+    &:active,
+    &:focus {
+      @include Custom-base;
+    }
+  }
+
+
+  .button.custom {
+    @include Custom;
+    &:hover,
+    &:active,
+    &:focus {
+      @include Custom;
+    }
+  }
+
+  .button.custom-blank-base {
+    @include Custom-base-hover;
+    &:hover,
+    &:active,
+    &:focus {
+      @include Custom-base-hover;
+      color: $fsColor-56;
+    }
+  }
+}
+
+
+@media only screen and (max-width: em-calc(640)) {
+
+  .btns.fs-btn-down-none .custom-base{
+    padding: 0 em-calc(50);
+  }
+  .fs-columnsbg-rounded {
+    .fs-layer-rounded {
+      .fs-btn-down-none .button {
+        padding: 2px 10px;
+        width: em-calc(180);
+      }
+    }
+    .fs-btn-down-none {
+      margin: 0;
+    }
+  }
+}
+@media only screen and (max-width: em-calc(320)) {
+
+}

@@ -1,0 +1,87 @@
+{eval $page_rel='deal_returned_customer';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="start_date" value="{$start_date}"/>
+    <input type="hidden" name="end_date" value="{$end_date}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td width="300"> 时段：
+                    <input type="text" readonly="readonly" name="start_date" class="date" value="{$start_date}" />
+                    ~
+                    <input type="text" readonly="readonly" name="end_date" class="date" value="{$end_date}" />
+                    </td>
+                    <td>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                查询
+                            </button>
+                        </div>
+                    </div></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" layoutH="98">
+    <div id="{$page_rel}_container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        new Highcharts.Chart({
+            chart: {
+                renderTo: "{$page_rel}_container",
+                type: "column"
+            },
+            title: {
+                text: "回头客分析"
+            },
+            subtitle: {
+                text: "时间段：{$start_date} ~ {$end_date}"
+            },
+            xAxis: {
+                categories: [
+                    {$cates_str}
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: "人数"
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                backgroundColor: '#FFFFFF',
+                align: 'left',
+                verticalAlign: 'top',
+                x: 100,
+                y: 70,
+                floating: true,
+                shadow: true
+            },
+            tooltip: {
+                formatter: function() {
+                    return ''+
+                        this.x +': '+ this.y +'人';
+                }
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '购买人数',
+                data: [{$num_str}]
+    
+            }]
+        });
+    });
+</script>

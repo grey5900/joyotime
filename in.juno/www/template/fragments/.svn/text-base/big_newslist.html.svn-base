@@ -1,0 +1,25 @@
+<div class="push">
+						<div class="tit">
+							<h2>{$big_newslist['frag']['name']}</h2>
+						</div>
+						<div class="con">
+						  <ul class="inform">
+						  {loop $big_newslist['data'] $k $l}
+						    <li>
+                                <div class="news-name"><a href="{$l['link']}" target="_blank">{$l['title']}</a></div>
+                                {if $l['image']}
+						      <div class="news-img">
+						        <a href="{$l['link']}" target="_blank"><img src="{$l['image']}" alt="{$l['title']}" /></a>
+						      </div>
+                                {/if}
+						      <div class="detail">
+                    {if $l['summary']}<div class="news-con">{eval echo cut_string(strip_tags($l['summary']),'240');}</div>{/if}
+                    <div class="news-time"><span></span></div>
+						      </div>
+						    </li>
+						   {/loop}
+						   
+						  </ul>
+						</div>
+						
+</div>

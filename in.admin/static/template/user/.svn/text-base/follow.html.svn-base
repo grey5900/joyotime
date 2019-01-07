@@ -1,0 +1,34 @@
+<form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, 'detail_follow');">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+</form>
+{eval $page_rel='detail_follow';}
+<div class="pageContent">
+    <table class="list" width="100%" layoutH="280" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="60%">用户</th>
+                <th width="40%" orderField="ucreateDate" class="<!--{if $order_field=='ucreateDate'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr>
+                <td>
+                    <a href="{eval echo site_url(array('user', 'detail', 'type', 'id', 'keywords', $row['id']));}" rel="{eval echo build_rel(array('user', 'detail'));}" title="用户详情" target="navTab">
+                    <img src="{eval echo image_url($row['avatar'], 'head', 'mdp')}" height="100" />
+                    {$row['id']}
+                    <br/>
+                    {$row['username']}
+                    <br/>
+                    {$row['nickname']}
+                    </a></td>
+                <td>{$row['ucreateDate']} </td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

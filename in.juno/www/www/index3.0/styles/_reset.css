@@ -1,0 +1,77 @@
+ul, ol {
+    list-style: none
+}
+
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, form, table, td, tr, img, div, input, textarea, iframe {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+input, img, button {
+    vertical-align: middle;
+    border: 0
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+em, strong, i {
+    font-style: normal;
+    font-weight: normal
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    display: inline-block;
+    _display: inline;
+    _zoom: 1;
+    -moz-box-sizing: border-box;
+    -webkit-: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 30px;
+    *min-height: 0
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    clear: both;
+    content: '.';
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden
+}
+
+.fr {
+    float: right
+}
+
+.b {
+    font-weight: bold
+}
+
+.ib {
+    display: inline-block;
+    _display: inline;
+    _zoom: 1
+}

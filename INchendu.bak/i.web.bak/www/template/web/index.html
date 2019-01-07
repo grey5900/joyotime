@@ -1,0 +1,379 @@
+<!--{template web/header}-->
+
+        <div class="container" id="container">
+            <div class="section-layout">
+                <div class="column-left a1-slide" id="a1-slide" data-url="/recommend/index/2/{$force}">
+                </div>
+                <div class="column-middle">
+                    <div class="item-title dotted-line">
+                        <h3><a href="{$data[5][1]['titleLink']}">{$data[5][1]['title']}</a></h3>
+                        <p>
+                            {$data[5][1]['intro']}…<a href="{$data[5][1]['titleLink']}" class="more-link">查看详情</a>
+                        </p>
+                    </div>
+                    <div class="item">
+                        <ul>
+                            <!--{loop $data[6] $key $row}-->
+                            <li>
+                                <!--{if $row['categoryLink']}-->
+                                <a href="{$row['categoryLink']}" class="category">[{$row['category']}]</a>
+                                <!--{else}-->
+                                <span class="category">[{$row['category']}]</span>
+                                <!--{/if}-->
+                                <a href="{$row['titleLink']}" class="title">{$row['title']}</a>
+                                <!--{if $row['authorLink']}-->
+                                <a href="{$row['authorLink']}" class="subtitle">{$row['author']}</a>
+                                <!--{else}-->
+                                <span class="subtitle">{$row['author']}</span>
+                                <!--{/if}-->
+                            </li>
+                            <!--{/loop}-->
+                        </ul>
+                    </div>
+                    <div class="item-bottom">
+                        <!--{loop $data[7] $row}-->
+                        <div class="review-info">
+                            <ul>
+                                <li>
+                                    <a href="{$row['authorLink']}" class="avatar small"><i></i><img src="{$row['authorAvatar']}" width="40" height="40" /></a>
+                                </li>
+                                <li>
+                                    <a href="{$row['authorLink']}">{$row['author']}</a><span>点评</span><a class="place-link" href="{$row['categoryLink']}">{$row['category']}</a>
+                                </li>
+                            </ul>
+                            <div class="dropdownBorderTop"></div>
+                            <div class="dropdown">
+                                <p>
+                                    {$row['intro']}…<a class="more-link" href="{$row['titleLink']}">查看详情</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!--{/loop}-->
+                    </div>
+                </div>
+                <div class="column-right clearfix">
+                    <div class="downapp-img">
+                        <a href="/download/"><img src="/img/pic_5.jpg" width="215" height="215"/></a>
+                    </div>
+                    <div id="app-feed">
+			            <ul class="feed-list">
+			                <script type="text/javascript" src="/recommend/feed/20/{$force}"></script>
+			            </ul>
+			            <div class="mask"></div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="/recommend/index/27/{$force}"></script>
+            <div class="article">
+                <div class="main-home">
+                    <div class="sort-title">
+                        <!--{loop $data[8] $row}-->
+                        <a href="{$row['categoryLink']}">{$row['category']}</a>
+                        <!--{/loop}-->
+                        <h2 class="sort-name">美食</h2>
+                    </div>
+                    <div class="sort-content">
+                        <div class="column-sort-left">
+                            <a href="{$data[9][1]['titleLink']}"><img src="{$data[9][1]['image']}" width="270" height="280"/><span class="caption"><span class="title">{$data[9][1]['title']}</span><span class="intro">{$data[9][1]['intro']}</span></span></a>
+                        </div>
+                        <div class="column-sort-right">
+                            <div class="item-title dotted-line">
+                                <h3><a href="{$data[9][2]['titleLink']}">{$data[9][2]['title']}</a></h3>
+                                <p>
+                                    {$data[9][2]['intro']}…<a href="{$data[9][2]['titleLink']}" class="more-link">查看详情</a>
+                                </p>
+                            </div>
+                            <div class="item dotted-line">
+                                <ul>
+                                    <!--{loop $data[10] $key $row}-->
+                                    <li>
+                                    <!--{if $row['categoryLink']}-->
+                                    <a href="{$row['categoryLink']}" class="category">[{$row['category']}]</a>
+                                    <!--{else}-->
+                                    <span class="category">[{$row['category']}]</span>
+                                    <!--{/if}-->
+                                    <a href="{$row['titleLink']}" class="title">{$row['title']}</a>
+                                    <!--{if $row['authorLink']}-->
+                                    <a href="{$row['authorLink']}" class="subtitle">{$row['author']}</a>
+                                    <!--{else}-->
+                                    <span class="subtitle">{$row['author']}</span>
+                                    <!--{/if}-->
+                                    </li>
+                                    <!--{if $key == 4}-->
+                                </ul>
+                            </div>
+                            <div class="item">
+                                <ul>
+                                    <!--{/if}-->
+                                    <!--{/loop}-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sort-slider">
+                        <div class="ico-food pull-left"></div>
+                        <div class="manual-scroll" >
+							<div class="talent-main">
+								<ul class="talent-list">
+                                    <!--{loop $data[11] $row}-->
+                                    <li>
+                                        <a href="{$row['authorLink']}" class="avatar xmiddle"><img alt="{$row['author']}" class="img-bd" src="{$row['authorAvatar']}" width="60" height="60"><span> {$row['author']}</span></a>
+                                    </li>
+                                <!--{/loop}-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-home">
+                    <div class="panel">
+                        <div class="title">
+                            <h3>热门餐厅</h3>
+                        </div>
+                        <div class="content">
+                            <ul class="hot-list showList">
+                                <!--{loop $data[12] $key $row}-->
+                                <li>
+                                    <div class="tit"><h4><i class="order{$key} pull-left"></i><a href="{$row['titleLink']}">{$row['title']}</a></h4></div>
+                                    <div class="sub"><span class="ico-star-{$row['category']}"></span></div>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                        <div class="brand-list">
+                            <ul>
+                                <!--{loop $data[15] $row}-->
+                                <li>
+                                    <a href="{$row['imageLink']}" target="_blank"><img width="105" height="55" src="{$row['image']}" alt="{$row['title']}" /></a>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="main-home">
+                    <div class="sort-title">
+                        <!--{loop $data[13] $row}-->
+                        <a href="{$row['categoryLink']}">{$row['category']}</a>
+                        <!--{/loop}-->
+                        <h2 class="sort-name">娱乐</h2>
+                    </div>
+                    <div class="sort-content">
+                        <div class="column-sort-left">
+                            <a href="{$data[14][1]['titleLink']}"><img src="{$data[14][1]['image']}" width="270" height="280"/><span class="caption"><span class="title">{$data[14][1]['title']}</span><span class="intro">{$data[14][1]['intro']}</span></span></a>
+                        </div>
+                        <div class="column-sort-right">
+                            <div class="item-title dotted-line">
+                                <h3><a href="{$data[14][2]['titleLink']}">{$data[14][2]['title']}</a></h3>
+                                <p>
+                                    {$data[14][2]['intro']}…<a href="{$data[14][2]['titleLink']}" class="more-link">查看详情</a>
+                                </p>
+                            </div>
+                            <div class="item dotted-line">
+                                <ul>
+                                    <!--{loop $data[16] $key $row}-->
+                                    <li>
+                                    <!--{if $row['categoryLink']}-->
+                                    <a href="{$row['categoryLink']}" class="category">[{$row['category']}]</a>
+                                    <!--{else}-->
+                                    <span class="category">[{$row['category']}]</span>
+                                    <!--{/if}-->
+                                    <a href="{$row['titleLink']}" class="title">{$row['title']}</a>
+                                    <!--{if $row['authorLink']}-->
+                                    <a href="{$row['authorLink']}" class="subtitle">{$row['author']}</a>
+                                    <!--{else}-->
+                                    <span class="subtitle">{$row['author']}</span>
+                                    <!--{/if}-->                                    
+                                    </li>
+                                    <!--{if $key == 4}-->
+                                </ul>
+                            </div>
+                            <div class="item">
+                                <ul>
+                                    <!--{/if}-->
+                                    <!--{/loop}-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sort-slider">
+                        <div class="ico-recreation pull-left"></div>
+						<div class="manual-scroll" >
+							<div class="talent-main">
+								<ul class="talent-list">
+                                    <!--{loop $data[17] $row}-->
+                                    <li>
+                                        <a href="{$row['authorLink']}" class="avatar xmiddle"><img alt="{$row['author']}" class="img-bd" src="{$row['authorAvatar']}" width="60" height="60"><span> {$row['author']}</span></a>
+                                    </li>
+                                    <!--{/loop}-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-home">
+                    <div class="panel">
+                        <div class="title">
+                            <h3>热门娱乐中心</h3>
+                        </div>
+                        <div class="content">
+                            <ul class="hot-list showList">
+                                <!--{loop $data[18] $key $row}-->
+                                <li>
+                                    <div class="tit"><h4><i class="order{$key} pull-left"></i><a href="{$row['titleLink']}">{$row['title']}</a></h4></div>
+                                    <div class="sub"><span class="ico-star-{$row['category']}"></span></div>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                        <div class="brand-list">
+                            <ul>
+                                <!--{loop $data[19] $row}-->
+                                <li>
+                                    <a href="{$row['imageLink']}" target="_blank"><img width="105" height="55" src="{$row['image']}" alt="{$row['title']}" /></a>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="main-home">
+                    <div class="sort-title">
+                        <!--{loop $data[20] $row}-->
+                        <a href="{$row['categoryLink']}">{$row['category']}</a>
+                        <!--{/loop}-->
+                        <h2 class="sort-name">购物</h2>
+                    </div>
+                    <div class="sort-content">
+                        <div class="column-sort-left">
+                            <a href="{$data[21][1]['titleLink']}"><img src="{$data[21][1]['image']}" width="270" height="280"/><span class="caption"><span class="title">{$data[21][1]['title']}</span><span class="intro">{$data[21][1]['intro']}</span></span></a>
+                        </div>
+                        <div class="column-sort-right">
+                            <div class="item-title dotted-line">
+                                <h3><a href="{$data[21][2]['titleLink']}">{$data[21][2]['title']}</a></h3>
+                                <p>
+                                    {$data[21][2]['intro']}…<a href="{$data[21][2]['titleLink']}" class="more-link">查看详情</a>
+                                </p>
+                            </div>
+                            <div class="item dotted-line">
+                                <ul>
+                                    <!--{loop $data[22] $key $row}-->
+                                    <li>
+                                    <!--{if $row['categoryLink']}-->
+                                    <a href="{$row['categoryLink']}" class="category">[{$row['category']}]</a>
+                                    <!--{else}-->
+                                    <span class="category">[{$row['category']}]</span>
+                                    <!--{/if}-->
+                                    <a href="{$row['titleLink']}" class="title">{$row['title']}</a>
+                                    <!--{if $row['authorLink']}-->
+                                    <a href="{$row['authorLink']}" class="subtitle">{$row['author']}</a>
+                                    <!--{else}-->
+                                    <span class="subtitle">{$row['author']}</span>
+                                    <!--{/if}-->                                    
+                                    </li>
+                                    <!--{if $key == 4}-->
+                                </ul>
+                            </div>
+                            <div class="item">
+                                <ul>
+                                    <!--{/if}-->
+                                    <!--{/loop}-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sort-slider">
+                        <div class="ico-shopping pull-left"></div>
+						<div class="manual-scroll" >
+							<div class="talent-main">
+								<ul class="talent-list">
+                                    <!--{loop $data[23] $row}-->
+                                    <li>
+                                        <a href="{$row['authorLink']}" class="avatar xmiddle"><img alt="{$row['author']}" class="img-bd" src="{$row['authorAvatar']}" width="60" height="60"><span> {$row['author']}</span></a>
+                                    </li>
+                                    <!--{/loop}-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-home">
+                    <div class="panel">
+                        <div class="title">
+                            <h3>热门购物中心</h3>
+                        </div>
+                        <div class="content">
+                            <ul class="hot-list showList">
+                                <!--{loop $data[24] $key $row}-->
+                                <li>
+                                    <div class="tit"><h4><i class="order{$key} pull-left"></i><a href="{$row['titleLink']}">{$row['title']}</a></h4></div>
+                                    <div class="sub"><span class="ico-star-{$row['category']}"></span></div>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                        <div class="brand-list">
+                            <ul>
+                                <!--{loop $data[25] $row}-->
+                                <li>
+                                    <a href="{$row['imageLink']}" target="_blank"><img width="105" height="55" src="{$row['image']}" alt="{$row['title']}" /></a>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-layout clearfix">
+                <div class="photo-title">
+                    <h3>图片墙</h3><a href="/photo/">更多图片</a>
+                </div>
+                <div class="photo-content clearfix">
+                    <div class="photo-box col200">
+                        <a href="{$data[26][1]['imageLink']}"><img src="{$data[26][1]['image']}" width="200" height="320"/></a>
+                        <div class="subtitle"><a href="{$data[26][1]['imageLink']}">{$data[26][1]['title']}</a></div>
+                    </div>
+                    <div class="photo-box col280">
+                        <a href="{$data[26][2]['imageLink']}"><img src="{$data[26][2]['image']}" width="280" height="155"/></a>
+                        <div class="subtitle"><a href="{$data[26][2]['imageLink']}">{$data[26][2]['title']}</a></div>
+                    </div>
+                    <div class="photo-box col285">
+                        <a href="{$data[26][4]['imageLink']}"><img src="{$data[26][4]['image']}" width="285" height="155"/></a>
+                        <div class="subtitle"><a href="{$data[26][4]['imageLink']}">{$data[26][4]['title']}</a></div>
+                    </div>
+                    <div class="photo-box col180" style="position: absolute;top:0;left: 780px;">
+                        <a href="{$data[26][6]['imageLink']}"><img src="{$data[26][6]['image']}" width="180" height="320"/></a>
+                        <div class="subtitle"><a href="{$data[26][6]['imageLink']}">{$data[26][6]['title']}</a></div>
+                    </div>
+                    <div class="photo-box col180">
+                        <a href="{$data[26][3]['imageLink']}"><img src="{$data[26][3]['image']}" width="180" height="160"/></a>
+                        <div class="subtitle"><a href="{$data[26][3]['imageLink']}">{$data[26][3]['title']}</a></div>
+                    </div>
+                    <div class="photo-box col385">
+                        <a href="{$data[26][5]['imageLink']}"><img src="{$data[26][5]['image']}" width="385" height="160"/></a>
+                        <div class="subtitle"><a href="{$data[26][5]['imageLink']}">{$data[26][5]['title']}</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="friendlink">
+	        <div class="container">
+				<h3>合作平台</h3>
+				<ul>
+					<li><a href="http://www.tompda.com/soft/" target="_blank">TomPDA智能手机网</a></li>
+					<li><a href="http://sj.zol.com.cn" target="_blank">ZOL手机软件下载</a></li>
+					<li><a href="http://www.ishuaji.cn" target="_blank">爱刷机   </a></li>
+					<li><a href="http://www.fengbao.com" target="_blank">风暴电子市场</a></li>
+					<li><a href="http://www.androidonline.net" target="_blank">安卓在线</a></li>
+					<li><a href="http://www.ruan8.com" target="_blank">软吧手机软件</a></li>
+					<li><a href="http://www.liqucn.com" target="_blank">历趣网</a></li>
+					<li><a href="http://soft.shouji.com.cn" target="_blank">手机乐园软件</a></li>
+					<li><a href="http://www.25pp.com" target="_blank">PP助手</a></li>
+				</ul>
+			</div>
+		</div>
+<!--{template web/footer}-->

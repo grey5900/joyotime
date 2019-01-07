@@ -1,0 +1,53 @@
+<!--{eval $page_id = 'batch_present';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this);">
+        <input type="hidden" name="brand_id" value="1" />
+        <div class="pageFormContent nowrap" layoutH="58">
+            <dl>
+            	<dt>道具：</dt>
+            	<dd>
+            	<select name="item" class="required">
+            	<option value="">请选择道具</option>
+            	<!--{loop $items $row}-->
+            	<option value="{$row['id']}">{$row['name']}</option>
+            	<!--{/loop}-->
+            	</select>
+            	</dd>
+            </dl>
+            <dl>
+            	<dt>用户：</dt>
+            	<dd>
+            	<input type="file" name="user_file" class="required" />
+            	</dd>
+            </dl>
+            <dl>
+            	<dt>附言：</dt>
+            	<dd>
+            	<textarea name="message" rows="10" cols="50"></textarea>
+            	</dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" id="btnSubmit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>  

@@ -1,0 +1,20 @@
+<div class="p-list modal">
+	<div class="modal-header">
+    <button type="button" class="close jqmClose">
+      &times;
+    </button>
+    <h3 id="myModalLabel">适用店铺</h3>
+  </div>
+  <div class="modal-body">
+    <ul>
+      <!--{loop $list $k $v}-->
+      <li>
+        {$v}
+      </li>
+      <!--{/loop}-->
+    </ul>
+  </div>
+  <div class="modal-footer">
+
+  </div>
+</div>

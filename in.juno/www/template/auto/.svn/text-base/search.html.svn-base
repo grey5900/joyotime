@@ -1,0 +1,24 @@
+{if $v3_fragments['v3_search']}
+					<div class="search">
+						<div class="condition">
+							搜索4S店经销商  <font style="color:grey;font-weight:normal;">（{$v3_fragments['v3_search']['frag']['description']}）</font>
+						</div>
+						<div class="s_con">
+							<form action="http://in.chengdu.cn/search" class="form-inline" target="_blank" method="get">
+								<div class="input_box">
+									<input type="hidden" name="t" value="20" />
+									<input id="keywords" type="text" name="kw" placeholder="请输入关键字" />
+									<input type="submit" class="btn btn-vertical btn-danger btn-inverse" value="搜索" />
+									<a href="{$v3_fragments['v3_search']['frag']['rule']['jump_link']}" target="_blank" class="btn btn-vertical">地图查找</a>
+								</div>
+								<div class="sub">
+									<div class="tags">
+									{loop $v3_fragments['v3_search']['data'] $v3_search}
+										<a class="btn" href="{$v3_search['link']}" target="_blank">{$v3_search['title']}</a>
+									{/loop}
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					{/if}

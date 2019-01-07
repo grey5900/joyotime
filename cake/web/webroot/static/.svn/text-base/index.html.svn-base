@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>鱼说-fishsaying</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://lib.sinaapp.com/js/bootstrap/v3.0.0/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+        
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="/js/html5shiv.js"></script>
+          <script src="/js/respond.min.js"></script>
+        <![endif]-->
+    
+    </head>
+
+    <body class="fs-index">
+        <div class="fs-index-banner">
+            <div class="navbar navbar-inverse fs-index-header">
+                <div class="container">
+                    <div class="fs-nav-logo clearfix">
+                        <a href="#" class="fs-logo">
+                            鱼说fishsaying
+                        </a>
+                    </div>
+                    <nav class="collapse navbar-collapse fs-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html" class="active">首页</a></li>
+                            <!-- <li><a href="recharge.html">充值中心</a></li> -->
+                            <!-- <li><a href="withdraw.html">余额提现</a></li> -->
+                            <li><a href="contact.html" data-hover="联系我们">联系我们</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="container">
+            	<div class="col-md-7">
+            	    <div class="fs-banner-control">
+            	        <div class="fs-banner-font">
+            	            <p class="m-logo-veiw"><img src="/img/logo.icon.png" alt="" /></p>
+            	            <p>
+            	            	<img src="/img/logo.ys.png" alt="" />
+            	            </p>
+            	            <h2>我们重新定义了导游</h2>
+            	        </div>
+            	        <div class="fs-banner-btn">
+            	            <a href="itms-services://?action=download-manifest&url=http://fsapp.joyotime.com/fs.plist" class="btn fs-btn btn-black">
+            	                <i class="icon-iphone"></i>
+            	                <span>Available on the</span>
+                                <h3>App Store</h3>
+            	            </a>
+            	            <a href="#" class="btn fs-btn btn-gray">
+            	                <i class="icon-android"></i>
+            	                Coming Soon
+            	            </a>
+            	        </div>
+            	    </div>
+            	</div>
+            	<div class="col-md-3">
+            	    <div class="fs-banner-phone"></div>
+            	</div>
+            </div>
+        </div>
+        
+        <div class="container fs-index-container">
+            <div class="col-md-12">
+                <section class="fs-index-intor fs-img-left clearfix">
+                    <div class="fs-intor-txt pull-right">
+                    	<h1 id="">你的随身导游</h1>
+                    	<p>基于地理位置的语音解说，随时随地享受贴身导游服务</p>
+                    </div>
+                    <img src="/img/index.1.png" alt="" />
+                </section>
+                <section class="fs-index-intor fs-img-right clearfix">
+                    <div class="fs-intor-txt">
+                    	<h1 id="">个性化解说</h1>
+                    	<p>丰富解说内容自由选择，旅途不再千篇一律</p>
+                    </div>
+                    <img src="/img/index.2.png" class="pull-right" alt="" />
+                </section>
+                <section class="fs-index-intor fs-img-left pd0 clearfix">
+                   <div class="fs-intor-txt pull-right">
+                    	 <h1 id="">离线下载</h1>
+                    	<p>离线解说至手机，适应各种网络环境，省心更省钱</p>
+                    </div>
+                    <img src="/img/index.3.png" alt="" />
+                </section>
+                <section class="fs-index-intor fs-img-right clearfix">
+                    <div class="fs-intor-txt">
+                    	<h1 id="">人人都能做导游</h1>
+                    	<p>录制解说，为更多人提供方便，同时获得不错的收入</p>
+                    </div>
+                    <img src="/img/index.4.png" class="pull-right" alt="" />
+                </section>
+            </div>
+        </div>
+
+        <footer class="fs-index-footer">
+            <div class="container">
+                <p>
+                    Copyright ©2013 Fishsaying Technology Co., Ltd. All rights reserved.
+                    <a href="javascript:;" class="pull-right">English</a>
+                </p>
+            </div>
+        </footer>
+        <script type="text/javascript" charset="utf-8">
+            $(function(){
+                var ua = navigator.userAgent;
+                    
+                var downBtnL = $('.fs-btn');
+                var downBtnLA = $('.fs-btn.btn-gray');
+                var downBtnLI = $('.fs-btn.btn-black');
+                
+                if(ua.indexOf('iPhone') != -1) {
+                    console.log('iphone');
+                    downBtnL.hide();
+                    downBtnLI.show();
+                } else if(ua.indexOf('Android') != -1) {
+                    downBtnL.hide();
+                    downBtnLA.show();
+                }
+            })
+        </script>
+    </body>
+</html>

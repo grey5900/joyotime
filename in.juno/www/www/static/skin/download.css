@@ -1,0 +1,241 @@
+#container {
+  margin: 20px auto;
+}
+.download-wrap .download-nav {
+  height: 65px;
+  background: url(download_nav_bg.png) 0 0 no-repeat;
+}
+.download-wrap .download-nav li {
+  float: left;
+}
+.download-wrap .download-nav li a {
+  display: block;
+  background: transparent url(download_nav_bg.gif) no-repeat scroll 0 -999em;
+}
+.download-wrap .download-nav .nav-iphone a {
+  width: 181px;
+  height: 65px;
+  background-position: 0 0;
+}
+.download-wrap .download-nav .nav-iphone a:active {
+  background-position: 0 0;
+}
+.download-wrap .download-nav .nav-iphone.current a {
+  background-position: 0 -65px;
+}
+.download-wrap .download-nav .nav-android a {
+  width: 180px;
+  height: 65px;
+  background-position: 0 -130px;
+}
+.download-wrap .download-nav .nav-android a:active {
+  background-position: 0 -130px;
+}
+.download-wrap .download-nav .nav-android.current a {
+  background-position: 0 -195px;
+}
+.download-wrap .download-nav .nav-wp a {
+  width: 300px;
+  height: 65px;
+  background-position: 0 -260px;
+}
+.download-wrap .download-nav .nav-wp.current a {
+  background-position: 0 -325px;
+}
+.download-wrap .iphone-bd {
+  position: relative;
+  height: 594px;
+  background: url(download_iphone_bg.jpg) 0 0 no-repeat;
+}
+.download-wrap .iphone-bd h3 {
+  position: absolute;
+  top: 50px;
+  left: 360px;
+  line-height: 42px;
+  font-size: 36px;
+  color: #E57100;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+.download-wrap .iphone-bd a {
+  text-indent: -9999em;
+}
+.download-wrap .iphone-bd .summary {
+  position: absolute;
+  top: 100px;
+  left: 360px;
+  width: 530px;
+  line-height: 28px;
+  font-size: 16px;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+.download-wrap .iphone-bd .btn-ipa {
+  background: url('btn_download_app.png') repeat-y scroll 0 -999em;
+  background-position: 0 -165px;
+  width: 154px;
+  height: 55px;
+  position: absolute;
+  bottom: 135px;
+  left: 360px;
+  cursor: pointer;
+  border: none;
+}
+.download-wrap .iphone-bd .btn-appstore {
+  background: url('btn_download_app.png') repeat-y scroll 0 -999em;
+  background-position: 0 -55px;
+  width: 154px;
+  height: 55px;
+  position: absolute;
+  bottom: 135px;
+  left: 360px;
+  cursor: pointer;
+  border: none;
+}
+.download-wrap .iphone-bd .two-dimensional-code {
+  position: absolute;
+  bottom: 135px;
+  left: 760px;
+}
+.download-wrap .iphone-bd .imitation-iphone {
+  position: absolute;
+  left: 92px;
+  top: 132px;
+  width: 211px;
+  height: 317px;
+  overflow: hidden;
+}
+.download-wrap .iphone-bd .imitation-iphone li {
+  float: left;
+  width: 211px;
+}
+.download-wrap .android-bd {
+  position: relative;
+  height: 594px;
+  background: url(download_android_bg.jpg) 0 0 no-repeat;
+}
+.download-wrap .android-bd h3 {
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  line-height: 42px;
+  font-size: 36px;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+.download-wrap .android-bd a {
+  text-indent: -9999em;
+}
+.download-wrap .android-bd .summary {
+  position: absolute;
+  top: 100px;
+  left: 70px;
+  width: 530px;
+  line-height: 28px;
+  font-size: 16px;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+.download-wrap .android-bd .btn-apk {
+  background: url(btn_download_app.png) no-repeat scroll 0 -999em;
+  background-position: 0 0;
+  width: 154px;
+  height: 55px;
+  display: block;
+  position: absolute;
+  bottom: 130px;
+  left: 70px;
+  cursor: pointer;
+  border: none;
+}
+.download-wrap .android-bd .two-dimensional-code {
+  position: absolute;
+  bottom: 135px;
+  left: 350px;
+}
+.download-wrap .android-bd .imitation-android {
+  height: 310px;
+  overflow: hidden;
+  position: absolute;
+  right: 68px;
+  top: 114px;
+  width: 200px;
+}
+.download-wrap .android-bd .imitation-android li {
+  float: left;
+  width: 200px;
+  height: 298px;
+}
+.download-wrap .wp-bd {
+  position: relative;
+  height: 594px;
+  background: url(download_wp_bg.jpg) 0 0 no-repeat;
+}
+.download-wrap .wp-bd h3 {
+  position: absolute;
+  top: 50px;
+  left: 360px;
+  line-height: 42px;
+  font-size: 36px;
+  color: #fff;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+.download-wrap .wp-bd a {
+  text-indent: -9999em;
+}
+.download-wrap .wp-bd .summary {
+  position: absolute;
+  top: 100px;
+  left: 360px;
+  width: 530px;
+  line-height: 28px;
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+.download-wrap .wp-bd .btn-appstore {
+  background: url(btn_download_app.png) repeat-y scroll 0 -999em;
+  background-position: 0 -110px;
+  width: 154px;
+  height: 55px;
+  position: absolute;
+  bottom: 135px;
+  left: 360px;
+  cursor: pointer;
+  border: none;
+}
+.download-wrap .wp-bd .two-dimensional-code {
+  position: absolute;
+  bottom: 135px;
+  left: 560px;
+}
+.download-wrap .wp-bd .imitation-wp {
+  position: absolute;
+  left: 82px;
+  top: 82px;
+  width: 216px;
+  height: 360px;
+  overflow: hidden;
+}
+.download-wrap .wp-bd .imitation-wp li {
+  float: left;
+  width: 216px;
+}
+.concern-us {
+  position: relative;
+  height: 54px;
+  margin: 20px 0 0 0;
+  padding: 0 0 0 150px;
+  background: #e8ecde;
+}
+.concern-us h3 {
+  position: absolute;
+  margin: 5px 0 0 -90px;
+  font-size: 18px;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+}
+.concern-us ul {
+  margin-left: 30px;
+}
+.concern-us li {
+  float: left;
+  width: 19%;
+  margin-top: 5px;
+  overflow: hidden;
+}

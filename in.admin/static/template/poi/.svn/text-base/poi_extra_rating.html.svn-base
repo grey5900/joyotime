@@ -1,0 +1,56 @@
+<script type="text/javascript">
+function poiChangeRatingAjaxDone(json) {
+    DWZ.ajaxDone(json);
+    if (json.statusCode == DWZ.statusCode.ok){
+        if (json.navTabId){
+            navTab.reload(json.forwardUrl, {navTabId: json.navTabId});
+        } else if (json.rel) {
+            navTabPageBreak({}, json.rel);
+        }
+        $("#extra_rating_" + json.value.id).text(json.value.value>=0?("+" + json.value.value):json.value.value);
+        // 已经计算了状态值
+        if(json.value.status == 1) {
+            $("#rating_" + json.value.id).text(parseInt(json.value.rating) - parseInt(json.value.value));
+        } else {
+            $("#rating_" + json.value.id).text(parseInt(json.value.rating));
+        }
+        
+        $.pdialog.closeCurrent();
+    }
+}
+</script>
+<div class="pageContent">
+    <form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, poiChangeRatingAjaxDone);">
+        <div class="pageFormContent" layoutH="60">
+            <div class="unit">
+                <label>
+                    调整权重(-/+)：
+                </label>
+                <input type="text" size="20" class="required number" value="{$rating['rating']}" name="rating" />
+            </div>
+            <div class="unit">
+                <label>
+                    时间：
+                </label>
+                <input type="text" value="{$rating['startDate']}" name="start_date" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+                <a class="inputDateButton" href="javascript:;">选择</a>
+                <label style="text-align: center; width:10px;">~</label>
+                <input type="text" value="{$rating['endDate']}" name="end_date" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+                <a class="inputDateButton" href="javascript:;">选择</a>
+            </div>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                提交
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

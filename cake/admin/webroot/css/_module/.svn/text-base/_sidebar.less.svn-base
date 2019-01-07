@@ -1,0 +1,72 @@
+.menu-group{
+  .menu-group-item{
+    .menu-group-item-header{
+      display:block;
+      height:60px;
+      line-height:60px;
+      padding-left:20px;
+      background-color:#f3f3f3;
+      font-size:16px;
+      color:#333333;
+      position:relative;
+      .arrow{
+        display:block;
+        width:15px;
+        height:9px;
+        position:absolute;
+        right:16px;
+        top:25px;
+        background-image: url("/img/arrow.down.png");
+      }
+      .arrow.on{
+        background-image: url("/img/arrow.up.png");
+      }
+      .i{
+        display: inline-block;
+        width:20px;
+        height:20px;
+        margin-right:10px;
+        margin-bottom:2px;
+        line-height: 20px;
+        vertical-align: middle;
+      }
+      .i-log{
+        background-image: url("/img/fs-menu-ico-log.png");
+      }
+      .i-msg{
+        background-image: url("/img/fs-menu-ico-msg.png");
+      }
+      .i-phone{
+        background-image: url("/img/fs-menu-ico-phone.png");
+      }
+      .i-user{
+        background-image: url("/img/fs-menu-ico-user.png");
+      }
+      .i-sound{
+        background-image: url("/img/fs-menu-ico-sound.png");
+      }
+      .i-set{
+        background-image: url("/img/fs-menu-ico-set.png");
+      }
+    }
+  }
+}
+
+.fs-menu{
+  margin-bottom:0;
+  display:none;
+  .list-group-item{
+    border-radius:0 !important;
+    border:0;
+    padding: 12px 30px 12px 45px;
+    color:#333333;
+    background-color:#fafafa;
+    border-left:4px solid #fafafa;
+  }
+  .list-group-item:hover,.list-group-item.active{
+    color:#4db5a4;
+    background-color:#fff;
+    border-left:4px solid #4db5a4;
+  }
+}
+

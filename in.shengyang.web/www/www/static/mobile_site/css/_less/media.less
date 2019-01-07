@@ -1,0 +1,174 @@
+// Media objects
+// Source: http://stubbornella.org/content/?p=497
+// --------------------------------------------------
+
+
+// Common styles
+// -------------------------
+
+// Clear the floats
+.media,
+.media-body {
+  background: #fff;
+  overflow: hidden;
+  zoom: 1;
+}
+
+// Proper spacing between instances of .media
+.media,
+.media .media {
+  margin-top: 15px;
+}
+.media:first-child {
+  margin-top: 0;
+}
+
+// For images and videos, set to block
+.media-object {
+  display: block;
+}
+
+// Reset margins on headings for tighter default spacing
+.media-heading {
+  margin: 0 0 5px;
+}
+
+
+// Media image alignment
+// -------------------------
+
+.media {
+  margin: 15px 5px 0;
+  p,span {
+    color: #666;
+  }
+  > .pull-left {
+    margin-right: 10px;
+  }
+  > .pull-right {
+    margin-left: 10px;
+  }
+}
+.modia-header {
+  .border-top-radius(5px);
+  color: #fff;
+  text-align: center;
+  font-size: 1em;
+  line-height: 36px;
+  height: 36px;
+  background: #f04949;
+  display: block;
+}
+.media-footer {
+  margin: 10px 10px 0;
+  padding: 0 0 10px;
+  color: #666;
+  span {
+    text-align: center;
+    display: block;
+  }
+}
+
+// Media list variation
+// -------------------------
+
+// Undo default ul/ol styles
+.media-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 0 10px 10px;
+  .clearfix();
+}
+
+.media-center {
+  text-align: center;
+  margin: 20px 0;
+  i {
+    margin: 0 auto;
+  }
+  span {
+    color: #aaa;
+    font-size: 1.125em;
+  }
+  .text-block {
+    color: #666;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 10px; 
+  }
+}
+
+.media-stand {
+  margin: 0 10px;
+  h2 {
+    display: block;
+    text-align: center;
+  }
+}
+
+.media-ad {
+  display: inline-block;
+  float: left;
+  text-align: center;
+  width: 50%;
+  margin: 20px 0 0;
+  a {
+    display: inline-block;
+  }
+  p {
+    text-align: left;
+    margin: 0 10px;
+  }
+  span {
+    color: #aaa;
+  }
+  em {
+    color: #f04949
+  }
+  .score {
+    display: block;
+    text-align: left;
+    margin: 0 10px;
+  }
+}
+.media-gift {
+  margin: 20px 10px;
+  text-align: center;
+  .gift {
+    background: url('/static/mobile_site/img/gift.png') no-repeat 0 0 ;
+    .background-size(300px 119px);
+    height: 119px;
+    width: 300px;
+    display: inline-block;
+  }
+  .info {
+    display: inline-block;
+    position: relative;
+    margin: 15px 0 0;
+    float: right;
+    padding: 5px;
+    text-align: left;
+    width: 150px;
+    p {
+      color: #f4ff40;
+      font-size: 0.75em;
+      text-shadow: 1px 3px 0 #870c0c;
+    }
+  }
+}
+.media-prop {
+  margin: 0 10px;
+  background: #fff;
+  border-radius: 5px;
+  .media-object {
+    border-radius: 5px;
+  }
+}
+.media-story {
+  margin: 0 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+.media-block {
+  padding: 5px;
+}

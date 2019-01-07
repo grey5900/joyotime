@@ -1,0 +1,10 @@
+<div class="sidebar">
+	<div class="title">
+		
+	</div>
+	<ul class="nav nav-list">
+		<li<!--{if empty($menu) || $menu === 'add'}--> class="active"<!--{/if}-->><a href="/profile">新建扩展</a></li>
+		<li<!--{if $menu === 'check'}--> class="active"<!--{/if}-->><a href="/profile/checks">等待审核</a></li>
+		<li<!--{if $menu === 'publish'}--> class="active"<!--{/if}-->><a href="/profile/publish">使用中</a></li>
+	</ul>
+</div>

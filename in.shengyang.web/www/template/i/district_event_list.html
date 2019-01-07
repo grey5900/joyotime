@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+	content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>{$name}活动</title>
+	<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}"type="text/css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/mobile.min.js?{$version}"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="container">
+			<div class="lumps">
+				<!--{if $show_nav}-->
+				<div class="navigation">
+					<a onclick="goBack();" class="navigation-back"><cite>上一页</cite></a>
+					<span class="navigation-title">{$name}活动</span>
+				</div>
+				<!--{/if}-->
+				<!--{loop $list $row}-->
+				<div class="lump {if $show_nav}nav-black{/if}">
+					<a class="banner" href="/event_new/detail/{$row['id']}"> <img
+						src="{echo image_url($row['image'], 'common', 'udp')}" width="260"
+						height="60" alt="{$row['subject']}" />
+					</a> <span class="title-box">{$row['subject']}</span>
+				</div>
+				<!--{/loop}-->
+			</div>
+			<div class="footer">
+				<p>IN.CHENGDU.CN</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

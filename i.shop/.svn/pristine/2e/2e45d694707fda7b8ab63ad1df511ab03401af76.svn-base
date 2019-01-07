@@ -1,0 +1,57 @@
+<!-- 详情页预览 -->
+<!--{if in_array($info[moduleId], array(-1, 0)) && !empty($info[moduleId])}-->
+<p>
+  这个扩展信息是链接到一个网站页面的
+</p>
+<!--{else}-->
+  <div class="modal-header">
+    <button type="button" class="close jqmClose">
+      &times;
+    </button>
+    <h3 id="myModalLabel">预览</h3>
+  </div>
+  <div class="phone-view">
+<!--{if isset($error) && $error}-->
+{$msg}
+<!--{else}-->
+    <div class="view-header"><img src="/static/img/phone_header.jpg" width="300px" /></div>
+    <div class="unit">
+      <div class="box">
+        <div class="inside">
+          <div class="unit-title">
+            <h3>{$info[title]}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="unit">
+      <!--{loop $info[fields] $k $v}-->
+      <div class="inside">
+        <div class="unit-title">
+          <h3>{$v[name]}</h3>
+        </div>
+        <!--{if $v[type] === 'rich_image'}-->
+        <ul class="img-col">
+          <!--{loop $v[images] $ke $img}-->
+          <li>
+            <img src="{$img[image]}" alt="{$img[title]}" title="{$img[detail]}" width="52px" />
+            <br/>
+            {$img[title]}
+          </li>
+          <!--{/loop}-->
+        </ul>
+        <!--{elseif $v[type] === 'image'}-->
+        <span class="img-bar"><img src="{$v[image]}" alt="{$v[name]}" title="{$v[name]}" width="250px" height="60px" /></span>
+        <!--{else}-->
+        <p>
+          {$v[value]}
+        </p>
+        <!--{/if}-->
+      </div>
+      <!--{/loop}-->
+    </div>
+   <div class="view-footer"><img src="/static/img/phone_footer.jpg" width="300px" /></div>
+<!--{/if}-->
+  </div>
+<!--{/if}-->
+<!-- 详情页预览 END -->

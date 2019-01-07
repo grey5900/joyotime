@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>{$event['subject']}</title>
+    <link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" />
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/mobile.min.js"></script>
+    <script type="text/javascript">
+    <!--{if $uid}-->
+    var online_id = {$uid};
+    <!--{else}-->
+    var online_id = 0;
+    <!--{/if}-->
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="container">
+        <div class="top">
+          <a href="/event_new/m_index/{$event['id']}"><img src="{$event['banner']}" alt="{$event['subject']}" /></a>
+        </div>
+        <div class="title">
+          <h3>活动动态</h3>
+        </div>
+        <div class="post">
+          <div class="feeds" id="feeds">
+          	<!--{loop $list $k $v}-->
+            <div class="feed-list">
+              <a href="inpost://{$v['id']}">
+                <div class="icon"><img src="{$v[avatar_url]}" alt="{$v[nickname]}" width="40" height="40" /></div>
+                <div class="detail">
+                  <h4>{echo $v[nickname]?$v[nickname]:$v[username];}</h4>
+                  {if $v[placename]}
+                  <div class="action"> 在</div>
+                  <div class="place">{$v[placename]}</div>
+                  {/if}
+                  <div class="action"> {echo $v[type]<4 ?'发布了点评':($v[type]==4?'发布了YY':'分享')} </div>
+                  
+                  <div class="info">{$v[content]}</div>
+                  
+                  <!--{if $v[photoName]}-->
+                  <div class="photo"><img class="lazy" src="{$v[photoName]}" data-original="{$v[photoName]}" width="200" /></div>
+                  <!--{/if}-->
+                  
+                  <div class="time">{$v[createDate]}</div>
+                </div>
+              </a>
+            </div>
+        	<!--{/loop}-->
+          </div>
+        </div>
+        <div class="pagination pagination-centered" >
+        </div>
+        <a href="/event_new/m_post_list/{$event['id']}/2" style="display:none" id="rolling_next_page"></a>
+      </div>
+      <div class="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

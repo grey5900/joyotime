@@ -1,0 +1,205 @@
+<!--{template common/header}-->
+<!--{template fragments/ad_back_top}-->
+	<div id="{if $bg['data'][0]['image'] || !$inner_cate}container{else}container-page{/if}"><!-- {if $inner_cate}container-page{else}container{/if} -->
+		<!-- 全屏广告开始 -->
+		<!--{if $bg}-->
+		<!-- fullscreen -->
+				<!--{if $bg['data'][0]['image']}-->
+				<style type="text/css" media="screen">
+				#container {background: url("<!--{$bg['data'][0]['image']}-->") center top no-repeat;}
+				</style>
+				<!--{/if}-->	
+		<a <!--{if $bg['data'] && $bg['data'][0]['link']!="#" && $bg['data'][0]['link']!="javascript:;" }--> href="<!--{$bg['data'][0]['link']}-->"<!--{/if}--> class="fullscreen" target="_blank"></a>
+		<!-- fullscreen -->
+		<!--{else}-->
+			<!--{if !$inner_cate}-->
+			<a class="fullscreen" ></a>
+			<!--{/if}-->
+		<!--{/if}-->
+		<!-- 全屏广告结束 -->
+		<div class="container">
+			<!--{template fragments/ad_back}-->
+            <!--通栏广告-->
+            <!--{template fragments/ad_banner}-->
+			<!--{template nav}-->
+			<div class="main">
+				<!--{if $hot}-->
+				<div class="hot">
+						<!--{template fragments/focus}-->
+						<!--{if $hot['headline']}-->
+							<!--{template fragments/headline}-->
+						<!--{/if}-->
+						<!--{if $hot['headline_movie']}-->
+							<!--{template fragments/headline_movie}-->
+						<!--{/if}-->
+						<!--{if $hot['headline_edu']}-->
+							<!--{template fragments/headline_edu}-->
+						<!--{/if}-->
+					<!--{if $search_config}-->
+					<hr />
+					<div class="search">
+						<div class="tit">
+							<ul>
+								<li class="active"><a href="javascript:;">楼盘搜索</a></li>
+							</ul>
+						</div>
+						<div class="con">
+							<div class="tab-pane active">
+								<form name="building" id="search_buildings_form" action="/search/building/" method="get" class="form-inline">
+									<div class="input-box">
+										<input type="text" name="keywords" value="" placeholder="请输入关键字(楼盘名/地名/开发商等)" id="keywords"/>
+										<input type="button" value="  搜索  " class="btn btn-primary" id="search_building_btn" /> <a href="/plist/21/100" target="_blank" class="btn">地图找房</a>
+									</div>
+									<div class="more">
+										<select name="area" id="search_building_area">
+											<option selected="selected" value="0" >区域</option>
+											<!--{loop $search_config['building']['area'] $key $value}-->
+											<option value="{$key}">{$value}</option>
+											<!--{/loop}-->
+											
+										</select>
+										<select name="price" id="search_building_price">
+											<option selected="selected" value="0" >目标价位</option>
+											<!--{loop $search_config['building']['price'] $key $value}-->
+											<option value="{$key}">{$value}</option>
+											<!--{/loop}-->
+											
+										</select>
+										<select name="house_type" id="search_building_type">
+											<option selected="selected" value="0" >物业类型</option>
+											
+											<!--{loop $search_config['building']['house_type'] $key $value}-->
+											<option value="{$key}">{$value}</option>
+											<!--{/loop}-->
+											
+										</select>
+										<select name="loop" id="search_building_loop">
+											<option selected="selected" value="0" >环线</option>
+											
+											<!--{loop $search_config['building']['loop'] $key $value}-->
+											<option value="{$key}">{$value}</option>
+											<!--{/loop}-->
+											
+										</select>
+									</div>
+								</form>
+								
+							</div>
+						</div>
+					</div>
+					<!--{/if}-->
+					
+					<!--{if $search_school}-->
+					
+					<!--{template fragments/search_school}-->
+					
+					<!--{/if}-->
+				</div>
+				<!--{/if}-->
+			
+                <!--{template fragments/ad_banner_middle}-->
+
+
+				<div class="main-l">
+
+
+                    <!--{template fragments/ad_banner_large}-->
+
+					<!--{if $f_tf}-->
+						<!--{eval $row = $f_tf}-->
+							<!--{template fragments/f_tf}-->
+					<!--{/if}-->
+					
+					<!-- 测试 -->
+					<!--{if $is_edu}-->
+						<!--{template fragments/edu}-->
+					<!--{/if}-->
+					<!-- 测试 -->
+					
+					<!--{if $big_newslist}-->
+						<!--{template fragments/big_newslist}-->
+					<!--{/if}-->
+					<div class="push">
+						<div class="tit">
+							<h2>大家都在说</h2> {if $place_id}<a class="say nav-bg" href="#" id="channel-say-btn">发言</a>{/if}
+							<div class="tab">
+								<a {if $sort=='new'}class="current nav-bg"{/if} href="{$sort_link['new']}" >最新</a>
+								<a {if $sort=='hot'}class="current nav-bg"{/if} href="{$sort_link['hot']}" >最热</a>
+							</div>
+						</div>
+                        <!--{if $place_id}-->
+                        <!-- 写点评 begin -->
+                        <div class="review-form hide" id="review-form">
+                            <form id="tip-post" method="post" action="/common/send/" data-refer="{$sort_link['new']}">
+                                <input type="hidden" name="place_id" value="{$place_id}" />
+                                <div class="section-release">
+                                    <div class="textarea-edit">
+                                        <textarea rows="3" id="textarea" name="content" class="reply-write" maxlength="500"></textarea>
+                                        <div class="imgupload">
+                                            <label class="imgselect" id="cover" for="imgbtn">
+                                                <input type="file" class="imgbtn" name="Filedata" value="" id="imgbtn" />
+                                            </label>
+                                        </div>
+										<div class="txt_tip">您还没有登陆哦，点击<a href="###">登陆</a></div>
+                                    </div>
+                                    <div class="action">
+                                        <label class="checkbox inline">
+                                            <input class="labelbox" type="checkbox" name="synchronous" id="synchronous" /> 同步到第三方平台
+                                        </label>
+                                        <input class="btn btn-primary" type="submit" data-loading-text="发布中..." value="发布" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 写点评 end -->
+                        <!--{/if}-->
+
+						<!--{template post_item}-->
+
+					</div>
+					
+				</div>
+				<div class="main-r">
+					<!-- 侧边栏循环 -->
+					<!--{loop $sidebar_data $row}-->
+						<!--{template fragments/sidebars}-->
+					<!--{/loop}-->
+				
+					
+				</div>
+			</div> 
+		</div>
+	</div>
+	<!--{template fragments/ad_pop}-->
+    <!--{template fragments/ad_couplet_left}-->
+    <!--{template fragments/ad_couplet_right}-->
+	<script type="text/javascript">
+		$(function(){
+		    $('.channel-nav').height() > $('.main').height() || $('.channel-nav').affix({
+		      offset: {
+		        top: $('.channel-nav').offset().top - $('.sub-nav').height()
+		      , bottom: 210
+		      }
+		    })
+			//输入框提示
+			$.checkAuth() ? $('.txt_tip').hide() : $('#modal').modal('hide');
+			$('#textarea')
+			.on('focus',function(){
+				$(this).animate({
+					height: '180px'},
+					300, function() {
+					// stuff to do after animation is complete
+				});
+			})
+			.on('focusout',function(){
+				if($(this).val() == '') {
+					$(this).animate({
+						height: '80px'},
+						300, function() {
+						// stuff to do after animation is complete
+					});
+				}
+			})
+		})
+	</script>
+<!--{template common/footer}-->

@@ -1,0 +1,26 @@
+<form id="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, 'detail_checkin');">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+</form>
+{eval $page_rel='detail_checkin';}
+<div class="pageContent">
+    <table class="list" width="100%" layoutH="200" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="70%">用户</th>
+                <th width="30%" orderField="createDate" class="<!--{if $order_field=='createDate'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr>
+                <td><img src="{$row['avatar_uri']}" height="60" /><span>ID：{$row['id']}</span><span>用户名：{$row['username']}</span></td>
+                <td> {$row['createDate']} </td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

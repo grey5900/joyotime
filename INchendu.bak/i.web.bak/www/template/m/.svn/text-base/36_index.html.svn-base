@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <title>同心卡年末盛典 吃喝玩乐天天5折起</title>
+    <link rel="stylesheet" href="//icd.sc/demo/c/reset.css"/>
+    <link rel="stylesheet" href="//icd.sc/demo/c/basic_mobile.3.0.css"/>
+    <script type="text/javascript" src="http://icd.sc/js/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+			/*	background color	*/
+			.page {
+				background: #f6f6f6;
+			}
+			#content .unit .box {
+				background: #fff;
+			}
+			.touchslider-viewport {
+				background: #fcadcd;
+			}
+			.box-db-left, .box-db-right {
+				background: #000;
+			}
+			.box-db .img img {
+				background: #fff;
+			}
+			/* font color  */
+			.unit-title {
+				color: #ef631e;
+			}
+			#content .unit p {
+				color: #666;
+			}
+			#content .statement p {
+				color: #666;
+			}
+			.box-db-left, .box-db-right {
+				color: #5a146a;
+			}
+			.texts .info-group {
+				color: #0c425c;
+				border-bottom: 1px dotted #e1d5c5;
+			}
+			.texts .inside strong {
+				color: #666;
+			}
+			.texts .inside p {
+
+			}
+			.bottons .botton span.title {
+				color: #fff;
+			}
+			.bottons .botton span.intro {
+				color: #fff;
+			}
+			.touchslider-item .touchslider-info {
+				color: #fff;
+			}
+			.multi-line dd span {
+				color: #666;
+			}
+			.multi-line dd a:hover {
+				border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+			}
+			.multi-line .viewall a {
+				color: #ef631e;
+			}
+			.multi-line .viewall a:hover {
+
+			}
+			.multi-line .address {
+				font-size: 12px;
+				color: #666;
+				padding-top: 5px;
+			}
+			.touchslider-item img {
+				height: 190px;
+			}
+			.touchslider-nav-item {
+
+			}
+			.feed, .user {
+				border-bottom: 0;
+			}
+			.feed a:hover, .user a:hover {
+				border-bottom: 0;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+			}
+/*			#content .img-unit {
+				box-shadow: none;
+			}*/
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="content">
+        <div class="grid">
+          <div class="img-unit">
+            <a href="/event/index/36/"><img border="0" src="http://icd.sc/img/m/36/header.jpg" width="100%" border="0" /></a>
+          </div>
+          <div class="unit texts">
+            <div class="unit-title">
+              <h3>活动说明</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+或许还意犹未尽，或许还不知不觉，2012这一年我们就要走过了。同心卡岁末计划也顷刻而出，本期主打“天天5折起”给卡友们准备了惊喜的岁末特礼！兰桂坊、香侬海岸、伊藤......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+                    或许还意犹未尽，或许还不知不觉，2012这一年我们就要走过了。同心卡岁末计划也顷刻而出，本期主打“天天5折起”给卡友们准备了惊喜的岁末特礼！兰桂坊、香侬海岸、伊藤洋华堂、岁末观影档、饕餮美食应有尽有！一切尽在中国工商银行与成都传媒集团联手打造，成都全搜索网站(www.chengdu.cn)独家运营的同心卡。
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="unit multi-line">
+            <div class="unit-title"><h3>工行同心卡 兰桂坊特惠季、天天5折起</h3></div>
+            <div class="box">
+              <dl class="shrink" id="txl">
+                <dd>
+                  <a href="inplace://312739">
+                    <div class="arrow">
+                      <span>露斯餐厅（兰桂坊店）</span>
+                      <div class="address">
+                                                           露斯餐厅精品港式双人套<br />
+                                                           原价：124元      同心卡：79元
+                      </div>
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306599">
+                    <div class="arrow">
+                    <span>卡里奥餐厅鸡尾酒吧</span>
+                    <div class="address">
+                                                            卡里奥餐厅鸡尾酒吧法式浪漫双人套<br />
+                                                            原价：402元<br />       同心卡：128元
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://317138">
+                    <div class="arrow">
+                      <span>江泉道韩式料理</span>
+                      <div class="address">
+                                                                江泉道韩式料理双人套<br />
+                                                                原价：231元   同心卡：134元<br />
+                                                                江泉道韩式烤肉四人套<br />
+  原价：470元     同心卡：258元
+                      </div>
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305702">
+                    <div class="arrow">
+                    <span>1981西餐厅</span>
+                    <div class="address">
+                    1981西餐厅甜蜜双人套<br />
+原价：526元     同心卡：208元<br />
+1981西餐厅超值披萨套<br />
+原价：98元     同心卡：68元<br />
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://307851">
+                    <div  class="arrow">
+                    <span>名人堂川菜</span>
+                    <div class="address">
+                                                           名人堂川菜四人套
+原价：642元       同心卡：256元<br />
+名人堂川香十人套<br />
+原价：2346元        同心卡：758元<br />
+
+                    </div></div>
+                  </a>
+                </dd>
+                 <dd>
+                  <a href="inplace://7949">
+                    <div class="arrow">
+                    <span>CC club center</span>
+                    <div class="address">
+                                                          1.所有酒水、饮料、果盘、小吃享受9折优惠<br />
+2.一次性消费满800，赠送价值450的香槟一支<br />
+3.一次性消费满800，赠送价值200的代金券一张（供下次使用）<br />
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://316464" >
+                     <div class="arrow">
+                    <span>签签生活</span>
+                    <div class="address">
+                                                             持同心卡用户享受 签签、冒菜、卤菜 8.8折优惠
+                    </div></div>
+                  </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa">
+                <a class="showMore" id="txs">查看全部（<em>7</em>）</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="unit multi-line">
+            <div class="unit-title"><h3>岁末观影档 天天5折起</h3></div>
+            <div class="box">
+              <dl class="shrink" id="txl1">
+                <dd>
+                  <a href="inplace://4346" >
+                    <div class="arrow">
+                    <span>幸福蓝海国际影城(成都仁和春天光华店)</span>
+                    <div class="address">
+                                                         持同心卡80元享受全成都最“巴适”豪华VIP厅、商务厅。不分时段2D大片40元，3D影片80元。
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://42227" >
+                    <div class="arrow">
+                    <span>橙天嘉禾国际影城</span>
+                    <div class="address">
+                                                            每天13:00前刷同心卡看热映2D3D大片均50元，并获赠单人套餐一份(含冰露一瓶及32oz爆谷一份)
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://42283" >
+                    <div class="arrow">
+                    <span>17.5成都今典沙湾影城</span>
+                    <div class="address">
+                                                           刷同心卡2D大片25元、3D影片35元
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://14788" >
+                    <div class="arrow">
+                    <span>保利国际影城</span>
+                    <div class="address">
+                   刷同心卡看2D大片30元，3D影片60元
+                    </div></div>
+                  </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa1">
+                <a class="showMore" id="txs1">查看全部（<em>4</em>）</a>
+              </div>
+            </div>
+          </div>
+          
+         <div class="unit multi-line">
+            <div class="unit-title"><h3>饕餮美食 天天5折起</h3></div>
+            <div class="box">
+              <dl class="shrink" id="txl2">
+                <dd>
+                  <a href="inplace://6361" >
+                    <div class="arrow">
+                    <span>领地庄园酒楼</span>
+                    <div class="address">
+                                                         领地庄园酒楼豪华4人套<br />
+原价：664元   同心卡价：368元<br />
+领地庄园酒楼豪华8人套<br />
+原价：1320元  同心卡价：698元<br />
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://314446" >
+                    <div class="arrow">
+                    <span>台场德一日式料理</span>
+                    <div class="address">
+                                                         台场德一超值单人套<br />
+原价：498元       同心卡：108元
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306942" >
+                    <div class="arrow">
+                    <span>迷尚澳门豆捞</span>
+                    <div class="address">
+                                                         迷尚澳门豆捞双人套<br />
+原价：312元       同心卡：188元
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://307271" >
+                    <div class="arrow">
+                    <span>万里号大饭店</span>
+                    <div class="address">
+万里号精品川菜3-4人套餐<br />
+原价：413        同心卡：208<br />
+万里号精品川菜7-8人套餐<br />
+原价：1111       同心卡：698<br />
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://4554" >
+                    <div class="arrow">
+                    <span>滴意法国餐吧</span>
+                    <div class="address">
+滴意同心卡定制套餐<br />
+原价：378   同心价：189<br />
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://315103" >
+                    <div class="arrow">
+                    <span>新晴茶餐厅</span>
+                    <div class="address">
+同心卡新晴茶餐厅世豪店定制双人套<br />
+原价：200元          同心卡：98元
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://304655" >
+                    <div class="arrow">
+                    <span>第三大街咖啡馆</span>
+                    <div class="address">
+第三大街浪漫西餐双人套<br />
+原价：256元       同心卡：168元
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://306710" >
+                    <div class="arrow">
+                    <span>金丰翔精品湘菜花园酒楼</span>
+                    <div class="address">
+金丰翔湘菜四人套<br />
+原价：388元       同心卡：168元
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://315578" >
+                    <div class="arrow">
+                    <span>道源圣城</span>
+                    <div class="address">
+圣城特色养生美食4人套餐<br />
+原价：280元   同心卡价：99元
+
+                    </div></div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="inplace://305063" >
+                    <div class="arrow">
+                    <span>御品川香</span>
+                    <div class="address">
+御品川香同心卡超值套餐<br />
+原价：114元      同心卡价格：55元
+
+                    </div></div>
+                  </a>
+                </dd>
+              </dl>
+              <div class="viewall" id="txa2">
+                <a class="showMore" id="txs2">查看全部（<em>15</em>）</a>
+              </div>
+            </div>
+          </div>
+          <div class="unit texts multi-line">
+            <div class="unit-title">
+              <h3>地铁二号线美食推荐 香侬海岸6.8折起</h3>
+            </div>
+            <div class="box">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://316650"> 
+                      <div  class="arrow">
+                        <span>香侬海岸美食汇</span>
+                        <div class="address">
+                          一品天下大街399号1栋北京华联商厦5楼
+                        </div>
+                    </div>
+                      
+                   </a>
+                  </dd>
+                </dl>
+                <div class="expand inside">
+                  <div class="expand-simple">
+                    <p>
+                      每周二全天持同心卡刷卡可享受6.8折， 午市：74元；晚市：93元。其余时段持同心卡刷卡享8.5折优惠。（平安夜、圣诞节及12月30、31日除外）<br />
+                      <strong>其余时段午市：</strong><br />
+                      周一至周五(11：30—14：00)    同心卡价：92元<br />
+                      周六、周日(11：30—14：30)    同心卡价：109元......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      每周二全天持同心卡刷卡可享受6.8折， 午市：74元；晚市：93元。其余时段持同心卡刷卡享8.5折优惠。（平安夜、圣诞节及12月30、31日除外）<br />
+                      <strong>其余时段午市：</strong><br />
+                                                                    周一至周五(11：30—14：00)    同心卡价：92元<br />
+                                                                    周六、周日(11：30—14：30)    同心卡价：109元<br />
+                                                                    <strong>其余时段晚市：</strong><br />
+                                                                    周一至周四(17：30—21:00)    同心卡价：116元<br />
+                                                                    周五至周日(17：30—21:30)    同心卡价：124元
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+              </div>
+            </div>
+          </div>            
+          
+         <div class="unit texts">
+            <div class="unit-title">
+              <h3>伊藤洋华堂网络超市 卡友刷卡享乐不停顿</h3>
+            </div>
+            <div class="box">
+              <div class="inside expand">
+                <div class="expand-simple">
+                  <p>
+这年头连买袋米都可以抵用20元？同心卡卡友在伊藤洋华堂网络超市购物满200元即可获赠20元网店购物礼金！<br />
+伊藤洋华堂网店地址：www.yiteng365.com<br />
+活动时间：2012年11月1日至2012年12月31日
+......
+                  </p>
+                </div>
+                <div class="expand-more">
+                  <p>
+这年头连买袋米都可以抵用20元？同心卡卡友在伊藤洋华堂网络超市购物满200元即可获赠20元网店购物礼金！<br />
+伊藤洋华堂网店地址：www.yiteng365.com<br />
+活动时间：2012年11月1日至2012年12月31日<br />
+参与方式：<br />
+1.在伊藤网超（www.yiteng365.com）购物满200元，选择同心卡支付，经上门送货人员确认支付完成，在第二个工作日通过网超站内信的方式将20元电子优惠券(下次购物使用)发到用户手里,用户可登陆伊藤网超会员中心查询站内信。<br />
+2.在伊藤门店（成都地区）购物满200元，使用同心卡支付的用户将伊藤购物小票、银行刷卡凭证及同心卡正面卡面拍照上传到伊藤洋华堂网络超市官方微博（上传方式：@伊藤洋华堂网络超市#晒消费#照片），经工作人员确认，在第二个工作日通过私信的方式将20元电子优惠券发送到用户微博。照片要求：有清晰的伊藤logo、消费金额、同心卡账号后四位及卡面同心卡字样。<br />
+使用规则：<br />
+1.本次活动单个订单只限返券1张，不能累计返券；<br />
+2.本次活动优惠券仅限在伊藤网超www.yiteng365.com 注册下单后使用，请在2012年11月1日至2013年1月30日有效期内使用。<br />
+3.本优惠券可用于伊藤网络超市上购物抵扣，购物满200元即可使用20元优惠券。<br />
+4.本优惠券不兑现，不找零，不可累积使用（每笔订单只能使用1张促销优惠券），如您有多张优惠券可分次使用。<br />
+5.在伊藤网超消费时，请根据提示一次性依次输入电子码。在您选择的商品满200元之后自动抵扣20元。余下的金额，在收到货时直接支付给配送人员即可
+                  </p>
+                </div>
+                <div class="expand-arrow">
+                  点击查看全部内容
+                </div>
+              </div>
+            </div>
+          </div>
+       
+          <div class="unit texts multi-line">
+            <div class="unit-title">
+              <h3>越“冻”越美丽------成都全搜索第二届美容节</h3>
+            </div>
+            <div class="box">
+                <dl class="shrink">
+                  <dd>
+                    <a href="inplace://4345"> 
+                      <div class="arrow">
+                      <span>成都市仁和春天商场（光华店） </span>
+                    <div class="address">
+                       成都市青羊区二环路西二段19号(西二环路口)
+                    </div></div>
+                     </a>
+                  </dd>
+                </dl>
+                <div class="expand inside">
+                  <div class="expand-simple">
+                    <p>
+                      爱美的亲们有福了，全搜索联合工行同心卡给爱美的亲们送福利----越“冻”越美丽全搜索第二届美容节大型活动，2012年12月1日-2与您相约仁和......
+                    </p>
+                  </div>
+                  <div class="expand-more">
+                    <p>
+                      爱美的亲们有福了，全搜索联合工行同心卡给爱美的亲们送福利----越“冻”越美丽全搜索第二届美容节大型活动，2012年12月1日-2与您相约仁和春天光华店。最happy的走秀活动、最具权威的整形专家与您面对面交流、最强悍的真人体验给您不一样的现场视觉与感觉体验。本次活动将集合成都最顶尖的美容整形机构、美体机构、及其他与美容行业相关的高端品质商家，现场产品、设备、整容工具等展览，揭开美容行业的神秘面纱，必将给成都美容市场注入新的活力，本次美容节将会成功打造为西南地区美容节史上一次不可超越的品牌盛会！
+    中国工商银行同心卡专享：现场持工商银行同心卡，下单即可在特惠价上再次享受低至8折优惠（折上折）。
+      活动现场好礼拿不停，签到礼、下单礼让您眼花缭乱，现场还有抽取一、二、三等大奖等着您，特别是一等奖超大礼：价值人民币15万元赴韩整形大奖，赶快行动吧，一起和全搜索体验全新的美容盛会！
+
+                    </p>
+                  </div>
+                  <div class="expand-arrow">
+                    点击查看全部内容
+                  </div>
+                </div>
+            </div>
+          </div>   
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          IN.CHENGDU.CN
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://icd.sc/js/slide.min.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$(".expand").each(function() {
+					$(this).on("click", function() {
+						$(this).toggleClass("on");
+					});
+				})
+				// $(".touchslider").touchSlider({
+					// mouseTouch : true,
+				// });
+				$("#txl").each(function(){
+          $("#txl > dd:gt(1)").hide(); 
+            $("#txa").click(function(){
+              $("#txs").toggle();
+              $("#txl > dd:gt(1)").toggle();
+            });        
+        });
+        $("#txl1").each(function(){
+          $("#txl1 > dd:gt(1)").hide(); 
+            $("#txa1").click(function(){
+              $("#txs1").toggle();
+              $("#txl1 > dd:gt(1)").toggle();
+            });        
+        });
+        $("#txl2").each(function(){
+          $("#txl2 > dd:gt(1)").hide(); 
+            $("#txa2").click(function(){
+              $("#txs2").toggle();
+              $("#txl2 > dd:gt(1)").toggle();
+            });        
+        });
+			})
+    </script>
+  </body>
+</html>

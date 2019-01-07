@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns:wb=“http://open.weibo.com/wb”>
+<head>
+
+	<meta charset="UTF-8">
+	<title>{$title}</title>
+	<meta name="keywords" content="{$keywords}" />
+	<meta name="description" content="{$description}" />
+	<link rel="stylesheet" type="text/css" href="/index3.0/styles/style.css?{$version}" />
+	<!--{if $theme}-->
+	<link rel="stylesheet" href="/index3.0/styles/channel.css?{$version}" />
+	
+	<link rel="stylesheet" href="/static/in_themes/{$theme}/skin/skin.css?{$version}" />
+	<!--{/if}-->
+	<script type="text/javascript">
+		var online_id = '<!--{$auth[uid]}-->',online_name = '<!--{if $auth[nickname]}--><!--{$auth[nickname]}--><!--{else}--><!--{$auth[username]}--><!--{/if}-->',online_avatar = '<!--{if $auth[avatar_m]}--><!--{$auth[avatar_m]}--><!--{else}-->/static/head_default.png<!--{/if}-->';
+		var signout_url = "{$signout_url}";
+		var sso_logout_url = "{$sso_logout_url}";
+		var current_url = location.href.split("?")[0];
+		var theme = '{$theme}';
+	</script>
+	<script type="text/javascript" src="/static/js/v3/dest/lib.min.js?{$version}"></script>
+	<!--[if lte IE 6]>
+		<script type="text/javascript" src="/static/js/v3/ie6-warn.js"></script>
+		<link rel="stylesheet" href="/index3.0/styles/ie6.css" />
+		<script type="text/javascript" src="/static/js/v3/ie6.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="/static/js/v3/seajs/sea.js"  data-config="/static/js/v3/seajs/config.js" id="seajsnode"></script>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function loadJs(selector,src,compress){
+			var ziped = !!compress;
+			if($(selector).length){				
+				if(ziped){
+					var newSrc = 'dest/'+src+'.min';
+					seajs.use(newSrc);
+				}
+				else{
+					seajs.use(src);
+				}
+			};
+		};
+		$(document).ready(function(){
+			loadJs('.timeline .posts,.waterfall .thumbnails','waterfall',true);
+			loadJs('.timeline','timeline',true);
+			loadJs('.channel','channel',true);	    
+			seajs.use('http://s22.cnzz.com/stat.php?id=5004908&web_id=5004908');
+			
+		});
+	</script>
+	<script type="text/javascript" src="http://js.adm.cnzz.net/js/abase.js"></script>
+	<base href="http://{HOST}" /> 
+</head>
+<body>
+	<div class="header">
+		
+		<div class="nav_bar">
+			<div class="layout">
+				<div class="user_nav">
+					<!--{if $auth}-->
+					<div class="sign_in">
+						<a href="/user/" class="name"><!--{if $auth[nickname]}--><!--{eval echo cut_string($auth[nickname],12);}--><!--{else}--><!--{eval echo cut_string($auth[username],12);}--><!--{/if}--></a>
+						<a href="#" data-rel="popover" data-toggle="popover" data-html="true" data-content='<div class="yy_panel"><div class="con"><form id="tip-post" action="/common/send"><textarea id="yText" placeholder="心情如何，写下来吧……" name="content" id="" maxlength="500" rows="10"></textarea><input id="ySmt" type="submit" value="发表" class="btn btn-vertical btn-success" /><label id="cover" class="upload" for="upload"><input type="file" id="upload" name="Filedata" /></label><div id="preview"></div></form>	</div></div>'   data-placement="bottom" class="yy"></a>
+						
+						<a href="javascript:$.signout();" onclick="" class="exit"></a>
+					</div>
+					<!--{else}-->
+					<div class="reg">
+						<a href="#">登录</a> -
+						<a href="#">注册</a>
+					</div>
+					<div class="sign_in" style="display:none">
+						<a href="/user/" class="name">
+						<a href="#" class="yy"></a>
+						<a href="javascript:;" onclick="$.signout();" class="exit"></a>
+					</div>
+					<!--{/if}-->
+				</div>
+				
+				<div class="more_nav">
+					<a id="clt" href="#">加入收藏夹</a> -
+					<a href="http://in.chengdu.cn/download" target="_blank">下载IN成都客户端</a>
+					<span>|</span>
+				</div>
+				<div class="site-nav">
+					<a href="http://www.chengdu.cn" target="_blank">全搜索首页</a> -
+					<a href="http://news.chengdu.cn" target="_blank">新闻</a> -
+					<a href="http://tg.chengdu.cn" target="_blank">章鱼团</a> -
+					<a href="http://photo.chengdu.cn" target="_blank">成都图片网</a>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<div class="layout">
+				<div class="search_bar">
+				<form name="search" action="/search" method="get" class="search-form form-inline">
+					<button type="submit"><i class="icon-search"></i></button>
+					<input type="text" class="txt" name="kw" placeholder="搜地点/点评/新闻/楼盘" />
+				</form>		
+				</div>
+				<div class="site_nav">
+					<a data-color="green" {if !$channel_id}class="active"{/if} href="http://in.chengdu.cn">IN成都</a>
+					{loop $display_channels $ch}
+					{if $ch['orderValue']==0}{eval continue;}{/if}
+					<a data-color="green" {if $channel_id==$ch['id']}class="active"{/if} href="{if $ch['link']}{$ch['link']}{else}http://{$ch['domain']}{/if}" target="_blank">{$ch['catName']}</a>
+					{/loop}
+					
+					<i></i>
+				</div>
+			</div>
+		</div>
+	</div>

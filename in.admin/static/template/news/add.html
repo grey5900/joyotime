@@ -1,0 +1,103 @@
+<div class="pageContent">
+	<form method="post" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+	<!--{if !empty($info[id])}--><input type="hidden" name="fid" value="{$info[id]}" /><!--{/if}-->
+	<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+			<label>频道名称:</label><input type="text" class="required" name="catName" value="{$info[catName]}" size="50" />
+		</div>
+		<div class="unit">
+			<label>上级分类:</label>
+			<select name="parentId">
+			<option value=0>请选择上级分类</option>
+				
+				{$category}
+			</select>
+		</div>
+		
+		<div class="unit">
+			<label>状态:</label>
+			<input type="radio" value="0" name="status" {if $info['status'] == 0}checked="checked"{/if} />不显示
+			<input type="radio" value="1" name="status" {if $info['status'] == 1}checked="checked"{/if} />显示
+			{if $info['id']}<input type="radio" value="2" name="status" {if $info['status'] == 2}checked="checked"{/if} />删除{/if}
+		</div>
+		
+		<div class="unit">
+			<label>栏目类型:</label>
+			<input type="radio"  name="catType" value="1" {if $info['catType'] == 1}checked="checked"{/if} />栏目
+			<input type="radio"  name="catType" value="0" {if $info['catType'] == 0}checked="checked"{/if} />标签
+		</div>
+		<div class="unit">
+			<label>外链:</label>
+			<input type="text"  name="link" value="{$info[link]}" size="50"/>
+		</div>
+		<div class="unit">
+			<label>排序:</label>
+			<input type="text"  name="orderValue" value="{$info[orderValue]}" size="50"/>(一级栏目在排序值为0时不在导航显示)
+		</div>
+		<div class="unit">
+			<label>模板样式:</label> 
+			<input type="text"  name="style" value="{$info[style]}" size="50"/>
+		</div>
+		<div class="unit" id="fragment_block" ><!-- {if $info['parentId']>0}style="display:none"{/if} -->
+			<label>碎片:</label>
+			<!--{template block/fragment_select}--> 
+		</div>
+		<div class="unit">  
+			<label>关键词:</label>
+			<input type="text"  name="keyword" value="{$info[keywords]}" size="50"/>
+		</div>  
+		<div class="unit"> 
+			<label>描述:</label><input type="text"  name="description" value="{$info[description]}" size="50"/>
+		</div>
+		<div class="unit">
+			<label>绑定域名:</label><input type="text"  name="domain" value="{$info[domain]}"  size="50" /> 
+			
+		</div>
+		<div class="unit">
+			<label>快速发言关联地点:</label>
+		<!--{eval $ext_condition = "Place";}-->
+		
+		<!--{eval $customer_tip = "<font color=red>*限一个</font>";}-->
+		<!--{template block/tag_select}-->
+		<!--{eval unset($ext_condition);}--> 
+		<!--{eval unset($customer_tip);}--> 
+		</div> 
+		<div class="unit">
+			<label>频道/栏目标签:</label>
+		<!--{template block/tag_select}-->
+		</div> 
+	</div>  
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick='onsubmit_form(this.form, "您确定要提交？",{$page_id}_select_tag_list_{$ext_condition})' id="btnSubmit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul> 
+	</div>
+	</form>
+</div>
+
+<script>
+$(function(){
+	//$("select[name=parentId]").change(function change();
+	//change(); 
+	//$("select[name=parentId]").bind("change",change());
+	//change();
+	/*$("select[name=parentId]").change(function(){
+		
+		change();
+	});*/
+})
+/*
+function change(){
+	//$("select[name=parentId]").change(function(){
+		//alert(1233);
+		var parentId = '<!--{$info[parentId]}-->';
+		var id = $(this).val();
+		if(id>0 || parseInt(parentId)>0){
+			$("#fragment_block").hide();
+		}else{
+			$("#fragment_block").show();
+		}
+	//});
+}*/
+</script>

@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <title>IN成都 - Google地图</title>
+        <style type="text/css">
+            html, body, #container {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .content {
+                position: relative;
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                width: 100%;
+                margin: 0 auto;
+                padding: 0;
+                clear: both;
+            }
+        </style>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJZp6IvM1poWnd_fqkeDb4sxyWD8O-HH0&sensor=true&language=zh&"></script>
+        <script type="text/javascript">
+            function getQueryStringRegExp(name) {
+                var reg = new RegExp("(^|\\?|&)" + name + "=([^&]*)(\\s|&|$)", "i");
+                if (reg.test(location.href)) {
+                    return unescape(RegExp.$2.replace(/\+/g, " "));
+                }
+                return "";
+            }
+
+            function onMapDragendListener() {
+                var latLng = map.getCenter();
+                Android.onMapCenterChanged(latLng.lat(), latLng.lng());
+            }
+
+            function initialize() {
+
+                var lat = getQueryStringRegExp("lat");
+                var lng = getQueryStringRegExp("lng");
+
+                var mapOptions = {
+                    center : new google.maps.LatLng(lat, lng),
+                    zoom : 15,
+                    mapTypeId : google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl : false,
+                    streetViewControl : false
+                };
+                window.map = new google.maps.Map(document.getElementById("container"), mapOptions);
+                google.maps.event.addListener(map, 'dragend', onMapDragendListener);
+                Android.onMapLoaded();
+            }
+
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <div id="container">
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!--{template common/header3.0}-->
+	<div class="main layout detail">
+		<div class="column intro_banner">
+			<div class="img">
+				<img src="/index3.0/images/mall.png" alt="道具商城" />
+				
+			</div>
+			<div class="info">
+				<h1>IN成都4.0三大炮：我为道具狂</h1>
+				<p>抢地主、玩道具，积分送大礼！<br />IN成都4.0来了，抢不到地主？那是你还没用上IN成都最新最牛的道具，赶紧看看吧。</p>
+				<a href="http://in.chengdu.cn/dowmload" class="down">下载IN成都客户端，玩转积分</a>
+			</div>
+			<div class="btns">				
+				<a href="/lord/"><i class="lord"></i>去抢地主</a>
+				<a href="/store/"><i class="mall"></i>去积分商城</a>
+			</div>
+		</div>
+		<div class="column mall_box">
+			<div class="tit">
+				<h3><i></i>可购买道具</h3>
+			</div>
+			<div class="con">
+				<ul class="list-fluid">
+				{loop $buyable $b}
+					<li>
+						<div class="item">
+							<div class="img">
+								<img src="http://pic.in.chengdu.cn/common/item100x100/{$b['image']}" alt="{$b['name']}" />
+							</div>
+							<div class="info">
+								<h4>{$b['name']}</h4>
+								<p>兑换积分<em>{$b['price']}</em></p>
+							</div>
+							<div class="intro">
+							使用说明：<span>{$b['description']}</span>
+							</div>
+						</div>
+					</li>
+				{/loop}
+					
+				</ul>
+			</div>
+		</div>
+		<div class="column mall_box">
+			<div class="tit">
+				<h3><i></i>稀有道具</h3>
+			</div>
+			<div class="con">
+				<ul class="list-fluid">
+				{loop $rare $r}
+					<li>
+						<div class="item">
+							<div class="img">
+								<img src="http://pic.in.chengdu.cn/common/item100x100/{$r['image']}" alt="{$r['name']}"/>
+							</div>
+							<div class="info">
+								<h4>{$r['name']}</h4>
+								
+							</div>
+							<div class="intro">
+							使用说明：<span>{$r['description']}</span>
+							</div>
+						</div>
+					</li>
+				{/loop}
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="js/ie6.js"></script>
+<![endif]-->
+<!--{template common/footer}-->
+</body>
+</html>

@@ -1,0 +1,80 @@
+10
+
+dir
+38580
+svn://182.140.139.153/Incd20/Web/trunk
+svn://182.140.139.153/Incd20
+
+
+
+2013-02-04T06:22:13.338969Z
+25374
+grey
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+86661628-28bb-49c0-9a6f-c8e3782614a9
+
+.project
+file
+
+
+
+
+2013-07-22T03:58:05.000000Z
+6bce6da319917747741e6a73975a371f
+2012-04-12T03:50:56.915097Z
+854
+grey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+379
+
+.settings
+dir
+
+css
+dir
+
+img
+dir
+
+js
+dir
+
+less
+dir
+
+www
+dir
+

@@ -1,0 +1,83 @@
+<!--{eval $page_id = 'brand_welcome';}-->
+<div class="pageHeader">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <input type="hidden" name="pageNum" value="{$cur_page}"/>
+        <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+        <input type="hidden" name="orderField" value="{$order_field}"/>
+        <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                        <option value="0">待审核</option>
+                        <option value="20"<!--{if $type == '20'}--> selected<!--{/if}-->>已通过</option>
+                        <option value="10"<!--{if $type == '10'}--> selected<!--{/if}-->>已驳回</option>
+                        <option value="-1"<!--{if $type == '-1'}--> selected<!--{/if}-->>所有</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="{$page_id}">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="ajaxTodo" title="你确定要通过？" warn="请选择一条" href="{echo site_url(array('brand', 'handle_welcome', 'do', 'pass', 'id'))}/<!--{{id}}-->"><span>通过</span></a>
+            </li>
+            <li>
+                <a class="delete" target="dialog" warn="请选择一条" title="驳回欢迎消息" rel="{echo build_rel(array('brand', 'handle_welcome', 'do', 'reject'))}" href="{echo site_url(array('brand', 'handle_welcome', 'do', 'reject', 'id'))}/<!--{{id}}-->"><span>驳回</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="128">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="15%">提交品牌</th>
+                <th width="15%">最后操作</th>
+                <th width="30%">消息内容</th>
+                <th width="10%">会员数</th>
+                <th width="25%">连接</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['name']}</td>
+                <td>{$row['lastDate']}</td>
+                <td>
+                    <span name="welcome_msg" content="消息：{$row['welcomeMsg']}">{$row['welcomeMsg']}</span>
+                    <!--{if $row['status'] == 10}--><span content="驳回理由：{$row['remark']}" class="tip-forbid"></span><!--{/if}-->
+                    <!--{if $row['status'] == 20}--><span class="tip-allow"></span><!--{/if}-->
+                    </td>
+                <td>{$row['memberCount']}</td>
+                <td>{$row['link']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".tip-forbid", $("#{$page_id}")).poshytip({
+                content:function(){
+                    return $(this).attr("content");
+                }
+            });
+            $("span[name=welcome_msg]", $("#{$page_id}")).poshytip({
+                content:function(){
+                    return $(this).attr("content");
+                }
+            });
+        }, 500);
+    });
+</script>

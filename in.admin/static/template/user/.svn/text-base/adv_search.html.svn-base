@@ -1,0 +1,77 @@
+<div class="pageContent">
+    <form method="post" action="{eval echo site_url(array('user', 'index'))}" onsubmit="return navTabSearch(this, '{eval echo build_rel(array('user', 'index'))}');">
+        <div class="pageFormContent" layoutH="60">
+            <div class="unit">
+                <label>
+                    <select name="type" class="combox">
+                        <option value="nickname">昵称</option>
+                        <option value="username">账号</option>
+                        <option value="id">ID</option>
+                    </select> </label>
+                <input type="text" name="keywords" size="30" />
+            </div>
+            <div class="unit">
+                <label>性别：</label>
+                <select name="gender" class="combox">
+                    <option value="0">请选择性别</option>
+                    <option value="1">女</option>
+                    <option value="2">男</option>
+                    <option value="3">未设定</option>
+                </select>
+            </div>
+            <div class="unit">
+                <label>最后登录时间：</label>
+                <input type="text" value="" name="last_time1" class="date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+                <a class="inputDateButton" href="javascript:;">选择</a>
+                <label style="text-align: center; width:10px;">~</label>
+                <input type="text" value="" name="last_time2" class="date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+                <a class="inputDateButton" href="javascript:;">选择</a>
+            </div>
+            <div class="unit">
+                <label>注册时间：</label>
+                <input type="text" value="" name="reg_time1" class="date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+                <a class="inputDateButton" href="javascript:;">选择</a>
+                <label style="text-align: center; width:10px;">~</label>
+                <input type="text" value="" name="reg_time2" class="date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/>
+                <a class="inputDateButton" href="javascript:;">选择</a>
+            </div>
+            <div class="unit">
+                <label>是否填邮箱：</label>
+                <select name="email" class="combox">
+                        <option value="0">请选择</option>
+                        <option value="2">有</option>
+                        <option value="1">无</option>
+                    </select>
+            </div>
+            <div class="unit">
+                <label>是否填手机：</label>
+                <select name="cellphone" class="combox">
+                        <option value="0">请选择</option>
+                        <option value="2">有</option>
+                        <option value="1">无</option>
+                    </select>
+            </div>
+            <div class="unit">
+                <label>状态：</label>
+                <select name="status" class="combox">
+                        <option value="0">请选择</option>
+                        <option value="1">正常</option>
+                        <option value="2">屏蔽</option>
+                    </select>
+            </div>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                检索
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

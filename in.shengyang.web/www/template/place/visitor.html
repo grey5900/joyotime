@@ -1,0 +1,20 @@
+<!--{template common/header}-->
+<div id="container">
+	<!--{template sub_header}-->
+	<div class="container">
+		<div class="pagelet">
+			<ul class="user_list">
+				<!--{loop $list $k $v}-->
+				<li class="user">
+					<div class="avatar xlarge"><a href="/user/{$v[id]}/"><i></i><img src="{$v[avatar_url]}" /></a></div>
+					<div class="username"><a href="/user/{$v[id]}/">{echo $v[nickname]?$v[nickname]:$v[username]}</a></div>
+				</li>
+				<!--{/loop}-->
+			</ul>
+			<hr class="divider" />
+			{$paginate}
+		</div>
+	</div>
+</div>
+
+<!--{template common/footer}-->

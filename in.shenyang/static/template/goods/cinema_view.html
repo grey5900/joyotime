@@ -1,0 +1,105 @@
+<div class="pageContent" id="cinema_view">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <dl>
+                <dt>商品标题：</dt>
+                <dd><input type="text" id="name" name="name" readonly="readonly" class="required" size="80" maxlength="80" value="{$cinema['name']}" /></dd>
+            </dl>
+            <dl>
+                <dt>商品描述：</dt>
+                <dd><textarea id="description" name="description" readonly="readonly" cols="80" rows="5" class="required">{$cinema['description']}</textarea></dd>
+            </dl>
+            <dl>
+                <dt>缩略图：</dt>
+                <dd><a id="cinema_view_image" href="{$cinema['image']}"><img src="{$cinema['image']}" height="100" /></a></dd>
+            </dl>
+            <dl>
+                <dt>使用提示：</dt>
+                <dd><textarea id="notice" name="notice" readonly="readonly" cols="80" rows="5" class="required">{$cinema['notice']}</textarea></dd>
+            </dl>
+            <dl>
+                <dt>商品详情：</dt>
+                <dd><textarea id="introduce" name="introduce" readonly="readonly" cols="120" rows="20" {$editor_image} class="required editor">{$cinema['introduce']}</textarea></dd>
+            </dl>
+            <dl>
+                <dt>商品原价：</dt>
+                <dd><input type="text" id="market_price" readonly="readonly" name="market_price" class="required number" size="10" maxlength="20" value="{$cinema['marketPrice']}" /></dd>
+            </dl>
+            <dl>
+                <dt>售价：</dt>
+                <dd>
+                    <input type="text" id="price" name="price" readonly="readonly" class="required number" style="color:red" size="10" maxlength="20" value="{$cinema['price']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>附加费用：</dt>
+                <dd>
+                    <input type="text" id="additional_fee" readonly="readonly" name="additional_fee"<!--{if $cinema['additionalFee']}--> class="required number"<!--{/if}--> style="color:red" size="10" maxlength="20" value="{$cinema['additionalFee']}" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>附加费用描述：</dt>
+                <dd>
+                    <textarea id="additional_fee_desc" readonly="readonly" name="additional_fee_desc" cols="80" rows="5"<!--{if $cinema['additionalFee']}--> class="required"<!--{/if}-->>{$cinema['additionalFeeDesc']}</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>实际库存：</dt>
+                <dd><input type="text" id="stock" name="stock" readonly="readonly" class="required number" size="10" maxlength="20" value="{eval echo $cinema['stock']?$cinema['stock']:0}" /></dd>
+            </dl>
+            <dl>
+                <dt>销售库存：</dt>
+                <dd><input type="text" id="quantity" name="quantity" class="number" readonly="readonly" size="10" maxlength="20" value="{$cinema['quantity']}" /></dd>
+            </dl>
+            <dl>
+                <dt>每单最大购买数：</dt>
+                <dd><input type="text" id="limited" name="limited" readonly="readonly" class="required number" size="10" maxlength="20" value="{eval echo $cinema['id']?$cinema['limited']:999}" /></dd>
+            </dl>
+            <dl>
+                <dt>单个设备：</dt>
+                <dd>
+                    <input type="text" id="device_limited_days" readonly="readonly" name="device_limited_days" class="required number" size="4" maxlength="10" value="{$cinema['deviceLimitedDays']}" />
+                    <span style="float: left">天，最大购买数：</span>
+                    <input type="text" id="device_limited" readonly="readonly" name="device_limited" class="required number" size="6" maxlength="10" value="{$cinema['deviceLimited']}" />
+                    <span style="float: left">个</span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>节省：</dt>
+                <dd><input type="text" readonly="readonly" class="required number" size="10" maxlength="20" value="{eval echo $cinema['marketPrice'] - $cinema['price']}" /></dd>
+            </dl>
+            <dl>
+                <dt>折扣：</dt>
+                <dd><input type="text" readonly="readonly" class="required number" size="10" maxlength="20" value="{eval echo number_format($cinema['price']/$cinema['marketPrice'], 2)*10}" /></dd>
+            </dl>
+            <dl>
+                <dt>观影券到期时间：</dt>
+                <dd><input type="text" name="expire_date" id="expire_date" value="{$cinema['expireDate']}" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/></dd>
+            </dl>
+            <dl>
+                <dt>结束时间：</dt>
+                <dd><input type="text" name="end_date" id="end_date" value="{$cinema['endDate']}" class="required date" format="yyyy-MM-dd HH:mm:ss" readonly="true"/></dd>
+            </dl>
+            <dl>
+                <dt>关联地点：</dt>
+                <dd style="width: 800px;">
+                    <select name="place[]" id="place" multiple style="width:320px;height:250px;">
+                        
+                    </select>
+                </dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">关闭</button></div></div></li>
+            </ul>
+        </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        <!--{loop $place $p}-->
+        $("#place", $("#cinema_view")).append("<option value=\"{$p['id']}\">({$p['id']}){$p['placename']}</option>");
+        <!--{/loop}-->
+        $("#cinema_view_image", $("#cinema_view")).fancybox();
+    });
+
+</script>

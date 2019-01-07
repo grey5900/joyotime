@@ -1,0 +1,1304 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright 2013 FishSaying <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-04-01 10:23+0800\n"
+"Last-Translator: Bob Bao <baohanddd@gmail.com>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: chn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+
+#: Controller/AppController.php:57
+msgid "Fish Saying"
+msgstr "鱼说"
+
+#: Controller/BroadcastsController.php:43
+msgid "广播已经发送成功"
+msgstr ""
+
+#: Controller/BroadcastsController.php:46
+msgid "广播发送失败, "
+msgstr ""
+
+#: Controller/CommentsController.php:82
+#: Controller/PackagesController.php:87;110;129;255;340
+#: Controller/ReportsController.php:76 Controller/TagsController.php:125
+#: Controller/UsersController.php:263;376;411
+#: Controller/VoicesController.php:133;209;233;256;277
+msgid "The operation is to fail"
+msgstr "操作失败"
+
+#: Controller/CommentsController.php:86
+#: Controller/PackagesController.php:92;115;134;263;345
+#: Controller/ReportsController.php:80 Controller/TagsController.php:130
+#: Controller/UsersController.php:241;259;372;391;416
+#: Controller/VoicesController.php:138;214;238;261;282
+msgid "The operation has finished in successfully"
+msgstr "操作成功完成"
+
+#: Controller/CouponsController.php:83;100
+#: Controller/PackagesController.php:65;158
+#: Controller/TagsController.php:84;101 Controller/VoicesController.php:333
+msgid "保存成功"
+msgstr ""
+
+#: Controller/CouponsController.php:134
+msgid "导出失败"
+msgstr ""
+
+#: Controller/GiftsController.php:50 Controller/UsersController.php:283
+msgid "赠送成功"
+msgstr ""
+
+#: Controller/SplashesController.php:64;69
+msgid "提交失败： "
+msgstr ""
+
+#: Controller/SplashesController.php:66 Controller/VersionsController.php:43
+msgid "提交成功"
+msgstr ""
+
+#: Controller/SplashesController.php:73
+msgid "访问API失败，"
+msgstr ""
+
+#: Controller/UploadsController.php:64;87
+msgid "找不到上传数据"
+msgstr ""
+
+#: Controller/UploadsController.php:67
+msgid "找不到切图数据"
+msgstr ""
+
+#: Controller/UploadsController.php:72
+msgid "找不到上传的文件"
+msgstr ""
+
+#: Controller/UploadsController.php:75
+msgid "上传文件失败"
+msgstr ""
+
+#: Controller/UploadsController.php:91
+msgid "找不到上传文件"
+msgstr ""
+
+#: Controller/UploadsController.php:92
+msgid "请上传后缀名为m4a的文件"
+msgstr ""
+
+#: Controller/UploadsController.php:96
+msgid "请确保音频时长在1分钟到5分钟之间"
+msgstr ""
+
+#: Controller/UsersController.php:100
+msgid "Username is inexist or password wrong"
+msgstr "用户名不存在或密码错误"
+
+#: Controller/UsersController.php:111
+msgid "Username/password wrong or session expired"
+msgstr "用户名/密码错误或登录超时"
+
+#: Controller/UsersController.php:245
+msgid "认证失败"
+msgstr ""
+
+#: Controller/UsersController.php:271
+msgid "消息发送成功"
+msgstr ""
+
+#: Controller/UsersController.php:273
+msgid "消息发送失败"
+msgstr ""
+
+#: Controller/UsersController.php:285
+msgid "赠送失败"
+msgstr ""
+
+#: Controller/UsersController.php:294
+msgid "设置成功"
+msgstr ""
+
+#: Controller/UsersController.php:296
+msgid "设置失败"
+msgstr ""
+
+#: Controller/UsersController.php:302
+msgid "添加成功"
+msgstr ""
+
+#: Controller/UsersController.php:304
+msgid "添加失败"
+msgstr ""
+
+#: Controller/UsersController.php:395
+msgid "推荐失败"
+msgstr ""
+
+#: Controller/VersionsController.php:46
+msgid "提交失败, "
+msgstr ""
+
+#: Controller/VoicesController.php:146;162
+msgid "The upload process is to fail"
+msgstr "上传失败"
+
+#: Controller/VoicesController.php:150;166
+msgid "The upload process has finished in successfully"
+msgstr "上传成功完成"
+
+#: Controller/VoicesController.php:185
+msgid "The voice has been deleted"
+msgstr "鱼说已被删除"
+
+#: Controller/VoicesController.php:187
+msgid "Try to delete the voice but to fail"
+msgstr "尝试删除鱼说失败"
+
+#: Controller/VoicesController.php:190
+msgid "No valid voice ID supplied"
+msgstr "鱼说ID非法"
+
+#: Controller/VoicesController.php:199
+#: Controller/WithdrawalsController.php:142
+msgid "请填写驳回理由"
+msgstr ""
+
+#: Controller/VoicesController.php:223
+msgid "请填写下架理由"
+msgstr ""
+
+#: Controller/WithdrawalsController.php:121;138
+msgid "缺少提现申请ID"
+msgstr ""
+
+#: Controller/WithdrawalsController.php:129
+msgid "处理提现申请成功"
+msgstr ""
+
+#: Controller/WithdrawalsController.php:149
+msgid "驳回成功"
+msgstr ""
+
+#: Controller/WithdrawalsController.php:151
+msgid "驳回失败，"
+msgstr ""
+
+#: Model/Test.php:29
+msgid "Invalid username supplied"
+msgstr "鱼说ID非法"
+
+#: Model/Data/Crop.php:26
+msgid "切图高宽数值非法"
+msgstr ""
+
+#: Utility/Encode/Audio.php:67
+msgid "Can not read duration for this audio"
+msgstr ""
+
+#: View/Broadcasts/add.ctp:6 View/Broadcasts/index.ctp:6
+#: View/Elements/sidebar.ctp:85 View/Helper/UserHelper.php:143
+msgid "推送消息"
+msgstr ""
+
+#: View/Broadcasts/add.ctp:11 View/Broadcasts/index.ctp:11
+msgid "历史消息"
+msgstr ""
+
+#: View/Broadcasts/add.ctp:21 View/Gifts/add.ctp:29
+msgid "消息内容："
+msgstr ""
+
+#: View/Broadcasts/add.ctp:27
+msgid "消息链接："
+msgstr ""
+
+#: View/Broadcasts/add.ctp:38
+msgid "发送广播"
+msgstr ""
+
+#: View/Broadcasts/index.ctp:21
+msgid "消息内容"
+msgstr ""
+
+#: View/Broadcasts/index.ctp:22 View/Gifts/index.ctp:23
+#: View/Reports/index.ctp:8 View/Users/auth_add_list.ctp:29
+#: View/Users/auth_list.ctp:29 View/Users/index.ctp:17
+#: View/Users/recommend_add_list.ctp:29
+msgid "语言"
+msgstr ""
+
+#: View/Broadcasts/index.ctp:23
+msgid "推送对象"
+msgstr ""
+
+#: View/Broadcasts/index.ctp:24
+msgid "推送时间"
+msgstr ""
+
+#: View/Broadcasts/index.ctp:25 View/Packages/index.ctp:49
+#: View/Reports/index.ctp:12 View/Withdrawals/processed.ctp:26
+msgid "状态"
+msgstr ""
+
+#: View/Comments/index.ctp:8 View/Users/auth_add_list.ctp:34
+#: View/Users/auth_list.ctp:33 View/Users/index.ctp:22
+#: View/Users/recommend_add_list.ctp:34 View/Voices/tag.ctp:6
+msgid "鱼说"
+msgstr ""
+
+#: View/Comments/index.ctp:9
+msgid "鱼说语言"
+msgstr ""
+
+#: View/Comments/index.ctp:10
+msgid "打分"
+msgstr ""
+
+#: View/Comments/index.ctp:11
+msgid "评论内容"
+msgstr ""
+
+#: View/Comments/index.ctp:12 View/Coupons/detail.ctp:24
+#: View/Receipts/index.ctp:10 View/Withdrawals/index.ctp:24
+#: View/Withdrawals/processed.ctp:24
+msgid "用户"
+msgstr ""
+
+#: View/Comments/index.ctp:13 View/Histories/index.ctp:19
+#: View/Receipts/index.ctp:12
+msgid "时间"
+msgstr ""
+
+#: View/Comments/index.ctp:14 View/Coupons/index.ctp:54
+#: View/Packages/index.ctp:54 View/Tags/index.ctp:47
+#: View/Users/auth_add_list.ctp:35 View/Users/auth_list.ctp:35
+#: View/Users/index.ctp:27 View/Users/recommend_add_list.ctp:35
+#: View/Users/recommend_list.ctp:24 View/Withdrawals/index.ctp:26
+msgid "操作"
+msgstr ""
+
+#: View/Comments/index.ctp:68
+msgid "正在屏蔽..."
+msgstr ""
+
+#: View/Comments/index.ctp:78 View/Elements/modals/comment_hide.ctp:13
+msgid "是的，屏蔽吧"
+msgstr ""
+
+#: View/Coupons/add.ctp:30
+msgid "数量："
+msgstr ""
+
+#: View/Coupons/add.ctp:43
+msgid "备注："
+msgstr ""
+
+#: View/Coupons/add.ctp:49 View/Tags/add.ctp:24 View/Voices/tag.ctp:36
+msgid "保存"
+msgstr ""
+
+#: View/Coupons/detail.ctp:18
+msgid "编号"
+msgstr ""
+
+#: View/Coupons/detail.ctp:29
+msgid "使用时间"
+msgstr ""
+
+#: View/Coupons/detail.ctp:76 View/Coupons/index.ctp:108
+#: View/Packages/index.ctp:155;176 View/Tags/index.ctp:100
+#: View/Users/auth_add_list.ctp:104 View/Users/auth_list.ctp:115;129
+#: View/Users/recommend_add_list.ctp:104 View/Users/recommend_list.ctp:98;112
+#: View/Voices/pending.ctp:113 View/Voices/unavailable.ctp:111
+msgid "正在处理..."
+msgstr ""
+
+#: View/Coupons/index.ctp:7
+msgid "批量生成"
+msgstr ""
+
+#: View/Coupons/index.ctp:28
+msgid "批号"
+msgstr ""
+
+#: View/Coupons/index.ctp:34
+msgid "面值"
+msgstr ""
+
+#: View/Coupons/index.ctp:39
+msgid "数量"
+msgstr ""
+
+#: View/Coupons/index.ctp:44
+msgid "过期时间"
+msgstr ""
+
+#: View/Coupons/index.ctp:49
+msgid "备注"
+msgstr ""
+
+#: View/Elements/header.ctp:4
+msgid "Welcome to contributor platform of fish saying"
+msgstr "欢迎来到鱼说分享平台"
+
+#: View/Elements/header.ctp:8
+msgid "Hi dude"
+msgstr "欢迎你"
+
+#: View/Elements/header.ctp:9 View/Voices/add.ctp:60
+msgid "Chinese"
+msgstr "中文"
+
+#: View/Elements/header.ctp:10 View/Voices/add.ctp:61
+msgid "English"
+msgstr "英文"
+
+#: View/Elements/sidebar.ctp:30
+msgid "Voice List"
+msgstr "鱼说列表"
+
+#: View/Elements/sidebar.ctp:33
+msgid "Approve voice"
+msgstr "鱼说审核"
+
+#: View/Elements/sidebar.ctp:36
+msgid "鱼说推荐"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:39
+msgid "鱼说包列表"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:43
+msgid "评论管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:46
+msgid "举报管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:54
+msgid "用户列表"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:57 View/Gifts/add.ctp:6 View/Gifts/index.ctp:6;21
+#: View/Helper/UserHelper.php:152
+msgid "赠送时长"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:60
+msgid "认证管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:63
+msgid "用户推荐"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:71
+msgid "订单管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:74
+msgid "提现管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:77
+msgid "二维码生成管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:93
+msgid "版本管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:96
+msgid "启动画面管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:99
+msgid "标签管理"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:102
+msgid "销售补贴"
+msgstr ""
+
+#: View/Elements/sidebar.ctp:112
+msgid "操作记录"
+msgstr ""
+
+#: View/Elements/version_tab.ctp:4
+msgid "iOS"
+msgstr ""
+
+#: View/Elements/version_tab.ctp:9
+msgid "Android"
+msgstr ""
+
+#: View/Elements/modals/comment_hide.ctp:6
+msgid "屏蔽评论"
+msgstr ""
+
+#: View/Elements/modals/comment_hide.ctp:9
+msgid "你真的想要屏蔽这条评论吗？"
+msgstr ""
+
+#: View/Elements/modals/comment_hide.ctp:12
+#: View/Elements/modals/common_tip.ctp:12 View/Elements/modals/delete.ctp:12
+#: View/Elements/modals/invalid.ctp:12
+#: View/Elements/modals/package_status.ctp:12
+#: View/Elements/modals/unavailable.ctp:12
+msgid "Close"
+msgstr "关闭"
+
+#: View/Elements/modals/common_tip.ctp:6
+msgid "操作提示"
+msgstr ""
+
+#: View/Elements/modals/common_tip.ctp:9
+msgid "确定删除？"
+msgstr ""
+
+#: View/Elements/modals/common_tip.ctp:13
+#: View/Elements/modals/user_auth.ctp:14
+#: View/Elements/modals/user_recommend.ctp:14 View/Users/auth_add_list.ctp:113
+#: View/Users/auth_list.ctp:124 View/Users/recommend_add_list.ctp:112
+#: View/Users/recommend_list.ctp:107
+msgid "确定"
+msgstr ""
+
+#: View/Elements/modals/delete.ctp:6
+msgid "删除确认"
+msgstr ""
+
+#: View/Elements/modals/delete.ctp:9
+msgid "确定要删除吗？"
+msgstr ""
+
+#: View/Elements/modals/delete.ctp:13 View/Packages/index.ctp:183
+msgid "是的，删除吧"
+msgstr ""
+
+#: View/Elements/modals/invalid.ctp:6 View/Voices/invalid.ctp:27
+msgid "Invalid Reason"
+msgstr "驳回原因"
+
+#: View/Elements/modals/invalid.ctp:9
+msgid "请填写驳回理由..."
+msgstr ""
+
+#: View/Elements/modals/invalid.ctp:13
+msgid "Invalid it now !"
+msgstr "驳回"
+
+#: View/Elements/modals/package_status.ctp:6
+msgid "上架鱼说包"
+msgstr ""
+
+#: View/Elements/modals/package_status.ctp:9
+msgid "确定上架鱼说包？"
+msgstr ""
+
+#: View/Elements/modals/package_status.ctp:13 View/Packages/index.ctp:171
+msgid "是的，上架吧"
+msgstr ""
+
+#: View/Elements/modals/qrcode.ctp:8
+msgid "二维码"
+msgstr ""
+
+#: View/Elements/modals/qrcode.ctp:15 View/Elements/modals/send_gift.ctp:20
+#: View/Elements/modals/send_message.ctp:12
+#: View/Elements/modals/setting_role.ctp:24
+#: View/Elements/modals/user_auth.ctp:13
+#: View/Elements/modals/user_recommend.ctp:13
+#: View/Elements/modals/voice_score.ctp:20
+#: View/Elements/modals/withdrawal_revert.ctp:12
+msgid "关闭"
+msgstr ""
+
+#: View/Elements/modals/send_gift.ctp:6
+msgid "赠送时长给"
+msgstr ""
+
+#: View/Elements/modals/send_gift.ctp:14
+msgid "请填写赠送时长数额..."
+msgstr ""
+
+#: View/Elements/modals/send_gift.ctp:15
+msgid "（分钟）"
+msgstr ""
+
+#: View/Elements/modals/send_gift.ctp:17
+msgid "请写下想发给用户的话..."
+msgstr ""
+
+#: View/Elements/modals/send_gift.ctp:21 View/Gifts/add.ctp:35
+msgid "赠送"
+msgstr ""
+
+#: View/Elements/modals/send_message.ctp:6
+msgid "推送消息给"
+msgstr ""
+
+#: View/Elements/modals/send_message.ctp:9
+msgid "请写下需要推送的消息..."
+msgstr ""
+
+#: View/Elements/modals/send_message.ctp:13 View/Users/index.ctp:146;181
+msgid "发送"
+msgstr ""
+
+#: View/Elements/modals/setting_role.ctp:6
+msgid "为"
+msgstr ""
+
+#: View/Elements/modals/setting_role.ctp:6
+msgid "设置账号类型"
+msgstr ""
+
+#: View/Elements/modals/setting_role.ctp:11
+msgid "设置为以下哪一种类型？"
+msgstr ""
+
+#: View/Elements/modals/setting_role.ctp:13 View/Helper/UserHelper.php:46
+#: View/Helper/VoiceHelper.php:290
+msgid "管理员"
+msgstr ""
+
+#: View/Elements/modals/setting_role.ctp:14 View/Helper/UserHelper.php:48
+#: View/Helper/VoiceHelper.php:294
+msgid "普通账号"
+msgstr ""
+
+#: View/Elements/modals/setting_role.ctp:15 View/Helper/UserHelper.php:47
+#: View/Helper/VoiceHelper.php:292
+msgid "审核账号"
+msgstr ""
+
+#: View/Elements/modals/setting_role.ctp:16 View/Helper/UserHelper.php:49
+#: View/Helper/VoiceHelper.php:296
+msgid "合作导游账号"
+msgstr ""
+
+#: View/Elements/modals/setting_role.ctp:25 View/Users/index.ctp:122
+msgid "设置"
+msgstr ""
+
+#: View/Elements/modals/unavailable.ctp:6 View/Voices/unavailable.ctp:38
+msgid "Unavailable Reason"
+msgstr "下架原因"
+
+#: View/Elements/modals/unavailable.ctp:9
+msgid "请填写下架理由..."
+msgstr ""
+
+#: View/Elements/modals/unavailable.ctp:13
+msgid "Unavailable it now !"
+msgstr "下架"
+
+#: View/Elements/modals/user_auth.ctp:6
+msgid "用户认证"
+msgstr ""
+
+#: View/Elements/modals/user_auth.ctp:10
+msgid "认证信息30字以内..."
+msgstr ""
+
+#: View/Elements/modals/user_recommend.ctp:6
+msgid "填写推荐理由"
+msgstr ""
+
+#: View/Elements/modals/user_recommend.ctp:10
+msgid "推荐理由30字以内..."
+msgstr ""
+
+#: View/Elements/modals/voice_score.ctp:6
+msgid "评分并上架"
+msgstr ""
+
+#: View/Elements/modals/voice_score.ctp:21 View/Voices/pending.ctp:123
+#: View/Voices/unavailable.ctp:121
+msgid "上架"
+msgstr ""
+
+#: View/Elements/modals/withdrawal_revert.ctp:6
+msgid "驳回理由"
+msgstr ""
+
+#: View/Elements/modals/withdrawal_revert.ctp:9
+msgid "请写下驳回理由..."
+msgstr ""
+
+#: View/Elements/modals/withdrawal_revert.ctp:13
+msgid "提交"
+msgstr ""
+
+#: View/Gifts/add.ctp:11 View/Gifts/index.ctp:11
+msgid "赠送历史"
+msgstr ""
+
+#: View/Gifts/add.ctp:21
+msgid "赠送数额："
+msgstr ""
+
+#: View/Gifts/index.ctp:22
+msgid "赠送消息"
+msgstr ""
+
+#: View/Gifts/index.ctp:24
+msgid "赠送对象"
+msgstr ""
+
+#: View/Gifts/index.ctp:25
+msgid "赠送时间"
+msgstr ""
+
+#: View/Helper/BroadcastHelper.php:52 View/Helper/GiftLogHelper.php:58
+msgid "全局推送"
+msgstr ""
+
+#: View/Helper/CommentHelper.php:84
+msgid "屏蔽"
+msgstr ""
+
+#: View/Helper/CommentHelper.php:94
+msgid "已屏蔽"
+msgstr ""
+
+#: View/Helper/CouponHelper.php:48 View/Helper/TagHelper.php:48
+msgid "编辑"
+msgstr ""
+
+#: View/Helper/CouponHelper.php:54
+msgid "导出"
+msgstr ""
+
+#: View/Helper/CouponHelper.php:61
+msgid "明细"
+msgstr ""
+
+#: View/Helper/CouponHelper.php:66 View/Helper/PackagesHelper.php:170
+#: View/Helper/TagHelper.php:56 View/Helper/UserHelper.php:197
+msgid "删除"
+msgstr ""
+
+#: View/Helper/PackagesHelper.php:60
+msgid "未上架"
+msgstr ""
+
+#: View/Helper/PackagesHelper.php:63
+msgid "已上架"
+msgstr ""
+
+#: View/Helper/PackagesHelper.php:110 View/Helper/VoiceHelper.php:159
+msgid "Edit"
+msgstr "编辑"
+
+#: View/Helper/ReceiptHelper.php:65
+msgid "异常"
+msgstr ""
+
+#: View/Helper/ReceiptHelper.php:74
+msgid "支付宝"
+msgstr ""
+
+#: View/Helper/ReceiptHelper.php:77
+msgid "APP Store"
+msgstr ""
+
+#: View/Helper/ReceiptHelper.php:80
+msgid "二维码充值"
+msgstr ""
+
+#: View/Helper/ReceiptHelper.php:83
+msgid "未知来源"
+msgstr ""
+
+#: View/Helper/ReportHelper.php:56 View/Withdrawals/index.ctp:12;42
+#: View/Withdrawals/processed.ctp:12
+msgid "已处理"
+msgstr ""
+
+#: View/Helper/ReportHelper.php:59
+msgid "未处理"
+msgstr ""
+
+#: View/Helper/ReportHelper.php:62
+msgid "正在处理中..."
+msgstr ""
+
+#: View/Helper/TagHelper.php:52
+msgid "管理标签"
+msgstr ""
+
+#: View/Helper/UserHelper.php:131
+msgid "设置权限"
+msgstr ""
+
+#: View/Helper/UserHelper.php:173
+msgid "编辑认证信息"
+msgstr ""
+
+#: View/Helper/UserHelper.php:181
+msgid "编辑理由"
+msgstr ""
+
+#: View/Helper/UserHelper.php:189
+msgid "取消认证"
+msgstr ""
+
+#: View/Helper/UserHelper.php:206
+msgid "认证"
+msgstr ""
+
+#: View/Helper/UserHelper.php:219
+msgid "推荐"
+msgstr ""
+
+#: View/Helper/VoiceHelper.php:105;131;143 View/Voices/invalid.ctp:7
+#: View/Voices/pending.ctp:7
+msgid "Pending"
+msgstr "待审核"
+
+#: View/Helper/VoiceHelper.php:108;134 View/Voices/index.ctp:16
+#: View/Voices/unavailable.ctp:7
+msgid "Approved"
+msgstr "在售"
+
+#: View/Helper/VoiceHelper.php:111;137 View/Voices/invalid.ctp:12
+#: View/Voices/pending.ctp:12
+msgid "Invalid"
+msgstr "已驳回"
+
+#: View/Helper/VoiceHelper.php:114;140 View/Voices/index.ctp:22
+#: View/Voices/unavailable.ctp:12
+msgid "Unavailable"
+msgstr "已下架"
+
+#: View/Helper/VoiceHelper.php:118
+msgid "（共"
+msgstr ""
+
+#: View/Helper/VoiceHelper.php:121
+msgid "“"
+msgstr ""
+
+#: View/Helper/VoiceHelper.php:224
+msgid "Free"
+msgstr "免费"
+
+#: View/Helper/VoiceHelper.php:242
+msgid "anonymous"
+msgstr "匿名"
+
+#: View/Helper/VoiceHelper.php:249
+msgid "Reject"
+msgstr "驳回"
+
+#: View/Helper/VoiceHelper.php:280
+msgid "取消推荐"
+msgstr ""
+
+#: View/Helper/VoiceHelper.php:304
+msgid "Off shelf"
+msgstr "下架"
+
+#: View/Helper/WithdrawalHelper.php:100
+msgid "转账成功"
+msgstr ""
+
+#: View/Helper/WithdrawalHelper.php:103
+msgid "已驳回"
+msgstr ""
+
+#: View/Helper/WithdrawalHelper.php:111 View/Withdrawals/index.ctp:90
+msgid "驳回"
+msgstr ""
+
+#: View/Histories/index.ctp:15
+msgid "登录名"
+msgstr ""
+
+#: View/Histories/index.ctp:16
+msgid "动作"
+msgstr ""
+
+#: View/Histories/index.ctp:17
+msgid "请求路径"
+msgstr ""
+
+#: View/Histories/index.ctp:18
+msgid "提交数据"
+msgstr ""
+
+#: View/Packages/index.ctp:6
+msgid "新建鱼说包"
+msgstr ""
+
+#: View/Packages/index.ctp:24
+msgid "鱼说包"
+msgstr ""
+
+#: View/Packages/index.ctp:29
+msgid "关联鱼说"
+msgstr ""
+
+#: View/Packages/index.ctp:34
+msgid "时长"
+msgstr ""
+
+#: View/Packages/index.ctp:39
+msgid "收藏数"
+msgstr ""
+
+#: View/Packages/index.ctp:44
+msgid "创建时间"
+msgstr ""
+
+#: View/Packages/list_voice.ctp:13 View/Packages/relation_voice.ctp:12
+msgid "已关联"
+msgstr ""
+
+#: View/Packages/list_voice.ctp:19 View/Packages/relation_voice.ctp:18
+msgid "新增关联"
+msgstr ""
+
+#: View/Packages/list_voice.ctp:35 View/Packages/relation_voice.ctp:28
+#: View/Voices/index.ctp:38 View/Voices/invalid.ctp:22
+#: View/Voices/pending.ctp:22 View/Voices/recommend.ctp:38
+#: View/Voices/recommended.ctp:38 View/Voices/unavailable.ctp:28
+msgid "Voice"
+msgstr "鱼说"
+
+#: View/Packages/list_voice.ctp:36 View/Voices/index.ctp:39
+#: View/Voices/invalid.ctp:23 View/Voices/pending.ctp:23
+#: View/Voices/recommend.ctp:39 View/Voices/recommended.ctp:39
+#: View/Voices/unavailable.ctp:29
+msgid "Language"
+msgstr "语言"
+
+#: View/Packages/list_voice.ctp:37 View/Voices/index.ctp:40
+#: View/Voices/invalid.ctp:24 View/Voices/pending.ctp:24
+#: View/Voices/recommend.ctp:40 View/Voices/recommended.ctp:40
+#: View/Voices/unavailable.ctp:30
+msgid "Length"
+msgstr "时长"
+
+#: View/Packages/list_voice.ctp:38 View/Voices/index.ctp:41
+#: View/Voices/recommend.ctp:41 View/Voices/recommended.ctp:41
+#: View/Voices/unavailable.ctp:31
+msgid "Score"
+msgstr "评分"
+
+#: View/Packages/list_voice.ctp:39 View/Voices/index.ctp:47
+#: View/Voices/recommend.ctp:46 View/Voices/recommended.ctp:46
+#: View/Voices/unavailable.ctp:36
+msgid "Comments"
+msgstr "评论数"
+
+#: View/Packages/list_voice.ctp:40 View/Voices/index.ctp:42
+#: View/Voices/invalid.ctp:25 View/Voices/pending.ctp:25
+#: View/Voices/recommend.ctp:42 View/Voices/recommended.ctp:42
+#: View/Voices/unavailable.ctp:32
+msgid "Author"
+msgstr "作者"
+
+#: View/Packages/list_voice.ctp:41 View/Voices/index.ctp:43
+#: View/Voices/unavailable.ctp:33
+msgid "Checkouts"
+msgstr "购买数量"
+
+#: View/Packages/list_voice.ctp:42 View/Voices/index.ctp:44
+#: View/Voices/recommend.ctp:44 View/Voices/recommended.ctp:47
+#: View/Voices/unavailable.ctp:34
+msgid "Earn"
+msgstr "总收入"
+
+#: View/Packages/list_voice.ctp:43 View/Voices/index.ctp:45
+#: View/Voices/recommend.ctp:45 View/Voices/recommended.ctp:48
+#: View/Voices/unavailable.ctp:35
+msgid "PlayCount"
+msgstr "播放次数"
+
+#: View/Packages/list_voice.ctp:46 View/Packages/relation_voice.ctp:30
+#: View/Voices/index.ctp:49 View/Voices/pending.ctp:28
+#: View/Voices/recommend.ctp:48 View/Voices/recommended.ctp:50
+#: View/Voices/unavailable.ctp:39
+msgid "Action"
+msgstr "操作"
+
+#: View/Packages/list_voice.ctp:137 View/Voices/index.ctp:141
+msgid "正在下架..."
+msgstr ""
+
+#: View/Packages/list_voice.ctp:145;170 View/Voices/index.ctp:149;174
+#: View/Voices/pending.ctp:100
+msgid "下架"
+msgstr ""
+
+#: View/Receipts/index.ctp:7
+msgid "订单号"
+msgstr ""
+
+#: View/Receipts/index.ctp:8
+msgid "充值时间"
+msgstr ""
+
+#: View/Receipts/index.ctp:9 View/Withdrawals/index.ctp:22
+#: View/Withdrawals/processed.ctp:22
+msgid "金额"
+msgstr ""
+
+#: View/Receipts/index.ctp:11
+msgid "来源"
+msgstr ""
+
+#: View/Reports/index.ctp:7
+msgid "被举报鱼说"
+msgstr ""
+
+#: View/Reports/index.ctp:9
+msgid "举报内容"
+msgstr ""
+
+#: View/Reports/index.ctp:10
+msgid "举报人"
+msgstr ""
+
+#: View/Reports/index.ctp:11
+msgid "举报时间"
+msgstr ""
+
+#: View/Splashes/add.ctp:13
+msgid "上传"
+msgstr ""
+
+#: View/Tags/add.ctp:12
+msgid "分类名称："
+msgstr ""
+
+#: View/Tags/add.ctp:18
+msgid "标签名称："
+msgstr ""
+
+#: View/Tags/index.ctp:9
+msgid "添加标签"
+msgstr ""
+
+#: View/Tags/index.ctp:37 View/Voices/recommend.ctp:47
+#: View/Voices/recommended.ctp:49
+msgid "标签"
+msgstr ""
+
+#: View/Tags/index.ctp:42
+msgid "分类"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:7 View/Users/auth_list.ctp:7
+msgid "用户认证列表"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:12 View/Users/auth_list.ctp:12
+msgid "新增认证"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:27 View/Users/auth_list.ctp:27
+#: View/Users/index.ctp:15 View/Users/recommend_add_list.ctp:27
+#: View/Users/recommend_list.ctp:21
+msgid "头像"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:28 View/Users/auth_list.ctp:28
+#: View/Users/index.ctp:16 View/Users/recommend_add_list.ctp:28
+msgid "用户名"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:30 View/Users/index.ctp:18
+#: View/Users/recommend_add_list.ctp:30
+msgid "邮箱"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:31 View/Users/auth_list.ctp:30
+#: View/Users/index.ctp:19 View/Users/recommend_add_list.ctp:31
+msgid "账户余额"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:32 View/Users/auth_list.ctp:31
+#: View/Users/index.ctp:20 View/Users/recommend_add_list.ctp:32
+msgid "可提现"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:33 View/Users/auth_list.ctp:32
+#: View/Users/index.ctp:21 View/Users/recommend_add_list.ctp:33
+msgid "购买次数"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:97 View/Users/auth_list.ctp:108
+msgid "请填认证信息"
+msgstr ""
+
+#: View/Users/auth_add_list.ctp:101 View/Users/auth_list.ctp:112
+msgid "认证信息30字以内!"
+msgstr ""
+
+#: View/Users/auth_list.ctp:34
+msgid "认证信息"
+msgstr ""
+
+#: View/Users/index.ctp:23
+msgid "注册时间"
+msgstr ""
+
+#: View/Users/index.ctp:114
+msgid "正在提交..."
+msgstr ""
+
+#: View/Users/index.ctp:134;169
+msgid "请填写想发送给用户的消息"
+msgstr ""
+
+#: View/Users/index.ctp:138;173
+msgid "正在发送..."
+msgstr ""
+
+#: View/Users/index.ctp:165
+msgid "请填写时长，单位：分钟"
+msgstr ""
+
+#: View/Users/recommend_add_list.ctp:7 View/Users/recommend_list.ctp:7
+msgid "推荐用户列表"
+msgstr ""
+
+#: View/Users/recommend_add_list.ctp:12 View/Users/recommend_list.ctp:12
+#: View/Voices/recommend.ctp:22 View/Voices/recommended.ctp:22
+msgid "新增推荐"
+msgstr ""
+
+#: View/Users/recommend_add_list.ctp:97
+msgid "请填写推荐理由信息"
+msgstr ""
+
+#: View/Users/recommend_add_list.ctp:101 View/Users/recommend_list.ctp:95
+msgid "推荐理由30字以内!"
+msgstr ""
+
+#: View/Users/recommend_list.ctp:22
+msgid "推荐用户"
+msgstr ""
+
+#: View/Users/recommend_list.ctp:23
+msgid "推荐理由"
+msgstr ""
+
+#: View/Users/recommend_list.ctp:91
+msgid "请填推荐理由"
+msgstr ""
+
+#: View/Users/recommend_list.ctp:123
+msgid "编辑推荐理由"
+msgstr ""
+
+#: View/Users/recommend_list.ctp:124
+msgid "确定要删除对此用户的推荐吗？"
+msgstr ""
+
+#: View/Versions/add.ctp:10
+msgid "平台："
+msgstr ""
+
+#: View/Versions/add.ctp:19
+msgid "版本号："
+msgstr ""
+
+#: View/Versions/add.ctp:24
+msgid "版本描述："
+msgstr ""
+
+#: View/Versions/add.ctp:29
+msgid "立即发布"
+msgstr ""
+
+#: View/Versions/index.ctp:6
+msgid "发布新版本"
+msgstr ""
+
+#: View/Versions/index.ctp:14
+msgid "历史版本"
+msgstr ""
+
+#: View/Versions/index.ctp:15
+msgid "平台"
+msgstr ""
+
+#: View/Versions/index.ctp:16
+msgid "版本描述"
+msgstr ""
+
+#: View/Versions/index.ctp:17
+msgid "发布时间"
+msgstr ""
+
+#: View/Voices/add.ctp:3
+msgid "Post new voice"
+msgstr "新增鱼说"
+
+#: View/Voices/add.ctp:10
+msgid "Subject: "
+msgstr "标题"
+
+#: View/Voices/add.ctp:18
+msgid "Cover: "
+msgstr "封面图"
+
+#: View/Voices/add.ctp:24
+msgid "Geo location: "
+msgstr "定位"
+
+#: View/Voices/add.ctp:26
+msgid "The coordinate will be filled in automatically until drag the bubble"
+msgstr "拖动气泡，坐标会自动填入下方的输入框"
+
+#: View/Voices/add.ctp:31
+msgid "Longitude(E): "
+msgstr "经度(E)："
+
+#: View/Voices/add.ctp:39
+msgid "Latitude(N): "
+msgstr "纬度(N)："
+
+#: View/Voices/add.ctp:51
+msgid "Audio file: "
+msgstr "音频文件："
+
+#: View/Voices/add.ctp:56
+msgid "Language: "
+msgstr "鱼说语言： "
+
+#: View/Voices/add.ctp:65
+msgid "Is Free: "
+msgstr "是否免费："
+
+#: View/Voices/add.ctp:69
+msgid "It's not free, needs to buy first"
+msgstr "不免费，需要购买"
+
+#: View/Voices/add.ctp:70
+msgid "Yeah, It's free"
+msgstr "是的，是免费的"
+
+#: View/Voices/add.ctp:74
+msgid "Voice length: "
+msgstr "鱼说时长："
+
+#: View/Voices/add.ctp:82
+msgid "Post now"
+msgstr "添加"
+
+#: View/Voices/index.ctp:46 View/Voices/pending.ctp:27
+msgid "标签个数"
+msgstr ""
+
+#: View/Voices/index.ctp:48
+msgid "Approved Date"
+msgstr "上架时间"
+
+#: View/Voices/invalid.ctp:26
+msgid "Invalid Date"
+msgstr "驳回时间"
+
+#: View/Voices/pending.ctp:26
+msgid "Created"
+msgstr "提交时间"
+
+#: View/Voices/pending.ctp:58
+msgid "Approve"
+msgstr "通过"
+
+#: View/Voices/pending.ctp:110 View/Voices/unavailable.ctp:108
+msgid "请先评分"
+msgstr ""
+
+#: View/Voices/recommend.ctp:16 View/Voices/recommended.ctp:16
+msgid "推荐鱼说"
+msgstr ""
+
+#: View/Voices/recommend.ctp:43 View/Voices/recommended.ctp:43
+msgid "购买人数"
+msgstr ""
+
+#: View/Voices/tag.ctp:6
+msgid "编辑标签"
+msgstr ""
+
+#: View/Voices/tag.ctp:59
+msgid "最多选择5个标签,也可直接输入."
+msgstr ""
+
+#: View/Voices/unavailable.ctp:37
+msgid "Unavailable Date"
+msgstr "下架时间"
+
+#: View/Voices/unavailable.ctp:75
+msgid "Reshelf"
+msgstr "重新上架"
+
+#: View/Withdrawals/index.ctp:7 View/Withdrawals/processed.ctp:7
+msgid "待处理"
+msgstr ""
+
+#: View/Withdrawals/index.ctp:21 View/Withdrawals/processed.ctp:21
+msgid "兑换分钟数"
+msgstr ""
+
+#: View/Withdrawals/index.ctp:23 View/Withdrawals/processed.ctp:23
+msgid "账户"
+msgstr ""
+
+#: View/Withdrawals/index.ctp:25
+msgid "申请时间"
+msgstr ""
+
+#: View/Withdrawals/index.ctp:81
+msgid "正在驳回..."
+msgstr ""
+
+#: View/Withdrawals/processed.ctp:25
+msgid "处理时间"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Plays"
+#~ msgstr "试听"
+
+#~ msgid "Logout"
+#~ msgstr "登出"
+
+#~ msgid "Prev"
+#~ msgstr "上一页"
+
+#~ msgid "Next"
+#~ msgstr "下一页"
+
+#~ msgid "Approved voice"
+#~ msgstr "通过审核"
+
+#~ msgid "Delete"
+#~ msgstr "删除"
+
+#~ msgid "See location"
+#~ msgstr "查看地图"
+
+#~ msgid "sec"
+#~ msgstr "秒"
+
+#~ msgid "Please write comments..."
+#~ msgstr "请写点评论在这里..."
+
+#~ msgid "addPackage"
+#~ msgstr "新建解说包"

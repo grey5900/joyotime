@@ -1,0 +1,82 @@
+<!--{template common/header}-->
+<div class="container block-top">
+    <section>
+        <div class="main">
+            <!-- <div class="model-search">
+                <a href="http://f.chengdu.cn/search/building/" target="_blank" class="arrow">没有你喜欢的楼盘,<em>搜索试试</em></a>
+            </div> -->
+            <div class="model-search">
+                <div class="tab-pane active">
+                    <form name="search_building" action="/web/index" method="get" class="form-inline">
+                        <div class="input-box">
+                        <input type="text" class="form-control" name="keywords" placeholder="请输入团购楼盘的名字" value="{echo urldecode($keywords);}" id="keywords">
+                        <input type="submit" value="  搜索  "  class="btn btn-danger">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            {loop $list['list'] $l}
+            <a class="model" href="/web/detail/{$l['house_id']}" target="_blank">
+                <div class="model-header">
+                    <h3>{$l['name']}{if $l['label_area']}<span>[{$l['label_area']}]</span>{/if}</h3>
+                    <p>
+                        {$l['group']['title']}
+                    </p>
+                </div>
+                <div class="model-info">
+                    <div class="btn-false">
+                        {if $l['group']['status']==0}我要参团{elseif $l['group']['status']==1}我想要优惠{/if}
+                    </div>
+                    <div class="joined">
+                        <span>{echo intval($l['group']['count']);}</span>人已团购
+                    </div>
+                    <div class="info">
+                        <p>
+                            <i class="icon-money"></i>
+                            {$l['label_price']}
+                        </p>
+                        <p class="time" >
+                            <i class="icon-time"></i>
+                            {if ($l['end_sc']['days']<0 || $l['end_sc']['hours']<0 || $l['end_sc']['mins']<0) || $l['group']['status']==1 }
+                            已经结束
+                            {else}
+                            剩余：{$l['end_sc']['days']}天{$l['end_sc']['hours']}小时{$l['end_sc']['mins']}分
+                            {/if}
+                        </p>
+                    </div>
+                </div>
+                <div class="model-img ">
+                    <img src="{$l['cover']}" width="480" height="225" alt="" />
+                </div> 
+            </a>
+            {/loop}
+
+            {$paginate}
+
+        </div>
+        <!--{template siderbar}-->
+    </section>
+</div>
+<script>
+var no_record = {echo intval($no_record);};
+
+$(function(){
+    
+    $("form[name=search_building]").on("submit", function(){
+        var keywords = $('#keywords').val();
+        var url = "/web/index/{$page}/"+keywords;
+        window.location.href = url;
+        if(no_record){
+            $.messager('没有搜索到记录，看看其他楼盘吧。');
+        }
+        return false;
+    });
+    
+    if(no_record){
+        $.messager('没有搜索到记录，看看其他楼盘吧。');
+    }
+});
+
+</script>
+<!--{template common/footer}-->

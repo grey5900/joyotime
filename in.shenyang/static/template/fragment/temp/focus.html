@@ -1,0 +1,21 @@
+<div class="focus">
+	<div class="bg-al"></div>
+	<div class="bg-al" style="height:20px;"></div>
+	<div class="focus_Num"> 
+		<ul class="focus_tit">
+			<!--{loop $list $o $v}-->
+			<li>{$v[title]}</li>
+			<!--{/loop}-->
+		</ul>
+		<div class="focus_Numid">
+			<!--{loop $list $o $v}-->
+			<span></span>
+			<!--{/loop}-->
+		</div>            
+	</div>
+	<div class="flash-img focus_pic">
+		<!--{loop $list $o $v}-->
+		<a href="{$v[link]}" target="_blank"><img src="{$v[image]}" {if $frag[rule][pic_size][0]}width="{$frag[rule][pic_size][0]}"{/if} {if $frag[rule][pic_size][1]}height="{$frag[rule][pic_size][1]}"{/if} alt="{$v[summary]}" /></a>
+		<!--{/loop}-->
+	</div>
+</div>

@@ -1,0 +1,92 @@
+{if $v3_fragments['v3_f_tf4.0']}
+<div class="module tg" >
+					<div class="hd" style="display:none">
+						<h2>成都团房</h2>
+						{if $v3_fragments['v3_f_tf4.0']['frag']['rule']['jump_link']}<a href="{$v3_fragments['v3_f_tf4.0']['frag']['rule']['jump_link']}" class="jump_link" target="_blank">更多&gt;</a>{/if}
+					</div>
+					<div class="bd" style="display:none">
+						<div class="primary">
+							<h3><a href="" target="_blank">-</a></h3>
+							<div class="img">
+								<a href="" target="_blank"><img src="t.jpg" alt="" /></a>
+							</div>
+							<div class="info">
+								<ul>
+									<li>
+										<div class="price">
+											<p>均价：<em>-</em>元/㎡</p>
+											<p>优惠：<i>-</i></p>
+											<p>返利：<span>-</span></p>
+										</div>
+									</li>
+									<li>
+										<div class="people">
+											<h3><em>78</em>人已团购</h3>
+											<p >剩余时间：<span id="js_countdown">12时58分49秒</span></p>
+										</div>
+									</li>
+									<li>
+										<a class="btn btn-vertical btn-warning" href="" target="_blank">我要团购</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+<script>
+var count_timeout = null;
+var count_down = 0;
+$(function(){
+	
+	var source = '{$v3_fragments[v3_f_tf4.0][frag][dataSource]}';
+	
+	$.getJSON(source+'&callback=?',function(data){
+	
+		var info = data;
+		var now = {eval echo time();};
+		count_down = parseInt(info.end_time - now);//parseInt($("#js_countdown").attr("data") - now);
+		info.image && $(".tg a:not(.jump_link)").attr("href",info.url).find("img").attr("src",info.image).attr("alt",info.title);
+		info.title && $(".tg .primary h3 a").attr("href",info.url).html(info.title);
+		//$(".tg .detail div.info").html("市场均价："+info.market_price+"元/㎡<br/>距离团购结束：<span id='js_countdown'>"+count_down+"</span><br/>团购优惠："+info.youhui+"<br/>返利："+info.fanli+"<br/>最高优惠："+info.max_youhui);
+		info.market_price <=0 ? $(".tg .info .price").find("p:first").html('均价：待定') : $(".tg .info .price").find("p:first").find('em').html(info.market_price);
+		$(".tg .info .price").find("p").eq(1).find('i').html(info.youhui);
+		$(".tg .info .price").find("p:last").find('span').html(info.fanli!=="0" ? info.fanli : '待定' );
+		//$(".tg .info .price").find("p:last").find('span:last').html(info.tenper!=="0" ? info.tenper : '待定');
+		info.now_number && $(".tg .info div.people").find("h3 > em").html(info.now_number);
+		
+		groupon_countdown();
+		$(".tg .hd,.tg .bd").show();
+	})
+})
+
+function groupon_countdown(){
+	count_timeout = setTimeout("timer()",1000);
+	//return format_time(count_down);
+	$("#js_countdown").html(format_time(count_down));
+}
+function timer(){
+	if(count_down>0){
+		count_down -- ;
+		$("#js_countdown").html(format_time(count_down));
+		setTimeout("timer()",1000);
+	}
+	else{
+		clearTimeout(count_timeout);
+	}
+}
+function format_time(sec){
+	if(sec<=0) return "已结束";
+	var days = Math.floor(sec/(3600*24));
+	var hours = Math.floor((sec - days*3600*24)/3600);
+	var mins = Math.floor((sec - days*3600*24 - hours*3600)/60);
+	//alert(days+"-"+hours+"-"+mins);
+	//return days+"天"+hours+"小时"+mins+"分";
+	var str = '';
+	days ? str+= days+"天" : "";
+	hours ? str+= hours+"时" : "";
+	mins ? str+= mins+"分" : "";
+	return str;
+}
+</script>
+{/if}

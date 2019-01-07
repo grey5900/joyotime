@@ -1,0 +1,132 @@
+<!--{template common/header}-->
+	<link rel="stylesheet" href="/static/skin/baby_style.css" type="text/css" />
+	<div id="container-page">
+		<div class="container-fluid">
+		   <div class="main">
+		     <div class="article">
+          <div class="photolist">
+            <div class="artwork">
+              <div class="imgartwork">
+                <span class="photo">
+                  <img src="{echo image_url($current_info['image'],'baby','bhdp');}" alt="$current_info['name']" />
+                </span>
+                <div id="detail-countdown">00:00:00</div>
+              </div>              
+            </div>
+            <div class="thumb">      
+              <ul>
+              {if $prev}
+              	{loop $prev $k $row}
+              		<li><a href="{if isset($row['hour']) && isset($row['minute'])}/babyclock/{$row['hour']}/{$row['minute']}{else}/babyclock/{$row['id']}{/if}"><img src="{echo image_url($row['image'],'baby','bldp');}" alt="{$row['name']}" /></a></li>
+              	{/loop}
+              	
+              {/if}	
+              	<li><a href="javascript:;" class="active"><img src="{echo image_url($current_info['image'],'baby','bldp');}" alt="{$row['name']}" /></a></li>
+              {if $next}
+              	{loop $next $k $row}
+              		<li><a href="{if isset($row['hour']) && isset($row['minute'])}/babyclock/{$row['hour']}/{$row['minute']}{else}/babyclock/{$row['id']}{/if}"><img src="{echo image_url($row['image'],'baby','bldp');}" alt="{$row['name']}" /></a></li>
+              	{/loop}
+              {/if}	
+              </ul>        
+            </div>
+          </div>
+          <div class="share">
+            <div class="ckepop">
+                <!-- JiaThis Button BEGIN -->
+                <div id="ckepop">
+                  <span class="jiathis_txt">分享到：</span>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_xiaoyou"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+                </div>
+                <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+              </div>
+          </div>
+		     </div>
+		     
+		     <div class="article">
+          <div class="tit"><h2>更多人气宝宝</h2></div>
+          <div class="con">
+            <ul>
+            {loop $hot $k $row}
+            	<li>
+            	  <a href="/babyclock/{$row['id']}"><img src="{echo image_url($row['image'],'baby','bldp');}" alt="{$row['name']}" title="{$row['name']}" /></a>
+            	  <div class="babyname">
+            	    <a href="/babyclock/{$row['id']}">{$row['name']}</a>
+                  <p>{$row['surport']}人支持</p>
+            	  </div>
+            	</li>
+            {/loop} 	
+            	
+            </ul>
+          </div>
+		     </div>
+		   </div>
+		   <div class="sidebar">
+		     <div class="module info-card">
+            <div class="tit">
+              <h3>宝宝档案</h3>
+            </div>
+            <div class="con">
+             <div class="info">
+               <div class="topname">
+                 <span class="name">{$current_info['name']}</span>
+                 {if $current_info['gender'] == 0}
+                 <i class="sex girl">女</i>
+                 {else}
+                 <i class="sex boy">男</i>
+                 {/if}
+                 <em>{$current_info['surport']}人支持{if $current_info['gender'] == 0}她{else}他{/if}</em>
+               </div>
+               <div class="listinfo">
+                 <table>
+                   <tr>
+                   	<td>生日：{if $current_info['birth']=="0000-00-00"}保密{else}{$current_info['birth']}{/if}</td>
+                    <td>出生地：{if !$current_info['hometown']}保密{else}{$current_info['hometown']}{/if}</td>
+                   </tr>
+                   <tr>
+                   	<td>血型：{if !$current_info['blood']}保密{else}{$current_info['blood']}{/if}</td>
+                    <td>星座：{if !$current_info['constellation']}保密{else}{$current_info['constellation']}{/if}</td>
+                   </tr>
+                 </table>
+               </div>
+             </div>
+             <div class="actions">
+                <a class="action-support btn btn-pink {if $is_supported}disabled{/if}" data-id="{$current_info['id']}"> 点击支持{$current_info['name']} </a>
+             </div>
+             <div class="intro">
+               <p>
+                 {$current_info['summary']}
+               </p>
+             </div>
+            </div>
+          </div>
+          <div class="module info-card">
+            <div class="tit">
+              <h3>参与方式</h3>
+            </div>
+            <div class="con">
+              <p>
+　　1、报名家庭在线上传0—3岁宝宝电子版写真照片一张，要求是正面近照，图片大小要求像素560*560之内。<br/>
+　　2、在线报名需认真填写报名内容，按要求填写宝贝名字、出生年月、出生地、血型星座等详细信息。<br/>
+　　3、请勿重复上传同样造型的宝宝照片，同样造型的照片只能审核通过一张，不同造型的照片可多次上传并获得审核通过。<br/>
+　　4、请参与者准确提供宝宝的信息，上传的照片将在全搜索亲子频道工作时间24小时内审核使用，审核通过后会在页面上显示并有机会推荐到首页。<br/>
+              </p>
+              <div class="link-upload">
+                <a href="/babyclock/upload" id="babyclock-upload-btn" class="btn btn-pink btn-large">上传宝宝照片</a>
+              </div>
+            </div>
+          </div>
+		   </div>
+		</div>
+	</div>
+
+
+
+<!--{template common/footer}-->

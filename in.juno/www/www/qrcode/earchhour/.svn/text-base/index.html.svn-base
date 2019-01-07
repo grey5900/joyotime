@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>超越一小时 我做绿V客</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="http://icd.sc/c/reset.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+		<script src="http://icd.sc/s/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css" media="screen">
+			.container {
+				background: #000;
+			}
+			.container {
+				display: block;
+			    left: 0;
+			    height: 100%;
+			    overflow-x: hidden;
+			    top: 0;
+			    width: 100%;
+			    z-index: 0;
+			    padding-bottom: 30px;
+			}
+			.header {
+				width:100%;
+				height: auto;
+			}
+			.header a img {
+			    border: 0 none;
+			    display: block;
+			    max-width: 100%;
+			    width: 100%;
+			}
+			.contents {
+				width: 100%;
+				text-align: center;
+			}
+			.contents .content{
+				width: 89%;
+				margin: 0 auto;
+				background: #fff;
+				border: 1px solid #959595;
+				padding-bottom:60px;
+				text-align: center;
+			}
+			.content .bb {
+				width:100%;
+				text-align: center;
+				display: block;
+			}
+			.content .bb a {
+				display: inline-block;
+			}
+			.content .bb img{
+				width: 278px;
+				height: 145px;
+			}
+			.content .text {
+				width:100%;
+				text-align: center;
+				display: inline-block;
+			}
+			.text span {
+				font-size: 14px;
+				font-weight: bold;
+				color: #fa0000;
+			}
+			.text p {
+				font-size: 12px;
+				color: #579806;
+				margin: 0 25px;
+			}
+			.text .text-left {
+				float: left;
+			 	width:50%;
+			}
+			.text .text-right {
+				float: left;
+			 	width:50%;
+			}
+			.content .enter {
+				width: 100%;
+				text-align:center;
+				margin-top: 10px;
+			}
+			.content .botton {
+				margin: 0 0 0 2px;
+				padding: 8px 65px;
+				height: 40px;
+				border: 1px solid #449008;
+				background: #87cb49;
+				font: bold 16px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+				-moz-box-shadow: 0 1px .5px rgba(51,51,51,0.1),inset 0 1px 0 rgba(255,255,255,0.4);
+				-webkit-box-shadow: 0 1px .5px rgba(51,51,51,0.1),inset 0 1px 0 rgba(255,255,255,0.5);
+				box-shadow: 0 1px .5px rgba(51,51,51,0.1),inset 0 1px 0 rgba(255,255,255,0.5);
+				color: #fff;
+				text-shadow: 0 -1px 0 rgba(56,140,13,0.8);
+				-webkit-font-smoothing: antialiased;
+				text-decoration: none;
+				text-align: center;
+				vertical-align: middle;
+				cursor: pointer;
+				background-color: #8dcf4f;
+				background-image: -moz-linear-gradient(top,#ace76f,#5eab1f);
+				background-image: -webkit-gradient(linear,0 0,0 100%,from(#ace76f),to(#5eab1f));
+				background-image: -webkit-linear-gradient(top,#ace76f,#5eab1f);
+				background-image: -o-linear-gradient(top,#ace76f,#5eab1f);
+				background-image: linear-gradient(top,#ace76f,#5eab1f);
+				background-repeat: repeat-x;
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fface76f',endColorstr='#ff5eab1f',GradientType=0);
+				filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+				-webkit-box-sizing: broder-box;
+				-moz-box-sizing: broder-box;
+				box-sizing: broder-box;
+				-webkit-border-radius: 60px;
+				-moz-border-radius: 60px;
+				-ms-border-radius: 60px;
+				border-radius: 60px;
+			}
+			.content .button:hover {
+			    background-color: #77BE38;
+				background-image: -moz-linear-gradient(top,#87CB49,#5EAB1F);
+				background-image: -webkit-gradient(linear,0 0,0 100%,from(#87CB49),to(#5EAB1F));
+				background-image: -webkit-linear-gradient(top,#87CB49,#5EAB1F);
+				background-image: -o-linear-gradient(top,#87CB49,#5EAB1F);
+				background-image: linear-gradient(top,#87CB49,#5EAB1F);
+				background-repeat: repeat-x;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="header">
+			 	<a><img src="img/hd.jpg" alt="" height="191px"  /></a>
+			</div>
+			<div class="contents">
+				<div class="content">
+					<div class="bb">
+						<a href="http://in.chengdu.cn/qr/inproductsstore/0"><img src="img/bb.png" alt="" /></a>
+					</div>
+					<div class="text">
+						<div class="text-left">
+							<span>0积分</span>
+							<p>独家环保袋+精美雨伞+ 环保再生笔记本</p>
+						</div>
+						<div class="text-right">
+							<span>0积分</span>
+							<p>独家环保袋+精美雨伞+ 环保再生笔记本</p>
+						</div>
+					</div>
+					<div class="enter">
+						<a href="http://in.chengdu.cn/qr/inproductsstore/0" class="botton">进入积分商城</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

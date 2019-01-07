@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>IN成都商家平台</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+		<link rel="stylesheet" href="css/wrapper.css" >
+		<link rel="shortcut icon" href="img/favicon.ico">
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/jquery.validate.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="navbar-link">
+						<h3><a class="logo" href="#">
+							<img width="354" height="55" title="IN成都商家平台" src="img/logo_header.png">
+						</a></h3>
+					</div>
+					<div class="navbar-link pull-right">
+						欢迎您！<span>多梦科技</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu">
+			<div class="container">
+				<div id="fixed-header">
+					<div class="navbar">
+						<ul class="nav">
+					    	<li><a href="#">首页</a></li>
+						    <li class="active"><a href="#">优惠管理</a></li>
+						    <li><a href="extend.html">扩展信息</a></li>
+						    <li><a href="vip_special.html">会员管理</a></li>
+					   </ul>
+					</div>
+				</div>
+				<div class="navbar-link pull-right">
+					<a href="#">修改密码</a><span>|</span>
+					<a href="#">退出登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="container">
+				<div class="mainbox">
+					<div class="main">
+						<div class="inner main-conter">
+							<div class="title">
+								<h3>等待审核</h3>
+							</div>
+							<div class="from-detail">
+								<div class="hd">
+									<div class="span7"><div class="cutoff"><span>优惠</span></div></div>
+									<div class="span2"><span>提交时间</span></div>
+								</div>
+								<div class="bd">
+									<dl>
+										<dd>
+											<div class="span7">
+												<div class="event">
+													<div class="icon">
+														<a href="#"><img src="img/temp01.jpg"/></a>
+													</div>
+													<div class="details">
+														<h3><a href="#">良木缘特惠第二季良木缘特惠第二季</a></h3>
+														<div class="timeing"><span><i class="icon-time"></i>有效期至2012-12-12</span></div>
+														<div class="info">阿斯的飞机拉萨看到就分开了阿斯兰看到房价阿拉山口的减肥阿拉山口警方啊上课了发动机阿拉山..</div>
+														<div class="others"><span>可以使用<em>1</em>次</span><a class="pull-right" href="#">全部适用店</a></div>
+													</div>
+												</div>
+											</div>
+											<div class="span2">
+												<div class="preview">
+													<span>2012/12-12 12:12</span>
+													<div class="review"><p>等待审核..</p></div>
+													<div class="setting">
+														<a href="#">编辑</a>|<a href="#">删除</a>
+													</div>
+												</div>
+											</div>
+										</dd>
+										<dd>
+											<div class="span7">
+												<div class="event">
+													<div class="icon">
+														<a href="#"><img src="img/temp01.jpg"/></a>
+													</div>
+													<div class="details">
+														<h3><a href="#">良木缘特惠第二季良木缘特惠第二季</a></h3>
+														<div class="timeing"><span><i class="icon-time"></i>有效期至2012-12-12</span></div>
+														<div class="info">阿斯的飞机拉萨看到就分开了阿斯兰看到房价阿拉山口的减肥阿拉山口警方啊上课了发动机阿拉山..</div>
+														<div class="others"><span>可以使用<em>1</em>次</span><a class="pull-right" href="#">全部适用店</a></div>
+													</div>
+												</div>
+											</div>
+											<div class="span2">
+												<div class="preview">
+													<span>2012/12-12 12:12</span>
+													<div class="review">
+														<a href="#error" data-toggle="modal" class="modal-tips">审核失败<i><img src="img/icon_why.png" /></i></a>
+													</div>
+													<div class="setting">
+														<a href="#">编辑</a>|<a href="#">删除</a>
+													</div>
+												</div>
+											</div>
+										</dd>
+										<dd>
+											<div class="span7">
+												<div class="event">
+													<div class="icon">
+														<a href="#"><img src="img/temp01.jpg"/></a>
+													</div>
+													<div class="details">
+														<h3><a href="#">良木缘特惠第二季良木缘特惠第二季</a></h3>
+														<div class="timeing"><span><i class="icon-time"></i>有效期至2012-12-12</span></div>
+														<div class="info">阿斯的飞机拉萨看到就分开了阿斯兰看到房价阿拉山口的减肥阿拉山口警方啊上课了发动机阿拉山..</div>
+														<div class="others"><span>可以使用<em>1</em>次</span><a class="pull-right" href="#">全部适用店</a></div>
+													</div>
+												</div>
+											</div>
+											<div class="span2">
+												<div class="preview">
+													<span>2012/12-12 12:12</span>
+													<div class="review"><p>等待审核...</p></div>
+													<div class="setting">
+														<a href="#">编辑</a>|<a href="#">删除</a>
+													</div>
+												</div>
+											</div>
+										</dd>
+										<dd>
+											<div class="span7">
+												<div class="event">
+													<div class="icon">
+														<a href="#"><img src="img/temp01.jpg"/></a>
+													</div>
+													<div class="details">
+														<h3><a href="#">良木缘特惠第二季良木缘特惠第二季</a></h3>
+														<div class="timeing"><span><i class="icon-time"></i>有效期至2012-12-12</span></div>
+														<div class="info">阿斯的飞机拉萨看到就分开了阿斯兰看到房价阿拉山口的减肥阿拉山口警方啊上课了发动机阿拉山..</div>
+														<div class="others"><span>可以使用<em>1</em>次</span><a class="pull-right" href="#">全部适用店</a></div>
+													</div>
+												</div>
+											</div>
+											<div class="span2">
+												<div class="preview">
+													<span>2012/12-12 12:12</span>
+													<div class="review"><p>等待审核...</p></div>
+													<div class="setting">
+														<a href="#">编辑</a>|<a href="#">删除</a>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<div class="pagination pagination-centered">
+									   <ul>
+										    <li class="active"><a href="#">上一页</a></li>
+										    <li><a href="#">1</a></li>
+										    <li><a href="#">2</a></li>
+										    <li><a href="#">3</a></li>
+										    <li><a href="#">4</a></li>
+										    <li><a href="#">下一页</a></li>
+									    </ul>
+								    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar">
+						<div class="title">
+							
+						</div>
+						<ul class="nav nav-list">
+							<li><a href="pre.html">新建优惠</a></li>
+							<li class="active"><a href="#">等待审核</a></li>
+							<li><a href="pre_publish.html">已发布</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal -->
+		<div class="modal hide" id="error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					×
+				</button>
+				<h3 id="myModalLabel">审核错误原因</h3>
+			</div>
+			<div class="modal-body">
+				<p>
+					错误原因
+				</p>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+		<div id="footer">
+			<div class="copyright">
+				<p><a href="#">关于我们</a>|<a href="#">联系我们</a>|<a href="#">帮助  </a></p>
+				<p ><span>©2011 in.chengdu.cn  All Rights Reserved</span><span>蜀ICP备：07003170号 ICP许可证编号：川B2-20060070	</span></p>
+			</div>
+		</div>
+	</body>
+</html>
+

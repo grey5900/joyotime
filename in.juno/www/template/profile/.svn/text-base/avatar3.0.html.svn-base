@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	
+	
+</head>
+<body>
+	<div class="header">
+		<div class="nav_bar">
+			<div class="layout">
+				<div class="user_nav">
+					<div class="reg">
+						<a href="">登录</a> -
+						<a href="">注册</a>
+					</div>
+					<div class="sign_in">
+						<a href="" class="name">小妖妖</a>
+						<a href="" class="edit"></a>
+						<a href="" class="exit"></a>
+					</div>
+				</div>
+				<div class="more_nav">
+					<a id="clt" href="">加入收藏夹</a> -
+					<a href="http://in.chengdu.cn/download" target="_blank">下载IN成都客户端</a>
+					<span>|</span>
+				</div>
+				<div class="site-nav">
+					<a href="http://www.chengdu.cn" target="_blank">全搜索首页</a> -
+					<a href="http://news.chengdu.cn" target="_blank">新闻</a> -
+					<a href="http://tg.chengdu.cn" target="_blank">章鱼团</a> -
+					<a href="http://photo.chengdu.cn" target="_blank">成都图片网</a>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<div class="layout">
+				<div class="search_bar">
+					<button type="submit"><i class="icon-search"></i></button>
+					<input type="text" class="txt" placeholder="搜地点/点评/新闻/楼盘" />
+					
+				</div>
+				<div class="site_nav">
+					<a href="">IN成都</a>
+					<a href="">美食</a>
+					<a href="">观影</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main layout">
+		<div class="column user_banner">
+			<div class="cover">
+				<img src="t.jpg" alt="" />
+			</div>
+			<div class="avatar">
+				<img src="t.jpg" alt="" />
+			</div>
+			<div class="sub">
+				<div class="name">
+					<a href="" class="btn btn-success btn-vertical">个人设置</a>
+					<h2>陈老师 <a href="" class="qrcode"><i class="icon-qrcode"></i></a></h2>
+					<p>女人最大的骄傲不是她的长相有多出众，而是她的男人有多疼她女人 </p>
+					
+				</div>
+				<hr class="fadeOut" />
+			</div>
+			<div class="info">
+				
+				<div class="intro">
+					<p>性别：男</p>
+					<p>星座：金毛</p>
+					<p>年龄：24</p>
+					<p>有志青年：Lv4</p>
+				</div>
+				<div class="score">
+					<p>点评：<em>2456</em></p>
+					<p>被赞：<em>2456</em></p>
+					<p>地主：<em>2456</em></p>
+					<p>积分：<em>2456</em></p>
+				</div>
+				<div class="album">
+					<div class="box friends">
+						<ul>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+							<li class="mini"><img src="t.jpg" alt="" /></li>
+						</ul>
+						<div class="title">
+							253个好友
+							
+						</div>
+					</div>
+					<div class="box photo">
+						<ul>
+							<li class="large"><img src="t.jpg" alt="" /></li>
+						</ul>
+						<div class="title">
+							253个好友
+							
+						</div>
+					</div>
+					<div class="box location">
+						<ul>
+							<li class="small">
+								<img src="t.jpg" alt="" />
+							</li>
+							<li class="mini">
+								<img src="t.jpg" alt="" />
+							</li>
+							<li class="mini">
+								<img src="t.jpg" alt="" />
+							</li>
+						</ul>
+						<div class="title">
+							253个好友
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column timeline">
+			<div class="content setting">
+				<div class="col_l">
+					<div class="menu">
+						<ul>
+							<li class="active">
+								<a href=""><i class="basic"></i>基本信息</a>
+							</li>
+							<li><a href=""><i class="avatar"></i>更换头像</a></li>
+							<li><a href=""><i class="password"></i>修改密码</a></li>
+							<li><a href=""><i class="email"></i>修改邮箱</a></li>
+							<li><a href=""><i class="sync"></i>同步设置</a></li>
+							<li><a href=""><i class="score"></i>积分规则</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col_con row-fluid">
+					<div class="tab_hd">
+						基本信息
+					</div>
+					<div class="avatar">
+						<div class="con">
+							<div class="info">
+								<p>仅支持JPG;GIF;PNG图片文件，且不超过1M</p>
+							</div>
+							<div class="avatar_up">
+								<label for="avatar" class="up_label">
+									<input type="file" id="avatar" />
+								</label>
+							</div>
+							<div class="form-actions">
+								<input type="submit" class="btn btn-success btn-vertical" value="保存" />
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="182"></iframe>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="js/ie6.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	$(function(){
+		$('.carousel-indicators li').bind('mouseenter',function(){
+			var $this = $(this);
+			$('.carousel').carousel($this.index());
+		});
+	})
+	var cData = ["BC9F78","A5CD84","C1CF8A"];
+	var forbid;
+	$('.user_tags li').each(function(i,n){
+		var num = Math.floor(Math.random()*3);
+		while(num == forbid){
+			num = Math.floor(Math.random()*3);
+		}
+		forbid = num;
+		n.style.backgroundColor = "#" + cData[num];
+	});
+</script>
+</body>
+</html>

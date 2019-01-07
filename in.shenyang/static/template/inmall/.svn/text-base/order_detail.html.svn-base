@@ -1,0 +1,112 @@
+{eval $page_id = 'inmall_order_detail'}
+<div class="pageContent" id="{$page_id}">
+    <div id="leftBox" class="unitBox" style="float:left; display:block; overflow:auto; width:720px;">
+        <div class="pageFormContent nowrap" layoutH="98">
+            <table class="list" width="100%">
+            	<tr>
+            		<td colspan="4">基本信息</td>
+            	</tr>
+                <tr>
+                    <td width="25%">订单号</td>
+                    <td width="25%">创建时间</td>
+                    <td width="25%">订单总金额</td>
+                	<td width="25%">支付时间</td>
+                </tr>
+                <tr>
+                    <td>{$order['id']}</td>
+                    <td>{$order['createDate']}</td>
+                    <td><font color="red">{$order['totalAmount']}</font></td>
+                	<td>{echo $order['isPayed']?$order['payDate']:'-';}</td>
+                </tr>
+            </table>
+            <br/>
+            <table class="list" width="100%">
+            	<tr>
+            		<td colspan="4">订单商品</td>
+            	</tr>
+                <tr>
+                    <td width="10%">商品ID</td>
+                    <td width="65%">商品名</td>
+                    <td width="15%">商品单价</td>
+                	<td width="10%">数量</td>
+                </tr>
+                <tr>
+                    <td>{$product['id']}</td>
+                    <td>{$product['name']}</td>
+                    <td>{$product['price']}</td>
+                	<td>{$order['quantity']}</td>
+                </tr>
+            </table>
+            <!--{if $order['isPayed'] && $order['isRefund']}-->
+            <br/>
+            <table class="list" width="60%">
+            	<tr>
+            		<td colspan="2">退款信息</td>
+            	</tr>
+                <tr>
+                    <td width="40%">退款时间</td>
+                    <td width="60%">操作管理员</td>
+                </tr>
+                <tr>
+                    <td>{$order['refund']['oper_date']}</td>
+                    <td>{$order['refund']['oper']}</td>
+                </tr>
+            </table>
+            <!--{/if}-->
+        </div>
+    </div>
+    <div id="rightBox" class="unitBox">
+        <div class="pageFormContent nowrap" layoutH="98">
+            <!--{if $order['isPayed']}-->
+            <table class="list" width="100%">
+            	<tr>
+            		<td colspan="2">兑换码</td>
+            	</tr>
+                <tr>
+                    <td width="70%">兑换码类型</td>
+                    <td width="30%">{echo $product['tradeCodeType']?'手动倒入':'自动生成'}</td>
+                </tr>
+                <!--{loop $code_list $row}-->
+                <tr>
+                    <td>{$row['code']}</td>
+                    <td>{$trade_code_status[$row['status']]}</td>
+                </tr>
+                <!--{/loop}-->
+            </table>
+            <br/>
+            <!--{/if}-->
+            <table class="list" width="100%">
+            	<tr>
+            		<td colspan="2">购买人信息</td>
+            	</tr>
+                <tr>
+                    <td width="30%">用户ID</td>
+                    <td width="70%">{$order['uid']}</td>
+                </tr>
+                <tr>
+                    <td>帐号</td>
+                    <td>{$user['username']}</td>
+                </tr>
+                <tr>
+                    <td>昵称</td>
+                    <td>{$user['nickname']}</td>
+                </tr>
+                <tr>
+                    <td>手机</td>
+                    <td>{$order['cellphoneNo']}</td>
+                </tr>
+            </table>
+            <br/>
+            {if $order['defaultComment']}
+            <table class="list" width="100%">
+            	<tr>
+            		<td >用户备注</td>
+            	</tr>
+                <tr>
+                   <td>{$order['defaultComment']}</td>
+                </tr>
+            </table>
+            {/if}
+        </div>
+    </div>
+</div>

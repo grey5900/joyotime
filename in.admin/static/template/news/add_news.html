@@ -1,0 +1,191 @@
+<div class="pageContent">
+	<form method="post" id="form{$timestamp}" action="{$current_url}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+	<!--{if !empty($info[id])}--><input type="hidden" name="id" value="{$info[id]}" /><!--{/if}-->
+	<div class="pageFormContent" layoutH="60">
+		<div class="unit">
+			<label>标题:</label><input type="text" class="required" id="subject" name="subject" value="{$info[subject]}" size="50" />
+		</div>
+		<div class="unit">
+			<label>分类:</label>
+			<select name="newsCatId">
+			{$category}
+			</select>
+		</div>
+		<!--这个页面暂时就只传文字新闻-->
+		<div class="unit">
+			<label>新闻类型:</label>
+			<input type="radio" name="newsType" value="0" {if $info['newsType']==0}checked="checked"{/if}>文字
+			<input type="radio" name="newsType" value="1" {if $info['newsType']==1}checked="checked"{/if}>图片
+			<input type="radio" name="newsType" value="2" {if $info['newsType']==2}checked="checked"{/if}>外链
+		</div>
+		
+		<div class="unit"> 
+			<label>状态:</label>
+			<input type="radio" name="status" value="0" {if $info['status']==0}checked="checked"{/if}>未发布
+			<input type="radio" name="status" value="1" {if $info['status']==1}checked="checked"{/if}>发布
+		</div>
+
+		<div class="unit full" id="{$page_id}upload_news1" {if $info['newsType']==0}style="display:none"{/if}>
+			<label>上传图片: </label>
+			
+			<div style="height:auto;width:100%" id="upload_rich_img_<!--{$timestamp}-->"></div>
+		</div> 
+		<div class="unit full" id="{$page_id}upload_news0" {if $info['newsType']==1}style="display:none"{/if}>
+			<label>上传图片: </label>
+			<button type="button" id="upload_img_<!--{$timestamp}-->">上传图片</button>
+			
+		</div>  
+		<div class="unit full">
+			<label>来源:</label><input type="text" id="source"  name="source" value="{$info[source]}"   /> 
+		</div>
+		<div class="unit full">
+			<label>编辑:</label>
+		<input type="text"  name="editor.name" value="{$info[editor]}"   />
+		
+		<a class="btnLook" href="/block/get_vest" lookupgroup="editor">查找带回</a>
+		</div> 
+		<div class="unit full">
+			<label>作者:</label>
+		<input type="text"  name="author" value="{$info[author]}"   />
+		
+		</div> 
+		<div class="unit full">
+			<label>关键词:</label>
+		<input type="text"  name="keywords" value="{$info[keywords]}"   /> 
+		</div> 
+		<div class="unit linkurl">
+			<label>外链地址:</label>
+		<input type="text"  name="linkuri" value="{$info[linkuri]}" size="50"   /> 
+		</div> 
+		<div class="unit">
+			<label>简介:</label>
+			<textarea name="summary" id="summary" rows=5 cols=50>{$info['summary']}</textarea>
+		</div>
+		<div class="unit">
+			<label>自动添加楼盘链接:</label>
+			<input type="checkbox" name="autolp_link" id="autolp_link" value=1 checked="checked" >是，添加
+		</div>
+		<div class="unit full">
+			<label>内容:</label>
+			{eval $editor_content = $info[content]?$info[content]:'';}
+			<input type="hidden" name="content" value="" />
+		</div>
+		<div class="unit full">
+			<!--{template block/rich_editor}-->
+		</div>
+		<div class="unit full">
+			<label>关联地点:</label>
+			<!--{template block/place_select}-->
+		</div> 
+		
+		<!--div class="unit">
+			<label>指定图片大小:</label>
+			高：<input type="text" value="400" id="thumb_height" />px
+			宽：<input type="text" value="350" id="thumb_width"  />px
+		</div  -->
+		
+		
+		<div class="unit full">
+			<label>相关新闻:</label> 
+			<!--{template block/news_select}--> 
+		</div> 
+		
+		
+		
+	</div>
+	<div class="formBar">
+		<ul>
+			<!-- <a href="/news/preview" id="prevLink" target="_blank">预览新闻</a>  -->
+		    <li><div class="buttonActive"><div class="buttonContent"><button type="button" id="btnPreview" onclick="preview()">预览新闻</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" id="btnSubmit{$timestamp}">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+function preview(){
+	var pages = 1;
+	var place = new Array();
+	var place = $("#place").val();
+	var str = UE.getEditor('rich_ueditor{$timestamp}').getContent();
+	$("input[name=content]").val(str);
+	//var str = editor.getContent();//$("input[name=content]").val();
+	var find = "[next]";
+	var reg = new RegExp(find,"g");//建立了一个正则表达式，也可以写为var reg=/is/g;
+	//var count = str.match(reg);  //match则匹配返回的字符串,这是很正规的做法
+	//alert(str , count ? count.length : 0);
+	var count = str.split(find).length-1;
+	if(count ) 
+	{
+		pages = count+1;
+	}
+	window.open("/news/preview/"+pages+"/1/"+place);
+}
+function get_size(str){
+	return intval($("#thumb_"+str).val());
+}
+
+function init_selection(obj){
+	var value = obj.val();
+	var tmp = Math.abs(value-1);
+	if(value==2){
+		$(".unit.full").hide();
+		$(".unit.linkurl").show();
+		$("textarea[name=summary],input[name=linkuri]").addClass("required");
+	}else{
+		$(".unit.full").show();
+		$(".unit.linkurl").hide();
+		$("textarea[name=summary],input[name=linkuri]").removeClass("required");
+		$("#<!--{$page_id}-->upload_news"+value).show();
+		$("#<!--{$page_id}-->upload_news"+tmp).hide();
+	}
+}
+$(function(){
+	
+	init_selection($("input[type=radio][name=newsType]:checked"));
+	var options = {file_type:'common',resolution:'odp', thumb_height:100, up_url:'/upload/index',width:350,height:400,name:"newsimg",id:"newsimg<!--{$timestamp}-->",water:"water.png",required:false<!--{if $img}-->,image_name:'<!--{$img}-->'<!--{/if}-->};
+	
+	$("#upload_img_<!--{$timestamp}-->").my_upload(options);
+
+	
+	var options2 = {name:"images",file_type:'common',resolution:'odp',water:"water.png", field:[{key:"detail", name:"详情", type:"textarea"}], up_url:'/upload/index',width:350,height:400,required:false<!--{if $batch_img}-->,data:<!--{$batch_img}--><!--{/if}-->};
+	
+	$("#upload_rich_img_<!--{$timestamp}-->").my_rich_upload(options2);
+	//动态载入控件newsType
+	$("input[type=radio][name=newsType]").change(function(){
+		init_selection($(this));
+			/*var value = $(this).val();
+			var tmp = Math.abs(value-1);
+			alert(value);
+			if(value==2){
+				$(".unit.full").hide();
+				$(".unit.linkurl").show();
+				$("textarea[name=summary],input[name=linkuri]").addClass("required");
+			}else{
+				$("#<!--{$page_id}-->upload_news"+value).show();
+				$("#<!--{$page_id}-->upload_news"+tmp).hide();
+			}*/
+	});
+
+	
+	
+	
+	$("#btnSubmit{$timestamp}").on("click", function(){
+		var form = $("#form{$timestamp}");
+		onsubmit_form(form, "", function(){
+			var content = UE.getEditor('rich_ueditor{$timestamp}').getContent();
+			$("input[name=content]", form).val(content);
+			if($.trim($("input[name=content]", form).val()) == ""  && $("input[type=radio][name=newsType]:checked").val()!=2) { //类型不是外链的时候判断
+				alertMsg.error('请输入内容~');
+				return false;
+			} else {
+				return true;
+			}
+		});
+	});
+})
+
+UE.getEditor('rich_ueditor{$timestamp}');
+</script>

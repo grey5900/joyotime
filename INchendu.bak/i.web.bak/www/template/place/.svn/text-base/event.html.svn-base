@@ -1,0 +1,29 @@
+<!--{if $has_event > 0}-->
+<div class="timeline-column">
+	<div class="column-hd"></div>
+	<div class="feed">
+		<div class="timeliine-event">
+			<div class="tit">
+				<i class="preferential"></i>
+			</div>
+			<div class="con">
+				<a class="pull-left" href="#"><img width="150" height="150" src="http://pic.in.chengdu.cn/event/139/logo/20120415132338_7418.jpg" alt=""></a>
+				<ul>
+					<li>
+						<h3><a href="toPlaceProfile.do?placeId=8823">上岛咖啡(东方新城店)</a></h3>
+					</li>
+					<li>
+						<p>
+							上岛咖啡海椒市店内装修精美、高贵、为您提供高品质的西餐、精品川菜、美...
+						</p>
+					</li>
+					<li>
+						<span>已有<em>468人</em> 参加 </span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="column-ft"></div>
+</div>
+<!--{/if}-->

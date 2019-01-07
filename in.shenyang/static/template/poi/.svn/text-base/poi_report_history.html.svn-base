@@ -1,0 +1,40 @@
+<div class="pageContent" layoutH="58">
+    <table class="list" width="100%">
+        <thead>
+            <tr>
+                <th width="20%">报错类型</th>
+                <th width="15%">详情</th>
+                <th width="50%">用户(点击可发送私信)</th>
+                <th width="15%">状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $k $r}-->
+            <tr>
+                <td>{$poi_report[$r['type']]}</td>
+                <td>
+                <!--{if ($r['type'] == 0 && $r['content']) || ($r['type'] == 3 && ($r['placename'] || $r['address'])) || ($r['type'] == 4 && $r['latitude'])}-->
+                <a href="{eval echo site_url(array('poi', 'report', 'detail', 'id', $r['id']))}" rel="{eval echo build_rel(array('poi', 'report', 'detail'))}" target="dialog" title="地点报错详情"<!--{if $r['type'] == 4}--> width="600" height="400"<!--{/if}--> maxable="false">查看详情</a>
+                <!--{/if}-->
+                </td>
+                <td>
+                <!--{if $r['uid']}-->
+                <a href="{eval echo site_url(array('ugc', 'reply', 'send', 'reply_type', '2', 'receiver', $r['uid']))}" target="dialog" maxable="false" height="300" width="500" rel="{eval echo build_rel(array('poi', 'report', 'private_message'))}">{$r['username']}({$r['nickname']}){$r['cellphoneNo']}</a>
+                <!--{else}-->
+                匿名用户
+                <!--{/if}-->
+                </td>
+                <td>
+                <!--{if $r['status'] == 1}-->
+                <!--该报错信息确认过，及报错处理的时候点击勾选了处理选框-->
+                已确认
+                <!--{else}-->
+                <!--报错记录处理过了，及报错处理的时候点击了已处理选框-->
+                已处理
+                <!--{/if}-->
+                </td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+</div>

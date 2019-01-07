@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TMP1</title>
+</head>
+<body>
+	<div class="frag"><ul>
+		<!--{loop $list $o $v}-->
+		<li>
+			<div class="img"><img src="{$v[image]}" width="120" height="120" /></div>
+			<div class="intro">
+				<span class="title"><a href="{$v[link]}">{$v[title]}</a></span>
+				<span class="summary">{$v[summary]}</span>
+			</div>
+			<div class="ext"><ul>
+				<!--{loop $v[extraData] $k $e}-->
+				<li>
+					<!--{if $e[type] === 'img'}-->
+					<img src="{$e[data]}" />
+					<!--{else}-->
+					{$e[data]}
+					<!--{/if}-->
+				</li>
+				<!--{/loop}-->
+			</ul></div>
+		</li>
+		<!--{/loop}-->
+	</ul></div>
+</body>
+</html>

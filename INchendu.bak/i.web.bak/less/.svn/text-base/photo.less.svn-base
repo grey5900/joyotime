@@ -1,0 +1,56 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "global.less";
+.header .container {
+	width: 1228px;
+}
+.header .bar-inner {
+	width: auto;
+}
+.section {
+	padding: 12px 0;
+	width: 1228px;
+	margin: 0 auto 20px;
+}
+.xga {
+	.header .container {
+		width: 980px;
+	}
+	.section {
+		width: 980px;
+	}
+}
+.pagination {
+	display: none;
+}
+
+#reply-form,
+#share-form {
+	.message_input {
+		padding: 5px;
+		border: 1px solid @grayLighter;
+	}
+	.counter {
+		float: none;
+		margin-top: -20px;
+		text-align: right;
+	}
+	textarea {
+		width: 100%;
+		outline: none;
+		border: none;
+		padding: 0px;
+		margin: 0px;
+		background-color: @white;
+		.border-radius(none);
+		.box-shadow(none);
+	}
+}
+.thumbnail .user{
+	 .poi{
+		.blueLink();
+	}
+	.data{
+		.grayLight();
+	}
+}

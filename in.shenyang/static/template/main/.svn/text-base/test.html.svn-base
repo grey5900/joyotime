@@ -1,0 +1,10 @@
+
+
+	<button id="test" type="button">测试上传</button>
+
+
+<script type="text/javascript">
+	$(function(){
+		$("#test").my_rich_upload({name: "test", field: [{key:"detail", name:"详情", type:"textarea"}]});
+	});
+</script>

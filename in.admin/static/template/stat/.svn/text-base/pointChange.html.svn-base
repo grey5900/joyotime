@@ -1,0 +1,157 @@
+<form id="pagerForm" method="post" action="{$current_page}">
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" />
+	<input type="hidden" name="orderField" value="<!--{{param.orderField}}-->" />
+	<input type="hidden" name="orderDirection" value="<!--{{param.orderDirection}}-->" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="{$current_url}" method="post">
+	<div class="searchBar">
+		<table class="searchContent">
+                <tr>
+                    <td>
+			
+				日期：<input type="text" name="startDate" value="{$startDate}" format="yyyy-MM-dd 00:00:00" class="date required"/> ~ 
+                   	 <input type="text" name="endDate" value="{$endDate}" format="yyyy-MM-dd 23:59:59" class="date required"/>
+					</td>
+					
+				</tr>
+			</table>
+			
+			
+			
+		
+		
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+							
+				<!-- li><a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a></li -->
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	
+	<table class="table" width="1140" layoutH="110">
+		<thead>
+			<tr>
+				<th > CASENAME </th>
+				{if $data}
+				{loop $data $key $d}
+					<th>{$key}</th>
+				{/loop}
+				{else}
+				
+				<th > 直到今天  </th>
+				{/if}
+			</tr>
+		</thead>
+		<tbody>
+		{if $data || $ispost}
+			
+				<tr >
+					<td > 系统从抢地主抽水的积分数量  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['placeRobCut']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 发放到地点的积分数量  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['placeGrowPoint']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 56 使用道具获得积分  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['useLotteryPoint']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 47 用户扫描积分票  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['userPointTicket']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 61 系统回收道具用户获得积分  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['itemRecyclePoint']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 56 使用道具获得积分  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['useLotteryPoint']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 50 用户购买道具  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['userBuyItem']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 49 用户购买积分商品  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['userBuyGoods']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 29 征收  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['systemRobUser']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 60 用户参加投票活动支出  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['userVoteCost']} </td>
+					{/loop}
+				</tr>
+				<tr >
+					<td > 11 每日启动客户端  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['dailyActive']} </td>
+					{/loop}
+				</tr>
+				
+				<tr >
+					<td > 24 管理员每日派发积分  </td>
+					{loop $data $key $d}
+					<td  > {$data[$key]['dailySAPoint']} </td>
+					{/loop}
+				</tr>
+			
+		{else}
+		<tr >
+				<td > 系统有效积分存量 </td>
+				<td  > {$total['total']} </td>
+			</tr>
+			<tr >
+				<td > 排除重复设备号的积分存量 </td>
+				<td  > {$distinctDeviceTotal['total']} </td>
+			</tr>
+			<tr >
+				<td > 系统外发的积分票存量 </td>
+				<td  > {$pointTicketTotal['total']} </td>
+			</tr>
+			<tr >
+				<td > 所有已经激活地主的地点积分存量 </td>
+				<td  > {$placePoint['total']} </td>
+			</tr>
+			<tr >
+				<td > 系统积分总负债  </td>
+				<td  > {echo $total['total']+$pointTicketTotal['total']+$placePoint['total']} </td>
+			</tr>
+		{/if}
+			
+		
+			
+		</tbody>
+	</table>
+	
+</div>

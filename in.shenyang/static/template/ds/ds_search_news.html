@@ -1,0 +1,11 @@
+<select name="type">
+    <option value="subject">标题</option>
+</select>
+<input type="text" name="name" size="15" />
+<script type="text/javascript">
+    function get_ds_form_data(){
+        var type = $("select[name='type']", $("#ds_search_news")).val();
+        var name = $("input[name='name']", $("#ds_search_news")).val();
+        return {type:type, name:name};
+    }
+</script>

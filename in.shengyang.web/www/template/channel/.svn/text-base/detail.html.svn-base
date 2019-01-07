@@ -1,0 +1,195 @@
+<!--{template common/header}-->
+<link rel="stylesheet" href="/static/in_themes/{$theme}/skin/skin.css?{$version}" />
+<link rel="stylesheet" href="/index3.0/styles/channel.css?{$version}" />
+
+
+	<div id="container-page">
+	  <div class="crumbs">
+      <ul>
+        <li><a href="/">{$channel['catName']}</a>&gt;</li>
+        <li><a href="/nlist/{$category['id']}">{$category['catName']}</a>&gt;</li>
+        <li><a href="javascript:;">{$detail['subject']}</a></li>
+      </ul>
+    </div>
+		<div class="container-fluid">
+		   <div class="main">
+		     <div class="article">
+		       <div class="art-title">
+		         <h1>{$detail['subject']}</h1>
+		         <div class="cfrom"><span>{eval echo date("Y-m-d G:i:s",$detail['dateline']);}</span>
+             {if $detail['source']}
+              <span>来自：{$detail['source']}</span>
+             {/if}
+             {if $detail['author']}
+              <span>作者：{$detail['author']}</span>
+             {/if}
+            </div>
+		       </div>
+		       <div class="art-content">
+		         <div class="contxt">
+		         {if $detail['summary']}
+             <div class="summary">
+			         {$detail['summary']}
+			       </div>
+		         {/if}
+		           {if $attach}
+		           	{loop $attach $at}
+		           		<div style="text-align:center;"><img src="{$at['attachment']}" /></div>
+		           		<div style="text-align:center;">{$at['description']}</div>
+		           	{/loop}
+		           {/if}
+		           {$detail['content']}
+		           {if $relatedNews}
+              		<div class="clear:both">
+              		相关新闻：<br/>
+              		{loop $relatedNews $r}
+              		<a href="{if $r['linkuri']}{$r[linkuri]}{else}/article/{$r['id']}{/if}" href="_blank">{$r['subject']}</a><br/>
+              		{/loop}
+              		</div>
+              		{/if}
+		         </div>
+		         <div class="conend">
+		           
+              		
+              		<div class="pagination">
+                	{$page_string}
+              		</div>
+              	
+              <div class="ckepop">
+                <!-- JiaThis Button BEGIN -->
+                <div id="ckepop">
+                  <span class="jiathis_txt">分享到：</span>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_xiaoyou"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+                </div>
+                <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+              </div>
+		         </div>
+		         <div class="next-page">
+		           {if $prev}<a class="pull-left" href="/article/{$prev['id']}">上一篇 {$prev['subject']}</a>{else}<a class="pull-left"></a>{/if}
+		           {if $next}<a class="pull-right" href="/article/{$next['id']}">下一篇 {$next['subject']}</a>{else}<a class="pull-right"></a>{/if}
+		         </div>
+		       </div>
+		     </div>
+		    {if $related} 
+		     <div class="article">
+         
+         <div class="tit">
+          <h2>相关资讯</h2>
+         </div>
+         <div class="con">
+           <ul>
+           {loop $related $re}
+            <li>
+              <a href="/article/{$re['id']}"><img src="{$re['thumb']}" /></a>
+              <a href="/article/{$re['id']}">{echo cut_string($re['subject'],'32');}</a>
+            </li>
+           {/loop} 
+          
+           </ul>
+         </div>
+        
+		     </div>
+		     {/if}
+		       <!--div class="article">
+		      <div class="tit">
+          <h2>用户点评</h2>
+         </div>
+         <div class="con">
+         <div id="SOHUCS"></div>
+         </div>
+         </div -->
+		   </div>
+		   
+		   <div class="sidebar">
+		   
+		   {if $location}
+		    <div class="module">
+		      <div class="tit-first"></div>
+          <div class="con">
+            <div class="list-first">
+              <div class="place-card">
+                <img src="{eval echo image_url($location['icon'],'common')}" alt="" />
+                <div class="info">
+                  <h3><a href="/place/{$location['id']}">{$location['placename']}</a></h3>
+                  <div class="star-info">
+                    <span class="ico-star-{$location['level']}"></span>
+                  </div>
+                  <p>地址：{$location['address']} </p>
+                  {if $location['tel']}<p>电话：{$location['tel']}</p>{/if}
+                </div>
+                <div class="details">
+                  <ul>
+                    <li><a href="/place_photo/{$location['id']}">{$location['photoCount']}</a><p>图片</p></li>
+                    <li class="bor"><a href="/place_visitor/{$location['id']}">{$location['checkinCount']}</a><p>访客</p></li>
+                    <li><a href="/place_favorite/{$location['id']}">{$location['favoriteCount']}</a><p>收藏</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="link-sj"><a class="btn btn-success btn-large" href="/place/{$location['id']}">{if $location['isBusiness']}商家主页{else}地点主页{/if}</a></div>
+            </div>
+          </div>
+        </div>
+        {/if}
+        
+        {if $goupon && 1!=1}
+        <div class="module">
+            <div class="tit"><h3>正在团购</h3></div>
+            <div class="con">
+              <ul class="list-groupon-sider">
+                <li>
+                  <div class="thumb"><a href="{$goupon['buy_link']}"><img src="{$goupon['imageUri']}"/><em class="t">{$goupon['title']}</em></a></div>
+                  <div class="summary"><a href="{$goupon['buy_link']}">{$goupon['content']}</a></div>
+                  <!--  div class="count"><strong>{$goupon['joinedCount']}</strong> 人已购买</div-->
+                  <div class="price">
+                    <del class="o">原价 ￥{$goupon['marketPrice']}</del>
+                    <span class="p">￥{$goupon['grouponPrice']}</span>
+                    <a href="{$goupon['buy_link']}" class="btn btn-success" target="_blank">立即购买</a>
+                  </div>
+                </li>
+               
+              </ul>
+            </div>
+          </div>
+         {/if} 
+          <div class="module">
+            <div class="tit">
+              <h3>本周热门推荐</h3>
+            </div>
+            <div class="con">
+             <div class="list-news-hot">
+               <ul class="list-news-hot-more">
+              {loop $hotnews $n}
+                <li><a href="/article/{$n['id']}">{echo cut_string($n['subject'],'38');}</a></li>
+              {/loop}  
+              
+              </ul>
+            </div>
+          </div>
+		   </div>
+		   
+		   <!-- used to be sidebar -->
+		</div>
+	</div>
+<script>
+/*(function(){
+    var appid = 'cy2ryR8WnJlz',
+    conf = 'prod_c06d06da9666a219db15cf575aff2824';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    SCS_NO_IFRAME = true;
+  })()*/
+</script>
+<!--{template common/footer}-->

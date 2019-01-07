@@ -1,0 +1,277 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "background-img.less";
+@import "global.less";
+
+#container {
+	margin: 20px auto;
+}
+.download-wrap{
+	.download-nav{
+		height:65px; 
+		background:url(/img/download_nav_bg.png) 0 0 no-repeat;
+		li{
+			float:left; 
+			a{
+				display:block;  
+				background:transparent url(/img/download_nav_bg.gif) no-repeat scroll 0 -999em;
+			}	
+		}
+		.nav-iphone{
+				a{
+					width:181px;
+					height: 65px;
+					background-position:0 0;
+					&:active{background-position:0 0;}
+				}
+				&.current{
+					a{
+						background-position:0 -65px;
+					}
+				}
+			}
+		.nav-android{
+				a{
+					width:180px;
+					height: 65px;
+					background-position:0 -130px;
+					&:active{background-position:0 -130px;}
+				}
+				&.current{
+					a{
+						background-position:0 -195px;
+					}
+				}
+			}
+		.nav-wp{
+				a{
+					width: 300px;
+					height: 65px;
+					background-position:0 -260px;		
+				}
+				&.current{
+					a{
+						background-position:0 -325px;
+					}
+				}
+			}
+		
+	}
+	.iphone-bd{
+		position:relative; 
+		height:594px; 
+		background:url(/img/download_iphone_bg.jpg) 0 0 no-repeat;
+		h3{
+			position:absolute; 
+			top:50px; 
+			left:360px; 
+			line-height:42px; 
+			font-size:36px; 
+			color:@orangeText;
+			.font-yab();
+		}
+		a{
+			text-indent:-9999em;
+		}
+		.summary{
+			position:absolute; 
+			top:100px; 
+			left:360px; 
+			width:530px; 
+			line-height:28px; 
+			font-size:16px; 
+			color:@brownText;
+			.font-yab();
+		}
+		
+		.btn-appstore{
+			background:url(/img/btn_download_app.png) repeat-y scroll 0 -999em;
+			background-position: 0 -55px;
+			width:154px;
+			height: 55px;
+			//display: block;
+			position:absolute; 
+			bottom:135px; 
+			left:360px;
+			cursor:pointer;
+			border:none;
+			}
+		.two-dimensional-code{
+			position:absolute; 
+			bottom:135px; 
+			left:560px;
+		}
+		.imitation-iphone{
+			position:absolute; 
+			left:92px; 
+			top:132px; 
+			width:205px; 
+			height:308px; 
+			overflow:hidden;
+			li{
+				float:left; 
+				width:205px;
+			}
+		}
+	}
+	.android-bd{
+		position:relative; 
+		height:594px; 
+		background:url(/img/download_android_bg.jpg) 0 0 no-repeat;
+		h3{
+			position:absolute; 
+			top:50px; 
+			left:70px; 
+			line-height:42px; 
+			font-size:36px;
+			color: @greenText;
+			.font-yab();
+		}
+		a{
+			text-indent:-9999em;
+		}
+		
+		.summary{
+			position:absolute; 
+			top:100px; 
+			left:70px; 
+			width:530px; 
+			line-height:28px; 
+			font-size:16px;
+			.font-yab();
+		}
+		.btn-apk{
+			background:url(/img/btn_download_app.png) no-repeat scroll 0 -999em;
+			background-position: 0 0;
+			width:154px;
+			height: 55px;
+			display: block;
+			position:absolute; 
+			bottom:135px; 
+			left:70px;
+			cursor:pointer;
+			border:none;
+		}
+		.two-dimensional-code{
+			position:absolute; 
+			bottom:135px; 
+			left:265px;
+		}
+		.imitation-android{
+			position:absolute; 
+			right:125px; 
+			top:109px; 
+			width:196px; 
+			height:298px; 
+			overflow:hidden;
+			li{
+				float:left; 
+				width:196px; 
+				height:298px;
+			}
+		}
+	}
+	.wp-bd{
+		position:relative; 
+		height:594px; 
+		background:url(/img/download_wp_bg.jpg) 0 0 no-repeat;
+		h3{
+			position:absolute; 
+			top:50px; 
+			left:360px; 
+			line-height:42px; 
+			font-size:36px; 
+			color:@white;
+			.font-yab();
+		}
+		a{
+			text-indent:-9999em;
+		}
+		.summary{
+			position:absolute; 
+			top:100px; 
+			left:360px; 
+			width:530px; 
+			line-height:28px; 
+			font-size:16px; 
+			color:@white;
+			.font-yab();
+		}
+		
+		.btn-appstore{
+			background:url(/img/btn_download_app.png) repeat-y scroll 0 -999em;
+			background-position: 0 -110px;
+			width:154px;
+			height: 55px;
+			//display: block;
+			position:absolute; 
+			bottom:135px; 
+			left:360px;
+			cursor:pointer;
+			border:none;
+			}
+		.two-dimensional-code{
+			position:absolute; 
+			bottom:135px; 
+			left:560px;
+		}
+		.imitation-wp{
+			position:absolute; 
+			left:82px; 
+			top:82px; 
+			width:216px; 
+			height:360px; 
+			overflow:hidden;
+			li{
+				float:left; 
+				width:216px;
+			}
+		}
+	}
+}
+.concern-us{
+	position:relative; 
+	height:54px; 
+	margin:20px 0 0 0; 
+	padding:0 0 0 150px; 
+	background:#e8ecde;
+	h3{
+		position:absolute; 
+		margin:16px 0 0 -90px; 
+		font-size:18px;
+		.font-yab();
+	}
+	li{
+		float:left; 
+		width:120px; 
+		height:54px; 
+		overflow:hidden;
+		&.sina-weibo{
+			img{max-width:none;}
+		}
+		&.douban{
+			img{margin:0 0 0 -120px;max-width:none;}
+		}
+		&.tencent-weibo{
+			img{margin:0 0 0 -245px;max-width:none;}
+		}
+		&.renren{
+			img{margin:0 0 0 -370px;max-width:none;}
+		}
+		&.qq{
+			position:relative; width:240px;
+			img{margin:0 0 0 -490px;max-width:none;}
+			em{
+				display:block; 
+				position:absolute; 
+				left:133px; 
+				top:16px; 
+				font-size:16px; 
+				color:@whiteText;
+				font-family:\5FAE\8F6F\96C5\9ED1;	
+			}
+		}
+	}
+}
+
+	

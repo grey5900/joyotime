@@ -1,0 +1,58 @@
+<form id="pagerForm" method="post" action="#rel#" onsubmit="return navTabSearch(this);">
+	<input type="hidden" name="type" value="{$type}"/>
+	<input type="hidden" name="keyword" value="{$keyword}" />
+	<input type="hidden" name="pageNum" value="{$pageNum}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return dwzSearch(this, 'dialog');">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:100%;"><label>{$label}：</label><input type="text" name="keyword" value="{$keyword}"/></li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div>
+		<table class="list" width="100%" cellspacing="4" cellpadding="4" layoutH="84">
+			<thead>
+				<tr>
+					<th width="10%">ID</th>
+					{if $type==='place'}
+					<th width="20%">地点名称</th>
+					<th width="40%">地址</th>
+					<th width="15%">创建时间</th>
+					{elseif $type==='user'}
+					<th width="30%">用户名</th>
+					<th width="30%">昵称</th>
+					{/if}
+					<th>选定</th>
+				</tr>
+			</thead>
+			<tbody>
+				{loop $list $key $val}
+				<tr>
+				<td>{$key}</td>
+				<td>{$val[name]}</td>
+				{if $type==='place'}
+				<td>{$val[address]}</td>
+				<td>{$val[createDate]}</td>
+				{elseif $type==='user'}
+				<td>{$val[nickname]}</td>
+				{/if}
+				<td><a class="btnSelect" href="javascript:$.bringBack({id:'{$key}', name:'{$val[name]}'})" title="查找带回">选择</a></td>
+				</tr>
+				{/loop}
+			</tbody>
+		</table>
+	</div>
+	<!--{template main/page_bar}-->
+</div>

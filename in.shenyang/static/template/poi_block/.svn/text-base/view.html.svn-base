@@ -1,0 +1,43 @@
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <div class="pageFormContent nowrap" layoutH="57">
+            <!--{eval $id = $property['id']?$property['id']:0}-->
+            <!--{template poi_block/place_block}-->
+            <dl>
+                <dt>
+                    <lable id="remark_tip">
+                        备注
+                    </lable>
+                    ：
+                </dt>
+                <dd><textarea name="remark" cols="60" rows="5">{$property['remark']}</textarea></dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $("input[name=status]", $("#{$page_id}")).click(function(){
+            if($("#status_reject", $("#{$page_id}")).attr("checked")) {
+                $("#remark_tip", $("#{$page_id}")).text('驳回理由');
+                $("textarea[name=remark]", $("#{$page_id}")).addClass("required");
+            } else {
+                $("#remark_tip", $("#{$page_id}")).text('备注');
+                $("textarea[name=remark]", $("#{$page_id}")).removeClass("required");
+            }
+        });
+    });
+</script>

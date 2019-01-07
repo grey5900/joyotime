@@ -1,0 +1,104 @@
+<!--{eval $page_id = 'point_index';}-->
+<div class="pageHeader">
+  <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+    <div class="searchBar">
+      <table class="searchContent">
+        <tr>
+          <td>
+            <select class="combox" name="type">
+              <option value="oper_name"<!--{if 'oper_name' == $type}--> selected<!--{/if}-->>
+                管理员帐号
+              </option>
+              <option value="oper_realname"<!--{if 'oper_realname' == $type}--> selected<!--{/if}-->>
+                管理员真实姓名
+              </option>
+              <option value="uid"<!--{if 'uid' == $type}--> selected<!--{/if}-->>
+                用户ID
+              </option>
+              <option value="nickname"<!--{if 'nickname' == $type}--> selected<!--{/if}-->>
+                用户昵称
+              </option>
+              <option value="username"<!--{if 'username' == $type}--> selected<!--{/if}-->>
+                用户名
+              </option>
+            </select>
+            <input type="text" name="keywords" value="{$keywords}" />
+            <button type="submit">
+              检索
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+</div>
+<div class="pageContent" id="{$page_id}">
+  <div class="panelBar">
+    <ul class="toolBar">
+      <li>
+      总计：{$total_minus} +{$total_plus}
+    </li>
+  </ul>
+</div>
+<table class="table" width="100%" layoutH="128">
+  <thead>
+    <tr>
+      <th width="15%">
+        派发时间
+      </th>
+      <th width="15%">
+        管理员
+      </th>
+      <th width="30%">
+        操作对象
+      </th>
+      <th width="30%">
+        原因
+      </th>
+      <th width="10%">
+        积分
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--{loop $list $row}-->
+    <tr>
+      <td>
+        {$row['createDate']}
+      </td>
+      <td>
+        {$row['name']}($row['truename'])
+      </td>
+      <td>
+        {echo $row['nickname']?$row['nickname']:$row['username']}($row['uid'])
+      </td>
+      <td>
+      	{$actions[$row['reason']['action']]}
+      	{echo $row['reason']['item_id']?sprintf('(%s)', $row['reason']['item_id']):'';}
+      	{echo $types[$row['reason']['item_type']]?sprintf('[%s]', $types[$row['reason']['item_type']]):'';}
+      	<!--{if $row['reason']['remark']}--><a href="javascript:;" content="{$row['reason']['remark']}" class="order-remark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><!--{/if}-->
+      </td>
+      <td>
+        {$row['point']}
+      </td>
+    </tr>
+    <!--{/loop}-->
+  </tbody>
+</table>
+<!--{template main/page_bar}-->
+</div>
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".order-remark", $("#{$page_id}")).poshytip({
+                content:function(){
+                    return $(this).attr("content");
+                }
+            });
+        }, 500);
+    });
+</script>

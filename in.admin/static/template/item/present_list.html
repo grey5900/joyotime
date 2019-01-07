@@ -1,0 +1,59 @@
+{eval $page_id='present_list';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="orderField" value="{$order_field}"/>
+    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+    <input type="hidden" name="keywords" value="{$keywords}"/>
+    <input type="hidden" name="type" value="{$type}" />
+</form>
+<div class="pageHeader" id="item_{$page_id}">
+    <form id="pagerForm" method="post" action="{$current_url}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <select name="type">
+                        <option value="item_name">道具名</option>
+                        <option value="nickname"<!--{if $type == 'nickname'}--> selected<!--{/if}-->>用户昵称</option>
+                        <option value="uid"<!--{if $type == 'uid'}--> selected<!--{/if}-->>用户ID</option>
+                    </select>
+                    <input type="text" name="keywords" value="{$keywords}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent" id="{$page_rel}">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="add" target="navTab" title="派发道具" rel="item_present" href="/item/present"><span>派发</span></a>
+            </li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="128" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="15%">派发时间</th>
+                <th width="20%">对象</th>
+                <th width="45%">附言</th>
+                <th width="20%">道具</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['createDate']}</td>
+                <td>{echo $row['nickname']?$row['nickname']:$row['username']}({$row['reciever']})</td>
+                <td>{$row['message']}</td>
+                <td>{$row['itemName']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

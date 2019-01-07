@@ -1,0 +1,163 @@
+<div class="pageHeader">
+    <form method="post" action="{eval echo site_url(array('user', 'detail'))}" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent" width="100%">
+                <tr>
+                    <td width="80">
+                    <select name="type">
+                        <option value="id">ID</option>
+                        <option value="username">账号</option>
+                    </select></td>
+                    <td width="200">
+                    <input type="text" name="keywords" value="{$keywords}" size="30"/>
+                    </td>
+                    <td width="50">
+                    <ul>
+                        <li>
+                            <div class="buttonActive">
+                                <div class="buttonContent">
+                                    <button type="submit">
+                                        跳转
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                    <table class="list" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="20%" colspan=2>用户</th>
+                                <th width="3%">性别</th>
+                                
+                                <th width="35%" colspan=2>签名</th>
+                                <th width="15%">最后登录时间</th>
+                                <th width="20%" colspan=5>操作</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan=2>
+                                    <img style="float: left;" src="{eval echo image_url($user['avatar'], 'head')}" height="60" />
+                                    {$user['id']}<br/>{$user['username']}<br/>{$user['nickname']}</td>
+                                <td>{$gender_state[$user['gender']]}</td>
+                               
+                                <td colspan=2>{$user['description']}</td>
+                                <td>{$user['lastSigninDate']}</td>
+                                <td colspan=5>
+                                    <div class="buttonActive">
+                                        <div class="buttonContent">
+                                            <button type="button" id="private_info">
+                                                隐私信息
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="buttonActive">
+                                        <div class="buttonContent">
+                                            <button type="button" id="send_private">
+                                                私信
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <select status="{$user['status']}" url="{eval echo site_url(array('user', 'change_status', 'id', $user['id'], 'status'))}" id="status" name="status">
+                                        <option value="0">
+                                            正常
+                                        </option>
+                                        <option value="1">
+                                            屏蔽
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th width="10%">经验值</th>
+                                <th width="10%">等级</th>
+                                <th width="10%">积分</th>
+                                <th width="10%">YY</th>
+                                <th width="10%">点评</th>
+                                <th width="10%">地点册</th>
+                                <th width="10%">精华</th>
+                                <th width="10%">回复</th>
+                                <th width="10%">地主</th>
+                                <th width="10%">粉丝</th>
+                                <th width="10%">关注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <td width="10%">{$user['exp']}</td>
+                                <td width="10%">lv.{$level[level]} {$level['title']}</td>
+                                <td width="10%">{$user['point']}</td>
+                                <td width="10%">{$user['yyCount']}</td>
+                                <td width="10%">{$user['tipCount']}</td>
+                                <td width="10%">{$user['placeCollectionCount']}</td>
+                                <td width="10%">{$user['essenceCount']}</td>
+                                <td width="10%">{$user['replyCount']}</td>
+                                <td width="10%">{$user['mayorshipCount']}</td>
+                                <td width="10%">{$user['beFollowCount']}</td>
+                                <td width="10%">{$user['followCount']}</td>
+                            </tr>
+                        </tbody>
+                    </table></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        设备号：{$user['deviceCode']} <input type="button" name="{$user['deviceCode']}" value="该设备的其他账号" id="otherDevices" /> 
+                        客户端系统版本：{$user['osVersion']}
+                        客户端版本：{$user['appVersion']}
+                        <select status="{$user['banned']}" url="{eval echo site_url(array('user', 'change_sensor', 'id', $user['id'], 'status'))}" id="sensor" name="sensor">
+                            <option value="0">
+                                正常
+                            </option>
+                            <option value="1">
+                                屏蔽设备
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                <td colspan=4>
+                	注册时间：{$user['createDate']}
+                </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $("select[name=type]").val("{$type}");
+        $("#private_info").click(function(){
+            $.pdialog.open("{eval echo site_url(array('user', 'private_info', 'id', $user['id']))}", "{eval echo build_rel(array('user', 'private_info'))}", "隐私信息", {maxable:false});　
+        });
+        $("#send_private").click(function(){
+            $.pdialog.open("{eval echo site_url(array('ugc', 'reply', 'send', 'reply_type', '2', 'receiver', {$user['id']}))}", "{eval echo build_rel(array('user', 'send_private'))}", "发送私信", {maxable:false});
+        });
+        
+        $("#status").val("{$user['status']}");
+        $("#sensor").val("{$user['banned']}");
+        
+        $("#status").my_info_status(function(json){
+            $("#status").attr("status", json.key);
+        });
+        
+        $("#sensor").my_info_status(function(json){
+            $("#sensor").attr("status", json.key);
+        });
+
+        $("#otherDevices").click(function(){
+            var d = $(this).attr("name");
+        	navTab.openTab('user_index', '/user/index', { title:'用户列表', fresh:true, data:{'type':'deviceCode','keywords':d} });
+        });
+    });
+    
+</script>

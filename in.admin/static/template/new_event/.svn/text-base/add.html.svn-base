@@ -1,0 +1,318 @@
+<!--{eval $page_id = 'event_add';}-->
+<div class="pageContent" id="{$page_id}">
+    <form method="post" action="{$current_url}" class="pageForm required-validate">
+        <input type="hidden" name="status" value="{$event['status']}"/>
+        <div class="pageFormContent nowrap" layoutH="57">
+            <fieldset>
+                <legend>基本信息</legend>
+                <dl>
+                    <dt>
+                        大图(600x240)：
+                    </dt>
+                    <dd>
+                        <button type="button" id="image_big">上传大图</button>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        中图(450x180)：
+                    </dt>
+                    <dd>
+                        <button type="button" id="image_middle">上传中图</button>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        小图(300x120)：
+                    </dt>
+                    <dd>
+                        <button type="button" id="image_small">上传小图</button>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        标题：
+                    </dt>
+                    <dd>
+                        <input type="text" name="subject" class="required" size="60" value="{$event['subject']}" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>活动时间：</dt>
+                    <dd>
+                        <input type="text" readonly="readonly" name="start_date" format="yyyy-MM-dd HH:mm:ss" class="date" value="{$event['startDate']}" />
+                        <input type="text" readonly="readonly" name="end_date" format="yyyy-MM-dd HH:mm:ss" class="date" value="{$event['endDate']}" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        外部链接活动：
+                    </dt>
+                    <dd>
+                        <select name="is_link">
+                            <option value="0">否</option>
+                            <option value="1"<!--{if $event['is_link']}--> selected<!--{/if}-->>是</option>
+                        </select>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        活动类型：
+                    </dt>
+                    <dd>
+                        <label><input type="radio" name="type" value=0 <!--{if !$event['type']}--> checked<!--{/if}--> />客户端、网站</label>
+                        <label><input type="radio" name="type" value=1 <!--{if $event['type']==1}--> checked<!--{/if}--> />仅客户端</label>
+                        <label><input type="radio" name="type" value=2 <!--{if $event['type']==2}--> checked<!--{/if}--> />仅网站</label>
+
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt>
+                       是否显示《他们参与了》：
+                    </dt>
+                    <dd>
+                        <label><input type="radio" name="show_joins" value=0 <!--{if $event['show_joins']==='0'}--> checked<!--{/if}--> />不显示</label>
+                        <label><input type="radio" name="show_joins" value=1 <!--{if $event['show_joins']==1 || (!$event['show_joins'] && $event['show_joins']!=='0')}--> checked<!--{/if}--> />显示</label>                   
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        绑定频道：
+                    </dt>
+                    <dd>
+
+                        <select name="newsCatId">
+                            <option value="0">选择频道</option>
+                            {$category}
+                            <!-- {loop $cates $row}
+                                <option value="$row['id']" {if $row['id']==$event['newsCatId']}selected{/if}>$row['catName']</option>
+                            {/loop}  -->
+                        </select>
+                    </dd>
+                </dl>
+                
+            </fieldset>
+            <div id="link_field" style="display:none">
+                <fieldset>
+                    <legend>外部链接活动</legend>
+                    <dl>
+                        <dt>
+                            链接：
+                        </dt>
+                        <dd>
+                            <input type="text" value="{$event['link']}" name="link" size="60" />
+                        </dd>
+                    </dl>
+                </fieldset>
+            </div>
+            <div id="content_area" style="display:none">
+                <fieldset>
+                    <legend>活动地点</legend>
+                <dl>
+                    <dt>
+                        活动地点：
+                    </dt>
+                    <dd>
+                        <!--{template block/place_select}-->
+                    </dd>
+                </dl>
+                </fieldset>
+                <fieldset>
+                    <legend>活动报名</legend>
+
+                    
+                    <dl id="apply_type_0" style="display:none">
+                    </dl>
+                    <dl id="apply_type_1">
+                        <dt>&nbsp;</dt>
+                        <dd><button type="button" name="add_apply_form"> 添加报名表项目 </button></dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>活动标签：</dt>
+                        <dd>
+                        	<span class="textInput">#</span>
+                        	<input type="text" name="tag_keywords" value="{$event['tag_keywords']}" size="35" />
+                        	<span class="textInput">#</span>
+                        	(多个标签以空格分隔)
+                        </dd>
+                    </dl>
+                    
+                    <!--  
+                    <dl id="apply_type_3" style="display:none">
+                        <dt>关键词：</dt>
+                        <dd><span class="textInput">#</span><input type="text" name="photo_keywords" value="{$event['applyProperty']}" size="20" /><span class="textInput">#</span></dd>
+                    </dl>
+                    -->
+                </fieldset>
+                <fieldset>
+                    <legend>活动简介</legend>
+                    <dl>
+                        <dt>
+                            &nbsp;
+                        </dt>
+                        <dd>
+                            <button type="button" name="add_intro">添加简介</button>
+                        </dd>
+                    </dl>
+                    <div id="intro_area">
+                    </div>
+                </fieldset>
+                {if $event['id']}
+                {eval echo include_file(site_url(array('new_event', 'show_vote' ,5 ,$event['id'])));}
+                {else}
+                {eval echo include_file(site_url(array('new_event', 'show_vote' )));}
+                {/if}
+            </div>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="button" id="btnSubmit" onclick='onsubmit_form(this.form, "您确定要提交？", check_keywords_empty)'>
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function() {
+        var options_b = "name:\"image[]\", id:\"image_big\", file_type:\"common\", required:true, resolution:\"udp\"";
+        var options_m = "name:\"image[]\", id:\"image_middle\", file_type:\"common\", required:true, resolution:\"hdp\"";
+        var options_s = "name:\"image[]\", id:\"image_small\", file_type:\"common\", required:true, resolution:\"mdp\"";
+        <!--{if $event['image']}-->
+            options_b += ", image_name: \"{$event['image']}\"";
+            options_m += ", image_name: \"{$event['image']}\"";
+            options_s += ", image_name: \"{$event['image']}\"";
+        <!--{/if}-->
+        $("#image_big", $("#{$page_id}")).my_upload(eval("({" + options_b + "})"));
+        $("#image_middle", $("#{$page_id}")).my_upload(eval("({" + options_m + "})"));
+        $("#image_small", $("#{$page_id}")).my_upload(eval("({" + options_s + "})"));
+        
+        var is_link = $("input[name=is_link]", $("#{$page_id}")).val();
+        link_type(is_link);
+        
+        $("select[name=is_link]", $("#{$page_id}")).change(function(){
+        	link_type($(this).val());
+        });
+        
+        $("button[name=add_intro]", $("#{$page_id}")).click(function(){
+        	add_intro();
+        });
+        
+        $("select[name=apply_type]", $("#{$page_id}")).change(function(){
+        	change_apply_type($(this).val());
+        });
+        
+        $("button[name=add_apply_form]", $("#{$page_id}")).click(function(){
+        	add_apply_form();
+        });
+        
+        <!--{if $event['applyType']}-->
+        change_apply_type({$event['applyType']});
+        <!--{/if}-->
+        
+        <!--{if $event['is_link']}-->
+        link_type(1);
+        <!--{/if}-->
+        
+        <!--{loop $event['intro'] $row}-->
+        add_intro("{$row['title']}", "{echo str_replace(array("\r", "\n"), "<br>", addslashes($row['intro']) )}", "{$row['link']}");
+        <!--{/loop}-->
+            
+        <!--{loop $event['apply_property'] $row}-->
+        add_apply_form("{$row['label']}", "{$row['tip']}","{$row['req']}");
+        <!--{/loop}-->
+    });
+    
+    
+    function change_apply_type(apply_type) {
+    	for(var i=0; i<4; i++) {
+    		//$("#apply_type_" + i, $("#{$page_id}")).hide();
+    	}
+    	
+    	$("#apply_type_" + apply_type, $("#{$page_id}")).show();
+    }
+	
+    function add_apply_form(label, tip,req) {
+    	var i = $('#apply_type_1 > div',$("#{$page_id}")).length ? $('#apply_type_1 > div:last',$("#{$page_id}")).attr('data-count') : 0;
+    	i++;
+    	var html = $('<div data-count="'+i+'"><dl>' +
+			    		'<dt><input type="text" size="12" value="'+(label?label:'标题')+'" name="apply_label['+i+']" /></dt>' +
+			    		'<dd><input type="text" size="30" name="apply_tip['+i+']" placeholder="说明" value="' + (tip?tip:"") + '" />' +
+			    		'是否必填 <input type="radio" name="apply_req['+i+']" value="1" '+(req==1?'checked':'')+'>是'+
+			    		'<input type="radio" name="apply_req['+i+']" value="0"' +(req==1?'':'checked')+'>否'+
+			    		
+			    		'<a href="javascript:;" onclick="$(this).parent().parent().parent().remove();">　[删除]　</a></dd>' +
+			    	'</dl></div>');
+    	$("#apply_type_1", $("#{$page_id}")).append(html);
+    }
+    
+    function add_intro(title, intro, link) {
+        var html = $('<div><dl>' + 
+					    	'<dt>标题：</dt>' + 
+					    	'<dd>' + 
+					    	'<input type="text" size="60" name="title[]" value="' + (title?title:"") + '" class="textInput" />' +
+					    	'<a href="javascript:;" onclick="$(this).parent().parent().parent().remove();">[删除]</a>' +
+					    	'</dd>' + 
+					    '</dl>' + 
+					    '<dl>' + 
+				    	'<dt>连接：</dt>' + 
+				    	'<dd>' + 
+				    	'<input type="text" size="60" name="link[]" value="' + (link?link:"") + '" class="textInput" />' +
+				    	'</dd>' + 
+				    	'</dl>' +
+					    '<dl>' + 
+					    	'<dt>描述：</dt>' + 
+					    	'<dd><textarea name="intro[]" cols="80" rows="8" class="textInput">' + (intro?intro.replace(/\<br\>/gi, "\n"):"") + '</textarea>' +
+					    	'</dd>' + 
+					    '</dl></div>');
+    	$("#intro_area", $("#{$page_id}")).append(html);
+    }
+
+    function link_type(b) {
+    	if(b > 0) {
+        	$("#content_area", $("#{$page_id}")).hide();
+        	$("#link_field", $("#{$page_id}")).show();
+        	$("input[name=link]", $("#{$page_id}")).addClass("required");
+        } else {
+        	$("#content_area", $("#{$page_id}")).show();
+        	$("#link_field", $("#{$page_id}")).hide();
+        	$("#link_field", $("#{$page_id}")).val("");
+        	$("input[name=link]", $("#{$page_id}")).removeClass("required");
+        }
+    }
+
+    function check_keywords_empty() {
+        var places = $("select[name='place[]']", $("#{$page_id}")).val(),
+            tip_keywords = $("input[name=tip_keywords]:visible", $("#{$page_id}")).val(),
+            photo_keywords = $("input[name=photo_keywords]:visible", $("#{$page_id}")).val();
+        if($("select[name=is_link]").val() == 1) { return true; }
+        if(places || tip_keywords || photo_keywords) {
+            return true;
+        } else {
+        	//@fc_lamp:暂时屏蔽2013319
+            //alertMsg.error("请选择活动地点或设置活动关键字！");
+           // return false;
+           return true;
+        }
+
+    }
+</script>

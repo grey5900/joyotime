@@ -1,0 +1,52 @@
+<!--{eval $page_id = 'user_point_log';}-->
+<div class="pageHeader">
+	<form id="pagerForm" method="post" action="{$current_url}" onsubmit="return dialogSearch(this);">
+	    <input type="hidden" name="orderField" value="{$order_field}"/>
+	    <input type="hidden" name="orderDirection" value="{$order_direction}"/>
+		<input type="hidden" name="pageNum" value="{$pageNum}" />
+		<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	</form>
+
+	合计    收入：{$sum_plus}     支出：{$sum_minus}     {if !$start_date} 余额：{echo $sum_plus + $sum_minus}{/if}
+</div>
+
+<div class="pageContent" id="{$page_id}">
+	<div>
+		<table class="table" targetType="dialog" width="100%" cellspacing="4" cellpadding="4" layoutH="87">
+			<thead>
+				<tr>
+					<th width="150" orderField="createDate" class="<!--{if $order_field=='createDate'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">时间</th>
+					<th>事件(相关ID)</th>
+					<th width="100" orderField="point" class="<!--{if $order_field=='point'}-->{$order_direction}<!--{else}-->asc<!--{/if}-->">分值</th>
+				</tr>
+			</thead>
+			<tbody>
+				{loop $list $row}
+				<tr>
+				<td>{$row['createDate']}</td>
+				<td>
+				{$row['caseName']}
+				{echo $row['reason']['item_id']?sprintf('(%s)', $row['reason']['item_id']):'';}
+      			{echo $types[$row['reason']['item_type']]?sprintf('[%s]', $types[$row['reason']['item_type']]):'';}
+				<!--{if $row['reason']['remark']}--><a href="javascript:;" content="{$row['reason']['remark']}" class="order-remark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><!--{/if}-->
+				</td>
+				<td>{$row['point']}</td>
+				</tr>
+				{/loop}
+			</tbody>
+		</table>
+	</div>
+	<!--{template main/page_bar}-->
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".order-remark", $("#{$page_id}")).poshytip({
+                content:function(){
+                    return $(this).attr("content");
+                }
+            });
+        }, 500);
+    });
+</script>

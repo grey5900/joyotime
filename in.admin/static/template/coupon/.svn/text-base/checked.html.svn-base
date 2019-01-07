@@ -1,0 +1,59 @@
+{eval $page_rel='coupon_checked';}
+<form id="pagerForm" method="post" action="{$current_url}">
+    <input type="hidden" name="pageNum" value="{$cur_page}"/>
+    <input type="hidden" name="numPerPage" value="{$per_page_num}"/>
+    <input type="hidden" name="title" value="{$title}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="{$current_url}" onsubmit="return divSearch(this, '{$page_rel}');">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                    <input type="text" name="title" value="{$title}" />
+                    <button type="submit">
+                        检索
+                    </button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li>
+                <a class="edit" target="navTab" warn="请选择优惠" title="查看优惠" rel="{eval echo build_rel(array('coupon', 'view'))}" href="{eval echo site_url(array('coupon', 'view', 'id'))}/<!--{{id}}-->"><span>查看</span></a>
+            </li>
+        </ul>
+    </div>
+    <table width="100%" class="table" layoutH="158" rel="{$page_rel}">
+        <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="30%">优惠名</th>
+                <th width="15%">审核时间</th>
+                <th width="20%">提交品牌</th>
+                <th width="10%">有效期</th>
+                <th width="10%">获得人数</th>
+                <th width="10%">使用次数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--{loop $list $row}-->
+            <tr target="id" rel="{$row['id']}">
+                <td>{$row['id']}</td>
+                <td>{$row['title']}
+                <!--{if $row['expire']}--><span class="tip-expire"></span><!--{/if}-->
+                </td>
+                <td>{$row['checkDate']}</td>
+                <td>{$row['brand']}</td>
+                <td>{$row['expireDate']}</td>
+                <td>{$row['userCount']}</td>
+                <td>{$row['usedCount']}</td>
+            </tr>
+            <!--{/loop}-->
+        </tbody>
+    </table>
+    <!--{template main/page_bar}-->
+</div>

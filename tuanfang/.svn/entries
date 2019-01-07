@@ -1,0 +1,123 @@
+10
+
+dir
+291
+svn://svn.joyotime.com/tuanfang/api/trunk
+svn://svn.joyotime.com/tuanfang
+
+
+
+2014-02-14T10:22:17.722568Z
+291
+zourong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7ee09e39-d032-4c7b-be80-2d6a131c2db4
+
+.project
+file
+
+
+
+
+2013-08-30T06:54:41.000000Z
+e84de30cd857f4e2343e40ddbf1721df
+2013-08-22T03:49:09.676749Z
+2
+zhucl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+834
+
+.settings
+dir
+
+api-doc
+dir
+
+api.sh
+file
+
+
+
+
+2013-08-22T10:15:57.000000Z
+df1a2448f7d3599a9637f2507f215a81
+2013-08-22T03:49:09.676749Z
+2
+zhucl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+291
+
+application
+dir
+
+data
+dir
+
+swagger-ui
+dir
+
+system
+dir
+
+template
+dir
+
+vendor
+dir
+
+www
+dir
+

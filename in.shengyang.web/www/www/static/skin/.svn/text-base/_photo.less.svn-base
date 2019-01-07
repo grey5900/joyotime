@@ -1,0 +1,25 @@
+.photowall {
+	padding: 12px 0;
+	margin: 0 auto 20px;
+	.tit {
+		background: url('ico.png') bottom repeat-x;
+		padding: 0 0 16px;
+		.cleartype();
+		.clearfix();
+		h3 {
+			color: #333;
+			font-size: 18px;
+			font-weight: normal;
+			line-height: 20px;
+			margin: 0px;
+			padding: 0 0 0 17px;
+			background: url('ico.png') -190px -179px no-repeat;
+			float: left;
+		}
+	}
+	.con {
+		.pagination {
+			display: none !important;
+		}
+	}
+}

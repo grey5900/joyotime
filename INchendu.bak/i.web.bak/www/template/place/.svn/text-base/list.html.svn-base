@@ -1,0 +1,153 @@
+<!--{template web/header}-->
+
+<div class="container" id="container">
+	<div class="section">
+		<div class="main">
+			<div class="order-btn dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<!--{if !empty($str_order)}-->
+						{$str_order}
+					<!--{else}-->
+						排序
+					<!--{/if}-->
+					<b class="caret"></b>
+				</a>
+				<ul id="menu1" class="dropdown-menu">
+					<li class="arrow"><i class="arrow-border">◆</i><i class="arrow-inside">◆</i></li>
+					<li><a onclick="addOptions(this, 'order')" data-order="pop">按人气值</a></li>
+					<li><a onclick="addOptions(this, 'order')" data-order="level">按星级</a></li>
+					<li><a onclick="addOptions(this, 'order')" data-order="tipCount">按点评数</a></li>
+					<li><a onclick="addOptions(this, 'order')" data-order="pcc">按人均消费</a></li>
+				</ul>
+			</div>
+			<div class="breadcrumb">
+				<ul class="pull-left">
+					<li class="home">
+							<a href="/place/list/"><i class="icon-home icon-gray"></i></a>
+					</li>
+					<!--{if  !empty($clist) || !empty($str_star) || !empty($str_pcc) || !empty($keyword)}-->
+						<!--{loop $clist $k $v}-->
+						<li>
+							<span>{$v[content]}</span><i class="close" data="{$v[id]}" onclick="delOptions(this,'{$v[h_type]}')">×</i>
+						</li>
+						<!--{/loop}-->
+						<!--{if !empty($str_star)}-->
+						<li>
+							<span>{$str_star}</span><i class="close" data="{$star}" onclick="delOptions(this,'star')">×</i>
+						</li>
+						<!--{/if}-->
+						<!--{if !empty($str_pcc)}-->
+						<li>
+							<span>{$str_pcc}</span><i class="close" data="{$pcc}" onclick="delOptions(this,'pcc')">×</i>
+						</li>
+						<!--{/if}-->
+						<!--{if !empty($keyword)}-->
+						<li>
+							<span>找“{$keyword}”</span><i class="close" data="{$keyword}" onclick="delOptions(this,'keyword')">×</i>
+						</li>
+						<!--{/if}-->
+					<!--{else}-->
+					<li class="all"><span>全部地点</span></li>
+					<!--{/if}-->
+				</ul>
+			</div>
+			<div class="place_list">
+				<!--{if !empty($list)}-->
+					<!--{loop $list $id $place}-->
+					<div class="place">
+						<div class="place-icon"><a href="/place/{$id}/" class="icon xmiddle"><img border="0" width="60" height="60" src="{$place[icon]}" /><i></i></a></div>
+						<div class="detail">
+							<h3><a href="/place/{$id}/">{$place[placename]}</a></h3>
+							<!--{if !empty($place[description])}--><div class="info">{eval echo cut_string($place[description],75);}</div><!--{/if}-->
+							<!--{if !empty($place[address])}--><div class="address">地址：{$place[address]}</div><!--{/if}-->
+							<!--{if !empty($place[tel])}--><div class="phone">电话：{$place[tel]}</div><!--{/if}-->
+						</div>
+						<div class="review">
+							<span class="ico-star-{$place[star]}"></span>
+							<div class="statistics">
+							<!--{if $place[isBusiness] > 0}-->
+							人均：<em><!--{if !empty($place[pcc]) && $place[pcc]>=0}-->{$place[pcc]}<!--{else}-->-<!--{/if}--></em>元<br />
+							<!--{/if}-->
+							签到：<em>{$place[v_count]}</em><br />
+							点评：<em>{$place[tipCount]}</em>
+							</div>
+						</div>
+					</div>
+					<!--{/loop}-->
+				<!--{else}-->
+					<div class="notify">没有找到满足条件的地点<!-- ，请 <a href="/add_place/">登记商家</a>。 --></div>
+				<!--{/if}-->
+			</div>
+			{$paginate}
+		</div>
+		<div class="sidebar">
+			<div class="place_filter">
+				<div class="filters">
+				<form method="get" action="{$page_form}" id="search_form">
+					<input type="hidden" id="cid" name="f_cid" value="{$f_cid}" />
+					<input type="hidden" id="s_cid" name="s_cid" value="{$s_cid}" />
+					<input type="hidden" id="pcc" name="pcc" value="{$pcc}" />
+					<input type="hidden" id="order" name="order" value="{$order}" />
+					<ul class="category-list">
+						<!--{loop $cates $cid $cate}-->
+						<li id="cate-{$cid}" class="first<!--{if $sel_cid == $cid }--> active<!--{/if}-->">
+							<a onclick="addOptions(this, 'cid');" data-cid="{$cid}"><img border="0" src="{$cate[c_icon]}" width="16" height="16" /> <span>{$cate[content]}</span></a>
+						</li>
+						<!--{/loop}-->
+					</ul>
+					<!--{if !empty($sel_cid) && $sel_cid > 0}-->
+					<script type="text/javascript">
+						$(function(){
+							show_son('{$sel_cid}');
+						});
+					</script>
+					<!--{/if}-->
+					<dl class="star">
+						<dt>星　　级：</dt>
+						<dd>
+							<div id="star_selector" data-rating="{$star}"></div>
+						</dd>
+					</dl>
+					<dl class="pcc">
+						<dt>人均消费：</dt>
+						<dd>
+							<ul id="consumption">
+								<li><a data-pcc="0-20" onclick="addOptions(this, 'pcc')">20元以下</a></li>
+								<li><a data-pcc="20-50" onclick="addOptions(this, 'pcc')">20-50元</a></li>
+								<li><a data-pcc="50-100" onclick="addOptions(this, 'pcc')">50-100元</a></li>
+								<li><a data-pcc="100-200" onclick="addOptions(this, 'pcc')">100-200元</a></li>
+								<li><a data-pcc="200-500" onclick="addOptions(this, 'pcc')">200-500元</a></li>
+								<li><a data-pcc="500-0" onclick="addOptions(this, 'pcc')">500元以上</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</form>
+				</div>
+			</div>
+			<div class="panel" id="add-poi">
+				<div class="content">
+					<div class="btn-area"><a href="/add_place/" class="btn btn-success btn-large"><span>商家入驻</span></a></div>
+					<div class="phone-area"><img src="/img/icon_phone.png" width="20" height="20" /> 咨询热线：<strong>4006-028-377</strong></div>
+				</div>
+			</div>
+			<!--{if !empty($news)}-->
+			<div class="panel" id="newpoi">
+				<div class="title"><h4 class="font-yab">最新加入</h4></div>
+				<div class="content">
+					<!--{loop $news $k $v}-->
+					<dl>
+						<dt><a href="/place/{$v[id]}/" class="icon small"><img border="0" src="{$v[icon]}" width="40" height="40" title="{$v[placename]}" class="tag" /><i></i></a></dt>
+						<dd>
+							<h5><a href="/place/{$v[id]}/">{$v[placename]}</a></h5>
+							<div class="address">{$v[address]}</div>
+						</dd>
+					</dl>
+					<!--{/loop}-->
+				</div>
+			</div>
+			<!--{/if}-->
+		</div>
+	</div>
+</div>
+<form action="/signin/" method="post" class="modal hide form-horizontal" id="signin-modal"></form>
+<!--{template web/footer}-->

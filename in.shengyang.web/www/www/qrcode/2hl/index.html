@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="zh_cn" name="language">
+		<title>掌上成都--成都二环指南</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}">
+    <script type="text/javascript" src="/static/js/jquery.min.js?{$version}"></script>
+    <style type="text/css" media="screen">
+      .container {
+      	min-height: 100%;
+      }
+      header {
+      	background: #fff;
+      }
+      .banner {
+      	position: relative;
+				max-width: 1140px;
+				margin: 0 auto;
+				padding: 10px 0;
+				zoom: 1;
+      }
+      .banner .logo {
+      	display: block;
+      	margin: 0 0 0 20px;
+      }
+      .banner .logo a img {
+      	display: inline-block;
+				float: left;
+      }
+      .banner .logo  a {
+      	font-size: 1.2em;
+      	line-height: 51px;
+      	height: 51px;
+      	color: #666;
+      }
+			.banner .logo a:hover,.banner .logo a:visited {
+				color: #666;
+			}
+      .banner p {
+      	margin: 0 0 20px 185px;
+				font-size: 0.875em;
+      }
+      .navtab {
+				margin-left: 60px;
+      	display: inline-block;
+      	overflow:hidden;
+      }
+      .navtab li {
+      	float: left;
+      	display: inline-block;
+      	margin-right: 10px;
+      	background: #aaa;
+      	padding:10px;
+      	-webkit-border-radius: 50px;
+		     -moz-border-radius: 50px;
+		      -ms-border-radius: 50px;
+		          border-radius: 50px;
+		    color:#fff;
+		    cursor: pointer;
+		    font-size: 12px;
+		    width:12px;
+      }
+      .navtab li.act {
+      	background: #fb7e7e;
+      }
+			.navtab li a {
+				color: #fff;
+			}
+      .tabwrap {
+      	width: 100%;
+      }
+      .tabwrap .tabl {
+      	display: none;
+      	
+      } 
+      .tabwrap img {
+      	display: block;
+      	width: 100%;
+      }
+      .touchslider-item {
+				min-width:320px;
+				min-height:186px;
+      }
+      footer  .green-button{
+	      -webkit-border-radius: 50px;
+			     -moz-border-radius: 50px;
+			      -ms-border-radius: 50px;
+			          border-radius: 50px;
+			  display:inline-block;
+	      padding: 4px 0;
+	      margin: 0;
+	      width: 220px;
+	      color:#fff;
+      }
+      footer {
+      	margin: 20px 0;
+      	text-align: center;
+      }
+      footer a:hover {
+      	color: #fff;
+      }
+      .touchslider {
+      	background: #fff;
+      	display: block;
+      }
+ 		  .touchslider-item {height:186px;overflow: hidden;margin:0 auto;text-align: center;}
+		  .touchslider-item img { width: 320px; height:186px;display: block;}
+		  .touchslider-nav {text-align: center;margin-top: 2px;}
+		  .touchslider-nav-item { 
+			  display: inline-block;
+		    width: 7px; 
+		    height: 7px; 
+		    background: url("/static/m_img/dot.png") no-repeat scroll -10px 0 transparent;
+		    display: inline-block;
+		    -webkit-border-radius: 12px;
+		    border-radius: 12px;
+		    margin: 0;
+		  }
+		  .touchslider-viewport {
+		  	height:100%;
+		  	min-height:168px;
+		  }
+		  .touchslider-nav-item-current {background: url("/static/m_img/dot.png") no-repeat scroll 0 0 transparent;}
+    	.locale {
+    		background: #fff;
+    		display: block;
+    	}
+    	.locale  table {
+    		width:100%;
+    		display: block;
+    	}
+    	.locale tr {
+    		background: #f2f8ed;
+    	}
+    	.locale td {
+    		width:33%;
+    		text-align: center;
+    		padding: 5px 0;
+    	}
+    	.locale td a {
+    		width:33%;
+    	}
+    	.locale td:hover {
+    		background: #e8e8e8;
+    	}
+    </style>
+	</head>
+
+	<body>
+		<div id="container" class="container">
+			<div id="tab-cont">
+				<header>
+					<div class="banner">
+						<h1 class="logo"><a>掌上成都--成都二环指南</a></h1>
+						<p><img src="img/lg.png" alt=""  width="140px"/></p>
+						<ul class="navtab" id="navtab">
+							<li>快速公交站</li>
+							<li>立交匝道</li>
+							<li>二环路故事</li>
+							<li>地点册</li>
+						</ul>
+					</div>
+				</header>
+				<div id="tabwrap" class="tabwrap">
+					<div class="tabl">
+						<img src="img/map01.png" alt="" />
+					</div>
+					<div class="tabl">
+						<img src="img/map02.png" alt="" />
+					</div>
+					<div class="tabl">
+							<div class="touchslider">
+								<div class="touchslider-viewport" style="width:100%;overflow:hidden;height: 100%;">
+									<div class="">
+										<div class="touchslider-item">
+											<img src="img/gs1.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs2.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs3.png" alt="" width="320px" />
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs4.png" alt="" width="320px" />
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs5.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs6.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs7.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs8.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs9.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs10.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs11.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs12.png" alt="" width="320px"/>
+										</div>
+										<div class="touchslider-item">
+											<img src="img/gs13.png" alt="" width="320px"/>
+										</div>
+									</div>
+								</div>
+								<div class="touchslider-nav">
+					        <span class="touchslider-nav-item touchslider-nav-item-current"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					        <span class="touchslider-nav-item"></span>
+					    </div>
+						</div>
+					</div>
+					<div class="tabl">
+						<div class="locale">
+							<table>
+								<tr>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51828">新北立交</a></td>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51829">刃具立交</a></td>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51830">杉板桥立交</a></td>
+								</tr>
+								<tr>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51831">双子立交</a></td>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51832">营门口立交</a></td>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51833">永丰立交</a></td>
+								</tr>
+								<tr>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51834">成温邛立交</a></td>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51835">人南立交</a></td>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51836">双楠立交</a></td>
+								</tr>
+								<tr>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51837">红星路立交</a></td>
+									<td><a href="http://in.chengdu.cn/qr/inpc/51838">二环路快速公交</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<footer>
+				<p>
+					<a href="http://icd.sc" class="green-button">下载IN沈阳客户端</a>
+				</p>
+			</footer>
+		</div>
+	</body>
+	<script type="text/javascript" charset="utf-8">
+		$(function(){
+			(function($){
+				$.fn.tab = function(options){
+					var defaults = {
+							trigger:"mouseenter", 
+							navId:".navtab",  
+							selCss:"act", 
+							conId:".tabwrap"
+					}
+					var options = $.extend(defaults, options);
+					this.each(function(){
+							var tab = $(this);
+							tab.find(options.navId).children().eq(0).addClass(options.selCss); 
+							tab.find(options.conId).children().eq(0).show(); 
+							tab.find(options.navId).children().bind(options.trigger, function(){
+								$(this).addClass(options.selCss).siblings().removeClass(options.selCss);
+								var index = $(this).index();
+								tab.find(options.conId).children().eq(index).show().siblings().hide();
+							});
+					});
+				};
+			})(jQuery);
+			
+			$("#tab-cont").tab({
+				trigger:"click"
+			});
+		})
+	</script>
+	<script  src="http://icd.sc/s/slide.js?{$version}"></script>
+	<script type="text/javascript">
+			jQuery(function($) {
+			    $(".touchslider").touchSlider({
+			    	mouseTouch: true,
+			    });
+			});
+		</script>
+</html>

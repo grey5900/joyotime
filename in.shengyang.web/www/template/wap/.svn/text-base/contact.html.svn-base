@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<title>成为IN沈阳商家</title>
+	<link rel="stylesheet" href="/static/skin/mobile_main_style.css?{$version}" type="text/css" media="screen" charset="utf-8"/>
+</head>
+	<body>
+      <div id="container">
+		<div class="container">
+			<div class="post">
+				<div class="feeds">
+                    <div class="feed-list">
+                      <a href="tel:4008111190">
+                        <div class="icon">
+                            <i class="wap-icons-tel"></i>
+                        </div>
+                        <span>电话：4008 - 1111 - 90（免长途费）</span>
+                      </a>
+                    </div>
+                  </div>
+				<div class="feeds">
+                    <div class="feed-list">
+                      <a href="mailto:kf@jin95.com">
+                        <div class="icon">
+                            <i class="wap-icons-meil"></i>
+                        </div>
+                        <span>邮箱：kf@jin95.com</span>
+                      </a>
+                    </div>
+                  </div>
+				<div class="feeds">
+                    <div class="feed-list">
+                      <a href="javascript:;">
+                        <div class="icon">
+                            <i class="wap-icons-address"></i>
+                        </div>
+                        <span>地址：沈阳电信网上商城</span>
+                      </a>
+                    </div>
+                  </div>
+			</div>
+		</div>
+      </div>
+	</body>
+</html>

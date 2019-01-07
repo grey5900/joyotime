@@ -1,0 +1,54 @@
+<form method="post" action="#rel#" id="pagerForm">
+	<input type="hidden" name="pageNum" value="{$cur_page}" />
+	<input type="hidden" name="numPerPage" value="{$per_page_num}" />
+	<input type="hidden" name="orderField" value="{$order_field}" />
+	<input type="hidden" name="orderDirectory" value="{$order_dire}"/>
+	<input type="hidden" name="keyword" value="{$keyword}" />
+</form>
+
+<div class="pageHeader">
+	<form method="post" rel="pagerForm" action="{$current_url}" onsubmit="return navTabSearch(this);">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li style="width:100px;">分类名称：</li>
+			<li><input type="text" name="keyword" value="{$keyword}" size="30" />
+		</ul>
+		<div class="subBar">
+			<ul><li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li></ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="/cms/category/add" target="dialog" rel="cms_category_add"><span>添加分类</span></a></li>
+			<li><a class="edit" href="/cms/category/edit/<!--{{sid_category}}-->" target="dialog" rel="cms_category_edit" warn="请选择一个分类"><span>编辑分类</span></a></li>
+			<li><a class="delete" href="/cms/category/delete" target="selectedTodo" rel="cids[]" title="删除操作将清空所选分类下面的文章且无法恢复。确定要删除吗？" warn="请至少选择一个分类"><span>删除分类</span></a></li>
+		</ul>
+	</div>
+	<table class="table" border="0" cellpadding="4" cellspacing="4" width="100%" asc="asc" desc="desc">
+		<thead>
+			<tr>
+				<th width="3%"><input type="checkbox" group="cids[]" class="checkboxCtrl"/></th>
+				<th width="15%">分类名称</th>
+				<th width="60%">分类描述</th>
+				<th width="15%">分类模板名</th>
+				<th orderField="writingCount" class="{$order_dire}">文章数量</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--{loop $list $k $v}-->
+			<tr target="{sid_category}" rel="{$k}">
+				<td><input type="checkbox" name="cids[]" value="{$k}" /></td>
+				<td>{$v[category]}</td>
+				<td>{$v[intro]}</td>
+				<td>{$v[template]}</td>
+				<td>{$v[writingCount]}</td>
+			</tr>
+			<!--{/loop}-->
+		</tbody>
+	</table>
+    <!--{template main/page_bar}-->
+</div>

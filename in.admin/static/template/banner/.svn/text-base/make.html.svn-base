@@ -1,0 +1,123 @@
+<script type="text/javascript">
+$(function(){
+
+	var value = $("#type").val();
+	if(value != "n")
+		show_lookup(value, false);
+});
+
+function show_lookup(value, clear){
+	if(value != '' && value != 'n' && value != 'http' && value != 'groupon' && value != 'filmticket'){
+		var link = "{eval echo site_url(array('lookup','list_lookup','type'));}";
+		if(value == 'place'){
+			link += "/place";
+		}else if(value == 'user'){
+			link += "/user";
+		}else if(value == 'badge'){
+			link += "/badge";
+		}
+		$("#lookup_link").attr('href', link);
+		if(clear){
+			$("#c_id").val("");
+			$("#c_name").val("");
+		}
+		$("#c_content").val("");
+		$('#url_p').hide();
+		$("#lookup_p").show();
+	}else if(value == 'http' || value == 'groupon' || 'filmticket' == value){
+		if(clear) {
+			$("#c_content").val("");
+		}
+		$("#c_id").val("");
+		$("#c_name").val("");
+		$("#lookup_p").hide();
+		$('#url_p').show();
+	}else if(value == "" || value == "n"){
+		if(clear){
+			$("#c_id").val("");
+			$("#c_name").val("");
+			$("#c_content").val("");
+		}
+		$("#lookup_p").hide();
+		$('#url_p').hide();
+	}
+}
+</script>
+<style>
+.panel div dl{margin:2px 0;}
+</style>
+<!--{eval $page_id='banner_add' . $type;}-->
+<div class="pageContent" id="{$page_id}">
+	
+	<form method="post" action="{$post_url}" class="reqired-validate pageForm" onsubmit="return iframeCallback(this, dialogAjaxDone);">
+		<div class="pageFormContent">
+			<div class="panel" defH="150">
+				<h1>Banner图片</h1>
+				<div>
+				{loop $cfg $key $c}
+				<dl class="unit" style="height:100px;">
+					<dt>{$c}</dt>
+					<dd>{if !isset($info)||empty($info)}<span class="f-red">*</span>{/if}<button type="button" id="{if isset($info)&&!empty($info)&&!empty($info[image])}edit_{/if}btn_{$key}">上传图片</button></dd>
+				</dl>
+				{/loop}
+				</div>
+			</div>
+			<div class="panel">
+				<h1>Banner属性</h1>
+				<div>
+					<table width="100%" cellspacing="4" cellpadding="4">
+							<tr height="28">
+								<th width="80">Banner描述</th>
+								<td colspan="3"><input type="text" name="name" size="80" value="{$info[name]}" /></td>
+							</tr>
+							<!-- <tr height="28">
+								<th width="80">Banner标题</th>
+								<td colspan="3"><input type="text" name="title" size="80" value="{$info[title]}" /></td>
+							</tr> -->
+							<tr height="28">
+								<th>Banner链接</th>
+								<td colspan="3">
+								    <!--{template main/link_page}-->
+								</td>
+							</tr>
+							<tr height="28">
+								<th>状态</th>
+								<td>
+								<label><input type="radio" name="disable" value="0" <!--{if empty($info['disable'])}--> checked="checked"<!--{/if}-->/>启用</label>
+								<label><input type="radio" name="disable" value="1" <!--{if $info['disable']}--> checked="checked"<!--{/if}--> />禁止</label>
+								</td>
+							</tr>
+							<!-- <tr height="28">
+								<th>Banner有效时间</th>
+								<td width="160"><input type="text" class="date textInput readonly" name="startDate" format="yyyy-MM-dd HH:mm:ss" value="{$info[startDate]}" readonly/>
+								<a class="inputDateButton" href="javascript:;">选择</a></td>
+								<td width="15">-</td>
+								<td><input type="text" class="date textInput readonly" name="endDate" format="yyyy-MM-dd HH:mm:ss" value="{$info[endDate]}" readonly/>
+								<a class="inputDateButton" href="javascript:;">选择</a></td>
+							</tr> -->
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="btnSubmit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close" onclick="$.pdialog.closeCurrent();">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	$(function(){
+		
+		var option = '';
+		{loop $cfg $key $c}
+		option = "name:\"banner[]\",file_type:\"default\"";
+		option += ",id:\"{if isset($info)&&!empty($info)&&!empty($info[image])}edit_{/if}banner_{$key}\"";
+		<!--{if isset($info)&&!empty($info)&&!empty($info[image])}-->
+		option += ",image_name:\"{$info[image]}\"";
+		<!--{/if}-->
+		$("#{if isset($info)&&!empty($info)&&!empty($info[image])}edit_{/if}btn_{$key}").my_upload(eval("({"+option+"})"));
+		{/loop}
+	});
+</script>

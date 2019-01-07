@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<title>手机报</title>
+		<meta name="Keywords" content="{$paper['subject']}">
+		<meta name="Description" content="{$paper['subject']}">
+		<link rel="stylesheet" href="/static/skin/mobile_main_style.css" type="text/css" media="screen" charset="utf-8"/>
+	</head>
+	<body>
+		<div class="letter">
+			<h1 class="subject">{$paper['subject']}</h1>
+			<ul class="contents">
+				<!--{loop $content $row}-->
+				<li>
+					<!--{if $row['image']}--><div><img src="{eval echo image_url($row['image'], 'common', 'odp');}" /></div><!--{/if}-->
+					<div class="content">
+						{echo nl2br($row['content']);}
+					</div>
+				</li>
+				<!--{/loop}-->
+			</ul>
+			<div class="buttom_bar">
+				<!--{if $prev}-->
+				<a class="button prev" href="/i/enewspaper/{$prev['id']}">上一期</a>
+				<!--{/if}-->
+				<!--{if $next}-->
+				<a class="button next" href="/i/enewspaper/{$next['id']}">下一期</a>
+				<!--{/if}-->
+			</div>
+		</div>
+	</body>
+</html>
